@@ -9,3 +9,4 @@
 | 7 | run-llama/llama_index | 42321 | 2025-06-13 | 73.49 | RAG-centric | LlamaIndex is the leading framework for building LLM-powered agents over your data. |
 | 8 | microsoft/autogen | 45918 | 2025-06-12 | 73.38 | General-purpose | A programming framework for agentic AI 🤖 PyPi: autogen-agentchat Discord: https://aka.ms/autogen-discord Office Hour: https://aka.ms/autogen-officehour |
 | 9 | crewAIInc/crewAI | 32856 | 2025-06-12 | 71.89 | Multi-Agent | Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks. |
+
