@@ -54,6 +54,9 @@ jobs:
           pip install pytest-socket
           pytest --disable-socket -q 2>&1 | tee pytest.log
           python scripts/network_guard.py pytest.log
+      - uses: pre-commit/action@v3.0.1
+        with:
+          extra_args: detect-large-files
 
   check_critical_tasks:
     name: Check for Outstanding Critical Review Tasks
