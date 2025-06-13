@@ -72,6 +72,8 @@ def fetch_badge(url: str, dest: Path) -> None:
         with urllib.request.urlopen(url) as resp:
             dest.write_bytes(resp.read())
     except Exception:
+        if dest.exists():
+            return
         dest.write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>\n')
 
 
