@@ -1,12 +1,15 @@
-| # | Repo | ★ | Last Commit | Score | Category | One-liner |
-|---|------|----|------------|-------|----------|-----------|
-| 1 | langgenius/dify | 103079 | 2025-06-13 | 78.48 | RAG-centric | Production-ready platform for agentic workflow development. |
-| 2 | browser-use/browser-use | 63054 | 2025-06-13 | 76.01 | DevTools | 🌐 Make websites accessible for AI agents. Automate tasks online with ease. |
-| 3 | All-Hands-AI/OpenHands | 57960 | 2025-06-13 | 75.47 | DevTools | 🙌 OpenHands: Code Less, Make More |
-| 4 | lobehub/lobe-chat | 62441 | 2025-06-13 | 75.32 | RAG-centric | 🤯 Lobe Chat - an open-source, modern-design AI chat framework. Supports Multi AI Providers( OpenAI / Claude 4 / Gemini / Ollama / DeepSeek / Qwen), Knowledge Base (file upload / knowledge management / RAG ), Multi-Modals (Plugins/Artifacts) and Thinking. One-click FREE deployment of your private ChatGPT/ Claude / DeepSeek application. |
-| 5 | FoundationAgents/MetaGPT | 56368 | 2025-05-16 | 75.3 | Multi-Agent | 🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming |
-| 6 | infiniflow/ragflow | 55012 | 2025-06-13 | 74.52 | RAG-centric | RAGFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding. |
-| 7 | run-llama/llama_index | 42321 | 2025-06-13 | 73.49 | RAG-centric | LlamaIndex is the leading framework for building LLM-powered agents over your data. |
-| 8 | microsoft/autogen | 45918 | 2025-06-12 | 73.38 | General-purpose | A programming framework for agentic AI 🤖 PyPi: autogen-agentchat Discord: https://aka.ms/autogen-discord Office Hour: https://aka.ms/autogen-officehour |
-| 9 | crewAIInc/crewAI | 32856 | 2025-06-12 | 71.89 | Multi-Agent | Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks. |
+| Rank | Repo (Click to Visit) | ★ Stars | Last Commit | Score | Category | One-Liner |
+|------|-----------------------|---------|-------------|-------|----------|-----------|
+| 1 | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | 32.8k | 2025-06-12 | 95 | 🤖 Multi-Agent Coordination | Framework for orchestrating role-playing, autonomous AI agents. [1] |
+| 2 | [microsoft/autogen](https://github.com/microsoft/autogen) | 45.9k | 2025-06-14 | 93 | 🤖 Multi-Agent Coordination | A programming framework for agentic AI. [2] |
+| 3 |(https://github.com/Significant-Gravitas/AutoGPT) | 176k | 2025-06-10 | 91 | 🌐 General-purpose | AutoGPT is the vision of accessible AI for everyone, to use and to build on. [10] |
+| 4 | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 109k | 2025-06-10 | 90 | 🌐 General-purpose | Build context-aware reasoning applications. [8] |
+| 5 | [yoheinakajima/babyagi](https://github.com/yoheinakajima/babyagi) | 21.6k | 2025-05-20 | 88 | 🧪 Experimental | The original BabyAGI from March 2023 introduced task planning for autonomous agents. [3] |
+| 6 | [pydantic/pydantic-ai](https://github.com/pydantic/pydantic-ai) | 10.2k | 2025-06-12 | 87 | 🛠️ DevTools | Agent Framework / shim to use Pydantic with LLMs. [13] |
+| 7 | [Upsonic/Upsonic](https://github.com/Upsonic/Upsonic) | 7.5k | 2025-06-10 | 85 | 🌐 General-purpose | The most reliable AI agent framework that supports MCP. [14] |
+| 8 | [langchain-ai/langgraph](https://github.com/langchain-ai/langgraph) | 14.1k | 2025-06-11 | 84 | 🤖 Multi-Agent Coordination | Build resilient language agents as graphs. [15] |
+| 9 | [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) | 2.1k | 2025-06-12 | 82 | 🌐 General-purpose | Open Source TypeScript AI Agent Framework. [12] |
+| 10 | [e2b-dev/e2b](https://github.com/e2b-dev/e2b) | 8.6k | 2025-06-13 | 81 | 🛠️ DevTools | Secure open source cloud runtime for AI apps & AI agents. [16] |
+|... |... |... |... |... |... |... |
+
 
