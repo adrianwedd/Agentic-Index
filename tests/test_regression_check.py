@@ -1,9 +1,4 @@
-import sys
-from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-
-import scripts.regression_check as rc
+import agentic_index_cli.internal.regression_check as rc
 
 
 def test_regression_allows_external_agentops(tmp_path):

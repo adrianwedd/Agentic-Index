@@ -1,5 +1,6 @@
 forbidden:
   - agentops_cli
+  - agentops
   - '"score"'
   - google.com/search?q=%23
 allowed_regex:

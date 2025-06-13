@@ -1,10 +1,6 @@
-import sys
-from pathlib import Path
 from types import SimpleNamespace
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-
-import scripts.link_integrity as li
+import agentic_index_cli.internal.link_integrity as li
 
 
 def test_link_integrity(tmp_path, monkeypatch):

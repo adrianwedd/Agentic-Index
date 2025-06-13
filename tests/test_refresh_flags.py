@@ -1,12 +1,9 @@
 import json
-import sys
 from pathlib import Path
 from unittest import mock
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-
-import scripts.rank as rank
-import scripts.scrape as scrape
+import agentic_index_cli.internal.rank as rank
+import agentic_index_cli.internal.scrape as scrape
 
 
 def make_response(stars):
