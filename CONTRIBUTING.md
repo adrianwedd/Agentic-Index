@@ -11,3 +11,9 @@ To propose additions or changes:
 1. Open a pull request describing what you changed.
 
 We welcome fixes to data, new repo suggestions, and other improvements.
+
+To run the scraping and ranking tools locally, install the CLI:
+
+```bash
+pip install agentic-index-cli
+```

@@ -1,0 +1,9 @@
+forbidden:
+  - agentops_cli
+  - agentops
+  - '"score"'
+  - google.com/search?q=%23
+allowed_regex:
+  - https://github\.com/.*/agentops\b
+  - Fast-Start Picks:.*AgentOps
+  - https://agentops\.ai

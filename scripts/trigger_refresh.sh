@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Trigger the update workflow for Agentic Index
 set -euo pipefail
 
@@ -16,3 +17,4 @@ gh workflow run update.yml \
   -f ref=main \
   -f min-stars="${1:-50}" \
   -f auto-merge="true"
+

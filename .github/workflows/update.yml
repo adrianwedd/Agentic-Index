@@ -2,26 +2,40 @@ name: Update index
 
 on:
   schedule:
-    - cron: '30 2 * * 1'
+    - cron: '30 2 * * *'
   workflow_dispatch:
+    inputs:
+      min-stars:
+        description: "Minimum stars to include"
+        default: '50'
+        required: false
+      auto-merge:
+        description: "Auto-merge PR when checks pass"
+        default: 'false'
+        required: false
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
     env:
       BRANCH: data-update-${{ github.run_id }}
+      MIN_STARS: ${{ github.event.inputs.min-stars || 50 }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: pip install -r requirements.txt requests pytest
+        run: |
+          pip install -r requirements.txt
+          pip install -e .
       - name: Scrape repositories
-        run: python -m agentic_index_cli.scraper --min-stars 50
+        run: python -m agentic_index_cli.scraper --min-stars $MIN_STARS
       - name: Rank repositories
         run: python -m agentic_index_cli.ranker data/repos.json
       - name: Run tests
+        env:
+          CI_OFFLINE: '1'
         run: pytest -q
       - name: Check for updated index
         id: diff
@@ -38,10 +52,17 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
           git add data/top50.md data/repos.json
-          git commit -m "chore(data): weekly agent index refresh"
+          git commit -m "chore(data): nightly agent index refresh"
           git push --set-upstream origin "$BRANCH"
       - name: Create pull request
         if: steps.diff.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh pr create --title "chore(data): weekly agent index refresh" --fill --head "$BRANCH" --base main
+        run: gh pr create --title "chore(data): nightly agent index refresh" --fill --head "$BRANCH" --base main
+      - name: Auto-merge
+        if: steps.diff.outputs.changed == 'true' && github.event.inputs.auto-merge == 'true'
+        uses: pascalgn/automerge-action@v0.15.6
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MERGE_LABELS: ""
+          MERGE_METHOD: squash

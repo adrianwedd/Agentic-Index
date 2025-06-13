@@ -1,2 +1,7 @@
 pytest
 pytest-cov
+hypothesis
+requests
+PyYAML
+pytest-socket
+responses

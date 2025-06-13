@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 """
 Rank agentic-AI repos, write a Markdown table, and emit Shields.io badges
 showing the last sync date and today’s top-ranked repo.
@@ -136,6 +136,4 @@ def main(json_path: str = "data/repos.json") -> None:
     generate_badges(top_repo_name, today_iso)
 
 
-if __name__ == "__main__":
-    src = sys.argv[1] if len(sys.argv) > 1 else "data/repos.json"
-    main(src)
+

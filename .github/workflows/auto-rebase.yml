@@ -1,0 +1,50 @@
+name: Auto Rebase Bot
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  auto-rebase:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        id: stale
+        with:
+          script: |
+            const prs = await github.paginate('GET /repos/${{ github.repository }}/pulls', {state: 'open', per_page: 100});
+            const stale = prs.filter(pr =>
+              pr.labels.some(l => l.name === 'needs-rebase') &&
+              (Date.now() - new Date(pr.updated_at).getTime()) > 259200000
+            );
+            if (stale.length) {
+              const pr = stale[0];
+              console.log(pr.head.ref);
+              return JSON.stringify({branch: pr.head.ref, repo: pr.head.repo.full_name});
+            }
+      - name: Checkout
+        if: steps.stale.outputs.result != ''
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ fromJSON(steps.stale.outputs.result).repo }}
+          ref: ${{ fromJSON(steps.stale.outputs.result).branch }}
+          fetch-depth: 0
+      - name: Rebase
+        if: steps.stale.outputs.result != ''
+        run: |
+          git fetch origin main
+          git rebase origin/main
+      - name: Push branch
+        if: steps.stale.outputs.result != ''
+        run: |
+          git remote set-url origin https://x-access-token:${{ github.token }}@github.com/${{ fromJSON(steps.stale.outputs.result).repo }}
+          git push --force-with-lease
+      - name: Create auto-rebase PR
+        if: steps.stale.outputs.result != ''
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ github.token }}
+          title: auto-rebase
+          body: Automated rebase onto main
+          base: ${{ fromJSON(steps.stale.outputs.result).branch }}
+          branch: auto-rebase-${{ fromJSON(steps.stale.outputs.result).branch }}

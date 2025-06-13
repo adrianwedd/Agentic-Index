@@ -1,0 +1,10 @@
+name: Stale Branch Guard
+on: pull_request_target
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.base.ref == 'main'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure branch is ≤1 commit behind
+        uses: ./.github/actions/behind-check
