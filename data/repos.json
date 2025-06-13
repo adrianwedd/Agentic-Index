@@ -4,8 +4,8 @@
     "full_name": "lobehub/lobe-chat",
     "html_url": "https://github.com/lobehub/lobe-chat",
     "description": "\ud83e\udd2f Lobe Chat - an open-source, modern-design AI chat framework. Supports Multi AI Providers( OpenAI / Claude 4 / Gemini / Ollama / DeepSeek / Qwen), Knowledge Base (file upload / knowledge management / RAG ), Multi-Modals (Plugins/Artifacts) and Thinking. One-click FREE deployment of your private ChatGPT/ Claude / DeepSeek application.",
-    "stargazers_count": 62445,
-    "forks_count": 12968,
+    "stargazers_count": 62452,
+    "forks_count": 12966,
     "open_issues_count": 855,
     "archived": false,
     "license": {
@@ -16,108 +16,108 @@
     "owner": {
       "login": "lobehub"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "MetaGPT",
     "full_name": "FoundationAgents/MetaGPT",
     "html_url": "https://github.com/FoundationAgents/MetaGPT",
     "description": "\ud83c\udf1f The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
-    "stargazers_count": 56371,
-    "forks_count": 6748,
+    "stargazers_count": 56381,
+    "forks_count": 6747,
     "open_issues_count": 74,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-05-16T13:18:18Z",
+    "pushed_at": "2025-06-13T14:15:25Z",
     "owner": {
       "login": "FoundationAgents"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "autogen",
     "full_name": "microsoft/autogen",
     "html_url": "https://github.com/microsoft/autogen",
     "description": "A programming framework for agentic AI \ud83e\udd16 PyPi: autogen-agentchat Discord: https://aka.ms/autogen-discord Office Hour: https://aka.ms/autogen-officehour",
-    "stargazers_count": 45927,
-    "forks_count": 6968,
-    "open_issues_count": 571,
+    "stargazers_count": 45934,
+    "forks_count": 6969,
+    "open_issues_count": 568,
     "archived": false,
     "license": {
       "spdx_id": "CC-BY-4.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-12T22:18:35Z",
+    "pushed_at": "2025-06-13T16:33:43Z",
     "owner": {
       "login": "microsoft"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "llama_index",
     "full_name": "run-llama/llama_index",
     "html_url": "https://github.com/run-llama/llama_index",
     "description": "LlamaIndex is the leading framework for building LLM-powered agents over your data.",
-    "stargazers_count": 42325,
-    "forks_count": 6062,
-    "open_issues_count": 299,
+    "stargazers_count": 42328,
+    "forks_count": 6063,
+    "open_issues_count": 298,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T07:32:38Z",
+    "pushed_at": "2025-06-13T15:56:43Z",
     "owner": {
       "login": "run-llama"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "crewAI",
     "full_name": "crewAIInc/crewAI",
     "html_url": "https://github.com/crewAIInc/crewAI",
     "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
-    "stargazers_count": 32866,
-    "forks_count": 4411,
-    "open_issues_count": 101,
+    "stargazers_count": 32869,
+    "forks_count": 4413,
+    "open_issues_count": 102,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-06-12T21:08:38Z",
+    "pushed_at": "2025-06-13T12:34:14Z",
     "owner": {
       "login": "crewAIInc"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "agno",
     "full_name": "agno-agi/agno",
     "html_url": "https://github.com/agno-agi/agno",
     "description": "Full-stack framework for building Multi-Agent Systems with memory, knowledge and reasoning.",
-    "stargazers_count": 28219,
+    "stargazers_count": 28227,
     "forks_count": 3593,
-    "open_issues_count": 147,
+    "open_issues_count": 139,
     "archived": false,
     "license": {
       "spdx_id": "MPL-2.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T11:04:10Z",
+    "pushed_at": "2025-06-13T16:23:07Z",
     "owner": {
       "login": "agno-agi"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "haystack",
@@ -126,25 +126,25 @@
     "description": "AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data. With advanced retrieval methods, it's best suited for building RAG, question answering, semantic search or conversational agent chatbots.",
     "stargazers_count": 21141,
     "forks_count": 2214,
-    "open_issues_count": 124,
+    "open_issues_count": 121,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T10:20:21Z",
+    "pushed_at": "2025-06-13T13:38:02Z",
     "owner": {
       "login": "deepset-ai"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "swarm",
     "full_name": "openai/swarm",
     "html_url": "https://github.com/openai/swarm",
     "description": "Educational framework exploring ergonomic, lightweight multi-agent orchestration. Managed by OpenAI Solution team.",
-    "stargazers_count": 19915,
+    "stargazers_count": 19917,
     "forks_count": 2108,
     "open_issues_count": 10,
     "archived": false,
@@ -156,16 +156,16 @@
     "owner": {
       "login": "openai"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "letta",
     "full_name": "letta-ai/letta",
     "html_url": "https://github.com/letta-ai/letta",
     "description": "Letta (formerly MemGPT) is the stateful agents framework with memory, reasoning, and context management.",
-    "stargazers_count": 16839,
-    "forks_count": 1752,
+    "stargazers_count": 16841,
+    "forks_count": 1754,
     "open_issues_count": 65,
     "archived": false,
     "license": {
@@ -176,15 +176,15 @@
     "owner": {
       "login": "letta-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "DB-GPT",
     "full_name": "eosphoros-ai/DB-GPT",
     "html_url": "https://github.com/eosphoros-ai/DB-GPT",
     "description": "AI Native Data App Development framework with AWEL(Agentic Workflow Expression Language) and Agents",
-    "stargazers_count": 16756,
+    "stargazers_count": 16757,
     "forks_count": 2298,
     "open_issues_count": 413,
     "archived": false,
@@ -196,15 +196,15 @@
     "owner": {
       "login": "eosphoros-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "SuperAGI",
     "full_name": "TransformerOptimus/SuperAGI",
     "html_url": "https://github.com/TransformerOptimus/SuperAGI",
     "description": "<\u26a1\ufe0f> SuperAGI - A dev-first open source autonomous AI agent framework. Enabling developers to build, manage & run useful autonomous agents quickly and reliably.",
-    "stargazers_count": 16411,
+    "stargazers_count": 16412,
     "forks_count": 2004,
     "open_issues_count": 198,
     "archived": false,
@@ -216,15 +216,15 @@
     "owner": {
       "login": "TransformerOptimus"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "RagaAI-Catalyst",
     "full_name": "raga-ai-hub/RagaAI-Catalyst",
     "html_url": "https://github.com/raga-ai-hub/RagaAI-Catalyst",
     "description": "Python SDK for Agent AI Observability, Monitoring and Evaluation Framework. Includes features like agent, llm and tools tracing, debugging multi-agentic system, self-hosted dashboard and advanced analytics with timeline and execution graph view ",
-    "stargazers_count": 16189,
+    "stargazers_count": 16188,
     "forks_count": 3777,
     "open_issues_count": 13,
     "archived": false,
@@ -236,57 +236,57 @@
     "owner": {
       "login": "raga-ai-hub"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "eliza",
     "full_name": "elizaOS/eliza",
     "html_url": "https://github.com/elizaOS/eliza",
     "description": "Autonomous agents for everyone",
-    "stargazers_count": 16063,
+    "stargazers_count": 16065,
     "forks_count": 5232,
-    "open_issues_count": 36,
+    "open_issues_count": 37,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-13T11:34:54Z",
+    "pushed_at": "2025-06-13T16:16:31Z",
     "owner": {
       "login": "elizaOS"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "mastra",
     "full_name": "mastra-ai/mastra",
     "html_url": "https://github.com/mastra-ai/mastra",
     "description": "The TypeScript AI agent framework. \u26a1 Assistants, RAG, observability. Supports any LLM: GPT-4, Claude, Gemini, Llama.",
-    "stargazers_count": 14158,
+    "stargazers_count": 14170,
     "forks_count": 841,
-    "open_issues_count": 266,
+    "open_issues_count": 256,
     "archived": false,
     "license": {
       "spdx_id": "NOASSERTION"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-13T11:25:25Z",
+    "pushed_at": "2025-06-13T16:33:47Z",
     "owner": {
       "login": "mastra-ai"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "deer-flow",
     "full_name": "bytedance/deer-flow",
     "html_url": "https://github.com/bytedance/deer-flow",
     "description": "DeerFlow is a community-driven Deep Research framework, combining language models with tools like web search, crawling, and Python execution, while contributing back to the open-source community.",
-    "stargazers_count": 13450,
-    "forks_count": 1486,
-    "open_issues_count": 144,
+    "stargazers_count": 13465,
+    "forks_count": 1487,
+    "open_issues_count": 145,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
@@ -296,37 +296,37 @@
     "owner": {
       "login": "bytedance"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "camel",
     "full_name": "camel-ai/camel",
     "html_url": "https://github.com/camel-ai/camel",
     "description": "\ud83d\udc2b CAMEL: The first and the best multi-agent framework. Finding the Scaling Law of Agents. https://www.camel-ai.org",
-    "stargazers_count": 12900,
+    "stargazers_count": 12903,
     "forks_count": 1376,
-    "open_issues_count": 515,
+    "open_issues_count": 516,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T11:35:47Z",
+    "pushed_at": "2025-06-13T16:12:04Z",
     "owner": {
       "login": "camel-ai"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "openai-agents-python",
     "full_name": "openai/openai-agents-python",
     "html_url": "https://github.com/openai/openai-agents-python",
     "description": "A lightweight, powerful framework for multi-agent workflows",
-    "stargazers_count": 11391,
+    "stargazers_count": 11401,
     "forks_count": 1661,
-    "open_issues_count": 211,
+    "open_issues_count": 212,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
@@ -336,56 +336,56 @@
     "owner": {
       "login": "openai"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "pydantic-ai",
     "full_name": "pydantic/pydantic-ai",
     "html_url": "https://github.com/pydantic/pydantic-ai",
     "description": "Agent Framework / shim to use Pydantic with LLMs",
-    "stargazers_count": 10209,
+    "stargazers_count": 10218,
     "forks_count": 933,
-    "open_issues_count": 298,
+    "open_issues_count": 300,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T11:33:54Z",
+    "pushed_at": "2025-06-13T15:57:50Z",
     "owner": {
       "login": "pydantic"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "agent-zero",
     "full_name": "frdel/agent-zero",
     "html_url": "https://github.com/frdel/agent-zero",
     "description": "Agent Zero AI framework",
-    "stargazers_count": 9759,
-    "forks_count": 1890,
-    "open_issues_count": 169,
+    "stargazers_count": 9773,
+    "forks_count": 1891,
+    "open_issues_count": 165,
     "archived": false,
     "license": {
       "spdx_id": "NOASSERTION"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T07:05:13Z",
+    "pushed_at": "2025-06-13T11:46:49Z",
     "owner": {
       "login": "frdel"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "Qwen-Agent",
     "full_name": "QwenLM/Qwen-Agent",
     "html_url": "https://github.com/QwenLM/Qwen-Agent",
     "description": "Agent framework and applications built upon Qwen>=3.0, featuring Function Calling, MCP, Code Interpreter, RAG, Chrome extension, etc.",
-    "stargazers_count": 9513,
-    "forks_count": 807,
+    "stargazers_count": 9514,
+    "forks_count": 808,
     "open_issues_count": 305,
     "archived": false,
     "license": {
@@ -396,8 +396,8 @@
     "owner": {
       "login": "QwenLM"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "Upsonic",
@@ -416,8 +416,8 @@
     "owner": {
       "login": "Upsonic"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "OpenRLHF",
@@ -426,7 +426,7 @@
     "description": "An Easy-to-use, Scalable and High-performance RLHF Framework based on Ray (PPO & GRPO & REINFORCE++ & vLLM & Ray & Dynamic Sampling & Async Agent RL)",
     "stargazers_count": 7069,
     "forks_count": 685,
-    "open_issues_count": 257,
+    "open_issues_count": 258,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -436,8 +436,8 @@
     "owner": {
       "login": "OpenRLHF"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "lamda",
@@ -456,8 +456,8 @@
     "owner": {
       "login": "firerpa"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "SerpentAI",
@@ -476,8 +476,8 @@
     "owner": {
       "login": "SerpentAI"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "intentkit",
@@ -496,8 +496,8 @@
     "owner": {
       "login": "crestalnetwork"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "MindSearch",
@@ -516,28 +516,28 @@
     "owner": {
       "login": "InternLM"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "agents",
     "full_name": "livekit/agents",
     "html_url": "https://github.com/livekit/agents",
     "description": "A powerful framework for building realtime voice AI agents \ud83e\udd16\ud83c\udf99\ufe0f\ud83d\udcf9 ",
-    "stargazers_count": 6305,
-    "forks_count": 961,
-    "open_issues_count": 349,
+    "stargazers_count": 6308,
+    "forks_count": 964,
+    "open_issues_count": 350,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T09:06:02Z",
+    "pushed_at": "2025-06-13T15:35:14Z",
     "owner": {
       "login": "livekit"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "ten-framework",
@@ -546,18 +546,18 @@
     "description": "Open-source framework for all AI agents.",
     "stargazers_count": 6156,
     "forks_count": 717,
-    "open_issues_count": 144,
+    "open_issues_count": 142,
     "archived": false,
     "license": {
       "spdx_id": "NOASSERTION"
     },
     "language": "C",
-    "pushed_at": "2025-06-13T10:54:43Z",
+    "pushed_at": "2025-06-13T13:20:28Z",
     "owner": {
       "login": "TEN-framework"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "LaVague",
@@ -576,8 +576,8 @@
     "owner": {
       "login": "lavague-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "agent-squad",
@@ -596,8 +596,8 @@
     "owner": {
       "login": "awslabs"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "AppAgent",
@@ -616,8 +616,8 @@
     "owner": {
       "login": "TencentQQGYLab"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "TaskWeaver",
@@ -636,8 +636,8 @@
     "owner": {
       "login": "microsoft"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "agents",
@@ -656,17 +656,17 @@
     "owner": {
       "login": "aiwaves-cn"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "Agent-S",
     "full_name": "simular-ai/Agent-S",
     "html_url": "https://github.com/simular-ai/Agent-S",
     "description": "Agent S: an open agentic framework that uses computers like a human",
-    "stargazers_count": 5448,
+    "stargazers_count": 5447,
     "forks_count": 555,
-    "open_issues_count": 9,
+    "open_issues_count": 10,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -676,16 +676,16 @@
     "owner": {
       "login": "simular-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "PocketFlow",
     "full_name": "The-Pocket/PocketFlow",
     "html_url": "https://github.com/The-Pocket/PocketFlow",
     "description": "Pocket Flow: 100-line LLM framework. Let Agents build Agents!",
-    "stargazers_count": 5438,
-    "forks_count": 608,
+    "stargazers_count": 5439,
+    "forks_count": 609,
     "open_issues_count": 38,
     "archived": false,
     "license": {
@@ -696,15 +696,15 @@
     "owner": {
       "login": "The-Pocket"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "tensortrade",
     "full_name": "tensortrade-org/tensortrade",
     "html_url": "https://github.com/tensortrade-org/tensortrade",
     "description": "An open source reinforcement learning framework for training, evaluating, and deploying robust trading agents.",
-    "stargazers_count": 5196,
+    "stargazers_count": 5197,
     "forks_count": 1093,
     "open_issues_count": 53,
     "archived": false,
@@ -716,8 +716,8 @@
     "owner": {
       "login": "tensortrade-org"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "superduper",
@@ -736,8 +736,8 @@
     "owner": {
       "login": "superduper-io"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "pyspur",
@@ -756,8 +756,8 @@
     "owner": {
       "login": "PySpur-Dev"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "swarms",
@@ -766,7 +766,7 @@
     "description": "The Enterprise-Grade Production-Ready Multi-Agent Orchestration Framework. Website: https://swarms.ai",
     "stargazers_count": 4923,
     "forks_count": 574,
-    "open_issues_count": 35,
+    "open_issues_count": 38,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -776,8 +776,8 @@
     "owner": {
       "login": "kyegomez"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "Archon",
@@ -785,7 +785,7 @@
     "html_url": "https://github.com/coleam00/Archon",
     "description": "Archon is an AI agent that is able to create other AI agents using an advanced agentic coding workflow and framework knowledge base to unlock a new frontier of automated agents.",
     "stargazers_count": 4880,
-    "forks_count": 936,
+    "forks_count": 937,
     "open_issues_count": 49,
     "archived": false,
     "license": {
@@ -796,16 +796,16 @@
     "owner": {
       "login": "coleam00"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "PraisonAI",
     "full_name": "MervinPraison/PraisonAI",
     "html_url": "https://github.com/MervinPraison/PraisonAI",
     "description": "PraisonAI is a production-ready Multi AI Agents framework, designed to create AI Agents to automate and solve problems ranging from simple tasks to complex challenges. It provides a low-code solution to streamline the building and management of multi-agent LLM systems, emphasising simplicity, customisation, and effective human-agent collaboration.",
-    "stargazers_count": 4847,
-    "forks_count": 671,
+    "stargazers_count": 4849,
+    "forks_count": 670,
     "open_issues_count": 28,
     "archived": false,
     "license": {
@@ -816,15 +816,15 @@
     "owner": {
       "login": "MervinPraison"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "AutoAgent",
     "full_name": "HKUDS/AutoAgent",
     "html_url": "https://github.com/HKUDS/AutoAgent",
     "description": "\"AutoAgent: Fully-Automated and Zero-Code LLM Agent Framework\"",
-    "stargazers_count": 4671,
+    "stargazers_count": 4673,
     "forks_count": 629,
     "open_issues_count": 40,
     "archived": false,
@@ -836,8 +836,8 @@
     "owner": {
       "login": "HKUDS"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "AgentVerse",
@@ -856,35 +856,35 @@
     "owner": {
       "login": "OpenBMB"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "agentops",
     "full_name": "AgentOps-AI/agentops",
     "html_url": "https://github.com/AgentOps-AI/agentops",
     "description": "Python SDK for AI agent monitoring, LLM cost tracking, benchmarking, and more. Integrates with most LLMs and agent frameworks including OpenAI Agents SDK, CrewAI, Langchain, Autogen, AG2, and CamelAI",
-    "stargazers_count": 4545,
-    "forks_count": 416,
+    "stargazers_count": 4547,
+    "forks_count": 417,
     "open_issues_count": 73,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T05:20:12Z",
+    "pushed_at": "2025-06-13T15:47:51Z",
     "owner": {
       "login": "AgentOps-AI"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "12-factor-agents",
     "full_name": "humanlayer/12-factor-agents",
     "html_url": "https://github.com/humanlayer/12-factor-agents",
     "description": "What are the principles we can use to build LLM-powered software that is actually good enough to put in the hands of production customers?",
-    "stargazers_count": 4353,
+    "stargazers_count": 4359,
     "forks_count": 256,
     "open_issues_count": 7,
     "archived": false,
@@ -896,15 +896,15 @@
     "owner": {
       "login": "humanlayer"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "cognita",
     "full_name": "truefoundry/cognita",
     "html_url": "https://github.com/truefoundry/cognita",
     "description": "RAG (Retrieval Augmented Generation) Framework for building modular, open source applications for production by TrueFoundry ",
-    "stargazers_count": 4100,
+    "stargazers_count": 4101,
     "forks_count": 333,
     "open_issues_count": 16,
     "archived": false,
@@ -916,36 +916,36 @@
     "owner": {
       "login": "truefoundry"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "spring-ai-alibaba",
     "full_name": "alibaba/spring-ai-alibaba",
     "html_url": "https://github.com/alibaba/spring-ai-alibaba",
     "description": "Agentic AI Framework for Java Developers",
-    "stargazers_count": 4059,
+    "stargazers_count": 4067,
     "forks_count": 775,
-    "open_issues_count": 239,
+    "open_issues_count": 234,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
     },
     "language": "Java",
-    "pushed_at": "2025-06-13T07:21:47Z",
+    "pushed_at": "2025-06-13T15:08:38Z",
     "owner": {
       "login": "alibaba"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "TradingAgents",
     "full_name": "TauricResearch/TradingAgents",
     "html_url": "https://github.com/TauricResearch/TradingAgents",
     "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-    "stargazers_count": 3822,
-    "forks_count": 490,
+    "stargazers_count": 3847,
+    "forks_count": 497,
     "open_issues_count": 19,
     "archived": false,
     "license": {
@@ -956,8 +956,8 @@
     "owner": {
       "login": "TauricResearch"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "agency-swarm",
@@ -972,12 +972,12 @@
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-06-11T12:46:55Z",
+    "pushed_at": "2025-06-13T15:29:04Z",
     "owner": {
       "login": "VRSEN"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "AdalFlow",
@@ -996,8 +996,8 @@
     "owner": {
       "login": "SylphAI-Inc"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "PromptWizard",
@@ -1016,8 +1016,8 @@
     "owner": {
       "login": "microsoft"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "modelscope-agent",
@@ -1032,12 +1032,12 @@
       "spdx_id": "Apache-2.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T10:46:02Z",
+    "pushed_at": "2025-06-13T13:13:38Z",
     "owner": {
       "login": "modelscope"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "core",
@@ -1056,8 +1056,8 @@
     "owner": {
       "login": "cheshire-cat-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "BotSharp",
@@ -1065,8 +1065,8 @@
     "html_url": "https://github.com/SciSharp/BotSharp",
     "description": "AI Multi-Agent Framework in .NET",
     "stargazers_count": 2764,
-    "forks_count": 552,
-    "open_issues_count": 37,
+    "forks_count": 553,
+    "open_issues_count": 38,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -1076,8 +1076,8 @@
     "owner": {
       "login": "SciSharp"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "LlamaIndexTS",
@@ -1096,8 +1096,8 @@
     "owner": {
       "login": "run-llama"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "beeai-framework",
@@ -1106,18 +1106,18 @@
     "description": "Build production-ready AI agents in both Python and Typescript.",
     "stargazers_count": 2520,
     "forks_count": 300,
-    "open_issues_count": 43,
+    "open_issues_count": 42,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-12T15:39:31Z",
+    "pushed_at": "2025-06-13T14:56:54Z",
     "owner": {
       "login": "i-am-bee"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "rl-baselines3-zoo",
@@ -1136,15 +1136,15 @@
     "owner": {
       "login": "DLR-RM"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "ii-agent",
     "full_name": "Intelligent-Internet/ii-agent",
     "html_url": "https://github.com/Intelligent-Internet/ii-agent",
     "description": "II-Agent: a new open-source framework to build and deploy intelligent agents",
-    "stargazers_count": 2428,
+    "stargazers_count": 2429,
     "forks_count": 356,
     "open_issues_count": 12,
     "archived": false,
@@ -1152,12 +1152,12 @@
       "spdx_id": "Apache-2.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T09:21:11Z",
+    "pushed_at": "2025-06-13T14:42:39Z",
     "owner": {
       "login": "Intelligent-Internet"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "china-dictatorship",
@@ -1176,8 +1176,8 @@
     "owner": {
       "login": "cirosantilli"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "synthetic-data-generator",
@@ -1196,8 +1196,8 @@
     "owner": {
       "login": "hitsz-ids"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "griptape",
@@ -1205,7 +1205,7 @@
     "html_url": "https://github.com/griptape-ai/griptape",
     "description": "Modular Python framework for AI agents and workflows with chain-of-thought reasoning, tools, and memory. ",
     "stargazers_count": 2313,
-    "forks_count": 194,
+    "forks_count": 193,
     "open_issues_count": 70,
     "archived": false,
     "license": {
@@ -1216,8 +1216,8 @@
     "owner": {
       "login": "griptape-ai"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "nextpy",
@@ -1236,8 +1236,8 @@
     "owner": {
       "login": "dot-agent"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "lagent",
@@ -1256,15 +1256,15 @@
     "owner": {
       "login": "InternLM"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "Cradle",
     "full_name": "BAAI-Agents/Cradle",
     "html_url": "https://github.com/BAAI-Agents/Cradle",
     "description": "The Cradle framework is a first attempt at General Computer Control (GCC). Cradle supports agents to ace any computer task by enabling strong reasoning abilities, self-improvment, and skill curation, in a standardized general environment with minimal requirements.",
-    "stargazers_count": 2110,
+    "stargazers_count": 2111,
     "forks_count": 187,
     "open_issues_count": 18,
     "archived": false,
@@ -1276,35 +1276,35 @@
     "owner": {
       "login": "BAAI-Agents"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "voltagent",
     "full_name": "VoltAgent/voltagent",
     "html_url": "https://github.com/VoltAgent/voltagent",
     "description": "Open Source TypeScript AI Agent Framework",
-    "stargazers_count": 2067,
+    "stargazers_count": 2069,
     "forks_count": 171,
-    "open_issues_count": 32,
+    "open_issues_count": 31,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-13T10:40:24Z",
+    "pushed_at": "2025-06-13T16:33:14Z",
     "owner": {
       "login": "VoltAgent"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "pymarl",
     "full_name": "oxwhirl/pymarl",
     "html_url": "https://github.com/oxwhirl/pymarl",
     "description": "Python Multi-Agent Reinforcement Learning framework",
-    "stargazers_count": 2032,
+    "stargazers_count": 2033,
     "forks_count": 397,
     "open_issues_count": 62,
     "archived": false,
@@ -1316,48 +1316,48 @@
     "owner": {
       "login": "oxwhirl"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "llama_deploy",
     "full_name": "run-llama/llama_deploy",
     "html_url": "https://github.com/run-llama/llama_deploy",
     "description": "Deploy your agentic worfklows to production",
-    "stargazers_count": 2023,
+    "stargazers_count": 2024,
     "forks_count": 225,
-    "open_issues_count": 36,
+    "open_issues_count": 35,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-06-12T22:31:42Z",
+    "pushed_at": "2025-06-13T14:07:31Z",
     "owner": {
       "login": "run-llama"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "motia",
     "full_name": "MotiaDev/motia",
     "html_url": "https://github.com/MotiaDev/motia",
     "description": "Unified Backend Framework for APIs, Events and Agents",
-    "stargazers_count": 2013,
+    "stargazers_count": 2014,
     "forks_count": 190,
-    "open_issues_count": 15,
+    "open_issues_count": 17,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-12T22:00:45Z",
+    "pushed_at": "2025-06-13T16:11:21Z",
     "owner": {
       "login": "MotiaDev"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "LazyLLM",
@@ -1366,7 +1366,7 @@
     "description": "Easiest and laziest way for  building multi-agent LLMs applications.",
     "stargazers_count": 2010,
     "forks_count": 109,
-    "open_issues_count": 20,
+    "open_issues_count": 21,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -1376,8 +1376,8 @@
     "owner": {
       "login": "LazyAGI"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "LLMStack",
@@ -1396,8 +1396,8 @@
     "owner": {
       "login": "trypromptly"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "DemoGPT",
@@ -1416,35 +1416,35 @@
     "owner": {
       "login": "melih-unsal"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "comfyui_LLM_party",
     "full_name": "heshengtao/comfyui_LLM_party",
     "html_url": "https://github.com/heshengtao/comfyui_LLM_party",
     "description": "LLM Agent Framework in ComfyUI includes MCP sever, Omost,GPT-sovits, ChatTTS,GOT-OCR2.0, and FLUX prompt nodes,access to Feishu,discord,and adapts to all llms with similar openai / aisuite interfaces, such as o1,ollama, gemini, grok, qwen, GLM, deepseek, kimi,doubao. Adapted to local llms, vlm, gguf such as llama-3.3 Janus-Pro, Linkage graphRAG",
-    "stargazers_count": 1724,
-    "forks_count": 144,
+    "stargazers_count": 1726,
+    "forks_count": 143,
     "open_issues_count": 51,
     "archived": false,
     "license": {
       "spdx_id": "AGPL-3.0"
     },
     "language": "Python",
-    "pushed_at": "2025-05-25T13:57:04Z",
+    "pushed_at": "2025-06-13T16:28:16Z",
     "owner": {
       "login": "heshengtao"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "langgraphjs",
     "full_name": "langchain-ai/langgraphjs",
     "html_url": "https://github.com/langchain-ai/langgraphjs",
     "description": "Framework to build resilient language agents as graphs.",
-    "stargazers_count": 1631,
+    "stargazers_count": 1632,
     "forks_count": 242,
     "open_issues_count": 122,
     "archived": false,
@@ -1456,17 +1456,17 @@
     "owner": {
       "login": "langchain-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "openlit",
     "full_name": "openlit/openlit",
     "html_url": "https://github.com/openlit/openlit",
     "description": "Open source platform for AI Engineering: OpenTelemetry-native LLM Observability, GPU Monitoring, Guardrails, Evaluations, Prompt Management, Vault, Playground. \ud83d\ude80\ud83d\udcbb Integrates with 50+ LLM Providers, VectorDBs, Agent Frameworks and GPUs.",
-    "stargazers_count": 1621,
+    "stargazers_count": 1622,
     "forks_count": 160,
-    "open_issues_count": 70,
+    "open_issues_count": 71,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -1476,15 +1476,15 @@
     "owner": {
       "login": "openlit"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "ax",
     "full_name": "ax-llm/ax",
     "html_url": "https://github.com/ax-llm/ax",
     "description": "The \"official\" unofficial DSPy framework. Build LLM powered agents and other workflows, based on the Stanford DSP paper.",
-    "stargazers_count": 1541,
+    "stargazers_count": 1542,
     "forks_count": 113,
     "open_issues_count": 13,
     "archived": false,
@@ -1496,8 +1496,8 @@
     "owner": {
       "login": "ax-llm"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": ".github",
@@ -1516,15 +1516,15 @@
     "owner": {
       "login": "gege-circle"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "agentUniverse",
     "full_name": "agentuniverse-ai/agentUniverse",
     "html_url": "https://github.com/agentuniverse-ai/agentUniverse",
     "description": "agentUniverse is a LLM multi-agent framework that allows developers to easily build multi-agent applications. ",
-    "stargazers_count": 1485,
+    "stargazers_count": 1486,
     "forks_count": 213,
     "open_issues_count": 45,
     "archived": false,
@@ -1536,8 +1536,8 @@
     "owner": {
       "login": "agentuniverse-ai"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "ACE_Framework",
@@ -1556,8 +1556,8 @@
     "owner": {
       "login": "daveshap"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "uAgents",
@@ -1566,18 +1566,18 @@
     "description": "A fast and lightweight framework for creating decentralized agents with ease.",
     "stargazers_count": 1384,
     "forks_count": 310,
-    "open_issues_count": 23,
+    "open_issues_count": 25,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-05T11:35:41Z",
+    "pushed_at": "2025-06-13T14:28:09Z",
     "owner": {
       "login": "fetchai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "patchwork",
@@ -1596,8 +1596,8 @@
     "owner": {
       "login": "patched-codes"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "Agently",
@@ -1616,8 +1616,8 @@
     "owner": {
       "login": "AgentEra"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "chidori",
@@ -1636,8 +1636,8 @@
     "owner": {
       "login": "ThousandBirdsInc"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "pywinassistant",
@@ -1656,8 +1656,8 @@
     "owner": {
       "login": "a-real-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "acu",
@@ -1676,8 +1676,8 @@
     "owner": {
       "login": "trycua"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "LLPhant",
@@ -1696,8 +1696,8 @@
     "owner": {
       "login": "LLPhant"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "agent-protocol",
@@ -1716,8 +1716,8 @@
     "owner": {
       "login": "Div99"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "company-research-agent",
@@ -1736,8 +1736,8 @@
     "owner": {
       "login": "guy-hartstein"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "Adala",
@@ -1756,8 +1756,8 @@
     "owner": {
       "login": "HumanSignal"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "codefuse-chatbot",
@@ -1776,8 +1776,8 @@
     "owner": {
       "login": "codefuse-ai"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "octotools",
@@ -1796,8 +1796,8 @@
     "owner": {
       "login": "octotools"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "KaibanJS",
@@ -1816,15 +1816,15 @@
     "owner": {
       "login": "kaiban-ai"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "RL-Factory",
     "full_name": "Simple-Efficient/RL-Factory",
     "html_url": "https://github.com/Simple-Efficient/RL-Factory",
     "description": "Train your Agent model via our easy and efficient framework",
-    "stargazers_count": 1096,
+    "stargazers_count": 1098,
     "forks_count": 91,
     "open_issues_count": 6,
     "archived": false,
@@ -1836,8 +1836,8 @@
     "owner": {
       "login": "Simple-Efficient"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "BaseAI",
@@ -1856,8 +1856,8 @@
     "owner": {
       "login": "LangbaseInc"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "intellagent",
@@ -1876,8 +1876,8 @@
     "owner": {
       "login": "plurai-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "FilmAgent",
@@ -1896,8 +1896,8 @@
     "owner": {
       "login": "HITsz-TMG"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "awesome-llm-agents",
@@ -1980,21 +1980,21 @@
     "category": "General-purpose"
   },
   {
-    "name": "Director",
-    "full_name": "video-db/Director",
-    "html_url": "https://github.com/video-db/Director",
-    "description": "AI video agents framework for next-gen video interactions and workflows.",
-    "stargazers_count": 904,
-    "forks_count": 126,
-    "open_issues_count": 9,
+    "name": "koog",
+    "full_name": "JetBrains/koog",
+    "html_url": "https://github.com/JetBrains/koog",
+    "description": "Koog is a Kotlin-based framework designed to build and run AI agents entirely in idiomatic Kotlin.",
+    "stargazers_count": 907,
+    "forks_count": 54,
+    "open_issues_count": 50,
     "archived": false,
     "license": {
-      "spdx_id": "MIT"
+      "spdx_id": "Apache-2.0"
     },
-    "language": "Python",
-    "pushed_at": "2025-06-10T07:17:25Z",
+    "language": "Kotlin",
+    "pushed_at": "2025-06-13T14:53:30Z",
     "owner": {
-      "login": "video-db"
+      "login": "JetBrains"
     },
     "AgenticIndexScore": 0.0,
     "category": "General-purpose"
@@ -2004,27 +2004,27 @@
     "full_name": "cline/cline",
     "html_url": "https://github.com/cline/cline",
     "description": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.",
-    "stargazers_count": 45631,
-    "forks_count": 5651,
+    "stargazers_count": 45640,
+    "forks_count": 5655,
     "open_issues_count": 903,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-13T06:32:07Z",
+    "pushed_at": "2025-06-13T16:09:10Z",
     "owner": {
       "login": "cline"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "AgentGPT",
     "full_name": "reworkd/AgentGPT",
     "html_url": "https://github.com/reworkd/AgentGPT",
     "description": "\ud83e\udd16 Assemble, configure, and deploy autonomous AI Agents in your browser.",
-    "stargazers_count": 34318,
+    "stargazers_count": 34319,
     "forks_count": 9430,
     "open_issues_count": 211,
     "archived": false,
@@ -2036,8 +2036,8 @@
     "owner": {
       "login": "reworkd"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "khoj",
@@ -2045,8 +2045,8 @@
     "html_url": "https://github.com/khoj-ai/khoj",
     "description": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.",
     "stargazers_count": 30318,
-    "forks_count": 1713,
-    "open_issues_count": 82,
+    "forks_count": 1714,
+    "open_issues_count": 83,
     "archived": false,
     "license": {
       "spdx_id": "AGPL-3.0"
@@ -2056,17 +2056,17 @@
     "owner": {
       "login": "khoj-ai"
     },
-    "category": "Experimental",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Experimental"
   },
   {
     "name": "gpt-researcher",
     "full_name": "assafelovic/gpt-researcher",
     "html_url": "https://github.com/assafelovic/gpt-researcher",
     "description": "LLM based autonomous agent that conducts deep local and web research on any topic and generates a long report with citations.",
-    "stargazers_count": 21853,
-    "forks_count": 2870,
-    "open_issues_count": 120,
+    "stargazers_count": 21855,
+    "forks_count": 2871,
+    "open_issues_count": 121,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -2076,17 +2076,17 @@
     "owner": {
       "login": "assafelovic"
     },
-    "category": "Experimental",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Experimental"
   },
   {
     "name": "awesome-ai-agents",
     "full_name": "e2b-dev/awesome-ai-agents",
     "html_url": "https://github.com/e2b-dev/awesome-ai-agents",
     "description": "A list of AI autonomous agents",
-    "stargazers_count": 18554,
-    "forks_count": 1423,
-    "open_issues_count": 55,
+    "stargazers_count": 18563,
+    "forks_count": 1425,
+    "open_issues_count": 56,
     "archived": false,
     "license": {
       "spdx_id": "NOASSERTION"
@@ -2096,28 +2096,28 @@
     "owner": {
       "login": "e2b-dev"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "agenticSeek",
     "full_name": "Fosowl/agenticSeek",
     "html_url": "https://github.com/Fosowl/agenticSeek",
     "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. \ud83d\udd14 Official updates only via twitter @Martin993886460. Any other account is fake.",
-    "stargazers_count": 18086,
-    "forks_count": 1746,
-    "open_issues_count": 19,
+    "stargazers_count": 18115,
+    "forks_count": 1749,
+    "open_issues_count": 16,
     "archived": false,
     "license": {
       "spdx_id": "GPL-3.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-12T17:11:48Z",
+    "pushed_at": "2025-06-13T15:55:57Z",
     "owner": {
       "login": "Fosowl"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "XAgent",
@@ -2136,8 +2136,8 @@
     "owner": {
       "login": "OpenBMB"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "AgentLaboratory",
@@ -2156,15 +2156,15 @@
     "owner": {
       "login": "SamuelSchmidgall"
     },
-    "category": "Experimental",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Experimental"
   },
   {
     "name": "claude-coder",
     "full_name": "kodu-ai/claude-coder",
     "html_url": "https://github.com/kodu-ai/claude-coder",
     "description": "Kodu is an autonomous coding agent that lives in your IDE. It is a VSCode extension that can help you build your dream project step by step by leveraging the latest technologies in automated coding agents ",
-    "stargazers_count": 3666,
+    "stargazers_count": 3667,
     "forks_count": 157,
     "open_issues_count": 24,
     "archived": false,
@@ -2176,8 +2176,8 @@
     "owner": {
       "login": "kodu-ai"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "OpenAI_Agent_Swarm",
@@ -2196,8 +2196,8 @@
     "owner": {
       "login": "daveshap"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "AutoGPT-Next-Web",
@@ -2205,7 +2205,7 @@
     "html_url": "https://github.com/ElricLiu/AutoGPT-Next-Web",
     "description": "\ud83e\udd16 Assemble, configure, and deploy autonomous AI Agents in your browser.\u4e00\u952e\u514d\u8d39\u90e8\u7f72\u4f60\u7684\u79c1\u4ebaAutoGPT \u7f51\u9875\u5e94\u7528",
     "stargazers_count": 3007,
-    "forks_count": 1398,
+    "forks_count": 1399,
     "open_issues_count": 32,
     "archived": false,
     "license": {
@@ -2216,8 +2216,8 @@
     "owner": {
       "login": "ElricLiu"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "Free-Auto-GPT",
@@ -2236,8 +2236,8 @@
     "owner": {
       "login": "IntelligenzaArtificiale"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "codel",
@@ -2256,15 +2256,15 @@
     "owner": {
       "login": "semanser"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "index",
     "full_name": "lmnr-ai/index",
     "html_url": "https://github.com/lmnr-ai/index",
     "description": "The SOTA Open-Source Browser Agent for autonomously performing complex tasks on the web",
-    "stargazers_count": 2268,
+    "stargazers_count": 2269,
     "forks_count": 117,
     "open_issues_count": 6,
     "archived": false,
@@ -2276,8 +2276,8 @@
     "owner": {
       "login": "lmnr-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "Memary",
@@ -2296,8 +2296,8 @@
     "owner": {
       "login": "kingjulio8238"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "react-agent",
@@ -2316,8 +2316,8 @@
     "owner": {
       "login": "eylonmiz"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "AI-Researcher",
@@ -2336,8 +2336,8 @@
     "owner": {
       "login": "HKUDS"
     },
-    "category": "Experimental",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Experimental"
   },
   {
     "name": "ai-legion",
@@ -2356,8 +2356,8 @@
     "owner": {
       "login": "eumemic"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "RestGPT",
@@ -2376,8 +2376,8 @@
     "owner": {
       "login": "Yifan-Song793"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "gpt-newspaper",
@@ -2396,8 +2396,8 @@
     "owner": {
       "login": "rotemweiss57"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "pasa",
@@ -2416,8 +2416,8 @@
     "owner": {
       "login": "bytedance"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "AIlice",
@@ -2436,8 +2436,8 @@
     "owner": {
       "login": "myshell-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "typedai",
@@ -2456,8 +2456,8 @@
     "owner": {
       "login": "TrafficGuard"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "SMARTS",
@@ -2476,8 +2476,8 @@
     "owner": {
       "login": "huawei-noah"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "ix",
@@ -2496,8 +2496,8 @@
     "owner": {
       "login": "kreneskyp"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "terminal-velocity",
@@ -2516,8 +2516,8 @@
     "owner": {
       "login": "Lesterpaintstheworld"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "webarena",
@@ -2536,16 +2536,16 @@
     "owner": {
       "login": "web-arena-x"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "web-eval-agent",
     "full_name": "Operative-Sh/web-eval-agent",
     "html_url": "https://github.com/Operative-Sh/web-eval-agent",
     "description": "An MCP server that autonomously evaluates web applications. ",
-    "stargazers_count": 1013,
-    "forks_count": 72,
+    "stargazers_count": 1015,
+    "forks_count": 73,
     "open_issues_count": 4,
     "archived": false,
     "license": {
@@ -2556,8 +2556,8 @@
     "owner": {
       "login": "Operative-Sh"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "SuperCoder",
@@ -2576,8 +2576,8 @@
     "owner": {
       "login": "TransformerOptimus"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "WebRover",
@@ -2636,8 +2636,8 @@
     "owner": {
       "login": "oliveirabruno01"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "OpenAlpha_Evolve",
@@ -2676,8 +2676,8 @@
     "owner": {
       "login": "OSU-NLP-Group"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "Awesome-Papers-Autonomous-Agent",
@@ -2745,7 +2745,7 @@
     "html_url": "https://github.com/henryalps/OpenManus",
     "description": "OpenManus is an open-source initiative to replicate the capabilities of the Manus AI agent, a state-of-the-art general-purpose AI developed by Monica, which excels in autonomously executing complex tasks.",
     "stargazers_count": 640,
-    "forks_count": 169,
+    "forks_count": 170,
     "open_issues_count": 6,
     "archived": false,
     "license": {
@@ -2756,8 +2756,8 @@
     "owner": {
       "login": "henryalps"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "AutoDidact",
@@ -2796,8 +2796,8 @@
     "owner": {
       "login": "microsoft"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "deebo-prototype",
@@ -2816,8 +2816,8 @@
     "owner": {
       "login": "snagasuri"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "promptulate",
@@ -2856,8 +2856,8 @@
     "owner": {
       "login": "sentient-engineering"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "pippin",
@@ -3106,7 +3106,7 @@
     "description": "Build autonomous, resilient and observable AI agents with built-in workflow orchestration, security, statefulness and telemetry.",
     "stargazers_count": 414,
     "forks_count": 52,
-    "open_issues_count": 29,
+    "open_issues_count": 27,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -3804,15 +3804,15 @@
     "full_name": "langgenius/dify",
     "html_url": "https://github.com/langgenius/dify",
     "description": "Production-ready platform for agentic workflow development.",
-    "stargazers_count": 103105,
-    "forks_count": 15483,
-    "open_issues_count": 787,
+    "stargazers_count": 103135,
+    "forks_count": 15484,
+    "open_issues_count": 782,
     "archived": false,
     "license": {
       "spdx_id": "NOASSERTION"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-13T10:44:10Z",
+    "pushed_at": "2025-06-13T13:07:32Z",
     "owner": {
       "login": "langgenius"
     },
@@ -3824,8 +3824,8 @@
     "full_name": "browser-use/browser-use",
     "html_url": "https://github.com/browser-use/browser-use",
     "description": "\ud83c\udf10 Make websites accessible for AI agents. Automate tasks online with ease.",
-    "stargazers_count": 63065,
-    "forks_count": 7119,
+    "stargazers_count": 63085,
+    "forks_count": 7125,
     "open_issues_count": 493,
     "archived": false,
     "license": {
@@ -3844,15 +3844,15 @@
     "full_name": "All-Hands-AI/OpenHands",
     "html_url": "https://github.com/All-Hands-AI/OpenHands",
     "description": "\ud83d\ude4c OpenHands: Code Less, Make More",
-    "stargazers_count": 57964,
-    "forks_count": 6629,
-    "open_issues_count": 371,
+    "stargazers_count": 57980,
+    "forks_count": 6635,
+    "open_issues_count": 373,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T11:10:02Z",
+    "pushed_at": "2025-06-13T16:24:43Z",
     "owner": {
       "login": "All-Hands-AI"
     },
@@ -3864,15 +3864,15 @@
     "full_name": "infiniflow/ragflow",
     "html_url": "https://github.com/infiniflow/ragflow",
     "description": "RAGFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding.",
-    "stargazers_count": 55023,
-    "forks_count": 5376,
-    "open_issues_count": 2239,
+    "stargazers_count": 55032,
+    "forks_count": 5379,
+    "open_issues_count": 2240,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T09:32:40Z",
+    "pushed_at": "2025-06-13T13:14:50Z",
     "owner": {
       "login": "infiniflow"
     },
@@ -3884,8 +3884,8 @@
     "full_name": "hiyouga/LLaMA-Factory",
     "html_url": "https://github.com/hiyouga/LLaMA-Factory",
     "description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
-    "stargazers_count": 52204,
-    "forks_count": 6300,
+    "stargazers_count": 52214,
+    "forks_count": 6303,
     "open_issues_count": 495,
     "archived": false,
     "license": {
@@ -3904,15 +3904,15 @@
     "full_name": "Mintplex-Labs/anything-llm",
     "html_url": "https://github.com/Mintplex-Labs/anything-llm",
     "description": "The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, MCP compatibility,  and more.",
-    "stargazers_count": 45271,
-    "forks_count": 4495,
-    "open_issues_count": 281,
+    "stargazers_count": 45276,
+    "forks_count": 4498,
+    "open_issues_count": 280,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "JavaScript",
-    "pushed_at": "2025-06-13T00:15:21Z",
+    "pushed_at": "2025-06-13T15:56:40Z",
     "owner": {
       "login": "Mintplex-Labs"
     },
@@ -3924,9 +3924,9 @@
     "full_name": "Shubhamsaboo/awesome-llm-apps",
     "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
     "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.",
-    "stargazers_count": 38000,
-    "forks_count": 4395,
-    "open_issues_count": 14,
+    "stargazers_count": 38434,
+    "forks_count": 4437,
+    "open_issues_count": 16,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -3944,7 +3944,7 @@
     "full_name": "2noise/ChatTTS",
     "html_url": "https://github.com/2noise/ChatTTS",
     "description": "A generative speech model for daily dialogue.",
-    "stargazers_count": 36774,
+    "stargazers_count": 36777,
     "forks_count": 3994,
     "open_issues_count": 58,
     "archived": false,
@@ -3964,8 +3964,8 @@
     "full_name": "chatchat-space/Langchain-Chatchat",
     "html_url": "https://github.com/chatchat-space/Langchain-Chatchat",
     "description": "Langchain-Chatchat\uff08\u539fLangchain-ChatGLM\uff09\u57fa\u4e8e Langchain \u4e0e ChatGLM, Qwen \u4e0e Llama \u7b49\u8bed\u8a00\u6a21\u578b\u7684 RAG \u4e0e Agent \u5e94\u7528 | Langchain-Chatchat (formerly langchain-ChatGLM), local knowledge based LLM (like ChatGLM, Qwen and Llama) RAG and Agent app with langchain ",
-    "stargazers_count": 35278,
-    "forks_count": 5910,
+    "stargazers_count": 35279,
+    "forks_count": 5911,
     "open_issues_count": 186,
     "archived": false,
     "license": {
@@ -3984,8 +3984,8 @@
     "full_name": "mem0ai/mem0",
     "html_url": "https://github.com/mem0ai/mem0",
     "description": "Memory for AI Agents; Announcing OpenMemory MCP - local and secure memory management.",
-    "stargazers_count": 34385,
-    "forks_count": 3423,
+    "stargazers_count": 34409,
+    "forks_count": 3425,
     "open_issues_count": 446,
     "archived": false,
     "license": {
@@ -4004,15 +4004,15 @@
     "full_name": "CherryHQ/cherry-studio",
     "html_url": "https://github.com/CherryHQ/cherry-studio",
     "description": "\ud83c\udf52 Cherry Studio is a desktop client that supports for multiple LLM providers.",
-    "stargazers_count": 28382,
+    "stargazers_count": 28392,
     "forks_count": 2446,
-    "open_issues_count": 825,
+    "open_issues_count": 831,
     "archived": false,
     "license": {
       "spdx_id": "NOASSERTION"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-13T11:31:30Z",
+    "pushed_at": "2025-06-13T16:28:46Z",
     "owner": {
       "login": "CherryHQ"
     },
@@ -4024,9 +4024,9 @@
     "full_name": "OpenBMB/ChatDev",
     "html_url": "https://github.com/OpenBMB/ChatDev",
     "description": "Create Customized Software using Natural Language Idea (through LLM-powered Multi-Agent Collaboration)",
-    "stargazers_count": 27019,
-    "forks_count": 3401,
-    "open_issues_count": 47,
+    "stargazers_count": 27021,
+    "forks_count": 3402,
+    "open_issues_count": 46,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -4046,13 +4046,13 @@
     "description": "Composio equips your AI agents & LLMs with 100+ high-quality integrations via function calling",
     "stargazers_count": 25493,
     "forks_count": 4415,
-    "open_issues_count": 78,
+    "open_issues_count": 80,
     "archived": false,
     "license": {
       "spdx_id": "NOASSERTION"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T11:15:18Z",
+    "pushed_at": "2025-06-13T14:33:56Z",
     "owner": {
       "login": "ComposioHQ"
     },
@@ -4064,7 +4064,7 @@
     "full_name": "labring/FastGPT",
     "html_url": "https://github.com/labring/FastGPT",
     "description": "FastGPT is a knowledge-based platform built on the LLMs, offers a comprehensive suite of out-of-the-box capabilities such as data processing, RAG retrieval, and visual AI workflow orchestration, letting you easily develop and deploy complex question-answering systems without the need for extensive setup or configuration.",
-    "stargazers_count": 24710,
+    "stargazers_count": 24714,
     "forks_count": 6358,
     "open_issues_count": 566,
     "archived": false,
@@ -4076,35 +4076,35 @@
     "owner": {
       "login": "labring"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "CopilotKit",
     "full_name": "CopilotKit/CopilotKit",
     "html_url": "https://github.com/CopilotKit/CopilotKit",
     "description": "React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic last-mile \ud83e\ude81",
-    "stargazers_count": 21142,
-    "forks_count": 2882,
-    "open_issues_count": 169,
+    "stargazers_count": 21149,
+    "forks_count": 2885,
+    "open_issues_count": 170,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-13T02:58:05Z",
+    "pushed_at": "2025-06-13T16:27:29Z",
     "owner": {
       "login": "CopilotKit"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "vanna",
     "full_name": "vanna-ai/vanna",
     "html_url": "https://github.com/vanna-ai/vanna",
     "description": "\ud83e\udd16 Chat with your SQL database \ud83d\udcca. Accurate Text-to-SQL Generation via LLMs using RAG \ud83d\udd04.",
-    "stargazers_count": 18101,
+    "stargazers_count": 18102,
     "forks_count": 1622,
     "open_issues_count": 201,
     "archived": false,
@@ -4116,15 +4116,15 @@
     "owner": {
       "login": "vanna-ai"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "agentic",
     "full_name": "transitive-bullshit/agentic",
     "html_url": "https://github.com/transitive-bullshit/agentic",
     "description": "AI agent stdlib that works with any LLM and TypeScript AI SDK.",
-    "stargazers_count": 17630,
+    "stargazers_count": 17632,
     "forks_count": 2229,
     "open_issues_count": 12,
     "archived": false,
@@ -4136,16 +4136,16 @@
     "owner": {
       "login": "transitive-bullshit"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "SWE-agent",
     "full_name": "SWE-agent/SWE-agent",
     "html_url": "https://github.com/SWE-agent/SWE-agent",
     "description": "SWE-agent takes a GitHub issue and tries to automatically fix it, using your LM of choice. It can also be employed for offensive cybersecurity or competitive coding challenges. [NeurIPS 2024] ",
-    "stargazers_count": 16280,
-    "forks_count": 1671,
+    "stargazers_count": 16282,
+    "forks_count": 1672,
     "open_issues_count": 47,
     "archived": false,
     "license": {
@@ -4156,8 +4156,8 @@
     "owner": {
       "login": "SWE-agent"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "DocsGPT",
@@ -4176,16 +4176,16 @@
     "owner": {
       "login": "arc53"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "ChuanhuChatGPT",
     "full_name": "GaiZhenbiao/ChuanhuChatGPT",
     "html_url": "https://github.com/GaiZhenbiao/ChuanhuChatGPT",
     "description": "GUI for ChatGPT API and many LLMs. Supports agents, file-based QA, GPT finetuning and query with web search. All with a neat UI.",
-    "stargazers_count": 15414,
-    "forks_count": 2279,
+    "stargazers_count": 15415,
+    "forks_count": 2280,
     "open_issues_count": 122,
     "archived": false,
     "license": {
@@ -4196,35 +4196,35 @@
     "owner": {
       "login": "GaiZhenbiao"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "ai",
     "full_name": "vercel/ai",
     "html_url": "https://github.com/vercel/ai",
     "description": "The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents ",
-    "stargazers_count": 14919,
+    "stargazers_count": 14921,
     "forks_count": 2383,
-    "open_issues_count": 732,
+    "open_issues_count": 735,
     "archived": false,
     "license": {
       "spdx_id": "NOASSERTION"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-13T11:38:24Z",
+    "pushed_at": "2025-06-13T16:07:35Z",
     "owner": {
       "login": "vercel"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "Llama-Chinese",
     "full_name": "LlamaFamily/Llama-Chinese",
     "html_url": "https://github.com/LlamaFamily/Llama-Chinese",
     "description": "Llama\u4e2d\u6587\u793e\u533a\uff0c\u5b9e\u65f6\u6c47\u603b\u6700\u65b0Llama\u5b66\u4e60\u8d44\u6599\uff0c\u6784\u5efa\u6700\u597d\u7684\u4e2d\u6587Llama\u5927\u6a21\u578b\u5f00\u6e90\u751f\u6001\uff0c\u5b8c\u5168\u5f00\u6e90\u53ef\u5546\u7528",
-    "stargazers_count": 14608,
+    "stargazers_count": 14609,
     "forks_count": 1304,
     "open_issues_count": 197,
     "archived": false,
@@ -4236,37 +4236,37 @@
     "owner": {
       "login": "LlamaFamily"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "goose",
     "full_name": "block/goose",
     "html_url": "https://github.com/block/goose",
     "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
-    "stargazers_count": 14540,
-    "forks_count": 1158,
-    "open_issues_count": 366,
+    "stargazers_count": 14558,
+    "forks_count": 1159,
+    "open_issues_count": 368,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
     },
     "language": "Rust",
-    "pushed_at": "2025-06-13T09:15:51Z",
+    "pushed_at": "2025-06-13T16:27:20Z",
     "owner": {
       "login": "block"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "suna",
     "full_name": "kortix-ai/suna",
     "html_url": "https://github.com/kortix-ai/suna",
     "description": "Suna - Open Source Generalist AI Agent",
-    "stargazers_count": 14356,
-    "forks_count": 2133,
-    "open_issues_count": 149,
+    "stargazers_count": 14367,
+    "forks_count": 2138,
+    "open_issues_count": 151,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -4276,35 +4276,35 @@
     "owner": {
       "login": "kortix-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "botpress",
     "full_name": "botpress/botpress",
     "html_url": "https://github.com/botpress/botpress",
     "description": "The open-source hub to build & deploy GPT/LLM Agents \u26a1\ufe0f",
-    "stargazers_count": 13799,
-    "forks_count": 2026,
-    "open_issues_count": 22,
+    "stargazers_count": 13801,
+    "forks_count": 2027,
+    "open_issues_count": 21,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-12T22:24:08Z",
+    "pushed_at": "2025-06-13T14:52:21Z",
     "owner": {
       "login": "botpress"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "plandex",
     "full_name": "plandex-ai/plandex",
     "html_url": "https://github.com/plandex-ai/plandex",
     "description": "Open source AI coding agent. Designed for large projects and real world tasks.",
-    "stargazers_count": 13784,
+    "stargazers_count": 13785,
     "forks_count": 967,
     "open_issues_count": 32,
     "archived": false,
@@ -4316,15 +4316,15 @@
     "owner": {
       "login": "plandex-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "GenAI_Agents",
     "full_name": "NirDiamant/GenAI_Agents",
     "html_url": "https://github.com/NirDiamant/GenAI_Agents",
     "description": "This repository provides tutorials and implementations for various Generative AI Agent techniques, from basic to advanced. It serves as a comprehensive guide for building intelligent, interactive AI systems.",
-    "stargazers_count": 13141,
+    "stargazers_count": 13145,
     "forks_count": 1765,
     "open_issues_count": 15,
     "archived": false,
@@ -4336,16 +4336,16 @@
     "owner": {
       "login": "NirDiamant"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "LangBot",
     "full_name": "RockChinQ/LangBot",
     "html_url": "https://github.com/RockChinQ/LangBot",
     "description": "\ud83e\udd29 Easy-to-use global IM bot platform designed for the LLM era / \u7b80\u5355\u6613\u7528\u7684\u5927\u6a21\u578b\u5373\u65f6\u901a\u4fe1\u673a\u5668\u4eba\u5e73\u53f0 \u26a1\ufe0f Bots for QQ / Discord / WeChat\uff08\u4f01\u4e1a\u5fae\u4fe1\u3001\u4e2a\u4eba\u5fae\u4fe1\uff09/ Telegram / \u98de\u4e66 / \u9489\u9489 / Slack \ud83e\udde9 Integrated with ChatGPT\u3001DeepSeek\u3001Dify\u3001n8n\u3001Claude\u3001Google Gemini\u3001xAI\u3001PPIO\u3001Ollama\u3001\u963f\u91cc\u4e91\u767e\u70bc\u3001SiliconFlow\u3001Qwen\u3001Moonshot\u3001SillyTraven\u3001MCP\u3001WeClone etc. LLM & Agent",
-    "stargazers_count": 11880,
-    "forks_count": 905,
+    "stargazers_count": 11889,
+    "forks_count": 906,
     "open_issues_count": 101,
     "archived": false,
     "license": {
@@ -4356,17 +4356,17 @@
     "owner": {
       "login": "RockChinQ"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "adk-python",
     "full_name": "google/adk-python",
     "html_url": "https://github.com/google/adk-python",
     "description": "An open-source, code-first Python toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.",
-    "stargazers_count": 10073,
-    "forks_count": 1232,
-    "open_issues_count": 432,
+    "stargazers_count": 10082,
+    "forks_count": 1234,
+    "open_issues_count": 436,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -4376,16 +4376,16 @@
     "owner": {
       "login": "google"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "ai-engineering-hub",
     "full_name": "patchy631/ai-engineering-hub",
     "html_url": "https://github.com/patchy631/ai-engineering-hub",
     "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
-    "stargazers_count": 9745,
-    "forks_count": 1694,
+    "stargazers_count": 9751,
+    "forks_count": 1696,
     "open_issues_count": 88,
     "archived": false,
     "license": {
@@ -4396,17 +4396,37 @@
     "owner": {
       "login": "patchy631"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
+  },
+  {
+    "name": "opik",
+    "full_name": "comet-ml/opik",
+    "html_url": "https://github.com/comet-ml/opik",
+    "description": "Debug, evaluate, and monitor your LLM applications, RAG systems, and agentic workflows with comprehensive tracing, automated evaluations, and production-ready dashboards.",
+    "stargazers_count": 9686,
+    "forks_count": 664,
+    "open_issues_count": 109,
+    "archived": false,
+    "license": {
+      "spdx_id": "Apache-2.0"
+    },
+    "language": "Python",
+    "pushed_at": "2025-06-13T15:47:01Z",
+    "owner": {
+      "login": "comet-ml"
+    },
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "AstrBot",
     "full_name": "AstrBotDevs/AstrBot",
     "html_url": "https://github.com/AstrBotDevs/AstrBot",
     "description": "\u2728 \u6613\u4e0a\u624b\u7684\u591a\u5e73\u53f0 LLM \u804a\u5929\u673a\u5668\u4eba\u53ca\u5f00\u53d1\u6846\u67b6 \u2728 \u5e73\u53f0\u652f\u6301 QQ\u3001QQ\u9891\u9053\u3001Telegram\u3001\u5fae\u4fe1\u3001\u4f01\u5fae\u3001\u98de\u4e66\u3001\u9489\u9489 | \u77e5\u8bc6\u5e93\u3001MCP \u670d\u52a1\u5668\u3001OpenAI\u3001DeepSeek\u3001Gemini\u3001\u7845\u57fa\u6d41\u52a8\u3001\u6708\u4e4b\u6697\u9762\u3001Ollama\u3001OneAPI\u3001Dify \u7b49\u3002 WebUI\u3002",
-    "stargazers_count": 9679,
+    "stargazers_count": 9685,
     "forks_count": 659,
-    "open_issues_count": 200,
+    "open_issues_count": 202,
     "archived": false,
     "license": {
       "spdx_id": "AGPL-3.0"
@@ -4416,35 +4436,15 @@
     "owner": {
       "login": "AstrBotDevs"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
-  },
-  {
-    "name": "opik",
-    "full_name": "comet-ml/opik",
-    "html_url": "https://github.com/comet-ml/opik",
-    "description": "Debug, evaluate, and monitor your LLM applications, RAG systems, and agentic workflows with comprehensive tracing, automated evaluations, and production-ready dashboards.",
-    "stargazers_count": 9678,
-    "forks_count": 663,
-    "open_issues_count": 110,
-    "archived": false,
-    "license": {
-      "spdx_id": "Apache-2.0"
-    },
-    "language": "Python",
-    "pushed_at": "2025-06-13T11:30:50Z",
-    "owner": {
-      "login": "comet-ml"
-    },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "bisheng",
     "full_name": "dataelement/bisheng",
     "html_url": "https://github.com/dataelement/bisheng",
     "description": "BISHENG is an open LLM devops platform for next generation Enterprise AI applications. Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SFT, Dataset Management, Enterprise-level System Management, Observability and more.",
-    "stargazers_count": 8834,
+    "stargazers_count": 8837,
     "forks_count": 1447,
     "open_issues_count": 106,
     "archived": false,
@@ -4452,21 +4452,21 @@
       "spdx_id": "Apache-2.0"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-13T09:14:55Z",
+    "pushed_at": "2025-06-13T12:59:49Z",
     "owner": {
       "login": "dataelement"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "E2B",
     "full_name": "e2b-dev/E2B",
     "html_url": "https://github.com/e2b-dev/E2B",
     "description": "Secure open source cloud runtime for AI apps & AI agents",
-    "stargazers_count": 8618,
+    "stargazers_count": 8619,
     "forks_count": 580,
-    "open_issues_count": 29,
+    "open_issues_count": 30,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
@@ -4476,15 +4476,15 @@
     "owner": {
       "login": "e2b-dev"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "Bert-VITS2",
     "full_name": "fishaudio/Bert-VITS2",
     "html_url": "https://github.com/fishaudio/Bert-VITS2",
     "description": "vits2 backbone with multilingual-bert",
-    "stargazers_count": 8463,
+    "stargazers_count": 8464,
     "forks_count": 1203,
     "open_issues_count": 1,
     "archived": false,
@@ -4496,17 +4496,17 @@
     "owner": {
       "login": "fishaudio"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "WrenAI",
     "full_name": "Canner/WrenAI",
     "html_url": "https://github.com/Canner/WrenAI",
     "description": "\u26a1\ufe0fWren AI is your GenBI Agent, that you can query any database with natural language \u2192 get accurate SQL(Text-to-SQL), charts(Text-to-Charts) & AI-generated insights in seconds. ",
-    "stargazers_count": 8034,
+    "stargazers_count": 8035,
     "forks_count": 798,
-    "open_issues_count": 184,
+    "open_issues_count": 185,
     "archived": false,
     "license": {
       "spdx_id": "AGPL-3.0"
@@ -4516,8 +4516,8 @@
     "owner": {
       "login": "Canner"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "LLM-Agent-Paper-List",
@@ -4536,15 +4536,15 @@
     "owner": {
       "login": "WooooDyy"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "agentscope",
     "full_name": "modelscope/agentscope",
     "html_url": "https://github.com/modelscope/agentscope",
     "description": "Start building LLM-empowered multi-agent applications in an easier way.",
-    "stargazers_count": 7480,
+    "stargazers_count": 7481,
     "forks_count": 440,
     "open_issues_count": 76,
     "archived": false,
@@ -4556,15 +4556,15 @@
     "owner": {
       "login": "modelscope"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "UFO",
     "full_name": "microsoft/UFO",
     "html_url": "https://github.com/microsoft/UFO",
     "description": "The Desktop AgentOS.",
-    "stargazers_count": 7380,
+    "stargazers_count": 7381,
     "forks_count": 909,
     "open_issues_count": 34,
     "archived": false,
@@ -4576,15 +4576,15 @@
     "owner": {
       "login": "microsoft"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "promptfoo",
     "full_name": "promptfoo/promptfoo",
     "html_url": "https://github.com/promptfoo/promptfoo",
     "description": "Test your prompts, agents, and RAGs. Red teaming, pentesting, and vulnerability scanning for LLMs. Compare performance of GPT, Claude, Gemini, Llama, and more. Simple declarative configs with command line and CI/CD integration.",
-    "stargazers_count": 7187,
+    "stargazers_count": 7188,
     "forks_count": 572,
     "open_issues_count": 220,
     "archived": false,
@@ -4592,19 +4592,19 @@
       "spdx_id": "MIT"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-13T08:24:30Z",
+    "pushed_at": "2025-06-13T16:01:42Z",
     "owner": {
       "login": "promptfoo"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "aichat",
     "full_name": "sigoden/aichat",
     "html_url": "https://github.com/sigoden/aichat",
     "description": "All-in-one LLM CLI tool featuring Shell Assistant, Chat-REPL, RAG, AI Tools & Agents, with access to OpenAI, Claude, Gemini, Ollama, Groq, and more.",
-    "stargazers_count": 7004,
+    "stargazers_count": 7005,
     "forks_count": 459,
     "open_issues_count": 1,
     "archived": false,
@@ -4616,16 +4616,16 @@
     "owner": {
       "login": "sigoden"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "nanobrowser",
     "full_name": "nanobrowser/nanobrowser",
     "html_url": "https://github.com/nanobrowser/nanobrowser",
     "description": "Open-Source Chrome extension for AI-powered web automation. Run multi-agent workflows using your own LLM API key. Alternative to OpenAI Operator.",
-    "stargazers_count": 6694,
-    "forks_count": 640,
+    "stargazers_count": 6714,
+    "forks_count": 641,
     "open_issues_count": 26,
     "archived": false,
     "license": {
@@ -4636,8 +4636,8 @@
     "owner": {
       "login": "nanobrowser"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "rags",
@@ -4656,8 +4656,8 @@
     "owner": {
       "login": "run-llama"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "deep-searcher",
@@ -4676,8 +4676,8 @@
     "owner": {
       "login": "zilliztech"
     },
-    "category": "Experimental",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Experimental"
   },
   {
     "name": "Awesome-GPT-Agents",
@@ -4696,8 +4696,8 @@
     "owner": {
       "login": "fr0gger"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "LLocalSearch",
@@ -4716,8 +4716,8 @@
     "owner": {
       "login": "nilsherzig"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "DevOpsGPT",
@@ -4736,16 +4736,16 @@
     "owner": {
       "login": "kuafuai"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "superagent",
     "full_name": "superagent-ai/superagent",
     "html_url": "https://github.com/superagent-ai/superagent",
     "description": "\ud83e\udd77 Run AI-agents with an API",
-    "stargazers_count": 5913,
-    "forks_count": 896,
+    "stargazers_count": 5916,
+    "forks_count": 897,
     "open_issues_count": 64,
     "archived": false,
     "license": {
@@ -4756,36 +4756,36 @@
     "owner": {
       "login": "superagent-ai"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "RD-Agent",
     "full_name": "microsoft/RD-Agent",
     "html_url": "https://github.com/microsoft/RD-Agent",
     "description": "Research and development (R&D) is crucial for the enhancement of industrial productivity, especially in the AI era, where the core aspects of R&D are mainly focused on data and models. We are committed to automating these high-value generic R&D processes through R&D-Agent, which lets AI drive data-driven AI. \ud83d\udd17https://aka.ms/RD-Agent-Tech-Report",
-    "stargazers_count": 5801,
-    "forks_count": 535,
+    "stargazers_count": 5811,
+    "forks_count": 536,
     "open_issues_count": 74,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T10:32:41Z",
+    "pushed_at": "2025-06-13T15:51:16Z",
     "owner": {
       "login": "microsoft"
     },
-    "category": "Experimental",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Experimental"
   },
   {
     "name": "mcp-agent",
     "full_name": "lastmile-ai/mcp-agent",
     "html_url": "https://github.com/lastmile-ai/mcp-agent",
     "description": "Build effective agents using Model Context Protocol and simple workflow patterns",
-    "stargazers_count": 5635,
-    "forks_count": 526,
+    "stargazers_count": 5647,
+    "forks_count": 527,
     "open_issues_count": 67,
     "archived": false,
     "license": {
@@ -4796,8 +4796,8 @@
     "owner": {
       "login": "lastmile-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "julep",
@@ -4816,15 +4816,15 @@
     "owner": {
       "login": "julep-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "awesome-LLM-resources",
     "full_name": "WangRongsheng/awesome-LLM-resources",
     "html_url": "https://github.com/WangRongsheng/awesome-LLM-resources",
     "description": "\ud83e\uddd1\u200d\ud83d\ude80 \u5168\u4e16\u754c\u6700\u597d\u7684LLM\u8d44\u6599\u603b\u7ed3\uff08\u89c6\u9891\u751f\u6210\u3001Agent\u3001\u8f85\u52a9\u7f16\u7a0b\u3001\u6570\u636e\u5904\u7406\u3001\u6a21\u578b\u8bad\u7ec3\u3001\u6a21\u578b\u63a8\u7406\u3001o1 \u6a21\u578b\u3001MCP\u3001\u5c0f\u8bed\u8a00\u6a21\u578b\u3001\u89c6\u89c9\u8bed\u8a00\u6a21\u578b\uff09 | Summary of the world's best LLM resources. ",
-    "stargazers_count": 5440,
+    "stargazers_count": 5441,
     "forks_count": 536,
     "open_issues_count": 0,
     "archived": false,
@@ -4836,8 +4836,8 @@
     "owner": {
       "login": "WangRongsheng"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "TaskingAI",
@@ -4856,8 +4856,8 @@
     "owner": {
       "login": "TaskingAI"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "steel-browser",
@@ -4876,15 +4876,15 @@
     "owner": {
       "login": "steel-dev"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "xtuner",
     "full_name": "InternLM/xtuner",
     "html_url": "https://github.com/InternLM/xtuner",
     "description": "An efficient, flexible and full-featured toolkit for fine-tuning LLM (InternLM2, Llama3, Phi3, Qwen, Mistral, ...)",
-    "stargazers_count": 4590,
+    "stargazers_count": 4591,
     "forks_count": 348,
     "open_issues_count": 249,
     "archived": false,
@@ -4896,15 +4896,15 @@
     "owner": {
       "login": "InternLM"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "Integuru",
     "full_name": "Integuru-AI/Integuru",
     "html_url": "https://github.com/Integuru-AI/Integuru",
     "description": "The first AI agent that builds permissionless integrations through reverse engineering platforms' internal APIs.",
-    "stargazers_count": 4376,
+    "stargazers_count": 4378,
     "forks_count": 346,
     "open_issues_count": 13,
     "archived": false,
@@ -4916,15 +4916,15 @@
     "owner": {
       "login": "Integuru-AI"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "OpenAgents",
     "full_name": "xlang-ai/OpenAgents",
     "html_url": "https://github.com/xlang-ai/OpenAgents",
     "description": "[COLM 2024] OpenAgents: An Open Platform for Language Agents in the Wild",
-    "stargazers_count": 4333,
+    "stargazers_count": 4334,
     "forks_count": 475,
     "open_issues_count": 12,
     "archived": false,
@@ -4936,8 +4936,8 @@
     "owner": {
       "login": "xlang-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "Viper",
@@ -4956,15 +4956,15 @@
     "owner": {
       "login": "FunnyWolf"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "cursor-talk-to-figma-mcp",
     "full_name": "sonnylazuardi/cursor-talk-to-figma-mcp",
     "html_url": "https://github.com/sonnylazuardi/cursor-talk-to-figma-mcp",
     "description": "Cursor Talk To Figma MCP",
-    "stargazers_count": 4302,
+    "stargazers_count": 4303,
     "forks_count": 421,
     "open_issues_count": 47,
     "archived": false,
@@ -4976,36 +4976,16 @@
     "owner": {
       "login": "sonnylazuardi"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
-  },
-  {
-    "name": "aci",
-    "full_name": "aipotheosis-labs/aci",
-    "html_url": "https://github.com/aipotheosis-labs/aci",
-    "description": "ACI.dev is the open source platform that connects your AI agents to 600+ tool integrations with multi-tenant auth, granular permissions, and access through direct function calling or a unified MCP server.",
-    "stargazers_count": 3969,
-    "forks_count": 341,
-    "open_issues_count": 49,
-    "archived": false,
-    "license": {
-      "spdx_id": "Apache-2.0"
-    },
-    "language": "Python",
-    "pushed_at": "2025-06-12T21:31:10Z",
-    "owner": {
-      "login": "aipotheosis-labs"
-    },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "opencode",
     "full_name": "opencode-ai/opencode",
     "html_url": "https://github.com/opencode-ai/opencode",
     "description": "A powerful AI coding agent. Built for the terminal.",
-    "stargazers_count": 3982,
-    "forks_count": 327,
+    "stargazers_count": 4020,
+    "forks_count": 331,
     "open_issues_count": 85,
     "archived": false,
     "license": {
@@ -5016,23 +4996,23 @@
     "owner": {
       "login": "opencode-ai"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "aci",
     "full_name": "aipotheosis-labs/aci",
     "html_url": "https://github.com/aipotheosis-labs/aci",
     "description": "ACI.dev is the open source platform that connects your AI agents to 600+ tool integrations with multi-tenant auth, granular permissions, and access through direct function calling or a unified MCP server.",
-    "stargazers_count": 3970,
+    "stargazers_count": 3971,
     "forks_count": 341,
-    "open_issues_count": 48,
+    "open_issues_count": 49,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T10:27:48Z",
+    "pushed_at": "2025-06-13T13:59:50Z",
     "owner": {
       "login": "aipotheosis-labs"
     },
@@ -5044,8 +5024,8 @@
     "full_name": "simstudioai/sim",
     "html_url": "https://github.com/simstudioai/sim",
     "description": "Sim Studio is an open-source AI agent workflow builder. Sim Studio's interface is a lightweight, intuitive way to quickly build and deploy LLMs that connect with your favorite tools.",
-    "stargazers_count": 3954,
-    "forks_count": 585,
+    "stargazers_count": 3956,
+    "forks_count": 586,
     "open_issues_count": 27,
     "archived": false,
     "license": {
@@ -5056,8 +5036,8 @@
     "owner": {
       "login": "simstudioai"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "gptme",
@@ -5072,21 +5052,21 @@
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T11:16:16Z",
+    "pushed_at": "2025-06-13T16:03:11Z",
     "owner": {
       "login": "gptme"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "rig",
     "full_name": "0xPlaygrounds/rig",
     "html_url": "https://github.com/0xPlaygrounds/rig",
     "description": "\u2699\ufe0f\ud83e\udd80 Build portable, modular & lightweight Fullstack Agents",
-    "stargazers_count": 3764,
+    "stargazers_count": 3765,
     "forks_count": 405,
-    "open_issues_count": 92,
+    "open_issues_count": 93,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
@@ -5096,15 +5076,15 @@
     "owner": {
       "login": "0xPlaygrounds"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "casibase",
     "full_name": "casibase/casibase",
     "html_url": "https://github.com/casibase/casibase",
     "description": "\u26a1\ufe0fAI Cloud OS: Open-source enterprise-level AI knowledge base and MCP (model-context-protocol)/A2A (agent-to-agent) management platform with admin UI, user management and Single-Sign-On\u26a1\ufe0f, supports ChatGPT, Claude, Llama, Ollama, HuggingFace, etc., chat bot demo: https://ai.casibase.com, admin UI demo: https://ai-admin.casibase.com",
-    "stargazers_count": 3732,
+    "stargazers_count": 3733,
     "forks_count": 440,
     "open_issues_count": 30,
     "archived": false,
@@ -5116,8 +5096,8 @@
     "owner": {
       "login": "casibase"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "FinRobot",
@@ -5125,7 +5105,7 @@
     "html_url": "https://github.com/AI4Finance-Foundation/FinRobot",
     "description": "FinRobot: An Open-Source AI Agent Platform for Financial Analysis using LLMs \ud83d\ude80 \ud83d\ude80 \ud83d\ude80 ",
     "stargazers_count": 3592,
-    "forks_count": 625,
+    "forks_count": 626,
     "open_issues_count": 48,
     "archived": false,
     "license": {
@@ -5136,15 +5116,15 @@
     "owner": {
       "login": "AI4Finance-Foundation"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "langroid",
     "full_name": "langroid/langroid",
     "html_url": "https://github.com/langroid/langroid",
     "description": "Harness LLMs with Multi-Agent Programming",
-    "stargazers_count": 3400,
+    "stargazers_count": 3401,
     "forks_count": 323,
     "open_issues_count": 59,
     "archived": false,
@@ -5152,19 +5132,19 @@
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-06-12T22:43:21Z",
+    "pushed_at": "2025-06-13T12:51:04Z",
     "owner": {
       "login": "langroid"
     },
-    "category": "Multi-Agent Coordination",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Multi-Agent Coordination"
   },
   {
     "name": "vocode-core",
     "full_name": "vocodedev/vocode-core",
     "html_url": "https://github.com/vocodedev/vocode-core",
     "description": "\ud83e\udd16 Build voice-based LLM agents. Modular + open source.",
-    "stargazers_count": 3346,
+    "stargazers_count": 3347,
     "forks_count": 581,
     "open_issues_count": 16,
     "archived": false,
@@ -5176,8 +5156,8 @@
     "owner": {
       "login": "vocodedev"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "Streamer-Sales",
@@ -5196,36 +5176,36 @@
     "owner": {
       "login": "PeterH0323"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "langflow",
     "full_name": "langflow-ai/langflow",
     "html_url": "https://github.com/langflow-ai/langflow",
     "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
-    "stargazers_count": 72936,
+    "stargazers_count": 73030,
     "forks_count": 6808,
-    "open_issues_count": 790,
+    "open_issues_count": 783,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T06:43:27Z",
+    "pushed_at": "2025-06-13T16:30:22Z",
     "owner": {
       "login": "langflow-ai"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "system-prompts-and-models-of-ai-tools",
     "full_name": "x1xhlol/system-prompts-and-models-of-ai-tools",
     "html_url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
     "description": "FULL v0, Cursor, Manus, Same.dev, Lovable, Devin, Replit Agent, Windsurf Agent, VSCode Agent, Dia Browser & Trae AI (And other Open Sourced) System Prompts, Tools & AI Models.",
-    "stargazers_count": 57125,
-    "forks_count": 17389,
+    "stargazers_count": 57188,
+    "forks_count": 17406,
     "open_issues_count": 38,
     "archived": false,
     "license": {
@@ -5236,35 +5216,35 @@
     "owner": {
       "login": "x1xhlol"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "Flowise",
     "full_name": "FlowiseAI/Flowise",
     "html_url": "https://github.com/FlowiseAI/Flowise",
     "description": "Build AI Agents, Visually",
-    "stargazers_count": 39982,
-    "forks_count": 20547,
-    "open_issues_count": 573,
+    "stargazers_count": 39990,
+    "forks_count": 20550,
+    "open_issues_count": 575,
     "archived": false,
     "license": {
       "spdx_id": "NOASSERTION"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-13T11:11:46Z",
+    "pushed_at": "2025-06-13T13:19:15Z",
     "owner": {
       "login": "FlowiseAI"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "Jobs_Applier_AI_Agent_AIHawk",
     "full_name": "feder-cr/Jobs_Applier_AI_Agent_AIHawk",
     "html_url": "https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk",
     "description": "AIHawk aims to easy job hunt process by automating the job application process. Utilizing artificial intelligence, it enables users to apply for multiple jobs in a tailored way.",
-    "stargazers_count": 28302,
+    "stargazers_count": 28304,
     "forks_count": 4272,
     "open_issues_count": 12,
     "archived": false,
@@ -5276,17 +5256,17 @@
     "owner": {
       "login": "feder-cr"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "LibreChat",
     "full_name": "danny-avila/LibreChat",
     "html_url": "https://github.com/danny-avila/LibreChat",
     "description": "Enhanced ChatGPT Clone: Features Agents, DeepSeek, Anthropic, AWS, OpenAI, Assistants API, Azure, Groq, o1, GPT-4o, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active project.",
-    "stargazers_count": 26710,
-    "forks_count": 4678,
-    "open_issues_count": 219,
+    "stargazers_count": 26727,
+    "forks_count": 4682,
+    "open_issues_count": 223,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
@@ -5296,36 +5276,36 @@
     "owner": {
       "login": "danny-avila"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "ai-agents-for-beginners",
     "full_name": "microsoft/ai-agents-for-beginners",
     "html_url": "https://github.com/microsoft/ai-agents-for-beginners",
     "description": "11 Lessons to Get Started Building AI Agents",
-    "stargazers_count": 25955,
-    "forks_count": 7058,
+    "stargazers_count": 26018,
+    "forks_count": 7075,
     "open_issues_count": 11,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "Jupyter Notebook",
-    "pushed_at": "2025-06-13T11:40:08Z",
+    "pushed_at": "2025-06-13T11:41:00Z",
     "owner": {
       "login": "microsoft"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "qlib",
     "full_name": "microsoft/qlib",
     "html_url": "https://github.com/microsoft/qlib",
     "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
-    "stargazers_count": 25060,
-    "forks_count": 3854,
+    "stargazers_count": 25080,
+    "forks_count": 3862,
     "open_issues_count": 264,
     "archived": false,
     "license": {
@@ -5336,15 +5316,15 @@
     "owner": {
       "login": "microsoft"
     },
-    "category": "Experimental",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Experimental"
   },
   {
     "name": "devika",
     "full_name": "stitionai/devika",
     "html_url": "https://github.com/stitionai/devika",
     "description": "Devika is an Agentic AI Software Engineer that can understand high-level human instructions, break them down into steps, research relevant information, and write code to achieve the given objective. Devika aims to be a competitive open-source alternative to Devin by Cognition AI. [\u26a0\ufe0f DEVIKA DOES NOT HAVE AN OFFICIAL WEBSITE \u26a0\ufe0f]",
-    "stargazers_count": 19331,
+    "stargazers_count": 19330,
     "forks_count": 2558,
     "open_issues_count": 186,
     "archived": false,
@@ -5356,16 +5336,16 @@
     "owner": {
       "login": "stitionai"
     },
-    "category": "Experimental",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Experimental"
   },
   {
     "name": "deep-research",
     "full_name": "dzhng/deep-research",
     "html_url": "https://github.com/dzhng/deep-research",
     "description": "An AI-powered research assistant that performs iterative, deep research on any topic by combining search engines, web scraping, and large language models.  The goal of this repo is to provide the simplest implementation of a deep research agent - e.g. an agent that can refine its research direction overtime and deep dive into a topic.",
-    "stargazers_count": 16624,
-    "forks_count": 1714,
+    "stargazers_count": 16627,
+    "forks_count": 1716,
     "open_issues_count": 68,
     "archived": false,
     "license": {
@@ -5376,15 +5356,15 @@
     "owner": {
       "login": "dzhng"
     },
-    "category": "Experimental",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Experimental"
   },
   {
     "name": "ai-pdf-chatbot-langchain",
     "full_name": "mayooear/ai-pdf-chatbot-langchain",
     "html_url": "https://github.com/mayooear/ai-pdf-chatbot-langchain",
     "description": "AI PDF chatbot agent built with LangChain & LangGraph ",
-    "stargazers_count": 15571,
+    "stargazers_count": 15572,
     "forks_count": 3094,
     "open_issues_count": 32,
     "archived": false,
@@ -5396,35 +5376,35 @@
     "owner": {
       "login": "mayooear"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "activepieces",
     "full_name": "activepieces/activepieces",
     "html_url": "https://github.com/activepieces/activepieces",
     "description": "AI Agents & MCPs & AI Workflow Automation \u2022 (280+ MCP servers for AI agents) \u2022 AI Automation / AI Agent with MCPs \u2022 AI Workflows & AI Agents \u2022 MCPs for AI Agents",
-    "stargazers_count": 15269,
-    "forks_count": 2080,
-    "open_issues_count": 392,
+    "stargazers_count": 15273,
+    "forks_count": 2082,
+    "open_issues_count": 391,
     "archived": false,
     "license": {
       "spdx_id": "NOASSERTION"
     },
     "language": "TypeScript",
-    "pushed_at": "2025-06-13T07:05:29Z",
+    "pushed_at": "2025-06-13T13:27:10Z",
     "owner": {
       "login": "activepieces"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "dagger",
     "full_name": "dagger/dagger",
     "html_url": "https://github.com/dagger/dagger",
     "description": "An open-source runtime for composable workflows. Great for AI agents and CI/CD.",
-    "stargazers_count": 13911,
+    "stargazers_count": 13913,
     "forks_count": 739,
     "open_issues_count": 765,
     "archived": false,
@@ -5436,16 +5416,16 @@
     "owner": {
       "login": "dagger"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "web-ui",
     "full_name": "browser-use/web-ui",
     "html_url": "https://github.com/browser-use/web-ui",
     "description": "\ud83d\udda5\ufe0f Run AI Agent in your browser.",
-    "stargazers_count": 13643,
-    "forks_count": 2309,
+    "stargazers_count": 13651,
+    "forks_count": 2313,
     "open_issues_count": 251,
     "archived": false,
     "license": {
@@ -5456,55 +5436,55 @@
     "owner": {
       "login": "browser-use"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "graphiti",
     "full_name": "getzep/graphiti",
     "html_url": "https://github.com/getzep/graphiti",
     "description": "Build Real-Time Knowledge Graphs for AI Agents",
-    "stargazers_count": 11231,
-    "forks_count": 875,
-    "open_issues_count": 63,
+    "stargazers_count": 11239,
+    "forks_count": 876,
+    "open_issues_count": 61,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T02:15:39Z",
+    "pushed_at": "2025-06-13T16:26:11Z",
     "owner": {
       "login": "getzep"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "cua",
     "full_name": "trycua/cua",
     "html_url": "https://github.com/trycua/cua",
     "description": "c/ua is the Docker Container for Computer-Use AI Agents.",
-    "stargazers_count": 8571,
-    "forks_count": 366,
+    "stargazers_count": 8576,
+    "forks_count": 368,
     "open_issues_count": 51,
     "archived": false,
     "license": {
       "spdx_id": "MIT"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T03:12:28Z",
+    "pushed_at": "2025-06-13T15:44:03Z",
     "owner": {
       "login": "trycua"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "pr-agent",
     "full_name": "qodo-ai/pr-agent",
     "html_url": "https://github.com/qodo-ai/pr-agent",
     "description": "\ud83d\ude80 PR-Agent (Qodo Merge open-source): An AI-Powered \ud83e\udd16 Tool for Automated Pull Request Analysis, Feedback, Suggestions and More! \ud83d\udcbb\ud83d\udd0d",
-    "stargazers_count": 8118,
+    "stargazers_count": 8120,
     "forks_count": 928,
     "open_issues_count": 74,
     "archived": false,
@@ -5516,15 +5496,15 @@
     "owner": {
       "login": "qodo-ai"
     },
-    "category": "DevTools",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "DevTools"
   },
   {
     "name": "Figma-Context-MCP",
     "full_name": "GLips/Figma-Context-MCP",
     "html_url": "https://github.com/GLips/Figma-Context-MCP",
     "description": "MCP server to provide Figma layout information to AI coding agents like Cursor",
-    "stargazers_count": 8110,
+    "stargazers_count": 8115,
     "forks_count": 660,
     "open_issues_count": 30,
     "archived": false,
@@ -5536,8 +5516,8 @@
     "owner": {
       "login": "GLips"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "lab",
@@ -5556,16 +5536,16 @@
     "owner": {
       "login": "google-deepmind"
     },
-    "category": "Experimental",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Experimental"
   },
   {
     "name": "R2R",
     "full_name": "SciPhi-AI/R2R",
     "html_url": "https://github.com/SciPhi-AI/R2R",
     "description": "SoTA production-ready AI retrieval system. Agentic Retrieval-Augmented Generation (RAG) with a RESTful API.",
-    "stargazers_count": 6966,
-    "forks_count": 552,
+    "stargazers_count": 6967,
+    "forks_count": 553,
     "open_issues_count": 86,
     "archived": false,
     "license": {
@@ -5576,8 +5556,8 @@
     "owner": {
       "login": "SciPhi-AI"
     },
-    "category": "RAG-centric",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "RAG-centric"
   },
   {
     "name": "street-fighter-ai",
@@ -5596,8 +5576,8 @@
     "owner": {
       "login": "linyiLYi"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "SuperPrompt",
@@ -5616,15 +5596,15 @@
     "owner": {
       "login": "NeoVertex1"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "open-deep-research",
     "full_name": "nickscamara/open-deep-research",
     "html_url": "https://github.com/nickscamara/open-deep-research",
     "description": "An open source deep research clone. AI Agent that reasons large amounts of web data extracted with Firecrawl",
-    "stargazers_count": 5713,
+    "stargazers_count": 5714,
     "forks_count": 708,
     "open_issues_count": 42,
     "archived": false,
@@ -5636,36 +5616,36 @@
     "owner": {
       "login": "nickscamara"
     },
-    "category": "Experimental",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Experimental"
   },
   {
     "name": "cognee",
     "full_name": "topoteretes/cognee",
     "html_url": "https://github.com/topoteretes/cognee",
     "description": "Memory for AI Agents in 5 lines of code",
-    "stargazers_count": 5485,
-    "forks_count": 403,
-    "open_issues_count": 39,
+    "stargazers_count": 5494,
+    "forks_count": 404,
+    "open_issues_count": 40,
     "archived": false,
     "license": {
       "spdx_id": "Apache-2.0"
     },
     "language": "Python",
-    "pushed_at": "2025-06-13T11:30:39Z",
+    "pushed_at": "2025-06-13T16:33:42Z",
     "owner": {
       "login": "topoteretes"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "magentic-ui",
     "full_name": "microsoft/magentic-ui",
     "html_url": "https://github.com/microsoft/magentic-ui",
     "description": "A research prototype of a human-centered web agent",
-    "stargazers_count": 5141,
-    "forks_count": 493,
+    "stargazers_count": 5148,
+    "forks_count": 497,
     "open_issues_count": 53,
     "archived": false,
     "license": {
@@ -5676,8 +5656,8 @@
     "owner": {
       "login": "microsoft"
     },
-    "category": "Experimental",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "Experimental"
   },
   {
     "name": "gaianet-node",
@@ -5696,8 +5676,8 @@
     "owner": {
       "login": "GaiaNet-AI"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   },
   {
     "name": "gibberlink",
@@ -5716,7 +5696,7 @@
     "owner": {
       "login": "PennyroyalTea"
     },
-    "category": "General-purpose",
-    "AgenticIndexScore": 0.0
+    "AgenticIndexScore": 0.0,
+    "category": "General-purpose"
   }
 ]
