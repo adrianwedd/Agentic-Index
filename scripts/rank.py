@@ -13,6 +13,7 @@ import math
 import os
 import sys
 import urllib.request
+import logging
 from pathlib import Path
 
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
@@ -50,12 +51,14 @@ def infer_category(repo: dict) -> str:
 # ─────────────────────────────  Badge helpers  ─────────────────────────────────
 
 def _fetch(url: str, dest: Path) -> None:
-    """Download an SVG badge, or write a tiny placeholder if offline."""
+    """Download an SVG badge with fallback to existing file."""
     try:
-        with urllib.request.urlopen(url) as resp:
+        with urllib.request.urlopen(url, timeout=3) as resp:
+            if getattr(resp, "status", 200) >= 400:
+                raise urllib.error.HTTPError(url, resp.status, "", resp.headers, None)
             dest.write_bytes(resp.read())
     except Exception:
-        dest.write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>\n')
+        logging.warning("badge fetch failed – using cached")
 
 def generate_badges(top_repo: str, iso_date: str) -> None:
     badges = Path("badges")
@@ -72,25 +75,28 @@ def generate_badges(top_repo: str, iso_date: str) -> None:
 def main(json_path: str = "data/repos.json") -> None:
     data_file = Path(json_path)
     repos = json.loads(data_file.read_text())
+    for repo in repos:
+        if "agentic_score" not in repo and "score" in repo:
+            repo["agentic_score"] = repo["score"]
     in_test = os.getenv("PYTEST_CURRENT_TEST") is not None
 
     # score + categorise
     for repo in repos:
-        repo["score"]    = compute_score(repo)
+        repo["agentic_score"] = compute_score(repo)
         repo["category"] = infer_category(repo)
 
     # sort & persist
-    repos.sort(key=lambda r: r["score"], reverse=True)
+    repos.sort(key=lambda r: r["agentic_score"], reverse=True)
     if not in_test:
         data_file.write_text(json.dumps(repos, indent=2))
 
     # top-50 table
     header = [
-        "| Rank | Repo | Score | Category |",
-        "|------|------|-------|----------|",
+        "| Rank | Repo | Agentic Score | Category |",
+        "|------|------|--------------|----------|",
     ]
     rows = [
-        f"| {i} | {repo['name']} | {repo['score']} | {repo['category']} |"
+        f"| {i} | {repo['name']} | {repo['agentic_score']} | {repo['category']} |"
         for i, repo in enumerate(repos[:50], start=1)
     ]
     if not in_test:

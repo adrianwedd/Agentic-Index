@@ -1,3 +1,9 @@
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-index-cli"
+version = "0.1.0"
+dynamic = ["dependencies", "optional-dependencies", "entry-points", "scripts", "description"]
+requires-python = ">=3.8"

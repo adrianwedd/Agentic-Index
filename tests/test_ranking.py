@@ -14,7 +14,7 @@ def run_script():
 
 def load_scores():
     data = json.loads(REPO_JSON.read_text())
-    return [item['score'] for item in data]
+    return [item.get('agentic_score', item.get('score')) for item in data]
 
 def test_score_count_matches_repos():
     run_script()
