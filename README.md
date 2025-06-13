@@ -172,7 +172,7 @@ Generated tables live in the `data/` directory.
 
 AgentOps aims to be *the* spot for Agentic-AI frameworks. Your brainpower and suggestions are gold.
 
-Check out **(./CONTRIBUTING.md)** for how to:
+Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
 
   * Nominate new repositories.
   * Flag outdated info or errors.
@@ -180,8 +180,14 @@ Check out **(./CONTRIBUTING.md)** for how to:
   * Understand what makes a repo eligible.
 
 Let's build the best damn agent list together\!
+<a href="./CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Code_of_Conduct-CC_v2.1-blue" alt="Code of Conduct"></a>
+
 
 -----
+## 🛡 Code of Conduct
+
+Please see our [Code of Conduct](./CODE_OF_CONDUCT.md) for contributor expectations.
+
 
 ## 📜 License
 
