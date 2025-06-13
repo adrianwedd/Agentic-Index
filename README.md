@@ -1,9 +1,9 @@
-# 🤖 AgentOps: The Ultimate Index of Open-Source AI Agent Frameworks
+# 🤖 Agentic Index: The Ultimate Index of Open-Source AI Agent Frameworks
 
-Welcome to **AgentOps**, the definitive, developer-focused catalogue of autonomous AI tooling.
+Welcome to **Agentic Index**, the definitive, developer-focused catalogue of autonomous AI tooling.
 Here you’ll find **scored and curated repositories** that power LLM agents, multi-agent systems, RAG pipelines, devtools, and more.
 
-Unlike star-count lists or stale awesome-pages, **AgentOps is data-driven**, refreshed monthly, and optimized for action.
+Unlike star-count lists or stale awesome-pages, **Agentic Index is data-driven**, refreshed monthly, and optimized for action.
 
 We rank everything using a transparent scoring formula based on:
 
@@ -29,44 +29,30 @@ Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
 </p>
 
 <p align="center">
-<img src="./assets/hero.png" alt="AgentOps Hero Image: Table preview of top AI Agent Repositories">
+<img src="./assets/hero.png" alt="Agentic Index Hero Image: Table preview of top AI Agent Repositories">
 </p>
 
-This catalogue is maintained by the AgentOps initiative and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
+This catalogue is maintained by the Agentic Index initiative and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
 
 -----
 
 ## TOC
 
-<<<<<<< codex/create-agents.md-for-automated-agents-description
-\*(\#why-agentops-is-different)
-\*(\#fast-start-picks-curated-for-newcomers)
-\*(\#the-agentops-top-50-ai-agent-repositories)
-
-  * [💎 Honourable Mentions / Niche & Novel Gems](https://www.google.com/search?q=%23honourable-mentions--niche--novel-gems)
-    \*(https://www.google.com/search?q=%23our-methodology--scoring-explained)
-    \*(\#category-definitions)
-  * [🔄 Changelog](https://www.google.com/search?q=%23changelog)
-  * [🤝 How to Contribute](https://www.google.com/search?q=%23how-to-contribute)
-  * [📜 Agents](agents.md)
-  * [📜 License](https://www.google.com/search?q=%23license)
-=======
-* [✨ Why AgentOps is Different](#why-agentops-is-different)
+* [✨ Why Agentic Index is Different](#why-agentic-index-is-different)
 * [🚀 Fast-Start Picks (Curated for Newcomers)](#fast-start-picks-curated-for-newcomers)
-* [🏆 The AgentOps Top 50: AI Agent Repositories](#the-agentops-top-50-ai-agent-repositories)
+* [🏆 The Agentic Index Top 50: AI Agent Repositories](#the-agentic-index-top-50-ai-agent-repositories)
   * [💎 Honourable Mentions / Niche & Novel Gems](#honourable-mentions--niche--novel-gems)
     * [🔬 Our Methodology & Scoring Explained](#our-methodology--scoring-explained)
     * [🏷️ Category Definitions](#category-definitions)
   * [🔄 Changelog](#changelog)
   * [🤝 How to Contribute](#how-to-contribute)
   * [📜 License](#license)
->>>>>>> main
 
 -----
 
-## ✨ Why AgentOps is Different
+## ✨ Why Agentic Index is Different
 
-In the fast-moving world of Agentic-AI, finding high-quality, actively maintained, and truly impactful frameworks can be a pain. Many lists are subjective or just track stars. AgentOps cuts through the noise with an analytical approach:
+In the fast-moving world of Agentic-AI, finding high-quality, actively maintained, and truly impactful frameworks can be a pain. Many lists are subjective or just track stars. Agentic Index cuts through the noise with an analytical approach:
 
   * **Systematic Scoring:** Every repo gets crunched through our [transparent scoring formula](#our-methodology--scoring-explained). We look at real signals: community traction (stars [1, 2]), development activity (commit recency [1, 2]), maintenance health (issue management [3, 4]), documentation quality, license permissiveness [1, 2], and ecosystem integration.[1, 5] No black boxes.
   * **Focus on Builder Tools:** We spotlight frameworks, toolkits, and platforms that *actually help you build and orchestrate AI agents*. Check our [scope definition](./docs/methodology.md) for the nitty-gritty.
@@ -74,7 +60,7 @@ In the fast-moving world of Agentic-AI, finding high-quality, actively maintaine
   * **Automated Vigilance:** A GitHub Action keeps an eye on things weekly, flagging big score or rank changes for review. This keeps the "freshness" promise real.
   * **Open & Transparent:** Our entire [methodology](./docs/methodology.md) – data sources, scoring weights, the lot – is out in the open. Trust through transparency.
 
-AgentOps is built to be a reliable, data-driven launchpad for your next Agentic-AI project.
+Agentic Index is built to be a reliable, data-driven launchpad for your next Agentic-AI project.
 
 -----
 
@@ -91,9 +77,9 @@ New to Agentic-AI or just want the good stuff fast? These repos are top-tier for
 
 -----
 
-## 🏆 The AgentOps Top 50: AI Agent Repositories
+## 🏆 The Agentic Index Top 50: AI Agent Repositories
 
-The definitive list of Agentic-AI repositories, ranked by the AgentOps Score. This score is a holistic measure of project quality, activity, and community love.
+The definitive list of Agentic-AI repositories, ranked by the Agentic Index Score. This score is a holistic measure of project quality, activity, and community love.
 *(Data updated as of: {timestamp} UTC)*
 
 <!-- TOP50:START -->
@@ -142,7 +128,7 @@ The definitive list of Agentic-AI repositories, ranked by the AgentOps Score. Th
 | 41 | PraisonAI | 0.0 | Multi-Agent Coordination |
 | 42 | AutoAgent | 0.0 | General-purpose |
 | 43 | AgentVerse | 0.0 | General-purpose |
-| 44 | agentops | 0.0 | Multi-Agent Coordination |
+| 44 | agentic-index | 0.0 | Multi-Agent Coordination |
 | 45 | 12-factor-agents | 0.0 | General-purpose |
 | 46 | cognita | 0.0 | RAG-centric |
 | 47 | spring-ai-alibaba | 0.0 | General-purpose |
@@ -171,9 +157,9 @@ Beyond the top-ranked, these projects are cooking up unique ideas, serving speci
 \<details\>
 \<summary\>🔬 Our Methodology & Scoring Explained (Click to Expand)\</summary\>
 
-AgentOps believes in full transparency. Here’s the lowdown on how we find, vet, and score repositories.
+Agentic Index believes in full transparency. Here’s the lowdown on how we find, vet, and score repositories.
 
-The core AgentOps Scoring Formula:
+The core Agentic Index Scoring Formula:
 `Score = 0.35*log2(stars+1) + 0.20*recency_factor + 0.15*issue_health + 0.15*doc_completeness + 0.10*license_freedom + 0.05*ecosystem_integration`\<sup\>†\</sup\>
 
 \<sup\>†\</sup\> *Weights are reviewed and potentially tuned quarterly. Full math and reasoning in [`/docs/methodology.md`](./docs/methodology.md).*
@@ -215,7 +201,7 @@ This isn't a static list. It's alive\! See [CHANGELOG.md](./CHANGELOG.md) for al
 Run the indexer to fetch fresh repo data:
 
 ```bash
-python3 scripts/agentops.py --min-stars 50 --iterations 1 --output data
+python3 scripts/agentic-index.py --min-stars 50 --iterations 1 --output data
 ```
 
 Generated tables live in the `data/` directory.
@@ -224,7 +210,7 @@ Generated tables live in the `data/` directory.
 
 ## 🤝 How to Contribute
 
-AgentOps aims to be *the* spot for Agentic-AI frameworks. Your brainpower and suggestions are gold.
+Agentic Index aims to be *the* spot for Agentic-AI frameworks. Your brainpower and suggestions are gold.
 
 Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
 
@@ -245,7 +231,7 @@ Please see our [Code of Conduct](./CODE_OF_CONDUCT.md) for contributor expectati
 
 ## 📜 License
 
-The content of AgentOps (this `README.md`, files in `/docs/`, etc.) is licensed under([https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)).
+The content of Agentic Index (this `README.md`, files in `/docs/`, etc.) is licensed under([https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)).
 
 Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 'em) are licensed under([https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)).
 
