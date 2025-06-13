@@ -41,7 +41,7 @@ def test_faststart(tmp_path):
     subprocess.run([
         "python",
         "-m",
-        "agentops_cli.faststart",
+        "agentic_index_cli.faststart",
         "--top",
         "2",
         str(data_file),

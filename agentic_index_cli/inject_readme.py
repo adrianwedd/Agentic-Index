@@ -1,1 +1,4 @@
-from agentops_cli.inject_readme import *
+from scripts.inject_readme import main
+
+if __name__ == "__main__":
+    main()
