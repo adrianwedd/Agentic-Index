@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>AgentOps Repo Index</title>
+  <style>
+    body { font-family: sans-serif; padding: 1rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 0.5rem; }
+    #filters { margin-bottom: 1rem; display: flex; gap: 1rem; align-items: center; }
+  </style>
+</head>
+<body>
+  <h1>AgentOps Repository Index</h1>
+  <div id="filters">
+    <label>Stars: <input type="range" id="starsRange" min="0" max="20000" step="100" value="0"></label>
+    <span id="starsValue">0+</span>
+    <label>Category:
+      <select id="categorySelect"></select>
+    </label>
+    <label><input type="checkbox" id="recentToggle"> Updated &lt;30d</label>
+  </div>
+  <table id="repoTable">
+    <thead>
+      <tr><th>Name</th><th>Stars</th><th>Category</th><th>Updated</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+<script>
+async function load() {
+  const res = await fetch('data/repos.json');
+  const data = await res.json();
+  const tbody = document.querySelector('#repoTable tbody');
+  const catSel = document.getElementById('categorySelect');
+  const range = document.getElementById('starsRange');
+  const rangeVal = document.getElementById('starsValue');
+  const toggle = document.getElementById('recentToggle');
+
+  const categories = Array.from(new Set(data.map(r => r.category)));
+  catSel.innerHTML = '<option value="">All</option>' + categories.map(c => `<option>${c}</option>`).join('');
+
+  function render() {
+    const minStars = parseInt(range.value);
+    rangeVal.textContent = minStars + '+';
+    const cat = catSel.value;
+    const now = Date.now();
+    const rows = data.filter(r => {
+      if (r.stars < minStars) return false;
+      if (cat && r.category !== cat) return false;
+      if (toggle.checked) {
+        const diff = (now - new Date(r.updated_at)) / (1000*60*60*24);
+        if (diff > 30) return false;
+      }
+      return true;
+    }).map(r => `<tr><td><a href="${r.url}">${r.name}</a></td><td>${r.stars}</td><td>${r.category}</td><td>${r.updated_at}</td></tr>`).join('');
+    tbody.innerHTML = rows;
+  }
+
+  range.oninput = render;
+  catSel.onchange = render;
+  toggle.onchange = render;
+  render();
+}
+load();
+</script>
+</body>
+</html>
