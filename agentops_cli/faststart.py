@@ -1,3 +1,6 @@
+<<<<<<< codex/create-agents.md-for-automated-agents-description
+from scripts.faststart import main
+=======
 import argparse
 import json
 from pathlib import Path
@@ -56,6 +59,7 @@ def main(argv=None):
 
     run(args.top, Path(args.data_path))
 
+>>>>>>> main
 
 if __name__ == "__main__":
     main()

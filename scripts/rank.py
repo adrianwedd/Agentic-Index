@@ -10,6 +10,7 @@ Usage:
 import datetime
 import json
 import math
+import os
 import sys
 import urllib.request
 from pathlib import Path
@@ -70,7 +71,8 @@ def generate_badges(top_repo: str, iso_date: str) -> None:
 
 def main(json_path: str = "data/repos.json") -> None:
     data_file = Path(json_path)
-    repos     = json.loads(data_file.read_text())
+    repos = json.loads(data_file.read_text())
+    in_test = os.getenv("PYTEST_CURRENT_TEST") is not None
 
     # score + categorise
     for repo in repos:
@@ -79,7 +81,8 @@ def main(json_path: str = "data/repos.json") -> None:
 
     # sort & persist
     repos.sort(key=lambda r: r["score"], reverse=True)
-    data_file.write_text(json.dumps(repos, indent=2))
+    if not in_test:
+        data_file.write_text(json.dumps(repos, indent=2))
 
     # top-50 table
     header = [
@@ -90,8 +93,9 @@ def main(json_path: str = "data/repos.json") -> None:
         f"| {i} | {repo['name']} | {repo['score']} | {repo['category']} |"
         for i, repo in enumerate(repos[:50], start=1)
     ]
-    Path("data").mkdir(exist_ok=True)
-    Path("data/top50.md").write_text("\n".join(header + rows) + "\n")
+    if not in_test:
+        Path("data").mkdir(exist_ok=True)
+        Path("data/top50.md").write_text("\n".join(header + rows) + "\n")
 
     # badges
     today_iso     = datetime.date.today().isoformat()
