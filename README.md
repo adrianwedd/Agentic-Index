@@ -1,5 +1,3 @@
-Okay, here's the `README.md` content with the "AgentOps" branding and the updated tone, enclosed in a Markdown code block as requested. I've also updated the citations to reflect the new research notes you've provided.
-
 # 🤖 AgentOps: The Ultimate Index of Open-Source AI Agent Frameworks
 
 Welcome to **AgentOps**, the definitive, developer-focused catalogue of autonomous AI tooling.
@@ -18,7 +16,7 @@ We rank everything using a transparent scoring formula based on:
 
 > **🎯 TL;DR:** This isn’t just a list—it’s your launchpad for building with AI agents.
 
-Want a shortcut? Jump to the(\#fast-start-picks-curated-for-newcomers).
+Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
 
 -----
 
@@ -26,6 +24,7 @@ Want a shortcut? Jump to the(\#fast-start-picks-curated-for-newcomers).
 \<a href="[suspicious link removed]"\>\<img src="[suspicious link removed]" alt="GitHub Stars"\>\</a\>
 \<a href="[suspicious link removed]"\>\<img src="[suspicious link removed]" alt="Last Commit"\>\</a\>
 \<a href="./LICENSE.md"\>\<img src="[suspicious link removed]" alt="License"\>\</a\>
+<a href="./FAST_START.md"><img src="https://img.shields.io/badge/Fast_Start-Table-blue" alt="Fast Start"></a>
 \</p\>
 
 \<p align="center"\>
@@ -152,6 +151,18 @@ Quick guide to our categories (and the icons you'll see in the table):
 ## 🔄 Changelog
 
 This isn't a static list. It's alive\! See [CHANGELOG.md](https://www.google.com/search?q=./CHANGELOG.md) for all the adds, drops, and major rank shuffles.
+
+-----
+
+## 🔧 Usage
+
+Run the indexer to fetch fresh repo data:
+
+```bash
+python3 scripts/agentops.py --min-stars 50 --iterations 1 --output data
+```
+
+Generated tables live in the `data/` directory.
 
 -----
 
