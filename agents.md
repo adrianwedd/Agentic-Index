@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-AgentOps curates & ranks AI-agent repos so developers can quickly find reliable frameworks and tools.
+Agentic Index curates & ranks AI-agent repos so developers can quickly find reliable frameworks and tools.
 
 ## 2. Agents Table
 

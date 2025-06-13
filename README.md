@@ -128,7 +128,7 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 | 41 | PraisonAI | 0.0 | Multi-Agent Coordination |
 | 42 | AutoAgent | 0.0 | General-purpose |
 | 43 | AgentVerse | 0.0 | General-purpose |
-| 44 | [agentops](https://github.com/AgentOps-AI/agentops) | 0.0 | Multi-Agent Coordination |
+| 44 | agentops | 0.0 | Multi-Agent Coordination |
 | 45 | 12-factor-agents | 0.0 | General-purpose |
 | 46 | cognita | 0.0 | RAG-centric |
 | 47 | spring-ai-alibaba | 0.0 | General-purpose |

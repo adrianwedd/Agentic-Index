@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT))
 
-import agentops_cli.prune as prune
+import agentic_index_cli.prune as prune
 
 
 def setup_temp_repo(tmp_path):
