@@ -8,6 +8,9 @@ on:
     types:
       - completed
 
+permissions:
+  contents: write
+
 jobs:
   build-deploy:
     if: github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
@@ -34,6 +37,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: web/dist
+          force_orphan: true
+          fail_on_error: true
       - name: Comment PR with preview URL
         if: github.event_name == 'workflow_run' && github.event.workflow_run.event == 'pull_request'
         uses: peter-evans/create-or-update-comment@v4
