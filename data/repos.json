@@ -1896,8 +1896,8 @@
     "owner": {
       "login": "HITsz-TMG"
     },
-    "score": 0.0,
-    "category": "Multi-Agent Coordination"
+    "category": "Multi-Agent Coordination",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "awesome-llm-agents",
@@ -1916,7 +1916,7 @@
     "owner": {
       "login": "kaushikb11"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -1936,7 +1936,7 @@
     "owner": {
       "login": "e2b-dev"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "DevTools"
   },
   {
@@ -1956,7 +1956,7 @@
     "owner": {
       "login": "victordibia"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "Multi-Agent Coordination"
   },
   {
@@ -1976,7 +1976,7 @@
     "owner": {
       "login": "Thytu"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -1996,7 +1996,7 @@
     "owner": {
       "login": "video-db"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -2596,7 +2596,7 @@
     "owner": {
       "login": "hrithikkoduri"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "RAG-centric"
   },
   {
@@ -2616,7 +2616,7 @@
     "owner": {
       "login": "tmgthb"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "Experimental"
   },
   {
@@ -2656,7 +2656,7 @@
     "owner": {
       "login": "shyamsaktawat"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "Experimental"
   },
   {
@@ -2696,7 +2696,7 @@
     "owner": {
       "login": "lafmdp"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -2716,7 +2716,7 @@
     "owner": {
       "login": "Jenqyang"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -2736,7 +2736,7 @@
     "owner": {
       "login": "cpnota"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -2776,7 +2776,7 @@
     "owner": {
       "login": "dCaples"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "Experimental"
   },
   {
@@ -2836,7 +2836,7 @@
     "owner": {
       "login": "Undertone0809"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -2876,7 +2876,7 @@
     "owner": {
       "login": "pippinlovesyou"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -2896,7 +2896,7 @@
     "owner": {
       "login": "BuilderIO"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "Experimental"
   },
   {
@@ -2916,7 +2916,7 @@
     "owner": {
       "login": "Little-Podi"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "Multi-Agent Coordination"
   },
   {
@@ -2936,7 +2936,7 @@
     "owner": {
       "login": "sentient-engineering"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -2956,7 +2956,7 @@
     "owner": {
       "login": "agentjido"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -2976,7 +2976,7 @@
     "owner": {
       "login": "modal-labs"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -2996,7 +2996,7 @@
     "owner": {
       "login": "pHaeusler"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3016,7 +3016,7 @@
     "owner": {
       "login": "WORLD3-ai"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3036,7 +3036,7 @@
     "owner": {
       "login": "erik-megarad"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3056,7 +3056,7 @@
     "owner": {
       "login": "matiasmolinas"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "DevTools"
   },
   {
@@ -3076,7 +3076,7 @@
     "owner": {
       "login": "Polymarket"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3096,7 +3096,7 @@
     "owner": {
       "login": "idosal"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3116,7 +3116,7 @@
     "owner": {
       "login": "dapr"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3136,7 +3136,7 @@
     "owner": {
       "login": "oneil512"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "Experimental"
   },
   {
@@ -3156,7 +3156,7 @@
     "owner": {
       "login": "stepanogil"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "DevTools"
   },
   {
@@ -3176,7 +3176,7 @@
     "owner": {
       "login": "yifanlu0227"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3196,7 +3196,7 @@
     "owner": {
       "login": "noahshinn"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3216,7 +3216,7 @@
     "owner": {
       "login": "personoids"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3236,7 +3236,7 @@
     "owner": {
       "login": "praveen-palanisamy"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "Multi-Agent Coordination"
   },
   {
@@ -3256,7 +3256,7 @@
     "owner": {
       "login": "DigiRL-agent"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3276,7 +3276,7 @@
     "owner": {
       "login": "ldclabs"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3296,7 +3296,7 @@
     "owner": {
       "login": "vxcontrol"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3316,7 +3316,7 @@
     "owner": {
       "login": "Nuggt-dev"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3336,7 +3336,7 @@
     "owner": {
       "login": "google-research"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3356,7 +3356,7 @@
     "owner": {
       "login": "meshula"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3376,7 +3376,7 @@
     "owner": {
       "login": "Gentopia-AI"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3396,7 +3396,7 @@
     "owner": {
       "login": "xlang-ai"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3416,7 +3416,7 @@
     "owner": {
       "login": "yoheinakajima"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3436,7 +3436,7 @@
     "owner": {
       "login": "machinegpt"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3456,7 +3456,7 @@
     "owner": {
       "login": "genlayerlabs"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "Multi-Agent Coordination"
   },
   {
@@ -3476,7 +3476,7 @@
     "owner": {
       "login": "PJLab-ADG"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3496,7 +3496,7 @@
     "owner": {
       "login": "libraryofcelsus"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3516,7 +3516,7 @@
     "owner": {
       "login": "neuml"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "RAG-centric"
   },
   {
@@ -3536,7 +3536,7 @@
     "owner": {
       "login": "XinyuanWangCS"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3556,7 +3556,7 @@
     "owner": {
       "login": "ScarletPan"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3576,7 +3576,7 @@
     "owner": {
       "login": "USC-GVL"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3596,7 +3596,7 @@
     "owner": {
       "login": "HKUST-Aerial-Robotics"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "Multi-Agent Coordination"
   },
   {
@@ -3616,7 +3616,7 @@
     "owner": {
       "login": "zhangfuyang"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3636,7 +3636,7 @@
     "owner": {
       "login": "cazala"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3656,7 +3656,7 @@
     "owner": {
       "login": "MODSetter"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "Multi-Agent Coordination"
   },
   {
@@ -3676,7 +3676,7 @@
     "owner": {
       "login": "fetchai"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3696,7 +3696,7 @@
     "owner": {
       "login": "vortezwohl"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3716,7 +3716,7 @@
     "owner": {
       "login": "Run-Tu"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3736,7 +3736,7 @@
     "owner": {
       "login": "dfinke"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3756,7 +3756,7 @@
     "owner": {
       "login": "jgravelle"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3776,7 +3776,7 @@
     "owner": {
       "login": "a16z-infra"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3796,7 +3796,7 @@
     "owner": {
       "login": "flurb18"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3816,7 +3816,7 @@
     "owner": {
       "login": "langgenius"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3836,7 +3836,7 @@
     "owner": {
       "login": "browser-use"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3856,7 +3856,7 @@
     "owner": {
       "login": "All-Hands-AI"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3876,7 +3876,7 @@
     "owner": {
       "login": "infiniflow"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "RAG-centric"
   },
   {
@@ -3896,7 +3896,7 @@
     "owner": {
       "login": "hiyouga"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3916,7 +3916,7 @@
     "owner": {
       "login": "Mintplex-Labs"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "RAG-centric"
   },
   {
@@ -3936,7 +3936,7 @@
     "owner": {
       "login": "Shubhamsaboo"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "RAG-centric"
   },
   {
@@ -3956,7 +3956,7 @@
     "owner": {
       "login": "2noise"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -3976,7 +3976,7 @@
     "owner": {
       "login": "chatchat-space"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "RAG-centric"
   },
   {
@@ -3996,7 +3996,7 @@
     "owner": {
       "login": "mem0ai"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -4016,7 +4016,7 @@
     "owner": {
       "login": "CherryHQ"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -4036,7 +4036,7 @@
     "owner": {
       "login": "OpenBMB"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "Multi-Agent Coordination"
   },
   {
@@ -4056,7 +4056,7 @@
     "owner": {
       "login": "ComposioHQ"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "General-purpose"
   },
   {
@@ -5036,7 +5036,7 @@
     "owner": {
       "login": "aipotheosis-labs"
     },
-    "score": 0.0,
+    "AgenticIndexScore": 0.0,
     "category": "DevTools"
   },
   {
