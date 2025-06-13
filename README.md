@@ -188,3 +188,6 @@ Let's build the best damn agent list together\!
 The content of AgentOps (this `README.md`, files in `/docs/`, etc.) is licensed under([https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)).
 
 Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 'em) are licensed under([https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)).
+
+
+![Last Sync](badges/last_sync.svg) ![Top Repo](badges/top_repo.svg)
