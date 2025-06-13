@@ -231,6 +231,16 @@ npx pa11y web/index.html
 
 You can also run `./scripts/install_pa11y_deps.sh` to install pa11y and Chrome.
 
+## 💻 Developer
+
+To trigger a data refresh via GitHub Actions, run:
+
+```bash
+bash scripts/trigger_refresh.sh 75
+```
+
+Replace `75` with your desired minimum star count. The script requires the GitHub CLI and an authenticated token.
+
 -----
 
 ## 🤝 How to Contribute
