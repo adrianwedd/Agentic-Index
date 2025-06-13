@@ -149,7 +149,6 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 | 49 | agency-swarm | 0.0 | General-purpose |
 | 50 | AdalFlow | 0.0 | General-purpose |
 <!-- TOP50:END -->
-
 *➡️ Dig into how these scores are cooked up in our [Methodology section](#our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](./docs/methodology.md).*
 
 -----
