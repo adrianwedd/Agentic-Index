@@ -18,3 +18,8 @@ fix: resolve merge conflicts with main
 ```
 
 Avoid `git merge main`; rebasing keeps the history linear and reduces noise for reviewers and CI.
+
+## Bot PR permissions
+
+For `update.yml` to refresh the data automatically, GitHub Actions must be allowed to open pull requests. Enable this under **Settings ▸ Actions ▸ General ▸ Workflow permissions** by checking “Allow GitHub Actions to create pull requests.” If you plan to let the bot auto-merge its PRs, also check “Allow GitHub Actions to approve pull requests.” Ensure branch protection rules still require status checks to pass.
+
