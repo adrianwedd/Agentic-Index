@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BRANCH: data-update-${{ github.run_id }}
-      MIN_STARS: ${{ github.event.inputs.min-stars || 50 }}
+      MIN_STARS: ${{ github.event.inputs['min-stars'] || 50 }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -60,7 +60,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: gh pr create --title "chore(data): nightly agent index refresh" --fill --head "$BRANCH" --base main
       - name: Auto-merge
-        if: steps.diff.outputs.changed == 'true' && github.event.inputs.auto-merge == 'true'
+        if: ${{ steps.diff.outputs.changed == 'true' && github.event.inputs['auto-merge'] == 'true' }}
         uses: pascalgn/automerge-action@v0.15.6
         env:
           GITHUB_TOKEN: ${{ github.token }}
