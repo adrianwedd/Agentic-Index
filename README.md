@@ -153,6 +153,18 @@ This isn't a static list. It's alive\! See [CHANGELOG.md](https://www.google.com
 
 -----
 
+## 🔧 Usage
+
+Run the indexer to fetch fresh repo data:
+
+```bash
+python3 scripts/agentops.py --min-stars 50 --iterations 1 --output data
+```
+
+Generated tables live in the `data/` directory.
+
+-----
+
 ## 🤝 How to Contribute
 
 AgentOps aims to be *the* spot for Agentic-AI frameworks. Your brainpower and suggestions are gold.
