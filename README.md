@@ -21,11 +21,11 @@ Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
 -----
 
 <p align="center">
-<a href="[suspicious link removed]"><img src="[suspicious link removed]" alt="GitHub Stars"></a>
-<a href="[suspicious link removed]"><img src="[suspicious link removed]" alt="Last Commit"></a>
-<a href="./LICENSE.md"><img src="[suspicious link removed]" alt="License"></a>
-<a href="./FAST_START.md"><img src="https://img.shields.io/badge/Fast_Start-Table-blue" alt="Fast Start"></a>
-<a href="./agents.md"><img src="https://img.shields.io/badge/agents-docs-blue" alt="agents"></a>
+<a href="[suspicious link removed]"><img src="[suspicious link removed]" alt="Agentic Index GitHub Stars"></a>
+<a href="[suspicious link removed]"><img src="[suspicious link removed]" alt="Agentic Index Last Commit"></a>
+<a href="./LICENSE.md"><img src="[suspicious link removed]" alt="Agentic Index License"></a>
+<a href="./FAST_START.md"><img src="https://img.shields.io/badge/Agentic%20Index-Fast_Start-blue" alt="Agentic Index Fast Start"></a>
+<a href="./agents.md"><img src="https://img.shields.io/badge/Agentic%20Index-Agents-blue" alt="Agentic Index agents"></a>
 </p>
 
 <p align="center">
@@ -38,7 +38,7 @@ This catalogue is maintained by the AgentOps initiative and is updated regularly
 
 ## TOC
 
-* [✨ Why AgentOps is Different](#why-agentops-is-different)
+* [✨ Why Agentic Index is Different](#why-agentic-index-is-different)
 * [🚀 Fast-Start Picks (Curated for Newcomers)](#fast-start-picks-curated-for-newcomers)
 * [🏆 The AgentOps Top 50: AI Agent Repositories](#the-agentops-top-50-ai-agent-repositories)
   * [💎 Honourable Mentions / Niche & Novel Gems](#honourable-mentions--niche--novel-gems)
@@ -50,7 +50,7 @@ This catalogue is maintained by the AgentOps initiative and is updated regularly
 
 -----
 
-## ✨ Why AgentOps is Different
+## ✨ Why Agentic Index is Different
 
 In the fast-moving world of Agentic-AI, finding high-quality, actively maintained, and truly impactful frameworks can be a pain. Many lists are subjective or just track stars. AgentOps cuts through the noise with an analytical approach:
 
@@ -201,7 +201,7 @@ This isn't a static list. It's alive\! See [CHANGELOG.md](./CHANGELOG.md) for al
 Run the indexer to fetch fresh repo data:
 
 ```bash
-python3 scripts/agentops.py --min-stars 50 --iterations 1 --output data
+python -m agentic_index_cli.agentic_index --min-stars 50 --iterations 1 --output data
 ```
 
 Generated tables live in the `data/` directory.
