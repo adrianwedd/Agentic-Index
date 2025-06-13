@@ -17,6 +17,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Install package
         run: pip install -e .
+      - name: README sync check
+        run: python scripts/inject_readme.py --check
       - name: Run regression guard
         run: python scripts/regression_check.py
       - name: Run tests with coverage
