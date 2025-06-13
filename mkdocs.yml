@@ -1,0 +1,12 @@
+site_name: AgentOps
+theme: material
+plugins:
+  - search
+  - mkdocstrings
+docs_dir: docs
+nav:
+  - Overview: index.md
+  - Methodology: METHODOLOGY.md
+  - CLI Usage: cli.md
+  - API Reference:
+      - agentops_cli: reference/agentops_cli.md
