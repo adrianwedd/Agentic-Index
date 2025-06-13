@@ -17,3 +17,7 @@ agentic_index_cli/scraper.py             3      3     0%   1-4
 ------------------------------------------------------------------
 TOTAL                                  342    244    29%
 16 passed in 5.25s
+
+The coverage gate is intentionally lenient. We target baseline plus twenty
+percentage points, ratcheting upward only when tests improve significantly.
+Edit `THRESHOLD` in `scripts/coverage_gate.py` to bump the requirement.
