@@ -4,6 +4,8 @@ import agentic_index_cli.internal.scrape as scrape
 
 @responses.activate
 def test_scrape_mock():
+    import warnings
+    warnings.filterwarnings("ignore", category=DeprecationWarning, module="responses")
     item = {
         "name": "repo",
         "full_name": "owner/repo",
