@@ -279,21 +279,15 @@ def save_changelog(changes: List[Dict], path: Path):
             f.write(f"| {c['repo']} | {c['action']} |\n")
 
 
-def main():
-    parser = argparse.ArgumentParser(description="AgentOps Repo Indexer")
-    parser.add_argument("--min-stars", type=int, default=0)
-    parser.add_argument("--iterations", type=int, default=1)
-    parser.add_argument("--output", type=Path, default=Path("data"))
-    args = parser.parse_args()
-
-    args.output.mkdir(parents=True, exist_ok=True)
-    prev_csv = args.output / "top50.csv"
+def run_index(min_stars: int = 0, iterations: int = 1, output: Path = Path("data")) -> None:
+    output.mkdir(parents=True, exist_ok=True)
+    prev_csv = output / "top50.csv"
     prev_repos = load_previous(prev_csv)
 
     final_repos = None
     last_top = None
-    for i in range(args.iterations):
-        repos = search_and_harvest(args.min_stars)
+    for _ in range(iterations):
+        repos = search_and_harvest(min_stars)
         top = sort_and_select(repos, 50)
         names = [r["name"] for r in top]
         if names == last_top:
@@ -303,10 +297,20 @@ def main():
     if final_repos is None:
         final_repos = top
 
-    save_csv(final_repos, args.output / "top50.csv")
-    save_markdown(final_repos, args.output / "top50.md")
+    save_csv(final_repos, output / "top50.csv")
+    save_markdown(final_repos, output / "top50.md")
     changes = changelog(prev_repos, [r["name"] for r in final_repos])
-    save_changelog(changes, args.output / "CHANGELOG.md")
+    save_changelog(changes, output / "CHANGELOG.md")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="AgentOps Repo Indexer")
+    parser.add_argument("--min-stars", type=int, default=0)
+    parser.add_argument("--iterations", type=int, default=1)
+    parser.add_argument("--output", type=Path, default=Path("data"))
+    args = parser.parse_args()
+
+    run_index(args.min_stars, args.iterations, args.output)
 
 
 if __name__ == "__main__":

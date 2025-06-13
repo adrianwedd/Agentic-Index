@@ -50,11 +50,13 @@ def prune(inactive_days, repos_path: Path = REPOS, changelog_path: Path = CHANGE
     return removed_entries
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description='Prune inactive repositories')
     parser.add_argument('--inactive', type=int, required=True, help='Days since last push')
-    args = parser.parse_args()
-    removed = prune(args.inactive)
+    parser.add_argument('--repos-path', type=Path, default=REPOS)
+    parser.add_argument('--changelog-path', type=Path, default=CHANGELOG)
+    args = parser.parse_args(argv)
+    removed = prune(args.inactive, repos_path=args.repos_path, changelog_path=args.changelog_path)
     if removed:
         print('\n'.join(removed))
 
