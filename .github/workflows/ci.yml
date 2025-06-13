@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests with coverage
+        run: pytest --cov=scripts --cov-report=xml
+        env:
+          PYTHONHASHSEED: 0
+      - name: Check coverage
+        run: |
+          python - <<'PY'
+          import xml.etree.ElementTree as ET, sys
+          cov = int(float(ET.parse('coverage.xml').getroot().attrib['line-rate']) * 100)
+          sys.exit(0 if cov >= 90 else 1)
+          PY
+        env:
+          PYTHONHASHSEED: 0
