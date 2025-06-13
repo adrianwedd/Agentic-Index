@@ -8,11 +8,11 @@ AgentOps curates & ranks AI-agent repos so developers can quickly find reliable 
 
 | Agent Name | Trigger | Code Location | Main Function | Outputs |
 |------------|---------|---------------|---------------|---------|
-| ScraperCLI | manual / update.yml | `agentops_cli/scraper.py` | Fetch repos via GitHub API | `data/repos.json` |
-| RankerCLI | manual / update.yml | `agentops_cli/ranker.py` | Compute score & top-50 | `data/top50.md`, badges |
-| READMEInjector | pre-commit / update.yml | `agentops_cli/inject_readme.py` | Update README table | updated README |
-| FastStartPicker | manual | `agentops_cli/faststart.py` | Generate FAST_START | `FAST_START.md` |
-| TrendGrapher | update.yml | `agentops_cli/plot_trends.py` | Plot score trends | `docs/trends/*.png` |
+| ScraperCLI | manual / update.yml | `agentic_index_cli/scraper.py` | Fetch repos via GitHub API | `data/repos.json` |
+| RankerCLI | manual / update.yml | `agentic_index_cli/ranker.py` | Compute score & top-50 | `data/top50.md`, badges |
+| READMEInjector | pre-commit / update.yml | `agentic_index_cli/inject_readme.py` | Update README table | updated README |
+| FastStartPicker | manual | `agentic_index_cli/faststart.py` | Generate FAST_START | `FAST_START.md` |
+| TrendGrapher | update.yml | `agentic_index_cli/plot_trends.py` | Plot score trends | `docs/trends/*.png` |
 | SiteDeployer | gh-pages | `.github/workflows/deploy_site.yml` | Publish /web to Pages | live site URL |
 
 Add any new agents as you implement them.*
@@ -102,5 +102,5 @@ graph TD
 
 ## 5. Maintenance Notes
 
-- To add a new agent, create a CLI module in `agentops_cli/` and document it in the table above.
+- To add a new agent, create a CLI module in `agentic_index_cli/` and document it in the table above.
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.

@@ -55,7 +55,7 @@ def _fetch(url: str, dest: Path) -> None:
         with urllib.request.urlopen(url) as resp:
             dest.write_bytes(resp.read())
     except Exception:
-        dest.write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>')
+        dest.write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>\n')
 
 def generate_badges(top_repo: str, iso_date: str) -> None:
     badges = Path("badges")

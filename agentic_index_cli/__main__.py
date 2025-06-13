@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(prog="agentops", description="AgentOps CLI")
+    parser = argparse.ArgumentParser(prog="agentic-index", description="Agentic Index CLI")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     scrape_p = subparsers.add_parser("scrape", help="Scrape and rank repositories")

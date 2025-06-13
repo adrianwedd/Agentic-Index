@@ -21,7 +21,7 @@ def generate_table(repos):
         repo_link = f"[{repo['full_name']}](https://github.com/{repo['full_name']})"
         line = (
             f"| {idx} | {repo_link} | {format_stars(repo['stars'])} | "
-            f"{repo['last_commit']} | {repo['AgentOpsScore']} | "
+            f"{repo['last_commit']} | {repo['AgenticIndexScore']} | "
             f"{repo.get('category', '')} | {repo.get('one_liner', '')} |"
         )
         lines.append(line)
@@ -37,7 +37,7 @@ def run(top: int, data_path: Path, output_path: Path | None = None) -> None:
         if r.get("stars", 0) >= 5000 and r.get("doc_completeness") == 1
     ]
 
-    ranked = sorted(filtered, key=lambda r: r.get("AgentOpsScore", 0), reverse=True)
+    ranked = sorted(filtered, key=lambda r: r.get("AgenticIndexScore", 0), reverse=True)
     ranked = ranked[:top]
 
     table = generate_table(ranked)
