@@ -61,8 +61,13 @@ def infer_category(repo: dict) -> str:
 # ─────────────────────────────  Badge helpers  ─────────────────────────────────
 
 
-def _fetch(url: str, dest: Path) -> None:
-    """Download an SVG badge, retaining previous contents if offline."""
+def fetch_badge(url: str, dest: Path) -> None:
+    """Download an SVG badge or create a local placeholder when offline."""
+    if os.getenv("CI_OFFLINE") == "1":
+        if dest.exists():
+            return
+        dest.write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>\n')
+        return
     try:
         with urllib.request.urlopen(url) as resp:
             dest.write_bytes(resp.read())
@@ -81,8 +86,8 @@ def generate_badges(top_repo: str, iso_date: str) -> None:
     )
     top_badge = f"https://img.shields.io/static/v1?label=top&message={urllib.request.quote(top_repo)}&color=brightgreen"
 
-    _fetch(sync_badge, badges / "last_sync.svg")
-    _fetch(top_badge, badges / "top_repo.svg")
+    fetch_badge(sync_badge, badges / "last_sync.svg")
+    fetch_badge(top_badge, badges / "top_repo.svg")
 
 
 # ───────────────────────────────  Main CLI  ────────────────────────────────────

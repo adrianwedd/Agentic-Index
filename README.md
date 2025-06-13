@@ -231,6 +231,9 @@ Run tests with:
 pytest -q
 ```
 
+CI runs tests with network access disabled. Set `CI_OFFLINE=1` or run
+`pytest --disable-socket` locally to replicate the offline environment.
+
 To check accessibility after building the site:
 
 ```bash
