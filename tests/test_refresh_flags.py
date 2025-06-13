@@ -4,6 +4,7 @@ from unittest import mock
 
 import agentic_index_cli.internal.rank as rank
 import agentic_index_cli.internal.scrape as scrape
+import agentic_index_cli.enricher as enricher
 
 
 def make_response(stars):
@@ -36,7 +37,7 @@ def test_refresh_flags(monkeypatch, tmp_path):
 
     repo_file = tmp_path / "repos.json"
     repo_file.write_text(json.dumps(repos))
-
+    enricher.enrich(repo_file)
     rank.main(str(repo_file))
     data = json.loads(repo_file.read_text())
     assert "AgenticIndexScore" in data[0]

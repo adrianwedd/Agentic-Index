@@ -6,7 +6,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(prog="agentic-index", description="Agentic Index CLI")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    scrape_p = subparsers.add_parser("scrape", help="Scrape and rank repositories")
+    scrape_p = subparsers.add_parser("scrape", help="Scrape repositories")
     scrape_p.add_argument("--min-stars", type=int, default=0)
     scrape_p.add_argument("--iterations", type=int, default=1)
     scrape_p.add_argument("--output", type=Path, default=Path("data"))
@@ -16,6 +16,15 @@ def main(argv=None):
         agentic_index.run_index(args.min_stars, args.iterations, args.output)
 
     scrape_p.set_defaults(func=run_scrape)
+
+    enrich_p = subparsers.add_parser("enrich", help="Compute enrichment factors")
+    enrich_p.add_argument("path", nargs="?", default="data/repos.json")
+
+    def run_enrich(args):
+        from . import enricher
+        enricher.main([args.path])
+
+    enrich_p.set_defaults(func=run_enrich)
 
     faststart_p = subparsers.add_parser("faststart", help="Generate FAST_START table")
     faststart_p.add_argument("--top", type=int, required=True)

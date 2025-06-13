@@ -6,10 +6,17 @@ from pathlib import Path
 
 
 def test_rank_ordering_and_tiebreak(tmp_path, monkeypatch):
+    base = {
+        "recency_factor": 1,
+        "issue_health": 1,
+        "doc_completeness": 0,
+        "license_freedom": 1,
+        "ecosystem_integration": 0,
+    }
     data = [
-        {"name": "B", "stars": 100},
-        {"name": "A", "stars": 100},
-        {"name": "C", "stars": 200},
+        dict(base, name="B", stars=100),
+        dict(base, name="A", stars=100),
+        dict(base, name="C", stars=200),
     ]
     repo_file = tmp_path / "repos.json"
     repo_file.write_text(json.dumps(data))

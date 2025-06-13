@@ -13,6 +13,10 @@ on:
         description: "Auto-merge PR when checks pass"
         default: 'false'
         required: false
+      force-inject:
+        description: "Force README injection"
+        default: 'false'
+        required: false
 
 permissions:
   contents: write
@@ -35,6 +39,8 @@ jobs:
           pip install -e .
       - name: Scrape repositories
         run: python -m agentic_index_cli.scraper --min-stars $MIN_STARS
+      - name: Enrich factors
+        run: python -m agentic_index_cli.enricher data/repos.json
       - name: Rank repositories
         run: python -m agentic_index_cli.ranker data/repos.json
       - name: Run tests
@@ -45,7 +51,9 @@ jobs:
         id: detect-changes
         shell: bash
         run: |
-          if git diff --quiet --exit-code \
+          if [ "${{ inputs.force-inject }}" = "true" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          elif git diff --quiet --exit-code \
                 data/top50.md data/repos.json README.md; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
