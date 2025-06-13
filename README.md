@@ -220,6 +220,31 @@ python3 scripts/agentops.py --min-stars 50 --iterations 1 --output data
 
 Generated tables live in the `data/` directory.
 
+## 🧪 Testing
+
+This project uses `pytest` for unit tests and [pa11y](https://github.com/pa11y/pa11y) for accessibility checks. Ensure Chrome is installed before running pa11y:
+
+```bash
+# via puppeteer
+npx puppeteer browsers install chrome
+# or with apt
+sudo apt-get install -y chromium
+```
+
+Run tests with:
+
+```bash
+pytest -q
+```
+
+To check accessibility after building the site:
+
+```bash
+npx pa11y web/index.html
+```
+
+You can also run `./scripts/install_pa11y_deps.sh` to install pa11y and Chrome.
+
 -----
 
 ## 🤝 How to Contribute
