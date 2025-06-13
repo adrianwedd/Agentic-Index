@@ -1,7 +1,3 @@
-Okay, here's the `README.md` content with the "AgentOps" branding and the updated tone, enclosed in a Markdown code block as requested. I've also updated the citations to reflect the new research notes you've provided.
-
-![Last Sync](badges/last_sync.svg) ![Top Repo](badges/top_repo.svg)
-
 # 🤖 AgentOps: The Ultimate Index of Open-Source AI Agent Frameworks
 
 Welcome to **AgentOps**, the definitive, developer-focused catalogue of autonomous AI tooling.
@@ -20,7 +16,7 @@ We rank everything using a transparent scoring formula based on:
 
 > **🎯 TL;DR:** This isn’t just a list—it’s your launchpad for building with AI agents.
 
-Want a shortcut? Jump to the(\#fast-start-picks-curated-for-newcomers).
+Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
 
 -----
 
@@ -28,6 +24,7 @@ Want a shortcut? Jump to the(\#fast-start-picks-curated-for-newcomers).
 \<a href="[suspicious link removed]"\>\<img src="[suspicious link removed]" alt="GitHub Stars"\>\</a\>
 \<a href="[suspicious link removed]"\>\<img src="[suspicious link removed]" alt="Last Commit"\>\</a\>
 \<a href="./LICENSE.md"\>\<img src="[suspicious link removed]" alt="License"\>\</a\>
+<a href="./FAST_START.md"><img src="https://img.shields.io/badge/Fast_Start-Table-blue" alt="Fast Start"></a>
 \</p\>
 
 \<p align="center"\>
@@ -85,6 +82,7 @@ New to Agentic-AI or just want the good stuff fast? These repos are top-tier for
 The definitive list of Agentic-AI repositories, ranked by the AgentOps Score. This score is a holistic measure of project quality, activity, and community love.
 *(Data updated as of: {timestamp} UTC)*
 
+<!-- TOP50:START -->
 | Rank | Repo (Click to Visit) | ★ Stars | Last Commit | Score | Category | One-Liner |
 |------|-----------------------|---------|-------------|-------|----------|-----------|
 | 1 | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | 32.8k | 2025-06-12 | 95 | 🤖 Multi-Agent Coordination | Framework for orchestrating role-playing, autonomous AI agents. [1] |
@@ -98,6 +96,7 @@ The definitive list of Agentic-AI repositories, ranked by the AgentOps Score. Th
 | 9 | [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) | 2.1k | 2025-06-12 | 82 | 🌐 General-purpose | Open Source TypeScript AI Agent Framework. [12] |
 | 10 | [e2b-dev/e2b](https://github.com/e2b-dev/e2b) | 8.6k | 2025-06-13 | 81 | 🛠️ DevTools | Secure open source cloud runtime for AI apps & AI agents. [16] |
 |... |... |... |... |... |... |... |
+<!-- TOP50:END -->
 
 *➡️ Dig into how these scores are cooked up in our [Methodology section](https://www.google.com/search?q=%23our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](https://www.google.com/search?q=./docs/methodology.md).*
 
@@ -157,6 +156,18 @@ This isn't a static list. It's alive\! See [CHANGELOG.md](https://www.google.com
 
 -----
 
+## 🔧 Usage
+
+Run the indexer to fetch fresh repo data:
+
+```bash
+python3 scripts/agentops.py --min-stars 50 --iterations 1 --output data
+```
+
+Generated tables live in the `data/` directory.
+
+-----
+
 ## 🤝 How to Contribute
 
 AgentOps aims to be *the* spot for Agentic-AI frameworks. Your brainpower and suggestions are gold.
@@ -177,3 +188,6 @@ Let's build the best damn agent list together\!
 The content of AgentOps (this `README.md`, files in `/docs/`, etc.) is licensed under([https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)).
 
 Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 'em) are licensed under([https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)).
+
+
+![Last Sync](badges/last_sync.svg) ![Top Repo](badges/top_repo.svg)

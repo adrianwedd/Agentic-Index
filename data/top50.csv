@@ -1,0 +1,10 @@
+name,stars,last_commit,score,category,description
+langgenius/dify,103079,2025-06-13T08:42:29Z,78.48,RAG-centric,Production-ready platform for agentic workflow development.
+browser-use/browser-use,63054,2025-06-13T01:38:28Z,76.01,DevTools,🌐 Make websites accessible for AI agents. Automate tasks online with ease.
+All-Hands-AI/OpenHands,57960,2025-06-13T06:08:51Z,75.47,DevTools,"🙌 OpenHands: Code Less, Make More"
+lobehub/lobe-chat,62441,2025-06-13T00:32:39Z,75.32,RAG-centric,"🤯 Lobe Chat - an open-source, modern-design AI chat framework. Supports Multi AI Providers( OpenAI / Claude 4 / Gemini / Ollama / DeepSeek / Qwen), Knowledge Base (file upload / knowledge management / RAG ), Multi-Modals (Plugins/Artifacts) and Thinking. One-click FREE deployment of your private ChatGPT/ Claude / DeepSeek application."
+FoundationAgents/MetaGPT,56368,2025-05-16T13:18:18Z,75.3,Multi-Agent,"🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming"
+infiniflow/ragflow,55012,2025-06-13T08:39:10Z,74.52,RAG-centric,RAGFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding.
+run-llama/llama_index,42321,2025-06-13T07:32:38Z,73.49,RAG-centric,LlamaIndex is the leading framework for building LLM-powered agents over your data.
+microsoft/autogen,45918,2025-06-12T22:18:35Z,73.38,General-purpose,A programming framework for agentic AI 🤖 PyPi: autogen-agentchat Discord: https://aka.ms/autogen-discord Office Hour: https://aka.ms/autogen-officehour
+crewAIInc/crewAI,32856,2025-06-12T21:08:38Z,71.89,Multi-Agent,"Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks."
