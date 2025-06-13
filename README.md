@@ -206,6 +206,13 @@ python -m agentic_index_cli.agentic_index --min-stars 50 --iterations 1 --output
 
 Generated tables live in the `data/` directory.
 
+## 🔄 How refresh works
+
+A scheduled GitHub Action keeps the index up to date. It runs the scraper and
+ranker, opens a pull request with any changes, and can auto-merge when all
+checks pass. You can also trigger this process manually by running
+[`scripts/trigger_refresh.sh`](scripts/trigger_refresh.sh).
+
 ## 🧪 Testing
 
 This project uses `pytest` for unit tests and [pa11y](https://github.com/pa11y/pa11y) for accessibility checks. Ensure Chrome is installed before running pa11y:
