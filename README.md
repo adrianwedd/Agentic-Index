@@ -1,5 +1,7 @@
 Okay, here's the `README.md` content with the "AgentOps" branding and the updated tone, enclosed in a Markdown code block as requested. I've also updated the citations to reflect the new research notes you've provided.
 
+![Last Sync](badges/last_sync.svg) ![Top Repo](badges/top_repo.svg)
+
 # 🤖 AgentOps: The Ultimate Index of Open-Source AI Agent Frameworks
 
 Welcome to **AgentOps**, the definitive, developer-focused catalogue of autonomous AI tooling.
