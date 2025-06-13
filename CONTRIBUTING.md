@@ -12,6 +12,12 @@ To propose additions or changes:
 
 We welcome fixes to data, new repo suggestions, and other improvements.
 
+Before opening a pull request, ensure the README table is up to date:
+
+```bash
+pre-commit run inject-readme --all-files
+```
+
 To run the scraping and ranking tools locally, install the CLI:
 
 ```bash

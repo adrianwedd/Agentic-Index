@@ -1,6 +1,10 @@
-"""Inject top50 table into README.md."""
+"""Inject top50 table into ``README.md`` or check that it is up to date."""
+
+from __future__ import annotations
+
 import pathlib
 import sys
+
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 README_PATH = ROOT / "README.md"
@@ -10,7 +14,43 @@ START = "<!-- TOP50:START -->"
 END = "<!-- TOP50:END -->"
 
 
-def main(force: bool = False) -> int:
+def _load_table() -> str:
+    lines = [l.strip() for l in DATA_PATH.read_text(encoding="utf-8").splitlines() if l.strip()]
+    header = lines[:2]
+    body = lines[2:]
+
+    parsed = []
+    for row in body:
+        cells = [c.strip() for c in row.strip().strip("|").split("|")]
+        if len(cells) < 4:
+            continue
+        repo = cells[1]
+        try:
+            score = float(cells[2])
+        except ValueError:
+            score = 0.0
+        cat = cells[3]
+        parsed.append((repo, score, cat))
+
+    parsed.sort(key=lambda r: (-r[1], r[0].lower()))
+
+    rows = [f"| {i} | {repo} | {score:.2f} | {cat} |" for i, (repo, score, cat) in enumerate(parsed, start=1)]
+    return "\n".join(header + rows)
+
+
+def main(*, force: bool = False, check: bool = False, write: bool = True) -> int:
+    """Synchronise the README table.
+
+    Parameters
+    ----------
+    force:
+        Write the README even if no changes detected.
+    check:
+        If ``True``, do not write. Exit ``1`` if README would change.
+    write:
+        Whether to update ``README.md``. Defaults to ``True``.
+    """
+
     readme_text = README_PATH.read_text(encoding="utf-8")
     end_newline = readme_text.endswith("\n")
     try:
@@ -21,25 +61,22 @@ def main(force: bool = False) -> int:
         return 1
 
     before = readme_text[: start_idx + len(START)].rstrip()
-    after = "\n" + readme_text[end_idx + len(END):].lstrip()
+    after = "\n" + readme_text[end_idx + len(END) :].lstrip()
 
-    lines = [l.strip() for l in DATA_PATH.read_text(encoding="utf-8").splitlines()]
-    header = lines[:2]
-    rows = lines[2:]
-
-    def rank_key(line: str) -> int:
-        parts = line.split("|")
-        return int(parts[1].strip()) if len(parts) > 2 else 0
-
-    rows = sorted(rows, key=rank_key)
-    table = "\n".join(header + rows)
+    table = _load_table()
 
     new_text = f"{before}\n{table}\n{END}{after}"
     new_text = new_text.rstrip("\n")
     if end_newline:
         new_text += "\n"
 
-    if force or new_text != readme_text:
+    if check:
+        if new_text != readme_text:
+            print("README.md is out of date", file=sys.stderr)
+            return 1
+        return 0
+
+    if write and (force or new_text != readme_text):
         README_PATH.write_text(new_text, encoding="utf-8")
 
     return 0
