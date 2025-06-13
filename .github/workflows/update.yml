@@ -1,0 +1,53 @@
+name: Update Rankings
+
+on:
+  pull_request:
+    paths:
+      - 'data/top50.md'
+    types: [opened, synchronize]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get previous top 10
+        id: old
+        run: |
+          if git show HEAD^:data/top50.md > /tmp/old_top50.md 2>/dev/null; then
+            head -n 10 /tmp/old_top50.md | tr '\n' ';' > /tmp/old_top10.txt
+            cat /tmp/old_top10.txt
+          fi
+          OLD=$(cat /tmp/old_top10.txt 2>/dev/null || echo '')
+          echo "value=$OLD" >> $GITHUB_OUTPUT
+
+      - name: Get current top 10
+        id: new
+        run: |
+          head -n 10 data/top50.md | tr '\n' ';' > /tmp/new_top10.txt
+          cat /tmp/new_top10.txt
+          NEW=$(cat /tmp/new_top10.txt)
+          echo "value=$NEW" >> $GITHUB_OUTPUT
+
+      - name: Check if top 10 changed
+        id: diff
+        run: |
+          if [ "${{ steps.old.outputs.value }}" != "${{ steps.new.outputs.value }}" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Notify Slack if changed
+        if: steps.diff.outputs.changed == 'true'
+        uses: slackapi/slack-github-action@v1
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          payload: |
+            {
+              "text": "AgentOps Top-10 updated: ${{ steps.old.outputs.value }} → ${{ steps.new.outputs.value }} | PR: ${{ github.event.pull_request.html_url }}"
+            }
+
