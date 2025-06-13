@@ -6,3 +6,4 @@ forbidden:
 allowed_regex:
   - https://github\.com/.*/agentops\b
   - Fast-Start Picks:.*AgentOps
+  - https://agentops\.ai

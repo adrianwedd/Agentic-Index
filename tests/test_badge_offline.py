@@ -5,7 +5,8 @@ import subprocess
 
 def test_badges_offline(monkeypatch, tmp_path):
     badges = Path('badges')
-    for f in badges.glob('*.svg'):
+    orig_svgs = list(badges.glob('*.svg'))
+    for f in orig_svgs:
         f.unlink()
     monkeypatch.setenv('CI_OFFLINE', '1')
     subprocess.run(['python', 'scripts/rank.py'], check=True)
@@ -13,3 +14,4 @@ def test_badges_offline(monkeypatch, tmp_path):
         p = badges / name
         assert p.exists()
         assert '<svg' in p.read_text()
+    subprocess.run(['git', 'checkout', '--', 'badges'], check=True)
