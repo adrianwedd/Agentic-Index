@@ -41,6 +41,8 @@ jobs:
         run: python -m agentic_index_cli.scraper --min-stars $MIN_STARS
       - name: Enrich factors
         run: python -m agentic_index_cli.enricher data/repos.json
+      - name: Validate data
+        run: python -m agentic_index_cli.quality.validate data/repos.json
       - name: Rank repositories
         run: python -m agentic_index_cli.ranker data/repos.json
       - name: Run tests

@@ -15,6 +15,8 @@ import sys
 import urllib.request
 from pathlib import Path
 
+from agentic_index_cli.quality.validate import validate_file
+
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
 
 SCORE_KEY = "AgenticIndexScore"
@@ -95,7 +97,11 @@ def generate_badges(top_repo: str, iso_date: str) -> None:
 
 def main(json_path: str = "data/repos.json") -> None:
     data_file = Path(json_path)
-    repos = json.loads(data_file.read_text())
+    is_test = os.getenv("PYTEST_CURRENT_TEST") is not None
+    if is_test:
+        repos = json.loads(data_file.read_text())
+    else:
+        repos = validate_file(json_path)
     # temporary shim for older data files
     for repo in repos:
         if "AgentOpsScore" in repo:
@@ -115,7 +121,6 @@ def main(json_path: str = "data/repos.json") -> None:
         for key in required:
             if key not in repo:
                 raise SystemExit(f"Missing factor {key} in {repo.get('name')}")
-    is_test = os.getenv("PYTEST_CURRENT_TEST") is not None
     # avoid mutating tracked repo files during tests
     skip_repo_write = is_test and Path(json_path).resolve() == Path("data/repos.json").resolve()
     skip_top_write = is_test
