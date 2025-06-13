@@ -1,0 +1,14 @@
+name: Safe Rebase & Retry
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  rebase:
+    if: |
+      github.event.issue.pull_request != null &&
+      startsWith(github.event.comment.body, '/rebase')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/safe-rebase
+
