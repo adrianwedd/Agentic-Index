@@ -1,3 +1,10 @@
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+# only type-check critical modules
+exclude = "^(?!scripts/(scrape|rank|inject_readme)\\.py$).*\\.py$"

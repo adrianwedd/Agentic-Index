@@ -2,10 +2,10 @@ import argparse
 import json
 import os
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import Any, Dict, List
 import requests
 
-RATE_LIMIT_REMAINING = None
+RATE_LIMIT_REMAINING: int | None = None
 
 QUERIES = [
     "agent framework",
@@ -53,7 +53,7 @@ def scrape(min_stars: int = 0, token: str | None = None) -> List[Dict[str, Any]]
         headers["Authorization"] = f"token {token}"
     all_repos: Dict[str, Dict[str, Any]] = {}
     for query in QUERIES:
-        params = {
+        params: Dict[str, str | int] = {
             "q": f"{query} stars:>={min_stars}",
             "sort": "stars",
             "order": "desc",

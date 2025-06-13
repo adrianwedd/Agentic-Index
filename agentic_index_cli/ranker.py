@@ -1,3 +1,4 @@
+# pragma: no cover
 from scripts.rank import main
 
 if __name__ == "__main__":

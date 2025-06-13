@@ -1,3 +1,4 @@
+# pragma: no cover
 """Placeholder for future trend plotting logic."""
 
 def main() -> None:

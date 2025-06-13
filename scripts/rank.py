@@ -13,20 +13,22 @@ import math
 import os
 import sys
 import urllib.request
+from urllib.parse import quote
 from pathlib import Path
+from typing import Any, Dict, List
 
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
 
 SCORE_KEY = "AgenticIndexScore"
 
 
-def compute_score(repo: dict) -> float:
-    stars = repo.get("stars", 0)
-    recency = repo.get("recency_factor", 0)
-    issue_health = repo.get("issue_health", 0)
-    docs = repo.get("doc_completeness", 0)
-    license_free = repo.get("license_freedom", 0)
-    ecosys = repo.get("ecosystem_integration", 0)
+def compute_score(repo: Dict[str, Any]) -> float:
+    stars = float(repo.get("stars", 0))
+    recency = float(repo.get("recency_factor", 0))
+    issue_health = float(repo.get("issue_health", 0))
+    docs = float(repo.get("doc_completeness", 0))
+    license_free = float(repo.get("license_freedom", 0))
+    ecosys = float(repo.get("ecosystem_integration", 0))
     score = (
         0.35 * math.log2(stars + 1)
         + 0.20 * recency
@@ -38,7 +40,7 @@ def compute_score(repo: dict) -> float:
     return round(score, 2)
 
 
-def infer_category(repo: dict) -> str:
+def infer_category(repo: Dict[str, Any]) -> str:
     blob = (
         " ".join(repo.get("topics", []))
         + " "
@@ -77,7 +79,7 @@ def generate_badges(top_repo: str, iso_date: str) -> None:
     sync_badge = (
         f"https://img.shields.io/static/v1?label=sync&message={iso_date}&color=blue"
     )
-    top_badge = f"https://img.shields.io/static/v1?label=top&message={urllib.request.quote(top_repo)}&color=brightgreen"
+    top_badge = f"https://img.shields.io/static/v1?label=top&message={quote(top_repo)}&color=brightgreen"
 
     _fetch(sync_badge, badges / "last_sync.svg")
     _fetch(top_badge, badges / "top_repo.svg")
@@ -88,24 +90,23 @@ def generate_badges(top_repo: str, iso_date: str) -> None:
 
 def main(json_path: str = "data/repos.json") -> None:
     data_file = Path(json_path)
-    repos = json.loads(data_file.read_text())
+    repos: List[Dict[str, Any]] = json.loads(data_file.read_text())
     # temporary shim for older data files
     for repo in repos:
         if "AgentOpsScore" in repo:
             repo[SCORE_KEY] = repo.pop("AgentOpsScore")
         if "score" in repo and SCORE_KEY not in repo:
             repo[SCORE_KEY] = repo.pop("score")
-    in_test = os.getenv("PYTEST_CURRENT_TEST") is not None
-
     # score + categorise
     for repo in repos:
         repo[SCORE_KEY] = compute_score(repo)
         repo["category"] = infer_category(repo)
 
+    in_test: bool = os.getenv("PYTEST_CURRENT_TEST") is not None
+
     # sort & persist
     repos.sort(key=lambda r: r[SCORE_KEY], reverse=True)
-    if not in_test:
-        data_file.write_text(json.dumps(repos, indent=2))
+    data_file.write_text(json.dumps(repos, indent=2) + "\n")
 
     # top-50 table
     header = [
@@ -120,10 +121,10 @@ def main(json_path: str = "data/repos.json") -> None:
         Path("data").mkdir(exist_ok=True)
         Path("data/top50.md").write_text("\n".join(header + rows) + "\n")
 
-    # badges
-    today_iso = datetime.date.today().isoformat()
-    top_repo_name = repos[0]["name"] if repos else "unknown"
-    generate_badges(top_repo_name, today_iso)
+        # badges
+        today_iso = datetime.date.today().isoformat()
+        top_repo_name = repos[0]["name"] if repos else "unknown"
+        generate_badges(top_repo_name, today_iso)
 
 
 if __name__ == "__main__":

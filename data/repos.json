@@ -1896,8 +1896,8 @@
     "owner": {
       "login": "HITsz-TMG"
     },
-    "score": 0.0,
-    "category": "Multi-Agent Coordination"
+    "category": "Multi-Agent Coordination",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "awesome-llm-agents",
@@ -1916,8 +1916,8 @@
     "owner": {
       "login": "kaushikb11"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "awesome-ai-sdks",
@@ -1936,8 +1936,8 @@
     "owner": {
       "login": "e2b-dev"
     },
-    "score": 0.0,
-    "category": "DevTools"
+    "category": "DevTools",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "autogen-ui",
@@ -1956,8 +1956,8 @@
     "owner": {
       "login": "victordibia"
     },
-    "score": 0.0,
-    "category": "Multi-Agent Coordination"
+    "category": "Multi-Agent Coordination",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "Agentarium",
@@ -1976,8 +1976,8 @@
     "owner": {
       "login": "Thytu"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "Director",
@@ -1996,8 +1996,8 @@
     "owner": {
       "login": "video-db"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "cline",
@@ -2596,8 +2596,8 @@
     "owner": {
       "login": "hrithikkoduri"
     },
-    "score": 0.0,
-    "category": "RAG-centric"
+    "category": "RAG-centric",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "Autonomous-Agents",
@@ -2616,8 +2616,8 @@
     "owner": {
       "login": "tmgthb"
     },
-    "score": 0.0,
-    "category": "Experimental"
+    "category": "Experimental",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "babyagi-asi",
@@ -2656,8 +2656,8 @@
     "owner": {
       "login": "shyamsaktawat"
     },
-    "score": 0.0,
-    "category": "Experimental"
+    "category": "Experimental",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "SeeAct",
@@ -2696,8 +2696,8 @@
     "owner": {
       "login": "lafmdp"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "Awesome-AI-Agents",
@@ -2716,8 +2716,8 @@
     "owner": {
       "login": "Jenqyang"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "autonomous-learning-library",
@@ -2736,8 +2736,8 @@
     "owner": {
       "login": "cpnota"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "OpenManus",
@@ -2776,8 +2776,8 @@
     "owner": {
       "login": "dCaples"
     },
-    "score": 0.0,
-    "category": "Experimental"
+    "category": "Experimental",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "AIOpsLab",
@@ -2836,8 +2836,8 @@
     "owner": {
       "login": "Undertone0809"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "jobber",
@@ -2876,8 +2876,8 @@
     "owner": {
       "login": "pippinlovesyou"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "gpt-assistant",
@@ -2896,8 +2896,8 @@
     "owner": {
       "login": "BuilderIO"
     },
-    "score": 0.0,
-    "category": "Experimental"
+    "category": "Experimental",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "Collaborative_Perception",
@@ -2916,8 +2916,8 @@
     "owner": {
       "login": "Little-Podi"
     },
-    "score": 0.0,
-    "category": "Multi-Agent Coordination"
+    "category": "Multi-Agent Coordination",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "agent-q",
@@ -2936,8 +2936,8 @@
     "owner": {
       "login": "sentient-engineering"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "jido",
@@ -2956,8 +2956,8 @@
     "owner": {
       "login": "agentjido"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "devlooper",
@@ -2976,8 +2976,8 @@
     "owner": {
       "login": "modal-labs"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "micro-agent",
@@ -2996,8 +2996,8 @@
     "owner": {
       "login": "pHaeusler"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "world_ai_protocol",
@@ -3016,8 +3016,8 @@
     "owner": {
       "login": "WORLD3-ai"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "beebot",
@@ -3036,8 +3036,8 @@
     "owner": {
       "login": "erik-megarad"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "evolving-agents",
@@ -3056,8 +3056,8 @@
     "owner": {
       "login": "matiasmolinas"
     },
-    "score": 0.0,
-    "category": "DevTools"
+    "category": "DevTools",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "agents",
@@ -3076,8 +3076,8 @@
     "owner": {
       "login": "Polymarket"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "AgentLLM",
@@ -3096,8 +3096,8 @@
     "owner": {
       "login": "idosal"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "dapr-agents",
@@ -3116,8 +3116,8 @@
     "owner": {
       "login": "dapr"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "INSIGHT",
@@ -3136,8 +3136,8 @@
     "owner": {
       "login": "oneil512"
     },
-    "score": 0.0,
-    "category": "Experimental"
+    "category": "Experimental",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "autonomous-hr-chatbot",
@@ -3156,8 +3156,8 @@
     "owner": {
       "login": "stepanogil"
     },
-    "score": 0.0,
-    "category": "DevTools"
+    "category": "DevTools",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "ChatSim",
@@ -3176,8 +3176,8 @@
     "owner": {
       "login": "yifanlu0227"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "reflexion-draft",
@@ -3196,8 +3196,8 @@
     "owner": {
       "login": "noahshinn"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "personoids-lite",
@@ -3216,8 +3216,8 @@
     "owner": {
       "login": "personoids"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "macad-gym",
@@ -3236,8 +3236,8 @@
     "owner": {
       "login": "praveen-palanisamy"
     },
-    "score": 0.0,
-    "category": "Multi-Agent Coordination"
+    "category": "Multi-Agent Coordination",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "digirl",
@@ -3256,8 +3256,8 @@
     "owner": {
       "login": "DigiRL-agent"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "anda",
@@ -3276,8 +3276,8 @@
     "owner": {
       "login": "ldclabs"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "pentagi",
@@ -3296,8 +3296,8 @@
     "owner": {
       "login": "vxcontrol"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "Nuggt",
@@ -3316,8 +3316,8 @@
     "owner": {
       "login": "Nuggt-dev"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "android_world",
@@ -3336,8 +3336,8 @@
     "owner": {
       "login": "google-research"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "OpenSteer",
@@ -3356,8 +3356,8 @@
     "owner": {
       "login": "meshula"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "Gentopia",
@@ -3376,8 +3376,8 @@
     "owner": {
       "login": "Gentopia-AI"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "aguvis",
@@ -3396,8 +3396,8 @@
     "owner": {
       "login": "xlang-ai"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "babyagi-2o",
@@ -3416,8 +3416,8 @@
     "owner": {
       "login": "yoheinakajima"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "agent",
@@ -3436,8 +3436,8 @@
     "owner": {
       "login": "machinegpt"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "genworlds",
@@ -3456,8 +3456,8 @@
     "owner": {
       "login": "genlayerlabs"
     },
-    "score": 0.0,
-    "category": "Multi-Agent Coordination"
+    "category": "Multi-Agent Coordination",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "GPT4V-AD-Exploration",
@@ -3476,8 +3476,8 @@
     "owner": {
       "login": "PJLab-ADG"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "Aetherius_AI_Assistant",
@@ -3496,8 +3496,8 @@
     "owner": {
       "login": "libraryofcelsus"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "txtchat",
@@ -3516,8 +3516,8 @@
     "owner": {
       "login": "neuml"
     },
-    "score": 0.0,
-    "category": "RAG-centric"
+    "category": "RAG-centric",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "PromptAgent",
@@ -3536,8 +3536,8 @@
     "owner": {
       "login": "XinyuanWangCS"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "awesome-autonomous-gpt",
@@ -3556,8 +3556,8 @@
     "owner": {
       "login": "ScarletPan"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "Agent-Driver",
@@ -3576,8 +3576,8 @@
     "owner": {
       "login": "USC-GVL"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "SIMPL",
@@ -3596,8 +3596,8 @@
     "owner": {
       "login": "HKUST-Aerial-Robotics"
     },
-    "score": 0.0,
-    "category": "Multi-Agent Coordination"
+    "category": "Multi-Agent Coordination",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "rl_CARLA",
@@ -3616,8 +3616,8 @@
     "owner": {
       "login": "zhangfuyang"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "shoal",
@@ -3636,8 +3636,8 @@
     "owner": {
       "login": "cazala"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "gpt-instagram",
@@ -3656,8 +3656,8 @@
     "owner": {
       "login": "MODSetter"
     },
-    "score": 0.0,
-    "category": "Multi-Agent Coordination"
+    "category": "Multi-Agent Coordination",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "agents-aea",
@@ -3676,8 +3676,8 @@
     "owner": {
       "login": "fetchai"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "Autono",
@@ -3696,8 +3696,8 @@
     "owner": {
       "login": "vortezwohl"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "MindFlow",
@@ -3716,8 +3716,8 @@
     "owner": {
       "login": "Run-Tu"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "PSAI",
@@ -3736,8 +3736,8 @@
     "owner": {
       "login": "dfinke"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "pocketgroq",
@@ -3756,8 +3756,8 @@
     "owner": {
       "login": "jgravelle"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "JungleGym",
@@ -3776,8 +3776,8 @@
     "owner": {
       "login": "a16z-infra"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "AgentOoba",
@@ -3796,8 +3796,8 @@
     "owner": {
       "login": "flurb18"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "dify",
@@ -3816,8 +3816,8 @@
     "owner": {
       "login": "langgenius"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "browser-use",
@@ -3836,8 +3836,8 @@
     "owner": {
       "login": "browser-use"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "OpenHands",
@@ -3856,8 +3856,8 @@
     "owner": {
       "login": "All-Hands-AI"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "ragflow",
@@ -3876,8 +3876,8 @@
     "owner": {
       "login": "infiniflow"
     },
-    "score": 0.0,
-    "category": "RAG-centric"
+    "category": "RAG-centric",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "LLaMA-Factory",
@@ -3896,8 +3896,8 @@
     "owner": {
       "login": "hiyouga"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "anything-llm",
@@ -3916,8 +3916,8 @@
     "owner": {
       "login": "Mintplex-Labs"
     },
-    "score": 0.0,
-    "category": "RAG-centric"
+    "category": "RAG-centric",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "awesome-llm-apps",
@@ -3936,8 +3936,8 @@
     "owner": {
       "login": "Shubhamsaboo"
     },
-    "score": 0.0,
-    "category": "RAG-centric"
+    "category": "RAG-centric",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "ChatTTS",
@@ -3956,8 +3956,8 @@
     "owner": {
       "login": "2noise"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "Langchain-Chatchat",
@@ -3976,8 +3976,8 @@
     "owner": {
       "login": "chatchat-space"
     },
-    "score": 0.0,
-    "category": "RAG-centric"
+    "category": "RAG-centric",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "mem0",
@@ -3996,8 +3996,8 @@
     "owner": {
       "login": "mem0ai"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "cherry-studio",
@@ -4016,8 +4016,8 @@
     "owner": {
       "login": "CherryHQ"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "ChatDev",
@@ -4036,8 +4036,8 @@
     "owner": {
       "login": "OpenBMB"
     },
-    "score": 0.0,
-    "category": "Multi-Agent Coordination"
+    "category": "Multi-Agent Coordination",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "composio",
@@ -4056,8 +4056,8 @@
     "owner": {
       "login": "ComposioHQ"
     },
-    "score": 0.0,
-    "category": "General-purpose"
+    "category": "General-purpose",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "FastGPT",
@@ -5036,8 +5036,8 @@
     "owner": {
       "login": "aipotheosis-labs"
     },
-    "score": 0.0,
-    "category": "DevTools"
+    "category": "DevTools",
+    "AgenticIndexScore": 0.0
   },
   {
     "name": "sim",
