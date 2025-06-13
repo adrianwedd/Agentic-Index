@@ -79,7 +79,7 @@ New to Agentic-AI or just want the good stuff fast? These repos are top-tier for
 
 ## 🏆 The AgentOps Top 50: AI Agent Repositories
 
-The definitive list of Agentic-AI repositories, ranked by the AgentOps Score. This score is a holistic measure of project quality, activity, and community love.
+The definitive list of Agentic-AI repositories, ranked by the Agentic Index Score. This score is a holistic measure of project quality, activity, and community love.
 *(Data updated as of: {timestamp} UTC)*
 
 <!-- TOP50:START -->

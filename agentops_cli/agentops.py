@@ -8,8 +8,9 @@ import time
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional
-
 import requests
+
+SCORE_KEY = "AgenticIndexScore"
 
 GITHUB_API = "https://api.github.com"
 HEADERS = {
@@ -182,7 +183,7 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
         "maintainer": repo.get("owner", {}).get("login"),
         "topics": ",".join(repo.get("topics", [])),
         "readme_excerpt": first_paragraph,
-        "score": score,
+        SCORE_KEY: score,
         "category": category,
     }
 
@@ -219,7 +220,7 @@ def search_and_harvest(min_stars: int = 0, max_pages: int = 1) -> List[Dict]:
 
 
 def sort_and_select(repos: List[Dict], limit: int = 50) -> List[Dict]:
-    repos.sort(key=lambda x: x["score"], reverse=True)
+    repos.sort(key=lambda x: x[SCORE_KEY], reverse=True)
     return repos[:limit]
 
 
@@ -228,7 +229,7 @@ def save_csv(repos: List[Dict], path: Path):
         "name",
         "stars",
         "last_commit",
-        "score",
+        SCORE_KEY,
         "category",
         "description",
     ]
@@ -246,7 +247,7 @@ def save_markdown(repos: List[Dict], path: Path):
         for i, r in enumerate(repos, 1):
             date = r["last_commit"].split("T")[0]
             line = (
-                f"| {i} | {r['name']} | {r['stars']} | {date} | {r['score']} | {r['category']} | {r['description']} |\n"
+                f"| {i} | {r['name']} | {r['stars']} | {date} | {r[SCORE_KEY]} | {r['category']} | {r['description']} |\n"
             )
             f.write(line)
 
