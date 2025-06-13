@@ -1,0 +1,30 @@
+[
+  {
+    "name": "CrewAI",
+    "url": "https://github.com/crewAIInc/crewAI",
+    "stars": 5000,
+    "category": "Multi-Agent Coordination",
+    "updated_at": "2025-06-12"
+  },
+  {
+    "name": "AutoGen",
+    "url": "https://github.com/microsoft/autogen",
+    "stars": 16000,
+    "category": "General-purpose",
+    "updated_at": "2025-06-10"
+  },
+  {
+    "name": "BabyAGI",
+    "url": "https://github.com/yoheinakajima/babyagi",
+    "stars": 17000,
+    "category": "Experimental",
+    "updated_at": "2025-05-15"
+  },
+  {
+    "name": "VoltAgent",
+    "url": "https://github.com/VoltAgent/voltagent",
+    "stars": 2100,
+    "category": "DevTools",
+    "updated_at": "2025-06-11"
+  }
+]

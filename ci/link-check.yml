@@ -1,0 +1,44 @@
+name: Link Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  gather:
+    runs-on: ubuntu-latest
+    outputs:
+      files: ${{ steps.set.outputs.files }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: set
+        run: |
+          files=$(git ls-files '*.md' | jq -R -s -c 'split("\n")[:-1]')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+
+  link-check:
+    needs: gather
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        file: ${{ fromJson(needs.gather.outputs.files) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: lychee-cache-${{ hashFiles('**/*.md') }}
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1
+        with:
+          fail: true
+          args: >-
+            --cache
+            --max-cache-age 1d
+            --exclude "github.com/.*/pull/"
+            --retry 2
+            ${{ matrix.file }}
