@@ -18,7 +18,7 @@ We rank everything using a transparent scoring formula based on:
 
 > **🎯 TL;DR:** This isn’t just a list—it’s your launchpad for building with AI agents.
 
-Want a shortcut? Jump to the(\#fast-start-picks-curated-for-newcomers).
+Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
 
 -----
 
@@ -26,6 +26,7 @@ Want a shortcut? Jump to the(\#fast-start-picks-curated-for-newcomers).
 \<a href="[suspicious link removed]"\>\<img src="[suspicious link removed]" alt="GitHub Stars"\>\</a\>
 \<a href="[suspicious link removed]"\>\<img src="[suspicious link removed]" alt="Last Commit"\>\</a\>
 \<a href="./LICENSE.md"\>\<img src="[suspicious link removed]" alt="License"\>\</a\>
+<a href="./FAST_START.md"><img src="https://img.shields.io/badge/Fast_Start-Table-blue" alt="Fast Start"></a>
 \</p\>
 
 \<p align="center"\>
