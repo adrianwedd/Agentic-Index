@@ -15,6 +15,8 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Run regression guard
+        run: python scripts/regression_check.py
       - name: Run tests with coverage
         run: pytest --cov=agentic_index_cli --cov-report=xml
         env:
@@ -28,3 +30,5 @@ jobs:
           PY
         env:
           PYTHONHASHSEED: 0
+      - name: Verify internal links
+        run: python scripts/link_integrity.py
