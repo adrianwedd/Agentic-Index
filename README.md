@@ -83,6 +83,7 @@ New to Agentic-AI or just want the good stuff fast? These repos are top-tier for
 The definitive list of Agentic-AI repositories, ranked by the AgentOps Score. This score is a holistic measure of project quality, activity, and community love.
 *(Data updated as of: {timestamp} UTC)*
 
+<!-- TOP50:START -->
 | Rank | Repo (Click to Visit) | ★ Stars | Last Commit | Score | Category | One-Liner |
 |------|-----------------------|---------|-------------|-------|----------|-----------|
 | 1 | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | 32.8k | 2025-06-12 | 95 | 🤖 Multi-Agent Coordination | Framework for orchestrating role-playing, autonomous AI agents. [1] |
@@ -96,6 +97,7 @@ The definitive list of Agentic-AI repositories, ranked by the AgentOps Score. Th
 | 9 | [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) | 2.1k | 2025-06-12 | 82 | 🌐 General-purpose | Open Source TypeScript AI Agent Framework. [12] |
 | 10 | [e2b-dev/e2b](https://github.com/e2b-dev/e2b) | 8.6k | 2025-06-13 | 81 | 🛠️ DevTools | Secure open source cloud runtime for AI apps & AI agents. [16] |
 |... |... |... |... |... |... |... |
+<!-- TOP50:END -->
 
 *➡️ Dig into how these scores are cooked up in our [Methodology section](https://www.google.com/search?q=%23our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](https://www.google.com/search?q=./docs/methodology.md).*
 

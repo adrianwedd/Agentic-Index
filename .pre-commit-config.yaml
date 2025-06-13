@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: inject-readme
+        name: Inject README top50
+        entry: python scripts/inject_readme.py
+        language: system
+        types: [markdown]
+        files: README\.md
