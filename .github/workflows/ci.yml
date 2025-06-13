@@ -52,3 +52,23 @@ jobs:
           pip install pytest-socket
           pytest --disable-socket -q 2>&1 | tee pytest.log
           python scripts/network_guard.py pytest.log
+
+  check_critical_tasks:
+    name: Check for Outstanding Critical Review Tasks
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs: [test, offline-lint] # Ensure it runs after other checks
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Scan for critical tasks in review docs
+        run: |
+          echo "Searching for lines starting with '- [ ] 🔴' in docs/REVIEW-*.md files..."
+          if grep -rE --include='REVIEW-*.md' '^\s*-\s*\[\s*\]\s*🔴' docs/; then
+            echo "Error: Found outstanding critical review tasks."
+            exit 1
+          else
+            echo "No outstanding critical review tasks found."
+            exit 0
+          fi

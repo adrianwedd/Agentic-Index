@@ -17,3 +17,13 @@ To run the scraping and ranking tools locally, install the CLI:
 ```bash
 pip install agentic-index-cli
 ```
+
+## Working on Launch Readiness Review Issues
+
+A comprehensive project review was conducted in June 2025 to identify areas for improvement before launch. Findings from this review have been translated into actionable GitHub issues.
+
+Contributors looking to help address these key items should refer to the main tracking issue:
+
+*   **EPIC Issue:** `EPIC: Launch-readiness fixes (June 2025 review)` (Search for this issue in the repository's GitHub Issues tab).
+
+This EPIC issue links to all individual tasks spawned from the review. Alternatively, you can view the full review document and linked issues in [REVIEW-2025-06.md](docs/REVIEW-2025-06.md).
