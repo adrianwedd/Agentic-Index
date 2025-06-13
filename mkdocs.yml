@@ -9,4 +9,4 @@ nav:
   - Methodology: METHODOLOGY.md
   - CLI Usage: cli.md
   - API Reference:
-      - agentops_cli: reference/agentops_cli.md
+      - agentic_index_cli: reference/agentic_index_cli.md
