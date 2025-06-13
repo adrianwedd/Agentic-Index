@@ -32,3 +32,19 @@ jobs:
           PYTHONHASHSEED: 0
       - name: Verify internal links
         run: python scripts/link_integrity.py
+
+  offline-lint:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Offline network guard
+        run: |
+          pip install pytest-socket
+          pytest --disable-socket -q 2>&1 | tee pytest.log
+          python scripts/network_guard.py pytest.log
