@@ -18,9 +18,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt requests pytest
       - name: Scrape repositories
-        run: python scripts/scrape.py --min-stars 50
+        run: python -m agentic_index_cli.scraper --min-stars 50
       - name: Rank repositories
-        run: python scripts/rank.py data/repos.json
+        run: python -m agentic_index_cli.ranker data/repos.json
       - name: Run tests
         run: pytest -q
       - name: Check for updated index
