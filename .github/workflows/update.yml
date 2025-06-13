@@ -42,15 +42,19 @@ jobs:
           CI_OFFLINE: '1'
         run: pytest -q
       - name: Check for updated index
-        id: diff
+        id: detect-changes
+        shell: bash
         run: |
-          if git diff --quiet --exit-code data/top50.md; then
+          if git diff --quiet --exit-code \
+                data/top50.md data/repos.json README.md; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+      - run: git status --short
+        if: steps.detect-changes.outputs.changed == 'true'
       - name: Create refresh PR
-        if: steps.diff.outputs.changed == 'true'
+        if: steps.detect-changes.outputs.changed == 'true'
         id: createpr
         uses: peter-evans/create-pull-request@v6
         with:
