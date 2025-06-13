@@ -42,6 +42,11 @@ jobs:
         run: pip install -r requirements.txt
       - name: Install package
         run: pip install -e .
+      - name: Install pre-commit
+        run: |
+          pip install -i https://pypi.org/simple \
+                      --trusted-host pypi.org \
+                      pre-commit
       - name: Offline network guard
         run: |
           pip install pytest-socket

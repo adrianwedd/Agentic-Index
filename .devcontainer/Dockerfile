@@ -12,6 +12,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python tooling
-RUN pip install --no-cache-dir pre-commit black ruff
+# Use explicit index to avoid firewall blocks
+RUN pip install --no-cache-dir \
+    -i https://pypi.org/simple \
+    --trusted-host pypi.org \
+    pre-commit black ruff
 
 WORKDIR /workspace
