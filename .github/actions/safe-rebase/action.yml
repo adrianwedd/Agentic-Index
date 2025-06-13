@@ -1,0 +1,43 @@
+name: safe-rebase
+description: Rebase PR branch into new branch <orig>-rebased
+inputs:
+  label:
+    default: needs-rebase
+    required: false
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v4
+      with: {fetch-depth: 0}
+    - name: Guard label
+      run: |
+        if ! gh pr view ${{ github.event.pull_request.number }} --json labels \
+             | jq -e ".labels[].name==\"${{ inputs.label }}\"" > /dev/null; then
+          echo "Label not present; skipping." && exit 0
+        fi
+    - name: Detect refs
+      id: refs
+      run: |
+        BRANCH=${{ github.head_ref }}
+        BASE=${{ github.base_ref }}
+        REBASE_BRANCH=${BRANCH}-rebased
+        echo "branch=$BRANCH"         >> "$GITHUB_OUTPUT"
+        echo "base=$BASE"             >> "$GITHUB_OUTPUT"
+        echo "rebase_branch=$REBASE_BRANCH" >> "$GITHUB_OUTPUT"
+    - name: Perform rebase
+      run: |
+        git fetch origin ${{ steps.refs.outputs.base }}
+        git checkout -B ${{ steps.refs.outputs.rebase_branch }}
+        git merge --strategy-option theirs origin/${{ steps.refs.outputs.base }} --no-edit
+    - name: Push new branch
+      run: git push -u origin ${{ steps.refs.outputs.rebase_branch }}
+    - name: Open draft PR
+      env: {GH_TOKEN: ${{ github.token }}}
+      run: |
+        gh pr create \
+          --title "Rebase: ${{ steps.refs.outputs.branch }} → ${{ steps.refs.outputs.base }}" \
+          --head ${{ steps.refs.outputs.rebase_branch }} \
+          --base ${{ steps.refs.outputs.base }} \
+          --draft \
+          --body "Automated rebase of **${{ steps.refs.outputs.branch }}**. Review & merge if satisfied."
+
