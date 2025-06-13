@@ -26,7 +26,7 @@ def test_table_sorted():
     run_script()
     # read markdown
     lines = [l for l in TOP_MD.read_text().splitlines() if l.startswith('|')][2:]
-    scores = [float(line.split('|')[3].strip()) for line in lines]
+    scores = [float(line.split('|')[5].strip()) for line in lines]
     assert all(scores[i] >= scores[i+1] for i in range(len(scores)-1))
 
 def test_deterministic_output(tmp_path):

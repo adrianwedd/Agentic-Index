@@ -1,52 +1,52 @@
-| Rank | Repo | Score | Category |
-|------|------|-------|----------|
-| 1 | lobe-chat | 0.0 | RAG-centric |
-| 2 | MetaGPT | 0.0 | Multi-Agent Coordination |
-| 3 | autogen | 0.0 | General-purpose |
-| 4 | llama_index | 0.0 | General-purpose |
-| 5 | crewAI | 0.0 | Multi-Agent Coordination |
-| 6 | agno | 0.0 | Multi-Agent Coordination |
-| 7 | haystack | 0.0 | RAG-centric |
-| 8 | swarm | 0.0 | Multi-Agent Coordination |
-| 9 | letta | 0.0 | General-purpose |
-| 10 | DB-GPT | 0.0 | General-purpose |
-| 11 | SuperAGI | 0.0 | RAG-centric |
-| 12 | RagaAI-Catalyst | 0.0 | RAG-centric |
-| 13 | eliza | 0.0 | General-purpose |
-| 14 | mastra | 0.0 | RAG-centric |
-| 15 | deer-flow | 0.0 | DevTools |
-| 16 | camel | 0.0 | Multi-Agent Coordination |
-| 17 | openai-agents-python | 0.0 | Multi-Agent Coordination |
-| 18 | pydantic-ai | 0.0 | General-purpose |
-| 19 | agent-zero | 0.0 | General-purpose |
-| 20 | Qwen-Agent | 0.0 | RAG-centric |
-| 21 | Upsonic | 0.0 | General-purpose |
-| 22 | OpenRLHF | 0.0 | General-purpose |
-| 23 | lamda | 0.0 | General-purpose |
-| 24 | SerpentAI | 0.0 | General-purpose |
-| 25 | intentkit | 0.0 | General-purpose |
-| 26 | MindSearch | 0.0 | Multi-Agent Coordination |
-| 27 | agents | 0.0 | General-purpose |
-| 28 | ten-framework | 0.0 | General-purpose |
-| 29 | LaVague | 0.0 | General-purpose |
-| 30 | agent-squad | 0.0 | General-purpose |
-| 31 | AppAgent | 0.0 | General-purpose |
-| 32 | TaskWeaver | 0.0 | General-purpose |
-| 33 | agents | 0.0 | General-purpose |
-| 34 | Agent-S | 0.0 | General-purpose |
-| 35 | PocketFlow | 0.0 | General-purpose |
-| 36 | tensortrade | 0.0 | General-purpose |
-| 37 | superduper | 0.0 | General-purpose |
-| 38 | pyspur | 0.0 | General-purpose |
-| 39 | swarms | 0.0 | Multi-Agent Coordination |
-| 40 | Archon | 0.0 | General-purpose |
-| 41 | PraisonAI | 0.0 | Multi-Agent Coordination |
-| 42 | AutoAgent | 0.0 | General-purpose |
-| 43 | AgentVerse | 0.0 | General-purpose |
-| 44 | agentops | 0.0 | Multi-Agent Coordination |
-| 45 | 12-factor-agents | 0.0 | General-purpose |
-| 46 | cognita | 0.0 | RAG-centric |
-| 47 | spring-ai-alibaba | 0.0 | General-purpose |
-| 48 | TradingAgents | 0.0 | Multi-Agent Coordination |
-| 49 | agency-swarm | 0.0 | General-purpose |
-| 50 | AdalFlow | 0.0 | General-purpose |
+| Rank | Repo (Click to Visit) | ★ Stars | Last Commit | Score | Category | One-Liner |
+|------|-----------------------|---------|-------------|-------|----------|-----------|
+| 1 | [lobehub/lobe-chat](https://github.com/lobehub/lobe-chat) | 62.4k | 2025-06-13 | 0.0 | RAG-centric | 🤯 Lobe Chat - an open-source, modern-design AI chat framework. Supports Multi AI Providers( OpenAI / Claude 4 / Gemini / Ollama / DeepSeek / Qwen), Knowledge Base (file upload / knowledge management / RAG ), Multi-Modals (Plugins/Artifacts) and Thinking. One-click FREE deployment of your private ChatGPT/ Claude / DeepSeek application. |
+| 2 | [FoundationAgents/MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 56.4k | 2025-05-16 | 0.0 | Multi-Agent Coordination | 🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming |
+| 3 | [microsoft/autogen](https://github.com/microsoft/autogen) | 45.9k | 2025-06-12 | 0.0 | General-purpose | A programming framework for agentic AI 🤖 PyPi: autogen-agentchat Discord: https://aka.ms/autogen-discord Office Hour: https://aka.ms/autogen-officehour |
+| 4 | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 42.3k | 2025-06-13 | 0.0 | General-purpose | LlamaIndex is the leading framework for building LLM-powered agents over your data. |
+| 5 | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | 32.9k | 2025-06-12 | 0.0 | Multi-Agent Coordination | Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks. |
+| 6 | [agno-agi/agno](https://github.com/agno-agi/agno) | 28.2k | 2025-06-13 | 0.0 | Multi-Agent Coordination | Full-stack framework for building Multi-Agent Systems with memory, knowledge and reasoning. |
+| 7 | [deepset-ai/haystack](https://github.com/deepset-ai/haystack) | 21.1k | 2025-06-11 | 0.0 | RAG-centric | AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data. With advanced retrieval methods, it's best suited for building RAG, question answering, semantic search or conversational agent chatbots. |
+| 8 | [openai/swarm](https://github.com/openai/swarm) | 19.9k | 2025-03-11 | 0.0 | Multi-Agent Coordination | Educational framework exploring ergonomic, lightweight multi-agent orchestration. Managed by OpenAI Solution team. |
+| 9 | [letta-ai/letta](https://github.com/letta-ai/letta) | 16.8k | 2025-06-12 | 0.0 | General-purpose | Letta (formerly MemGPT) is the stateful agents framework with memory, reasoning, and context management. |
+| 10 | [eosphoros-ai/DB-GPT](https://github.com/eosphoros-ai/DB-GPT) | 16.8k | 2025-06-12 | 0.0 | General-purpose | AI Native Data App Development framework with AWEL(Agentic Workflow Expression Language) and Agents |
+| 11 | [TransformerOptimus/SuperAGI](https://github.com/TransformerOptimus/SuperAGI) | 16.4k | 2025-01-22 | 0.0 | RAG-centric | <⚡️> SuperAGI - A dev-first open source autonomous AI agent framework. Enabling developers to build, manage & run useful autonomous agents quickly and reliably. |
+| 12 | [raga-ai-hub/RagaAI-Catalyst](https://github.com/raga-ai-hub/RagaAI-Catalyst) | 16.2k | 2025-06-10 | 0.0 | RAG-centric | Python SDK for Agent AI Observability, Monitoring and Evaluation Framework. Includes features like agent, llm and tools tracing, debugging multi-agentic system, self-hosted dashboard and advanced analytics with timeline and execution graph view  |
+| 13 | [elizaOS/eliza](https://github.com/elizaOS/eliza) | 16.1k | 2025-06-13 | 0.0 | General-purpose | Autonomous agents for everyone |
+| 14 | [mastra-ai/mastra](https://github.com/mastra-ai/mastra) | 14.2k | 2025-06-13 | 0.0 | RAG-centric | The TypeScript AI agent framework. ⚡ Assistants, RAG, observability. Supports any LLM: GPT-4, Claude, Gemini, Llama. |
+| 15 | [bytedance/deer-flow](https://github.com/bytedance/deer-flow) | 13.4k | 2025-06-12 | 0.0 | DevTools | DeerFlow is a community-driven Deep Research framework, combining language models with tools like web search, crawling, and Python execution, while contributing back to the open-source community. |
+| 16 | [camel-ai/camel](https://github.com/camel-ai/camel) | 12.9k | 2025-06-13 | 0.0 | Multi-Agent Coordination | 🐫 CAMEL: The first and the best multi-agent framework. Finding the Scaling Law of Agents. https://www.camel-ai.org |
+| 17 | [openai/openai-agents-python](https://github.com/openai/openai-agents-python) | 11.4k | 2025-06-12 | 0.0 | Multi-Agent Coordination | A lightweight, powerful framework for multi-agent workflows |
+| 18 | [pydantic/pydantic-ai](https://github.com/pydantic/pydantic-ai) | 10.2k | 2025-06-13 | 0.0 | General-purpose | Agent Framework / shim to use Pydantic with LLMs |
+| 19 | [frdel/agent-zero](https://github.com/frdel/agent-zero) | 9.8k | 2025-06-13 | 0.0 | General-purpose | Agent Zero AI framework |
+| 20 | [QwenLM/Qwen-Agent](https://github.com/QwenLM/Qwen-Agent) | 9.5k | 2025-05-29 | 0.0 | RAG-centric | Agent framework and applications built upon Qwen>=3.0, featuring Function Calling, MCP, Code Interpreter, RAG, Chrome extension, etc. |
+| 21 | [Upsonic/Upsonic](https://github.com/Upsonic/Upsonic) | 7.5k | 2025-06-06 | 0.0 | General-purpose | The most reliable AI agent framework that supports MCP. |
+| 22 | [OpenRLHF/OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) | 7.1k | 2025-06-12 | 0.0 | General-purpose | An Easy-to-use, Scalable and High-performance RLHF Framework based on Ray (PPO & GRPO & REINFORCE++ & vLLM & Ray & Dynamic Sampling & Async Agent RL) |
+| 23 | [firerpa/lamda](https://github.com/firerpa/lamda) | 7.0k | 2025-06-08 | 0.0 | General-purpose |  The most powerful Android RPA agent framework, next generation of mobile automation robots. |
+| 24 | [SerpentAI/SerpentAI](https://github.com/SerpentAI/SerpentAI) | 6.9k | 2022-11-07 | 0.0 | General-purpose | Game Agent Framework. Helping you create AIs / Bots that learn to play any game you own! |
+| 25 | [crestalnetwork/intentkit](https://github.com/crestalnetwork/intentkit) | 6.4k | 2025-06-13 | 0.0 | General-purpose | An open and fair framework for everyone to build AI agents equipped with powerful skills. Launch your agent, improve the world, your wallet, or both! |
+| 26 | [InternLM/MindSearch](https://github.com/InternLM/MindSearch) | 6.4k | 2025-01-08 | 0.0 | Multi-Agent Coordination | 🔍 An LLM-based Multi-agent Framework of Web Search Engine (like Perplexity.ai Pro and SearchGPT) |
+| 27 | [livekit/agents](https://github.com/livekit/agents) | 6.3k | 2025-06-13 | 0.0 | General-purpose | A powerful framework for building realtime voice AI agents 🤖🎙️📹  |
+| 28 | [TEN-framework/ten-framework](https://github.com/TEN-framework/ten-framework) | 6.2k | 2025-06-13 | 0.0 | General-purpose | Open-source framework for all AI agents. |
+| 29 | [lavague-ai/LaVague](https://github.com/lavague-ai/LaVague) | 6.1k | 2025-01-21 | 0.0 | General-purpose | Large Action Model framework to develop AI Web Agents |
+| 30 | [awslabs/agent-squad](https://github.com/awslabs/agent-squad) | 6.0k | 2025-06-06 | 0.0 | General-purpose | Flexible and powerful framework for managing multiple AI agents and handling complex conversations |
+| 31 | [TencentQQGYLab/AppAgent](https://github.com/TencentQQGYLab/AppAgent) | 5.9k | 2025-03-19 | 0.0 | General-purpose | AppAgent: Multimodal Agents as Smartphone Users, an LLM-based multimodal agent framework designed to operate smartphone apps. |
+| 32 | [microsoft/TaskWeaver](https://github.com/microsoft/TaskWeaver) | 5.8k | 2025-05-19 | 0.0 | General-purpose | A code-first agent framework for seamlessly planning and executing data analytics tasks.  |
+| 33 | [aiwaves-cn/agents](https://github.com/aiwaves-cn/agents) | 5.6k | 2024-09-26 | 0.0 | General-purpose | An Open-source Framework for Data-centric, Self-evolving Autonomous Language Agents |
+| 34 | [simular-ai/Agent-S](https://github.com/simular-ai/Agent-S) | 5.4k | 2025-06-10 | 0.0 | General-purpose | Agent S: an open agentic framework that uses computers like a human |
+| 35 | [The-Pocket/PocketFlow](https://github.com/The-Pocket/PocketFlow) | 5.4k | 2025-06-06 | 0.0 | General-purpose | Pocket Flow: 100-line LLM framework. Let Agents build Agents! |
+| 36 | [tensortrade-org/tensortrade](https://github.com/tensortrade-org/tensortrade) | 5.2k | 2024-06-09 | 0.0 | General-purpose | An open source reinforcement learning framework for training, evaluating, and deploying robust trading agents. |
+| 37 | [superduper-io/superduper](https://github.com/superduper-io/superduper) | 5.1k | 2025-06-12 | 0.0 | General-purpose | Superduper: End-to-end framework for building custom AI applications and agents. |
+| 38 | [PySpur-Dev/pyspur](https://github.com/PySpur-Dev/pyspur) | 5.1k | 2025-05-12 | 0.0 | General-purpose | A visual playground for agentic workflows: Iterate over your agents 10x faster |
+| 39 | [kyegomez/swarms](https://github.com/kyegomez/swarms) | 4.9k | 2025-06-12 | 0.0 | Multi-Agent Coordination | The Enterprise-Grade Production-Ready Multi-Agent Orchestration Framework. Website: https://swarms.ai |
+| 40 | [coleam00/Archon](https://github.com/coleam00/Archon) | 4.9k | 2025-06-10 | 0.0 | General-purpose | Archon is an AI agent that is able to create other AI agents using an advanced agentic coding workflow and framework knowledge base to unlock a new frontier of automated agents. |
+| 41 | [MervinPraison/PraisonAI](https://github.com/MervinPraison/PraisonAI) | 4.8k | 2025-06-12 | 0.0 | Multi-Agent Coordination | PraisonAI is a production-ready Multi AI Agents framework, designed to create AI Agents to automate and solve problems ranging from simple tasks to complex challenges. It provides a low-code solution to streamline the building and management of multi-agent LLM systems, emphasising simplicity, customisation, and effective human-agent collaboration. |
+| 42 | [HKUDS/AutoAgent](https://github.com/HKUDS/AutoAgent) | 4.7k | 2025-06-06 | 0.0 | General-purpose | "AutoAgent: Fully-Automated and Zero-Code LLM Agent Framework" |
+| 43 | [OpenBMB/AgentVerse](https://github.com/OpenBMB/AgentVerse) | 4.6k | 2024-09-09 | 0.0 | General-purpose | 🤖 AgentVerse 🪐 is designed to facilitate the deployment of multiple LLM-based agents in various applications, which primarily provides two frameworks: task-solving and simulation |
+| 44 | [AgentOps-AI/agentops](https://github.com/AgentOps-AI/agentops) | 4.5k | 2025-06-13 | 0.0 | Multi-Agent Coordination | Python SDK for AI agent monitoring, LLM cost tracking, benchmarking, and more. Integrates with most LLMs and agent frameworks including OpenAI Agents SDK, CrewAI, Langchain, Autogen, AG2, and CamelAI |
+| 45 | [humanlayer/12-factor-agents](https://github.com/humanlayer/12-factor-agents) | 4.3k | 2025-06-12 | 0.0 | General-purpose | What are the principles we can use to build LLM-powered software that is actually good enough to put in the hands of production customers? |
+| 46 | [truefoundry/cognita](https://github.com/truefoundry/cognita) | 4.1k | 2025-02-21 | 0.0 | RAG-centric | RAG (Retrieval Augmented Generation) Framework for building modular, open source applications for production by TrueFoundry  |
+| 47 | [alibaba/spring-ai-alibaba](https://github.com/alibaba/spring-ai-alibaba) | 4.1k | 2025-06-13 | 0.0 | General-purpose | Agentic AI Framework for Java Developers |
+| 48 | [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) | 3.8k | 2025-06-12 | 0.0 | Multi-Agent Coordination | TradingAgents: Multi-Agents LLM Financial Trading Framework |
+| 49 | [VRSEN/agency-swarm](https://github.com/VRSEN/agency-swarm) | 3.7k | 2025-06-11 | 0.0 | General-purpose | Reliable agent framework built on top of OpenAI Assistants API. (Responses API soon) |
+| 50 | [SylphAI-Inc/AdalFlow](https://github.com/SylphAI-Inc/AdalFlow) | 3.3k | 2025-03-26 | 0.0 | General-purpose | AdalFlow: The library to build & auto-optimize LLM applications. |

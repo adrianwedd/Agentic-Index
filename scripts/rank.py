@@ -87,15 +87,25 @@ def main(json_path: str = "data/repos.json") -> None:
     repos.sort(key=lambda r: r["score"], reverse=True)
     data_file.write_text(json.dumps(repos, indent=2))
 
-    # top-50 table
+    # top-50 table using the full schema expected by docs
     header = [
-        "| Rank | Repo | Score | Category |",
-        "|------|------|-------|----------|",
+        "| Rank | Repo (Click to Visit) | ★ Stars | Last Commit | "
+        "Score | Category | One-Liner |",
+        "|------|-----------------------|---------|-------------|"
+        "-------|----------|-----------|",
     ]
-    rows = [
-        f"| {i} | {repo['name']} | {repo['score']} | {repo['category']} |"
-        for i, repo in enumerate(repos[:50], start=1)
-    ]
+    rows = []
+    for i, repo in enumerate(repos[:50], start=1):
+        link = f"[{repo['full_name']}](https://github.com/{repo['full_name']})"
+        stars = repo.get('stars') or repo.get('stargazers_count', 0)
+        stars_str = f"{stars/1000:.1f}k" if stars >= 1000 else str(stars)
+        last_commit = repo.get('pushed_at', '')[:10]
+        row = (
+            f"| {i} | {link} | {stars_str} | {last_commit} | {repo['score']} | "
+            f"{repo['category']} | {repo.get('description', '').splitlines()[0]} |"
+        )
+        rows.append(row)
+
     Path("data").mkdir(exist_ok=True)
     Path("data/top50.md").write_text("\n".join(header + rows) + "\n")
 
