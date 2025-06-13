@@ -8,8 +8,9 @@ import time
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional
-
 import requests
+
+SCORE_KEY = "AgenticIndexScore"
 
 GITHUB_API = "https://api.github.com"
 HEADERS = {
@@ -182,7 +183,7 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
         "maintainer": repo.get("owner", {}).get("login"),
         "topics": ",".join(repo.get("topics", [])),
         "readme_excerpt": first_paragraph,
-        "score": score,
+        SCORE_KEY: score,
         "category": category,
     }
 
@@ -219,7 +220,7 @@ def search_and_harvest(min_stars: int = 0, max_pages: int = 1) -> List[Dict]:
 
 
 def sort_and_select(repos: List[Dict], limit: int = 50) -> List[Dict]:
-    repos.sort(key=lambda x: x["score"], reverse=True)
+    repos.sort(key=lambda x: x[SCORE_KEY], reverse=True)
     return repos[:limit]
 
 
@@ -228,7 +229,7 @@ def save_csv(repos: List[Dict], path: Path):
         "name",
         "stars",
         "last_commit",
-        "score",
+        SCORE_KEY,
         "category",
         "description",
     ]
@@ -246,7 +247,7 @@ def save_markdown(repos: List[Dict], path: Path):
         for i, r in enumerate(repos, 1):
             date = r["last_commit"].split("T")[0]
             line = (
-                f"| {i} | {r['name']} | {r['stars']} | {date} | {r['score']} | {r['category']} | {r['description']} |\n"
+                f"| {i} | {r['name']} | {r['stars']} | {date} | {r[SCORE_KEY]} | {r['category']} | {r['description']} |\n"
             )
             f.write(line)
 
@@ -279,21 +280,15 @@ def save_changelog(changes: List[Dict], path: Path):
             f.write(f"| {c['repo']} | {c['action']} |\n")
 
 
-def main():
-    parser = argparse.ArgumentParser(description="AgentOps Repo Indexer")
-    parser.add_argument("--min-stars", type=int, default=0)
-    parser.add_argument("--iterations", type=int, default=1)
-    parser.add_argument("--output", type=Path, default=Path("data"))
-    args = parser.parse_args()
-
-    args.output.mkdir(parents=True, exist_ok=True)
-    prev_csv = args.output / "top50.csv"
+def run_index(min_stars: int = 0, iterations: int = 1, output: Path = Path("data")) -> None:
+    output.mkdir(parents=True, exist_ok=True)
+    prev_csv = output / "top50.csv"
     prev_repos = load_previous(prev_csv)
 
     final_repos = None
     last_top = None
-    for i in range(args.iterations):
-        repos = search_and_harvest(args.min_stars)
+    for _ in range(iterations):
+        repos = search_and_harvest(min_stars)
         top = sort_and_select(repos, 50)
         names = [r["name"] for r in top]
         if names == last_top:
@@ -303,10 +298,20 @@ def main():
     if final_repos is None:
         final_repos = top
 
-    save_csv(final_repos, args.output / "top50.csv")
-    save_markdown(final_repos, args.output / "top50.md")
+    save_csv(final_repos, output / "top50.csv")
+    save_markdown(final_repos, output / "top50.md")
     changes = changelog(prev_repos, [r["name"] for r in final_repos])
-    save_changelog(changes, args.output / "CHANGELOG.md")
+    save_changelog(changes, output / "CHANGELOG.md")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Agentic Index Repo Indexer")
+    parser.add_argument("--min-stars", type=int, default=0)
+    parser.add_argument("--iterations", type=int, default=1)
+    parser.add_argument("--output", type=Path, default=Path("data"))
+    args = parser.parse_args()
+
+    run_index(args.min_stars, args.iterations, args.output)
 
 
 if __name__ == "__main__":

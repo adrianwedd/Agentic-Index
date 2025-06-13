@@ -1,0 +1,33 @@
+name: Docs Build & Link Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install mkdocs-material mkdocstrings[python]
+      - name: Build docs
+        run: mkdocs build --strict
+      - name: Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: lychee-cache-${{ hashFiles('docs/**/*.md') }}
+      - name: Link Check
+        uses: lycheeverse/lychee-action@v1
+        with:
+          fail: true
+          args: >-
+            --no-progress
+            --exclude "github.com/.*/pull/"
+            docs/**/*.md
+

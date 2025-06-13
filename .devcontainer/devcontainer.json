@@ -1,0 +1,15 @@
+{
+    "name": "Agentic Index Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "postCreateCommand": "pre-commit install",
+    "customizations": {
+        "vscode": {
+            "workspaceCommands": [
+                { "name": "Run Tests", "command": "pytest -q" },
+                { "name": "Run Scrape", "command": "python scripts/scrape.py" }
+            ]
+        }
+    }
+}

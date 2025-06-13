@@ -9,7 +9,7 @@ def test_faststart(tmp_path):
             "full_name": "user1/repo1",
             "stars": 6000,
             "doc_completeness": 1,
-            "AgentOpsScore": 90,
+            "AgenticIndexScore": 90,
             "last_commit": "2024-01-01",
             "category": "A",
             "one_liner": "desc",
@@ -18,7 +18,7 @@ def test_faststart(tmp_path):
             "full_name": "user2/repo2",
             "stars": 8000,
             "doc_completeness": 1,
-            "AgentOpsScore": 80,
+            "AgenticIndexScore": 80,
             "last_commit": "2024-01-02",
             "category": "B",
             "one_liner": "desc",
@@ -27,7 +27,7 @@ def test_faststart(tmp_path):
             "full_name": "user3/repo3",
             "stars": 3000,
             "doc_completeness": 1,
-            "AgentOpsScore": 85,
+            "AgenticIndexScore": 85,
             "last_commit": "2024-01-03",
             "category": "C",
             "one_liner": "desc",
@@ -38,9 +38,14 @@ def test_faststart(tmp_path):
     with data_file.open("w") as f:
         json.dump(data, f)
 
-    script = Path(__file__).resolve().parents[1] / "scripts" / "faststart.py"
-
-    subprocess.run(["python", str(script), "--top", "2", str(data_file)], check=True, cwd=tmp_path)
+    subprocess.run([
+        "python",
+        "-m",
+        "agentic_index_cli.faststart",
+        "--top",
+        "2",
+        str(data_file),
+    ], check=True, cwd=tmp_path)
 
     output = tmp_path / "FAST_START.md"
     lines = [l for l in output.read_text().splitlines() if l.startswith("| ") and l[2].isdigit()]

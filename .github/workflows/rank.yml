@@ -1,0 +1,35 @@
+name: Rank Repos
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install requirements
+        run: pip install matplotlib
+      - name: Run ranker
+        run: |
+          echo "running ranker"
+          # Placeholder for ranking logic generating repos.json
+          python scripts/ranker.py || true
+      - name: Archive repos.json
+        run: |
+          mkdir -p data/history
+          if [ -f repos.json ]; then
+            cp repos.json data/history/$(date +%F).json
+          fi
+      - name: Plot trends
+        run: python scripts/plot_trends.py
+      - name: Commit results
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update history and trends
+

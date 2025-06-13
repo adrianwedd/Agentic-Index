@@ -3,12 +3,27 @@ name: Deploy Web
 on:
   push:
     branches: [ main ]
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+
+permissions:
+  contents: write
 
 jobs:
   build-deploy:
+    if: github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        if: github.event_name == 'push'
+        uses: actions/checkout@v4
+      - name: Checkout code from workflow run
+        if: github.event_name == 'workflow_run'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -18,7 +33,16 @@ jobs:
       - name: Build
         run: npm run build --prefix web
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: web/dist
+          force_orphan: true
+          fail_on_error: true
+      - name: Comment PR with preview URL
+        if: github.event_name == 'workflow_run' && github.event.workflow_run.event == 'pull_request'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.workflow_run.pull_requests[0].number }}
+          body: |
+            🚀 Preview available at: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/

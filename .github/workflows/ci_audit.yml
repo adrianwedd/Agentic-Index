@@ -1,0 +1,29 @@
+name: CI-Audit
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '18 3 * * *'
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  gather-failures:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch failed runs (last 30 days)
+        id: fetch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api -H "Accept: application/vnd.github+json" "repos/${{ github.repository }}/actions/runs?per_page=100&status=failed" | \
+            jq '.workflow_runs[] | select(.created_at > (now - 2592000 | todateiso8601)) | {id,name,html_url,created_at,conclusion}' > failed_runs.json
+
+      - name: Upload table to artifact
+        run: |
+          jq -r '["Date","Workflow","URL","Conclusion"], (.[] | [.created_at, .name, .html_url, .conclusion]) | @tsv' failed_runs.json | column -t -s$'\t' > ci_audit.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ci-audit-report
+          path: ci_audit.md

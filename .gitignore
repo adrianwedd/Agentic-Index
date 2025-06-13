@@ -1,3 +1,14 @@
 __pycache__/
 .hypothesis/
 .coverage
+
+# Ignore generated trend plots
+/docs/trends/*.png
+# Ignore runtime JSON outputs
+repos.json
+
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+

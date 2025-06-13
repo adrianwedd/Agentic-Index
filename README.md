@@ -20,16 +20,18 @@ Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
 
 -----
 
-\<p align="center"\>
-\<a href="[suspicious link removed]"\>\<img src="[suspicious link removed]" alt="GitHub Stars"\>\</a\>
-\<a href="[suspicious link removed]"\>\<img src="[suspicious link removed]" alt="Last Commit"\>\</a\>
-\<a href="./LICENSE.md"\>\<img src="[suspicious link removed]" alt="License"\>\</a\>
-<a href="./FAST_START.md"><img src="https://img.shields.io/badge/Fast_Start-Table-blue" alt="Fast Start"></a>
-\</p\>
+<p align="center">
+<a href="https://img.shields.io/github/stars/AgentOps/Agentic-Index?style=social"><img src="https://img.shields.io/github/stars/AgentOps/Agentic-Index?style=social" alt="Agentic Index GitHub Stars"></a>
+<a href="https://img.shields.io/github/last-commit/AgentOps/Agentic-Index"><img src="https://img.shields.io/github/last-commit/AgentOps/Agentic-Index" alt="Agentic Index Last Commit"></a>
+<a href="./LICENSE.md"><img src="https://img.shields.io/github/license/AgentOps/Agentic-Index" alt="Agentic Index License"></a>
+<a href="./FAST_START.md"><img src="https://img.shields.io/badge/Agentic%20Index-Fast_Start-blue" alt="Agentic Index Fast Start"></a>
+<a href="./agents.md"><img src="https://img.shields.io/badge/Agentic%20Index-Agents-blue" alt="Agentic Index agents"></a>
+<a href="https://img.shields.io/badge/coverage-49%25-yellow.svg"><img src="https://img.shields.io/badge/coverage-49%25-yellow.svg" alt="Coverage"></a>
+</p>
 
-\<p align="center"\>
-\<img src="./assets/hero.png" alt="AgentOps Hero Image: Table preview of top AI Agent Repositories"\>
-\</p\>
+<p align="center">
+<img src="./assets/hero.png" alt="AgentOps Hero Image: Table preview of top AI Agent Repositories">
+</p>
 
 This catalogue is maintained by the AgentOps initiative and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
 
@@ -37,28 +39,27 @@ This catalogue is maintained by the AgentOps initiative and is updated regularly
 
 ## TOC
 
-\*(\#why-agentops-is-different)
-\*(\#fast-start-picks-curated-for-newcomers)
-\*(\#the-agentops-top-50-ai-agent-repositories)
-
-  * [💎 Honourable Mentions / Niche & Novel Gems](https://www.google.com/search?q=%23honourable-mentions--niche--novel-gems)
-    \*(https://www.google.com/search?q=%23our-methodology--scoring-explained)
-    \*(\#category-definitions)
-  * [🔄 Changelog](https://www.google.com/search?q=%23changelog)
-  * [🤝 How to Contribute](https://www.google.com/search?q=%23how-to-contribute)
-  * [📜 License](https://www.google.com/search?q=%23license)
+* [✨ Why Agentic Index is Different](#why-agentic-index-is-different)
+* [🚀 Fast-Start Picks (Curated for Newcomers)](#fast-start-picks-curated-for-newcomers)
+* [🏆 The AgentOps Top 50: AI Agent Repositories](#the-agentops-top-50-ai-agent-repositories)
+  * [💎 Honourable Mentions / Niche & Novel Gems](#honourable-mentions--niche--novel-gems)
+    * [🔬 Our Methodology & Scoring Explained](#our-methodology--scoring-explained)
+    * [🏷️ Category Definitions](#category-definitions)
+  * [🔄 Changelog](#changelog)
+  * [🤝 How to Contribute](#how-to-contribute)
+  * [📜 License](#license)
 
 -----
 
-## ✨ Why AgentOps is Different
+## ✨ Why Agentic Index is Different
 
 In the fast-moving world of Agentic-AI, finding high-quality, actively maintained, and truly impactful frameworks can be a pain. Many lists are subjective or just track stars. AgentOps cuts through the noise with an analytical approach:
 
-  * **Systematic Scoring:** Every repo gets crunched through our [transparent scoring formula](https://www.google.com/search?q=%23our-methodology--scoring-explained). We look at real signals: community traction (stars [1, 2]), development activity (commit recency [1, 2]), maintenance health (issue management [3, 4]), documentation quality, license permissiveness [1, 2], and ecosystem integration.[1, 5] No black boxes.
-  * **Focus on Builder Tools:** We spotlight frameworks, toolkits, and platforms that *actually help you build and orchestrate AI agents*. Check our [scope definition](https://www.google.com/search?q=./docs/methodology.md) for the nitty-gritty.
-  * **Relentlessly Fresh:** Data gets a refresh monthly (or sooner if big shifts happen). Stale lists suck. Our [Changelog](https://www.google.com/search?q=./CHANGELOG.md) keeps score.
+  * **Systematic Scoring:** Every repo gets crunched through our [transparent scoring formula](#our-methodology--scoring-explained). We look at real signals: community traction (stars [1, 2]), development activity (commit recency [1, 2]), maintenance health (issue management [3, 4]), documentation quality, license permissiveness [1, 2], and ecosystem integration.[1, 5] No black boxes.
+  * **Focus on Builder Tools:** We spotlight frameworks, toolkits, and platforms that *actually help you build and orchestrate AI agents*. Check our [scope definition](./docs/methodology.md) for the nitty-gritty.
+  * **Relentlessly Fresh:** Data gets a refresh monthly (or sooner if big shifts happen). Stale lists suck. Our [Changelog](./CHANGELOG.md) keeps score.
   * **Automated Vigilance:** A GitHub Action keeps an eye on things weekly, flagging big score or rank changes for review. This keeps the "freshness" promise real.
-  * **Open & Transparent:** Our entire [methodology](https://www.google.com/search?q=./docs/methodology.md) – data sources, scoring weights, the lot – is out in the open. Trust through transparency.
+  * **Open & Transparent:** Our entire [methodology](./docs/methodology.md) – data sources, scoring weights, the lot – is out in the open. Trust through transparency.
 
 AgentOps is built to be a reliable, data-driven launchpad for your next Agentic-AI project.
 
@@ -79,24 +80,65 @@ New to Agentic-AI or just want the good stuff fast? These repos are top-tier for
 
 ## 🏆 The AgentOps Top 50: AI Agent Repositories
 
-The definitive list of Agentic-AI repositories, ranked by the AgentOps Score. This score is a holistic measure of project quality, activity, and community love.
+The definitive list of Agentic-AI repositories, ranked by the Agentic Index Score. This score is a holistic measure of project quality, activity, and community love.
 *(Data updated as of: {timestamp} UTC)*
 
-| Rank | Repo (Click to Visit) | ★ Stars | Last Commit | Score | Category | One-Liner |
-|------|-----------------------|---------|-------------|-------|----------|-----------|
-| 1 | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | 32.8k | 2025-06-12 | 95 | 🤖 Multi-Agent Coordination | Framework for orchestrating role-playing, autonomous AI agents. [1] |
-| 2 | [microsoft/autogen](https://github.com/microsoft/autogen) | 45.9k | 2025-06-14 | 93 | 🤖 Multi-Agent Coordination | A programming framework for agentic AI. [2] |
-| 3 |(https://github.com/Significant-Gravitas/AutoGPT) | 176k | 2025-06-10 | 91 | 🌐 General-purpose | AutoGPT is the vision of accessible AI for everyone, to use and to build on. [10] |
-| 4 | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 109k | 2025-06-10 | 90 | 🌐 General-purpose | Build context-aware reasoning applications. [8] |
-| 5 | [yoheinakajima/babyagi](https://github.com/yoheinakajima/babyagi) | 21.6k | 2025-05-20 | 88 | 🧪 Experimental | The original BabyAGI from March 2023 introduced task planning for autonomous agents. [3] |
-| 6 | [pydantic/pydantic-ai](https://github.com/pydantic/pydantic-ai) | 10.2k | 2025-06-12 | 87 | 🛠️ DevTools | Agent Framework / shim to use Pydantic with LLMs. [13] |
-| 7 | [Upsonic/Upsonic](https://github.com/Upsonic/Upsonic) | 7.5k | 2025-06-10 | 85 | 🌐 General-purpose | The most reliable AI agent framework that supports MCP. [14] |
-| 8 | [langchain-ai/langgraph](https://github.com/langchain-ai/langgraph) | 14.1k | 2025-06-11 | 84 | 🤖 Multi-Agent Coordination | Build resilient language agents as graphs. [15] |
-| 9 | [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) | 2.1k | 2025-06-12 | 82 | 🌐 General-purpose | Open Source TypeScript AI Agent Framework. [12] |
-| 10 | [e2b-dev/e2b](https://github.com/e2b-dev/e2b) | 8.6k | 2025-06-13 | 81 | 🛠️ DevTools | Secure open source cloud runtime for AI apps & AI agents. [16] |
-|... |... |... |... |... |... |... |
+<!-- TOP50:START -->
+| Rank | Repo | Score | Category |
+|------|------|-------|----------|
+| 1 | lobe-chat | 0.0 | RAG-centric |
+| 2 | MetaGPT | 0.0 | Multi-Agent Coordination |
+| 3 | autogen | 0.0 | General-purpose |
+| 4 | llama_index | 0.0 | General-purpose |
+| 5 | crewAI | 0.0 | Multi-Agent Coordination |
+| 6 | agno | 0.0 | Multi-Agent Coordination |
+| 7 | haystack | 0.0 | RAG-centric |
+| 8 | swarm | 0.0 | Multi-Agent Coordination |
+| 9 | letta | 0.0 | General-purpose |
+| 10 | DB-GPT | 0.0 | General-purpose |
+| 11 | SuperAGI | 0.0 | RAG-centric |
+| 12 | RagaAI-Catalyst | 0.0 | RAG-centric |
+| 13 | eliza | 0.0 | General-purpose |
+| 14 | mastra | 0.0 | RAG-centric |
+| 15 | deer-flow | 0.0 | DevTools |
+| 16 | camel | 0.0 | Multi-Agent Coordination |
+| 17 | openai-agents-python | 0.0 | Multi-Agent Coordination |
+| 18 | pydantic-ai | 0.0 | General-purpose |
+| 19 | agent-zero | 0.0 | General-purpose |
+| 20 | Qwen-Agent | 0.0 | RAG-centric |
+| 21 | Upsonic | 0.0 | General-purpose |
+| 22 | OpenRLHF | 0.0 | General-purpose |
+| 23 | lamda | 0.0 | General-purpose |
+| 24 | SerpentAI | 0.0 | General-purpose |
+| 25 | intentkit | 0.0 | General-purpose |
+| 26 | MindSearch | 0.0 | Multi-Agent Coordination |
+| 27 | agents | 0.0 | General-purpose |
+| 28 | ten-framework | 0.0 | General-purpose |
+| 29 | LaVague | 0.0 | General-purpose |
+| 30 | agent-squad | 0.0 | General-purpose |
+| 31 | AppAgent | 0.0 | General-purpose |
+| 32 | TaskWeaver | 0.0 | General-purpose |
+| 33 | agents | 0.0 | General-purpose |
+| 34 | Agent-S | 0.0 | General-purpose |
+| 35 | PocketFlow | 0.0 | General-purpose |
+| 36 | tensortrade | 0.0 | General-purpose |
+| 37 | superduper | 0.0 | General-purpose |
+| 38 | pyspur | 0.0 | General-purpose |
+| 39 | swarms | 0.0 | Multi-Agent Coordination |
+| 40 | Archon | 0.0 | General-purpose |
+| 41 | PraisonAI | 0.0 | Multi-Agent Coordination |
+| 42 | AutoAgent | 0.0 | General-purpose |
+| 43 | AgentVerse | 0.0 | General-purpose |
+| 44 | agentops | 0.0 | Multi-Agent Coordination |
+| 45 | 12-factor-agents | 0.0 | General-purpose |
+| 46 | cognita | 0.0 | RAG-centric |
+| 47 | spring-ai-alibaba | 0.0 | General-purpose |
+| 48 | TradingAgents | 0.0 | Multi-Agent Coordination |
+| 49 | agency-swarm | 0.0 | General-purpose |
+| 50 | AdalFlow | 0.0 | General-purpose |
+<!-- TOP50:END -->
 
-*➡️ Dig into how these scores are cooked up in our [Methodology section](https://www.google.com/search?q=%23our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](https://www.google.com/search?q=./docs/methodology.md).*
+*➡️ Dig into how these scores are cooked up in our [Methodology section](#our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](./docs/methodology.md).*
 
 -----
 
@@ -112,6 +154,7 @@ Beyond the top-ranked, these projects are cooking up unique ideas, serving speci
 
 -----
 
+<a id="our-methodology--scoring-explained"></a>
 \<details\>
 \<summary\>🔬 Our Methodology & Scoring Explained (Click to Expand)\</summary\>
 
@@ -120,7 +163,7 @@ AgentOps believes in full transparency. Here’s the lowdown on how we find, vet
 The core AgentOps Scoring Formula:
 `Score = 0.35*log2(stars+1) + 0.20*recency_factor + 0.15*issue_health + 0.15*doc_completeness + 0.10*license_freedom + 0.05*ecosystem_integration`\<sup\>†\</sup\>
 
-\<sup\>†\</sup\> *Weights are reviewed and potentially tuned quarterly. Full math and reasoning in [`/docs/methodology.md`](https://www.google.com/search?q=./docs/methodology.md).*
+\<sup\>†\</sup\> *Weights are reviewed and potentially tuned quarterly. Full math and reasoning in [`/docs/methodology.md`](./docs/methodology.md).*
 
 **Quick Look at Components:**
 
@@ -129,7 +172,7 @@ The core AgentOps Scoring Formula:
   * **Quality & Activity Scoring:** The formula balances community buzz, dev activity, maintenance, docs, license, and how well it plays with others.
   * **De-duplication & Categorisation:** Forks usually get skipped unless they’re their own thing now. Repos get bucketed by their main gig.
 
-For the full, unabridged version, see **[./docs/methodology.md](https://www.google.com/search?q=./docs/methodology.md)**.
+For the full, unabridged version, see **[./docs/methodology.md](./docs/methodology.md)**.
 
 \</details\>
 
@@ -150,7 +193,7 @@ Quick guide to our categories (and the icons you'll see in the table):
 
 ## 🔄 Changelog
 
-This isn't a static list. It's alive\! See [CHANGELOG.md](https://www.google.com/search?q=./CHANGELOG.md) for all the adds, drops, and major rank shuffles.
+This isn't a static list. It's alive\! See [CHANGELOG.md](./CHANGELOG.md) for all the adds, drops, and major rank shuffles.
 
 -----
 
@@ -159,10 +202,45 @@ This isn't a static list. It's alive\! See [CHANGELOG.md](https://www.google.com
 Run the indexer to fetch fresh repo data:
 
 ```bash
-python3 scripts/agentops.py --min-stars 50 --iterations 1 --output data
+python -m agentic_index_cli.agentic_index --min-stars 50 --iterations 1 --output data
 ```
 
 Generated tables live in the `data/` directory.
+
+## 🔄 How refresh works
+
+A scheduled GitHub Action keeps the index up to date. It runs the scraper and
+ranker, opens a pull request with any changes, and can auto-merge when all
+checks pass. You can also trigger this process manually by running
+[`scripts/trigger_refresh.sh`](scripts/trigger_refresh.sh).
+
+## 🧪 Testing
+
+This project uses `pytest` for unit tests and [pa11y](https://github.com/pa11y/pa11y) for accessibility checks. Ensure Chrome is installed before running pa11y:
+
+```bash
+# via puppeteer
+npx puppeteer browsers install chrome
+# or with apt
+sudo apt-get install -y chromium
+```
+
+Run tests with:
+
+```bash
+pytest -q
+```
+
+CI runs tests with network access disabled. Set `CI_OFFLINE=1` or run
+`pytest --disable-socket` locally to replicate the offline environment.
+
+To check accessibility after building the site:
+
+```bash
+npx pa11y web/index.html
+```
+
+You can also run `./scripts/install_pa11y_deps.sh` to install pa11y and Chrome.
 
 -----
 
@@ -170,7 +248,7 @@ Generated tables live in the `data/` directory.
 
 AgentOps aims to be *the* spot for Agentic-AI frameworks. Your brainpower and suggestions are gold.
 
-Check out **(./CONTRIBUTING.md)** for how to:
+Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
 
   * Nominate new repositories.
   * Flag outdated info or errors.
@@ -178,11 +256,20 @@ Check out **(./CONTRIBUTING.md)** for how to:
   * Understand what makes a repo eligible.
 
 Let's build the best damn agent list together\!
+<a href="./CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Code_of_Conduct-CC_v2.1-blue" alt="Code of Conduct"></a>
+
 
 -----
+## 🛡 Code of Conduct
+
+Please see our [Code of Conduct](./CODE_OF_CONDUCT.md) for contributor expectations.
+
 
 ## 📜 License
 
 The content of AgentOps (this `README.md`, files in `/docs/`, etc.) is licensed under([https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)).
 
 Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 'em) are licensed under([https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)).
+
+
+![Last Sync](badges/last_sync.svg) ![Top Repo](badges/top_repo.svg)

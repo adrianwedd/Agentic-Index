@@ -21,20 +21,14 @@ def generate_table(repos):
         repo_link = f"[{repo['full_name']}](https://github.com/{repo['full_name']})"
         line = (
             f"| {idx} | {repo_link} | {format_stars(repo['stars'])} | "
-            f"{repo['last_commit']} | {repo['AgentOpsScore']} | "
+            f"{repo['last_commit']} | {repo.get('AgenticIndexScore', repo.get('AgentOpsScore', 0))} | "
             f"{repo.get('category', '')} | {repo.get('one_liner', '')} |"
         )
         lines.append(line)
     return "\n".join(lines) + "\n"
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Generate Fast Start table")
-    parser.add_argument("--top", type=int, required=True, help="number of repos")
-    parser.add_argument("data_path", help="path to repos.json")
-    args = parser.parse_args()
-
-    data_path = Path(args.data_path)
+def run(top: int, data_path: Path, output_path: Path | None = None) -> None:
     with data_path.open() as f:
         repos = json.load(f)
 
@@ -43,15 +37,25 @@ def main():
         if r.get("stars", 0) >= 5000 and r.get("doc_completeness") == 1
     ]
 
-    ranked = sorted(filtered, key=lambda r: r.get("AgentOpsScore", 0), reverse=True)
-    ranked = ranked[: args.top]
+    ranked = sorted(filtered, key=lambda r: r.get("AgenticIndexScore", r.get("AgentOpsScore", 0)), reverse=True)
+    ranked = ranked[:top]
 
     table = generate_table(ranked)
 
-    output_path = Path("FAST_START.md")
+    if output_path is None:
+        output_path = Path("FAST_START.md")
     with output_path.open("w") as f:
         f.write(table)
 
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Generate Fast Start table")
+    parser.add_argument("--top", type=int, required=True, help="number of repos")
+    parser.add_argument("data_path", help="path to repos.json")
+    args = parser.parse_args(argv)
+
+
+    run(args.top, Path(args.data_path))
 
 if __name__ == "__main__":
     main()
