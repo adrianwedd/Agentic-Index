@@ -5,3 +5,4 @@ requests
 PyYAML
 pytest-socket
 responses
+pytest-benchmark

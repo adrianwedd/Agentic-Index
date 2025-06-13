@@ -5,6 +5,7 @@ import math
 import os
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -44,14 +45,18 @@ VIRAL_LICENSES = {
     "agpl-2.0",
 }
 
+# cache for GitHub license texts to avoid repeated downloads
+LICENSE_CACHE: dict[str, str] = {}
 
-def github_search(query: str, page: int = 1) -> List[Dict]:
+
+def github_search(query: str, page: int = 1, per_page: int = 100) -> List[Dict]:
+    """Search GitHub repositories with batching support."""
     time.sleep(1)  # rate limiting
     params = {
         "q": query,
         "sort": "stars",
         "order": "desc",
-        "per_page": 5,
+        "per_page": per_page,
         "page": page,
     }
     resp = requests.get(f"{GITHUB_API}/search/repositories", params=params, headers=HEADERS)
@@ -81,6 +86,25 @@ def fetch_readme(full_name: str) -> str:
         import base64
         return base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
     return ""
+
+
+def fetch_license_text(url: str) -> str:
+    """Fetch and cache license body text."""
+    if not url:
+        return ""
+    if url in LICENSE_CACHE:
+        return LICENSE_CACHE[url]
+    resp = requests.get(url, headers=HEADERS)
+    if resp.status_code != 200:
+        LICENSE_CACHE[url] = ""
+        return ""
+    data = resp.json()
+    text = data.get("body", "")
+    if not text and "content" in data:
+        import base64
+        text = base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
+    LICENSE_CACHE[url] = text
+    return text
 
 
 def compute_recency_factor(pushed_at: str) -> float:
@@ -167,6 +191,9 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
     if not repo:
         return None
     readme = fetch_readme(full_name)
+    license_url = (repo.get("license") or {}).get("url")
+    if license_url:
+        fetch_license_text(license_url)
     score = compute_score(repo, readme)
     category = categorize(repo.get("description", ""), repo.get("topics", []))
     first_paragraph = readme.split("\n\n")[0][:200]
@@ -188,34 +215,37 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
     }
 
 
-def search_and_harvest(min_stars: int = 0, max_pages: int = 1) -> List[Dict]:
-    seen = set()
-    results = []
+def search_and_harvest(
+    min_stars: int = 0, max_pages: int = 1, workers: int = 8
+) -> List[Dict]:
+    """Search GitHub and harvest repo metadata concurrently."""
+    seen: set[str] = set()
+    names: list[str] = []
     for term in SEARCH_TERMS:
         for page in range(1, max_pages + 1):
             query = f"{term} stars:>={min_stars}"
-            repos = github_search(query, page)
+            repos = github_search(query, page, per_page=100)
             for repo in repos:
                 full_name = repo["full_name"]
                 if full_name in seen:
                     continue
                 seen.add(full_name)
-                meta = harvest_repo(full_name)
-                if meta:
-                    results.append(meta)
-    # Topic filter
+                names.append(full_name)
     for topic in TOPIC_FILTERS:
         for page in range(1, max_pages + 1):
             query = f"topic:{topic} stars:>={min_stars}"
-            repos = github_search(query, page)
+            repos = github_search(query, page, per_page=100)
             for repo in repos:
                 full_name = repo["full_name"]
                 if full_name in seen:
                     continue
                 seen.add(full_name)
-                meta = harvest_repo(full_name)
-                if meta:
-                    results.append(meta)
+                names.append(full_name)
+    results: list[dict] = []
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        for meta in ex.map(harvest_repo, names):
+            if meta:
+                results.append(meta)
     return results
 
 
