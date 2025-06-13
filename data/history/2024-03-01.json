@@ -1,0 +1,8 @@
+[
+  {"name": "repo1", "AgentOpsScore": 7},
+  {"name": "repo2", "AgentOpsScore": 6},
+  {"name": "repo3", "AgentOpsScore": 5},
+  {"name": "repo4", "AgentOpsScore": 4},
+  {"name": "repo5", "AgentOpsScore": 3}
+]
+
