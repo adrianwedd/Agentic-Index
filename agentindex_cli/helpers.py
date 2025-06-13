@@ -1,4 +1,4 @@
-"""Helper functions for AgentOps."""
+"""Helper functions for AgentIndex."""
 
 def add(a: int, b: int) -> int:
     """Return the sum of a and b."""

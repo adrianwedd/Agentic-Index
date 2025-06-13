@@ -1,4 +1,4 @@
-::: agentops_cli
+::: agentindex_cli
 handler: python
 rendering:
   show_source: false

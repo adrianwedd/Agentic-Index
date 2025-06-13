@@ -860,10 +860,10 @@
     "category": "General-purpose"
   },
   {
-    "name": "agentops",
-    "full_name": "AgentOps-AI/agentops",
-    "html_url": "https://github.com/AgentOps-AI/agentops",
-    "description": "Python SDK for AI agent monitoring, LLM cost tracking, benchmarking, and more. Integrates with most LLMs and agent frameworks including OpenAI Agents SDK, CrewAI, Langchain, Autogen, AG2, and CamelAI",
+    "name": "agentindex",
+    "full_name": "example/agentindex",
+    "html_url": "https://github.com/example/agentindex",
+    "description": "Python SDK for AI agent monitoring and benchmarking.",
     "stargazers_count": 4544,
     "forks_count": 415,
     "open_issues_count": 73,
@@ -874,7 +874,7 @@
     "language": "Python",
     "pushed_at": "2025-06-13T05:20:12Z",
     "owner": {
-      "login": "AgentOps-AI"
+      "login": "example"
     },
     "score": 0.0,
     "category": "Multi-Agent Coordination"

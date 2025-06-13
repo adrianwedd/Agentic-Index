@@ -1,4 +1,4 @@
-site_name: AgentOps
+site_name: AgentIndex
 theme: material
 plugins:
   - search
@@ -9,4 +9,4 @@ nav:
   - Methodology: METHODOLOGY.md
   - CLI Usage: cli.md
   - API Reference:
-      - agentops_cli: reference/agentops_cli.md
+      - agentindex_cli: reference/agentindex_cli.md

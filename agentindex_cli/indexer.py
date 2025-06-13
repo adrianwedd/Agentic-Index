@@ -304,7 +304,7 @@ def run_index(min_stars: int = 0, iterations: int = 1, output: Path = Path("data
 
 
 def main():
-    parser = argparse.ArgumentParser(description="AgentOps Repo Indexer")
+    parser = argparse.ArgumentParser(description="AgentIndex Repo Indexer")
     parser.add_argument("--min-stars", type=int, default=0)
     parser.add_argument("--iterations", type=int, default=1)
     parser.add_argument("--output", type=Path, default=Path("data"))

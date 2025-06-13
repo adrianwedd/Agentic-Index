@@ -75,7 +75,7 @@ def scrape(min_stars: int = 0, token: str | None = None) -> List[Dict[str, Any]]
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Fetch GitHub repos for AgentOps")
+    parser = argparse.ArgumentParser(description="Fetch GitHub repos for AgentIndex")
     parser.add_argument("--min-stars", type=int, default=0, dest="min_stars")
     args = parser.parse_args()
     token = os.getenv("GITHUB_TOKEN")

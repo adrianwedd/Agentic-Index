@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in improving AgentOps!
+Thanks for your interest in improving AgentIndex!
 
 Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) before participating.
 

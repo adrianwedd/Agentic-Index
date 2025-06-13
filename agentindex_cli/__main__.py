@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(prog="agentops", description="AgentOps CLI")
+    parser = argparse.ArgumentParser(prog="agentindex", description="AgentIndex CLI")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     scrape_p = subparsers.add_parser("scrape", help="Scrape and rank repositories")
@@ -12,8 +12,8 @@ def main(argv=None):
     scrape_p.add_argument("--output", type=Path, default=Path("data"))
 
     def run_scrape(args):
-        from . import agentops
-        agentops.run_index(args.min_stars, args.iterations, args.output)
+        from . import indexer
+        indexer.run_index(args.min_stars, args.iterations, args.output)
 
     scrape_p.set_defaults(func=run_scrape)
 

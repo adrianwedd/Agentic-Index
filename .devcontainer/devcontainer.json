@@ -1,5 +1,5 @@
 {
-    "name": "AgentOps Dev Container",
+    "name": "AgentIndex Dev Container",
     "build": {
         "dockerfile": "Dockerfile"
     },
