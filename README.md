@@ -69,6 +69,7 @@ Agentic-Index is built to be a reliable, data-driven launchpad for your next Age
 pip install agentic-index-cli
 
 agentic-index scrape --min-stars 100
+agentic-index enrich data/repos.json
 agentic-index rank data/repos.json
 cat README.md | less         # see table injected
 ```

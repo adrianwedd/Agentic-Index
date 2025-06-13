@@ -10,7 +10,7 @@ START = "<!-- TOP50:START -->"
 END = "<!-- TOP50:END -->"
 
 
-def main() -> int:
+def main(force: bool = False) -> int:
     readme_text = README_PATH.read_text(encoding="utf-8")
     end_newline = readme_text.endswith("\n")
     try:
@@ -39,7 +39,7 @@ def main() -> int:
     if end_newline:
         new_text += "\n"
 
-    if new_text != readme_text:
+    if force or new_text != readme_text:
         README_PATH.write_text(new_text, encoding="utf-8")
 
     return 0

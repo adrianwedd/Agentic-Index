@@ -10,6 +10,7 @@ RANK_SCRIPT = Path('scripts/rank.py')
 TOP_MD = Path('data/top50.md')
 
 def run_script():
+    subprocess.run(['python3', '-m', 'agentic_index_cli.enricher', str(REPO_JSON)], check=True)
     subprocess.run(['python3', str(RANK_SCRIPT), str(REPO_JSON)], check=True)
 
 def load_scores():
