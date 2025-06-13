@@ -3,7 +3,6 @@ import os
 import subprocess
 from pathlib import Path
 
-import scripts.rank as rank
 
 
 def test_rank_ordering_and_tiebreak(tmp_path, monkeypatch):

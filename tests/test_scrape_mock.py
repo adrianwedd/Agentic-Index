@@ -1,5 +1,5 @@
 import responses
-import scripts.scrape as scrape
+import agentic_index_cli.internal.scrape as scrape
 
 
 @responses.activate

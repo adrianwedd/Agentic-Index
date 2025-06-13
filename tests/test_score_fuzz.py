@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 
 from hypothesis import given, strategies as st
 
-from scripts import agentops
+from agentic_index_cli.rank import compute_score
 
 
 # Helper to build minimal repo dict for compute_score
@@ -36,8 +36,8 @@ def test_score_monotonic_and_range(stars1, stars2, open_issues, closed_issues, d
     repo_high = _repo(stars2, open_issues, closed_issues, days)
     readme = "word " * 300 + "```code```"
 
-    score_low = agentops.compute_score(repo_low, readme)
-    score_high = agentops.compute_score(repo_high, readme)
+    score_low = compute_score(repo_low, readme)
+    score_high = compute_score(repo_high, readme)
 
     assert 0 <= score_low <= 100
     assert 0 <= score_high <= 100

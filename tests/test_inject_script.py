@@ -1,6 +1,6 @@
 from pathlib import Path
 
-import scripts.inject_readme as inj
+import agentic_index_cli.internal.inject_readme as inj
 
 
 def test_inject_readme(tmp_path, monkeypatch):
