@@ -1,0 +1,47 @@
+[
+  {
+    "full_name": "crewAIInc/crewAI",
+    "stars": 32800,
+    "doc_completeness": 1,
+    "AgentOpsScore": 95,
+    "last_commit": "2025-06-12",
+    "category": "🤖 Multi-Agent Coordination",
+    "one_liner": "Framework for orchestrating role-playing, autonomous AI agents."
+  },
+  {
+    "full_name": "microsoft/autogen",
+    "stars": 45900,
+    "doc_completeness": 1,
+    "AgentOpsScore": 93,
+    "last_commit": "2025-06-14",
+    "category": "🤖 Multi-Agent Coordination",
+    "one_liner": "A programming framework for agentic AI."
+  },
+  {
+    "full_name": "Significant-Gravitas/AutoGPT",
+    "stars": 176000,
+    "doc_completeness": 1,
+    "AgentOpsScore": 91,
+    "last_commit": "2025-06-10",
+    "category": "🌐 General-purpose",
+    "one_liner": "AutoGPT is the vision of accessible AI for everyone."
+  },
+  {
+    "full_name": "langchain-ai/langchain",
+    "stars": 109000,
+    "doc_completeness": 1,
+    "AgentOpsScore": 90,
+    "last_commit": "2025-06-10",
+    "category": "🌐 General-purpose",
+    "one_liner": "Build context-aware reasoning applications."
+  },
+  {
+    "full_name": "yoheinakajima/babyagi",
+    "stars": 21600,
+    "doc_completeness": 1,
+    "AgentOpsScore": 88,
+    "last_commit": "2025-05-20",
+    "category": "🧪 Experimental",
+    "one_liner": "The original BabyAGI introduced task planning for autonomous agents."
+  }
+]
