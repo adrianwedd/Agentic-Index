@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
+
+# Trigger the update workflow for Agentic Index
 set -euo pipefail
 
-# Trigger the GitHub Action workflow that refreshes repo data.
-# Requires a GitHub token with workflow scope.
+if ! command -v gh >/dev/null 2>&1; then
+  echo "Error: GitHub CLI 'gh' not found. Install from https://cli.github.com/." >&2
+  exit 1
+fi
 
-MIN_STARS=${MIN_STARS:-50}
-AUTO_MERGE=${AUTO_MERGE:-false}
+if ! gh auth status >/dev/null 2>&1; then
+  echo "Error: GitHub CLI is not authenticated. Run 'gh auth login' or set GH_TOKEN." >&2
+  exit 1
+fi
 
-echo "Dispatching update workflow..."
+gh workflow run update.yml \
+  -f ref=main \
+  -f min-stars="${1:-50}" \
+  -f auto-merge="true"
 
-gh workflow run update.yml -f min-stars="$MIN_STARS" -f auto-merge="$AUTO_MERGE"
