@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Repository",
+  "type": "object",
+  "required": [
+    "full_name",
+    "stargazers_count",
+    "forks_count",
+    "open_issues_count",
+    "pushed_at",
+    "license",
+    "owner"
+  ],
+  "properties": {
+    "full_name": {"type": "string"},
+    "stargazers_count": {"type": "integer", "minimum": 0},
+    "forks_count": {"type": "integer", "minimum": 0},
+    "open_issues_count": {"type": "integer", "minimum": 0},
+    "pushed_at": {"type": "string", "format": "date-time"},
+    "license": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "properties": {"spdx_id": {"type": ["string", "null"]}},
+          "required": ["spdx_id"],
+          "additionalProperties": true
+        }
+      ]
+    },
+    "owner": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "properties": {"login": {"type": ["string", "null"]}},
+          "required": ["login"],
+          "additionalProperties": true
+        }
+      ]
+    }
+  },
+  "additionalProperties": true
+}
