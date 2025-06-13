@@ -255,6 +255,9 @@ Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
   * Suggest tweaks to scoring or categories.
   * Understand what makes a repo eligible.
 
+For tips on keeping your branch in sync with `main` and resolving conflicts, see
+[CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).
+
 Let's build the best damn agent list together\!
 <a href="./CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Code_of_Conduct-CC_v2.1-blue" alt="Code of Conduct"></a>
 
