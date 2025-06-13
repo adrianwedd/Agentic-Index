@@ -1,0 +1,35 @@
+name: Refresh notification
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - data/top50.md
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send webhook alert
+        env:
+          WEBHOOK: ${{ secrets.REFRESH_WEBHOOK_URL }}
+        run: |
+          if [ -z "$WEBHOOK" ]; then
+            echo "::warning::REFRESH_WEBHOOK_URL not set; skipping notification"
+            exit 0
+          fi
+          payload='{"text": "✅ AgentOps index updated – commit ${{ github.sha }}"}'
+          attempt=0
+          while [ $attempt -lt 3 ]; do
+            status=$(curl -s -o /dev/null -w "%{http_code}" -X POST -H 'Content-Type: application/json' -d "$payload" "$WEBHOOK")
+            if [ "$status" = "200" ]; then
+              echo "Webhook sent"
+              exit 0
+            fi
+            attempt=$((attempt + 1))
+            echo "Attempt $attempt failed with status $status"
+            sleep 2
+          done
+          echo "::error::Failed to send webhook after $attempt attempts"
+          exit 1
+
