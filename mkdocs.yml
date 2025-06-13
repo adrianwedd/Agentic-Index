@@ -9,6 +9,8 @@ nav:
   - Guides:
       - Refresh Pipeline: REFRESH.md
       - CI Audit Report: ci-audit.md
+      - Conflict Resolution: CONFLICT_RESOLUTION.md
+      - Coverage Baseline: coverage_baseline.md
   - Methodology: METHODOLOGY.md
   - CLI Usage: cli.md
   - API Reference:
