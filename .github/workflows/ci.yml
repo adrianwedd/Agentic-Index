@@ -15,6 +15,8 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Install package
+        run: pip install -e .
       - name: Run regression guard
         run: python scripts/regression_check.py
       - name: Run tests with coverage
@@ -38,6 +40,8 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Install package
+        run: pip install -e .
       - name: Offline network guard
         run: |
           pip install pytest-socket
