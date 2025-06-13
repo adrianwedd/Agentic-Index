@@ -14,6 +14,10 @@ on:
         default: 'false'
         required: false
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
@@ -45,24 +49,21 @@ jobs:
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
-      - name: Commit changes
+      - name: Create refresh PR
         if: steps.diff.outputs.changed == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$BRANCH"
-          git add data/top50.md data/repos.json
-          git commit -m "chore(data): nightly agent index refresh"
-          git push --set-upstream origin "$BRANCH"
-      - name: Create pull request
-        if: steps.diff.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh pr create --title "chore(data): nightly agent index refresh" --fill --head "$BRANCH" --base main
-      - name: Auto-merge
-        if: ${{ steps.diff.outputs.changed == 'true' && github.event.inputs['auto-merge'] == 'true' }}
+        id: createpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(data): nightly agent index refresh"
+          branch: ${{ env.BRANCH }}
+          base: main
+          title: "chore(data): nightly agent index refresh"
+          body: "Automated data scrape, rank, and README injection."
+          delete-branch: true
+      - name: Enable auto-merge
         uses: pascalgn/automerge-action@v0.15.6
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          MERGE_LABELS: ""
-          MERGE_METHOD: squash
+        if: ${{ inputs.auto-merge == 'true' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pull_request: ${{ steps.createpr.outputs.pull-request-number }}
+          merge_method: squash
