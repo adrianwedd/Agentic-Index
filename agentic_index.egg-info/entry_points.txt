@@ -1,0 +1,2 @@
+[console_scripts]
+agentic-index = agentic_index_cli.__main__:main
