@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""
-Rank agentic-AI repos, write a Markdown table, and emit Shields.io badges
-showing the last sync date and today’s top-ranked repo.
+"""Rank repos and emit badges summarizing the results.
 
 Usage:
     python extend_rank.py [data/repos.json]
@@ -17,12 +15,14 @@ from pathlib import Path
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
 
 def compute_score(repo: dict) -> float:
-    stars        = repo.get("stars", 0)
-    recency      = repo.get("recency_factor", 0)
+    """Compute the ranking score for ``repo``."""
+
+    stars = repo.get("stars", 0)
+    recency = repo.get("recency_factor", 0)
     issue_health = repo.get("issue_health", 0)
-    docs         = repo.get("doc_completeness", 0)
+    docs = repo.get("doc_completeness", 0)
     license_free = repo.get("license_freedom", 0)
-    ecosys       = repo.get("ecosystem_integration", 0)
+    ecosys = repo.get("ecosystem_integration", 0)
     score = (
         0.35 * math.log2(stars + 1)
         + 0.20 * recency
@@ -34,6 +34,8 @@ def compute_score(repo: dict) -> float:
     return round(score, 2)
 
 def infer_category(repo: dict) -> str:
+    """Derive a broad category from repository metadata."""
+
     blob = " ".join(repo.get("topics", [])) + " " + repo.get("description", "") + " " + repo.get("name", "")
     text = blob.lower()
     if "rag" in text:
@@ -57,6 +59,8 @@ def _fetch(url: str, dest: Path) -> None:
         dest.write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>')
 
 def generate_badges(top_repo: str, iso_date: str) -> None:
+    """Create SVG badges for badge consumers."""
+
     badges = Path("badges")
     badges.mkdir(exist_ok=True)
 
@@ -69,8 +73,10 @@ def generate_badges(top_repo: str, iso_date: str) -> None:
 # ───────────────────────────────  Main CLI  ────────────────────────────────────
 
 def main(json_path: str = "data/repos.json") -> None:
+    """Process ``json_path`` and generate ranking outputs."""
+
     data_file = Path(json_path)
-    repos     = json.loads(data_file.read_text())
+    repos = json.loads(data_file.read_text())
 
     # score + categorise
     for repo in repos:

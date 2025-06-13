@@ -1,15 +1,52 @@
-| Rank | Repo (Click to Visit) | ★ Stars | Last Commit | Score | Category | One-Liner |
-|------|-----------------------|---------|-------------|-------|----------|-----------|
-| 1 | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | 32.8k | 2025-06-12 | 95 | 🤖 Multi-Agent Coordination | Framework for orchestrating role-playing, autonomous AI agents. [1] |
-| 2 | [microsoft/autogen](https://github.com/microsoft/autogen) | 45.9k | 2025-06-14 | 93 | 🤖 Multi-Agent Coordination | A programming framework for agentic AI. [2] |
-| 3 |(https://github.com/Significant-Gravitas/AutoGPT) | 176k | 2025-06-10 | 91 | 🌐 General-purpose | AutoGPT is the vision of accessible AI for everyone, to use and to build on. [10] |
-| 4 | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 109k | 2025-06-10 | 90 | 🌐 General-purpose | Build context-aware reasoning applications. [8] |
-| 5 | [yoheinakajima/babyagi](https://github.com/yoheinakajima/babyagi) | 21.6k | 2025-05-20 | 88 | 🧪 Experimental | The original BabyAGI from March 2023 introduced task planning for autonomous agents. [3] |
-| 6 | [pydantic/pydantic-ai](https://github.com/pydantic/pydantic-ai) | 10.2k | 2025-06-12 | 87 | 🛠️ DevTools | Agent Framework / shim to use Pydantic with LLMs. [13] |
-| 7 | [Upsonic/Upsonic](https://github.com/Upsonic/Upsonic) | 7.5k | 2025-06-10 | 85 | 🌐 General-purpose | The most reliable AI agent framework that supports MCP. [14] |
-| 8 | [langchain-ai/langgraph](https://github.com/langchain-ai/langgraph) | 14.1k | 2025-06-11 | 84 | 🤖 Multi-Agent Coordination | Build resilient language agents as graphs. [15] |
-| 9 | [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) | 2.1k | 2025-06-12 | 82 | 🌐 General-purpose | Open Source TypeScript AI Agent Framework. [12] |
-| 10 | [e2b-dev/e2b](https://github.com/e2b-dev/e2b) | 8.6k | 2025-06-13 | 81 | 🛠️ DevTools | Secure open source cloud runtime for AI apps & AI agents. [16] |
-|... |... |... |... |... |... |... |
-
-
+| Rank | Repo | Score | Category |
+|------|------|-------|----------|
+| 1 | lobe-chat | 0.0 | RAG-centric |
+| 2 | MetaGPT | 0.0 | Multi-Agent Coordination |
+| 3 | autogen | 0.0 | General-purpose |
+| 4 | llama_index | 0.0 | General-purpose |
+| 5 | crewAI | 0.0 | Multi-Agent Coordination |
+| 6 | agno | 0.0 | Multi-Agent Coordination |
+| 7 | haystack | 0.0 | RAG-centric |
+| 8 | swarm | 0.0 | Multi-Agent Coordination |
+| 9 | letta | 0.0 | General-purpose |
+| 10 | DB-GPT | 0.0 | General-purpose |
+| 11 | SuperAGI | 0.0 | RAG-centric |
+| 12 | RagaAI-Catalyst | 0.0 | RAG-centric |
+| 13 | eliza | 0.0 | General-purpose |
+| 14 | mastra | 0.0 | RAG-centric |
+| 15 | deer-flow | 0.0 | DevTools |
+| 16 | camel | 0.0 | Multi-Agent Coordination |
+| 17 | openai-agents-python | 0.0 | Multi-Agent Coordination |
+| 18 | pydantic-ai | 0.0 | General-purpose |
+| 19 | agent-zero | 0.0 | General-purpose |
+| 20 | Qwen-Agent | 0.0 | RAG-centric |
+| 21 | Upsonic | 0.0 | General-purpose |
+| 22 | OpenRLHF | 0.0 | General-purpose |
+| 23 | lamda | 0.0 | General-purpose |
+| 24 | SerpentAI | 0.0 | General-purpose |
+| 25 | intentkit | 0.0 | General-purpose |
+| 26 | MindSearch | 0.0 | Multi-Agent Coordination |
+| 27 | agents | 0.0 | General-purpose |
+| 28 | ten-framework | 0.0 | General-purpose |
+| 29 | LaVague | 0.0 | General-purpose |
+| 30 | agent-squad | 0.0 | General-purpose |
+| 31 | AppAgent | 0.0 | General-purpose |
+| 32 | TaskWeaver | 0.0 | General-purpose |
+| 33 | agents | 0.0 | General-purpose |
+| 34 | Agent-S | 0.0 | General-purpose |
+| 35 | PocketFlow | 0.0 | General-purpose |
+| 36 | tensortrade | 0.0 | General-purpose |
+| 37 | superduper | 0.0 | General-purpose |
+| 38 | pyspur | 0.0 | General-purpose |
+| 39 | swarms | 0.0 | Multi-Agent Coordination |
+| 40 | Archon | 0.0 | General-purpose |
+| 41 | PraisonAI | 0.0 | Multi-Agent Coordination |
+| 42 | AutoAgent | 0.0 | General-purpose |
+| 43 | AgentVerse | 0.0 | General-purpose |
+| 44 | agentops | 0.0 | Multi-Agent Coordination |
+| 45 | 12-factor-agents | 0.0 | General-purpose |
+| 46 | cognita | 0.0 | RAG-centric |
+| 47 | spring-ai-alibaba | 0.0 | General-purpose |
+| 48 | TradingAgents | 0.0 | Multi-Agent Coordination |
+| 49 | agency-swarm | 0.0 | General-purpose |
+| 50 | AdalFlow | 0.0 | General-purpose |

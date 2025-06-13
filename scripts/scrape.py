@@ -1,3 +1,5 @@
+"""Scrape GitHub for AgentOps repository data."""
+
 import argparse
 import json
 import os
@@ -30,6 +32,8 @@ FIELDS = [
 ]
 
 def _extract(item: Dict[str, Any]) -> Dict[str, Any]:
+    """Convert a GitHub API item to our simplified schema."""
+
     return {
         "name": item.get("name"),
         "full_name": item.get("full_name"),
@@ -47,6 +51,8 @@ def _extract(item: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def scrape(min_stars: int = 0, token: str | None = None) -> List[Dict[str, Any]]:
+    """Fetch repositories matching known queries."""
+
     global RATE_LIMIT_REMAINING
     headers = {"Accept": "application/vnd.github+json"}
     if token:
@@ -75,6 +81,8 @@ def scrape(min_stars: int = 0, token: str | None = None) -> List[Dict[str, Any]]
 
 
 def main() -> None:
+    """Command-line wrapper around :func:`scrape`."""
+
     parser = argparse.ArgumentParser(description="Fetch GitHub repos for AgentOps")
     parser.add_argument("--min-stars", type=int, default=0, dest="min_stars")
     args = parser.parse_args()

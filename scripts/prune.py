@@ -1,3 +1,5 @@
+"""Remove inactive repositories from ``repos.json``."""
+
 import argparse
 import json
 from datetime import datetime, timezone
@@ -8,17 +10,23 @@ REPOS = Path("repos.json")
 
 
 def load_repos(path: Path = REPOS):
+    """Load repository metadata from ``path``."""
+
     with open(path) as f:
         return json.load(f)
 
 
 def save_repos(repos, path: Path = REPOS):
+    """Write repository data to disk."""
+
     with open(path, "w") as f:
         json.dump(repos, f, indent=2)
         f.write("\n")
 
 
 def append_changelog(entries, changelog: Path = CHANGELOG):
+    """Append log entries to ``changelog``."""
+
     if not entries:
         return
     if changelog.exists():
@@ -31,6 +39,8 @@ def append_changelog(entries, changelog: Path = CHANGELOG):
 
 
 def prune(inactive_days, repos_path: Path = REPOS, changelog_path: Path = CHANGELOG):
+    """Remove repos not updated within ``inactive_days``."""
+
     repos = load_repos(repos_path)
     keep = []
     removed_entries = []
@@ -51,6 +61,8 @@ def prune(inactive_days, repos_path: Path = REPOS, changelog_path: Path = CHANGE
 
 
 def main():
+    """CLI interface for the ``prune`` function."""
+
     parser = argparse.ArgumentParser(description='Prune inactive repositories')
     parser.add_argument('--inactive', type=int, required=True, help='Days since last push')
     args = parser.parse_args()

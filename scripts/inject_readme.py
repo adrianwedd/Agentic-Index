@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Inject top50 table into README.md."""
+"""Insert the latest top-50 table into the project README."""
 
 import pathlib
 import sys
@@ -13,6 +13,8 @@ END = "<!-- TOP50:END -->"
 
 
 def main() -> int:
+    """Replace the table section of ``README.md`` with current data."""
+
     readme_text = README_PATH.read_text(encoding="utf-8")
     end_newline = readme_text.endswith("\n")
 

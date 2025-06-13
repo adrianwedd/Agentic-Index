@@ -1,3 +1,5 @@
+"""Generate a condensed table of high-quality repositories."""
+
 import argparse
 import json
 from pathlib import Path
@@ -10,12 +12,16 @@ HEADER = (
 
 
 def format_stars(stars: int) -> str:
+    """Render star counts in a short form."""
+
     if stars >= 1000:
         return f"{stars/1000:.1f}k"
     return str(stars)
 
 
 def generate_table(repos):
+    """Return a Markdown table summarizing ``repos``."""
+
     lines = [HEADER]
     for idx, repo in enumerate(repos, 1):
         repo_link = f"[{repo['full_name']}](https://github.com/{repo['full_name']})"
@@ -29,6 +35,8 @@ def generate_table(repos):
 
 
 def main():
+    """CLI entry point for creating FAST_START.md."""
+
     parser = argparse.ArgumentParser(description="Generate Fast Start table")
     parser.add_argument("--top", type=int, required=True, help="number of repos")
     parser.add_argument("data_path", help="path to repos.json")

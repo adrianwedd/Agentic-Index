@@ -1,3 +1,5 @@
+"""Harvest and rank GitHub repositories for the AgentOps catalogue."""
+
 import argparse
 import csv
 import json
@@ -45,7 +47,17 @@ VIRAL_LICENSES = {
 
 
 def github_search(query: str, page: int = 1) -> List[Dict]:
-    time.sleep(1)  # rate limiting
+    """Query GitHub for repositories matching ``query``.
+
+    Args:
+        query: Search query string.
+        page: Result page number.
+
+    Returns:
+        A list of repository dictionaries as returned by the API.
+    """
+
+    time.sleep(1)  # basic rate limiting
     params = {
         "q": query,
         "sort": "stars",
@@ -62,6 +74,15 @@ def github_search(query: str, page: int = 1) -> List[Dict]:
 
 
 def fetch_repo(full_name: str) -> Optional[Dict]:
+    """Retrieve metadata for a repository.
+
+    Args:
+        full_name: Repository ``owner/name`` string.
+
+    Returns:
+        The repository metadata dictionary or ``None`` on failure.
+    """
+
     time.sleep(1)
     resp = requests.get(f"{GITHUB_API}/repos/{full_name}", headers=HEADERS)
     if resp.status_code != 200:
@@ -71,6 +92,8 @@ def fetch_repo(full_name: str) -> Optional[Dict]:
 
 
 def fetch_readme(full_name: str) -> str:
+    """Return the decoded README for ``full_name`` if available."""
+
     time.sleep(1)
     resp = requests.get(f"{GITHUB_API}/repos/{full_name}/readme", headers=HEADERS)
     if resp.status_code != 200:
@@ -83,6 +106,8 @@ def fetch_readme(full_name: str) -> str:
 
 
 def compute_recency_factor(pushed_at: str) -> float:
+    """Score how recently a repository was updated."""
+
     pushed_date = datetime.strptime(pushed_at, "%Y-%m-%dT%H:%M:%SZ")
     days = (datetime.utcnow() - pushed_date).days
     if days <= 30:
@@ -93,11 +118,15 @@ def compute_recency_factor(pushed_at: str) -> float:
 
 
 def compute_issue_health(open_issues: int, closed_issues: int) -> float:
+    """Return a simple metric for open issue ratio."""
+
     denom = open_issues + closed_issues + 1e-6
     return 1 - open_issues / denom
 
 
 def readme_doc_completeness(readme: str) -> float:
+    """Check README length and presence of code examples."""
+
     words = len(readme.split())
     has_code = "```" in readme
     if words >= 300 and has_code:
@@ -106,6 +135,8 @@ def readme_doc_completeness(readme: str) -> float:
 
 
 def license_freedom(license_spdx: Optional[str]) -> float:
+    """Evaluate license permissiveness."""
+
     if not license_spdx:
         return 0.0
     key = license_spdx.lower()
@@ -117,6 +148,8 @@ def license_freedom(license_spdx: Optional[str]) -> float:
 
 
 def ecosystem_integration(topics: List[str], readme: str) -> float:
+    """Detect mentions of common integrations."""
+
     text = " ".join(topics).lower() + " " + readme.lower()
     keywords = ["langchain", "plugin", "openai", "tool", "extension", "framework"]
     for k in keywords:
@@ -126,6 +159,8 @@ def ecosystem_integration(topics: List[str], readme: str) -> float:
 
 
 def categorize(description: str, topics: List[str]) -> str:
+    """Infer a broad category from the repo description and topics."""
+
     text = (description or "").lower() + " " + " ".join(topics).lower()
     if "rag" in text or "retrieval" in text:
         return "RAG-centric"
@@ -141,6 +176,8 @@ def categorize(description: str, topics: List[str]) -> str:
 
 
 def compute_score(repo: Dict, readme: str) -> float:
+    """Calculate an overall quality score for a repository."""
+
     stars = repo.get("stargazers_count", 0)
     open_issues = repo.get("open_issues_count", 0)
     closed_issues = repo.get("closed_issues", 0)
@@ -162,6 +199,8 @@ def compute_score(repo: Dict, readme: str) -> float:
 
 
 def harvest_repo(full_name: str) -> Optional[Dict]:
+    """Collect repo details and compute its AgentOps score."""
+
     repo = fetch_repo(full_name)
     if not repo:
         return None
@@ -188,6 +227,8 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
 
 
 def search_and_harvest(min_stars: int = 0, max_pages: int = 1) -> List[Dict]:
+    """Search GitHub and return enriched repository data."""
+
     seen = set()
     results = []
     for term in SEARCH_TERMS:
@@ -219,11 +260,15 @@ def search_and_harvest(min_stars: int = 0, max_pages: int = 1) -> List[Dict]:
 
 
 def sort_and_select(repos: List[Dict], limit: int = 50) -> List[Dict]:
+    """Return the top ``limit`` repos sorted by score."""
+
     repos.sort(key=lambda x: x["score"], reverse=True)
     return repos[:limit]
 
 
 def save_csv(repos: List[Dict], path: Path):
+    """Write repository data to ``path`` as CSV."""
+
     keys = [
         "name",
         "stars",
@@ -240,6 +285,8 @@ def save_csv(repos: List[Dict], path: Path):
 
 
 def save_markdown(repos: List[Dict], path: Path):
+    """Write repository data as a Markdown table."""
+
     with path.open("w") as f:
         f.write("| # | Repo | ★ | Last Commit | Score | Category | One-liner |\n")
         f.write("|---|------|----|------------|-------|----------|-----------|\n")
@@ -252,6 +299,8 @@ def save_markdown(repos: List[Dict], path: Path):
 
 
 def load_previous(path: Path) -> List[str]:
+    """Return repo names from a previous CSV run."""
+
     if not path.exists():
         return []
     with path.open() as f:
@@ -260,6 +309,8 @@ def load_previous(path: Path) -> List[str]:
 
 
 def changelog(old: List[str], new: List[str]) -> List[Dict]:
+    """Generate changelog entries between two repo lists."""
+
     old_set = set(old)
     new_set = set(new)
     changes = []
@@ -271,6 +322,8 @@ def changelog(old: List[str], new: List[str]) -> List[Dict]:
 
 
 def save_changelog(changes: List[Dict], path: Path):
+    """Persist changelog entries to ``path``."""
+
     if not changes:
         return
     with path.open("w") as f:
@@ -280,6 +333,8 @@ def save_changelog(changes: List[Dict], path: Path):
 
 
 def main():
+    """Entry point for the AgentOps harvesting CLI."""
+
     parser = argparse.ArgumentParser(description="AgentOps Repo Indexer")
     parser.add_argument("--min-stars", type=int, default=0)
     parser.add_argument("--iterations", type=int, default=1)
