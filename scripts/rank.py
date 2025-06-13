@@ -95,7 +95,10 @@ def main(json_path: str = "data/repos.json") -> None:
             repo[SCORE_KEY] = repo.pop("AgentOpsScore")
         if "score" in repo and SCORE_KEY not in repo:
             repo[SCORE_KEY] = repo.pop("score")
-    in_test = os.getenv("PYTEST_CURRENT_TEST") is not None
+    is_test = os.getenv("PYTEST_CURRENT_TEST") is not None
+    # avoid mutating tracked repo files during tests
+    skip_repo_write = is_test and Path(json_path).resolve() == Path("data/repos.json").resolve()
+    skip_top_write = is_test
 
     # score + categorise
     for repo in repos:
@@ -104,7 +107,7 @@ def main(json_path: str = "data/repos.json") -> None:
 
     # sort & persist
     repos.sort(key=lambda r: r[SCORE_KEY], reverse=True)
-    if not in_test:
+    if not skip_repo_write:
         data_file.write_text(json.dumps(repos, indent=2))
 
     # top-50 table
@@ -116,7 +119,7 @@ def main(json_path: str = "data/repos.json") -> None:
         f"| {i} | {repo['name']} | {repo[SCORE_KEY]} | {repo['category']} |"
         for i, repo in enumerate(repos[:50], start=1)
     ]
-    if not in_test:
+    if not skip_top_write:
         Path("data").mkdir(exist_ok=True)
         Path("data/top50.md").write_text("\n".join(header + rows) + "\n")
 
