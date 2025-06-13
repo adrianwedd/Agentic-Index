@@ -18,7 +18,7 @@ jobs:
             echo "::warning::REFRESH_WEBHOOK_URL not set; skipping notification"
             exit 0
           fi
-          payload='{"text": "✅ AgentOps index updated – commit ${{ github.sha }}"}'
+          payload='{"text": "✅ Agentic-Index updated – commit ${{ github.sha }}"}'
           attempt=0
           while [ $attempt -lt 3 ]; do
             status=$(curl -s -o /dev/null -w "%{http_code}" -X POST -H 'Content-Type: application/json' -d "$payload" "$WEBHOOK")
