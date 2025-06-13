@@ -27,7 +27,8 @@ def load_config(path: Path = CONFIG_PATH) -> dict:
 
 def gather_files() -> list[Path]:
     out = subprocess.check_output(['git', 'ls-files'], text=True)
-    return [Path(p) for p in out.splitlines() if p]
+    files = [Path(p) for p in out.splitlines() if p]
+    return [p for p in files if p != CONFIG_PATH]
 
 
 def check_files(paths: list[Path], config: dict) -> list[str]:
@@ -35,6 +36,8 @@ def check_files(paths: list[Path], config: dict) -> list[str]:
     forbidden = config.get('forbidden', [])
     failures = []
     for p in paths:
+        if p.resolve() == CONFIG_PATH.resolve():
+            continue
         try:
             text = p.read_text(encoding='utf-8', errors='ignore')
         except Exception:

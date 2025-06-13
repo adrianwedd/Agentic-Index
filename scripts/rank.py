@@ -100,8 +100,8 @@ def main(json_path: str = "data/repos.json") -> None:
     for repo in repos:
         if "AgentOpsScore" in repo:
             repo[SCORE_KEY] = repo.pop("AgentOpsScore")
-        if "score" in repo and SCORE_KEY not in repo:
-            repo[SCORE_KEY] = repo.pop("score")
+        if 'score' in repo and SCORE_KEY not in repo:
+            repo[SCORE_KEY] = repo.pop('score')
     is_test = os.getenv("PYTEST_CURRENT_TEST") is not None
     # avoid mutating tracked repo files during tests
     skip_repo_write = is_test and Path(json_path).resolve() == Path("data/repos.json").resolve()
