@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Repository",
+  "type": "object",
+  "required": [
+    "rank",
+    "name",
+    "full_name",
+    "html_url",
+    "stars",
+    "last_commit",
+    "score",
+    "category",
+    "one_liner"
+  ],
+  "properties": {
+    "rank": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "name": {
+      "type": "string"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "html_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "stars": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "last_commit": {
+      "type": "string",
+      "format": "date"
+    },
+    "score": {
+      "type": ["number", "integer"]
+    },
+    "category": {
+      "type": "string"
+    },
+    "one_liner": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

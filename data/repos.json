@@ -1,0 +1,24 @@
+[
+  {
+    "rank": 1,
+    "name": "crewAI",
+    "full_name": "crewAIInc/crewAI",
+    "html_url": "https://github.com/crewAIInc/crewAI",
+    "stars": 32800,
+    "last_commit": "2025-06-12",
+    "score": 95,
+    "category": "Multi-Agent Coordination",
+    "one_liner": "Framework for orchestrating role-playing, autonomous AI agents."
+  },
+  {
+    "rank": 2,
+    "name": "AutoGen",
+    "full_name": "microsoft/autogen",
+    "html_url": "https://github.com/microsoft/autogen",
+    "stars": 45900,
+    "last_commit": "2025-06-14",
+    "score": 93,
+    "category": "Multi-Agent Coordination",
+    "one_liner": "A programming framework for agentic AI."
+  }
+]
