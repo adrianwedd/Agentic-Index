@@ -7,3 +7,8 @@ repos:
         language: system
         types: [markdown]
         files: README\.md
+      - id: pytest
+        name: pytest
+        entry: pytest --quiet --cov=agentic_index_cli
+        language: system
+        files: \.py$

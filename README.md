@@ -26,6 +26,7 @@ Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
 <a href="./LICENSE.md"><img src="https://img.shields.io/github/license/AgentOps/Agentic-Index" alt="Agentic Index License"></a>
 <a href="./FAST_START.md"><img src="https://img.shields.io/badge/Agentic%20Index-Fast_Start-blue" alt="Agentic Index Fast Start"></a>
 <a href="./agents.md"><img src="https://img.shields.io/badge/Agentic%20Index-Agents-blue" alt="Agentic Index agents"></a>
+<a href="https://img.shields.io/badge/coverage-49%25-yellow.svg"><img src="https://img.shields.io/badge/coverage-49%25-yellow.svg" alt="Coverage"></a>
 </p>
 
 <p align="center">

@@ -62,11 +62,13 @@ def infer_category(repo: dict) -> str:
 
 
 def _fetch(url: str, dest: Path) -> None:
-    """Download an SVG badge, or write a tiny placeholder if offline."""
+    """Download an SVG badge, retaining previous contents if offline."""
     try:
         with urllib.request.urlopen(url) as resp:
             dest.write_bytes(resp.read())
     except Exception:
+        if dest.exists():
+            return
         dest.write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>\n')
 
 
