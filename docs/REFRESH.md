@@ -7,4 +7,4 @@ This page explains how the automatic refresh of `repos.json` and the ranking tab
 3. **Auto-merge** – If `auto-merge` is true, the workflow uses an action to merge the refresh PR once checks succeed.
 4. **Webhook** – After merging, a webhook notifies any downstream services that new data is available.
 
-See [`scripts/trigger_refresh.sh`](../scripts/trigger_refresh.sh) for the command-line helper.
+See [`trigger_refresh.sh`](https://github.com/adrianwedd/Agentic-Index/blob/main/scripts/trigger_refresh.sh) for the command-line helper.
