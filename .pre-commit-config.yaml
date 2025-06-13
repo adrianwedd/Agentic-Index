@@ -12,3 +12,10 @@ repos:
         entry: pytest --quiet --cov=agentic_index_cli
         language: system
         files: \.py$
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+        name: detect-large-files
+        args: [--maxkb=5120]
+        exclude: ^data/history/.*\.json\.gz$

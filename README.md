@@ -298,6 +298,8 @@ Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
   * Flag outdated info or errors.
   * Suggest tweaks to scoring or categories.
   * Understand what makes a repo eligible.
+  * Install [Git LFS](https://git-lfs.github.com/) and run `git lfs install`.
+    PNG and GIF assets are tracked via LFS.
 
 For tips on keeping your branch in sync with `main` and resolving conflicts, see
 [CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).
