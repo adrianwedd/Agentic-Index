@@ -17,6 +17,9 @@ from pathlib import Path
 
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
 
+SCORE_KEY = "AgenticIndexScore"
+
+
 def compute_score(repo: dict) -> float:
     stars        = repo.get("stars", 0)
     recency      = repo.get("recency_factor", 0)
@@ -72,15 +75,21 @@ def generate_badges(top_repo: str, iso_date: str) -> None:
 def main(json_path: str = "data/repos.json") -> None:
     data_file = Path(json_path)
     repos = json.loads(data_file.read_text())
+    # temporary shim for older data files
+    for repo in repos:
+        if "AgentOpsScore" in repo:
+            repo[SCORE_KEY] = repo.pop("AgentOpsScore")
+        if "score" in repo and SCORE_KEY not in repo:
+            repo[SCORE_KEY] = repo.pop("score")
     in_test = os.getenv("PYTEST_CURRENT_TEST") is not None
 
     # score + categorise
     for repo in repos:
-        repo["score"]    = compute_score(repo)
+        repo[SCORE_KEY]  = compute_score(repo)
         repo["category"] = infer_category(repo)
 
     # sort & persist
-    repos.sort(key=lambda r: r["score"], reverse=True)
+    repos.sort(key=lambda r: r[SCORE_KEY], reverse=True)
     if not in_test:
         data_file.write_text(json.dumps(repos, indent=2))
 
@@ -90,7 +99,7 @@ def main(json_path: str = "data/repos.json") -> None:
         "|------|------|-------|----------|",
     ]
     rows = [
-        f"| {i} | {repo['name']} | {repo['score']} | {repo['category']} |"
+        f"| {i} | {repo['name']} | {repo[SCORE_KEY]} | {repo['category']} |"
         for i, repo in enumerate(repos[:50], start=1)
     ]
     if not in_test:
