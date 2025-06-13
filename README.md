@@ -38,19 +38,6 @@ This catalogue is maintained by the AgentOps initiative and is updated regularly
 
 ## TOC
 
-<<<<<<< codex/create-agents.md-for-automated-agents-description
-\*(\#why-agentops-is-different)
-\*(\#fast-start-picks-curated-for-newcomers)
-\*(\#the-agentops-top-50-ai-agent-repositories)
-
-  * [💎 Honourable Mentions / Niche & Novel Gems](https://www.google.com/search?q=%23honourable-mentions--niche--novel-gems)
-    \*(https://www.google.com/search?q=%23our-methodology--scoring-explained)
-    \*(\#category-definitions)
-  * [🔄 Changelog](https://www.google.com/search?q=%23changelog)
-  * [🤝 How to Contribute](https://www.google.com/search?q=%23how-to-contribute)
-  * [📜 Agents](agents.md)
-  * [📜 License](https://www.google.com/search?q=%23license)
-=======
 * [✨ Why AgentOps is Different](#why-agentops-is-different)
 * [🚀 Fast-Start Picks (Curated for Newcomers)](#fast-start-picks-curated-for-newcomers)
 * [🏆 The AgentOps Top 50: AI Agent Repositories](#the-agentops-top-50-ai-agent-repositories)
@@ -60,7 +47,6 @@ This catalogue is maintained by the AgentOps initiative and is updated regularly
   * [🔄 Changelog](#changelog)
   * [🤝 How to Contribute](#how-to-contribute)
   * [📜 License](#license)
->>>>>>> main
 
 -----
 
