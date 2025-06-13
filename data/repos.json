@@ -1,0 +1,50 @@
+[
+  {
+    "name": "repo1",
+    "stars": 100,
+    "recency_factor": 80,
+    "issue_health": 70,
+    "doc_completeness": 90,
+    "license_freedom": 100,
+    "ecosystem_integration": 60,
+    "description": "A multi-agent coordination framework",
+    "topics": [
+      "agents",
+      "multi-agent"
+    ],
+    "score": 55.33,
+    "category": "Multi-Agent Coordination"
+  },
+  {
+    "name": "repo2",
+    "stars": 500,
+    "recency_factor": 90,
+    "issue_health": 60,
+    "doc_completeness": 80,
+    "license_freedom": 80,
+    "ecosystem_integration": 70,
+    "description": "RAG pipeline for LLMs",
+    "topics": [
+      "rag",
+      "pipeline"
+    ],
+    "score": 53.64,
+    "category": "RAG-centric"
+  },
+  {
+    "name": "repo3",
+    "stars": 50,
+    "recency_factor": 60,
+    "issue_health": 80,
+    "doc_completeness": 70,
+    "license_freedom": 90,
+    "ecosystem_integration": 50,
+    "description": "experimental tool for developers",
+    "topics": [
+      "devtool",
+      "experiment"
+    ],
+    "score": 47.99,
+    "category": "DevTools"
+  }
+]
