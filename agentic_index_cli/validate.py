@@ -48,7 +48,7 @@ class Repo(BaseModel):
 
 
 class RepoFile(BaseModel):
-    schema_version: int = 1
+    schema_version: int = 2
     repos: List[Repo]
 
     model_config = ConfigDict(extra="forbid")
@@ -60,6 +60,8 @@ def _migrate_item(item: dict) -> dict:
         item["AgenticIndexScore"] = item.pop("AgentOpsScore")
     if "score" in item and "AgenticIndexScore" not in item:
         item["AgenticIndexScore"] = item.pop("score")
+    if isinstance(item.get("license"), dict):
+        item["license"] = item["license"].get("spdx_id")
     return item
 
 
@@ -68,8 +70,9 @@ def load_repos(path: Path) -> List[dict]:
     if isinstance(raw, list):
         items = raw
     elif isinstance(raw, dict):
-        if raw.get("schema_version") != 1:
-            raise ValidationError(f"Unsupported schema_version {raw.get('schema_version')}")
+        version = raw.get("schema_version", 1)
+        if version not in (1, 2):
+            raise ValidationError(f"Unsupported schema_version {version}")
         items = raw.get("repos")
         if not isinstance(items, list):
             raise ValidationError('"repos" must be a list')

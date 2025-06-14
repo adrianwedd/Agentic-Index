@@ -54,7 +54,10 @@ def compute_score(repo: dict) -> float:
     docs = repo.get("doc_completeness", 0)
     license_free = repo.get("license_freedom")
     if license_free is None:
-        license_free = license_freedom((repo.get("license") or {}).get("spdx_id"))
+        lic = repo.get("license")
+        if isinstance(lic, dict):
+            lic = lic.get("spdx_id")
+        license_free = license_freedom(lic)
     ecosys = repo.get("ecosystem_integration", 0)
 
     score = (
@@ -165,9 +168,10 @@ def main(json_path: str = "data/repos.json") -> None:
             )
         repo.setdefault("doc_completeness", 0.0)
         if "license_freedom" not in repo:
-            repo["license_freedom"] = license_freedom(
-                (repo.get("license") or {}).get("spdx_id")
-            )
+            lic = repo.get("license")
+            if isinstance(lic, dict):
+                lic = lic.get("spdx_id")
+            repo["license_freedom"] = license_freedom(lic)
         repo.setdefault("ecosystem_integration", 0.0)
     # avoid mutating tracked repo files during tests
     skip_repo_write = is_test and Path(json_path).resolve() == Path("data/repos.json").resolve()
