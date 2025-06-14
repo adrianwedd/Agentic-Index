@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 from typing import List
 
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel, ValidationError, ConfigDict
 
 
 class License(BaseModel):
@@ -44,16 +44,14 @@ class Repo(BaseModel):
     last_commit: str | None = None
     one_liner: str | None = None
 
-    class Config:
-        extra = "forbid"
+    model_config = ConfigDict(extra="forbid")
 
 
 class RepoFile(BaseModel):
     schema_version: int = 1
     repos: List[Repo]
 
-    class Config:
-        extra = "forbid"
+    model_config = ConfigDict(extra="forbid")
 
 
 def _migrate_item(item: dict) -> dict:
@@ -88,7 +86,7 @@ def load_repos(path: Path) -> List[dict]:
             duplicates.append(name)
             continue
         seen.add(name)
-        repos.append(repo.dict(exclude_none=True))
+        repos.append(repo.model_dump(exclude_none=True))
     if duplicates:
         dup = ", ".join(duplicates)
         raise ValidationError(f"duplicate entries: {dup}")
@@ -96,7 +94,7 @@ def load_repos(path: Path) -> List[dict]:
 
 
 def save_repos(path: Path, repos: List[dict]) -> None:
-    payload = RepoFile(repos=[Repo(**_migrate_item(r)) for r in repos]).dict(exclude_none=True)
+    payload = RepoFile(repos=[Repo(**_migrate_item(r)) for r in repos]).model_dump(exclude_none=True)
     path.write_text(json.dumps(payload, indent=2) + "\n")
 
 

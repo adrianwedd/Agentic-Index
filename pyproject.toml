@@ -11,7 +11,7 @@ dependencies = [
     "requests",
     "PyYAML",
     "jsonschema>=3.2",
-    "pydantic",
+    "pydantic>=2",
 ]
 
 [project.scripts]
