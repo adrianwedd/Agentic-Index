@@ -36,3 +36,23 @@ def test_fetch_badge_404_creates_placeholder(tmp_path, monkeypatch):
     fetch_badge("http://example.com", dest)
     assert dest.exists()
     assert "<svg" in dest.read_text()
+
+
+def test_fetch_badge_urlerror(tmp_path, monkeypatch):
+    dest = tmp_path / "badge.svg"
+
+    def boom(url):
+        raise urllib.error.URLError("offline")
+
+    monkeypatch.setattr(urllib.request, "urlopen", boom)
+    fetch_badge("http://example.com", dest)
+    assert dest.exists()
+    assert dest.read_text().startswith("<svg")
+
+
+def test_fetch_badge_offline_env(tmp_path, monkeypatch):
+    dest = tmp_path / "badge.svg"
+    monkeypatch.setenv("CI_OFFLINE", "1")
+    fetch_badge("http://example.com", dest)
+    assert dest.exists()
+    assert dest.read_text().startswith("<svg")

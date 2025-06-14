@@ -11,3 +11,9 @@ def test_cli_help(tmp_path):
     assert result.returncode == 0
     assert 'scrape' in result.stdout
     assert 'faststart' in result.stdout
+
+
+def test_python_m_entrypoint():
+    result = subprocess.run([sys.executable, '-m', 'agentic_index_cli', '--help'], capture_output=True, text=True)
+    assert result.returncode == 0
+    assert 'scrape' in result.stdout
