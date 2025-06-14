@@ -5,11 +5,24 @@ Agentic-Index continuously scores and curates every open-source framework for bu
 We rank everything using a transparent scoring formula based on:
 
   * 🌟 Stars & momentum
-  * 🔧 Maintenance & issue health
-  * 📚 Docs & examples
-  * 🧠 Ecosystem fit
-  * 📅 Recency
-  * ⚖️ Licensing
+* 🔧 Maintenance & issue health
+* 📚 Docs & examples
+* 🧠 Ecosystem fit
+* 📅 Recency
+* ⚖️ Licensing
+
+### Metrics Explained
+
+| Emoji | Field | Formula | Updated | Source |
+|-------|-------|---------|---------|--------|
+| ⭐ | `stars_30d` | GitHub star Δ (30 days) | Nightly | `scraper/github.py` |
+| 🔧 | `maintenance` | Issue/PR hygiene score | Weekly | `score/maintenance.py` |
+| 📅 | `release_age` | Days since latest release | Nightly | `scraper/github.py` |
+| 📚 | `docs_quality` | Heuristic score (README + examples) | Monthly | `score/docs.py` |
+| 🧠 | `ecosystem_fit` | Keyword-based tag affinity | Monthly | `score/ecosystem.py` |
+| ⚖️ | `license_score` | OSI compatibility / restrictiveness | Static | `score/license.py` |
+
+Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metrics Legend](#metrics-legend) for weighting details. The full JSON schema is documented in [SCHEMA.md](SCHEMA.md).
 
 > **🎯 TL;DR:** This isn’t just a list—it’s your launchpad for building with AI agents.
 
@@ -153,6 +166,8 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 | 50 | 5.12 | ai-pdf-chatbot-langchain | 0 | 0.00 | - | 0.00 | 0.00 | MIT |
 <!-- TOP50:END -->
 *➡️ Dig into how these scores are cooked up in our [Methodology section](#our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](./docs/methodology.md).*
+
+<a id="metrics-legend"></a>
 
 <details>
 <summary>📊 Metrics Legend</summary>

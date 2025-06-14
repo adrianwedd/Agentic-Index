@@ -25,6 +25,14 @@ To run the scraping and ranking tools locally, install the CLI:
 pip install agentic-index-cli
 ```
 
+### Architecture
+
+```
++---------+      +--------+      +----------+      +----------+
+| Scraper | ---> | Cache  | ---> | Injector | ---> | Pull Req |
++---------+      +--------+      +----------+      +----------+
+```
+
 ## Development environment
 
 Set up Python 3.11 and install dependencies:
@@ -45,6 +53,20 @@ To view an HTML coverage report, run:
 ```bash
 coverage html -d cov_html && open cov_html/index.html
 ```
+
+### Test and workflow quickstart
+
+```bash
+pip install -r requirements.txt
+pytest -q
+python scripts/inject_readme.py
+```
+
+## Adding a New Metric
+
+Touch files under `score/*.py`, update `scripts/inject_readme.py` and document your column in `README.md`. Include tests covering the metric and regenerate snapshots with the injector.
+New metrics should maintain overall test coverage (see badges) and update any affected snapshots.
+
 
 
 
