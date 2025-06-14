@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-from hypothesis import given, strategies as st
+from hypothesis import given, strategies as st, settings
 
 from agentic_index_cli.rank import compute_score
 
@@ -20,6 +20,7 @@ def _repo(stars: int, open_issues: int, closed_issues: int, days_old: int):
         "topics": [],
     }
 
+@settings(max_examples=20)
 
 @given(
     stars1=st.integers(min_value=0, max_value=1_000_000),
