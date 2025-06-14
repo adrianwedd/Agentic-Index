@@ -15,11 +15,11 @@ def test_validation_dup(tmp_path):
     }
     repo_b = dict(repo_a)
     repo_b["AgenticIndexScore"] = 2
-    data = [repo_a, repo_b]
+    data = {"schema_version": 1, "repos": [repo_a, repo_b]}
     path = tmp_path / "repos.json"
     path.write_text(json.dumps(data))
     result = subprocess.run(
-        ["python", "-m", "agentic_index_cli.quality.validate", str(path)],
+        ["python", "-m", "agentic_index_cli.validate", str(path)],
         capture_output=True,
         text=True,
     )

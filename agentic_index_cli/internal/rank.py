@@ -15,7 +15,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
-from agentic_index_cli.quality.validate import validate_file
+from agentic_index_cli.validate import load_repos, save_repos
 from agentic_index_cli.agentic_index import (
     compute_recency_factor,
     compute_issue_health,
@@ -125,10 +125,7 @@ def generate_badges(top_repo: str, iso_date: str) -> None:
 def main(json_path: str = "data/repos.json") -> None:
     data_file = Path(json_path)
     is_test = os.getenv("PYTEST_CURRENT_TEST") is not None
-    if is_test:
-        repos = json.loads(data_file.read_text())
-    else:
-        repos = validate_file(json_path)
+    repos = load_repos(data_file)
     # temporary shim for older data files
     for repo in repos:
         if "AgentOpsScore" in repo:
@@ -167,7 +164,7 @@ def main(json_path: str = "data/repos.json") -> None:
     # sort & persist
     repos.sort(key=lambda r: r[SCORE_KEY], reverse=True)
     if not skip_repo_write:
-        data_file.write_text(json.dumps(repos, indent=2))
+        save_repos(data_file, repos)
 
     # top-50 table
     header = [

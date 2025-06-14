@@ -10,6 +10,7 @@ import requests
 from pydantic import BaseModel, ValidationError
 
 from ..exceptions import APIError, RateLimitError, InvalidRepoError
+from ..validate import save_repos
 
 RATE_LIMIT_REMAINING = None
 logger = logging.getLogger(__name__)
@@ -138,8 +139,7 @@ def main() -> None:
     repos = scrape(min_stars=args.min_stars, token=token)
     path = Path("data/repos.json")
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as f:
-        json.dump(repos, f, ensure_ascii=False, indent=2)
+    save_repos(path, repos)
     logger.info("Wrote %s repos to %s", len(repos), path)
     if RATE_LIMIT_REMAINING is not None:
         logger.info("Rate limit remaining: %s", RATE_LIMIT_REMAINING)

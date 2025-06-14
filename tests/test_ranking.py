@@ -14,12 +14,12 @@ def run_script():
     subprocess.run(['python3', str(RANK_SCRIPT), str(REPO_JSON)], check=True)
 
 def load_scores():
-    data = json.loads(REPO_JSON.read_text())
+    data = json.loads(REPO_JSON.read_text())["repos"]
     return [item['AgenticIndexScore'] for item in data]
 
 def test_score_count_matches_repos():
     run_script()
-    data = json.loads(REPO_JSON.read_text())
+    data = json.loads(REPO_JSON.read_text())["repos"]
     scores = load_scores()
     assert len(scores) == len(data)
 

@@ -1,5 +1,4 @@
 import argparse
-import json
 import math
 from pathlib import Path
 
@@ -8,10 +7,11 @@ from .agentic_index import (
     compute_issue_health,
     license_freedom,
 )
+from .validate import load_repos, save_repos
 
 
 def enrich(path: Path) -> None:
-    data = json.loads(path.read_text())
+    data = load_repos(path)
     for repo in data:
         stars = repo.get("stargazers_count", 0)
         repo["stars"] = stars
@@ -21,7 +21,7 @@ def enrich(path: Path) -> None:
         repo["doc_completeness"] = repo.get("doc_completeness", 0.0)
         repo["license_freedom"] = license_freedom((repo.get("license") or {}).get("spdx_id"))
         repo.setdefault("ecosystem_integration", 0.0)
-    path.write_text(json.dumps(data, indent=2))
+    save_repos(path, data)
 
 
 def main(argv=None):

@@ -1,5 +1,4 @@
 import argparse
-import json
 from pathlib import Path
 
 
@@ -28,9 +27,11 @@ def generate_table(repos):
     return "\n".join(lines) + "\n"
 
 
+from .validate import load_repos
+
+
 def run(top: int, data_path: Path, output_path: Path | None = None) -> None:
-    with data_path.open() as f:
-        repos = json.load(f)
+    repos = load_repos(data_path)
 
     filtered = [
         r for r in repos

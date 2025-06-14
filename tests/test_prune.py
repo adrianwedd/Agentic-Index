@@ -24,7 +24,7 @@ def setup_temp_repo(tmp_path):
     ]
     repo_file = tmp_path / "repos.json"
     with open(repo_file, "w") as f:
-        json.dump(repos, f)
+        json.dump({"schema_version": 1, "repos": repos}, f)
     changelog = tmp_path / "CHANGELOG.md"
     return repo_file, changelog
 
@@ -37,8 +37,8 @@ def test_prune_removes_inactive(tmp_path):
 
     with open(repo_file) as f:
         data = json.load(f)
-    assert len(data) == 1
-    assert data[0]["full_name"] == "fresh/repo"
+    assert len(data["repos"]) == 1
+    assert data["repos"][0]["full_name"] == "fresh/repo"
 
     log = changelog.read_text().strip()
     assert "Removed old/repo" in log
