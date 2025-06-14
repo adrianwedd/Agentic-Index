@@ -9,3 +9,5 @@ jsonschema>=3.2
 pydantic>=2
 
 pydeps
+sphinx
+sphinx_rtd_theme
