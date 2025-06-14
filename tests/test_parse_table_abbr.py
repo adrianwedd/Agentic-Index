@@ -30,3 +30,14 @@ def test_assert_equivalent_ignores_abbr():
         "| 1 | 1.0 | foo |\n"
     )
     assert_readme_equivalent(expected, actual)
+
+
+def test_parse_table_strips_generic_html():
+    table = (
+        "| <b>Rank</b> | <span>Score</span> | Repo |\n"
+        "|-----:|------:|------|\n"
+        "| 1 | 1.0 | foo |\n"
+    )
+    headers, rows = _parse_table(table)
+    assert headers == ["Rank", "Score", "Repo"]
+    assert rows == [["1", "1.0", "foo"]]
