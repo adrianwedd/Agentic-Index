@@ -22,7 +22,22 @@ jobs:
       - name: Verify import
         run: python -c "import agentic_index_cli"
       - name: README sync check
+        id: readme
         run: python scripts/inject_readme.py --check
+        continue-on-error: true
+      - name: Update README on drift
+        if: steps.readme.outcome == 'failure'
+        run: python scripts/inject_readme.py --write
+      - name: Auto-PR for README drift
+        if: steps.readme.outcome == 'failure'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "docs: sync README"
+          branch: readme-sync-${{ github.run_id }}
+          base: ${{ github.ref_name }}
+          title: "docs: sync README"
+          body: "Automated README table update"
+          delete-branch: true
       - name: Run regression guard
         run: python scripts/regression_check.py --allowlist regression_allowlist.yml
       - name: Run tests with coverage

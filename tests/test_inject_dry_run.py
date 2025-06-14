@@ -21,5 +21,7 @@ def test_inject_readme_check(tmp_path, monkeypatch):
     monkeypatch.setattr(inj, "REPOS_PATH", data_dir / "repos.json")
     monkeypatch.setattr(inj, "SNAPSHOT", data_dir / "last_snapshot.json")
 
-    modified = inj.build_readme()
-    assert inj.diff(modified) == ""
+    modified = inj.build_readme().strip()
+    assert modified == readme.read_text().strip()
+
+    assert inj.main(check=True) == 0
