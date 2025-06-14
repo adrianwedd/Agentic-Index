@@ -1,22 +1,17 @@
 import urllib.error
 import urllib.request
 from pathlib import Path
+import io
 
 from agentic_index_cli.internal.rank import fetch_badge
 
 
-class DummyResp:
-    def __init__(self, data: bytes):
-        self.data = data
-
+class DummyResp(io.BytesIO):
     def __enter__(self):
         return self
 
-    def __exit__(self, exc_type, exc, tb):
+    def __exit__(self, *exc):
         pass
-
-    def read(self) -> bytes:
-        return self.data
 
 
 def test_fetch_badge_success(tmp_path, monkeypatch):
