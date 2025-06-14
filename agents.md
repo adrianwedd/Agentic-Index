@@ -16,6 +16,7 @@ Agentic Index curates & ranks AI-agent repos so developers can quickly find reli
 | SiteDeployer | gh-pages | `.github/workflows/deploy_site.yml` | Publish /web to Pages | live site URL |
 | SafeRebase | comment /rebase | `.github/actions/safe-rebase/action.yml` | Rebase PR into new branch | draft <orig>-rebased PR |
 | IssueLogger | manual / CI | `agentic_index_cli/issue_logger.py` | Post GitHub issues/comments | Issue/Comment URLs |
+| APIServer | container | `agentic_index_api/server.py` | HTTP interface | JSON responses |
 
 Add any new agents as you implement them.*
 
