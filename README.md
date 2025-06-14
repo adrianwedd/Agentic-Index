@@ -26,7 +26,7 @@ Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metr
 
 > **🎯 TL;DR:** This isn’t just a list—it’s your launchpad for building with AI agents.
 
-Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
+[🚀 Jump to Fast-Start Picks →](FAST_START.md)
 
 -----
 
@@ -65,7 +65,6 @@ This catalogue is maintained by the Agentic-Index project and is updated regular
 ## TOC
 
 * [✨ Why Agentic Index is Different](#-why-agentic-index-is-different)
-* [🚀 Fast-Start Picks (Curated for Newcomers)](#-fast-start-picks-curated-for-newcomers)
 * [⚡ Installation & Quick-start](#-installation--quick-start)
 * [🏆 The Agentic-Index Top 100: AI Agent Repositories](#-the-agentic-index-top-100-ai-agent-repositories)
   * [💎 Honourable Mentions / Niche & Novel Gems](#-honourable-mentions--niche--novel-gems)
@@ -109,19 +108,6 @@ cat README.md | less         # see table injected
 
 -----
 
-<a id="-fast-start-picks-curated-for-newcomers"></a>
-## 🚀 Fast-Start Picks (Curated for Newcomers)
-
-New to Agentic-AI or just want the good stuff fast? These repos are top-tier for usability, community, docs, or just plain cool ideas:
-
-  * **CrewAI ([crewAIInc/crewAI](https://github.com/crewAIInc/crewAI))**: Slick orchestration for role-playing, autonomous AI agents. Built for collaborative intelligence. [1]
-  * **AutoGen ([microsoft/autogen](https://github.com/microsoft/autogen))**: Microsoft's powerhouse for multi-agent conversational apps. Flexible and robust. [6, 7, 2]
-  * **Langchain ([langchain-ai/langchain](https://github.com/langchain-ai/langchain))**: The OG. A massive library for LLM apps with deep agent capabilities and tons of integrations. [8, 9]
-  * **AutoGPT ((https://github.com/Significant-Gravitas/AutoGPT))**: One of the first to show off truly autonomous GPT-4, making agentic concepts go viral. [10, 11]
-  * **BabyAGI ([yoheinakajima/babyagi](https://github.com/yoheinakajima/babyagi))**: Simple, elegant task management loop that inspired a generation of agent frameworks. [3]
-  * **VoltAgent ([VoltAgent/voltagent](https://github.com/VoltAgent/voltagent))**: Clean TypeScript framework for modular AI agent dev, with built-in observability. [12]
-
------
 
 <a id="-the-agentic-index-top-100-ai-agent-repositories"></a>
 ## 🏆 The Agentic-Index Top 100: AI Agent Repositories
