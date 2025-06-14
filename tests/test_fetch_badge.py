@@ -51,3 +51,23 @@ def test_fetch_badge_offline_env(tmp_path, monkeypatch):
     fetch_badge("http://example.com", dest)
     assert dest.exists()
     assert dest.read_text().startswith("<svg")
+
+
+def test_fetch_badge_offline_no_overwrite(tmp_path, monkeypatch):
+    dest = tmp_path / "badge.svg"
+    dest.write_text("old")
+    monkeypatch.setenv("CI_OFFLINE", "1")
+    fetch_badge("http://example.com", dest)
+    assert dest.read_text() == "old"
+
+
+def test_fetch_badge_error_no_overwrite(tmp_path, monkeypatch):
+    dest = tmp_path / "badge.svg"
+    dest.write_text("old")
+
+    def boom(url):
+        raise urllib.error.URLError("offline")
+
+    monkeypatch.setattr(urllib.request, "urlopen", boom)
+    fetch_badge("http://example.com", dest)
+    assert dest.read_text() == "old"
