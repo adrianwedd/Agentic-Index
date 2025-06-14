@@ -12,7 +12,7 @@ repos:
         name: pytest
         entry: pytest --quiet --cov=agentic_index_cli
         language: python
-        additional_dependencies: [., pytest-cov, requests, PyYAML, jsonschema, pydantic, responses]
+        additional_dependencies: [., pytest-cov, requests, PyYAML, jsonschema, pydantic, responses, matplotlib]
         files: \.py$
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
