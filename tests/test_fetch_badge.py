@@ -16,9 +16,10 @@ class DummyResp(io.BytesIO):
 
 def test_fetch_badge_success(tmp_path, monkeypatch):
     dest = tmp_path / "badge.svg"
-    monkeypatch.setattr(urllib.request, "urlopen", lambda url: DummyResp(b"<svg>ok</svg>"))
+    svg_ok = b'<svg xmlns="http://www.w3.org/2000/svg"></svg>'
+    monkeypatch.setattr(urllib.request, "urlopen", lambda url: DummyResp(svg_ok))
     fetch_badge("http://example.com", dest)
-    assert dest.read_bytes() == b"<svg>ok</svg>"
+    assert dest.read_bytes() == svg_ok
 
 
 def test_fetch_badge_404_creates_placeholder(tmp_path, monkeypatch):
