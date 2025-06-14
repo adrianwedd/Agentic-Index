@@ -12,7 +12,7 @@ nav:
       - Conflict Resolution: CONFLICT_RESOLUTION.md
       - Coverage Baseline: coverage_baseline.md
       - Development Setup: DEVELOPMENT.md
-  - Methodology: METHODOLOGY.md
+  - Methodology: methodology.md
   - CLI Usage: cli.md
   - API Reference:
       - agentic_index_cli: reference/agentic_index_cli.md
