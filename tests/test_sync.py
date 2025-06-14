@@ -10,7 +10,7 @@ def test_readme_synced():
 
 
 def test_inject_idempotent(tmp_path):
-    orig = (ROOT / "README.md").read_text()
     subprocess.run(["python", str(INJECT)], check=True)
+    first = (ROOT / "README.md").read_text()
     subprocess.run(["python", str(INJECT)], check=True)
-    assert (ROOT / "README.md").read_text() == orig
+    assert (ROOT / "README.md").read_text() == first

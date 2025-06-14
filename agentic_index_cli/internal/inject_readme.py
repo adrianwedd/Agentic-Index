@@ -4,55 +4,73 @@ from __future__ import annotations
 
 import pathlib
 import sys
+import json
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 README_PATH = ROOT / "README.md"
 DATA_PATH = ROOT / "data" / "top50.md"
+REPOS_PATH = ROOT / "data" / "repos.json"
+SNAPSHOT = ROOT / "data" / "last_snapshot.json"
 
 START = "<!-- TOP50:START -->"
 END = "<!-- TOP50:END -->"
 
 
 def _load_rows() -> list[str]:
-    """Return normalised rows from ``top50.md`` sorted deterministically."""
-    lines = [
-        l.strip() for l in DATA_PATH.read_text(encoding="utf-8").splitlines() if l.strip()
-    ]
-    body = lines[2:]
+    """Return table rows computed from ``repos.json`` with stable deltas."""
+    repos = json.loads(REPOS_PATH.read_text()).get("repos", [])
+
+    if not SNAPSHOT.exists():
+        SNAPSHOT.write_text(json.dumps(repos, indent=2))
+    baseline = json.loads(SNAPSHOT.read_text())
+
+    baseline_map = {r.get("full_name", r.get("name")): r for r in baseline}
 
     parsed = []
-    for row in body:
-        cells = [c.strip() for c in row.strip().strip("|").split("|")]
-        if len(cells) < 6:
-            continue
-        repo = cells[1]
-        try:
-            score = float(cells[2])
-        except ValueError:
-            score = 0.0
-        stars_delta = _fmt_delta(cells[3], is_int=True)
-        score_delta = _fmt_delta(cells[4])
-        cat = cells[5]
-        parsed.append((repo, score, stars_delta, score_delta, cat))
+    for repo in repos:
+        name = repo.get("name")
+        score = float(repo.get("AgenticIndexScore", 0))
+        stars = repo.get("stars", repo.get("stargazers_count", 0))
+        old = baseline_map.get(repo.get("full_name"))
+        if old:
+            prev_stars = old.get("stars", old.get("stargazers_count", 0))
+            prev_score = float(old.get("AgenticIndexScore", 0))
+        else:
+            prev_stars = stars
+            prev_score = score
+        stars_delta = stars - prev_stars
+        score_delta = round(score - prev_score, 2)
+        cat = repo.get("category", "")
+        parsed.append((name, score, stars_delta, score_delta, cat))
 
     parsed.sort(key=lambda r: (-r[1], r[0].lower()))
 
-    return [
-        f"| {i} | {repo} | {score:.2f} | {sd} | {qd} | {cat} |"
-        for i, (repo, score, sd, qd, cat) in enumerate(parsed, start=1)
-    ]
+    rows = []
+    for i, (name, score, sd, qd, cat) in enumerate(parsed[:50], start=1):
+        sd_str = "" if sd == 0 else _fmt_delta(str(sd), is_int=True)
+        qd_str = "" if qd == 0 else _fmt_delta(str(qd))
+        rows.append(f"| {i} | {name} | {score:.2f} | {sd_str} | {qd_str} | {cat} |")
+    return rows
 
 
-def _fmt_delta(val: str, *, is_int: bool = False) -> str:
+def _fmt_delta(val: str | int | float, *, is_int: bool = False) -> str:
     """Normalise delta strings to always include a ``+`` sign when non-negative."""
+    if isinstance(val, (int, float)):
+        if val == 0:
+            return ""
+        val = str(val)
     if val.startswith("+") or val.startswith("-") or val.startswith("+new"):
         return val
     try:
         if is_int:
             num = int(val)
+            if num == 0:
+                return ""
             return f"{num:+d}"
         num = float(val)
+        if num == 0:
+            return ""
         return f"{num:+.1f}".rstrip("0").rstrip(".")
     except ValueError:
         return val
