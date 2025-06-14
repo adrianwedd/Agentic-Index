@@ -9,6 +9,7 @@ To propose additions or changes:
 1. Fork the repo and create your branch.
 1. Make your changes with clear commits.
 1. Open a pull request describing what you changed.
+1. Tag your PR with `feature`, `enhancement`, `bug`, `fix`, `ci`, or `docs` so it appears in the release notes.
 
 We welcome fixes to data, new repo suggestions, and other improvements.
 

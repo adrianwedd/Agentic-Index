@@ -24,6 +24,7 @@ Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
 <a href="https://adrianwedd.github.io/Agentic-Index/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index" alt="Site"></a>
 <a href="./LICENSE.md"><img src="badges/license.svg" alt="license"></a>
 <a href="https://pypi.org/project/agentic-index-cli/"><img src="badges/pypi.svg" alt="PyPI"></a>
+<a href="https://github.com/adrianwedd/Agentic-Index/releases"><img src="https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases" alt="Release Notes"></a>
 </p>
 
 This catalogue is maintained by the Agentic-Index project and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
