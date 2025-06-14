@@ -1,6 +1,7 @@
 import os
 import re
 import math
+import difflib
 from typing import List, Tuple, Dict, Any
 
 
@@ -30,12 +31,15 @@ def _parse_table(text: str) -> Tuple[List[str], List[List[str]]]:
     lines = [l.strip() for l in text.splitlines() if l.strip().startswith("|")]
     if not lines:
         return [], []
-    headers = [c.strip() for c in lines[0].strip("|").split("|")]
+    raw_headers = [c.strip() for c in lines[0].strip("|").split("|")]
+    headers = [re.sub(r"</?abbr[^>]*>", "", h).strip() for h in raw_headers]
     rows = []
     for line in lines[2:]:
         cells = [c.strip() for c in line.strip("|").split("|")]
         if len(cells) != len(headers):
-            raise AssertionError(f"Column count mismatch in line: {line}")
+            raise AssertionError(
+                f"Column count mismatch: expected {len(headers)} got {len(cells)} in line: {line}"
+            )
         rows.append(cells)
     return headers, rows
 
@@ -64,25 +68,77 @@ def _load_tolerances(tols: Dict[str, float] | None) -> Dict[str, float]:
 
 def assert_readme_equivalent(expected: str, actual: str, tolerances: Dict[str, float] | None = None) -> None:
     tols = _load_tolerances(tolerances)
-    exp_headers_raw, exp_rows = _parse_table(expected)
-    act_headers_raw, act_rows = _parse_table(actual)
-    assert exp_headers_raw == act_headers_raw, "Header mismatch"
-    assert len(exp_rows) == len(act_rows), "Row count changed"
+    try:
+        exp_headers_raw, exp_rows = _parse_table(expected)
+    except AssertionError as e:
+        raise AssertionError(f"Failed to parse expected table: {e}")
+
+    try:
+        act_headers_raw, act_rows = _parse_table(actual)
+    except AssertionError as e:
+        raise AssertionError(f"Failed to parse actual table: {e}")
+
+    if exp_headers_raw != act_headers_raw:
+        diff = "\n".join(
+            difflib.unified_diff(exp_headers_raw, act_headers_raw, "expected", "actual", lineterm="")
+        )
+        raise AssertionError(f"Header mismatch:\n{diff}")
+
+    if len(exp_rows) != len(act_rows):
+        raise AssertionError(
+            f"Row count mismatch: expected {len(exp_rows)} rows but got {len(act_rows)}"
+        )
+
     headers = exp_headers_raw
     for row_idx, (erow, arow) in enumerate(zip(exp_rows, act_rows)):
-        assert len(erow) == len(arow), f"Column count changed in row {row_idx}"
+        if len(erow) != len(arow):
+            raise AssertionError(
+                f"Column count mismatch in row {row_idx}: expected {len(erow)} got {len(arow)}"
+            )
         for col_idx, (ecell, acell) in enumerate(zip(erow, arow)):
             header = headers[col_idx]
             key = _canonical(header)
             val1, kind1 = _parse_value(ecell)
             val2, kind2 = _parse_value(acell)
             if kind1 == "text" or kind2 == "text":
-                assert ecell == acell, f"Mismatch in row {row_idx} column {header}"
+                if ecell != acell:
+                    diff = "\n".join(
+                        difflib.unified_diff(
+                            ["| " + " | ".join(erow) + " |"],
+                            ["| " + " | ".join(arow) + " |"],
+                            "expected",
+                            "actual",
+                            lineterm="",
+                        )
+                    )
+                    raise AssertionError(f"Mismatch in row {row_idx} column {header}\n{diff}")
                 continue
             tol = tols.get(key, 0.0)
             if kind1 == "int" and kind2 == "int" and "." not in ecell and "." not in acell:
-                assert abs(val1 - val2) <= tol, f"Int mismatch in row {row_idx} column {header}: {val1} vs {val2}"
+                if abs(val1 - val2) > tol:
+                    diff = "\n".join(
+                        difflib.unified_diff(
+                            ["| " + " | ".join(erow) + " |"],
+                            ["| " + " | ".join(arow) + " |"],
+                            "expected",
+                            "actual",
+                            lineterm="",
+                        )
+                    )
+                    raise AssertionError(
+                        f"Int mismatch in row {row_idx} column {header}: {val1} vs {val2}\n{diff}"
+                    )
             else:
-                assert math.isclose(float(val1), float(val2), rel_tol=tol), (
-                    f"Float mismatch in row {row_idx} column {header}: {val1} vs {val2} tol={tol}"
-                )
+                if not math.isclose(float(val1), float(val2), rel_tol=tol):
+                    diff = "\n".join(
+                        difflib.unified_diff(
+                            ["| " + " | ".join(erow) + " |"],
+                            ["| " + " | ".join(arow) + " |"],
+                            "expected",
+                            "actual",
+                            lineterm="",
+                        )
+                    )
+                    raise AssertionError(
+                        f"Float mismatch in row {row_idx} column {header}: {val1} vs {val2} tol={tol}\n{diff}"
+                    )
