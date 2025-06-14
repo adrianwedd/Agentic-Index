@@ -31,13 +31,13 @@ Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
 -----
 
 <p align="center">
-<a href="https://github.com/adrianwedd/Agentic-Index/actions/workflows/ci.yml"><img src="badges/build.svg" alt="build"></a>
+![build](badges/build.svg)
 ![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
-<a href="https://adrianwedd.github.io/Agentic-Index/"><img src="badges/docs.svg" alt="docs"></a>
-<a href="https://adrianwedd.github.io/Agentic-Index/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index" alt="Site"></a>
-<a href="./LICENSE.md"><img src="badges/license.svg" alt="license"></a>
-<a href="https://pypi.org/project/agentic-index-cli/"><img src="badges/pypi.svg" alt="PyPI"></a>
-<a href="https://github.com/adrianwedd/Agentic-Index/releases"><img src="https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases" alt="Release Notes"></a>
+![docs](badges/docs.svg)
+![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index)
+![license](badges/license.svg)
+![PyPI](badges/pypi.svg)
+![Release Notes](https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases)
 </p>
 
 This catalogue is maintained by the Agentic-Index project and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
@@ -339,7 +339,7 @@ For tips on keeping your branch in sync with `main` and resolving conflicts, see
 [CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).
 
 Let's build the best damn agent list together\!
-<a href="./CODE_OF_CONDUCT.md"><img src="badges/coc.svg" alt="Code of Conduct"></a>
+![Code of Conduct](badges/coc.svg)
 
 
 -----
