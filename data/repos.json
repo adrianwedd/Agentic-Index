@@ -27,7 +27,7 @@
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0,
+      "score_delta": 0.0,
       "stars_log2": 16.654188473059545,
       "stars_7d": 123,
       "maintenance": 0.9,
@@ -44,9 +44,7 @@
       "forks_count": 6808,
       "open_issues_count": 783,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T16:30:22Z",
       "owner": {
@@ -60,11 +58,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 16.156221364814154,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0.01
+      "score_delta": 0.01,
+      "stars_log2": 16.156221364814154
     },
     {
       "name": "browser-use",
@@ -75,9 +73,7 @@
       "forks_count": 7125,
       "open_issues_count": 493,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T01:38:28Z",
       "owner": {
@@ -91,11 +87,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.945032258425424,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.945032258425424
     },
     {
       "name": "OpenHands",
@@ -106,9 +102,7 @@
       "forks_count": 6635,
       "open_issues_count": 373,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T16:24:43Z",
       "owner": {
@@ -122,11 +116,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.82329259536683,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.82329259536683
     },
     {
       "name": "lobe-chat",
@@ -137,9 +131,7 @@
       "forks_count": 12966,
       "open_issues_count": 855,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T09:40:29Z",
       "owner": {
@@ -153,11 +145,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.930483254523896,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.930483254523896
     },
     {
       "name": "MetaGPT",
@@ -168,9 +160,7 @@
       "forks_count": 6747,
       "open_issues_count": 74,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T14:15:25Z",
       "owner": {
@@ -184,11 +174,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.78294703409676,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.78294703409676
     },
     {
       "name": "ragflow",
@@ -199,9 +189,7 @@
       "forks_count": 5379,
       "open_issues_count": 2240,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T13:14:50Z",
       "owner": {
@@ -215,11 +203,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.74800935563,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.74800935563
     },
     {
       "name": "LLaMA-Factory",
@@ -230,9 +218,7 @@
       "forks_count": 6303,
       "open_issues_count": 495,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-12T08:10:38Z",
       "owner": {
@@ -246,11 +232,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.672176694332201,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.672176694332201
     },
     {
       "name": "system-prompts-and-models-of-ai-tools",
@@ -261,9 +247,7 @@
       "forks_count": 17406,
       "open_issues_count": 38,
       "archived": false,
-      "license": {
-        "spdx_id": "GPL-3.0"
-      },
+      "license": "GPL-3.0",
       "pushed_at": "2025-06-13T10:16:17Z",
       "owner": {
         "login": "x1xhlol"
@@ -276,11 +260,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.803450058518623,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.803450058518623
     },
     {
       "name": "cline",
@@ -291,9 +275,7 @@
       "forks_count": 5655,
       "open_issues_count": 903,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T16:09:10Z",
       "owner": {
@@ -307,11 +289,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.478042781150538,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.478042781150538
     },
     {
       "name": "anything-llm",
@@ -322,9 +304,7 @@
       "forks_count": 4498,
       "open_issues_count": 280,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "JavaScript",
       "pushed_at": "2025-06-13T15:56:40Z",
       "owner": {
@@ -338,11 +318,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.466490749633856,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.466490749633856
     },
     {
       "name": "llama_index",
@@ -353,9 +333,7 @@
       "forks_count": 6063,
       "open_issues_count": 298,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T15:56:43Z",
       "owner": {
@@ -369,11 +347,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.369358785709156,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.369358785709156
     },
     {
       "name": "autogen",
@@ -384,9 +362,7 @@
       "forks_count": 6969,
       "open_issues_count": 568,
       "archived": false,
-      "license": {
-        "spdx_id": "CC-BY-4.0"
-      },
+      "license": "CC-BY-4.0",
       "language": "Python",
       "pushed_at": "2025-06-13T16:33:43Z",
       "owner": {
@@ -400,11 +376,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.48730620823347,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.48730620823347
     },
     {
       "name": "awesome-llm-apps",
@@ -415,9 +391,7 @@
       "forks_count": 4437,
       "open_issues_count": 16,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-12T22:59:25Z",
       "owner": {
@@ -431,11 +405,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.230133048013252,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.230133048013252
     },
     {
       "name": "Flowise",
@@ -446,9 +420,7 @@
       "forks_count": 20550,
       "open_issues_count": 575,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T13:19:15Z",
       "owner": {
@@ -462,11 +434,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.287387736641552,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.287387736641552
     },
     {
       "name": "mem0",
@@ -477,9 +449,7 @@
       "forks_count": 3425,
       "open_issues_count": 446,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T07:27:30Z",
       "owner": {
@@ -493,11 +463,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.070540271624344,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.070540271624344
     },
     {
       "name": "ChatTTS",
@@ -508,9 +478,7 @@
       "forks_count": 3994,
       "open_issues_count": 58,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "Python",
       "pushed_at": "2025-05-23T13:00:56Z",
       "owner": {
@@ -524,11 +492,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.166555407191236,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.166555407191236
     },
     {
       "name": "Langchain-Chatchat",
@@ -539,9 +507,7 @@
       "forks_count": 5911,
       "open_issues_count": 186,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "TypeScript",
       "pushed_at": "2025-03-25T15:45:51Z",
       "owner": {
@@ -555,11 +521,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.106562940444883,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.106562940444883
     },
     {
       "name": "crewAI",
@@ -570,9 +536,7 @@
       "forks_count": 4413,
       "open_issues_count": 102,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T12:34:14Z",
       "owner": {
@@ -586,11 +550,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.004483835967672,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.004483835967672
     },
     {
       "name": "AgentGPT",
@@ -601,9 +565,7 @@
       "forks_count": 9430,
       "open_issues_count": 211,
       "archived": false,
-      "license": {
-        "spdx_id": "GPL-3.0"
-      },
+      "license": "GPL-3.0",
       "language": "TypeScript",
       "pushed_at": "2025-04-29T01:19:32Z",
       "owner": {
@@ -617,11 +579,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.066761932386909,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 15.066761932386909
     },
     {
       "name": "agno",
@@ -632,9 +594,7 @@
       "forks_count": 3593,
       "open_issues_count": 139,
       "archived": false,
-      "license": {
-        "spdx_id": "MPL-2.0"
-      },
+      "license": "MPL-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T16:23:07Z",
       "owner": {
@@ -648,11 +608,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.78483929465315,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.78483929465315
     },
     {
       "name": "khoj",
@@ -663,9 +623,7 @@
       "forks_count": 1714,
       "open_issues_count": 83,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "Python",
       "pushed_at": "2025-06-11T20:37:52Z",
       "owner": {
@@ -679,11 +637,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.887934549983502,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.887934549983502
     },
     {
       "name": "ChatDev",
@@ -694,9 +652,7 @@
       "forks_count": 3402,
       "open_issues_count": 46,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-05T23:58:06Z",
       "owner": {
@@ -710,11 +666,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.721846837458786,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.721846837458786
     },
     {
       "name": "LibreChat",
@@ -725,9 +681,7 @@
       "forks_count": 4682,
       "open_issues_count": 223,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-12T21:34:06Z",
       "owner": {
@@ -741,11 +695,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.70606426733497,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.70606426733497
     },
     {
       "name": "cherry-studio",
@@ -756,9 +710,7 @@
       "forks_count": 2446,
       "open_issues_count": 831,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T16:28:46Z",
       "owner": {
@@ -772,11 +724,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.793247671600913,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.793247671600913
     },
     {
       "name": "Jobs_Applier_AI_Agent_AIHawk",
@@ -787,9 +739,7 @@
       "forks_count": 4272,
       "open_issues_count": 12,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "Python",
       "pushed_at": "2025-05-28T13:24:12Z",
       "owner": {
@@ -803,11 +753,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.788769303208964,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.788769303208964
     },
     {
       "name": "ai-agents-for-beginners",
@@ -818,9 +768,7 @@
       "forks_count": 7075,
       "open_issues_count": 11,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Jupyter Notebook",
       "pushed_at": "2025-06-13T11:41:00Z",
       "owner": {
@@ -834,11 +782,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.667277894919362,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.667277894919362
     },
     {
       "name": "qlib",
@@ -849,9 +797,7 @@
       "forks_count": 3862,
       "open_issues_count": 264,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-05-29T07:18:13Z",
       "owner": {
@@ -865,11 +811,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.61430725026834,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.61430725026834
     },
     {
       "name": "composio",
@@ -880,9 +826,7 @@
       "forks_count": 4415,
       "open_issues_count": 80,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "Python",
       "pushed_at": "2025-06-13T14:33:56Z",
       "owner": {
@@ -896,11 +840,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.637870129034443,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.637870129034443
     },
     {
       "name": "FastGPT",
@@ -911,9 +855,7 @@
       "forks_count": 6358,
       "open_issues_count": 566,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T10:55:36Z",
       "owner": {
@@ -927,11 +869,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.593099286027135,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.593099286027135
     },
     {
       "name": "gpt-researcher",
@@ -942,9 +884,7 @@
       "forks_count": 2871,
       "open_issues_count": 121,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T09:24:04Z",
       "owner": {
@@ -958,11 +898,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.41574176829009,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.41574176829009
     },
     {
       "name": "haystack",
@@ -973,9 +913,7 @@
       "forks_count": 2214,
       "open_issues_count": 121,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T13:38:02Z",
       "owner": {
@@ -989,11 +927,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.367824239411048,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.367824239411048
     },
     {
       "name": "CopilotKit",
@@ -1004,9 +942,7 @@
       "forks_count": 2885,
       "open_issues_count": 170,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T16:27:29Z",
       "owner": {
@@ -1020,11 +956,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.368370042894675,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.368370042894675
     },
     {
       "name": "swarm",
@@ -1035,9 +971,7 @@
       "forks_count": 2108,
       "open_issues_count": 10,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-03-11T17:27:22Z",
       "owner": {
@@ -1051,11 +985,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.281785170783738,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.281785170783738
     },
     {
       "name": "agentic",
@@ -1066,9 +1000,7 @@
       "forks_count": 2229,
       "open_issues_count": 12,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-06T15:18:17Z",
       "owner": {
@@ -1082,11 +1014,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.105990328791846,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.105990328791846
     },
     {
       "name": "vanna",
@@ -1097,9 +1029,7 @@
       "forks_count": 1622,
       "open_issues_count": 201,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-04-10T03:18:09Z",
       "owner": {
@@ -1108,16 +1038,16 @@
       "AgenticIndexScore": 5.23,
       "category": "RAG-centric",
       "stars": 18102,
-      "recency_factor": 0.8985074626865672,
+      "recency_factor": 0.8955223880597015,
       "issue_health": 4.975124312522894e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.143941177768493,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.143941177768493
     },
     {
       "name": "letta",
@@ -1128,9 +1058,7 @@
       "forks_count": 1754,
       "open_issues_count": 65,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-12T16:33:25Z",
       "owner": {
@@ -1144,11 +1072,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.039775849233681,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.039775849233681
     },
     {
       "name": "DB-GPT",
@@ -1159,9 +1087,7 @@
       "forks_count": 2298,
       "open_issues_count": 413,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T09:27:24Z",
       "owner": {
@@ -1175,11 +1101,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.032562359001107,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.032562359001107
     },
     {
       "name": "deep-research",
@@ -1190,9 +1116,7 @@
       "forks_count": 1716,
       "open_issues_count": 68,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-07T13:00:43Z",
       "owner": {
@@ -1206,11 +1130,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.021327032624372,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.021327032624372
     },
     {
       "name": "agenticSeek",
@@ -1221,9 +1145,7 @@
       "forks_count": 1749,
       "open_issues_count": 16,
       "archived": false,
-      "license": {
-        "spdx_id": "GPL-3.0"
-      },
+      "license": "GPL-3.0",
       "language": "Python",
       "pushed_at": "2025-06-13T15:55:57Z",
       "owner": {
@@ -1237,11 +1159,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.144976824050111,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.144976824050111
     },
     {
       "name": "SWE-agent",
@@ -1252,9 +1174,7 @@
       "forks_count": 1672,
       "open_issues_count": 47,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T05:00:30Z",
       "owner": {
@@ -1268,11 +1188,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.991078907556085,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.991078907556085
     },
     {
       "name": "RagaAI-Catalyst",
@@ -1283,9 +1203,7 @@
       "forks_count": 3777,
       "open_issues_count": 13,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-10T10:43:33Z",
       "owner": {
@@ -1299,11 +1217,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.982726252182031,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.982726252182031
     },
     {
       "name": "eliza",
@@ -1314,9 +1232,7 @@
       "forks_count": 5232,
       "open_issues_count": 37,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T16:16:31Z",
       "owner": {
@@ -1330,11 +1246,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.97172316117676,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.97172316117676
     },
     {
       "name": "DocsGPT",
@@ -1345,9 +1261,7 @@
       "forks_count": 1669,
       "open_issues_count": 38,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T00:14:14Z",
       "owner": {
@@ -1361,11 +1275,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.939303724347104,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.939303724347104
     },
     {
       "name": "awesome-ai-agents",
@@ -1376,9 +1290,7 @@
       "forks_count": 1425,
       "open_issues_count": 56,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "pushed_at": "2025-02-26T10:04:45Z",
       "owner": {
         "login": "e2b-dev"
@@ -1386,16 +1298,16 @@
       "AgenticIndexScore": 5.17,
       "category": "General-purpose",
       "stars": 18563,
-      "recency_factor": 0.7701492537313432,
+      "recency_factor": 0.7671641791044777,
       "issue_health": 1.7857142542432314e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.180219982170192,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.180219982170192
     },
     {
       "name": "goose",
@@ -1406,9 +1318,7 @@
       "forks_count": 1159,
       "open_issues_count": 368,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Rust",
       "pushed_at": "2025-06-13T16:27:20Z",
       "owner": {
@@ -1422,11 +1332,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.829623645485354,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.829623645485354
     },
     {
       "name": "devika",
@@ -1437,9 +1347,7 @@
       "forks_count": 2558,
       "open_issues_count": 186,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-09-19T16:11:25Z",
       "owner": {
@@ -1453,11 +1361,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.23862865019351,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.23862865019351
     },
     {
       "name": "SuperAGI",
@@ -1468,9 +1376,7 @@
       "forks_count": 2004,
       "open_issues_count": 198,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-01-22T22:14:07Z",
       "owner": {
@@ -1484,11 +1390,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.002551341103736,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 14.002551341103736
     },
     {
       "name": "suna",
@@ -1499,9 +1405,7 @@
       "forks_count": 2138,
       "open_issues_count": 151,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "TypeScript",
       "pushed_at": "2025-06-11T18:22:32Z",
       "owner": {
@@ -1515,11 +1419,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.810571634741146,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.810571634741146
     },
     {
       "name": "ai-pdf-chatbot-langchain",
@@ -1530,9 +1434,7 @@
       "forks_count": 3094,
       "open_issues_count": 32,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-02-20T18:19:58Z",
       "owner": {
@@ -1546,11 +1448,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.926759273112985,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.926759273112985
     },
     {
       "name": "dagger",
@@ -1561,9 +1463,7 @@
       "forks_count": 739,
       "open_issues_count": 765,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Go",
       "pushed_at": "2025-06-13T09:58:31Z",
       "owner": {
@@ -1577,11 +1477,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.76424960536716,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.76424960536716
     },
     {
       "name": "botpress",
@@ -1592,9 +1492,7 @@
       "forks_count": 2027,
       "open_issues_count": 21,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T14:52:21Z",
       "owner": {
@@ -1608,11 +1506,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.75258971764099,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.75258971764099
     },
     {
       "name": "plandex",
@@ -1623,9 +1521,7 @@
       "forks_count": 967,
       "open_issues_count": 32,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Go",
       "pushed_at": "2025-06-08T19:42:26Z",
       "owner": {
@@ -1639,11 +1535,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.750916299978075,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.750916299978075
     },
     {
       "name": "activepieces",
@@ -1654,9 +1550,7 @@
       "forks_count": 2082,
       "open_issues_count": 391,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T13:27:10Z",
       "owner": {
@@ -1670,11 +1564,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.898790308381212,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.898790308381212
     },
     {
       "name": "web-ui",
@@ -1685,9 +1579,7 @@
       "forks_count": 2313,
       "open_issues_count": 251,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-01T14:56:06Z",
       "owner": {
@@ -1701,11 +1593,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.736824699098866,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.736824699098866
     },
     {
       "name": "deer-flow",
@@ -1716,9 +1608,7 @@
       "forks_count": 1487,
       "open_issues_count": 145,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T10:01:19Z",
       "owner": {
@@ -1732,11 +1622,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.717033749490891,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.717033749490891
     },
     {
       "name": "ai",
@@ -1747,9 +1637,7 @@
       "forks_count": 2383,
       "open_issues_count": 735,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T16:07:35Z",
       "owner": {
@@ -1763,11 +1651,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.865153292938063,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.865153292938063
     },
     {
       "name": "mastra",
@@ -1778,9 +1666,7 @@
       "forks_count": 841,
       "open_issues_count": 256,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T16:33:47Z",
       "owner": {
@@ -1794,11 +1680,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.790653947553906,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.790653947553906
     },
     {
       "name": "camel",
@@ -1809,9 +1695,7 @@
       "forks_count": 1376,
       "open_issues_count": 516,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T16:12:04Z",
       "owner": {
@@ -1825,11 +1709,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.655530723155643,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.655530723155643
     },
     {
       "name": "ChuanhuChatGPT",
@@ -1840,9 +1724,7 @@
       "forks_count": 2280,
       "open_issues_count": 122,
       "archived": false,
-      "license": {
-        "spdx_id": "GPL-3.0"
-      },
+      "license": "GPL-3.0",
       "language": "Python",
       "pushed_at": "2025-03-13T09:36:38Z",
       "owner": {
@@ -1851,16 +1733,16 @@
       "AgenticIndexScore": 5.08,
       "category": "General-purpose",
       "stars": 15415,
-      "recency_factor": 0.8149253731343283,
+      "recency_factor": 0.8119402985074626,
       "issue_health": 8.196721190678602e-09,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.912140856295721,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.912140856295721
     },
     {
       "name": "GenAI_Agents",
@@ -1871,9 +1753,7 @@
       "forks_count": 1765,
       "open_issues_count": 15,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "Jupyter Notebook",
       "pushed_at": "2025-05-14T19:56:13Z",
       "owner": {
@@ -1887,11 +1767,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.682336269711378,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.682336269711378
     },
     {
       "name": "openai-agents-python",
@@ -1902,9 +1782,7 @@
       "forks_count": 1661,
       "open_issues_count": 212,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-12T17:11:08Z",
       "owner": {
@@ -1918,11 +1796,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.476999286133061,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.476999286133061
     },
     {
       "name": "Llama-Chinese",
@@ -1933,7 +1811,6 @@
       "forks_count": 1304,
       "open_issues_count": 197,
       "archived": false,
-      "license": {},
       "language": "Python",
       "pushed_at": "2025-04-06T09:16:55Z",
       "owner": {
@@ -1942,16 +1819,16 @@
       "AgenticIndexScore": 5.02,
       "category": "General-purpose",
       "stars": 14609,
-      "recency_factor": 0.8865671641791044,
+      "recency_factor": 0.8835820895522388,
       "issue_health": 5.076142062243605e-09,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.834668557690861,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.834668557690861
     },
     {
       "name": "graphiti",
@@ -1962,9 +1839,7 @@
       "forks_count": 876,
       "open_issues_count": 61,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T16:26:11Z",
       "owner": {
@@ -1978,11 +1853,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.456354415108288,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.456354415108288
     },
     {
       "name": "LangBot",
@@ -1993,9 +1868,7 @@
       "forks_count": 906,
       "open_issues_count": 101,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "Python",
       "pushed_at": "2025-06-11T12:32:48Z",
       "owner": {
@@ -2009,11 +1882,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.537461094633018,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.537461094633018
     },
     {
       "name": "pydantic-ai",
@@ -2024,9 +1897,7 @@
       "forks_count": 933,
       "open_issues_count": 300,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T15:57:50Z",
       "owner": {
@@ -2040,11 +1911,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.31896640501995,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.31896640501995
     },
     {
       "name": "adk-python",
@@ -2055,9 +1926,7 @@
       "forks_count": 1234,
       "open_issues_count": 436,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T06:45:26Z",
       "owner": {
@@ -2071,11 +1940,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.299637328029158,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.299637328029158
     },
     {
       "name": "ai-engineering-hub",
@@ -2086,9 +1955,7 @@
       "forks_count": 1696,
       "open_issues_count": 88,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Jupyter Notebook",
       "pushed_at": "2025-06-13T10:57:59Z",
       "owner": {
@@ -2102,11 +1969,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.251482410620213,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.251482410620213
     },
     {
       "name": "Qwen-Agent",
@@ -2117,9 +1984,7 @@
       "forks_count": 808,
       "open_issues_count": 305,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-05-29T09:36:00Z",
       "owner": {
@@ -2133,11 +1998,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.215987941161384,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.215987941161384
     },
     {
       "name": "opik",
@@ -2148,9 +2013,7 @@
       "forks_count": 664,
       "open_issues_count": 109,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T15:47:01Z",
       "owner": {
@@ -2164,11 +2027,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.241834226335136,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.241834226335136
     },
     {
       "name": "agent-zero",
@@ -2179,9 +2042,7 @@
       "forks_count": 1891,
       "open_issues_count": 165,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "Python",
       "pushed_at": "2025-06-13T11:46:49Z",
       "owner": {
@@ -2195,11 +2056,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.254733389246674,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.254733389246674
     },
     {
       "name": "bisheng",
@@ -2210,9 +2071,7 @@
       "forks_count": 1447,
       "open_issues_count": 106,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T12:59:49Z",
       "owner": {
@@ -2226,11 +2085,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.109504215757006,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.109504215757006
     },
     {
       "name": "AstrBot",
@@ -2241,9 +2100,7 @@
       "forks_count": 659,
       "open_issues_count": 202,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "Python",
       "pushed_at": "2025-06-12T15:02:22Z",
       "owner": {
@@ -2257,11 +2114,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.241685287601625,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.241685287601625
     },
     {
       "name": "E2B",
@@ -2272,9 +2129,7 @@
       "forks_count": 580,
       "open_issues_count": 30,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "MDX",
       "pushed_at": "2025-06-13T11:03:19Z",
       "owner": {
@@ -2288,11 +2143,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.07347215397646,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.07347215397646
     },
     {
       "name": "cua",
@@ -2303,9 +2158,7 @@
       "forks_count": 368,
       "open_issues_count": 51,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T15:44:03Z",
       "owner": {
@@ -2319,11 +2172,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.066257405352255,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.066257405352255
     },
     {
       "name": "Figma-Context-MCP",
@@ -2334,9 +2187,7 @@
       "forks_count": 660,
       "open_issues_count": 30,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-11T16:36:26Z",
       "owner": {
@@ -2350,11 +2201,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.98655314975666,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.98655314975666
     },
     {
       "name": "Bert-VITS2",
@@ -2365,9 +2216,7 @@
       "forks_count": 1203,
       "open_issues_count": 1,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "Python",
       "pushed_at": "2025-06-10T19:28:55Z",
       "owner": {
@@ -2381,11 +2230,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.047294352783004,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.047294352783004
     },
     {
       "name": "Upsonic",
@@ -2396,9 +2245,7 @@
       "forks_count": 701,
       "open_issues_count": 53,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-06T22:17:36Z",
       "owner": {
@@ -2412,11 +2259,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.877475866534427,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.877475866534427
     },
     {
       "name": "agentscope",
@@ -2427,9 +2274,7 @@
       "forks_count": 440,
       "open_issues_count": 76,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-12T02:52:10Z",
       "owner": {
@@ -2443,11 +2288,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.869208250550827,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.869208250550827
     },
     {
       "name": "UFO",
@@ -2458,9 +2303,7 @@
       "forks_count": 909,
       "open_issues_count": 34,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-11T12:33:29Z",
       "owner": {
@@ -2474,11 +2317,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.84979602224561,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.84979602224561
     },
     {
       "name": "pr-agent",
@@ -2489,9 +2332,7 @@
       "forks_count": 928,
       "open_issues_count": 74,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "Python",
       "pushed_at": "2025-06-12T14:58:02Z",
       "owner": {
@@ -2505,11 +2346,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.98744167293612,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.98744167293612
     },
     {
       "name": "WrenAI",
@@ -2520,9 +2361,7 @@
       "forks_count": 798,
       "open_issues_count": 185,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T07:26:22Z",
       "owner": {
@@ -2536,11 +2375,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.972261848733291,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.972261848733291
     },
     {
       "name": "awesome-LLM-resources",
@@ -2551,9 +2390,7 @@
       "forks_count": 536,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "pushed_at": "2025-06-13T06:09:26Z",
       "owner": {
         "login": "WangRongsheng"
@@ -2566,11 +2403,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.409921241249679,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.409921241249679
     },
     {
       "name": "OpenRLHF",
@@ -2581,9 +2418,7 @@
       "forks_count": 685,
       "open_issues_count": 258,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T10:59:11Z",
       "owner": {
@@ -2597,11 +2432,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.787494499696761,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.787494499696761
     },
     {
       "name": "promptfoo",
@@ -2612,9 +2447,7 @@
       "forks_count": 572,
       "open_issues_count": 220,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T16:01:42Z",
       "owner": {
@@ -2628,11 +2461,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.811575388375799,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.811575388375799
     },
     {
       "name": "aichat",
@@ -2643,9 +2476,7 @@
       "forks_count": 459,
       "open_issues_count": 1,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Rust",
       "pushed_at": "2025-06-09T01:03:00Z",
       "owner": {
@@ -2659,11 +2490,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.774375272802063,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.774375272802063
     },
     {
       "name": "R2R",
@@ -2674,9 +2505,7 @@
       "forks_count": 553,
       "open_issues_count": 86,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-10T18:22:54Z",
       "owner": {
@@ -2690,11 +2519,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.766528908598865,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.766528908598865
     },
     {
       "name": "nanobrowser",
@@ -2705,9 +2534,7 @@
       "forks_count": 641,
       "open_issues_count": 26,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "TypeScript",
       "pushed_at": "2025-06-11T08:06:35Z",
       "owner": {
@@ -2721,11 +2548,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.713171684314805,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.713171684314805
     },
     {
       "name": "intentkit",
@@ -2736,9 +2563,7 @@
       "forks_count": 682,
       "open_issues_count": 71,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T10:03:34Z",
       "owner": {
@@ -2752,11 +2577,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.648132845652658,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.648132845652658
     },
     {
       "name": "agents",
@@ -2767,9 +2592,7 @@
       "forks_count": 964,
       "open_issues_count": 350,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T15:35:14Z",
       "owner": {
@@ -2783,11 +2606,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.623195635452936,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.623195635452936
     },
     {
       "name": "deep-searcher",
@@ -2798,9 +2621,7 @@
       "forks_count": 620,
       "open_issues_count": 37,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-05-30T12:43:23Z",
       "owner": {
@@ -2814,11 +2635,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.607792641919211,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.607792641919211
     },
     {
       "name": "XAgent",
@@ -2829,9 +2650,7 @@
       "forks_count": 885,
       "open_issues_count": 53,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2024-08-12T06:41:38Z",
       "owner": {
@@ -2840,16 +2659,16 @@
       "AgenticIndexScore": 4.7,
       "category": "General-purpose",
       "stars": 8367,
-      "recency_factor": 0.17910447761194026,
+      "recency_factor": 0.17611940298507467,
       "issue_health": 1.8867924111987122e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.030667136246942,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 13.030667136246942
     },
     {
       "name": "agent-squad",
@@ -2860,9 +2679,7 @@
       "forks_count": 509,
       "open_issues_count": 64,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-06T13:20:33Z",
       "owner": {
@@ -2876,11 +2693,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.556984957594462,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.556984957594462
     },
     {
       "name": "LLocalSearch",
@@ -2891,9 +2708,7 @@
       "forks_count": 375,
       "open_issues_count": 58,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Go",
       "pushed_at": "2025-04-28T07:04:51Z",
       "owner": {
@@ -2902,16 +2717,16 @@
       "AgenticIndexScore": 4.68,
       "category": "General-purpose",
       "stars": 5926,
-      "recency_factor": 0.9522388059701492,
+      "recency_factor": 0.9492537313432836,
       "issue_health": 1.724137899117295e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.533086342167612,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.533086342167612
     },
     {
       "name": "RD-Agent",
@@ -2922,9 +2737,7 @@
       "forks_count": 536,
       "open_issues_count": 74,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T15:51:16Z",
       "owner": {
@@ -2938,11 +2751,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.504818987632841,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.504818987632841
     },
     {
       "name": "lamda",
@@ -2953,7 +2766,6 @@
       "forks_count": 962,
       "open_issues_count": 26,
       "archived": false,
-      "license": {},
       "language": "Python",
       "pushed_at": "2025-06-08T07:23:13Z",
       "owner": {
@@ -2967,11 +2779,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.778898476008376,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.778898476008376
     },
     {
       "name": "TaskWeaver",
@@ -2982,9 +2794,7 @@
       "forks_count": 739,
       "open_issues_count": 55,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-05-19T03:01:21Z",
       "owner": {
@@ -2998,11 +2808,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.49235394515987,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.49235394515987
     },
     {
       "name": "ten-framework",
@@ -3013,9 +2823,7 @@
       "forks_count": 717,
       "open_issues_count": 142,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "C",
       "pushed_at": "2025-06-13T13:20:28Z",
       "owner": {
@@ -3029,11 +2837,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.588011853215088,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.588011853215088
     },
     {
       "name": "superagent",
@@ -3044,9 +2852,7 @@
       "forks_count": 897,
       "open_issues_count": 64,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-04-01T07:49:39Z",
       "owner": {
@@ -3055,16 +2861,16 @@
       "AgenticIndexScore": 4.66,
       "category": "RAG-centric",
       "stars": 5916,
-      "recency_factor": 0.8716417910447761,
+      "recency_factor": 0.8686567164179104,
       "issue_health": 1.5624999738506062e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.530650179750014,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.530650179750014
     },
     {
       "name": "mcp-agent",
@@ -3075,9 +2881,7 @@
       "forks_count": 527,
       "open_issues_count": 67,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-12T17:37:09Z",
       "owner": {
@@ -3091,11 +2895,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.46352437327118,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.46352437327118
     },
     {
       "name": "MindSearch",
@@ -3106,9 +2910,7 @@
       "forks_count": 647,
       "open_issues_count": 49,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "JavaScript",
       "pushed_at": "2025-01-08T09:34:38Z",
       "owner": {
@@ -3117,16 +2919,16 @@
       "AgenticIndexScore": 4.65,
       "category": "Multi-Agent Coordination",
       "stars": 6389,
-      "recency_factor": 0.6238805970149254,
+      "recency_factor": 0.6208955223880597,
       "issue_health": 2.0408162826335285e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.641600215834357,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.641600215834357
     },
     {
       "name": "AppAgent",
@@ -3137,9 +2939,7 @@
       "forks_count": 652,
       "open_issues_count": 88,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-03-19T11:01:38Z",
       "owner": {
@@ -3148,16 +2948,16 @@
       "AgenticIndexScore": 4.65,
       "category": "General-purpose",
       "stars": 5883,
-      "recency_factor": 0.8328358208955224,
+      "recency_factor": 0.8298507462686567,
       "issue_health": 1.1363636254202447e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.522581531254831,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.522581531254831
     },
     {
       "name": "julep",
@@ -3168,9 +2968,7 @@
       "forks_count": 928,
       "open_issues_count": 96,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T10:37:01Z",
       "owner": {
@@ -3184,11 +2982,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.43540982316332,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.43540982316332
     },
     {
       "name": "cognee",
@@ -3199,9 +2997,7 @@
       "forks_count": 404,
       "open_issues_count": 40,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T16:33:42Z",
       "owner": {
@@ -3215,11 +3011,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.423903765836593,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.423903765836593
     },
     {
       "name": "Agent-S",
@@ -3230,9 +3026,7 @@
       "forks_count": 555,
       "open_issues_count": 10,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-10T00:59:39Z",
       "owner": {
@@ -3246,11 +3040,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.411510988012072,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.411510988012072
     },
     {
       "name": "PocketFlow",
@@ -3261,9 +3055,7 @@
       "forks_count": 609,
       "open_issues_count": 38,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-06T04:18:37Z",
       "owner": {
@@ -3277,11 +3069,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.409390936137703,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.409390936137703
     },
     {
       "name": "LaVague",
@@ -3292,9 +3084,7 @@
       "forks_count": 553,
       "open_issues_count": 94,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-01-21T13:41:48Z",
       "owner": {
@@ -3308,11 +3098,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.568193653850074,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.568193653850074
     },
     {
       "name": "magentic-ui",
@@ -3323,9 +3113,7 @@
       "forks_count": 497,
       "open_issues_count": 53,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T01:52:05Z",
       "owner": {
@@ -3339,11 +3127,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.330076554797458,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.330076554797458
     },
     {
       "name": "superduper",
@@ -3354,9 +3142,7 @@
       "forks_count": 496,
       "open_issues_count": 30,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-12T14:33:55Z",
       "owner": {
@@ -3370,11 +3156,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.311748315004959,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.311748315004959
     },
     {
       "name": "pyspur",
@@ -3385,9 +3171,7 @@
       "forks_count": 355,
       "open_issues_count": 25,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "TypeScript",
       "pushed_at": "2025-05-12T12:01:00Z",
       "owner": {
@@ -3396,16 +3180,16 @@
       "AgenticIndexScore": 4.61,
       "category": "General-purpose",
       "stars": 5070,
-      "recency_factor": 0.9940298507462687,
+      "recency_factor": 0.991044776119403,
       "issue_health": 3.999999842463353e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.308054559066635,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.308054559066635
     },
     {
       "name": "open-deep-research",
@@ -3416,9 +3200,7 @@
       "forks_count": 708,
       "open_issues_count": 42,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "TypeScript",
       "pushed_at": "2025-05-07T15:38:28Z",
       "owner": {
@@ -3432,11 +3214,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.480537783101841,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.480537783101841
     },
     {
       "name": "swarms",
@@ -3447,9 +3229,7 @@
       "forks_count": 574,
       "open_issues_count": 38,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-12T22:37:15Z",
       "owner": {
@@ -3463,11 +3243,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.265615046484458,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.265615046484458
     },
     {
       "name": "Archon",
@@ -3478,9 +3258,7 @@
       "forks_count": 937,
       "open_issues_count": 49,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-10T11:15:28Z",
       "owner": {
@@ -3494,11 +3272,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.252961036393684,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.252961036393684
     },
     {
       "name": "PraisonAI",
@@ -3509,9 +3287,7 @@
       "forks_count": 670,
       "open_issues_count": 28,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-12T04:01:21Z",
       "owner": {
@@ -3525,11 +3301,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.243769031961852,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.243769031961852
     },
     {
       "name": "AutoAgent",
@@ -3540,9 +3316,7 @@
       "forks_count": 629,
       "open_issues_count": 40,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-06T16:45:38Z",
       "owner": {
@@ -3556,11 +3330,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.190442018782825,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.190442018782825
     },
     {
       "name": "SerpentAI",
@@ -3571,9 +3345,7 @@
       "forks_count": 801,
       "open_issues_count": 2,
       "archived": true,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2022-11-07T01:59:31Z",
       "owner": {
@@ -3587,11 +3359,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.751544059089099,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.751544059089099
     },
     {
       "name": "steel-browser",
@@ -3602,9 +3374,7 @@
       "forks_count": 310,
       "open_issues_count": 19,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "TypeScript",
       "pushed_at": "2025-06-12T21:52:18Z",
       "owner": {
@@ -3618,11 +3388,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.1767964781476,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.1767964781476
     },
     {
       "name": "xtuner",
@@ -3633,9 +3403,7 @@
       "forks_count": 348,
       "open_issues_count": 249,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-05-29T15:17:57Z",
       "owner": {
@@ -3649,11 +3417,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.164906926675688,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.164906926675688
     },
     {
       "name": "agentops",
@@ -3664,9 +3432,7 @@
       "forks_count": 417,
       "open_issues_count": 73,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T15:47:51Z",
       "owner": {
@@ -3680,11 +3446,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.151016538892248,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.151016538892248
     },
     {
       "name": "LLM-Agent-Paper-List",
@@ -3695,7 +3461,6 @@
       "forks_count": 468,
       "open_issues_count": 17,
       "archived": false,
-      "license": {},
       "pushed_at": "2024-07-28T20:41:35Z",
       "owner": {
         "login": "WooooDyy"
@@ -3708,11 +3473,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.914011328541255,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.914011328541255
     },
     {
       "name": "gaianet-node",
@@ -3723,9 +3488,7 @@
       "forks_count": 297,
       "open_issues_count": 60,
       "archived": false,
-      "license": {
-        "spdx_id": "GPL-3.0"
-      },
+      "license": "GPL-3.0",
       "language": "Shell",
       "pushed_at": "2025-06-05T13:47:13Z",
       "owner": {
@@ -3739,11 +3502,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.274960472140602,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.274960472140602
     },
     {
       "name": "lab",
@@ -3754,9 +3517,7 @@
       "forks_count": 1390,
       "open_issues_count": 65,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "C",
       "pushed_at": "2023-01-04T15:38:37Z",
       "owner": {
@@ -3770,11 +3531,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.82137539237254,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.82137539237254
     },
     {
       "name": "rags",
@@ -3785,9 +3546,7 @@
       "forks_count": 664,
       "open_issues_count": 36,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-04-05T05:36:59Z",
       "owner": {
@@ -3801,11 +3560,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.65954999687987,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.65954999687987
     },
     {
       "name": "street-fighter-ai",
@@ -3816,9 +3575,7 @@
       "forks_count": 1396,
       "open_issues_count": 58,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2024-05-14T22:46:22Z",
       "owner": {
@@ -3832,11 +3589,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.663113308455806,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.663113308455806
     },
     {
       "name": "agents",
@@ -3847,9 +3604,7 @@
       "forks_count": 437,
       "open_issues_count": 36,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2024-09-26T03:12:53Z",
       "owner": {
@@ -3858,16 +3613,16 @@
       "AgenticIndexScore": 4.52,
       "category": "General-purpose",
       "stars": 5621,
-      "recency_factor": 0.31343283582089554,
+      "recency_factor": 0.31044776119402984,
       "issue_health": 2.7777776967496948e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.456867738380343,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.456867738380343
     },
     {
       "name": "AgentLaboratory",
@@ -3878,9 +3633,7 @@
       "forks_count": 653,
       "open_issues_count": 53,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-03-27T17:22:15Z",
       "owner": {
@@ -3894,11 +3647,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.137951734715358,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.137951734715358
     },
     {
       "name": "Awesome-GPT-Agents",
@@ -3909,9 +3662,7 @@
       "forks_count": 669,
       "open_issues_count": 7,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "pushed_at": "2024-07-21T17:56:50Z",
       "owner": {
         "login": "fr0gger"
@@ -3924,11 +3675,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.572937025017309,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.572937025017309
     },
     {
       "name": "TaskingAI",
@@ -3939,9 +3690,7 @@
       "forks_count": 329,
       "open_issues_count": 38,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2024-12-02T22:18:38Z",
       "owner": {
@@ -3955,11 +3704,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.324743110494417,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.324743110494417
     },
     {
       "name": "cursor-talk-to-figma-mcp",
@@ -3970,9 +3719,7 @@
       "forks_count": 421,
       "open_issues_count": 47,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "JavaScript",
       "pushed_at": "2025-05-04T11:58:48Z",
       "owner": {
@@ -3981,16 +3728,16 @@
       "AgenticIndexScore": 4.52,
       "category": "General-purpose",
       "stars": 4303,
-      "recency_factor": 0.9701492537313433,
+      "recency_factor": 0.9671641791044776,
       "issue_health": 2.1276595263408637e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.071462362556623,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.071462362556623
     },
     {
       "name": "gibberlink",
@@ -4001,9 +3748,7 @@
       "forks_count": 360,
       "open_issues_count": 8,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-04-04T19:25:50Z",
       "owner": {
@@ -4017,11 +3762,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.13024878405069,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.13024878405069
     },
     {
       "name": "SuperPrompt",
@@ -4032,7 +3777,6 @@
       "forks_count": 577,
       "open_issues_count": 12,
       "archived": false,
-      "license": {},
       "pushed_at": "2024-12-01T04:13:50Z",
       "owner": {
         "login": "NeoVertex1"
@@ -4040,16 +3784,16 @@
       "AgenticIndexScore": 4.51,
       "category": "General-purpose",
       "stars": 6138,
-      "recency_factor": 0.5104477611940299,
+      "recency_factor": 0.5074626865671642,
       "issue_health": 8.333332635057644e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.583787954502338,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.583787954502338
     },
     {
       "name": "spring-ai-alibaba",
@@ -4060,9 +3804,7 @@
       "forks_count": 775,
       "open_issues_count": 234,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Java",
       "pushed_at": "2025-06-13T15:08:38Z",
       "owner": {
@@ -4076,11 +3818,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.9901039638575,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.9901039638575
     },
     {
       "name": "opencode",
@@ -4091,9 +3833,7 @@
       "forks_count": 331,
       "open_issues_count": 85,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Go",
       "pushed_at": "2025-06-07T19:41:25Z",
       "owner": {
@@ -4107,11 +3847,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.97333862080036,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.97333862080036
     },
     {
       "name": "12-factor-agents",
@@ -4122,9 +3862,7 @@
       "forks_count": 256,
       "open_issues_count": 7,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "TypeScript",
       "pushed_at": "2025-06-12T23:07:03Z",
       "owner": {
@@ -4138,11 +3876,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.090112419664289,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.090112419664289
     },
     {
       "name": "aci",
@@ -4153,9 +3891,7 @@
       "forks_count": 341,
       "open_issues_count": 49,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T13:59:50Z",
       "owner": {
@@ -4169,11 +3905,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.955649907528374,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.955649907528374
     },
     {
       "name": "sim",
@@ -4184,9 +3920,7 @@
       "forks_count": 586,
       "open_issues_count": 27,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T08:10:09Z",
       "owner": {
@@ -4200,11 +3934,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.950191349972702,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.950191349972702
     },
     {
       "name": "TradingAgents",
@@ -4215,9 +3949,7 @@
       "forks_count": 497,
       "open_issues_count": 19,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-12T02:43:39Z",
       "owner": {
@@ -4231,11 +3963,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.909893083770042,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.909893083770042
     },
     {
       "name": "DevOpsGPT",
@@ -4246,9 +3978,7 @@
       "forks_count": 725,
       "open_issues_count": 18,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "HTML",
       "pushed_at": "2024-08-14T09:11:08Z",
       "owner": {
@@ -4257,16 +3987,16 @@
       "AgenticIndexScore": 4.47,
       "category": "Multi-Agent Coordination",
       "stars": 5921,
-      "recency_factor": 0.18507462686567167,
+      "recency_factor": 0.18208955223880596,
       "issue_health": 5.5555552491703963e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.531868775177553,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.531868775177553
     },
     {
       "name": "gptme",
@@ -4277,9 +4007,7 @@
       "forks_count": 317,
       "open_issues_count": 93,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T16:03:11Z",
       "owner": {
@@ -4293,11 +4021,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.914758838941857,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.914758838941857
     },
     {
       "name": "rig",
@@ -4308,9 +4036,7 @@
       "forks_count": 405,
       "open_issues_count": 93,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Rust",
       "pushed_at": "2025-06-12T14:57:16Z",
       "owner": {
@@ -4324,11 +4050,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.878817284614229,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.878817284614229
     },
     {
       "name": "cognita",
@@ -4339,9 +4065,7 @@
       "forks_count": 333,
       "open_issues_count": 16,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-02-21T11:10:29Z",
       "owner": {
@@ -4350,16 +4074,16 @@
       "AgenticIndexScore": 4.45,
       "category": "RAG-centric",
       "stars": 4101,
-      "recency_factor": 0.755223880597015,
+      "recency_factor": 0.7522388059701492,
       "issue_health": 6.249999617846669e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.002111776479852,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.002111776479852
     },
     {
       "name": "agency-swarm",
@@ -4370,9 +4094,7 @@
       "forks_count": 946,
       "open_issues_count": 9,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T15:29:04Z",
       "owner": {
@@ -4386,11 +4108,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.850968150982439,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.850968150982439
     },
     {
       "name": "casibase",
@@ -4401,9 +4123,7 @@
       "forks_count": 440,
       "open_issues_count": 30,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Go",
       "pushed_at": "2025-06-12T16:40:13Z",
       "owner": {
@@ -4417,11 +4137,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.866506212226202,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.866506212226202
     },
     {
       "name": "Integuru",
@@ -4432,9 +4152,7 @@
       "forks_count": 346,
       "open_issues_count": 13,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "Python",
       "pushed_at": "2025-02-13T22:55:29Z",
       "owner": {
@@ -4448,11 +4166,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.096385734452651,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.096385734452651
     },
     {
       "name": "Viper",
@@ -4463,7 +4181,6 @@
       "forks_count": 582,
       "open_issues_count": 3,
       "archived": false,
-      "license": {},
       "pushed_at": "2025-06-12T14:13:20Z",
       "owner": {
         "login": "FunnyWolf"
@@ -4476,11 +4193,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.080151309614088,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.080151309614088
     },
     {
       "name": "tensortrade",
@@ -4491,9 +4208,7 @@
       "forks_count": 1093,
       "open_issues_count": 53,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2024-06-09T21:29:46Z",
       "owner": {
@@ -4507,11 +4222,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.3437409184722,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.3437409184722
     },
     {
       "name": "OpenAgents",
@@ -4522,9 +4237,7 @@
       "forks_count": 475,
       "open_issues_count": 12,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2024-11-18T09:39:29Z",
       "owner": {
@@ -4533,16 +4246,16 @@
       "AgenticIndexScore": 4.42,
       "category": "General-purpose",
       "stars": 4334,
-      "recency_factor": 0.4716417910447761,
+      "recency_factor": 0.4686567164179104,
       "issue_health": 8.333332635057644e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.081816278109198,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.081816278109198
     },
     {
       "name": "AgentVerse",
@@ -4553,9 +4266,7 @@
       "forks_count": 448,
       "open_issues_count": 29,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "JavaScript",
       "pushed_at": "2024-09-09T05:47:44Z",
       "owner": {
@@ -4564,16 +4275,16 @@
       "AgenticIndexScore": 4.41,
       "category": "General-purpose",
       "stars": 4614,
-      "recency_factor": 0.26268656716417915,
+      "recency_factor": 0.25970149253731345,
       "issue_health": 3.448275742723439e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.172114932533136,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 12.172114932533136
     },
     {
       "name": "langroid",
@@ -4584,9 +4295,7 @@
       "forks_count": 323,
       "open_issues_count": 59,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T12:51:04Z",
       "owner": {
@@ -4600,11 +4309,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.732167425663386,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.732167425663386
     },
     {
       "name": "PromptWizard",
@@ -4615,9 +4324,7 @@
       "forks_count": 287,
       "open_issues_count": 13,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-06T17:33:45Z",
       "owner": {
@@ -4631,11 +4338,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.689561254285525,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.689561254285525
     },
     {
       "name": "claude-coder",
@@ -4646,9 +4353,7 @@
       "forks_count": 157,
       "open_issues_count": 24,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "TypeScript",
       "pushed_at": "2025-04-30T10:21:02Z",
       "owner": {
@@ -4657,16 +4362,16 @@
       "AgenticIndexScore": 4.39,
       "category": "RAG-centric",
       "stars": 3667,
-      "recency_factor": 0.9582089552238806,
+      "recency_factor": 0.9552238805970149,
       "issue_health": 4.166666500715621e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.840777923595054,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.840777923595054
     },
     {
       "name": "modelscope-agent",
@@ -4677,9 +4382,7 @@
       "forks_count": 362,
       "open_issues_count": 77,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T13:13:38Z",
       "owner": {
@@ -4693,11 +4396,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.638435913990472,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.638435913990472
     },
     {
       "name": "AdalFlow",
@@ -4708,9 +4411,7 @@
       "forks_count": 288,
       "open_issues_count": 39,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-03-26T15:22:05Z",
       "owner": {
@@ -4724,11 +4425,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.696098170955864,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.696098170955864
     },
     {
       "name": "FinRobot",
@@ -4739,9 +4440,7 @@
       "forks_count": 626,
       "open_issues_count": 48,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Jupyter Notebook",
       "pushed_at": "2024-11-17T16:41:06Z",
       "owner": {
@@ -4755,11 +4454,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.810973220002165,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.810973220002165
     },
     {
       "name": "BotSharp",
@@ -4770,9 +4469,7 @@
       "forks_count": 553,
       "open_issues_count": 38,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "C#",
       "pushed_at": "2025-06-13T02:22:09Z",
       "owner": {
@@ -4786,11 +4483,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.43306376512207,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.43306376512207
     },
     {
       "name": "Streamer-Sales",
@@ -4801,9 +4498,7 @@
       "forks_count": 515,
       "open_issues_count": 11,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "Python",
       "pushed_at": "2025-03-08T00:38:06Z",
       "owner": {
@@ -4817,11 +4512,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.685186796595348,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.685186796595348
     },
     {
       "name": "LlamaIndexTS",
@@ -4832,9 +4527,7 @@
       "forks_count": 446,
       "open_issues_count": 113,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-12T09:25:51Z",
       "owner": {
@@ -4848,11 +4541,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.390168956200183,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.390168956200183
     },
     {
       "name": "vocode-core",
@@ -4863,9 +4556,7 @@
       "forks_count": 581,
       "open_issues_count": 16,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-11-15T22:16:58Z",
       "owner": {
@@ -4879,11 +4570,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.709083812550343,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.709083812550343
     },
     {
       "name": "core",
@@ -4894,9 +4585,7 @@
       "forks_count": 377,
       "open_issues_count": 50,
       "archived": false,
-      "license": {
-        "spdx_id": "GPL-3.0"
-      },
+      "license": "GPL-3.0",
       "language": "Python",
       "pushed_at": "2025-06-11T21:25:38Z",
       "owner": {
@@ -4910,11 +4599,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.454299293619899,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.454299293619899
     },
     {
       "name": "beeai-framework",
@@ -4925,9 +4614,7 @@
       "forks_count": 300,
       "open_issues_count": 42,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T14:56:54Z",
       "owner": {
@@ -4941,11 +4628,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.29978040285854,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.29978040285854
     },
     {
       "name": "rl-baselines3-zoo",
@@ -4956,9 +4643,7 @@
       "forks_count": 555,
       "open_issues_count": 62,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-02T10:09:07Z",
       "owner": {
@@ -4972,11 +4657,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.261507309202056,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.261507309202056
     },
     {
       "name": "ii-agent",
@@ -4987,9 +4672,7 @@
       "forks_count": 356,
       "open_issues_count": 12,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T14:42:39Z",
       "owner": {
@@ -5003,11 +4686,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.246740598493144,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.246740598493144
     },
     {
       "name": "AutoGPT-Next-Web",
@@ -5018,9 +4701,7 @@
       "forks_count": 1399,
       "open_issues_count": 32,
       "archived": false,
-      "license": {
-        "spdx_id": "GPL-3.0"
-      },
+      "license": "GPL-3.0",
       "language": "TypeScript",
       "pushed_at": "2025-02-10T19:36:24Z",
       "owner": {
@@ -5034,11 +4715,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.554588851677638,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.554588851677638
     },
     {
       "name": "synthetic-data-generator",
@@ -5049,9 +4730,7 @@
       "forks_count": 383,
       "open_issues_count": 24,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-02T17:57:14Z",
       "owner": {
@@ -5065,11 +4744,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.204571144249204,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.204571144249204
     },
     {
       "name": "griptape",
@@ -5080,9 +4759,7 @@
       "forks_count": 193,
       "open_issues_count": 70,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-11T19:45:51Z",
       "owner": {
@@ -5096,11 +4773,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.17617314910749,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.17617314910749
     },
     {
       "name": "index",
@@ -5111,9 +4788,7 @@
       "forks_count": 117,
       "open_issues_count": 6,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-09T13:58:42Z",
       "owner": {
@@ -5127,11 +4802,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.148476582178278,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.148476582178278
     },
     {
       "name": "china-dictatorship",
@@ -5142,9 +4817,7 @@
       "forks_count": 267,
       "open_issues_count": 748,
       "archived": false,
-      "license": {
-        "spdx_id": "CC-BY-SA-4.0"
-      },
+      "license": "CC-BY-SA-4.0",
       "language": "HTML",
       "pushed_at": "2025-05-19T11:35:21Z",
       "owner": {
@@ -5158,11 +4831,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.236014191900084,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.236014191900084
     },
     {
       "name": "lagent",
@@ -5173,9 +4846,7 @@
       "forks_count": 220,
       "open_issues_count": 14,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-11T12:56:41Z",
       "owner": {
@@ -5189,11 +4860,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.067434360756522,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.067434360756522
     },
     {
       "name": "voltagent",
@@ -5204,9 +4875,7 @@
       "forks_count": 171,
       "open_issues_count": 31,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T16:33:14Z",
       "owner": {
@@ -5220,11 +4889,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.015415052386688,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.015415052386688
     },
     {
       "name": "OpenAI_Agent_Swarm",
@@ -5235,9 +4904,7 @@
       "forks_count": 396,
       "open_issues_count": 7,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-02-16T17:12:05Z",
       "owner": {
@@ -5251,11 +4918,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.583552930466485,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.583552930466485
     },
     {
       "name": "llama_deploy",
@@ -5266,9 +4933,7 @@
       "forks_count": 225,
       "open_issues_count": 35,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-13T14:07:31Z",
       "owner": {
@@ -5282,11 +4947,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.98370619265935,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.98370619265935
     },
     {
       "name": "motia",
@@ -5297,9 +4962,7 @@
       "forks_count": 190,
       "open_issues_count": 17,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T16:11:21Z",
       "owner": {
@@ -5313,11 +4976,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.97656412341533,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.97656412341533
     },
     {
       "name": "LazyLLM",
@@ -5328,9 +4991,7 @@
       "forks_count": 109,
       "open_issues_count": 21,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-12T14:57:01Z",
       "owner": {
@@ -5344,11 +5005,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.973697366305352,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.973697366305352
     },
     {
       "name": "DemoGPT",
@@ -5359,9 +5020,7 @@
       "forks_count": 211,
       "open_issues_count": 6,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-05-19T14:54:40Z",
       "owner": {
@@ -5375,11 +5034,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.84313591111135,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.84313591111135
     },
     {
       "name": "Memary",
@@ -5390,9 +5049,7 @@
       "forks_count": 167,
       "open_issues_count": 12,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Jupyter Notebook",
       "pushed_at": "2024-10-22T00:46:00Z",
       "owner": {
@@ -5406,11 +5063,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.135067945777816,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.135067945777816
     },
     {
       "name": "Cradle",
@@ -5421,9 +5078,7 @@
       "forks_count": 187,
       "open_issues_count": 18,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-11-07T04:58:20Z",
       "owner": {
@@ -5432,16 +5087,16 @@
       "AgenticIndexScore": 4.05,
       "category": "General-purpose",
       "stars": 2111,
-      "recency_factor": 0.4388059701492537,
+      "recency_factor": 0.435820895522388,
       "issue_health": 5.5555552491703963e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.044394119358454,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.044394119358454
     },
     {
       "name": "Free-Auto-GPT",
@@ -5452,9 +5107,7 @@
       "forks_count": 394,
       "open_issues_count": 33,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-06-19T00:18:00Z",
       "owner": {
@@ -5468,11 +5121,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.287712379549449,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.287712379549449
     },
     {
       "name": "langgraphjs",
@@ -5483,9 +5136,7 @@
       "forks_count": 242,
       "open_issues_count": 122,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-12T21:24:11Z",
       "owner": {
@@ -5499,11 +5150,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.673309075561695,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.673309075561695
     },
     {
       "name": "openlit",
@@ -5514,9 +5165,7 @@
       "forks_count": 160,
       "open_issues_count": 71,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-12T16:15:38Z",
       "owner": {
@@ -5530,11 +5179,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.664447284547972,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.664447284547972
     },
     {
       "name": "nextpy",
@@ -5545,9 +5194,7 @@
       "forks_count": 167,
       "open_issues_count": 23,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2024-05-01T09:46:55Z",
       "owner": {
@@ -5561,11 +5208,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.163020639580793,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.163020639580793
     },
     {
       "name": "comfyui_LLM_party",
@@ -5576,9 +5223,7 @@
       "forks_count": 143,
       "open_issues_count": 51,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "Python",
       "pushed_at": "2025-06-13T16:28:16Z",
       "owner": {
@@ -5592,11 +5237,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.754052367528924,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.754052367528924
     },
     {
       "name": "ax",
@@ -5607,9 +5252,7 @@
       "forks_count": 113,
       "open_issues_count": 13,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T02:29:31Z",
       "owner": {
@@ -5623,11 +5266,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.591522346570734,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.591522346570734
     },
     {
       "name": "LLMStack",
@@ -5638,9 +5281,7 @@
       "forks_count": 286,
       "open_issues_count": 14,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "Python",
       "pushed_at": "2024-12-11T19:59:51Z",
       "owner": {
@@ -5654,11 +5295,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.938109326219239,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.938109326219239
     },
     {
       "name": "agentUniverse",
@@ -5669,9 +5310,7 @@
       "forks_count": 213,
       "open_issues_count": 45,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T09:15:54Z",
       "owner": {
@@ -5685,11 +5324,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.53818893205242,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.53818893205242
     },
     {
       "name": "codel",
@@ -5700,9 +5339,7 @@
       "forks_count": 190,
       "open_issues_count": 27,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "TypeScript",
       "pushed_at": "2024-04-29T17:53:58Z",
       "owner": {
@@ -5716,11 +5353,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.198445041452363,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 11.198445041452363
     },
     {
       "name": "ai-legion",
@@ -5731,9 +5368,7 @@
       "forks_count": 165,
       "open_issues_count": 8,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-05-27T23:52:06Z",
       "owner": {
@@ -5747,11 +5382,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.461479447286155,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.461479447286155
     },
     {
       "name": "pymarl",
@@ -5762,9 +5397,7 @@
       "forks_count": 397,
       "open_issues_count": 62,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2022-12-08T02:58:39Z",
       "owner": {
@@ -5778,11 +5411,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.9901039638575,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.9901039638575
     },
     {
       "name": "uAgents",
@@ -5793,9 +5426,7 @@
       "forks_count": 310,
       "open_issues_count": 25,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T14:28:09Z",
       "owner": {
@@ -5809,11 +5440,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.43567026093655,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.43567026093655
     },
     {
       "name": "Agently",
@@ -5824,9 +5455,7 @@
       "forks_count": 154,
       "open_issues_count": 28,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-05-04T13:37:50Z",
       "owner": {
@@ -5840,11 +5469,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.404077136241234,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.404077136241234
     },
     {
       "name": "AI-Researcher",
@@ -5855,7 +5484,6 @@
       "forks_count": 203,
       "open_issues_count": 35,
       "archived": false,
-      "license": {},
       "language": "Python",
       "pushed_at": "2025-06-08T06:14:02Z",
       "owner": {
@@ -5869,11 +5497,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.638435913990472,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.638435913990472
     },
     {
       "name": "LLPhant",
@@ -5884,9 +5512,7 @@
       "forks_count": 127,
       "open_issues_count": 36,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "PHP",
       "pushed_at": "2025-06-13T10:20:05Z",
       "owner": {
@@ -5900,11 +5526,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.274960472140602,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.274960472140602
     },
     {
       "name": "patchwork",
@@ -5915,9 +5541,7 @@
       "forks_count": 94,
       "open_issues_count": 189,
       "archived": false,
-      "license": {
-        "spdx_id": "AGPL-3.0"
-      },
+      "license": "AGPL-3.0",
       "language": "Python",
       "pushed_at": "2025-04-18T08:13:52Z",
       "owner": {
@@ -5926,16 +5550,16 @@
       "AgenticIndexScore": 3.88,
       "category": "General-purpose",
       "stars": 1375,
-      "recency_factor": 0.9223880597014925,
+      "recency_factor": 0.9194029850746268,
       "issue_health": 5.291005300556151e-09,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.426264754702098,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.426264754702098
     },
     {
       "name": "company-research-agent",
@@ -5946,9 +5570,7 @@
       "forks_count": 163,
       "open_issues_count": 2,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-04T08:38:08Z",
       "owner": {
@@ -5962,11 +5584,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.232420927176076,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.232420927176076
     },
     {
       "name": "Adala",
@@ -5977,9 +5599,7 @@
       "forks_count": 98,
       "open_issues_count": 35,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-12T22:59:39Z",
       "owner": {
@@ -5993,11 +5613,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.217957697864113,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.217957697864113
     },
     {
       "name": "octotools",
@@ -6008,9 +5628,7 @@
       "forks_count": 157,
       "open_issues_count": 3,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-05-29T19:48:24Z",
       "owner": {
@@ -6024,11 +5642,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.214319120800766,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.214319120800766
     },
     {
       "name": "pasa",
@@ -6039,9 +5657,7 @@
       "forks_count": 85,
       "open_issues_count": 14,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-05-27T11:09:11Z",
       "owner": {
@@ -6055,11 +5671,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.234817431117325,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.234817431117325
     },
     {
       "name": "AIlice",
@@ -6070,9 +5686,7 @@
       "forks_count": 177,
       "open_issues_count": 5,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-12T14:58:24Z",
       "owner": {
@@ -6086,11 +5700,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.217957697864113,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.217957697864113
     },
     {
       "name": "pywinassistant",
@@ -6101,9 +5715,7 @@
       "forks_count": 187,
       "open_issues_count": 13,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-02-13T21:26:47Z",
       "owner": {
@@ -6117,11 +5729,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.349834091457247,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.349834091457247
     },
     {
       "name": "agent-protocol",
@@ -6132,9 +5744,7 @@
       "forks_count": 147,
       "open_issues_count": 44,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-04-08T06:10:21Z",
       "owner": {
@@ -6143,16 +5753,16 @@
       "AgenticIndexScore": 3.87,
       "category": "General-purpose",
       "stars": 1220,
-      "recency_factor": 0.8925373134328358,
+      "recency_factor": 0.8895522388059701,
       "issue_health": 2.2727272175337987e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.253847484987404,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.253847484987404
     },
     {
       "name": "KaibanJS",
@@ -6163,9 +5773,7 @@
       "forks_count": 111,
       "open_issues_count": 62,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "JavaScript",
       "pushed_at": "2025-05-21T19:24:51Z",
       "owner": {
@@ -6179,11 +5787,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.181152256865566,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.181152256865566
     },
     {
       "name": ".github",
@@ -6194,7 +5802,6 @@
       "forks_count": 138,
       "open_issues_count": 919,
       "archived": false,
-      "license": {},
       "pushed_at": "2025-02-27T06:42:49Z",
       "owner": {
         "login": "gege-circle"
@@ -6202,16 +5809,16 @@
       "AgenticIndexScore": 3.85,
       "category": "RAG-centric",
       "stars": 1497,
-      "recency_factor": 0.7731343283582089,
+      "recency_factor": 0.7701492537313432,
       "issue_health": 1.0881392453754302e-09,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.54882190845875,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.54882190845875
     },
     {
       "name": "chidori",
@@ -6222,9 +5829,7 @@
       "forks_count": 49,
       "open_issues_count": 1,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Rust",
       "pushed_at": "2025-01-08T10:16:24Z",
       "owner": {
@@ -6233,16 +5838,16 @@
       "AgenticIndexScore": 3.85,
       "category": "DevTools",
       "stars": 1316,
-      "recency_factor": 0.6238805970149254,
+      "recency_factor": 0.6208955223880597,
       "issue_health": 9.99998999939855e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.363039630256514,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.363039630256514
     },
     {
       "name": "Autonomous-Agents",
@@ -6253,9 +5858,7 @@
       "forks_count": 43,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "pushed_at": "2025-06-12T16:46:27Z",
       "owner": {
         "login": "tmgthb"
@@ -6268,11 +5871,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.715961990255144,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.715961990255144
     },
     {
       "name": "RL-Factory",
@@ -6283,9 +5886,7 @@
       "forks_count": 91,
       "open_issues_count": 6,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-13T10:44:26Z",
       "owner": {
@@ -6299,11 +5900,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.101975670949232,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.101975670949232
     },
     {
       "name": "react-agent",
@@ -6314,9 +5915,7 @@
       "forks_count": 151,
       "open_issues_count": 13,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2024-04-12T13:38:37Z",
       "owner": {
@@ -6330,11 +5929,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.64565843240871,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.64565843240871
     },
     {
       "name": "typedai",
@@ -6345,9 +5944,7 @@
       "forks_count": 74,
       "open_issues_count": 5,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T03:22:21Z",
       "owner": {
@@ -6361,11 +5958,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.071462362556623,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.071462362556623
     },
     {
       "name": "acu",
@@ -6376,7 +5973,6 @@
       "forks_count": 90,
       "open_issues_count": 1,
       "archived": false,
-      "license": {},
       "pushed_at": "2025-05-15T19:23:33Z",
       "owner": {
         "login": "trycua"
@@ -6389,11 +5985,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.346513733165635,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.346513733165635
     },
     {
       "name": "intellagent",
@@ -6404,9 +6000,7 @@
       "forks_count": 132,
       "open_issues_count": 2,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-04-28T14:37:12Z",
       "owner": {
@@ -6420,11 +6014,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.049848549450562,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.049848549450562
     },
     {
       "name": "web-eval-agent",
@@ -6435,9 +6029,7 @@
       "forks_count": 73,
       "open_issues_count": 4,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-03T07:00:43Z",
       "owner": {
@@ -6451,11 +6043,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.988684686772165,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.988684686772165
     },
     {
       "name": "ACE_Framework",
@@ -6466,9 +6058,7 @@
       "forks_count": 208,
       "open_issues_count": 3,
       "archived": true,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-03-17T22:02:02Z",
       "owner": {
@@ -6482,11 +6072,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.521600439723727,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.521600439723727
     },
     {
       "name": "RestGPT",
@@ -6497,9 +6087,7 @@
       "forks_count": 104,
       "open_issues_count": 13,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-06-07T13:22:15Z",
       "owner": {
@@ -6513,11 +6101,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.419960177847889,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.419960177847889
     },
     {
       "name": "SMARTS",
@@ -6528,9 +6116,7 @@
       "forks_count": 202,
       "open_issues_count": 228,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-01-31T23:17:16Z",
       "owner": {
@@ -6544,11 +6130,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.019590728357882,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.019590728357882
     },
     {
       "name": "koog",
@@ -6559,9 +6145,7 @@
       "forks_count": 54,
       "open_issues_count": 50,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Kotlin",
       "pushed_at": "2025-06-13T14:53:30Z",
       "owner": {
@@ -6575,11 +6159,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.826548487290914,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.826548487290914
     },
     {
       "name": "webarena",
@@ -6590,9 +6174,7 @@
       "forks_count": 158,
       "open_issues_count": 67,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-02-07T16:35:08Z",
       "owner": {
@@ -6606,11 +6188,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.001408194392809,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.001408194392809
     },
     {
       "name": "BaseAI",
@@ -6621,9 +6203,7 @@
       "forks_count": 93,
       "open_issues_count": 28,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "TypeScript",
       "pushed_at": "2025-02-25T11:30:28Z",
       "owner": {
@@ -6632,16 +6212,16 @@
       "AgenticIndexScore": 3.73,
       "category": "DevTools",
       "stars": 1072,
-      "recency_factor": 0.7671641791044777,
+      "recency_factor": 0.764179104477612,
       "issue_health": 3.5714284529753115e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.067434360756522,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.067434360756522
     },
     {
       "name": "gpt-newspaper",
@@ -6652,9 +6232,7 @@
       "forks_count": 187,
       "open_issues_count": 12,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-06-21T18:18:00Z",
       "owner": {
@@ -6668,11 +6246,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.371776644337924,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.371776644337924
     },
     {
       "name": "WebRover",
@@ -6683,9 +6261,7 @@
       "forks_count": 160,
       "open_issues_count": 7,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-02-15T23:40:14Z",
       "owner": {
@@ -6699,11 +6275,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.85642552862553,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.85642552862553
     },
     {
       "name": "Agentarium",
@@ -6714,9 +6290,7 @@
       "forks_count": 75,
       "open_issues_count": 1,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-01-30T16:55:12Z",
       "owner": {
@@ -6730,11 +6304,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.848622940429339,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.848622940429339
     },
     {
       "name": "awesome-llm-agents",
@@ -6745,7 +6319,6 @@
       "forks_count": 87,
       "open_issues_count": 20,
       "archived": false,
-      "license": {},
       "language": "Python",
       "pushed_at": "2025-06-08T02:21:19Z",
       "owner": {
@@ -6759,11 +6332,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.92035285541508,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.92035285541508
     },
     {
       "name": "OpenAlpha_Evolve",
@@ -6774,9 +6347,7 @@
       "forks_count": 131,
       "open_issues_count": 8,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-05-31T16:34:33Z",
       "owner": {
@@ -6790,11 +6361,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.60917873814198,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.60917873814198
     },
     {
       "name": "codefuse-chatbot",
@@ -6805,9 +6376,7 @@
       "forks_count": 123,
       "open_issues_count": 5,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "Python",
       "pushed_at": "2024-07-01T09:16:47Z",
       "owner": {
@@ -6816,16 +6385,16 @@
       "AgenticIndexScore": 3.64,
       "category": "RAG-centric",
       "stars": 1189,
-      "recency_factor": 0.05373134328358209,
+      "recency_factor": 0.05074626865671639,
       "issue_health": 1.9999996003772225e-07,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.216745858195306,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.216745858195306
     },
     {
       "name": "FilmAgent",
@@ -6836,7 +6405,6 @@
       "forks_count": 134,
       "open_issues_count": 15,
       "archived": false,
-      "license": {},
       "language": "Python",
       "pushed_at": "2025-03-19T03:33:40Z",
       "owner": {
@@ -6845,16 +6413,16 @@
       "AgenticIndexScore": 3.64,
       "category": "Multi-Agent Coordination",
       "stars": 977,
-      "recency_factor": 0.8328358208955224,
+      "recency_factor": 0.8298507462686567,
       "issue_health": 6.666666219068418e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.933690654952233,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.933690654952233
     },
     {
       "name": "autogen-ui",
@@ -6865,9 +6433,7 @@
       "forks_count": 133,
       "open_issues_count": 14,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2024-11-14T00:31:12Z",
       "owner": {
@@ -6881,11 +6447,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.862637357558794,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.862637357558794
     },
     {
       "name": "terminal-velocity",
@@ -6896,7 +6462,6 @@
       "forks_count": 74,
       "open_issues_count": 1,
       "archived": false,
-      "license": {},
       "language": "Python",
       "pushed_at": "2025-01-06T11:40:38Z",
       "owner": {
@@ -6905,16 +6470,16 @@
       "AgenticIndexScore": 3.63,
       "category": "General-purpose",
       "stars": 1029,
-      "recency_factor": 0.6179104477611941,
+      "recency_factor": 0.6149253731343284,
       "issue_health": 9.99998999939855e-07,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.00842862207058,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.00842862207058
     },
     {
       "name": "awesome-ai-sdks",
@@ -6925,7 +6490,6 @@
       "forks_count": 79,
       "open_issues_count": 17,
       "archived": false,
-      "license": {},
       "pushed_at": "2025-02-26T10:07:19Z",
       "owner": {
         "login": "e2b-dev"
@@ -6933,16 +6497,16 @@
       "AgenticIndexScore": 3.62,
       "category": "DevTools",
       "stars": 951,
-      "recency_factor": 0.7701492537313432,
+      "recency_factor": 0.7671641791044777,
       "issue_health": 5.8823526050133523e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.894817763307943,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.894817763307943
     },
     {
       "name": "ix",
@@ -6953,9 +6517,7 @@
       "forks_count": 128,
       "open_issues_count": 14,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-03-04T01:20:20Z",
       "owner": {
@@ -6969,11 +6531,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.00842862207058,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 10.00842862207058
     },
     {
       "name": "SuperCoder",
@@ -6984,9 +6546,7 @@
       "forks_count": 98,
       "open_issues_count": 28,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Go",
       "pushed_at": "2024-08-02T12:45:04Z",
       "owner": {
@@ -6995,16 +6555,16 @@
       "AgenticIndexScore": 3.59,
       "category": "General-purpose",
       "stars": 938,
-      "recency_factor": 0.14925373134328357,
+      "recency_factor": 0.14626865671641787,
       "issue_health": 3.5714284529753115e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.874981347653774,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.874981347653774
     },
     {
       "name": "SeeAct",
@@ -7015,9 +6575,7 @@
       "forks_count": 95,
       "open_issues_count": 10,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "Python",
       "pushed_at": "2025-02-03T02:09:18Z",
       "owner": {
@@ -7026,16 +6584,16 @@
       "AgenticIndexScore": 3.54,
       "category": "General-purpose",
       "stars": 753,
-      "recency_factor": 0.7014925373134329,
+      "recency_factor": 0.6985074626865672,
       "issue_health": 9.99999899553572e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.558420713268664,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.558420713268664
     },
     {
       "name": "AIOpsLab",
@@ -7046,9 +6604,7 @@
       "forks_count": 88,
       "open_issues_count": 3,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-06-10T16:38:09Z",
       "owner": {
@@ -7062,11 +6618,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.264442600226602,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.264442600226602
     },
     {
       "name": "deebo-prototype",
@@ -7077,9 +6633,7 @@
       "forks_count": 46,
       "open_issues_count": 1,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "JavaScript",
       "pushed_at": "2025-06-11T01:34:00Z",
       "owner": {
@@ -7093,11 +6647,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.224001674198105,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.224001674198105
     },
     {
       "name": "OpenManus",
@@ -7108,9 +6662,7 @@
       "forks_count": 170,
       "open_issues_count": 6,
       "archived": false,
-      "license": {
-        "spdx_id": "Unlicense"
-      },
+      "license": "Unlicense",
       "language": "Python",
       "pushed_at": "2025-06-07T04:45:05Z",
       "owner": {
@@ -7124,11 +6676,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.324180546618742,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.324180546618742
     },
     {
       "name": "promptulate",
@@ -7139,9 +6691,7 @@
       "forks_count": 35,
       "open_issues_count": 106,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-10T08:41:30Z",
       "owner": {
@@ -7155,11 +6705,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.172427508645482,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.172427508645482
     },
     {
       "name": "world_ai_protocol",
@@ -7170,9 +6720,7 @@
       "forks_count": 186,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Move",
       "pushed_at": "2025-04-07T17:23:52Z",
       "owner": {
@@ -7186,11 +6734,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.794415866350105,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.794415866350105
     },
     {
       "name": "Awesome-AI-Agents",
@@ -7201,7 +6749,6 @@
       "forks_count": 49,
       "open_issues_count": 5,
       "archived": false,
-      "license": {},
       "pushed_at": "2025-05-21T02:41:39Z",
       "owner": {
         "login": "Jenqyang"
@@ -7214,11 +6761,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.361943773735241,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.361943773735241
     },
     {
       "name": "babyagi-asi",
@@ -7229,9 +6776,7 @@
       "forks_count": 91,
       "open_issues_count": 7,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2023-06-02T22:15:42Z",
       "owner": {
@@ -7245,11 +6790,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.640244936222345,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.640244936222345
     },
     {
       "name": "Awesome-Papers-Autonomous-Agent",
@@ -7260,7 +6805,6 @@
       "forks_count": 59,
       "open_issues_count": 1,
       "archived": false,
-      "license": {},
       "pushed_at": "2024-12-24T05:23:54Z",
       "owner": {
         "login": "lafmdp"
@@ -7268,16 +6812,16 @@
       "AgenticIndexScore": 3.42,
       "category": "General-purpose",
       "stars": 698,
-      "recency_factor": 0.5791044776119403,
+      "recency_factor": 0.5761194029850747,
       "issue_health": 9.99998999939855e-07,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.449148645375436,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.449148645375436
     },
     {
       "name": "AutoDidact",
@@ -7288,7 +6832,6 @@
       "forks_count": 52,
       "open_issues_count": 5,
       "archived": false,
-      "license": {},
       "language": "Jupyter Notebook",
       "pushed_at": "2025-03-22T01:15:55Z",
       "owner": {
@@ -7302,11 +6845,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.303780748177102,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.303780748177102
     },
     {
       "name": "pippin",
@@ -7317,9 +6860,7 @@
       "forks_count": 186,
       "open_issues_count": 4,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-02-26T16:30:57Z",
       "owner": {
@@ -7333,11 +6874,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.044394119358454,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.044394119358454
     },
     {
       "name": "anda",
@@ -7348,9 +6889,7 @@
       "forks_count": 40,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Rust",
       "pushed_at": "2025-06-02T06:46:01Z",
       "owner": {
@@ -7364,11 +6903,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.471675214392045,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.471675214392045
     },
     {
       "name": "jido",
@@ -7379,9 +6918,7 @@
       "forks_count": 23,
       "open_issues_count": 8,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Elixir",
       "pushed_at": "2025-06-09T21:53:00Z",
       "owner": {
@@ -7395,11 +6932,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.848622940429339,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.848622940429339
     },
     {
       "name": "devlooper",
@@ -7410,9 +6947,7 @@
       "forks_count": 33,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-09-19T19:28:50Z",
       "owner": {
@@ -7426,11 +6961,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.845490050944376,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.845490050944376
     },
     {
       "name": "autonomous-learning-library",
@@ -7441,9 +6976,7 @@
       "forks_count": 72,
       "open_issues_count": 24,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-03-17T21:46:51Z",
       "owner": {
@@ -7457,11 +6990,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.342074667999139,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.342074667999139
     },
     {
       "name": "evolving-agents",
@@ -7472,9 +7005,7 @@
       "forks_count": 30,
       "open_issues_count": 14,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-10T21:06:39Z",
       "owner": {
@@ -7488,11 +7019,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.76487159073609,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.76487159073609
     },
     {
       "name": "jobber",
@@ -7503,9 +7034,7 @@
       "forks_count": 81,
       "open_issues_count": 4,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-09-09T06:47:22Z",
       "owner": {
@@ -7514,16 +7043,16 @@
       "AgenticIndexScore": 3.34,
       "category": "General-purpose",
       "stars": 545,
-      "recency_factor": 0.26268656716417915,
+      "recency_factor": 0.25970149253731345,
       "issue_health": 2.499999375293882e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.092757140919852,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.092757140919852
     },
     {
       "name": "dapr-agents",
@@ -7534,9 +7063,7 @@
       "forks_count": 52,
       "open_issues_count": 27,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-12T20:47:06Z",
       "owner": {
@@ -7550,11 +7077,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.696967526234287,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.696967526234287
     },
     {
       "name": "agent",
@@ -7565,9 +7092,7 @@
       "forks_count": 682,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-04T04:22:43Z",
       "owner": {
@@ -7581,11 +7106,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.257387842692651,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.257387842692651
     },
     {
       "name": "Collaborative_Perception",
@@ -7596,7 +7121,6 @@
       "forks_count": 58,
       "open_issues_count": 1,
       "archived": false,
-      "license": {},
       "pushed_at": "2025-06-08T13:18:02Z",
       "owner": {
         "login": "Little-Podi"
@@ -7609,11 +7133,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.945443836377912,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.945443836377912
     },
     {
       "name": "txtchat",
@@ -7624,9 +7148,7 @@
       "forks_count": 15,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-05-15T12:34:56Z",
       "owner": {
@@ -7640,11 +7162,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.194756854422248,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.194756854422248
     },
     {
       "name": "agent-q",
@@ -7655,9 +7177,7 @@
       "forks_count": 94,
       "open_issues_count": 5,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-09-26T08:41:39Z",
       "owner": {
@@ -7666,16 +7186,16 @@
       "AgenticIndexScore": 3.27,
       "category": "General-purpose",
       "stars": 467,
-      "recency_factor": 0.31343283582089554,
+      "recency_factor": 0.31044776119402984,
       "issue_health": 1.9999996003772225e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.870364719583405,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.870364719583405
     },
     {
       "name": "agents",
@@ -7686,9 +7206,7 @@
       "forks_count": 120,
       "open_issues_count": 10,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-11-05T15:40:29Z",
       "owner": {
@@ -7702,11 +7220,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.758223214726724,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.758223214726724
     },
     {
       "name": "pentagi",
@@ -7717,9 +7235,7 @@
       "forks_count": 48,
       "open_issues_count": 7,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Go",
       "pushed_at": "2025-06-03T08:53:26Z",
       "owner": {
@@ -7733,11 +7249,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.413627929024173,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.413627929024173
     },
     {
       "name": "digirl",
@@ -7748,9 +7264,7 @@
       "forks_count": 34,
       "open_issues_count": 2,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-02-22T06:07:42Z",
       "owner": {
@@ -7759,16 +7273,16 @@
       "AgenticIndexScore": 3.23,
       "category": "General-purpose",
       "stars": 360,
-      "recency_factor": 0.7582089552238807,
+      "recency_factor": 0.755223880597015,
       "issue_health": 4.999997500476638e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.49585502688717,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.49585502688717
     },
     {
       "name": "android_world",
@@ -7779,9 +7293,7 @@
       "forks_count": 46,
       "open_issues_count": 19,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2025-06-06T16:48:25Z",
       "owner": {
@@ -7795,11 +7307,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.379378367071261,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.379378367071261
     },
     {
       "name": "babyagi-2o",
@@ -7810,9 +7322,7 @@
       "forks_count": 65,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-10-19T17:57:51Z",
       "owner": {
@@ -7826,11 +7336,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.285402218862249,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.285402218862249
     },
     {
       "name": "autonomous-hr-chatbot",
@@ -7841,9 +7351,7 @@
       "forks_count": 86,
       "open_issues_count": 2,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Jupyter Notebook",
       "pushed_at": "2024-09-30T05:01:28Z",
       "owner": {
@@ -7852,16 +7360,16 @@
       "AgenticIndexScore": 3.2,
       "category": "DevTools",
       "stars": 404,
-      "recency_factor": 0.32537313432835824,
+      "recency_factor": 0.32238805970149254,
       "issue_health": 4.999997500476638e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.661778097771988,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.661778097771988
     },
     {
       "name": "beebot",
@@ -7872,9 +7380,7 @@
       "forks_count": 75,
       "open_issues_count": 9,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2023-10-22T23:25:16Z",
       "owner": {
@@ -7888,11 +7394,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.7714894695006,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.7714894695006
     },
     {
       "name": "gpt-assistant",
@@ -7903,7 +7409,6 @@
       "forks_count": 63,
       "open_issues_count": 7,
       "archived": false,
-      "license": {},
       "language": "TypeScript",
       "pushed_at": "2023-04-26T18:14:09Z",
       "owner": {
@@ -7917,11 +7422,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.027905996569885,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 9.027905996569885
     },
     {
       "name": "INSIGHT",
@@ -7932,9 +7437,7 @@
       "forks_count": 58,
       "open_issues_count": 1,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2023-10-21T22:34:08Z",
       "owner": {
@@ -7948,11 +7451,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.679480099505446,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.679480099505446
     },
     {
       "name": "PromptAgent",
@@ -7963,9 +7466,7 @@
       "forks_count": 34,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2024-08-04T01:58:23Z",
       "owner": {
@@ -7974,16 +7475,16 @@
       "AgenticIndexScore": 3.14,
       "category": "General-purpose",
       "stars": 287,
-      "recency_factor": 0.15522388059701497,
+      "recency_factor": 0.15223880597014927,
       "issue_health": 1.0,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.169925001442312,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.169925001442312
     },
     {
       "name": "OpenSteer",
@@ -7994,9 +7495,7 @@
       "forks_count": 50,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "C++",
       "pushed_at": "2023-03-31T06:42:58Z",
       "owner": {
@@ -8010,11 +7509,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.379378367071261,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.379378367071261
     },
     {
       "name": "GPT4V-AD-Exploration",
@@ -8025,9 +7524,7 @@
       "forks_count": 16,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "pushed_at": "2024-03-14T09:52:13Z",
       "owner": {
         "login": "PJLab-ADG"
@@ -8040,11 +7537,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.219168520462162,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.219168520462162
     },
     {
       "name": "ChatSim",
@@ -8055,7 +7552,6 @@
       "forks_count": 27,
       "open_issues_count": 38,
       "archived": false,
-      "license": {},
       "language": "Python",
       "pushed_at": "2024-12-11T18:28:24Z",
       "owner": {
@@ -8069,11 +7565,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.614709844115207,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.614709844115207
     },
     {
       "name": "gpt-instagram",
@@ -8084,9 +7580,7 @@
       "forks_count": 23,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "TypeScript",
       "pushed_at": "2024-12-19T18:50:16Z",
       "owner": {
@@ -8100,11 +7594,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.864186144654281,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 7.864186144654281
     },
     {
       "name": "reflexion-draft",
@@ -8115,9 +7609,7 @@
       "forks_count": 40,
       "open_issues_count": 2,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2023-11-26T01:06:38Z",
       "owner": {
@@ -8131,11 +7623,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.603626344986193,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.603626344986193
     },
     {
       "name": "AgentLLM",
@@ -8146,9 +7638,7 @@
       "forks_count": 76,
       "open_issues_count": 11,
       "archived": false,
-      "license": {
-        "spdx_id": "GPL-3.0"
-      },
+      "license": "GPL-3.0",
       "language": "JavaScript",
       "pushed_at": "2023-07-31T18:08:47Z",
       "owner": {
@@ -8162,11 +7652,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.707359132080883,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.707359132080883
     },
     {
       "name": "personoids-lite",
@@ -8177,9 +7667,7 @@
       "forks_count": 24,
       "open_issues_count": 8,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "JavaScript",
       "pushed_at": "2023-09-29T09:44:45Z",
       "owner": {
@@ -8193,11 +7681,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.57742882803575,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.57742882803575
     },
     {
       "name": "micro-agent",
@@ -8208,7 +7696,6 @@
       "forks_count": 43,
       "open_issues_count": 6,
       "archived": false,
-      "license": {},
       "language": "Python",
       "pushed_at": "2023-04-04T10:13:56Z",
       "owner": {
@@ -8222,11 +7709,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.794415866350105,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.794415866350105
     },
     {
       "name": "macad-gym",
@@ -8237,9 +7724,7 @@
       "forks_count": 78,
       "open_issues_count": 16,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2023-05-20T22:19:30Z",
       "owner": {
@@ -8253,11 +7738,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.499845887083206,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.499845887083206
     },
     {
       "name": "aguvis",
@@ -8268,7 +7753,6 @@
       "forks_count": 19,
       "open_issues_count": 22,
       "archived": false,
-      "license": {},
       "language": "Python",
       "pushed_at": "2025-03-07T08:11:15Z",
       "owner": {
@@ -8277,16 +7761,16 @@
       "AgenticIndexScore": 3.07,
       "category": "General-purpose",
       "stars": 316,
-      "recency_factor": 0.7970149253731343,
+      "recency_factor": 0.7940298507462686,
       "issue_health": 4.5454543462497554e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.308339030139408,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.308339030139408
     },
     {
       "name": "MindFlow",
@@ -8297,9 +7781,7 @@
       "forks_count": 29,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2025-01-20T18:02:08Z",
       "owner": {
@@ -8313,11 +7795,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.6865005271832185,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 7.6865005271832185
     },
     {
       "name": "Nuggt",
@@ -8328,9 +7810,7 @@
       "forks_count": 29,
       "open_issues_count": 7,
       "archived": false,
-      "license": {
-        "spdx_id": "CC0-1.0"
-      },
+      "license": "CC0-1.0",
       "language": "Python",
       "pushed_at": "2024-10-21T19:51:28Z",
       "owner": {
@@ -8344,11 +7824,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.39231742277876,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.39231742277876
     },
     {
       "name": "genworlds",
@@ -8359,9 +7839,7 @@
       "forks_count": 39,
       "open_issues_count": 6,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Jupyter Notebook",
       "pushed_at": "2024-09-18T05:43:43Z",
       "owner": {
@@ -8370,16 +7848,16 @@
       "AgenticIndexScore": 3.05,
       "category": "Multi-Agent Coordination",
       "stars": 305,
-      "recency_factor": 0.28955223880597014,
+      "recency_factor": 0.28656716417910444,
       "issue_health": 1.6666663893438738e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.257387842692651,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.257387842692651
     },
     {
       "name": "shoal",
@@ -8390,9 +7868,7 @@
       "forks_count": 35,
       "open_issues_count": 0,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "JavaScript",
       "pushed_at": "2018-04-25T19:45:30Z",
       "owner": {
@@ -8406,11 +7882,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.965784284662087,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 7.965784284662087
     },
     {
       "name": "Gentopia",
@@ -8421,9 +7897,7 @@
       "forks_count": 40,
       "open_issues_count": 3,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2023-11-27T02:42:21Z",
       "owner": {
@@ -8437,11 +7911,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.312882955284355,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.312882955284355
     },
     {
       "name": "PSAI",
@@ -8452,9 +7926,7 @@
       "forks_count": 19,
       "open_issues_count": 4,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "PowerShell",
       "pushed_at": "2025-05-14T18:42:03Z",
       "owner": {
@@ -8468,11 +7940,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.672425341971495,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 7.672425341971495
     },
     {
       "name": "Aetherius_AI_Assistant",
@@ -8483,9 +7955,7 @@
       "forks_count": 40,
       "open_issues_count": 1,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "Python",
       "pushed_at": "2024-09-06T16:48:36Z",
       "owner": {
@@ -8499,11 +7969,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.20945336562895,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.20945336562895
     },
     {
       "name": "Autono",
@@ -8514,9 +7984,7 @@
       "forks_count": 35,
       "open_issues_count": 13,
       "archived": false,
-      "license": {
-        "spdx_id": "GPL-3.0"
-      },
+      "license": "GPL-3.0",
       "language": "Python",
       "pushed_at": "2025-04-29T13:46:57Z",
       "owner": {
@@ -8530,11 +7998,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.700439718141092,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 7.700439718141092
     },
     {
       "name": "Agent-Driver",
@@ -8545,9 +8013,7 @@
       "forks_count": 15,
       "open_issues_count": 11,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-03-21T21:47:23Z",
       "owner": {
@@ -8561,11 +8027,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.044394119358454,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.044394119358454
     },
     {
       "name": "SIMPL",
@@ -8576,9 +8042,7 @@
       "forks_count": 34,
       "open_issues_count": 25,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2024-06-18T16:53:52Z",
       "owner": {
@@ -8592,11 +8056,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.016808287686555,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.016808287686555
     },
     {
       "name": "awesome-autonomous-gpt",
@@ -8607,7 +8071,6 @@
       "forks_count": 18,
       "open_issues_count": 3,
       "archived": false,
-      "license": {},
       "pushed_at": "2023-12-29T02:57:31Z",
       "owner": {
         "login": "ScarletPan"
@@ -8620,11 +8083,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.139551352398794,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 8.139551352398794
     },
     {
       "name": "agents-aea",
@@ -8635,9 +8098,7 @@
       "forks_count": 71,
       "open_issues_count": 88,
       "archived": false,
-      "license": {
-        "spdx_id": "Apache-2.0"
-      },
+      "license": "Apache-2.0",
       "language": "Python",
       "pushed_at": "2023-07-19T04:45:10Z",
       "owner": {
@@ -8651,11 +8112,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.839203788096944,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 7.839203788096944
     },
     {
       "name": "pocketgroq",
@@ -8666,7 +8127,6 @@
       "forks_count": 56,
       "open_issues_count": 3,
       "archived": false,
-      "license": {},
       "language": "Python",
       "pushed_at": "2025-02-11T21:15:42Z",
       "owner": {
@@ -8680,11 +8140,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.636624620543649,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 7.636624620543649
     },
     {
       "name": "JungleGym",
@@ -8695,7 +8155,6 @@
       "forks_count": 20,
       "open_issues_count": 0,
       "archived": false,
-      "license": {},
       "language": "Python",
       "pushed_at": "2023-12-04T17:34:37Z",
       "owner": {
@@ -8709,11 +8168,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.592457037268081,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 7.592457037268081
     },
     {
       "name": "rl_CARLA",
@@ -8724,7 +8183,6 @@
       "forks_count": 41,
       "open_issues_count": 3,
       "archived": false,
-      "license": {},
       "language": "Python",
       "pushed_at": "2023-03-24T21:56:01Z",
       "owner": {
@@ -8738,11 +8196,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.977279923499917,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 7.977279923499917
     },
     {
       "name": "AgentOoba",
@@ -8753,9 +8211,7 @@
       "forks_count": 13,
       "open_issues_count": 9,
       "archived": false,
-      "license": {
-        "spdx_id": "MIT"
-      },
+      "license": "MIT",
       "language": "Python",
       "pushed_at": "2023-09-07T22:33:25Z",
       "owner": {
@@ -8769,11 +8225,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.459431618637297,
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.0,
+      "stars_log2": 7.459431618637297
     }
   ]
 }
