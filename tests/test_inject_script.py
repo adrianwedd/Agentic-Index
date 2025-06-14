@@ -8,7 +8,7 @@ def test_inject_readme(tmp_path, monkeypatch):
     data_dir = tmp_path / "data"
     data_dir.mkdir()
     table = (
-        "| Rank | <abbr title=\"Score\">📊</abbr> Score | Repo | <abbr title=\"Stars gained in last 30 days\">⭐ Δ30d</abbr> | <abbr title=\"Maintenance score\">🔧 Maint</abbr> | <abbr title=\"Last release date\">📅 Release</abbr> | <abbr title=\"Documentation score\">📚 Docs</abbr> | <abbr title=\"Ecosystem fit\">🧠 Fit</abbr> | <abbr title=\"License\">⚖️ License</abbr> |\n|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|\n| 1 | 1.00 | x | 1 | 0.50 | - | 0.50 | 0.30 | MIT |\n"
+        "| Rank | <abbr title=\"Overall\">📊</abbr> Overall | Repo | <abbr title=\"Stars gained in last 30 days\">⭐ Δ30d</abbr> | <abbr title=\"Maintenance score\">🔧 Maint</abbr> | <abbr title=\"Last release date\">📅 Release</abbr> | <abbr title=\"Documentation score\">📚 Docs</abbr> | <abbr title=\"Ecosystem fit\">🧠 Fit</abbr> | <abbr title=\"License\">⚖️ License</abbr> |\n|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|\n| 1 | 1.00 | x | 1 | 0.50 | - | 0.50 | 0.30 | MIT |\n"
     )
     (data_dir / "top50.md").write_text(table)
     (data_dir / "repos.json").write_text(
