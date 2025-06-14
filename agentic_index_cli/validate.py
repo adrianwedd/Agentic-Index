@@ -1,3 +1,5 @@
+"""Validation helpers for repository JSON files."""
+
 import json
 import sys
 from pathlib import Path
@@ -7,14 +9,20 @@ from pydantic import BaseModel, ValidationError, ConfigDict
 
 
 class License(BaseModel):
+    """Model for the ``license`` block."""
+
     spdx_id: str | None = None
 
 
 class Owner(BaseModel):
+    """Simplified repository owner model."""
+
     login: str | None = None
 
 
 class Repo(BaseModel):
+    """Repository schema used by :mod:`agentic_index_cli`."""
+
     name: str | None = None
     full_name: str | None = None
     html_url: str | None = None
@@ -53,6 +61,8 @@ class Repo(BaseModel):
 
 
 class RepoFile(BaseModel):
+    """Container for a list of :class:`Repo` objects."""
+
     schema_version: int = 2
     repos: List[Repo]
 
@@ -71,6 +81,7 @@ def _migrate_item(item: dict) -> dict:
 
 
 def load_repos(path: Path) -> List[dict]:
+    """Validate and load repository JSON data."""
     raw = json.loads(path.read_text())
     if isinstance(raw, list):
         items = raw
@@ -102,15 +113,18 @@ def load_repos(path: Path) -> List[dict]:
 
 
 def save_repos(path: Path, repos: List[dict]) -> None:
+    """Write validated ``repos`` to ``path``."""
     payload = RepoFile(repos=[Repo(**_migrate_item(r)) for r in repos]).model_dump(exclude_none=True)
     path.write_text(json.dumps(payload, indent=2) + "\n")
 
 
 def validate_file(path: str) -> List[dict]:
+    """Load and validate a repository JSON file."""
     return load_repos(Path(path))
 
 
 def main(argv=None) -> int:
+    """CLI entry for validating repo files."""
     argv = argv or sys.argv[1:]
     json_path = Path(argv[0] if argv else "data/repos.json")
     try:

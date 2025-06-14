@@ -1,3 +1,6 @@
+"""Custom exception hierarchy for the Agentic Index scraper."""
+
+
 class ScraperError(Exception):
     """Base exception for scraper errors."""
 

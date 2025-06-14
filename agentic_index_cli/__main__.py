@@ -1,8 +1,11 @@
+"""Entrypoint for the ``agentic-index`` command line tool."""
+
 import argparse
 from pathlib import Path
 
 
 def main(argv=None):
+    """Dispatch subcommands for the CLI."""
     parser = argparse.ArgumentParser(prog="agentic-index", description="Agentic Index CLI")
     subparsers = parser.add_subparsers(dest="command", required=True)
 

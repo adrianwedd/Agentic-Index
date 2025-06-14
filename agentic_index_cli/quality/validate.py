@@ -1,3 +1,5 @@
+"""Validate ``repos.json`` against the public schema."""
+
 import json
 import sys
 from pathlib import Path
@@ -9,10 +11,12 @@ SCHEMA_PATH = ROOT / "schemas" / "repo.schema.json"
 
 
 def load_schema() -> dict:
+    """Return the JSON schema used for validation."""
     return json.loads(SCHEMA_PATH.read_text())
 
 
 def validate_file(path: str) -> list:
+    """Validate ``path`` and return unique repos."""
     data = json.loads(Path(path).read_text())
     schema = load_schema()
     validator = Draft7Validator(schema)
@@ -41,6 +45,7 @@ def validate_file(path: str) -> list:
 
 
 def main(argv=None) -> int:
+    """CLI wrapper for :func:`validate_file`."""
     argv = argv or sys.argv[1:]
     json_path = argv[0] if argv else "data/repos.json"
     try:
