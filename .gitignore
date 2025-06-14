@@ -16,5 +16,9 @@ node_modules/
 /docs/trends/*.png
 # Ignore runtime JSON outputs
 repos.json
+!tests/fixtures/data/repos.json
+!tests/fixtures/data/top50.md
+!tests/fixtures/data/last_snapshot.json
+!tests/fixtures/README_fixture.md
 !data/last_snapshot.json
 /docs/sphinx/_build/
