@@ -14,6 +14,7 @@ import os
 import sys
 import urllib.request
 from pathlib import Path
+import shutil
 
 from agentic_index_cli.validate import load_repos, save_repos
 from agentic_index_cli.agentic_index import (
@@ -126,6 +127,22 @@ def main(json_path: str = "data/repos.json") -> None:
     data_file = Path(json_path)
     is_test = os.getenv("PYTEST_CURRENT_TEST") is not None
     repos = load_repos(data_file)
+
+    data_dir = data_file.parent
+    history_dir = data_dir / "history"
+    history_dir.mkdir(exist_ok=True)
+    last_snapshot_file = data_dir / "last_snapshot.txt"
+    prev_map = {}
+    if last_snapshot_file.exists():
+        prev_path = Path(last_snapshot_file.read_text().strip())
+        if not prev_path.is_absolute():
+            prev_path = history_dir / prev_path.name
+        if prev_path.exists():
+            try:
+                prev_repos = load_repos(prev_path)
+                prev_map = {r.get("full_name", r.get("name")): r for r in prev_repos}
+            except Exception:
+                prev_map = {}
     # temporary shim for older data files
     for repo in repos:
         if "AgentOpsScore" in repo:
@@ -156,6 +173,17 @@ def main(json_path: str = "data/repos.json") -> None:
     for repo in repos:
         repo[SCORE_KEY] = compute_score(repo)
         repo["category"] = infer_category(repo)
+        prev = prev_map.get(repo.get("full_name", repo.get("name")))
+        if prev:
+            repo["stars_delta"] = repo.get("stars", 0) - prev.get("stars", prev.get("stargazers_count", 0))
+            repo["forks_delta"] = repo.get("forks_count", 0) - prev.get("forks_count", 0)
+            repo["issues_closed_delta"] = repo.get("closed_issues", 0) - prev.get("closed_issues", 0)
+            repo["score_delta"] = round(repo[SCORE_KEY] - float(prev.get(SCORE_KEY, 0)), 2)
+        else:
+            repo["stars_delta"] = "+new"
+            repo["forks_delta"] = "+new"
+            repo["issues_closed_delta"] = "+new"
+            repo["score_delta"] = "+new"
 
     zero_scores = sum(1 for r in repos if r[SCORE_KEY] == 0)
     allowed_zero = max(1, int(len(repos) * 0.02))
@@ -165,14 +193,36 @@ def main(json_path: str = "data/repos.json") -> None:
     repos.sort(key=lambda r: r[SCORE_KEY], reverse=True)
     if not skip_repo_write:
         save_repos(data_file, repos)
+        # persist snapshot
+        today_iso = datetime.date.today().isoformat()
+        snapshot_path = history_dir / f"{today_iso}.json"
+        shutil.copy(data_file, snapshot_path)
+        last_snapshot_file.write_text(str(snapshot_path))
+        snapshots = sorted(history_dir.glob("*.json"))
+        for old in snapshots[:-7]:
+            old.unlink()
 
     # top-50 table
     header = [
-        "| Rank | Repo | Score | Category |",
-        "|------|------|-------|----------|",
+        "| Rank | Repo | Score | ▲ StarsΔ | ▲ ScoreΔ | Category |",
+        "|-----:|------|------:|-------:|--------:|----------|",
     ]
+
+    def fmt(val):
+        if isinstance(val, str):
+            return val
+        sign = "+" if val >= 0 else ""
+        return f"{sign}{val}"
+
     rows = [
-        f"| {i} | {repo['name']} | {repo[SCORE_KEY]} | {repo['category']} |"
+        "| {i} | {name} | {score:.2f} | {sd} | {qd} | {cat} |".format(
+            i=i,
+            name=repo["name"],
+            score=repo[SCORE_KEY],
+            sd=fmt(repo["stars_delta"]),
+            qd=fmt(repo["score_delta"]),
+            cat=repo["category"],
+        )
         for i, repo in enumerate(repos[:50], start=1)
     ]
     if not skip_top_write:

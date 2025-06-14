@@ -36,6 +36,10 @@ class Repo(BaseModel):
     doc_completeness: float | None = None
     license_freedom: float | None = None
     ecosystem_integration: float | None = None
+    stars_delta: int | str | None = None
+    forks_delta: int | str | None = None
+    issues_closed_delta: int | str | None = None
+    score_delta: float | str | None = None
     stars_log2: float | None = None
     last_commit: str | None = None
     one_liner: str | None = None

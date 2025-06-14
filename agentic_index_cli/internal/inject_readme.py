@@ -22,19 +22,24 @@ def _load_table() -> str:
     parsed = []
     for row in body:
         cells = [c.strip() for c in row.strip().strip("|").split("|")]
-        if len(cells) < 4:
+        if len(cells) < 6:
             continue
         repo = cells[1]
         try:
             score = float(cells[2])
         except ValueError:
             score = 0.0
-        cat = cells[3]
-        parsed.append((repo, score, cat))
+        stars_delta = cells[3]
+        score_delta = cells[4]
+        cat = cells[5]
+        parsed.append((repo, score, stars_delta, score_delta, cat))
 
     parsed.sort(key=lambda r: (-r[1], r[0].lower()))
 
-    rows = [f"| {i} | {repo} | {score:.2f} | {cat} |" for i, (repo, score, cat) in enumerate(parsed, start=1)]
+    rows = [
+        f"| {i} | {repo} | {score:.2f} | {sd} | {qd} | {cat} |"
+        for i, (repo, score, sd, qd, cat) in enumerate(parsed, start=1)
+    ]
     return "\n".join(header + rows)
 
 
