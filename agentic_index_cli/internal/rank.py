@@ -99,8 +99,12 @@ def fetch_badge(url: str, dest: Path) -> None:
         dest.write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>\n')
         return
     try:
-        with urllib.request.urlopen(url) as resp:
+        resp = urllib.request.urlopen(url)
+        try:
             dest.write_bytes(resp.read())
+        finally:
+            if hasattr(resp, "close"):
+                resp.close()
     except Exception:
         if dest.exists():
             return
