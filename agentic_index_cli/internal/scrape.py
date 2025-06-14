@@ -1,11 +1,18 @@
 import argparse
 import json
 import os
+import time
+import logging
 from pathlib import Path
 from typing import List, Dict, Any
+
 import requests
+from pydantic import BaseModel, ValidationError
+
+from ..exceptions import APIError, RateLimitError, InvalidRepoError
 
 RATE_LIMIT_REMAINING = None
+logger = logging.getLogger(__name__)
 
 QUERIES = [
     "agent framework",
@@ -29,21 +36,62 @@ FIELDS = [
     "owner",
 ]
 
+
+class LicenseModel(BaseModel):
+    spdx_id: str | None = None
+
+
+class OwnerModel(BaseModel):
+    login: str | None = None
+
+
+class RepoModel(BaseModel):
+    name: str
+    full_name: str
+    html_url: str
+    description: str | None = None
+    stargazers_count: int
+    forks_count: int
+    open_issues_count: int
+    archived: bool
+    license: LicenseModel | None = None
+    language: str | None = None
+    pushed_at: str
+    owner: OwnerModel
+
+
+def _get(url: str, *, headers: dict, params: dict | None = None) -> requests.Response:
+    backoff = 1
+    for attempt in range(5):
+        try:
+            resp = requests.get(url, headers=headers, params=params)
+        except requests.RequestException as e:
+            if attempt == 4:
+                raise APIError(str(e)) from e
+        else:
+            if resp.status_code == 403 and resp.headers.get("X-RateLimit-Remaining") == "0":
+                reset = int(resp.headers.get("X-RateLimit-Reset", "0"))
+                sleep_for = max(0, reset - int(time.time()))
+                logger.warning("Rate limit hit, sleeping %s seconds", sleep_for)
+                time.sleep(sleep_for)
+                continue
+            if resp.status_code >= 500:
+                logger.warning("Server error %s, retrying", resp.status_code)
+            else:
+                return resp
+        time.sleep(backoff)
+        backoff *= 2
+    raise APIError(f"failed GET {url} after retries")
+
 def _extract(item: Dict[str, Any]) -> Dict[str, Any]:
-    return {
-        "name": item.get("name"),
-        "full_name": item.get("full_name"),
-        "html_url": item.get("html_url"),
-        "description": item.get("description"),
-        "stargazers_count": item.get("stargazers_count"),
-        "forks_count": item.get("forks_count"),
-        "open_issues_count": item.get("open_issues_count"),
-        "archived": item.get("archived"),
-        "license": {"spdx_id": (item.get("license") or {}).get("spdx_id")},
-        "language": item.get("language"),
-        "pushed_at": item.get("pushed_at"),
-        "owner": {"login": (item.get("owner") or {}).get("login")},
-    }
+    try:
+        repo = RepoModel(**item)
+    except ValidationError as e:
+        raise InvalidRepoError(str(e)) from e
+    data = repo.dict()
+    data["license"] = {"spdx_id": (repo.license.spdx_id if repo.license else None)}
+    data["owner"] = {"login": repo.owner.login}
+    return {field: data.get(field) for field in FIELDS}
 
 
 def scrape(min_stars: int = 0, token: str | None = None) -> List[Dict[str, Any]]:
@@ -59,17 +107,25 @@ def scrape(min_stars: int = 0, token: str | None = None) -> List[Dict[str, Any]]
             "order": "desc",
             "per_page": 100,
         }
-        response = requests.get(
+        response = _get(
             "https://api.github.com/search/repositories",
             headers=headers,
             params=params,
         )
-        response.raise_for_status()
         remaining = int(response.headers.get("X-RateLimit-Remaining", "0"))
         if RATE_LIMIT_REMAINING is None or remaining < RATE_LIMIT_REMAINING:
             RATE_LIMIT_REMAINING = remaining
-        for item in response.json().get("items", []):
-            data = _extract(item)
+        try:
+            items = response.json().get("items", [])
+        except ValueError as e:
+            logger.warning("bad JSON skipped: %s", e)
+            continue
+        for item in items:
+            try:
+                data = _extract(item)
+            except InvalidRepoError as e:
+                logger.warning("invalid repo skipped: %s", e)
+                continue
             all_repos[data["full_name"]] = data
     return list(all_repos.values())
 
@@ -84,9 +140,9 @@ def main() -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as f:
         json.dump(repos, f, ensure_ascii=False, indent=2)
-    print(f"Wrote {len(repos)} repos to {path}")
+    logger.info("Wrote %s repos to %s", len(repos), path)
     if RATE_LIMIT_REMAINING is not None:
-        print(f"Rate limit remaining: {RATE_LIMIT_REMAINING}")
+        logger.info("Rate limit remaining: %s", RATE_LIMIT_REMAINING)
 
 
 
