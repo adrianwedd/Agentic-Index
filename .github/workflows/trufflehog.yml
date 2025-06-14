@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Secret scan with TruffleHog
-        uses: trufflesecurity/trufflehog/actions/scan@v3
+        uses: trufflesecurity/trufflehog/actions/scan@v3.75.0
         with:
           path: .
           base: ${{ github.event.before }}
