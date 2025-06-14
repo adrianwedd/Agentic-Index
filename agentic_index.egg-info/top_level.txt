@@ -1,1 +1,2 @@
 agentic_index_cli
+lib
