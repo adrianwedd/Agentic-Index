@@ -7,6 +7,8 @@ import sys
 import json
 import difflib
 
+from agentic_index_cli.config import load_config
+
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 README_PATH = ROOT / "README.md"
@@ -29,7 +31,7 @@ def _clamp_name(name: str, limit: int = 28) -> str:
     return safe[: limit - 3] + "..."
 
 
-def _load_rows(sort_by: str = 'score') -> list[str]:
+def _load_rows(sort_by: str = 'score', *, limit: int = 100) -> list[str]:
     """Return table rows computed from repo data using v2 fields.
 
     If ``data/ranked.json`` is present it is used in preference to
@@ -93,7 +95,7 @@ def _load_rows(sort_by: str = 'score') -> list[str]:
         parsed.sort(key=lambda r: (-r[sort_by], r["name"].lower()))
 
     rows = []
-    for i, repo in enumerate(parsed[:100], start=1):
+    for i, repo in enumerate(parsed[:limit], start=1):
         rows.append(
             "| {i} | {score:.2f} | {name} | {s30} | {maint} | {rel} | {docs} | {eco} | {lic} |".format(
                 i=i,
@@ -132,7 +134,7 @@ def _fmt_delta(val: str | int | float, *, is_int: bool = False) -> str:
         return val
 
 
-def build_readme(*, sort_by: str = 'score') -> str:
+def build_readme(*, sort_by: str = 'score', limit: int | None = None) -> str:
     """Return README text with the top100 table injected."""
     readme_text = README_PATH.read_text(encoding="utf-8")
     end_newline = readme_text.endswith("\n")
@@ -148,7 +150,12 @@ def build_readme(*, sort_by: str = 'score') -> str:
         "|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|",
     ]
 
-    rows = _load_rows(sort_by)
+    cfg_limit = limit
+    if cfg_limit is None:
+        cfg = load_config()
+        cfg_limit = cfg.get('output', {}).get('markdown_table_limit', 100)
+
+    rows = _load_rows(sort_by, limit=cfg_limit)
     table = "\n".join(header_lines + rows)
 
     new_text = f"{before}\n{table}\n{END}{after}"

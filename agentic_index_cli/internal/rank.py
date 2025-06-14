@@ -20,6 +20,7 @@ from agentic_index_cli.agentic_index import (
     compute_issue_health,
     license_freedom,
 )
+from agentic_index_cli.config import load_config
 
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
 
@@ -134,8 +135,11 @@ def generate_badges(top_repo: str, iso_date: str, repo_count: int) -> None:
 # ───────────────────────────────  Main CLI  ────────────────────────────────────
 
 
-def main(json_path: str = "data/repos.json") -> None:
+def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> None:
     """Rank repositories and write results back to disk."""
+    cfg = config or load_config()
+    top_n = cfg.get("ranking", {}).get("top_n", 100)
+    delta_days = cfg.get("ranking", {}).get("delta_days", 7)
     data_file = Path(json_path)
     is_test = os.getenv("PYTEST_CURRENT_TEST") is not None
     repos = load_repos(data_file)
@@ -212,7 +216,7 @@ def main(json_path: str = "data/repos.json") -> None:
         shutil.copy(data_file, snapshot_path)
         last_snapshot_file.write_text(str(snapshot_path))
         snapshots = sorted(history_dir.glob("*.json"))
-        for old in snapshots[:-7]:
+        for old in snapshots[:-delta_days]:
             old.unlink()
 
     # top-50 table
@@ -236,7 +240,7 @@ def main(json_path: str = "data/repos.json") -> None:
             qd=fmt(repo["score_delta"]),
             cat=repo["category"],
         )
-        for i, repo in enumerate(repos[:100], start=1)
+        for i, repo in enumerate(repos[:top_n], start=1)
     ]
     if not skip_top_write:
         Path("data").mkdir(exist_ok=True)

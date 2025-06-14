@@ -319,6 +319,9 @@ Run the indexer to fetch fresh repo data:
 python -m agentic_index_cli.agentic_index --min-stars 50 --iterations 1 --output data
 ```
 
+The CLI reads tuning parameters from `agentic_index_cli/config.yaml`. Use
+`--config my.yml` with any command to override these defaults.
+
 Generated tables live in the `data/` directory.
 
 <a id="-how-refresh-works"></a>

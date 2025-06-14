@@ -1,7 +1,23 @@
 #!/usr/bin/env python3
+"""CLI wrapper for ranking repositories."""
+
+import argparse
+
+from agentic_index_cli.config import load_config
 from agentic_index_cli.internal.rank import main, generate_badges
 
+
+def parse_args(argv=None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Rank repositories")
+    parser.add_argument("path", nargs="?", default="data/repos.json")
+    parser.add_argument("--config")
+    return parser.parse_args(argv)
+
+
 if __name__ == "__main__":
-    import sys
-    path = sys.argv[1] if len(sys.argv) > 1 else "data/repos.json"
-    main(path)
+    args = parse_args()
+    cfg = load_config(args.config) if args.config else None
+    if cfg is None:
+        main(args.path)
+    else:
+        main(args.path, config=cfg)
