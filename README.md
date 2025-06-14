@@ -300,6 +300,7 @@ Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
   * Understand what makes a repo eligible.
   * Install [Git LFS](https://git-lfs.github.com/) and run `git lfs install`.
     PNG and GIF assets are tracked via LFS.
+  * Set up your dev environment with [DEVELOPMENT.md](./docs/DEVELOPMENT.md).
 
 For tips on keeping your branch in sync with `main` and resolving conflicts, see
 [CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).

@@ -11,6 +11,7 @@ nav:
       - CI Audit Report: ci-audit.md
       - Conflict Resolution: CONFLICT_RESOLUTION.md
       - Coverage Baseline: coverage_baseline.md
+      - Development Setup: DEVELOPMENT.md
   - Methodology: METHODOLOGY.md
   - CLI Usage: cli.md
   - API Reference:
