@@ -1,6 +1,6 @@
-from __future__ import annotations
-
 """Helpers for computing and formatting delta values."""
+
+from __future__ import annotations
 
 
 def _fmt_delta(old: int | None, new: int) -> str:

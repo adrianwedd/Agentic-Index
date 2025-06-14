@@ -1,4 +1,4 @@
-"""Enrichment utilities for repository metadata."""
+"""Helpers for enriching scraped repository data."""
 
 import argparse
 import math
@@ -13,12 +13,7 @@ from .validate import load_repos, save_repos
 
 
 def enrich(path: Path) -> None:
-    """Add derived fields to a repository JSON file.
-
-    Args:
-        path: Path to the repository JSON data.
-    """
-
+    """Add derived fields to a repository JSON file."""
     data = load_repos(path)
     for repo in data:
         stars = repo.get("stargazers_count", 0)
@@ -40,12 +35,7 @@ def enrich(path: Path) -> None:
 
 
 def main(argv=None):
-    """Command-line interface for :func:`enrich`.
-
-    Args:
-        argv: Optional command line arguments.
-    """
-
+    """Command-line interface for :func:`enrich`."""
     parser = argparse.ArgumentParser(description="Enrich scraped repo data")
     parser.add_argument("json_path", nargs="?", default="data/repos.json")
     args = parser.parse_args(argv)

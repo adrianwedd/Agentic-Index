@@ -1,7 +1,5 @@
-
-"""
-Rank agentic-AI repos, write a Markdown table, and emit Shields.io badges
-showing the last sync date and today’s top-ranked repo.
+# -*- coding: utf-8 -*-
+"""Rank Agentic-AI repos and generate badges.
 
 Usage:
     python extend_rank.py [data/repos.json]
@@ -40,7 +38,6 @@ def compute_score(repo: dict) -> float:
             + 0.10 * license
             + 0.05 * ecosystem
     """
-
     stars = repo.get("stars", repo.get("stargazers_count", 0))
     recency = repo.get("recency_factor")
     if recency is None:
@@ -72,6 +69,7 @@ def compute_score(repo: dict) -> float:
 
 
 def infer_category(repo: dict) -> str:
+    """Derive a high-level category from repo metadata."""
     blob = (
         " ".join(repo.get("topics", []))
         + " "
@@ -115,6 +113,7 @@ def fetch_badge(url: str, dest: Path) -> None:
 
 
 def generate_badges(top_repo: str, iso_date: str, repo_count: int) -> None:
+    """Create Shields.io badges for the ranking results."""
     badges = Path("badges")
     badges.mkdir(exist_ok=True)
 
@@ -135,6 +134,7 @@ def generate_badges(top_repo: str, iso_date: str, repo_count: int) -> None:
 
 
 def main(json_path: str = "data/repos.json") -> None:
+    """Rank repositories and write results back to disk."""
     data_file = Path(json_path)
     is_test = os.getenv("PYTEST_CURRENT_TEST") is not None
     repos = load_repos(data_file)

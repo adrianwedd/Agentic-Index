@@ -170,7 +170,6 @@ def main(*, force: bool = False, check: bool = False, write: bool = True, sort_b
     sort_by:
         Field to sort by. One of ``score``, ``stars_30d``, ``maintenance``, or ``last_release``.
     """
-
     try:
         new_text = build_readme(sort_by=sort_by)
     except ValueError:

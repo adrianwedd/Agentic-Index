@@ -21,6 +21,7 @@ CONFIG_PATH = Path('.regression.yml')
 
 
 def load_config(path: Path = CONFIG_PATH) -> dict:
+    """Return regression config from ``path``."""
     if not path.exists():
         return {"forbidden": [], "allowed_regex": []}
     with open(path, 'r', encoding='utf-8') as f:
@@ -42,6 +43,7 @@ ALLOWLIST_PATH = Path('regression_allowlist.yml')
 
 
 def load_allowlist(path: Path = ALLOWLIST_PATH) -> list[str]:
+    """Load allowed regex patterns from ``path``."""
     if not path.exists():
         return []
     with open(path, 'r', encoding='utf-8') as f:
@@ -50,6 +52,7 @@ def load_allowlist(path: Path = ALLOWLIST_PATH) -> list[str]:
 
 
 def gather_files(globs: list[str] | None = None) -> list[Path]:
+    """Return repository files matching ``globs``."""
     globs = globs or DEFAULT_GLOBS
     files: list[Path] = []
     for g in globs:
@@ -66,6 +69,7 @@ def gather_files(globs: list[str] | None = None) -> list[Path]:
 
 
 def check_files(paths: list[Path], config: dict) -> list[str]:
+    """Return list of forbidden-pattern failures."""
     allowed = [re.compile(p) for p in config.get('allowed_regex', [])]
     allowlist = [re.compile(p) for p in config.get('allowlist', [])]
     forbidden = config.get('forbidden', [])
@@ -90,6 +94,7 @@ def check_files(paths: list[Path], config: dict) -> list[str]:
 
 
 def main(argv: list[str] | None = None) -> int:
+    """Command-line interface for regression checks."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--allowlist', type=Path, default=ALLOWLIST_PATH,
                         help='YAML file containing allowed regex patterns')

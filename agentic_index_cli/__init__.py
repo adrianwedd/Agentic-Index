@@ -1,1 +1,1 @@
-# Agentic Index CLI package
+"""Command-line interface for working with the Agentic Index."""

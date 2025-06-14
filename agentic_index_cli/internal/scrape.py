@@ -1,3 +1,5 @@
+"""Scrape GitHub repositories for inclusion in the index."""
+
 import argparse
 import json
 import os
@@ -39,14 +41,20 @@ FIELDS = [
 
 
 class LicenseModel(BaseModel):
+    """Subset of repo license information."""
+
     spdx_id: str | None = None
 
 
 class OwnerModel(BaseModel):
+    """Repository owner information."""
+
     login: str | None = None
 
 
 class RepoModel(BaseModel):
+    """Model for GitHub repository objects."""
+
     name: str
     full_name: str
     html_url: str
@@ -96,6 +104,7 @@ def _extract(item: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def scrape(min_stars: int = 0, token: str | None = None) -> List[Dict[str, Any]]:
+    """Return repository metadata from GitHub."""
     global RATE_LIMIT_REMAINING
     headers = {"Accept": "application/vnd.github+json"}
     if token:
@@ -132,6 +141,7 @@ def scrape(min_stars: int = 0, token: str | None = None) -> List[Dict[str, Any]]
 
 
 def main() -> None:
+    """CLI wrapper for :func:`scrape`."""
     parser = argparse.ArgumentParser(description="Fetch GitHub repos for Agentic Index")
     parser.add_argument("--min-stars", type=int, default=0, dest="min_stars")
     args = parser.parse_args()

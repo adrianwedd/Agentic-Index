@@ -1,6 +1,4 @@
 """Helper functions for Agentic Index."""
-
-
 def add(a: int, b: int) -> int:
     """Add two integers.
 
@@ -11,5 +9,4 @@ def add(a: int, b: int) -> int:
     Returns:
         The sum of ``a`` and ``b``.
     """
-
     return a + b
