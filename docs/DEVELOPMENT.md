@@ -39,7 +39,7 @@ Use the default PyPI mirror or the mirror in `docs/CI_SETUP.md` if your network 
 
 **Q: GitHub API rate limit when scraping?**
 
-Export `GITHUB_TOKEN` with a personal token to increase limits or reduce the `--min-stars` argument when testing locally.
+Export `GITHUB_TOKEN_REPO_STATS` with a personal token to increase limits or reduce the `--min-stars` argument when testing locally.
 
 **Q: Paths not recognized on Windows?**
 

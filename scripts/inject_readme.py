@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).resolve().parents[1]))
 from agentic_index_cli.internal.inject_readme import main
 
 if __name__ == "__main__":
