@@ -24,6 +24,23 @@ To run the scraping and ranking tools locally, install the CLI:
 pip install agentic-index-cli
 ```
 
+## Development environment
+
+Set up Python 3.11 and install dependencies:
+
+```bash
+pip install -r requirements.txt
+pip install -e .
+pip install pre-commit
+pre-commit install
+```
+
+Run the full test suite before pushing changes:
+
+```bash
+pytest -q
+```
+
 ## Working on Launch Readiness Review Issues
 
 A comprehensive project review was conducted in June 2025 to identify areas for improvement before launch. Findings from this review have been translated into actionable GitHub issues.
