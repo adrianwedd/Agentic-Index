@@ -14,6 +14,7 @@ Agentic Index curates & ranks AI-agent repos so developers can quickly find reli
 | FastStartPicker | manual | `agentic_index_cli/faststart.py` | Generate FAST_START | `FAST_START.md` |
 | TrendGrapher | update.yml | `agentic_index_cli/plot_trends.py` | Plot score trends | `docs/trends/*.png` |
 | SiteDeployer | gh-pages | `.github/workflows/deploy_site.yml` | Publish /web to Pages | live site URL |
+| SyncAPI | POST /sync | `api/app.py` | Trigger repo sync | `state/sync_data.json` |
 | SafeRebase | comment /rebase | `.github/actions/safe-rebase/action.yml` | Rebase PR into new branch | draft <orig>-rebased PR |
 
 Add any new agents as you implement them.*
