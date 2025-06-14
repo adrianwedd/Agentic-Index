@@ -5,3 +5,5 @@ requests
 PyYAML
 pytest-socket
 responses
+rich
+typer[all]
