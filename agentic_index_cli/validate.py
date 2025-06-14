@@ -24,7 +24,7 @@ class Repo(BaseModel):
     open_issues_count: int | None = None
     closed_issues: int | None = None
     archived: bool | None = None
-    license: License | None = None
+    license: License | str | None = None
     language: str | None = None
     pushed_at: str | None = None
     owner: Owner | None = None
@@ -43,6 +43,11 @@ class Repo(BaseModel):
     stars_log2: float | None = None
     last_commit: str | None = None
     one_liner: str | None = None
+    stars_30d: int | None = None
+    maintenance: float | None = None
+    docs_score: float | None = None
+    ecosystem: float | None = None
+    last_release: str | None = None
 
     model_config = ConfigDict(extra="forbid")
 
