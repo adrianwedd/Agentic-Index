@@ -8,6 +8,8 @@ responses
 jsonschema>=3.2
 pydantic>=2
 matplotlib
+fastapi>=0.110
+httpx
 
 pydeps
 sphinx
