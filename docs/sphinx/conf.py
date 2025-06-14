@@ -8,4 +8,5 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon']
 html_theme = 'sphinx_rtd_theme'
 
 autodoc_typehints = 'description'
+autodoc_mock_imports = ["pydantic"]
 
