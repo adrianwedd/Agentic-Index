@@ -21,6 +21,7 @@ Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
 <a href="https://github.com/adrianwedd/Agentic-Index/actions/workflows/ci.yml"><img src="badges/build.svg" alt="build"></a>
 <a href="badges/coverage.svg"><img src="badges/coverage.svg" alt="coverage"></a>
 <a href="https://adrianwedd.github.io/Agentic-Index/"><img src="badges/docs.svg" alt="docs"></a>
+<a href="https://adrianwedd.github.io/Agentic-Index/"><img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index" alt="Site"></a>
 <a href="./LICENSE.md"><img src="badges/license.svg" alt="license"></a>
 <a href="https://pypi.org/project/agentic-index-cli/"><img src="badges/pypi.svg" alt="PyPI"></a>
 </p>
