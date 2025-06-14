@@ -89,7 +89,7 @@ def _extract(item: Dict[str, Any]) -> Dict[str, Any]:
         repo = RepoModel(**item)
     except ValidationError as e:
         raise InvalidRepoError(str(e)) from e
-    data = repo.dict()
+    data = repo.model_dump()
     data["license"] = {"spdx_id": (repo.license.spdx_id if repo.license else None)}
     data["owner"] = {"login": repo.owner.login}
     return {field: data.get(field) for field in FIELDS}
