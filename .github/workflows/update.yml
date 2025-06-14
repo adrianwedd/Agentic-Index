@@ -56,7 +56,7 @@ jobs:
           if [ "${{ inputs.force-inject }}" = "true" ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           elif git diff --quiet --exit-code \
-                data/top50.md data/repos.json README.md; then
+                data/top100.md data/repos.json README.md; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"

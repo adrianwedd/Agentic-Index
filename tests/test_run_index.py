@@ -17,11 +17,11 @@ def test_run_index_creates_outputs(tmp_path, monkeypatch):
     monkeypatch.setattr(ai, "search_and_harvest", lambda min_stars: data)
     ai.run_index(min_stars=0, iterations=1, output=tmp_path)
 
-    assert (tmp_path / "top50.csv").exists()
-    assert (tmp_path / "top50.md").exists()
+    assert (tmp_path / "top100.csv").exists()
+    assert (tmp_path / "top100.md").exists()
     assert (tmp_path / "CHANGELOG.md").exists()
 
-    with open(tmp_path / "top50.csv") as f:
+    with open(tmp_path / "top100.csv") as f:
         reader = csv.DictReader(f)
         rows = list(reader)
         assert rows and rows[0]["name"] == "repo"

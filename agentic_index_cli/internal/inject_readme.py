@@ -1,4 +1,4 @@
-"""Inject top50 table into ``README.md`` or check that it is up to date."""
+"""Inject top100 table into ``README.md`` or check that it is up to date."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ import difflib
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 README_PATH = ROOT / "README.md"
-DATA_PATH = ROOT / "data" / "top50.md"
+DATA_PATH = ROOT / "data" / "top100.md"
 REPOS_PATH = ROOT / "data" / "repos.json"
 RANKED_PATH = ROOT / "data" / "ranked.json"
 SNAPSHOT = ROOT / "data" / "last_snapshot.json"
@@ -46,7 +46,7 @@ def _load_rows(sort_by: str = 'score') -> list[str]:
     for repo in repos:
         name = repo.get("name", "")
         repo_score = float(repo.get("AgenticIndexScore", 0))
-        stars30 = int(repo.get("stars_30d", 0))
+        stars7 = int(repo.get("stars_7d", 0))
         maint_raw = repo.get("maintenance")
         maint_val = float(maint_raw) if maint_raw is not None else 0.0
         maint_fmt = "-" if maint_raw is None else f"{maint_val:.2f}"
@@ -73,7 +73,7 @@ def _load_rows(sort_by: str = 'score') -> list[str]:
             {
                 "name": name,
                 "score": repo_score,
-                "stars_30d": stars30,
+                "stars_7d": stars7,
                 "maintenance": maint_fmt,
                 "maintenance_sort": maint_val,
                 "release": release,
@@ -93,13 +93,13 @@ def _load_rows(sort_by: str = 'score') -> list[str]:
         parsed.sort(key=lambda r: (-r[sort_by], r["name"].lower()))
 
     rows = []
-    for i, repo in enumerate(parsed[:50], start=1):
+    for i, repo in enumerate(parsed[:100], start=1):
         rows.append(
             "| {i} | {score:.2f} | {name} | {s30} | {maint} | {rel} | {docs} | {eco} | {lic} |".format(
                 i=i,
                 score=repo['score'],
                 name=_clamp_name(repo['name']),
-                s30=repo['stars_30d'],
+                s30=repo['stars_7d'],
                 maint=repo['maintenance'],
                 rel=repo['release'],
                 docs=repo['docs'],
@@ -133,7 +133,7 @@ def _fmt_delta(val: str | int | float, *, is_int: bool = False) -> str:
 
 
 def build_readme(*, sort_by: str = 'score') -> str:
-    """Return README text with the top50 table injected."""
+    """Return README text with the top100 table injected."""
     readme_text = README_PATH.read_text(encoding="utf-8")
     end_newline = readme_text.endswith("\n")
     start_idx = readme_text.index(START)
@@ -144,7 +144,7 @@ def build_readme(*, sort_by: str = 'score') -> str:
 
     # always inject standard header for v2 schema
     header_lines = [
-        f"| Rank | <abbr title=\"{OVERALL_COL}\">📊</abbr> {OVERALL_COL} | Repo | <abbr title=\"Stars gained in last 30 days\">⭐ Δ30d</abbr> | <abbr title=\"Maintenance score\">🔧 Maint</abbr> | <abbr title=\"Last release date\">📅 Release</abbr> | <abbr title=\"Documentation score\">📚 Docs</abbr> | <abbr title=\"Ecosystem fit\">🧠 Fit</abbr> | <abbr title=\"License\">⚖️ License</abbr> |",
+        f"| Rank | <abbr title=\"{OVERALL_COL}\">📊</abbr> {OVERALL_COL} | Repo | <abbr title=\"Stars gained in last 7 days\">⭐ Δ7d</abbr> | <abbr title=\"Maintenance score\">🔧 Maint</abbr> | <abbr title=\"Last release date\">📅 Release</abbr> | <abbr title=\"Documentation score\">📚 Docs</abbr> | <abbr title=\"Ecosystem fit\">🧠 Fit</abbr> | <abbr title=\"License\">⚖️ License</abbr> |",
         "|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|",
     ]
 
@@ -189,7 +189,7 @@ def main(*, force: bool = False, check: bool = False, write: bool = True, sort_b
     write:
         Whether to update ``README.md``. Defaults to ``True``.
     sort_by:
-        Field to sort by. One of ``score``, ``stars_30d``, ``maintenance``, or ``last_release``.
+        Field to sort by. One of ``score``, ``stars_7d``, ``maintenance``, or ``last_release``.
     """
     try:
         new_text = build_readme(sort_by=sort_by)

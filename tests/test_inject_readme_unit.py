@@ -14,7 +14,7 @@ def _setup(tmp_path: Path) -> Path:
                     "name": "x",
                     "full_name": "o/x",
                     "AgenticIndexScore": 1.0,
-                    "stars_30d": 1,
+                    "stars_7d": 1,
                     "maintenance": 0.5,
                     "docs_score": 0.5,
                     "ecosystem": 0.3,
@@ -24,8 +24,8 @@ def _setup(tmp_path: Path) -> Path:
             ],
         })
     )
-    (data_dir / "top50.md").write_text(
-        "| Rank | <abbr title=\"Overall\">📊</abbr> Overall | Repo | <abbr title=\"Stars gained in last 30 days\">⭐ Δ30d</abbr> | <abbr title=\"Maintenance score\">🔧 Maint</abbr> | <abbr title=\"Last release date\">📅 Release</abbr> | <abbr title=\"Documentation score\">📚 Docs</abbr> | <abbr title=\"Ecosystem fit\">🧠 Fit</abbr> | <abbr title=\"License\">⚖️ License</abbr> |\n|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|\n| 1 | 1.00 | x | 1 | 0.50 | - | 0.50 | 0.30 | MIT |\n"
+    (data_dir / "top100.md").write_text(
+        "| Rank | <abbr title=\"Overall\">📊</abbr> Overall | Repo | <abbr title=\"Stars gained in last 7 days\">⭐ Δ7d</abbr> | <abbr title=\"Maintenance score\">🔧 Maint</abbr> | <abbr title=\"Last release date\">📅 Release</abbr> | <abbr title=\"Documentation score\">📚 Docs</abbr> | <abbr title=\"Ecosystem fit\">🧠 Fit</abbr> | <abbr title=\"License\">⚖️ License</abbr> |\n|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|\n| 1 | 1.00 | x | 1 | 0.50 | - | 0.50 | 0.30 | MIT |\n"
     )
     (data_dir / "last_snapshot.json").write_text('[]')
     readme = tmp_path / "README.md"
@@ -33,7 +33,7 @@ def _setup(tmp_path: Path) -> Path:
 
     for name, val in {
         "README_PATH": readme,
-        "DATA_PATH": data_dir / "top50.md",
+        "DATA_PATH": data_dir / "top100.md",
         "REPOS_PATH": data_dir / "repos.json",
         "SNAPSHOT": data_dir / "last_snapshot.json",
     }.items():

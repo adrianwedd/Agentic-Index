@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 NEW_FIELDS = {
-    "stars_30d": 0,
+    "stars_7d": 0,
     "maintenance": 0.0,
     "docs_score": 0.0,
     "ecosystem": 0.0,

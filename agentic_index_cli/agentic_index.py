@@ -235,7 +235,7 @@ def search_and_harvest(min_stars: int = 0, max_pages: int = 1) -> List[Dict]:
     return results
 
 
-def sort_and_select(repos: List[Dict], limit: int = 50) -> List[Dict]:
+def sort_and_select(repos: List[Dict], limit: int = 100) -> List[Dict]:
     """Return the top ``limit`` repos sorted by score."""
     repos.sort(key=lambda x: x[SCORE_KEY], reverse=True)
     return repos[:limit]
@@ -305,14 +305,14 @@ def save_changelog(changes: List[Dict], path: Path):
 def run_index(min_stars: int = 0, iterations: int = 1, output: Path = Path("data")) -> None:
     """Run the full indexing workflow."""
     output.mkdir(parents=True, exist_ok=True)
-    prev_csv = output / "top50.csv"
+    prev_csv = output / "top100.csv"
     prev_repos = load_previous(prev_csv)
 
     final_repos = None
     last_top = None
     for _ in range(iterations):
         repos = search_and_harvest(min_stars)
-        top = sort_and_select(repos, 50)
+        top = sort_and_select(repos, 100)
         names = [r["name"] for r in top]
         if names == last_top:
             break
@@ -321,8 +321,8 @@ def run_index(min_stars: int = 0, iterations: int = 1, output: Path = Path("data
     if final_repos is None:
         final_repos = top
 
-    save_csv(final_repos, output / "top50.csv")
-    save_markdown(final_repos, output / "top50.md")
+    save_csv(final_repos, output / "top100.csv")
+    save_markdown(final_repos, output / "top100.md")
     changes = changelog(prev_repos, [r["name"] for r in final_repos])
     save_changelog(changes, output / "CHANGELOG.md")
 

@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - data/top50.md
+      - data/top100.md
 
 jobs:
   notify:

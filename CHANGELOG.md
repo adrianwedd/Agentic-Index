@@ -4,5 +4,5 @@
 
 ## v2-schema
 - Introduced 📊 Metrics Legend
-- Added new scoring columns (maint, stars_30d, etc.)
+- Added new scoring columns (maint, stars_7d, etc.)
 - README snapshot now uses diff tolerance ±0.02

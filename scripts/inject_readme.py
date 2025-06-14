@@ -13,7 +13,7 @@ if __name__ == "__main__":
             self.print_help()
             self.exit(1)
 
-    parser = _Parser(description="Synchronise README top50 table")
+    parser = _Parser(description="Synchronise README top100 table")
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--check", action="store_true", help="Fail if README is outdated")
     group.add_argument("--write", action="store_true", help="Update README in place (default)")
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--sort-by",
         default="score",
-        choices=["score", "stars_30d", "maintenance", "last_release"],
+        choices=["score", "stars_7d", "maintenance", "last_release"],
         help="Sort table by metric",
     )
     args = parser.parse_args()

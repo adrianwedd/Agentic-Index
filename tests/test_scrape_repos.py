@@ -53,5 +53,5 @@ def test_one_shot_fields(tmp_path, monkeypatch):
 
     data = json.loads((tmp_path / 'data/repos.json').read_text())
     repo_data = data['repos'][0]
-    for field in ['stars_30d', 'maintenance', 'docs_score', 'ecosystem', 'last_release']:
+    for field in ['stars_7d', 'maintenance', 'docs_score', 'ecosystem', 'last_release']:
         assert field in repo_data

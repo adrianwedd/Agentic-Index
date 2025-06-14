@@ -29,9 +29,9 @@
           "language": {"type": ["string", "null"]},
           "pushed_at": {"type": "string"},
           "owner": {"type": "object"},
-          "stars_30d": {
+          "stars_7d": {
             "type": "integer",
-            "description": "Stars gained in the last 30 days"
+            "description": "Stars gained in the last 7 days"
           },
           "maintenance": {
             "type": "number",

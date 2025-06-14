@@ -60,10 +60,13 @@ def _get(url: str) -> requests.Response:
     raise RuntimeError(f"failed GET {url}")
 
 
-def _compute_stars_30d(full_name: str, stars: int) -> int:
+DELTA_DAYS = 7
+
+
+def _compute_stars_delta(full_name: str, stars: int) -> int:
     HIST_DIR.mkdir(parents=True, exist_ok=True)
     today = _dt.date.today()
-    back = today - _dt.timedelta(days=30)
+    back = today - _dt.timedelta(days=DELTA_DAYS)
     prev_file = HIST_DIR / f"{back.isoformat()}.json"
     prev_stars = 0
     if prev_file.exists():
@@ -125,7 +128,7 @@ def fetch_repo(full_name: str) -> Dict[str, Any]:
         "language": repo.get("language"),
         "pushed_at": repo.get("pushed_at"),
         "owner": {"login": repo.get("owner", {}).get("login")},
-        "stars_30d": _compute_stars_30d(full_name, stars),
+        "stars_7d": _compute_stars_delta(full_name, stars),
         "maintenance": 1.0,
         "docs_score": 0.0,
         "ecosystem": 1.0 if topics else 0.0,
