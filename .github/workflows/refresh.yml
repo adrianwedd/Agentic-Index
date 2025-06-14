@@ -1,0 +1,112 @@
+name: Nightly README Refresh
+
+on:
+  schedule:
+    - cron: "23 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -e .
+      - name: Run scraper & inject README
+        run: |
+          python scripts/scrape.py
+          python scripts/inject_readme.py
+          git diff --quiet || echo "CHANGES_DETECTED=true" >> "$GITHUB_ENV"
+      - name: Summarize metrics
+        id: metrics
+        run: |
+          python <<'PY'
+import json, os, pathlib
+path = pathlib.Path('data/repos.json')
+try:
+    data = json.load(path.open())
+    repos = data.get('repos', data)
+except Exception:
+    repos = []
+count = len(repos)
+
+def num(v):
+    if isinstance(v, str):
+        try:
+            return float(v.replace('+',''))
+        except Exception:
+            return -1e9
+    return float(v or 0)
+
+def fmt(v, int_fmt=False):
+    if isinstance(v, str):
+        if v == '+new':
+            return '+new'
+        try:
+            f = float(v)
+            return f"{f:+.2f}" if not int_fmt else f"{int(f):+d}"
+        except Exception:
+            return v
+    if int_fmt:
+        return f"{int(v):+d}"
+    return f"{float(v):+.2f}"
+
+score_repo = max(repos, key=lambda r: num(r.get('score_delta', 0)), default={})
+star_repo = max(repos, key=lambda r: num(r.get('stars_delta', 0)), default={})
+score_val = fmt(score_repo.get('score_delta',0))
+star_val = fmt(star_repo.get('stars_delta',0), int_fmt=True)
+score_name = score_repo.get('full_name') or score_repo.get('name','unknown')
+star_name = star_repo.get('full_name') or star_repo.get('name','unknown')
+summary = (
+    "🕒 Automated refresh of repo metrics.\n\n"
+    f"• Total repos: {count}\n"
+    f"• 🔼 Largest score delta: `{score_val}` ({score_name})\n"
+    f"• ⭐ Most stars gained: `{star_val}` ({star_name})\n\n"
+    "_Triggered via scheduled job. No manual action required._"
+)
+print(summary)
+step = os.environ.get('GITHUB_STEP_SUMMARY')
+if step:
+    with open(step, 'a') as fh:
+        fh.write(summary + "\n")
+with open('pr_body.txt','w') as fh:
+    fh.write(summary)
+PY
+          body=$(cat pr_body.txt)
+          printf "body<<EOF\n%s\nEOF\n" "$body" >> "$GITHUB_OUTPUT"
+      - name: Report rate limit
+        run: |
+          curl -s -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/rate_limit > rate.json
+          python - <<'PY'
+import json, os
+try:
+    data = json.load(open('rate.json'))
+    core = data['resources']['core']
+    msg = f"GitHub API rate limit: {core['remaining']}/{core['limit']} remaining"
+    print(msg)
+    step = os.environ.get('GITHUB_STEP_SUMMARY')
+    if step:
+        with open(step,'a') as fh:
+            fh.write(msg + '\n')
+except Exception as e:
+    print('Rate limit status unavailable', e)
+PY
+      - name: Create pull request
+        if: env.CHANGES_DETECTED == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/readme-refresh-${{ github.run_id }}
+          commit-message: "chore: nightly metrics refresh (${{ github.run_date }})"
+          title: "Nightly README update – ${{ github.run_date }}"
+          labels: bot, documentation
+          body-path: pr_body.txt
+          delete-branch: true
