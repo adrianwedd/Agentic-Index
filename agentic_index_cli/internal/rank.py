@@ -16,6 +16,11 @@ import urllib.request
 from pathlib import Path
 
 from agentic_index_cli.quality.validate import validate_file
+from agentic_index_cli.agentic_index import (
+    compute_recency_factor,
+    compute_issue_health,
+    license_freedom,
+)
 
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
 
@@ -23,12 +28,34 @@ SCORE_KEY = "AgenticIndexScore"
 
 
 def compute_score(repo: dict) -> float:
-    stars = repo.get("stars", 0)
-    recency = repo.get("recency_factor", 0)
-    issue_health = repo.get("issue_health", 0)
+    """Return the Agentic Index score.
+
+    Equation::
+
+        S = 0.35 * log2(stars + 1)
+            + 0.20 * recency
+            + 0.15 * issue_health
+            + 0.15 * docs
+            + 0.10 * license
+            + 0.05 * ecosystem
+    """
+
+    stars = repo.get("stars", repo.get("stargazers_count", 0))
+    recency = repo.get("recency_factor")
+    if recency is None:
+        pushed = repo.get("pushed_at", "1970-01-01T00:00:00Z")
+        recency = compute_recency_factor(pushed)
+    issue_health = repo.get("issue_health")
+    if issue_health is None:
+        issue_health = compute_issue_health(
+            repo.get("open_issues_count", 0), repo.get("closed_issues", 0)
+        )
     docs = repo.get("doc_completeness", 0)
-    license_free = repo.get("license_freedom", 0)
+    license_free = repo.get("license_freedom")
+    if license_free is None:
+        license_free = license_freedom((repo.get("license") or {}).get("spdx_id"))
     ecosys = repo.get("ecosystem_integration", 0)
+
     score = (
         0.35 * math.log2(stars + 1)
         + 0.20 * recency
@@ -109,18 +136,21 @@ def main(json_path: str = "data/repos.json") -> None:
         if 'score' in repo and SCORE_KEY not in repo:
             repo[SCORE_KEY] = repo.pop('score')
 
-    required = [
-        "stars",
-        "recency_factor",
-        "issue_health",
-        "doc_completeness",
-        "license_freedom",
-        "ecosystem_integration",
-    ]
+    # ensure essential fields exist; fall back to raw GitHub data when missing
     for repo in repos:
-        for key in required:
-            if key not in repo:
-                raise SystemExit(f"Missing factor {key} in {repo.get('name')}")
+        repo.setdefault("stars", repo.get("stargazers_count", 0))
+        if "recency_factor" not in repo and repo.get("pushed_at"):
+            repo["recency_factor"] = compute_recency_factor(repo["pushed_at"])
+        if "issue_health" not in repo:
+            repo["issue_health"] = compute_issue_health(
+                repo.get("open_issues_count", 0), repo.get("closed_issues", 0)
+            )
+        repo.setdefault("doc_completeness", 0.0)
+        if "license_freedom" not in repo:
+            repo["license_freedom"] = license_freedom(
+                (repo.get("license") or {}).get("spdx_id")
+            )
+        repo.setdefault("ecosystem_integration", 0.0)
     # avoid mutating tracked repo files during tests
     skip_repo_write = is_test and Path(json_path).resolve() == Path("data/repos.json").resolve()
     skip_top_write = is_test
@@ -129,6 +159,10 @@ def main(json_path: str = "data/repos.json") -> None:
     for repo in repos:
         repo[SCORE_KEY] = compute_score(repo)
         repo["category"] = infer_category(repo)
+
+    zero_scores = sum(1 for r in repos if r[SCORE_KEY] == 0)
+    allowed_zero = max(1, int(len(repos) * 0.02))
+    assert zero_scores <= allowed_zero, "too many repos scored 0.0"
 
     # sort & persist
     repos.sort(key=lambda r: r[SCORE_KEY], reverse=True)
