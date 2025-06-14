@@ -14,10 +14,15 @@ repos:
         language: python
         additional_dependencies: [., pytest-cov, requests, PyYAML, jsonschema, pydantic, responses, matplotlib]
         files: \.py$
+      - id: detect-large-files
+        name: detect-large-files
+        entry: python scripts/detect_large_files.py
+        language: python
+        pass_filenames: false
+        additional_dependencies: [pre-commit-hooks==5.0.0]
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v5.0.0
     hooks:
       - id: check-added-large-files
-        name: detect-large-files
         args: [--maxkb=5120]
         exclude: ^data/history/.*\.json\.gz$
