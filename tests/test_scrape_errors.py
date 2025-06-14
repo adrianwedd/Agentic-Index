@@ -1,6 +1,7 @@
 import json
 import time
 import responses
+from responses import matchers
 import agentic_index_cli.internal.scrape as scrape
 
 
@@ -37,7 +38,12 @@ def test_scrape_retry_500(monkeypatch):
         responses.GET,
         "https://api.github.com/search/repositories",
         callback=cb,
-        match_querystring=False,
+        match=[matchers.query_param_matcher({
+            "q": "q stars:>=0",
+            "sort": "stars",
+            "order": "desc",
+            "per_page": "100",
+        })],
     )
     monkeypatch.setattr(scrape.time, "sleep", lambda s: None)
     repos = scrape.scrape(0, token=None)
@@ -72,7 +78,12 @@ def test_scrape_rate_limit_sleep(monkeypatch):
         responses.GET,
         "https://api.github.com/search/repositories",
         callback=cb,
-        match_querystring=False,
+        match=[matchers.query_param_matcher({
+            "q": "q stars:>=0",
+            "sort": "stars",
+            "order": "desc",
+            "per_page": "100",
+        })],
     )
 
     scrape.scrape(0, token=None)
