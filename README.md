@@ -154,6 +154,19 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 <!-- TOP50:END -->
 *➡️ Dig into how these scores are cooked up in our [Methodology section](#our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](./docs/methodology.md).*
 
+<details>
+<summary>📊 Metrics Legend</summary>
+
+- 📊 Score = 0.35*log2(stars+1) + 0.20*recency_factor + 0.15*issue_health + 0.15*doc_completeness + 0.10*license_freedom + 0.05*ecosystem_integration
+- ⭐ Δ30d = stars gained in the last 30 days
+- 🔧 Maint = 1 / (days_since_last_commit * open_issue_ratio)
+- 📅 Release = 1 / days_since_last_release
+- 📚 Docs = 1 if README > 300 words & has code else 0
+- 🧠 Fit = fraction of ecosystem keywords matched
+- ⚖️ License = 1 for permissive, 0.5 for viral, 0 if none
+
+</details>
+
 -----
 
 <a id="-honourable-mentions--niche--novel-gems"></a>
@@ -328,4 +341,4 @@ Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 
 © 2025 Agentic-Index Maintainers
 
 
-![Last Sync](badges/last_sync.svg) ![Top Repo](badges/top_repo.svg)
+![Last Sync](badges/last_sync.svg) ![Top Repo](badges/top_repo.svg) ![Repo Count](badges/repo_count.svg)

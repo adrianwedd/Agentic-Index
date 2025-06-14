@@ -10,7 +10,8 @@ repos:
       - id: pytest
         name: pytest
         entry: pytest --quiet --cov=agentic_index_cli
-        language: system
+        language: python
+        additional_dependencies: [requests, jsonschema, hypothesis]
         files: \.py$
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0

@@ -7,7 +7,7 @@ def test_badges_generation(tmp_path):
     subprocess.run(['python', '-m', 'agentic_index_cli.enricher'], check=True)
     subprocess.run(['python', 'scripts/rank.py'], check=True)
 
-    for name in ['last_sync.svg', 'top_repo.svg']:
+    for name in ['last_sync.svg', 'top_repo.svg', 'repo_count.svg']:
         path = os.path.join('badges', name)
         assert os.path.exists(path), f"Missing {name}"
         with open(path, 'r', encoding='utf-8') as f:

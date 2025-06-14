@@ -11,7 +11,7 @@ def test_badges_offline(monkeypatch, tmp_path):
     monkeypatch.setenv('CI_OFFLINE', '1')
     subprocess.run(['python', '-m', 'agentic_index_cli.enricher'], check=True)
     subprocess.run(['python', 'scripts/rank.py'], check=True)
-    for name in ['last_sync.svg', 'top_repo.svg']:
+    for name in ['last_sync.svg', 'top_repo.svg', 'repo_count.svg']:
         p = badges / name
         assert p.exists()
         assert '<svg' in p.read_text()
