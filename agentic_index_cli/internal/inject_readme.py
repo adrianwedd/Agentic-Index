@@ -26,7 +26,7 @@ def _clamp_name(name: str, limit: int = 28) -> str:
     return safe[: limit - 3] + "..."
 
 
-def _load_rows() -> list[str]:
+def _load_rows(sort_by: str = "score") -> list[str]:
     """Return table rows computed from ``repos.json`` using v2 fields."""
     repos = json.loads(REPOS_PATH.read_text()).get("repos", [])
 
@@ -39,20 +39,50 @@ def _load_rows() -> list[str]:
         release = repo.get("last_release") or "-"
         if release and release != "-":
             release = release.split("T")[0]
+        release_key = 0.0
+        if release and release != "-":
+            try:
+                release_key = float(release.replace("-", ""))
+            except Exception:
+                release_key = 0.0
         docs = float(repo.get("docs_score", 0))
         ecosys = float(repo.get("ecosystem", 0))
         lic = repo.get("license")
         if isinstance(lic, dict):
             lic = lic.get("spdx_id")
         lic = lic or "-"
-        parsed.append((name, score, stars30, maint, release, docs, ecosys, lic))
-
-    parsed.sort(key=lambda r: (-r[1], r[0].lower()))
+        parsed.append(
+            {
+                "name": name,
+                "score": score,
+                "stars_30d": stars30,
+                "maintenance": maint,
+                "release": release,
+                "release_key": release_key,
+                "docs": docs,
+                "ecosystem": ecosys,
+                "license": lic,
+            }
+        )
+    if sort_by == "last_release":
+        parsed.sort(key=lambda r: (-r["release_key"], r["name"].lower()))
+    else:
+        parsed.sort(key=lambda r: (-r[sort_by], r["name"].lower()))
 
     rows = []
-    for i, (name, score, s30, maint, rel, docs, eco, lic) in enumerate(parsed[:50], start=1):
+    for i, repo in enumerate(parsed[:50], start=1):
         rows.append(
-            f"| {i} | {score:.2f} | {_clamp_name(name)} | {s30} | {maint:.2f} | {rel} | {docs:.2f} | {eco:.2f} | {lic} |"
+            "| {i} | {score:.2f} | {name} | {s30} | {maint:.2f} | {rel} | {docs:.2f} | {eco:.2f} | {lic} |".format(
+                i=i,
+                score=repo["score"],
+                name=_clamp_name(repo["name"]),
+                s30=repo["stars_30d"],
+                maint=repo["maintenance"],
+                rel=repo["release"],
+                docs=repo["docs"],
+                eco=repo["ecosystem"],
+                lic=repo["license"],
+            )
         )
     return rows
 
@@ -79,7 +109,7 @@ def _fmt_delta(val: str | int | float, *, is_int: bool = False) -> str:
         return val
 
 
-def build_readme() -> str:
+def build_readme(*, sort_by: str = "score") -> str:
     """Return README text with the top50 table injected."""
     readme_text = README_PATH.read_text(encoding="utf-8")
     end_newline = readme_text.endswith("\n")
@@ -95,7 +125,7 @@ def build_readme() -> str:
         "|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|",
     ]
 
-    rows = _load_rows()
+    rows = _load_rows(sort_by)
     table = "\n".join(header_lines + rows)
 
     new_text = f"{before}\n{table}\n{END}{after}"
@@ -124,7 +154,7 @@ def diff(new_text: str, readme_path: pathlib.Path | None = None) -> str:
     )
 
 
-def main(*, force: bool = False, check: bool = False, write: bool = True) -> int:
+def main(*, force: bool = False, check: bool = False, write: bool = True, sort_by: str = "score") -> int:
     """Synchronise the README table.
 
     Parameters
@@ -135,10 +165,12 @@ def main(*, force: bool = False, check: bool = False, write: bool = True) -> int
         If ``True``, do not write. Exit ``1`` if README would change.
     write:
         Whether to update ``README.md``. Defaults to ``True``.
+    sort_by:
+        Field to sort by. One of ``score``, ``stars_30d``, ``maintenance``, or ``last_release``.
     """
 
     try:
-        new_text = build_readme()
+        new_text = build_readme(sort_by=sort_by)
     except ValueError:
         print("Markers not found in README.md", file=sys.stderr)
         return 1
