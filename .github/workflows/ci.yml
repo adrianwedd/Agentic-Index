@@ -22,7 +22,7 @@ jobs:
       - name: README sync check
         run: python scripts/inject_readme.py --check
       - name: Run regression guard
-        run: python scripts/regression_check.py
+        run: python scripts/regression_check.py --allowlist regression_allowlist.yml
       - name: Run tests with coverage
         run: pytest --cov=agentic_index_cli --cov-report=xml
         env:
