@@ -44,3 +44,10 @@ Export `GITHUB_TOKEN` with a personal token to increase limits or reduce the `--
 **Q: Paths not recognized on Windows?**
 
 Run the tools in WSL or use forward slashes (e.g. `python scripts/inject_readme.py`).
+
+### README injection must be idempotent
+
+Running `python scripts/inject_readme.py` twice in a row should leave `README.md`
+unchanged. CI checks this with `pytest -k test_inject_idempotent`. If the second
+run rewrites the file, adjust the injector so only the table body between the
+`<!-- TOP50:START -->` and `<!-- TOP50:END -->` markers is regenerated.
