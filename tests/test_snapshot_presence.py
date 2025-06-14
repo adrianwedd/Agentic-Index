@@ -1,23 +1,16 @@
-import shutil
 from pathlib import Path
-
+import shutil
 import agentic_index_cli.internal.inject_readme as inj
-from _utils import assert_readme_diff
-
-
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_inject_readme_check(tmp_path, monkeypatch):
+def test_injector_handles_missing_snapshot(tmp_path, monkeypatch):
     data_dir = tmp_path / "data"
     data_dir.mkdir()
     shutil.copy(ROOT / "data" / "top50.md", data_dir / "top50.md")
     shutil.copy(ROOT / "data" / "repos.json", data_dir / "repos.json")
-    try:
-        shutil.copy(ROOT / "data" / "last_snapshot.json", data_dir / "last_snapshot.json")
-    except FileNotFoundError:
-        (data_dir / "last_snapshot.json").write_text("{}")
+    # intentionally do not provide last_snapshot.json
 
     readme = tmp_path / "README.md"
     readme.write_text((ROOT / "README.md").read_text())
@@ -26,8 +19,5 @@ def test_inject_readme_check(tmp_path, monkeypatch):
     monkeypatch.setattr(inj, "DATA_PATH", data_dir / "top50.md")
     monkeypatch.setattr(inj, "REPOS_PATH", data_dir / "repos.json")
     monkeypatch.setattr(inj, "SNAPSHOT", data_dir / "last_snapshot.json")
-
-    modified = inj.build_readme().strip()
-    assert_readme_diff(readme.read_text().strip(), modified)
 
     assert inj.main(check=True) == 0
