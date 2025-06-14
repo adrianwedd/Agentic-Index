@@ -7,3 +7,5 @@ pytest-socket
 responses
 jsonschema>=3.2
 pydantic>=2
+
+pydeps

@@ -34,6 +34,8 @@ pip install agentic-index-cli
 | Scraper | ---> | Cache  | ---> | Injector | ---> | Pull Req |
 +---------+      +--------+      +----------+      +----------+
 ```
+Additional dependency diagrams live in `docs/architecture`. Generate them with
+`python scripts/gen_arch_diagrams.py` to explore how modules interact.
 
 ## Development environment
 
