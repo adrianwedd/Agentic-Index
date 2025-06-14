@@ -14,13 +14,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run TruffleHog
+      - name: Run TruffleHog on PR diff
+        if: ${{ github.event_name == 'pull_request' }}
         uses: trufflesecurity/trufflehog@52d0ee5f5419ca938d3b7e358fe6f32131565026
         with:
           path: .
-          format: sarif
-          output: trufflehog-results.sarif
+          base: ${{ github.event.pull_request.base.sha }}
+          head: ${{ github.event.pull_request.head.sha }}
+          extra_args: |
+            --format sarif
+            --output trufflehog-results.sarif
+      - name: Run TruffleHog on push
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: trufflesecurity/trufflehog@52d0ee5f5419ca938d3b7e358fe6f32131565026
+        with:
+          path: .
+          extra_args: |
+            --format sarif
+            --output trufflehog-results.sarif
       - name: Upload TruffleHog results
+        if: ${{ always() && hashFiles('trufflehog-results.sarif') != '' }}
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: trufflehog-results.sarif
