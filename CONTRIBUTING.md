@@ -41,6 +41,12 @@ Run the full test suite before pushing changes:
 ```bash
 pytest -q
 ```
+To view an HTML coverage report, run:
+```bash
+coverage html -d cov_html && open cov_html/index.html
+```
+
+
 
 ## Working on Launch Readiness Review Issues
 
