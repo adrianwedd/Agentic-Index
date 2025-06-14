@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "repos": [
     {
       "name": "dify",
@@ -10,9 +10,7 @@
       "forks_count": 15484,
       "open_issues_count": 782,
       "archived": false,
-      "license": {
-        "spdx_id": "NOASSERTION"
-      },
+      "license": "NOASSERTION",
       "language": "TypeScript",
       "pushed_at": "2025-06-13T13:07:32Z",
       "owner": {
@@ -30,7 +28,12 @@
       "forks_delta": 0,
       "issues_closed_delta": 0,
       "score_delta": 0,
-      "stars_log2": 16.654188473059545
+      "stars_log2": 16.654188473059545,
+      "stars_30d": 123,
+      "maintenance": 0.9,
+      "docs_score": 0.8,
+      "ecosystem": 0.7,
+      "last_release": "2025-06-01T00:00:00Z"
     },
     {
       "name": "langflow",

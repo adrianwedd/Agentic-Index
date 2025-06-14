@@ -19,7 +19,10 @@ def enrich(path: Path) -> None:
         repo["recency_factor"] = compute_recency_factor(repo.get("pushed_at", "1970-01-01T00:00:00Z"))
         repo["issue_health"] = compute_issue_health(repo.get("open_issues_count", 0), repo.get("closed_issues", 0))
         repo["doc_completeness"] = repo.get("doc_completeness", 0.0)
-        repo["license_freedom"] = license_freedom((repo.get("license") or {}).get("spdx_id"))
+        lic = repo.get("license")
+        if isinstance(lic, dict):
+            lic = lic.get("spdx_id")
+        repo["license_freedom"] = license_freedom(lic)
         repo.setdefault("ecosystem_integration", 0.0)
     save_repos(path, data)
 

@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agentic Index Repository Data v2",
+  "type": "object",
+  "required": ["schema_version", "repos"],
+  "properties": {
+    "schema_version": {"type": "integer"},
+    "repos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {"type": "string"},
+          "full_name": {"type": "string"},
+          "html_url": {"type": "string", "format": "uri"},
+          "description": {"type": ["string", "null"]},
+          "stargazers_count": {"type": "integer", "minimum": 0},
+          "forks_count": {"type": "integer", "minimum": 0},
+          "open_issues_count": {"type": "integer", "minimum": 0},
+          "archived": {"type": "boolean"},
+          "license": {
+            "description": "SPDX string or license object",
+            "oneOf": [
+              {"type": ["string", "null"]},
+              {"type": "object"}
+            ]
+          },
+          "language": {"type": ["string", "null"]},
+          "pushed_at": {"type": "string"},
+          "owner": {"type": "object"},
+          "stars_30d": {
+            "type": "integer",
+            "description": "Stars gained in the last 30 days"
+          },
+          "maintenance": {
+            "type": "number",
+            "description": "Maintenance score"
+          },
+          "docs_score": {
+            "type": "number",
+            "description": "Documentation quality score"
+          },
+          "ecosystem": {
+            "type": "number",
+            "description": "Ecosystem integration score"
+          },
+          "last_release": {
+            "type": ["string", "null"],
+            "description": "Date of last release"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}

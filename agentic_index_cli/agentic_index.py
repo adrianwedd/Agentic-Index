@@ -148,8 +148,10 @@ def compute_score(repo: Dict, readme: str) -> float:
     recency = compute_recency_factor(repo.get("pushed_at"))
     issue_health = compute_issue_health(open_issues, closed_issues)
     doc_comp = readme_doc_completeness(readme)
-    license_data = repo.get("license") or {}
-    license_free = license_freedom(license_data.get("spdx_id"))
+    lic = repo.get("license")
+    if isinstance(lic, dict):
+        lic = lic.get("spdx_id")
+    license_free = license_freedom(lic)
     eco = ecosystem_integration(repo.get("topics", []), readme)
     score = (
         0.35 * math.log2(stars + 1)
@@ -179,7 +181,7 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
         "closed_issues": repo.get("closed_issues", 0),
         "last_commit": repo.get("pushed_at", ""),
         "language": repo.get("language", ""),
-        "license": (repo.get("license") or {}).get("spdx_id"),
+        "license": (repo.get("license") if not isinstance(repo.get("license"), dict) else repo.get("license").get("spdx_id")),
         "maintainer": repo.get("owner", {}).get("login"),
         "topics": ",".join(repo.get("topics", [])),
         "readme_excerpt": first_paragraph,
