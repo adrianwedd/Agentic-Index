@@ -9,7 +9,7 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-BADGE_RE = re.compile(r"https://img\.shields\.io/badge/coverage-\d+%25-[a-zA-Z]+")
+BADGE_RE = re.compile(r"!?\[coverage\]\(https://img\.shields\.io/badge/coverage-\d+%25-[a-zA-Z]+\)")
 
 
 def fetch_badge(url: str, dest: Path) -> None:
@@ -56,9 +56,11 @@ def _badge_url(percent: int) -> str:
 
 
 def build_readme(readme_path: Path, percent: int) -> str:
+    """Return README text with an updated coverage badge."""
     text = readme_path.read_text(encoding="utf-8")
     url = _badge_url(percent)
-    new_text = BADGE_RE.sub(url, text)
+    # Normalize to image syntax in case the badge was a regular link
+    new_text = BADGE_RE.sub(f"![coverage]({url})", text)
     return new_text
 
 
