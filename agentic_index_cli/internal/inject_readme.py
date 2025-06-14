@@ -14,6 +14,8 @@ DATA_PATH = ROOT / "data" / "top50.md"
 REPOS_PATH = ROOT / "data" / "repos.json"
 SNAPSHOT = ROOT / "data" / "last_snapshot.json"
 
+OVERALL_COL = "Overall"
+
 START = "<!-- TOP50:START -->"
 END = "<!-- TOP50:END -->"
 
@@ -26,14 +28,14 @@ def _clamp_name(name: str, limit: int = 28) -> str:
     return safe[: limit - 3] + "..."
 
 
-def _load_rows(sort_by: str = "score") -> list[str]:
+def _load_rows(sort_by: str = 'score') -> list[str]:
     """Return table rows computed from ``repos.json`` using v2 fields."""
     repos = json.loads(REPOS_PATH.read_text()).get("repos", [])
 
     parsed = []
     for repo in repos:
         name = repo.get("name", "")
-        score = float(repo.get("AgenticIndexScore", 0))
+        repo_score = float(repo.get("AgenticIndexScore", 0))
         stars30 = int(repo.get("stars_30d", 0))
         maint = float(repo.get("maintenance", 0))
         release = repo.get("last_release") or "-"
@@ -54,7 +56,7 @@ def _load_rows(sort_by: str = "score") -> list[str]:
         parsed.append(
             {
                 "name": name,
-                "score": score,
+                "score": repo_score,
                 "stars_30d": stars30,
                 "maintenance": maint,
                 "release": release,
@@ -74,14 +76,14 @@ def _load_rows(sort_by: str = "score") -> list[str]:
         rows.append(
             "| {i} | {score:.2f} | {name} | {s30} | {maint:.2f} | {rel} | {docs:.2f} | {eco:.2f} | {lic} |".format(
                 i=i,
-                score=repo["score"],
-                name=_clamp_name(repo["name"]),
-                s30=repo["stars_30d"],
-                maint=repo["maintenance"],
-                rel=repo["release"],
-                docs=repo["docs"],
-                eco=repo["ecosystem"],
-                lic=repo["license"],
+                score=repo['score'],
+                name=_clamp_name(repo['name']),
+                s30=repo['stars_30d'],
+                maint=repo['maintenance'],
+                rel=repo['release'],
+                docs=repo['docs'],
+                eco=repo['ecosystem'],
+                lic=repo['license'],
             )
         )
     return rows
@@ -109,7 +111,7 @@ def _fmt_delta(val: str | int | float, *, is_int: bool = False) -> str:
         return val
 
 
-def build_readme(*, sort_by: str = "score") -> str:
+def build_readme(*, sort_by: str = 'score') -> str:
     """Return README text with the top50 table injected."""
     readme_text = README_PATH.read_text(encoding="utf-8")
     end_newline = readme_text.endswith("\n")
@@ -121,7 +123,7 @@ def build_readme(*, sort_by: str = "score") -> str:
 
     # always inject standard header for v2 schema
     header_lines = [
-        "| Rank | <abbr title=\"Score\">📊</abbr> Score | Repo | <abbr title=\"Stars gained in last 30 days\">⭐ Δ30d</abbr> | <abbr title=\"Maintenance score\">🔧 Maint</abbr> | <abbr title=\"Last release date\">📅 Release</abbr> | <abbr title=\"Documentation score\">📚 Docs</abbr> | <abbr title=\"Ecosystem fit\">🧠 Fit</abbr> | <abbr title=\"License\">⚖️ License</abbr> |",
+        f"| Rank | <abbr title=\"{OVERALL_COL}\">📊</abbr> {OVERALL_COL} | Repo | <abbr title=\"Stars gained in last 30 days\">⭐ Δ30d</abbr> | <abbr title=\"Maintenance score\">🔧 Maint</abbr> | <abbr title=\"Last release date\">📅 Release</abbr> | <abbr title=\"Documentation score\">📚 Docs</abbr> | <abbr title=\"Ecosystem fit\">🧠 Fit</abbr> | <abbr title=\"License\">⚖️ License</abbr> |",
         "|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|",
     ]
 
@@ -154,7 +156,7 @@ def diff(new_text: str, readme_path: pathlib.Path | None = None) -> str:
     )
 
 
-def main(*, force: bool = False, check: bool = False, write: bool = True, sort_by: str = "score") -> int:
+def main(*, force: bool = False, check: bool = False, write: bool = True, sort_by: str = 'score') -> int:
     """Synchronise the README table.
 
     Parameters

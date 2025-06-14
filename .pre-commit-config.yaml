@@ -6,12 +6,13 @@ repos:
         entry: python scripts/inject_readme.py --check
         language: system
         types: [markdown]
+        pass_filenames: false
         files: README\.md
       - id: pytest
         name: pytest
         entry: pytest --quiet --cov=agentic_index_cli
         language: python
-        additional_dependencies: [requests, jsonschema, hypothesis]
+        additional_dependencies: [., pytest-cov, requests, PyYAML, jsonschema, pydantic, responses]
         files: \.py$
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
