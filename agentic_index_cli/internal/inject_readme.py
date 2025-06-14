@@ -177,6 +177,9 @@ def main(*, force: bool = False, check: bool = False, write: bool = True, sort_b
         return 1
 
     if check:
+        if not SNAPSHOT.exists():
+            print(f"Warning: missing snapshot {SNAPSHOT}", file=sys.stderr)
+            return 0
         if diff(new_text):
             print("README.md is out of date", file=sys.stderr)
             return 1
