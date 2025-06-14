@@ -97,19 +97,20 @@ def fetch_badge(url: str, dest: Path) -> None:
     if os.getenv("CI_OFFLINE") == "1":
         if dest.exists():
             return
-        dest.write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>\n')
+        dest.write_bytes(b'<svg xmlns="http://www.w3.org/2000/svg"></svg>')
         return
     try:
         resp = urllib.request.urlopen(url)
         try:
-            dest.write_bytes(resp.read())
+            content = resp.read().rstrip(b"\n")
+            dest.write_bytes(content)
         finally:
             if hasattr(resp, "close"):
                 resp.close()
     except Exception:
         if dest.exists():
             return
-        dest.write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>\n')
+        dest.write_bytes(b'<svg xmlns="http://www.w3.org/2000/svg"></svg>')
 
 
 def generate_badges(top_repo: str, iso_date: str, repo_count: int) -> None:
