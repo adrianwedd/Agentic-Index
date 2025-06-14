@@ -9,6 +9,8 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+from agentic_index_cli.helpers.markdown import render_badge
+
 BADGE_RE = re.compile(r"!?\[coverage\]\(https://img\.shields\.io/badge/coverage-\d+%25-[a-zA-Z]+\)")
 
 
@@ -60,7 +62,7 @@ def build_readme(readme_path: Path, percent: int) -> str:
     text = readme_path.read_text(encoding="utf-8")
     url = _badge_url(percent)
     # Normalize to image syntax in case the badge was a regular link
-    new_text = BADGE_RE.sub(f"![coverage]({url})", text)
+    new_text = BADGE_RE.sub(render_badge("coverage", url), text)
     return new_text
 
 
