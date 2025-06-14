@@ -16,4 +16,4 @@ node_modules/
 /docs/trends/*.png
 # Ignore runtime JSON outputs
 repos.json
-data/last_snapshot.json
+!data/last_snapshot.json
