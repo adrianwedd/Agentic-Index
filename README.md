@@ -31,18 +31,13 @@ Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metr
 -----
 
 <p align="center">
-  <a href="https://github.com/adrianwedd/Agentic-Index/actions/workflows/ci.yml">
-    <img src="badges/build.svg" alt="Build Status" />
-  </a>
-  <a href="https://github.com/adrianwedd/Agentic-Index/actions/workflows/ci.yml">
-    <img src="https://img.shields.io/badge/coverage-80%25-brightgreen" alt="Coverage" />
-  </a>
-  <a href="https://pypi.org/project/agentic-index/">
-    <img src="badges/pypi.svg" alt="PyPI" />
-  </a>
-  <a href="./LICENSE">
-    <img src="badges/license.svg" alt="License" />
-  </a>
+![build](badges/build.svg)
+![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
+![docs](badges/docs.svg)
+![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index)
+![license](badges/license.svg)
+![PyPI](badges/pypi.svg)
+![Release Notes](https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases)
 </p>
 <details>
 <summary>More status badges</summary>
@@ -399,5 +394,3 @@ The content of Agentic-Index (this `README.md`, files in `/docs/`, etc.) is lice
 Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 'em) are licensed under([https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)).
 
 © 2025 Agentic-Index Maintainers
-
-
