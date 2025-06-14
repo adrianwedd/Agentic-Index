@@ -7,26 +7,57 @@ import argparse
 import datetime as _dt
 import json
 import os
+import sys
+import time
 from pathlib import Path
 from typing import Dict, Any, List
+
+sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 import requests
 
 from agentic_index_cli.validate import save_repos
 
 HEADERS = {"Accept": "application/vnd.github+json"}
-TOKEN = os.getenv("GITHUB_TOKEN")
+TOKEN = os.getenv("GITHUB_TOKEN_REPO_STATS") or os.getenv("GITHUB_TOKEN")
 if TOKEN:
     HEADERS["Authorization"] = f"token {TOKEN}"
+
+CACHE_DIR = Path(".cache")
+API_LIMIT = None
+API_REMAINING = None
+CACHE_HITS = 0
+API_CALLS = 0
 
 DEFAULT_REPOS = ["octocat/Hello-World"]
 HIST_DIR = Path("data/hist")
 
 
 def _get(url: str) -> requests.Response:
-    resp = requests.get(url, headers=HEADERS)
-    resp.raise_for_status()
-    return resp
+    """GET with simple retry/backoff and rate-limit handling."""
+    global API_LIMIT, API_REMAINING, API_CALLS
+    backoff = 1
+    for _ in range(5):
+        resp = requests.get(url, headers=HEADERS)
+        API_CALLS += 1
+        if "X-RateLimit-Limit" in resp.headers and API_LIMIT is None:
+            API_LIMIT = int(resp.headers["X-RateLimit-Limit"])
+        if "X-RateLimit-Remaining" in resp.headers:
+            API_REMAINING = int(resp.headers["X-RateLimit-Remaining"])
+        if resp.status_code == 403 and resp.headers.get("X-RateLimit-Remaining") == "0":
+            reset = int(resp.headers.get("X-RateLimit-Reset", "0"))
+            sleep_for = max(0, reset - int(time.time()))
+            if sleep_for > 0:
+                time.sleep(sleep_for)
+                continue
+            raise RuntimeError("Rate limit exceeded")
+        if resp.status_code >= 500:
+            time.sleep(backoff)
+            backoff *= 2
+            continue
+        resp.raise_for_status()
+        return resp
+    raise RuntimeError(f"failed GET {url}")
 
 
 def _compute_stars_30d(full_name: str, stars: int) -> int:
@@ -56,6 +87,15 @@ def _compute_stars_30d(full_name: str, stars: int) -> int:
 
 
 def fetch_repo(full_name: str) -> Dict[str, Any]:
+    cache_file = CACHE_DIR / f"repo_{full_name.replace('/', '_')}.json"
+    if cache_file.exists() and time.time() - cache_file.stat().st_mtime < 86400:
+        global CACHE_HITS
+        CACHE_HITS += 1
+        try:
+            return json.loads(cache_file.read_text())
+        except Exception:
+            pass
+
     repo_resp = _get(f"https://api.github.com/repos/{full_name}")
     repo = repo_resp.json()
     release_resp = requests.get(
@@ -91,6 +131,8 @@ def fetch_repo(full_name: str) -> Dict[str, Any]:
         "ecosystem": 1.0 if topics else 0.0,
         "last_release": last_release,
     }
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    cache_file.write_text(json.dumps(data, indent=2) + "\n")
     return data
 
 
@@ -113,6 +155,20 @@ def main(argv: List[str] | None = None) -> None:
     repos = scrape(args.repos)
     Path("data").mkdir(exist_ok=True)
     save_repos(Path("data/repos.json"), repos)
+
+    projected = len(args.repos) * 2
+    used = None
+    if API_LIMIT is not None and API_REMAINING is not None:
+        used = API_LIMIT - API_REMAINING
+    summary = (
+        f"API {used}/{API_LIMIT if API_LIMIT is not None else '?'} used, "
+        f"projected {projected}, cache hits {CACHE_HITS}"
+    )
+    print(summary)
+    step = os.getenv("GITHUB_STEP_SUMMARY")
+    if step:
+        with open(step, "a", encoding="utf-8") as fh:
+            fh.write(summary + "\n")
 
 
 if __name__ == "__main__":

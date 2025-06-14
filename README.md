@@ -299,6 +299,7 @@ bash scripts/trigger_refresh.sh 75
 ```
 
 Replace `75` with your desired minimum star count. The script requires the GitHub CLI and an authenticated token.
+Set a personal access token via the `GITHUB_TOKEN_REPO_STATS` environment variable to avoid hitting rate limits when scraping.
 
 -----
 
