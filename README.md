@@ -102,7 +102,7 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 | Rank | Repo | Score | ▲ StarsΔ | ▲ ScoreΔ | Category |
 |-----:|------|------:|-------:|--------:|----------|
 | 1 | dify | 6.08 |  |  | General-purpose |
-| 2 | langflow | 5.95 |  |  | DevTools |
+| 2 | langflow | 5.96 |  |  | DevTools |
 | 3 | browser-use | 5.88 |  |  | General-purpose |
 | 4 | OpenHands | 5.84 |  |  | General-purpose |
 | 5 | lobe-chat | 5.83 |  |  | RAG-centric |

@@ -49,7 +49,7 @@
       "owner": {
         "login": "langflow-ai"
       },
-      "AgenticIndexScore": 5.95,
+      "AgenticIndexScore": 5.96,
       "category": "DevTools",
       "stars": 73030,
       "recency_factor": 1.0,
@@ -61,7 +61,7 @@
       "stars_delta": 0,
       "forks_delta": 0,
       "issues_closed_delta": 0,
-      "score_delta": 0
+      "score_delta": 0.01
     },
     {
       "name": "browser-use",
