@@ -56,3 +56,17 @@ Whenever `data/top100.md` or `data/repos.json` change, regenerate the README and
 commit the updated files so `tests/test_inject_dry_run.py` stays in sync. The
 test tolerates minor score drift (±0.01) but still fails if the table structure
 diverges.
+
+### IssueLogger
+
+Use the `issue-logger` command to post a GitHub issue or comment from scripts or
+CI pipelines.
+
+```bash
+python -m agentic_index_cli.issue_logger \
+  --repo owner/repo --new-issue \
+  --title "CI Failure" --body "See logs for details"
+```
+
+The tool reads a token from `GITHUB_TOKEN` or falls back to
+`GITHUB_TOKEN_ISSUES`.
