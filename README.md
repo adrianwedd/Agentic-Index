@@ -31,14 +31,32 @@ Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
 -----
 
 <p align="center">
-![build](badges/build.svg)
-![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
-![docs](badges/docs.svg)
-![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index)
-![license](badges/license.svg)
-![PyPI](badges/pypi.svg)
-![Release Notes](https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases)
+  <a href="https://github.com/adrianwedd/Agentic-Index/actions/workflows/ci.yml">
+    <img src="badges/build.svg" alt="Build Status" />
+  </a>
+  <a href="https://github.com/adrianwedd/Agentic-Index/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/badge/coverage-80%25-brightgreen" alt="Coverage" />
+  </a>
+  <a href="https://pypi.org/project/agentic-index/">
+    <img src="badges/pypi.svg" alt="PyPI" />
+  </a>
+  <a href="./LICENSE">
+    <img src="badges/license.svg" alt="License" />
+  </a>
 </p>
+<details>
+<summary>More status badges</summary>
+
+<p align="center">
+  <img src="badges/docs.svg" alt="Documentation" />
+  <img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index" alt="Site Status" />
+  <img src="https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases" alt="Release Notes" />
+  <img src="badges/coc.svg" alt="Code of Conduct" />
+  <img src="badges/last_sync.svg" alt="Last Sync" />
+  <img src="badges/top_repo.svg" alt="Top Repo" />
+  <img src="badges/repo_count.svg" alt="Repo Count" />
+</p>
+</details>
 
 This catalogue is maintained by the Agentic-Index project and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
 
@@ -393,7 +411,6 @@ For tips on keeping your branch in sync with `main` and resolving conflicts, see
 [CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).
 
 Let's build the best damn agent list together\!
-![Code of Conduct](badges/coc.svg)
 
 
 -----
@@ -413,4 +430,3 @@ Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 
 © 2025 Agentic-Index Maintainers
 
 
-![Last Sync](badges/last_sync.svg) ![Top Repo](badges/top_repo.svg) ![Repo Count](badges/repo_count.svg)
