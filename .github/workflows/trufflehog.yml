@@ -15,14 +15,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Secret scan with TruffleHog
-        uses: trufflesecurity/trufflehog/actions/scan@main
+        uses: trufflesecurity/trufflehog@main
         with:
           path: .
           base: ${{ github.event.before }}
           head: ${{ github.sha }}
-          scanArguments: --format sarif --output trufflehog-results.sarif
+          scanArguments: --format json --output trufflehog-results.json
       - name: Upload TruffleHog results
-        if: ${{ always() && hashFiles('trufflehog-results.sarif') != '' }}
-        uses: github/codeql-action/upload-sarif@v3
+        if: ${{ always() && hashFiles('trufflehog-results.json') != '' }}
+        uses: actions/upload-artifact@v4
         with:
-          sarif_file: trufflehog-results.sarif
+          name: trufflehog-results
+          path: trufflehog-results.json
