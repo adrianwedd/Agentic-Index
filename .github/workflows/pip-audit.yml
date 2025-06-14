@@ -19,16 +19,10 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Dependency audit
-        uses: pypa/gh-action-pip-audit@v1.0.0
-        with:
-          inputs: requirements.txt
-          format: json
-          output: pip-audit.json
-          summary: true
-      - name: Convert audit → SARIF
-        run: |
-          pipx run pip-audit-sarif pip-audit.json > pip-audit.sarif
+      - name: Install pip-audit
+        run: pip install pip-audit
+      - name: Run pip-audit
+        run: pip-audit -r requirements.txt -f sarif -o pip-audit.sarif
       - name: Upload SARIF
         if: ${{ hashFiles('pip-audit.sarif') != '' }}
         uses: github/codeql-action/upload-sarif@v3
