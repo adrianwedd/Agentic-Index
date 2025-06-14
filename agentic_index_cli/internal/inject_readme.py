@@ -12,6 +12,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 README_PATH = ROOT / "README.md"
 DATA_PATH = ROOT / "data" / "top50.md"
 REPOS_PATH = ROOT / "data" / "repos.json"
+RANKED_PATH = ROOT / "data" / "ranked.json"
 SNAPSHOT = ROOT / "data" / "last_snapshot.json"
 
 OVERALL_COL = "Overall"
@@ -29,15 +30,26 @@ def _clamp_name(name: str, limit: int = 28) -> str:
 
 
 def _load_rows(sort_by: str = 'score') -> list[str]:
-    """Return table rows computed from ``repos.json`` using v2 fields."""
-    repos = json.loads(REPOS_PATH.read_text()).get("repos", [])
+    """Return table rows computed from repo data using v2 fields.
+
+    If ``data/ranked.json`` is present it is used in preference to
+    ``repos.json``. Missing metric values render as ``-`` to make it clear
+    they were unavailable.
+    """
+    if RANKED_PATH.exists():
+        data = json.loads(RANKED_PATH.read_text())
+        repos = data.get("repos", data)
+    else:
+        repos = json.loads(REPOS_PATH.read_text()).get("repos", [])
 
     parsed = []
     for repo in repos:
         name = repo.get("name", "")
         repo_score = float(repo.get("AgenticIndexScore", 0))
         stars30 = int(repo.get("stars_30d", 0))
-        maint = float(repo.get("maintenance", 0))
+        maint_raw = repo.get("maintenance")
+        maint_val = float(maint_raw) if maint_raw is not None else 0.0
+        maint_fmt = "-" if maint_raw is None else f"{maint_val:.2f}"
         release = repo.get("last_release") or "-"
         if release and release != "-":
             release = release.split("T")[0]
@@ -47,8 +59,12 @@ def _load_rows(sort_by: str = 'score') -> list[str]:
                 release_key = float(release.replace("-", ""))
             except Exception:
                 release_key = 0.0
-        docs = float(repo.get("docs_score", 0))
-        ecosys = float(repo.get("ecosystem", 0))
+        docs_raw = repo.get("docs_score")
+        docs_val = float(docs_raw) if docs_raw is not None else 0.0
+        docs_fmt = "-" if docs_raw is None else f"{docs_val:.2f}"
+        ecosys_raw = repo.get("ecosystem")
+        ecosys_val = float(ecosys_raw) if ecosys_raw is not None else 0.0
+        ecosys_fmt = "-" if ecosys_raw is None else f"{ecosys_val:.2f}"
         lic = repo.get("license")
         if isinstance(lic, dict):
             lic = lic.get("spdx_id")
@@ -58,23 +74,28 @@ def _load_rows(sort_by: str = 'score') -> list[str]:
                 "name": name,
                 "score": repo_score,
                 "stars_30d": stars30,
-                "maintenance": maint,
+                "maintenance": maint_fmt,
+                "maintenance_sort": maint_val,
                 "release": release,
                 "release_key": release_key,
-                "docs": docs,
-                "ecosystem": ecosys,
+                "docs": docs_fmt,
+                "docs_sort": docs_val,
+                "ecosystem": ecosys_fmt,
+                "ecosystem_sort": ecosys_val,
                 "license": lic,
             }
         )
     if sort_by == "last_release":
         parsed.sort(key=lambda r: (-r["release_key"], r["name"].lower()))
+    elif sort_by == "maintenance":
+        parsed.sort(key=lambda r: (-r["maintenance_sort"], r["name"].lower()))
     else:
         parsed.sort(key=lambda r: (-r[sort_by], r["name"].lower()))
 
     rows = []
     for i, repo in enumerate(parsed[:50], start=1):
         rows.append(
-            "| {i} | {score:.2f} | {name} | {s30} | {maint:.2f} | {rel} | {docs:.2f} | {eco:.2f} | {lic} |".format(
+            "| {i} | {score:.2f} | {name} | {s30} | {maint} | {rel} | {docs} | {eco} | {lic} |".format(
                 i=i,
                 score=repo['score'],
                 name=_clamp_name(repo['name']),
