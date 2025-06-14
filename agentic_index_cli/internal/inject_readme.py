@@ -5,6 +5,7 @@ from __future__ import annotations
 import pathlib
 import sys
 import json
+import difflib
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -76,27 +77,12 @@ def _fmt_delta(val: str | int | float, *, is_int: bool = False) -> str:
         return val
 
 
-def main(*, force: bool = False, check: bool = False, write: bool = True) -> int:
-    """Synchronise the README table.
-
-    Parameters
-    ----------
-    force:
-        Write the README even if no changes detected.
-    check:
-        If ``True``, do not write. Exit ``1`` if README would change.
-    write:
-        Whether to update ``README.md``. Defaults to ``True``.
-    """
-
+def build_readme() -> str:
+    """Return README text with the top50 table injected."""
     readme_text = README_PATH.read_text(encoding="utf-8")
     end_newline = readme_text.endswith("\n")
-    try:
-        start_idx = readme_text.index(START)
-        end_idx = readme_text.index(END, start_idx)
-    except ValueError:
-        print("Markers not found in README.md", file=sys.stderr)
-        return 1
+    start_idx = readme_text.index(START)
+    end_idx = readme_text.index(END, start_idx)
 
     before = readme_text[: start_idx + len(START)].rstrip()
     after = "\n" + readme_text[end_idx + len(END) :].lstrip()
@@ -119,14 +105,54 @@ def main(*, force: bool = False, check: bool = False, write: bool = True) -> int
     new_text = new_text.rstrip("\n")
     if end_newline:
         new_text += "\n"
+    return new_text
+
+
+def diff(new_text: str, readme_path: pathlib.Path | None = None) -> str:
+    """Return a unified diff comparing ``new_text`` with ``readme_path``."""
+    if readme_path is None:
+        readme_path = README_PATH
+    old_text = readme_path.read_text(encoding="utf-8")
+    if not new_text.endswith("\n"):
+        new_text += "\n"
+    if not old_text.endswith("\n"):
+        old_text += "\n"
+    return "".join(
+        difflib.unified_diff(
+            old_text.splitlines(keepends=True),
+            new_text.splitlines(keepends=True),
+            fromfile=str(readme_path),
+            tofile="generated",
+        )
+    )
+
+
+def main(*, force: bool = False, check: bool = False, write: bool = True) -> int:
+    """Synchronise the README table.
+
+    Parameters
+    ----------
+    force:
+        Write the README even if no changes detected.
+    check:
+        If ``True``, do not write. Exit ``1`` if README would change.
+    write:
+        Whether to update ``README.md``. Defaults to ``True``.
+    """
+
+    try:
+        new_text = build_readme()
+    except ValueError:
+        print("Markers not found in README.md", file=sys.stderr)
+        return 1
 
     if check:
-        if new_text != readme_text:
+        if diff(new_text):
             print("README.md is out of date", file=sys.stderr)
             return 1
         return 0
 
-    if write and (force or new_text != readme_text):
+    if write and (force or diff(new_text)):
         README_PATH.write_text(new_text, encoding="utf-8")
 
     return 0
