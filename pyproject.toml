@@ -12,6 +12,8 @@ dependencies = [
     "PyYAML",
     "jsonschema>=3.2",
     "pydantic>=2",
+    "fastapi>=0.110",
+    "httpx",
 ]
 
 [project.scripts]
