@@ -15,7 +15,7 @@ Each entry includes raw GitHub fields plus derived metrics used for ranking.
 | `license` | license object or `null` |
 | `owner.login` | repository owner |
 | `AgenticIndexScore` | overall ranking score |
-| `stars_30d` | star change over 30 days |
+| `stars_7d` | star change over 7 days |
 | `maintenance` | issue/PR hygiene score |
 | `release_age` | days since latest release |
 | `docs_quality` | README/examples heuristic |

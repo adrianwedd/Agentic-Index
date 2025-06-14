@@ -21,7 +21,7 @@ README_SNAP = FIXTURE_DIR / "README_fixture.md"
 def _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
     data_dir = tmp_path / "data"
     data_dir.mkdir()
-    shutil.copy(data_fixture_dir / "top50.md", data_dir / "top50.md")
+    shutil.copy(data_fixture_dir / "top100.md", data_dir / "top100.md")
     shutil.copy(data_fixture_dir / "repos.json", data_dir / "repos.json")
     try:
         shutil.copy(data_fixture_dir / "last_snapshot.json", data_dir / "last_snapshot.json")
@@ -32,7 +32,7 @@ def _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
     readme.write_text(readme_fixture_path.read_text())
 
     monkeypatch.setattr(inj, "README_PATH", readme)
-    monkeypatch.setattr(inj, "DATA_PATH", data_dir / "top50.md")
+    monkeypatch.setattr(inj, "DATA_PATH", data_dir / "top100.md")
     monkeypatch.setattr(inj, "REPOS_PATH", data_dir / "repos.json")
     monkeypatch.setattr(inj, "SNAPSHOT", data_dir / "last_snapshot.json")
 

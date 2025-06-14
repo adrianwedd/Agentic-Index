@@ -36,7 +36,7 @@ This catalogue is maintained by the Agentic-Index project and is updated regular
 * [✨ Why Agentic Index is Different](#-why-agentic-index-is-different)
 * [🚀 Fast-Start Picks (Curated for Newcomers)](#-fast-start-picks-curated-for-newcomers)
 * [⚡ Installation & Quick-start](#-installation--quick-start)
-* [🏆 The Agentic-Index Top 50: AI Agent Repositories](#-the-agentic-index-top-50-ai-agent-repositories)
+* [🏆 The Agentic-Index Top 100: AI Agent Repositories](#-the-agentic-index-top-100-ai-agent-repositories)
   * [💎 Honourable Mentions / Niche & Novel Gems](#-honourable-mentions--niche--novel-gems)
     * [🔬 Our Methodology & Scoring Explained](#our-methodology--scoring-explained)
     * [🏷️ Category Definitions](#-category-definitions)
@@ -93,13 +93,13 @@ New to Agentic-AI or just want the good stuff fast? These repos are top-tier for
 -----
 
 <a id="-the-agentic-index-top-50-ai-agent-repositories"></a>
-## 🏆 The Agentic-Index Top 50: AI Agent Repositories
+## 🏆 The Agentic-Index Top 100: AI Agent Repositories
 
 The definitive list of Agentic-AI repositories, ranked by the Agentic Index Score. This score is a holistic measure of project quality, activity, and community love.
 *(Data updated as of: {timestamp} UTC)*
 
 <!-- TOP50:START -->
-| Rank | <abbr title="Overall">📊</abbr> Overall | Repo | <abbr title="Stars gained in last 30 days">⭐ Δ30d</abbr> | <abbr title="Maintenance score">🔧 Maint</abbr> | <abbr title="Last release date">📅 Release</abbr> | <abbr title="Documentation score">📚 Docs</abbr> | <abbr title="Ecosystem fit">🧠 Fit</abbr> | <abbr title="License">⚖️ License</abbr> |
+| Rank | <abbr title="Overall">📊</abbr> Overall | Repo | <abbr title="Stars gained in last 7 days">⭐ Δ7d</abbr> | <abbr title="Maintenance score">🔧 Maint</abbr> | <abbr title="Last release date">📅 Release</abbr> | <abbr title="Documentation score">📚 Docs</abbr> | <abbr title="Ecosystem fit">🧠 Fit</abbr> | <abbr title="License">⚖️ License</abbr> |
 |-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|
 | 1 | 6.08 | dify | 123 | 0.90 | 2025-06-01 | 0.80 | 0.70 | NOASSERTION |
 | 2 | 5.96 | langflow | 0 | - | - | - | - | MIT |
@@ -158,7 +158,7 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 <summary>📊 Metrics Legend</summary>
 
 - 📊 Score = 0.30*log2(stars+1) + 0.25*recency_factor + 0.20*issue_health + 0.15*doc_completeness + 0.07*license_freedom + 0.03*ecosystem_integration
-- ⭐ Δ30d = stars gained in the last 30 days
+- ⭐ Δ7d = stars gained in the last 7 days
 - 🔧 Maint = 1 / (days_since_last_commit * open_issue_ratio)
 - 📅 Release = 1 / days_since_last_release
 - 📚 Docs = 1 if README > 300 words & has code else 0

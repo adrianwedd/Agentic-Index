@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 
 README = Path('README.md')
-TOP = Path('data/top50.md')
+TOP = Path('data/top100.md')
 START = '<!-- TOP50:START -->'
 END = '<!-- TOP50:END -->'
 

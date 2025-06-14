@@ -51,7 +51,7 @@ class Repo(BaseModel):
     stars_log2: float | None = None
     last_commit: str | None = None
     one_liner: str | None = None
-    stars_30d: int | None = None
+    stars_7d: int | None = None
     maintenance: float | None = None
     docs_score: float | None = None
     ecosystem: float | None = None

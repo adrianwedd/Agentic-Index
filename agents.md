@@ -9,7 +9,7 @@ Agentic Index curates & ranks AI-agent repos so developers can quickly find reli
 | Agent Name | Trigger | Code Location | Main Function | Outputs |
 |------------|---------|---------------|---------------|---------|
 | ScraperCLI | manual / update.yml | `agentic_index_cli/scraper.py` | Fetch repos via GitHub API | `data/repos.json` |
-| RankerCLI | manual / update.yml | `agentic_index_cli/ranker.py` | Compute score & top-50 | `data/top50.md`, badges |
+| RankerCLI | manual / update.yml | `agentic_index_cli/ranker.py` | Compute score & top-100 | `data/top100.md`, badges |
 | READMEInjector | pre-commit / update.yml | `agentic_index_cli/inject_readme.py` | Update README table | updated README |
 | FastStartPicker | manual | `agentic_index_cli/faststart.py` | Generate FAST_START | `FAST_START.md` |
 | TrendGrapher | update.yml | `agentic_index_cli/plot_trends.py` | Plot score trends | `docs/trends/*.png` |
@@ -37,17 +37,17 @@ name: RankerCLI
 inputs:
   - path: data/repos.json
 outputs:
-  - path: data/top50.md
+  - path: data/top100.md
   - path: badges/*
 success_criteria:
-  - top50.md contains a markdown table
+  - top100.md contains a markdown table
   - badges are valid SVG
 ```
 
 ```yaml
 name: READMEInjector
 inputs:
-  - path: data/top50.md
+  - path: data/top100.md
   - path: README.md
 outputs:
   - path: README.md
@@ -69,7 +69,7 @@ success_criteria:
 ```yaml
 name: TrendGrapher
 inputs:
-  - path: data/top50.md history
+  - path: data/top100.md history
 outputs:
   - path: docs/trends/*.png
 success_criteria:
@@ -92,7 +92,7 @@ success_criteria:
 graph TD
   Scraper-->JSON[data/repos.json]
   JSON-->Ranker
-  Ranker-->MD[data/top50.md]
+  Ranker-->MD[data/top100.md]
   Ranker-->Badges
   MD-->Injector
   Injector-->README

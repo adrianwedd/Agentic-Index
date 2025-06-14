@@ -14,14 +14,14 @@ def _setup(tmp_path: Path):
             "name": "a",
             "full_name": "o/a",
             "AgenticIndexScore": 1.0,
-            "stars_30d": 0,
+            "stars_7d": 0,
             "license": "MIT",
         },
         {
             "name": "b",
             "full_name": "o/b",
             "AgenticIndexScore": 2.0,
-            "stars_30d": 0,
+            "stars_7d": 0,
             "maintenance": 0.5,
             "docs_score": 0.5,
             "ecosystem": 0.2,
@@ -29,13 +29,13 @@ def _setup(tmp_path: Path):
         },
     ]
     (data_dir / "repos.json").write_text(json.dumps({"schema_version": 2, "repos": repos}))
-    (data_dir / "top50.md").write_text("")
+    (data_dir / "top100.md").write_text("")
     (data_dir / "last_snapshot.json").write_text("[]")
     readme = tmp_path / "README.md"
     readme.write_text("x\n<!-- TOP50:START -->\nold\n<!-- TOP50:END -->\n")
     for name, val in {
         "README_PATH": readme,
-        "DATA_PATH": data_dir / "top50.md",
+        "DATA_PATH": data_dir / "top100.md",
         "REPOS_PATH": data_dir / "repos.json",
         "SNAPSHOT": data_dir / "last_snapshot.json",
     }.items():

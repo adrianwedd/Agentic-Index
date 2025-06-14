@@ -236,11 +236,11 @@ def main(json_path: str = "data/repos.json") -> None:
             qd=fmt(repo["score_delta"]),
             cat=repo["category"],
         )
-        for i, repo in enumerate(repos[:50], start=1)
+        for i, repo in enumerate(repos[:100], start=1)
     ]
     if not skip_top_write:
         Path("data").mkdir(exist_ok=True)
-        Path("data/top50.md").write_text("\n".join(header + rows) + "\n")
+        Path("data/top100.md").write_text("\n".join(header + rows) + "\n")
 
     # badges
     today_iso = datetime.date.today().isoformat()

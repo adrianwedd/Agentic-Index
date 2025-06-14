@@ -9,7 +9,7 @@ This document defines the fields produced by the Agentic Index enrichment pipeli
 | `rank` | `int` | Position in score ranking | `score/__init__.py` | Nightly |
 | `repo` | `str` | GitHub `owner/name` | `scraper/github.py` | Static |
 | `score` | `float` | Composite score (0–10) | `score/__init__.py` | Nightly |
-| `stars_30d` | `int` | Net new stars in last 30d | `scraper/github.py` | Nightly |
+| `stars_7d` | `int` | Net new stars in last 7d | `scraper/github.py` | Nightly |
 | `maintenance` | `float` | Issue/PR hygiene (0–10) | `score/maintenance.py` | Weekly |
 | `release_age` | `int` | Days since last release | `scraper/github.py` | Nightly |
 | `docs_quality` | `float` | Heuristic docs quality | `score/docs.py` | Monthly |
@@ -24,7 +24,7 @@ This document defines the fields produced by the Agentic Index enrichment pipeli
 - Downstream tools expected `repos.json` without the additional metrics.
 
 ### v2
-- Added enrichment metrics: `stars_30d`, `maintenance`, `docs_quality`, `ecosystem_fit`, `release_age`, and `license_score`.
+- Added enrichment metrics: `stars_7d`, `maintenance`, `docs_quality`, `ecosystem_fit`, `release_age`, and `license_score`.
 - License is now stored only as an SPDX string.
 - `scripts/migrate_schema_v2.py` upgrades old files. Tests consuming `repos.json` must update fixtures to include the new fields.
 

@@ -2,7 +2,7 @@ repos:
   - repo: local
     hooks:
       - id: inject-readme
-        name: Inject README top50
+        name: Inject README top100
         entry: python scripts/inject_readme.py --check
         language: system
         types: [markdown]
