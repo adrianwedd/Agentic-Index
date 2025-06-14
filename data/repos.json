@@ -26,6 +26,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0,
       "stars_log2": 16.654188473059545
     },
     {
@@ -53,7 +57,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 16.156221364814154
+      "stars_log2": 16.156221364814154,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "browser-use",
@@ -80,7 +88,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.945032258425424
+      "stars_log2": 15.945032258425424,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "OpenHands",
@@ -107,7 +119,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.82329259536683
+      "stars_log2": 15.82329259536683,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "lobe-chat",
@@ -134,7 +150,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.930483254523896
+      "stars_log2": 15.930483254523896,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "MetaGPT",
@@ -161,7 +181,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.78294703409676
+      "stars_log2": 15.78294703409676,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ragflow",
@@ -188,7 +212,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.74800935563
+      "stars_log2": 15.74800935563,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "LLaMA-Factory",
@@ -215,7 +243,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.672176694332201
+      "stars_log2": 15.672176694332201,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "system-prompts-and-models-of-ai-tools",
@@ -241,7 +273,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.803450058518623
+      "stars_log2": 15.803450058518623,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "cline",
@@ -268,7 +304,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.478042781150538
+      "stars_log2": 15.478042781150538,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "anything-llm",
@@ -295,7 +335,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.466490749633856
+      "stars_log2": 15.466490749633856,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "llama_index",
@@ -322,7 +366,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.369358785709156
+      "stars_log2": 15.369358785709156,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "autogen",
@@ -349,7 +397,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.48730620823347
+      "stars_log2": 15.48730620823347,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "awesome-llm-apps",
@@ -376,7 +428,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.230133048013252
+      "stars_log2": 15.230133048013252,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Flowise",
@@ -403,7 +459,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.287387736641552
+      "stars_log2": 15.287387736641552,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "mem0",
@@ -430,7 +490,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.070540271624344
+      "stars_log2": 15.070540271624344,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ChatTTS",
@@ -457,7 +521,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.166555407191236
+      "stars_log2": 15.166555407191236,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Langchain-Chatchat",
@@ -484,7 +552,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.106562940444883
+      "stars_log2": 15.106562940444883,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "crewAI",
@@ -511,7 +583,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.004483835967672
+      "stars_log2": 15.004483835967672,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AgentGPT",
@@ -538,7 +614,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 15.066761932386909
+      "stars_log2": 15.066761932386909,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agno",
@@ -565,7 +645,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.78483929465315
+      "stars_log2": 14.78483929465315,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "khoj",
@@ -592,7 +676,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.887934549983502
+      "stars_log2": 14.887934549983502,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ChatDev",
@@ -619,7 +707,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.721846837458786
+      "stars_log2": 14.721846837458786,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "LibreChat",
@@ -646,7 +738,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.70606426733497
+      "stars_log2": 14.70606426733497,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "cherry-studio",
@@ -673,7 +769,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.793247671600913
+      "stars_log2": 14.793247671600913,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Jobs_Applier_AI_Agent_AIHawk",
@@ -700,7 +800,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.788769303208964
+      "stars_log2": 14.788769303208964,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ai-agents-for-beginners",
@@ -727,7 +831,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.667277894919362
+      "stars_log2": 14.667277894919362,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "qlib",
@@ -754,7 +862,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.61430725026834
+      "stars_log2": 14.61430725026834,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "composio",
@@ -781,7 +893,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.637870129034443
+      "stars_log2": 14.637870129034443,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "FastGPT",
@@ -808,7 +924,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.593099286027135
+      "stars_log2": 14.593099286027135,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "gpt-researcher",
@@ -835,7 +955,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.41574176829009
+      "stars_log2": 14.41574176829009,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "haystack",
@@ -862,7 +986,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.367824239411048
+      "stars_log2": 14.367824239411048,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "CopilotKit",
@@ -889,7 +1017,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.368370042894675
+      "stars_log2": 14.368370042894675,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "swarm",
@@ -916,7 +1048,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.281785170783738
+      "stars_log2": 14.281785170783738,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agentic",
@@ -943,7 +1079,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.105990328791846
+      "stars_log2": 14.105990328791846,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "vanna",
@@ -970,7 +1110,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.143941177768493
+      "stars_log2": 14.143941177768493,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "letta",
@@ -997,7 +1141,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.039775849233681
+      "stars_log2": 14.039775849233681,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "DB-GPT",
@@ -1024,7 +1172,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.032562359001107
+      "stars_log2": 14.032562359001107,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "deep-research",
@@ -1051,7 +1203,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.021327032624372
+      "stars_log2": 14.021327032624372,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agenticSeek",
@@ -1078,7 +1234,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.144976824050111
+      "stars_log2": 14.144976824050111,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "SWE-agent",
@@ -1105,7 +1265,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.991078907556085
+      "stars_log2": 13.991078907556085,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "RagaAI-Catalyst",
@@ -1132,7 +1296,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.982726252182031
+      "stars_log2": 13.982726252182031,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "eliza",
@@ -1159,7 +1327,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.97172316117676
+      "stars_log2": 13.97172316117676,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "DocsGPT",
@@ -1186,7 +1358,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.939303724347104
+      "stars_log2": 13.939303724347104,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "awesome-ai-agents",
@@ -1212,7 +1388,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.180219982170192
+      "stars_log2": 14.180219982170192,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "goose",
@@ -1239,7 +1419,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.829623645485354
+      "stars_log2": 13.829623645485354,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "devika",
@@ -1266,7 +1450,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.23862865019351
+      "stars_log2": 14.23862865019351,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "SuperAGI",
@@ -1293,7 +1481,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 14.002551341103736
+      "stars_log2": 14.002551341103736,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "suna",
@@ -1320,7 +1512,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.810571634741146
+      "stars_log2": 13.810571634741146,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ai-pdf-chatbot-langchain",
@@ -1347,7 +1543,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.926759273112985
+      "stars_log2": 13.926759273112985,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "dagger",
@@ -1374,7 +1574,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.76424960536716
+      "stars_log2": 13.76424960536716,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "botpress",
@@ -1401,7 +1605,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.75258971764099
+      "stars_log2": 13.75258971764099,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "plandex",
@@ -1428,7 +1636,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.750916299978075
+      "stars_log2": 13.750916299978075,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "activepieces",
@@ -1455,7 +1667,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.898790308381212
+      "stars_log2": 13.898790308381212,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "web-ui",
@@ -1482,7 +1698,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.736824699098866
+      "stars_log2": 13.736824699098866,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "deer-flow",
@@ -1509,7 +1729,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.717033749490891
+      "stars_log2": 13.717033749490891,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ai",
@@ -1536,7 +1760,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.865153292938063
+      "stars_log2": 13.865153292938063,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "mastra",
@@ -1563,7 +1791,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.790653947553906
+      "stars_log2": 13.790653947553906,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "camel",
@@ -1590,7 +1822,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.655530723155643
+      "stars_log2": 13.655530723155643,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ChuanhuChatGPT",
@@ -1617,7 +1853,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.912140856295721
+      "stars_log2": 13.912140856295721,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "GenAI_Agents",
@@ -1644,7 +1884,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.682336269711378
+      "stars_log2": 13.682336269711378,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "openai-agents-python",
@@ -1671,7 +1915,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.476999286133061
+      "stars_log2": 13.476999286133061,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Llama-Chinese",
@@ -1696,7 +1944,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.834668557690861
+      "stars_log2": 13.834668557690861,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "graphiti",
@@ -1723,7 +1975,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.456354415108288
+      "stars_log2": 13.456354415108288,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "LangBot",
@@ -1750,7 +2006,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.537461094633018
+      "stars_log2": 13.537461094633018,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "pydantic-ai",
@@ -1777,7 +2037,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.31896640501995
+      "stars_log2": 13.31896640501995,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "adk-python",
@@ -1804,7 +2068,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.299637328029158
+      "stars_log2": 13.299637328029158,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ai-engineering-hub",
@@ -1831,7 +2099,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.251482410620213
+      "stars_log2": 13.251482410620213,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Qwen-Agent",
@@ -1858,7 +2130,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.215987941161384
+      "stars_log2": 13.215987941161384,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "opik",
@@ -1885,7 +2161,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.241834226335136
+      "stars_log2": 13.241834226335136,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agent-zero",
@@ -1912,7 +2192,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.254733389246674
+      "stars_log2": 13.254733389246674,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "bisheng",
@@ -1939,7 +2223,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.109504215757006
+      "stars_log2": 13.109504215757006,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AstrBot",
@@ -1966,7 +2254,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.241685287601625
+      "stars_log2": 13.241685287601625,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "E2B",
@@ -1993,7 +2285,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.07347215397646
+      "stars_log2": 13.07347215397646,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "cua",
@@ -2020,7 +2316,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.066257405352255
+      "stars_log2": 13.066257405352255,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Figma-Context-MCP",
@@ -2047,7 +2347,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.98655314975666
+      "stars_log2": 12.98655314975666,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Bert-VITS2",
@@ -2074,7 +2378,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.047294352783004
+      "stars_log2": 13.047294352783004,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Upsonic",
@@ -2101,7 +2409,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.877475866534427
+      "stars_log2": 12.877475866534427,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agentscope",
@@ -2128,7 +2440,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.869208250550827
+      "stars_log2": 12.869208250550827,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "UFO",
@@ -2155,7 +2471,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.84979602224561
+      "stars_log2": 12.84979602224561,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "pr-agent",
@@ -2182,7 +2502,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.98744167293612
+      "stars_log2": 12.98744167293612,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "WrenAI",
@@ -2209,7 +2533,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.972261848733291
+      "stars_log2": 12.972261848733291,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "awesome-LLM-resources",
@@ -2235,7 +2563,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.409921241249679
+      "stars_log2": 12.409921241249679,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "OpenRLHF",
@@ -2262,7 +2594,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.787494499696761
+      "stars_log2": 12.787494499696761,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "promptfoo",
@@ -2289,7 +2625,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.811575388375799
+      "stars_log2": 12.811575388375799,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "aichat",
@@ -2316,7 +2656,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.774375272802063
+      "stars_log2": 12.774375272802063,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "R2R",
@@ -2343,7 +2687,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.766528908598865
+      "stars_log2": 12.766528908598865,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "nanobrowser",
@@ -2370,7 +2718,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.713171684314805
+      "stars_log2": 12.713171684314805,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "intentkit",
@@ -2397,7 +2749,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.648132845652658
+      "stars_log2": 12.648132845652658,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agents",
@@ -2424,7 +2780,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.623195635452936
+      "stars_log2": 12.623195635452936,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "deep-searcher",
@@ -2451,7 +2811,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.607792641919211
+      "stars_log2": 12.607792641919211,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "XAgent",
@@ -2478,7 +2842,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 13.030667136246942
+      "stars_log2": 13.030667136246942,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agent-squad",
@@ -2505,7 +2873,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.556984957594462
+      "stars_log2": 12.556984957594462,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "LLocalSearch",
@@ -2532,7 +2904,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.533086342167612
+      "stars_log2": 12.533086342167612,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "RD-Agent",
@@ -2559,7 +2935,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.504818987632841
+      "stars_log2": 12.504818987632841,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "lamda",
@@ -2584,7 +2964,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.778898476008376
+      "stars_log2": 12.778898476008376,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "TaskWeaver",
@@ -2611,7 +2995,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.49235394515987
+      "stars_log2": 12.49235394515987,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ten-framework",
@@ -2638,7 +3026,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.588011853215088
+      "stars_log2": 12.588011853215088,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "superagent",
@@ -2665,7 +3057,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.530650179750014
+      "stars_log2": 12.530650179750014,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "mcp-agent",
@@ -2692,7 +3088,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.46352437327118
+      "stars_log2": 12.46352437327118,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "MindSearch",
@@ -2719,7 +3119,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.641600215834357
+      "stars_log2": 12.641600215834357,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AppAgent",
@@ -2746,7 +3150,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.522581531254831
+      "stars_log2": 12.522581531254831,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "julep",
@@ -2773,7 +3181,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.43540982316332
+      "stars_log2": 12.43540982316332,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "cognee",
@@ -2800,7 +3212,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.423903765836593
+      "stars_log2": 12.423903765836593,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Agent-S",
@@ -2827,7 +3243,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.411510988012072
+      "stars_log2": 12.411510988012072,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "PocketFlow",
@@ -2854,7 +3274,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.409390936137703
+      "stars_log2": 12.409390936137703,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "LaVague",
@@ -2881,7 +3305,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.568193653850074
+      "stars_log2": 12.568193653850074,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "magentic-ui",
@@ -2908,7 +3336,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.330076554797458
+      "stars_log2": 12.330076554797458,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "superduper",
@@ -2935,7 +3367,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.311748315004959
+      "stars_log2": 12.311748315004959,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "pyspur",
@@ -2962,7 +3398,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.308054559066635
+      "stars_log2": 12.308054559066635,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "open-deep-research",
@@ -2989,7 +3429,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.480537783101841
+      "stars_log2": 12.480537783101841,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "swarms",
@@ -3016,7 +3460,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.265615046484458
+      "stars_log2": 12.265615046484458,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Archon",
@@ -3043,7 +3491,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.252961036393684
+      "stars_log2": 12.252961036393684,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "PraisonAI",
@@ -3070,7 +3522,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.243769031961852
+      "stars_log2": 12.243769031961852,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AutoAgent",
@@ -3097,7 +3553,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.190442018782825
+      "stars_log2": 12.190442018782825,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "SerpentAI",
@@ -3124,7 +3584,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.751544059089099
+      "stars_log2": 12.751544059089099,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "steel-browser",
@@ -3151,7 +3615,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.1767964781476
+      "stars_log2": 12.1767964781476,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "xtuner",
@@ -3178,7 +3646,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.164906926675688
+      "stars_log2": 12.164906926675688,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agentops",
@@ -3205,7 +3677,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.151016538892248
+      "stars_log2": 12.151016538892248,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "LLM-Agent-Paper-List",
@@ -3229,7 +3705,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.914011328541255
+      "stars_log2": 12.914011328541255,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "gaianet-node",
@@ -3256,7 +3736,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.274960472140602
+      "stars_log2": 12.274960472140602,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "lab",
@@ -3283,7 +3767,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.82137539237254
+      "stars_log2": 12.82137539237254,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "rags",
@@ -3310,7 +3798,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.65954999687987
+      "stars_log2": 12.65954999687987,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "street-fighter-ai",
@@ -3337,7 +3829,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.663113308455806
+      "stars_log2": 12.663113308455806,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agents",
@@ -3364,7 +3860,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.456867738380343
+      "stars_log2": 12.456867738380343,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AgentLaboratory",
@@ -3391,7 +3891,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.137951734715358
+      "stars_log2": 12.137951734715358,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Awesome-GPT-Agents",
@@ -3417,7 +3921,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.572937025017309
+      "stars_log2": 12.572937025017309,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "TaskingAI",
@@ -3444,7 +3952,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.324743110494417
+      "stars_log2": 12.324743110494417,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "cursor-talk-to-figma-mcp",
@@ -3471,7 +3983,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.071462362556623
+      "stars_log2": 12.071462362556623,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "gibberlink",
@@ -3498,7 +4014,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.13024878405069
+      "stars_log2": 12.13024878405069,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "SuperPrompt",
@@ -3522,7 +4042,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.583787954502338
+      "stars_log2": 12.583787954502338,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "spring-ai-alibaba",
@@ -3549,7 +4073,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.9901039638575
+      "stars_log2": 11.9901039638575,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "opencode",
@@ -3576,7 +4104,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.97333862080036
+      "stars_log2": 11.97333862080036,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "12-factor-agents",
@@ -3603,7 +4135,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.090112419664289
+      "stars_log2": 12.090112419664289,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "aci",
@@ -3630,7 +4166,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.955649907528374
+      "stars_log2": 11.955649907528374,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "sim",
@@ -3657,7 +4197,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.950191349972702
+      "stars_log2": 11.950191349972702,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "TradingAgents",
@@ -3684,7 +4228,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.909893083770042
+      "stars_log2": 11.909893083770042,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "DevOpsGPT",
@@ -3711,7 +4259,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.531868775177553
+      "stars_log2": 12.531868775177553,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "gptme",
@@ -3738,7 +4290,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.914758838941857
+      "stars_log2": 11.914758838941857,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "rig",
@@ -3765,7 +4321,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.878817284614229
+      "stars_log2": 11.878817284614229,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "cognita",
@@ -3792,7 +4352,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.002111776479852
+      "stars_log2": 12.002111776479852,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agency-swarm",
@@ -3819,7 +4383,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.850968150982439
+      "stars_log2": 11.850968150982439,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "casibase",
@@ -3846,7 +4414,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.866506212226202
+      "stars_log2": 11.866506212226202,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Integuru",
@@ -3873,7 +4445,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.096385734452651
+      "stars_log2": 12.096385734452651,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Viper",
@@ -3897,7 +4473,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.080151309614088
+      "stars_log2": 12.080151309614088,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "tensortrade",
@@ -3924,7 +4504,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.3437409184722
+      "stars_log2": 12.3437409184722,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "OpenAgents",
@@ -3951,7 +4535,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.081816278109198
+      "stars_log2": 12.081816278109198,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AgentVerse",
@@ -3978,7 +4566,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 12.172114932533136
+      "stars_log2": 12.172114932533136,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "langroid",
@@ -4005,7 +4597,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.732167425663386
+      "stars_log2": 11.732167425663386,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "PromptWizard",
@@ -4032,7 +4628,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.689561254285525
+      "stars_log2": 11.689561254285525,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "claude-coder",
@@ -4059,7 +4659,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.840777923595054
+      "stars_log2": 11.840777923595054,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "modelscope-agent",
@@ -4086,7 +4690,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.638435913990472
+      "stars_log2": 11.638435913990472,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AdalFlow",
@@ -4113,7 +4721,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.696098170955864
+      "stars_log2": 11.696098170955864,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "FinRobot",
@@ -4140,7 +4752,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.810973220002165
+      "stars_log2": 11.810973220002165,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "BotSharp",
@@ -4167,7 +4783,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.43306376512207
+      "stars_log2": 11.43306376512207,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Streamer-Sales",
@@ -4194,7 +4814,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.685186796595348
+      "stars_log2": 11.685186796595348,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "LlamaIndexTS",
@@ -4221,7 +4845,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.390168956200183
+      "stars_log2": 11.390168956200183,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "vocode-core",
@@ -4248,7 +4876,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.709083812550343
+      "stars_log2": 11.709083812550343,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "core",
@@ -4275,7 +4907,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.454299293619899
+      "stars_log2": 11.454299293619899,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "beeai-framework",
@@ -4302,7 +4938,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.29978040285854
+      "stars_log2": 11.29978040285854,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "rl-baselines3-zoo",
@@ -4329,7 +4969,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.261507309202056
+      "stars_log2": 11.261507309202056,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ii-agent",
@@ -4356,7 +5000,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.246740598493144
+      "stars_log2": 11.246740598493144,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AutoGPT-Next-Web",
@@ -4383,7 +5031,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.554588851677638
+      "stars_log2": 11.554588851677638,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "synthetic-data-generator",
@@ -4410,7 +5062,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.204571144249204
+      "stars_log2": 11.204571144249204,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "griptape",
@@ -4437,7 +5093,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.17617314910749
+      "stars_log2": 11.17617314910749,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "index",
@@ -4464,7 +5124,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.148476582178278
+      "stars_log2": 11.148476582178278,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "china-dictatorship",
@@ -4491,7 +5155,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.236014191900084
+      "stars_log2": 11.236014191900084,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "lagent",
@@ -4518,7 +5186,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.067434360756522
+      "stars_log2": 11.067434360756522,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "voltagent",
@@ -4545,7 +5217,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.015415052386688
+      "stars_log2": 11.015415052386688,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "OpenAI_Agent_Swarm",
@@ -4572,7 +5248,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.583552930466485
+      "stars_log2": 11.583552930466485,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "llama_deploy",
@@ -4599,7 +5279,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.98370619265935
+      "stars_log2": 10.98370619265935,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "motia",
@@ -4626,7 +5310,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.97656412341533
+      "stars_log2": 10.97656412341533,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "LazyLLM",
@@ -4653,7 +5341,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.973697366305352
+      "stars_log2": 10.973697366305352,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "DemoGPT",
@@ -4680,7 +5372,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.84313591111135
+      "stars_log2": 10.84313591111135,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Memary",
@@ -4707,7 +5403,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.135067945777816
+      "stars_log2": 11.135067945777816,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Cradle",
@@ -4734,7 +5434,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.044394119358454
+      "stars_log2": 11.044394119358454,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Free-Auto-GPT",
@@ -4761,7 +5465,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.287712379549449
+      "stars_log2": 11.287712379549449,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "langgraphjs",
@@ -4788,7 +5496,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.673309075561695
+      "stars_log2": 10.673309075561695,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "openlit",
@@ -4815,7 +5527,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.664447284547972
+      "stars_log2": 10.664447284547972,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "nextpy",
@@ -4842,7 +5558,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.163020639580793
+      "stars_log2": 11.163020639580793,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "comfyui_LLM_party",
@@ -4869,7 +5589,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.754052367528924
+      "stars_log2": 10.754052367528924,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ax",
@@ -4896,7 +5620,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.591522346570734
+      "stars_log2": 10.591522346570734,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "LLMStack",
@@ -4923,7 +5651,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.938109326219239
+      "stars_log2": 10.938109326219239,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agentUniverse",
@@ -4950,7 +5682,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.53818893205242
+      "stars_log2": 10.53818893205242,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "codel",
@@ -4977,7 +5713,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 11.198445041452363
+      "stars_log2": 11.198445041452363,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ai-legion",
@@ -5004,7 +5744,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.461479447286155
+      "stars_log2": 10.461479447286155,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "pymarl",
@@ -5031,7 +5775,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.9901039638575
+      "stars_log2": 10.9901039638575,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "uAgents",
@@ -5058,7 +5806,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.43567026093655
+      "stars_log2": 10.43567026093655,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Agently",
@@ -5085,7 +5837,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.404077136241234
+      "stars_log2": 10.404077136241234,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AI-Researcher",
@@ -5110,7 +5866,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.638435913990472
+      "stars_log2": 10.638435913990472,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "LLPhant",
@@ -5137,7 +5897,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.274960472140602
+      "stars_log2": 10.274960472140602,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "patchwork",
@@ -5164,7 +5928,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.426264754702098
+      "stars_log2": 10.426264754702098,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "company-research-agent",
@@ -5191,7 +5959,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.232420927176076
+      "stars_log2": 10.232420927176076,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Adala",
@@ -5218,7 +5990,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.217957697864113
+      "stars_log2": 10.217957697864113,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "octotools",
@@ -5245,7 +6021,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.214319120800766
+      "stars_log2": 10.214319120800766,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "pasa",
@@ -5272,7 +6052,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.234817431117325
+      "stars_log2": 10.234817431117325,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AIlice",
@@ -5299,7 +6083,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.217957697864113
+      "stars_log2": 10.217957697864113,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "pywinassistant",
@@ -5326,7 +6114,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.349834091457247
+      "stars_log2": 10.349834091457247,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agent-protocol",
@@ -5353,7 +6145,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.253847484987404
+      "stars_log2": 10.253847484987404,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "KaibanJS",
@@ -5380,7 +6176,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.181152256865566
+      "stars_log2": 10.181152256865566,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": ".github",
@@ -5404,7 +6204,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.54882190845875
+      "stars_log2": 10.54882190845875,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "chidori",
@@ -5431,7 +6235,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.363039630256514
+      "stars_log2": 10.363039630256514,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Autonomous-Agents",
@@ -5457,7 +6265,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.715961990255144
+      "stars_log2": 9.715961990255144,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "RL-Factory",
@@ -5484,7 +6296,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.101975670949232
+      "stars_log2": 10.101975670949232,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "react-agent",
@@ -5511,7 +6327,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.64565843240871
+      "stars_log2": 10.64565843240871,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "typedai",
@@ -5538,7 +6358,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.071462362556623
+      "stars_log2": 10.071462362556623,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "acu",
@@ -5562,7 +6386,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.346513733165635
+      "stars_log2": 10.346513733165635,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "intellagent",
@@ -5589,7 +6417,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.049848549450562
+      "stars_log2": 10.049848549450562,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "web-eval-agent",
@@ -5616,7 +6448,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.988684686772165
+      "stars_log2": 9.988684686772165,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ACE_Framework",
@@ -5643,7 +6479,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.521600439723727
+      "stars_log2": 10.521600439723727,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "RestGPT",
@@ -5670,7 +6510,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.419960177847889
+      "stars_log2": 10.419960177847889,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "SMARTS",
@@ -5697,7 +6541,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.019590728357882
+      "stars_log2": 10.019590728357882,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "koog",
@@ -5724,7 +6572,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.826548487290914
+      "stars_log2": 9.826548487290914,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "webarena",
@@ -5751,7 +6603,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.001408194392809
+      "stars_log2": 10.001408194392809,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "BaseAI",
@@ -5778,7 +6634,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.067434360756522
+      "stars_log2": 10.067434360756522,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "gpt-newspaper",
@@ -5805,7 +6665,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.371776644337924
+      "stars_log2": 10.371776644337924,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "WebRover",
@@ -5832,7 +6696,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.85642552862553
+      "stars_log2": 9.85642552862553,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Agentarium",
@@ -5859,7 +6727,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.848622940429339
+      "stars_log2": 9.848622940429339,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "awesome-llm-agents",
@@ -5884,7 +6756,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.92035285541508
+      "stars_log2": 9.92035285541508,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "OpenAlpha_Evolve",
@@ -5911,7 +6787,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.60917873814198
+      "stars_log2": 9.60917873814198,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "codefuse-chatbot",
@@ -5938,7 +6818,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.216745858195306
+      "stars_log2": 10.216745858195306,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "FilmAgent",
@@ -5963,7 +6847,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.933690654952233
+      "stars_log2": 9.933690654952233,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "autogen-ui",
@@ -5990,7 +6878,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.862637357558794
+      "stars_log2": 9.862637357558794,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "terminal-velocity",
@@ -6015,7 +6907,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.00842862207058
+      "stars_log2": 10.00842862207058,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "awesome-ai-sdks",
@@ -6039,7 +6935,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.894817763307943
+      "stars_log2": 9.894817763307943,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ix",
@@ -6066,7 +6966,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 10.00842862207058
+      "stars_log2": 10.00842862207058,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "SuperCoder",
@@ -6093,7 +6997,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.874981347653774
+      "stars_log2": 9.874981347653774,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "SeeAct",
@@ -6120,7 +7028,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.558420713268664
+      "stars_log2": 9.558420713268664,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AIOpsLab",
@@ -6147,7 +7059,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.264442600226602
+      "stars_log2": 9.264442600226602,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "deebo-prototype",
@@ -6174,7 +7090,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.224001674198105
+      "stars_log2": 9.224001674198105,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "OpenManus",
@@ -6201,7 +7121,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.324180546618742
+      "stars_log2": 9.324180546618742,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "promptulate",
@@ -6228,7 +7152,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.172427508645482
+      "stars_log2": 9.172427508645482,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "world_ai_protocol",
@@ -6255,7 +7183,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.794415866350105
+      "stars_log2": 8.794415866350105,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Awesome-AI-Agents",
@@ -6279,7 +7211,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.361943773735241
+      "stars_log2": 9.361943773735241,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "babyagi-asi",
@@ -6306,7 +7242,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.640244936222345
+      "stars_log2": 9.640244936222345,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Awesome-Papers-Autonomous-Agent",
@@ -6330,7 +7270,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.449148645375436
+      "stars_log2": 9.449148645375436,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AutoDidact",
@@ -6355,7 +7299,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.303780748177102
+      "stars_log2": 9.303780748177102,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "pippin",
@@ -6382,7 +7330,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.044394119358454
+      "stars_log2": 9.044394119358454,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "anda",
@@ -6409,7 +7361,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.471675214392045
+      "stars_log2": 8.471675214392045,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "jido",
@@ -6436,7 +7392,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.848622940429339
+      "stars_log2": 8.848622940429339,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "devlooper",
@@ -6463,7 +7423,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.845490050944376
+      "stars_log2": 8.845490050944376,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "autonomous-learning-library",
@@ -6490,7 +7454,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.342074667999139
+      "stars_log2": 9.342074667999139,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "evolving-agents",
@@ -6517,7 +7485,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.76487159073609
+      "stars_log2": 8.76487159073609,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "jobber",
@@ -6544,7 +7516,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.092757140919852
+      "stars_log2": 9.092757140919852,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "dapr-agents",
@@ -6571,7 +7547,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.696967526234287
+      "stars_log2": 8.696967526234287,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agent",
@@ -6598,7 +7578,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.257387842692651
+      "stars_log2": 8.257387842692651,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Collaborative_Perception",
@@ -6622,7 +7606,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.945443836377912
+      "stars_log2": 8.945443836377912,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "txtchat",
@@ -6649,7 +7637,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.194756854422248
+      "stars_log2": 8.194756854422248,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agent-q",
@@ -6676,7 +7668,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.870364719583405
+      "stars_log2": 8.870364719583405,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agents",
@@ -6703,7 +7699,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.758223214726724
+      "stars_log2": 8.758223214726724,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "pentagi",
@@ -6730,7 +7730,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.413627929024173
+      "stars_log2": 8.413627929024173,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "digirl",
@@ -6757,7 +7761,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.49585502688717
+      "stars_log2": 8.49585502688717,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "android_world",
@@ -6784,7 +7792,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.379378367071261
+      "stars_log2": 8.379378367071261,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "babyagi-2o",
@@ -6811,7 +7823,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.285402218862249
+      "stars_log2": 8.285402218862249,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "autonomous-hr-chatbot",
@@ -6838,7 +7854,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.661778097771988
+      "stars_log2": 8.661778097771988,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "beebot",
@@ -6865,7 +7885,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.7714894695006
+      "stars_log2": 8.7714894695006,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "gpt-assistant",
@@ -6890,7 +7914,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 9.027905996569885
+      "stars_log2": 9.027905996569885,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "INSIGHT",
@@ -6917,7 +7945,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.679480099505446
+      "stars_log2": 8.679480099505446,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "PromptAgent",
@@ -6944,7 +7976,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.169925001442312
+      "stars_log2": 8.169925001442312,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "OpenSteer",
@@ -6971,7 +8007,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.379378367071261
+      "stars_log2": 8.379378367071261,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "GPT4V-AD-Exploration",
@@ -6997,7 +8037,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.219168520462162
+      "stars_log2": 8.219168520462162,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "ChatSim",
@@ -7022,7 +8066,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.614709844115207
+      "stars_log2": 8.614709844115207,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "gpt-instagram",
@@ -7049,7 +8097,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.864186144654281
+      "stars_log2": 7.864186144654281,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "reflexion-draft",
@@ -7076,7 +8128,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.603626344986193
+      "stars_log2": 8.603626344986193,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AgentLLM",
@@ -7103,7 +8159,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.707359132080883
+      "stars_log2": 8.707359132080883,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "personoids-lite",
@@ -7130,7 +8190,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.57742882803575
+      "stars_log2": 8.57742882803575,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "micro-agent",
@@ -7155,7 +8219,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.794415866350105
+      "stars_log2": 8.794415866350105,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "macad-gym",
@@ -7182,7 +8250,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.499845887083206
+      "stars_log2": 8.499845887083206,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "aguvis",
@@ -7207,7 +8279,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.308339030139408
+      "stars_log2": 8.308339030139408,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "MindFlow",
@@ -7234,7 +8310,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.6865005271832185
+      "stars_log2": 7.6865005271832185,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Nuggt",
@@ -7261,7 +8341,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.39231742277876
+      "stars_log2": 8.39231742277876,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "genworlds",
@@ -7288,7 +8372,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.257387842692651
+      "stars_log2": 8.257387842692651,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "shoal",
@@ -7315,7 +8403,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.965784284662087
+      "stars_log2": 7.965784284662087,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Gentopia",
@@ -7342,7 +8434,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.312882955284355
+      "stars_log2": 8.312882955284355,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "PSAI",
@@ -7369,7 +8465,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.672425341971495
+      "stars_log2": 7.672425341971495,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Aetherius_AI_Assistant",
@@ -7396,7 +8496,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.20945336562895
+      "stars_log2": 8.20945336562895,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Autono",
@@ -7423,7 +8527,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.700439718141092
+      "stars_log2": 7.700439718141092,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "Agent-Driver",
@@ -7450,7 +8558,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.044394119358454
+      "stars_log2": 8.044394119358454,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "SIMPL",
@@ -7477,7 +8589,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.016808287686555
+      "stars_log2": 8.016808287686555,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "awesome-autonomous-gpt",
@@ -7501,7 +8617,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 8.139551352398794
+      "stars_log2": 8.139551352398794,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "agents-aea",
@@ -7528,7 +8648,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.839203788096944
+      "stars_log2": 7.839203788096944,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "pocketgroq",
@@ -7553,7 +8677,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.636624620543649
+      "stars_log2": 7.636624620543649,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "JungleGym",
@@ -7578,7 +8706,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.592457037268081
+      "stars_log2": 7.592457037268081,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "rl_CARLA",
@@ -7603,7 +8735,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.977279923499917
+      "stars_log2": 7.977279923499917,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     },
     {
       "name": "AgentOoba",
@@ -7630,7 +8766,11 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_log2": 7.459431618637297
+      "stars_log2": 7.459431618637297,
+      "stars_delta": 0,
+      "forks_delta": 0,
+      "issues_closed_delta": 0,
+      "score_delta": 0
     }
   ]
 }

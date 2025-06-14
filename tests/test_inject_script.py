@@ -7,7 +7,7 @@ def test_inject_readme(tmp_path, monkeypatch):
     readme = tmp_path / "README.md"
     data_dir = tmp_path / "data"
     data_dir.mkdir()
-    table = "| Rank | Repo | Score | Category |\n|------|------|-------|----------|\n| 1 | x | 1.00 | cat |\n"
+    table = "| Rank | Repo | Score | ▲ StarsΔ | ▲ ScoreΔ | Category |\n|-----:|------|------:|-------:|--------:|----------|\n| 1 | x | 1.00 | +1 | +0.1 | cat |\n"
     (data_dir / "top50.md").write_text(table)
 
     readme.write_text(
