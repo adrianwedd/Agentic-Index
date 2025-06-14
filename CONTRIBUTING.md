@@ -13,6 +13,8 @@ To propose additions or changes:
 
 We welcome fixes to data, new repo suggestions, and other improvements.
 
+Refer to [SCHEMA.md](./docs/SCHEMA.md) for details on metric fields used in `repos.json`.
+
 Before opening a pull request, ensure the README table is up to date:
 
 ```bash
