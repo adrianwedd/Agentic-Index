@@ -14,9 +14,11 @@ START = "<!-- TOP50:START -->"
 END = "<!-- TOP50:END -->"
 
 
-def _load_table() -> str:
-    lines = [l.strip() for l in DATA_PATH.read_text(encoding="utf-8").splitlines() if l.strip()]
-    header = lines[:2]
+def _load_rows() -> list[str]:
+    """Return normalised rows from ``top50.md`` sorted deterministically."""
+    lines = [
+        l.strip() for l in DATA_PATH.read_text(encoding="utf-8").splitlines() if l.strip()
+    ]
     body = lines[2:]
 
     parsed = []
@@ -29,18 +31,31 @@ def _load_table() -> str:
             score = float(cells[2])
         except ValueError:
             score = 0.0
-        stars_delta = cells[3]
-        score_delta = cells[4]
+        stars_delta = _fmt_delta(cells[3], is_int=True)
+        score_delta = _fmt_delta(cells[4])
         cat = cells[5]
         parsed.append((repo, score, stars_delta, score_delta, cat))
 
     parsed.sort(key=lambda r: (-r[1], r[0].lower()))
 
-    rows = [
+    return [
         f"| {i} | {repo} | {score:.2f} | {sd} | {qd} | {cat} |"
         for i, (repo, score, sd, qd, cat) in enumerate(parsed, start=1)
     ]
-    return "\n".join(header + rows)
+
+
+def _fmt_delta(val: str, *, is_int: bool = False) -> str:
+    """Normalise delta strings to always include a ``+`` sign when non-negative."""
+    if val.startswith("+") or val.startswith("-") or val.startswith("+new"):
+        return val
+    try:
+        if is_int:
+            num = int(val)
+            return f"{num:+d}"
+        num = float(val)
+        return f"{num:+.1f}".rstrip("0").rstrip(".")
+    except ValueError:
+        return val
 
 
 def main(*, force: bool = False, check: bool = False, write: bool = True) -> int:
@@ -68,7 +83,19 @@ def main(*, force: bool = False, check: bool = False, write: bool = True) -> int
     before = readme_text[: start_idx + len(START)].rstrip()
     after = "\n" + readme_text[end_idx + len(END) :].lstrip()
 
-    table = _load_table()
+    block_lines = [
+        l for l in readme_text[start_idx + len(START) : end_idx].splitlines() if l.strip()
+    ]
+    if len(block_lines) >= 2:
+        header_lines = block_lines[:2]
+    else:
+        header_lines = [
+            "| Rank | Repo | Score | ▲ StarsΔ | ▲ ScoreΔ | Category |",
+            "|-----:|------|------:|-------:|--------:|----------|",
+        ]
+
+    rows = _load_rows()
+    table = "\n".join(header_lines + rows)
 
     new_text = f"{before}\n{table}\n{END}{after}"
     new_text = new_text.rstrip("\n")
