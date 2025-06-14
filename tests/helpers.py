@@ -42,8 +42,8 @@ def _parse_table(text: str) -> Tuple[List[str], List[List[str]]]:
     lines = _extract_table(text)
     if not lines:
         return [], []
-    raw_headers = [c.strip() for c in lines[0].strip("|").split("|")]
-    headers = [re.sub(r"</?abbr[^>]*>", "", h).strip() for h in raw_headers]
+    header_line = re.sub(r"<[^>]+>", "", lines[0])
+    headers = [c.strip() for c in header_line.strip("|").split("|")]
     rows = []
     for line in lines[2:]:
         cells = [c.strip() for c in line.strip("|").split("|")]
