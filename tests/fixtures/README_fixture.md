@@ -207,7 +207,7 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 <details>
 <summary>📊 Metrics Legend</summary>
 
-- 📊 Score = 0.30*log2(stars+1) + 0.25*recency_factor + 0.20*issue_health + 0.15*doc_completeness + 0.07*license_freedom + 0.03*ecosystem_integration
+- Our score blends stars, recency, issue health, docs completeness, license freedom and ecosystem integration. **[See full formula →](./docs/methodology.md#scoring-formula)**
 - ⭐ Δ7d = stars gained in the last 7 days
 - 🔧 Maint = 1 / (days_since_last_commit * open_issue_ratio)
 - 📅 Release = 1 / days_since_last_release
@@ -239,10 +239,7 @@ Beyond the top-ranked, these projects are cooking up unique ideas, serving speci
 
 Agentic-Index believes in full transparency. Here’s the lowdown on how we find, vet, and score repositories.
 
-The core Agentic-Index Scoring Formula:
-`Score = 0.30*log2(stars+1) + 0.25*recency_factor + 0.20*issue_health + 0.15*doc_completeness + 0.07*license_freedom + 0.03*ecosystem_integration`\<sup\>†\</sup\>
-
-\<sup\>†\</sup\> *Weights are reviewed and potentially tuned quarterly. Full math and reasoning in [`/docs/methodology.md`](./docs/methodology.md).*
+Our score balances stars, recency, maintenance health, documentation quality, license freedom, and ecosystem fit. **[See full formula →](./docs/methodology.md#scoring-formula)**
 
 **Quick Look at Components:**
 
