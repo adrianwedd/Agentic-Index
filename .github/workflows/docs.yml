@@ -23,7 +23,7 @@ jobs:
           path: .lycheecache
           key: lychee-cache-${{ hashFiles('docs/**/*.md') }}
       - name: Link Check
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v2
         with:
           fail: true
           args: >-
