@@ -167,6 +167,8 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 
 </details>
 
+For a full description of every metric field, see [SCHEMA.md](./docs/SCHEMA.md).
+
 -----
 
 <a id="-honourable-mentions--niche--novel-gems"></a>
