@@ -5,7 +5,7 @@ import agentic_index_cli.internal.inject_readme as inj
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_injector_handles_missing_snapshot(tmp_path, monkeypatch):
+def test_injector_handles_missing_snapshot(tmp_path, capsys, monkeypatch):
     data_dir = tmp_path / "data"
     data_dir.mkdir()
     shutil.copy(ROOT / "data" / "top50.md", data_dir / "top50.md")
@@ -20,4 +20,7 @@ def test_injector_handles_missing_snapshot(tmp_path, monkeypatch):
     monkeypatch.setattr(inj, "REPOS_PATH", data_dir / "repos.json")
     monkeypatch.setattr(inj, "SNAPSHOT", data_dir / "last_snapshot.json")
 
-    assert inj.main(check=True) == 0
+    ret = inj.main(check=True)
+    captured = capsys.readouterr()
+    assert ret == 0
+    assert "missing snapshot" in captured.err
