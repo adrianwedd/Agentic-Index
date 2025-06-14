@@ -18,40 +18,42 @@ START = "<!-- TOP50:START -->"
 END = "<!-- TOP50:END -->"
 
 
+def _clamp_name(name: str, limit: int = 28) -> str:
+    """Return ``name`` truncated and escaped for markdown."""
+    safe = name.replace("|", "\\|").replace("`", "\\`")
+    if len(safe) <= limit:
+        return safe
+    return safe[: limit - 3] + "..."
+
+
 def _load_rows() -> list[str]:
-    """Return table rows computed from ``repos.json`` with stable deltas."""
+    """Return table rows computed from ``repos.json`` using v2 fields."""
     repos = json.loads(REPOS_PATH.read_text()).get("repos", [])
-
-    if not SNAPSHOT.exists():
-        SNAPSHOT.write_text(json.dumps(repos, indent=2))
-    baseline = json.loads(SNAPSHOT.read_text())
-
-    baseline_map = {r.get("full_name", r.get("name")): r for r in baseline}
 
     parsed = []
     for repo in repos:
-        name = repo.get("name")
+        name = repo.get("name", "")
         score = float(repo.get("AgenticIndexScore", 0))
-        stars = repo.get("stars", repo.get("stargazers_count", 0))
-        old = baseline_map.get(repo.get("full_name"))
-        if old:
-            prev_stars = old.get("stars", old.get("stargazers_count", 0))
-            prev_score = float(old.get("AgenticIndexScore", 0))
-        else:
-            prev_stars = stars
-            prev_score = score
-        stars_delta = stars - prev_stars
-        score_delta = round(score - prev_score, 2)
-        cat = repo.get("category", "")
-        parsed.append((name, score, stars_delta, score_delta, cat))
+        stars30 = int(repo.get("stars_30d", 0))
+        maint = float(repo.get("maintenance", 0))
+        release = repo.get("last_release") or "-"
+        if release and release != "-":
+            release = release.split("T")[0]
+        docs = float(repo.get("docs_score", 0))
+        ecosys = float(repo.get("ecosystem", 0))
+        lic = repo.get("license")
+        if isinstance(lic, dict):
+            lic = lic.get("spdx_id")
+        lic = lic or "-"
+        parsed.append((name, score, stars30, maint, release, docs, ecosys, lic))
 
     parsed.sort(key=lambda r: (-r[1], r[0].lower()))
 
     rows = []
-    for i, (name, score, sd, qd, cat) in enumerate(parsed[:50], start=1):
-        sd_str = "" if sd == 0 else _fmt_delta(str(sd), is_int=True)
-        qd_str = "" if qd == 0 else _fmt_delta(str(qd))
-        rows.append(f"| {i} | {name} | {score:.2f} | {sd_str} | {qd_str} | {cat} |")
+    for i, (name, score, s30, maint, rel, docs, eco, lic) in enumerate(parsed[:50], start=1):
+        rows.append(
+            f"| {i} | {score:.2f} | {_clamp_name(name)} | {s30} | {maint:.2f} | {rel} | {docs:.2f} | {eco:.2f} | {lic} |"
+        )
     return rows
 
 
@@ -87,16 +89,11 @@ def build_readme() -> str:
     before = readme_text[: start_idx + len(START)].rstrip()
     after = "\n" + readme_text[end_idx + len(END) :].lstrip()
 
-    block_lines = [
-        l for l in readme_text[start_idx + len(START) : end_idx].splitlines() if l.strip()
+    # always inject standard header for v2 schema
+    header_lines = [
+        "| Rank | <abbr title=\"Score\">📊</abbr> Score | Repo | <abbr title=\"Stars gained in last 30 days\">⭐ Δ30d</abbr> | <abbr title=\"Maintenance score\">🔧 Maint</abbr> | <abbr title=\"Last release date\">📅 Release</abbr> | <abbr title=\"Documentation score\">📚 Docs</abbr> | <abbr title=\"Ecosystem fit\">🧠 Fit</abbr> | <abbr title=\"License\">⚖️ License</abbr> |",
+        "|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|",
     ]
-    if len(block_lines) >= 2:
-        header_lines = block_lines[:2]
-    else:
-        header_lines = [
-            "| Rank | Repo | Score | ▲ StarsΔ | ▲ ScoreΔ | Category |",
-            "|-----:|------|------:|-------:|--------:|----------|",
-        ]
 
     rows = _load_rows()
     table = "\n".join(header_lines + rows)
