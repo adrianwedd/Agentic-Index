@@ -17,6 +17,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Install package
         run: pip install -e .
+      - name: Verify import
+        run: python -c "import agentic_index_cli"
       - name: README sync check
         run: python scripts/inject_readme.py --check
       - name: Run regression guard
@@ -44,6 +46,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Install package
         run: pip install -e .
+      - name: Verify import
+        run: python -c "import agentic_index_cli"
       - name: Install pre-commit
         run: |
           pip install -i https://pypi.org/simple \
