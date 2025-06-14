@@ -114,7 +114,7 @@ def fetch_badge(url: str, dest: Path) -> None:
         dest.write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>\n')
 
 
-def generate_badges(top_repo: str, iso_date: str) -> None:
+def generate_badges(top_repo: str, iso_date: str, repo_count: int) -> None:
     badges = Path("badges")
     badges.mkdir(exist_ok=True)
 
@@ -122,9 +122,13 @@ def generate_badges(top_repo: str, iso_date: str) -> None:
         f"https://img.shields.io/static/v1?label=sync&message={iso_date}&color=blue"
     )
     top_badge = f"https://img.shields.io/static/v1?label=top&message={urllib.request.quote(top_repo)}&color=brightgreen"
+    count_badge = (
+        f"https://img.shields.io/static/v1?label=repos&message={repo_count}&color=informational"
+    )
 
     fetch_badge(sync_badge, badges / "last_sync.svg")
     fetch_badge(top_badge, badges / "top_repo.svg")
+    fetch_badge(count_badge, badges / "repo_count.svg")
 
 
 # ───────────────────────────────  Main CLI  ────────────────────────────────────
@@ -240,7 +244,7 @@ def main(json_path: str = "data/repos.json") -> None:
     # badges
     today_iso = datetime.date.today().isoformat()
     top_repo_name = repos[0]["name"] if repos else "unknown"
-    generate_badges(top_repo_name, today_iso)
+    generate_badges(top_repo_name, today_iso, len(repos))
 
 
 
