@@ -4,3 +4,9 @@ Version: 0.1.0
 Summary: CLI for Agentic Index
 Requires-Python: >=3.8
 Requires-Dist: requests
+Requires-Dist: PyYAML
+Requires-Dist: jsonschema>=3.2
+Requires-Dist: pydantic>=2
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: pydantic; extra == "docs"
