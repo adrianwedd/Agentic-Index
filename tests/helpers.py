@@ -27,8 +27,19 @@ def _canonical(name: str) -> str:
     return mapping.get(name, name)
 
 
+def _extract_table(text: str) -> List[str]:
+    """Return table lines between the TOP50 markers if present."""
+    try:
+        start = text.index("<!-- TOP50:START -->")
+        end = text.index("<!-- TOP50:END -->", start)
+    except ValueError:
+        return [l.strip() for l in text.splitlines() if l.strip().startswith("|")]
+    section = text[start:end]
+    return [l.strip() for l in section.splitlines() if l.strip().startswith("|")]
+
+
 def _parse_table(text: str) -> Tuple[List[str], List[List[str]]]:
-    lines = [l.strip() for l in text.splitlines() if l.strip().startswith("|")]
+    lines = _extract_table(text)
     if not lines:
         return [], []
     raw_headers = [c.strip() for c in lines[0].strip("|").split("|")]

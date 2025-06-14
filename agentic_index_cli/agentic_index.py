@@ -166,12 +166,12 @@ def compute_score(repo: Dict, readme: str) -> float:
     license_free = license_freedom(lic)
     eco = ecosystem_integration(repo.get("topics", []), readme)
     score = (
-        0.35 * math.log2(stars + 1)
-        + 0.20 * recency
-        + 0.15 * issue_health
+        0.30 * math.log2(stars + 1)
+        + 0.25 * recency
+        + 0.20 * issue_health
         + 0.15 * doc_comp
-        + 0.10 * license_free
-        + 0.05 * eco
+        + 0.07 * license_free
+        + 0.03 * eco
     )
     return round(score * 100 / 8, 2)  # normalized roughly to 0-100
 

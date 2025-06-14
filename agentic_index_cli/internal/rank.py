@@ -31,12 +31,12 @@ def compute_score(repo: dict) -> float:
 
     Equation::
 
-        S = 0.35 * log2(stars + 1)
-            + 0.20 * recency
-            + 0.15 * issue_health
+        S = 0.30 * log2(stars + 1)
+            + 0.25 * recency
+            + 0.20 * issue_health
             + 0.15 * docs
-            + 0.10 * license
-            + 0.05 * ecosystem
+            + 0.07 * license
+            + 0.03 * ecosystem
     """
     stars = repo.get("stars", repo.get("stargazers_count", 0))
     recency = repo.get("recency_factor")
@@ -58,12 +58,12 @@ def compute_score(repo: dict) -> float:
     ecosys = repo.get("ecosystem_integration", 0)
 
     score = (
-        0.35 * math.log2(stars + 1)
-        + 0.20 * recency
-        + 0.15 * issue_health
+        0.30 * math.log2(stars + 1)
+        + 0.25 * recency
+        + 0.20 * issue_health
         + 0.15 * docs
-        + 0.10 * license_free
-        + 0.05 * ecosys
+        + 0.07 * license_free
+        + 0.03 * ecosys
     )
     return round(score, 2)
 

@@ -20,12 +20,12 @@ def test_compute_score_formula():
     license_free = ai.license_freedom("MIT")
     eco = ai.ecosystem_integration(["tool"], readme)
     expected = (
-        0.35 * math.log2(100 + 1)
-        + 0.20 * recency
-        + 0.15 * issue_health
+        0.30 * math.log2(100 + 1)
+        + 0.25 * recency
+        + 0.20 * issue_health
         + 0.15 * doc_comp
-        + 0.10 * license_free
-        + 0.05 * eco
+        + 0.07 * license_free
+        + 0.03 * eco
     )
     expected = round(expected * 100 / 8, 2)
     assert math.isclose(score, expected)

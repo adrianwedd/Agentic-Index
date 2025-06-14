@@ -21,10 +21,21 @@ def parse_delta(val: str):
         return num
 
 
+def _extract_table_lines(text: str) -> list[str]:
+    """Return only the table lines between the TOP50 markers."""
+    try:
+        start = text.index("<!-- TOP50:START -->")
+        end = text.index("<!-- TOP50:END -->", start)
+    except ValueError:
+        return [l for l in text.splitlines() if l.startswith("|")]
+    section = text[start:end]
+    return [l for l in section.splitlines() if l.startswith("|")]
+
+
 def assert_readme_diff(old: str, new: str, *, delta: float = 0.02) -> None:
     """Assert README tables differ only within ``delta`` for numeric cells."""
-    old_lines = [l for l in old.splitlines() if l.startswith("|")]
-    new_lines = [l for l in new.splitlines() if l.startswith("|")]
+    old_lines = _extract_table_lines(old)
+    new_lines = _extract_table_lines(new)
     assert len(old_lines) == len(new_lines)
     for i, (ol, nl) in enumerate(zip(old_lines, new_lines)):
         if i < 2:
