@@ -32,7 +32,7 @@ Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
 
 <p align="center">
 ![build](badges/build.svg)
-![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
+![coverage](https://img.shields.io/badge/coverage-81%25-brightgreen)
 ![docs](badges/docs.svg)
 ![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index)
 ![license](badges/license.svg)
