@@ -6,6 +6,7 @@ updates:
       interval: "weekly"
     labels:
       - "dependencies"
+      - "fix"
     assignees:
       - "adrianwedd"
     reviewers:
@@ -16,6 +17,7 @@ updates:
       interval: "weekly"
     labels:
       - "dependencies"
+      - "fix"
     assignees:
       - "adrianwedd"
     reviewers:
@@ -26,6 +28,7 @@ updates:
       interval: "weekly"
     labels:
       - "dependencies"
+      - "ci"
     assignees:
       - "adrianwedd"
     reviewers:
