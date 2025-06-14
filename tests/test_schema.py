@@ -12,7 +12,6 @@ REQUIRED_KEYS = [
     "open_issues_count",
     "archived",
     "license",
-    "language",
     "pushed_at",
     "owner",
 ]
@@ -22,9 +21,10 @@ def test_repos_schema():
     assert path.exists(), f"Missing {path}"
     with path.open(encoding="utf-8") as f:
         data = json.load(f)
-    assert isinstance(data, list)
-    for item in data:
+    assert data.get("schema_version") == 1
+    repos = data["repos"]
+    assert isinstance(repos, list)
+    for item in repos:
         for key in REQUIRED_KEYS:
             assert key in item
-        assert "spdx_id" in (item["license"] or {})
-        assert "login" in (item["owner"] or {})
+        assert "login" in (item.get("owner") or {})

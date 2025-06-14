@@ -18,7 +18,7 @@ def detect_changes(repo):
 def setup_repo(tmp_path):
     (tmp_path / "data").mkdir()
     (tmp_path / "data/top50.md").write_text("one")
-    (tmp_path / "data/repos.json").write_text("{}")
+    (tmp_path / "data/repos.json").write_text('{"schema_version": 1, "repos": []}')
     (tmp_path / "README.md").write_text("readme")
     subprocess.run(["git", "init"], cwd=tmp_path, check=True)
     subprocess.run(

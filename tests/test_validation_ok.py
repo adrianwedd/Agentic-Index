@@ -13,9 +13,9 @@ def test_validation_ok(tmp_path):
         "owner": {"login": "owner"},
     }
     path = tmp_path / "repos.json"
-    path.write_text(json.dumps([repo]))
+    path.write_text(json.dumps({"schema_version": 1, "repos": [repo]}))
     result = subprocess.run(
-        ["python", "-m", "agentic_index_cli.quality.validate", str(path)],
+        ["python", "-m", "agentic_index_cli.validate", str(path)],
         capture_output=True,
         text=True,
     )

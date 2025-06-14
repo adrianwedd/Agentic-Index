@@ -36,7 +36,7 @@ def test_faststart(tmp_path):
 
     data_file = tmp_path / "repos.json"
     with data_file.open("w") as f:
-        json.dump(data, f)
+        json.dump({"schema_version": 1, "repos": data}, f)
 
     subprocess.run([
         "python",

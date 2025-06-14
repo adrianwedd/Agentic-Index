@@ -9,6 +9,7 @@ def make_response(remaining):
     resp.headers = {"X-RateLimit-Remaining": str(remaining)}
     resp.links = {}
     resp.raise_for_status = mock.Mock()
+    resp.status_code = 200
     return resp
 
 

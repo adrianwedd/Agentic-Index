@@ -27,6 +27,7 @@ def make_response(stars):
     resp.headers = {"X-RateLimit-Remaining": "100"}
     resp.links = {}
     resp.raise_for_status = mock.Mock()
+    resp.status_code = 200
     return resp
 
 
@@ -40,4 +41,4 @@ def test_refresh_flags(monkeypatch, tmp_path):
     enricher.enrich(repo_file)
     rank.main(str(repo_file))
     data = json.loads(repo_file.read_text())
-    assert "AgenticIndexScore" in data[0]
+    assert "AgenticIndexScore" in data["repos"][0]

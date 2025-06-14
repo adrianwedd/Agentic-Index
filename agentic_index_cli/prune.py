@@ -1,5 +1,4 @@
 import argparse
-import json
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -7,15 +6,15 @@ CHANGELOG = Path("CHANGELOG.md")
 REPOS = Path("repos.json")
 
 
+from .validate import load_repos as _load, save_repos as _save
+
+
 def load_repos(path: Path = REPOS):
-    with open(path) as f:
-        return json.load(f)
+    return _load(path)
 
 
 def save_repos(repos, path: Path = REPOS):
-    with open(path, "w") as f:
-        json.dump(repos, f, indent=2)
-        f.write("\n")
+    _save(path, repos)
 
 
 def append_changelog(entries, changelog: Path = CHANGELOG):

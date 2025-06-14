@@ -13,7 +13,7 @@ def test_score_nonzero(tmp_path):
         "license": {"spdx_id": "MIT"},
     }
     path = tmp_path / "repos.json"
-    path.write_text(json.dumps([repo]))
+    path.write_text(json.dumps({"schema_version": 1, "repos": [repo]}))
     env = os.environ.copy()
     env["PYTHONPATH"] = "."
     subprocess.run([
@@ -21,5 +21,5 @@ def test_score_nonzero(tmp_path):
         "scripts/rank.py",
         str(path),
     ], check=True, env=env)
-    scored = json.loads(path.read_text())[0]
+    scored = json.loads(path.read_text())["repos"][0]
     assert scored["AgenticIndexScore"] > 0
