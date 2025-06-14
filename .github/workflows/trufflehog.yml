@@ -1,0 +1,26 @@
+name: TruffleHog Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run TruffleHog
+        uses: trufflesecurity/trufflehog@52d0ee5f5419ca938d3b7e358fe6f32131565026
+        with:
+          path: .
+          format: sarif
+          output: trufflehog-results.sarif
+      - name: Upload TruffleHog results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trufflehog-results.sarif
