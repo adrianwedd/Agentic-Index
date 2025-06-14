@@ -26,11 +26,11 @@ git commit -m "main" >/dev/null
 
 git remote add origin .
 
-export GITHUB_HEAD_REF=feature
+git checkout feature >/dev/null
 
-if "$root_dir/scripts/behind_check.sh"; then
-  echo "Expected failure when branch is behind" >&2
-  exit 1
-else
-  exit 0
-fi
+export GITHUB_HEAD_REF=feature
+output_file=$(mktemp)
+export GITHUB_OUTPUT="$output_file"
+"$root_dir/scripts/behind_check.sh"
+
+grep -q 'behind=true' "$output_file"
