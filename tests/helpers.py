@@ -77,7 +77,34 @@ def _load_tolerances(tols: Dict[str, float] | None) -> Dict[str, float]:
     return result
 
 
-def assert_readme_equivalent(expected: str, actual: str, tolerances: Dict[str, float] | None = None) -> None:
+def _format_row(row: List[str]) -> str:
+    return "| " + " | ".join(row) + " |"
+
+
+def diff_row_cells(erow: List[str], arow: List[str], headers: List[str] | None = None, tols: Dict[str, float] | None = None) -> str:
+    """Return a unified diff between two table rows with optional tolerance row."""
+    left = []
+    right = []
+    if headers:
+        left.append(_format_row(headers))
+        right.append(_format_row(headers))
+        if tols:
+            tol_row = [str(tols.get(_canonical(h), 0.0)) for h in headers]
+            left.append(_format_row(tol_row))
+            right.append(_format_row(tol_row))
+    left.append(_format_row(erow))
+    right.append(_format_row(arow))
+    return "\n".join(difflib.unified_diff(left, right, "expected", "actual", lineterm=""))
+
+
+def assert_readme_equivalent(
+    expected: str,
+    actual: str,
+    tolerances: Dict[str, float] | None = None,
+    *,
+    verbose: bool = False,
+) -> None:
+    """Assert that README tables match within tolerances."""
     tols = _load_tolerances(tolerances)
     try:
         exp_headers_raw, exp_rows = _parse_table(expected)
@@ -113,43 +140,27 @@ def assert_readme_equivalent(expected: str, actual: str, tolerances: Dict[str, f
             val2, kind2 = _parse_value(acell)
             if kind1 == "text" or kind2 == "text":
                 if ecell != acell:
-                    diff = "\n".join(
-                        difflib.unified_diff(
-                            ["| " + " | ".join(erow) + " |"],
-                            ["| " + " | ".join(arow) + " |"],
-                            "expected",
-                            "actual",
-                            lineterm="",
-                        )
+                    diff = diff_row_cells(erow, arow, headers, tols)
+                    raise AssertionError(
+                        f"Mismatch in row {row_idx} column {header}\n{diff}"
                     )
-                    raise AssertionError(f"Mismatch in row {row_idx} column {header}\n{diff}")
+                if verbose:
+                    print(f"Row {row_idx} {header} matches: {ecell}")
                 continue
             tol = tols.get(key, 0.0)
             if kind1 == "int" and kind2 == "int" and "." not in ecell and "." not in acell:
                 if abs(val1 - val2) > tol:
-                    diff = "\n".join(
-                        difflib.unified_diff(
-                            ["| " + " | ".join(erow) + " |"],
-                            ["| " + " | ".join(arow) + " |"],
-                            "expected",
-                            "actual",
-                            lineterm="",
-                        )
-                    )
+                    diff = diff_row_cells(erow, arow, headers, tols)
                     raise AssertionError(
-                        f"Int mismatch in row {row_idx} column {header}: {val1} vs {val2}\n{diff}"
+                        f"{header} mismatch: expected {val1} got {val2} (tol={tol})\n{diff}"
                     )
             else:
                 if not math.isclose(float(val1), float(val2), rel_tol=tol):
-                    diff = "\n".join(
-                        difflib.unified_diff(
-                            ["| " + " | ".join(erow) + " |"],
-                            ["| " + " | ".join(arow) + " |"],
-                            "expected",
-                            "actual",
-                            lineterm="",
-                        )
-                    )
+                    diff = diff_row_cells(erow, arow, headers, tols)
                     raise AssertionError(
-                        f"Float mismatch in row {row_idx} column {header}: {val1} vs {val2} tol={tol}\n{diff}"
+                        f"{header} mismatch: expected {val1} got {val2} (tol={tol})\n{diff}"
                     )
+            if verbose:
+                print(
+                    f"Row {row_idx} {header} ok: {val1} vs {val2} (tol={tol})"
+                )
