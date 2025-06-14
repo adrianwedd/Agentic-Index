@@ -48,6 +48,23 @@ jobs:
         run: python scripts/coverage_gate.py coverage.xml
         env:
           PYTHONHASHSEED: 0
+      - name: Coverage badge check
+        id: covbadge
+        run: python scripts/update_coverage_badge.py --check
+        continue-on-error: true
+      - name: Update coverage badge
+        if: steps.covbadge.outcome == 'failure'
+        run: python scripts/update_coverage_badge.py --write
+      - name: Auto-PR for coverage badge
+        if: steps.covbadge.outcome == 'failure'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "docs: update coverage badge"
+          branch: coverage-badge-${{ github.run_id }}
+          base: ${{ github.ref_name }}
+          title: "docs: update coverage badge"
+          body: "Automated coverage badge update"
+          delete-branch: true
       - name: Verify internal links
         run: python scripts/link_integrity.py
 
