@@ -17,3 +17,4 @@ node_modules/
 # Ignore runtime JSON outputs
 repos.json
 !data/last_snapshot.json
+/docs/sphinx/_build/
