@@ -71,6 +71,18 @@ python scripts/inject_readme.py
 Touch files under `score/*.py`, update `scripts/inject_readme.py` and document your column in `README.md`. Include tests covering the metric and regenerate snapshots with the injector.
 New metrics should maintain overall test coverage (see badges) and update any affected snapshots.
 
+## Codex Queue
+
+Automation tasks can be orchestrated through a simple queue file located at `.codex/queue.yml`.
+To simulate execution locally run:
+
+```bash
+python scripts/codex_task_runner.py
+```
+
+Define modular tasks in the YAML file to integrate with Codex tooling.
+
+
 
 
 
