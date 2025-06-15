@@ -37,3 +37,47 @@ def test_process_creates_issue(monkeypatch, tmp_path):
     assert len(calls) == 2
     assert calls[0][0] == "First task"
     assert "GH-TASK-1" in calls[0][1]
+
+
+import json
+
+
+def test_process_skips_existing(monkeypatch, tmp_path):
+    p = tmp_path / "tasks.md"
+    p.write_text(SAMPLE_MD)
+    monkeypatch.setattr(td, "STATE_PATH", tmp_path / "state.json")
+    tasks = td.parse_tasks(p)
+    td.save_state({tasks[0]["id"]: {"hash": td.task_hash(tasks[0]), "url": "u"}})
+    calls = []
+
+    def fake_create(title, body, repo, labels=None):
+        calls.append(title)
+        return "url"
+
+    monkeypatch.setattr(td.issue_logger, "create_issue", fake_create)
+    td.process_tasks(p, "o/r")
+    # only second task should trigger create_issue
+    assert calls == ["Second task"]
+
+
+def test_process_worklogs(monkeypatch, tmp_path):
+    monkeypatch.chdir(tmp_path)
+    wl_dir = tmp_path / "worklog"
+    wl_dir.mkdir()
+    data = {"task_id": "GH-TASK-1"}
+    (wl_dir / "log.json").write_text(json.dumps(data))
+    monkeypatch.setattr(td, "STATE_PATH", tmp_path / "state.json")
+    td.save_state(
+        {"GH-TASK-1": {"hash": "h", "url": "https://api.github.com/repos/o/r/issues/1"}}
+    )
+    called = {}
+
+    def fake_post(url, d):
+        called["url"] = url
+        called["data"] = d
+
+    monkeypatch.setattr(td.issue_logger, "post_worklog_comment", fake_post)
+    td.process_worklogs()
+    assert called["url"].endswith("/1")
+    assert not (wl_dir / "log.json").exists()
+    assert (wl_dir / "log.posted").exists()
