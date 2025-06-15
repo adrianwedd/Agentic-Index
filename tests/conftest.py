@@ -16,6 +16,31 @@ def _offline_socket(monkeypatch):
         yield
 
 
+@pytest.fixture(autouse=True)
+def allow_testclient_unix_sockets():
+    """Permit AF_UNIX sockets for FastAPI's TestClient when sockets are disabled."""
+    import socket
+
+    try:
+        import pytest_socket
+    except Exception:  # pragma: no cover - pytest-socket not installed
+        yield
+        return
+
+    if socket.socket is pytest_socket._true_socket:
+        # Network calls aren't blocked; nothing to do
+        yield
+        return
+
+    pytest_socket.enable_socket()
+    pytest_socket.disable_socket(allow_unix_socket=True)
+    try:
+        yield
+    finally:
+        pytest_socket.enable_socket()
+        pytest_socket.disable_socket()
+
+
 @pytest.fixture(scope="session")
 def readme_fixture_path() -> Path:
     path = Path(__file__).resolve().parent / "fixtures" / "README_fixture.md"

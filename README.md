@@ -317,6 +317,8 @@ pytest -q
 
 CI runs tests with network access disabled. Set `CI_OFFLINE=1` or run
 `pytest --disable-socket` locally to replicate the offline environment.
+An autouse fixture still permits UNIX-domain `socketpair()` calls so FastAPI's
+`TestClient` can start its event loop.
 
 To check accessibility after building the site:
 
