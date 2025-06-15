@@ -1,0 +1,11 @@
+queue:
+  - GH-API-03a
+  - GH-API-03b
+  - GH-API-03c
+mode: sequential
+on_block:
+  - explain: true
+  - request_human_input: true
+report:
+  - status: after_each
+  - format: markdown
