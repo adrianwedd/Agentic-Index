@@ -9,6 +9,8 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Send webhook alert
         env:

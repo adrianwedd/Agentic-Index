@@ -25,6 +25,9 @@ permissions:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     env:
       BRANCH: data-update-${{ github.run_id }}
       MIN_STARS: ${{ github.event.inputs['min-stars'] || 50 }}
@@ -78,6 +81,6 @@ jobs:
         uses: pascalgn/automerge-action@v0.15.6
         if: ${{ inputs.auto-merge == 'true' }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ github.token }}
           pull_request: ${{ steps.createpr.outputs.pull-request-number }}
           merge_method: squash

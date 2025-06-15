@@ -12,6 +12,9 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -84,8 +87,10 @@ PY
           body=$(cat pr_body.txt)
           printf "body<<EOF\n%s\nEOF\n" "$body" >> "$GITHUB_OUTPUT"
       - name: Report rate limit
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          curl -s -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/rate_limit > rate.json
+          curl -s -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/rate_limit > rate.json
           python - <<'PY'
 import json, os
 try:

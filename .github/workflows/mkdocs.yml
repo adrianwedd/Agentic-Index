@@ -11,6 +11,9 @@ permissions:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,7 +27,7 @@ jobs:
         with:
           publish_dir: web/dist
           publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ github.token }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
