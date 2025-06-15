@@ -14,9 +14,11 @@ import sys
 import urllib.request
 from pathlib import Path
 
-from agentic_index_cli.agentic_index import (compute_issue_health,
-                                             compute_recency_factor,
-                                             license_freedom)
+from agentic_index_cli.agentic_index import (
+    compute_issue_health,
+    compute_recency_factor,
+    license_freedom,
+)
 from agentic_index_cli.config import load_config
 from agentic_index_cli.validate import load_repos, save_repos
 
