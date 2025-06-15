@@ -19,6 +19,9 @@ labels: [auto, codex]
 
 
 def test_runner_creates_issue(monkeypatch, tmp_path):
+    monkeypatch.delenv("GITHUB_SERVER_URL", raising=False)
+    monkeypatch.delenv("GITHUB_REPOSITORY", raising=False)
+    monkeypatch.delenv("GITHUB_RUN_ID", raising=False)
     md = tmp_path / "tasks.md"
     md.write_text(SAMPLE)
 
