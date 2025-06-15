@@ -4,8 +4,7 @@ import argparse
 import math
 from pathlib import Path
 
-from .agentic_index import (compute_issue_health, compute_recency_factor,
-                            license_freedom)
+from .agentic_index import compute_issue_health, compute_recency_factor, license_freedom
 from .validate import load_repos, save_repos
 
 

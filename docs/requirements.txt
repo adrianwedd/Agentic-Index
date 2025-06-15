@@ -1,2 +1,3 @@
 sphinx
 pydantic
+rich
