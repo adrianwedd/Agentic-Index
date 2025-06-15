@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -267,9 +268,13 @@ def main(argv: list[str] | None = None) -> None:
     mode.add_argument("--comment", action="store_true", help="comment on an issue")
     mode.add_argument("--update", action="store_true", help="update issue fields")
     mode.add_argument("--close", action="store_true", help="close an issue")
+    mode.add_argument(
+        "--worklog", metavar="FILE", help="post a structured worklog JSON file"
+    )
     parser.add_argument("--repo", help="owner/repo")
     parser.add_argument("--title")
     parser.add_argument("--body", default="")
+    parser.add_argument("--body-file")
     parser.add_argument("--issue-number", type=int)
     parser.add_argument("--issue-url")
     parser.add_argument("--assign", action="append", default=[])
@@ -279,6 +284,11 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--debug", action="store_true")
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args(argv)
+
+    if args.body_file:
+        args.body = Path(args.body_file).read_text()
+    elif args.body == "-":
+        args.body = sys.stdin.read()
 
     if args.new_issue:
         if not args.title:
@@ -299,7 +309,30 @@ def main(argv: list[str] | None = None) -> None:
             print(url)
         return
 
-    if not args.issue_number and not args.issue_url:
+    if args.worklog:
+        data = json.loads(Path(args.worklog).read_text())
+        if args.issue_url:
+            issue_url = args.issue_url
+        elif args.issue_number:
+            if not args.repo:
+                parser.error("--repo required")
+            issue_url = (
+                f"https://api.github.com/repos/{args.repo}/issues/{args.issue_number}"
+            )
+        else:
+            issue_url = data.get("issue_url") or data.get("url")
+            if not issue_url:
+                parser.error("--issue-url or --issue-number required")
+        if args.dry_run:
+            if args.verbose:
+                print(f"DRY RUN: would post worklog to {issue_url}")
+            return
+        url = post_worklog_comment(issue_url, data, debug=args.debug)
+        if args.verbose:
+            print(url)
+        return
+
+    if not args.worklog and not args.issue_number and not args.issue_url:
         parser.error("--issue-number or --issue-url required")
 
     if args.issue_url:
