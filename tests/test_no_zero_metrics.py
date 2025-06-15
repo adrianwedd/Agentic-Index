@@ -28,7 +28,9 @@ def _setup(tmp_path: Path):
             "license": "MIT",
         },
     ]
-    (data_dir / "repos.json").write_text(json.dumps({"schema_version": 2, "repos": repos}))
+    (data_dir / "repos.json").write_text(
+        json.dumps({"schema_version": 2, "repos": repos})
+    )
     (data_dir / "top100.md").write_text("")
     (data_dir / "last_snapshot.json").write_text("[]")
     readme = tmp_path / "README.md"

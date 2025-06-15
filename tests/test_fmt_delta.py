@@ -1,4 +1,5 @@
 import pytest
+
 from agentic_index_cli.internal.inject_readme import _fmt_delta
 
 

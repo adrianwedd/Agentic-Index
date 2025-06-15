@@ -1,4 +1,5 @@
 """Check Markdown links and badges for correctness."""
+
 from __future__ import annotations
 
 import re
@@ -8,17 +9,17 @@ from typing import Iterable
 
 import requests
 
-HEAD_RE = re.compile(r'^(#+)\s*(.+)$')
-ANCHOR_RE = re.compile(r'\[[^\]]+\]\(#([^\)]+)\)')
-IMG_RE = re.compile(r'!\[[^\]]*\]\(([^)]+)\)')
+HEAD_RE = re.compile(r"^(#+)\s*(.+)$")
+ANCHOR_RE = re.compile(r"\[[^\]]+\]\(#([^\)]+)\)")
+IMG_RE = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
 HTML_IMG_RE = re.compile(r'<img\s+[^>]*src="([^"]+)"')
 
 
 def slug(text: str) -> str:
     """Return GitHub-style slug for ``text``."""
-    s = re.sub(r'[\s]+', '-', re.sub(r'[^\x00-\x7F]+', '', text))
-    s = re.sub(r'[^a-zA-Z0-9\- ]', '', s)
-    s = s.replace(' ', '-')
+    s = re.sub(r"[\s]+", "-", re.sub(r"[^\x00-\x7F]+", "", text))
+    s = re.sub(r"[^a-zA-Z0-9\- ]", "", s)
+    s = s.replace(" ", "-")
     return s.lower()
 
 
@@ -76,4 +77,3 @@ def main(paths: Iterable[str] | None = None) -> int:
         print("\n".join(failures))
         return 1
     return 0
-

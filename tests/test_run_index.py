@@ -1,5 +1,6 @@
 import csv
 from pathlib import Path
+
 import agentic_index_cli.agentic_index as ai
 
 

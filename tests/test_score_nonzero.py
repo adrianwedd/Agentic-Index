@@ -3,6 +3,7 @@ import os
 import subprocess
 from pathlib import Path
 
+
 def test_score_nonzero(tmp_path):
     repo = {
         "name": "sample",
@@ -16,10 +17,14 @@ def test_score_nonzero(tmp_path):
     path.write_text(json.dumps({"schema_version": 1, "repos": [repo]}))
     env = os.environ.copy()
     env["PYTHONPATH"] = "."
-    subprocess.run([
-        "python",
-        "scripts/rank.py",
-        str(path),
-    ], check=True, env=env)
+    subprocess.run(
+        [
+            "python",
+            "scripts/rank.py",
+            str(path),
+        ],
+        check=True,
+        env=env,
+    )
     scored = json.loads(path.read_text())["repos"][0]
     assert scored["AgenticIndexScore"] > 0

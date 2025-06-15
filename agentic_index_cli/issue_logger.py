@@ -28,7 +28,12 @@ def get_token() -> str | None:
 
 
 def create_issue(
-    title: str, body: str, repo: str, labels: List[str] | None = None, *, token: str | None = None
+    title: str,
+    body: str,
+    repo: str,
+    labels: List[str] | None = None,
+    *,
+    token: str | None = None,
 ) -> str:
     """Create a new issue and return the HTML URL."""
     token = token or get_token()
@@ -208,9 +213,13 @@ def main(argv: list[str] | None = None) -> None:
             parser.error("--issue-number required for --comment")
         if args.dry_run:
             if args.verbose:
-                print(f"DRY RUN: would comment on issue {args.issue_number} in {args.repo}")
+                print(
+                    f"DRY RUN: would comment on issue {args.issue_number} in {args.repo}"
+                )
             return
-        issue_url = f"https://api.github.com/repos/{args.repo}/issues/{args.issue_number}"
+        issue_url = (
+            f"https://api.github.com/repos/{args.repo}/issues/{args.issue_number}"
+        )
         url = post_comment(issue_url, args.body)
         if args.verbose:
             print(url)

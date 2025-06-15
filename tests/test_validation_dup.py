@@ -25,4 +25,3 @@ def test_validation_dup(tmp_path):
     )
     assert result.returncode != 0
     assert "duplicate entries" in result.stderr
-

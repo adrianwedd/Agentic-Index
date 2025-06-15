@@ -1,8 +1,9 @@
-from fastapi import FastAPI, Body
-from typing import List, Optional, Dict, Any
-from pathlib import Path
 import json
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
 import matplotlib.pyplot as plt
+from fastapi import Body, FastAPI
 from pydantic import BaseModel
 
 from .sync import sync
@@ -16,6 +17,7 @@ class RepoScore(BaseModel):
 class RenderRequest(BaseModel):
     repos: List[RepoScore]
     export_json: bool = False
+
 
 app = FastAPI()
 
@@ -63,4 +65,3 @@ def render_endpoint(req: RenderRequest):
         "json_file": str(json_file) if json_file else None,
         "markdown": markdown,
     }
-

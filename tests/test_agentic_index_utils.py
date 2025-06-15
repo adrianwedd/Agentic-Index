@@ -24,4 +24,3 @@ def test_readme_doc():
     good = "word " * 300 + "```code```"
     assert ai.readme_doc_completeness(good) == 1.0
     assert ai.readme_doc_completeness("short") == 0.0
-

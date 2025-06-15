@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+
 from jsonschema import Draft7Validator
 
 

@@ -1,19 +1,20 @@
 """Plot score trends across repository snapshots."""
 
 import json
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+
 import matplotlib.pyplot as plt
 
 
 def load_snapshots(history_dir: Path):
     """Return parsed snapshot data and corresponding dates."""
-    files = sorted(history_dir.glob('*.json'))
+    files = sorted(history_dir.glob("*.json"))
     dates = []
     snapshots = []
     for f in files:
         try:
-            date = datetime.strptime(f.stem, '%Y-%m-%d')
+            date = datetime.strptime(f.stem, "%Y-%m-%d")
         except ValueError:
             # skip files that don't match date pattern
             continue
@@ -34,15 +35,23 @@ def build_timeseries(dates, snapshots):
     latest = snapshots[-1]
     # Latest snapshot defines which repos to plot
     scores_latest = {
-        item.get('name'): item.get('AgentOpsScore')
+        item.get("name"): item.get("AgentOpsScore")
         for item in latest
         if isinstance(item, dict)
     }
-    top5 = sorted(scores_latest.items(), key=lambda x: x[1] if x[1] is not None else -1, reverse=True)[:5]
+    top5 = sorted(
+        scores_latest.items(),
+        key=lambda x: x[1] if x[1] is not None else -1,
+        reverse=True,
+    )[:5]
     repos = [name for name, _ in top5]
     series = {name: [] for name in repos}
     for snap in snapshots:
-        mapping = {item.get('name'): item.get('AgentOpsScore') for item in snap if isinstance(item, dict)}
+        mapping = {
+            item.get("name"): item.get("AgentOpsScore")
+            for item in snap
+            if isinstance(item, dict)
+        }
         for name in repos:
             series[name].append(mapping.get(name))
     return series, repos
@@ -51,13 +60,13 @@ def build_timeseries(dates, snapshots):
 def plot(series, dates, output: Path):
     """Render a line plot for ``series`` and save to ``output``."""
     if not series:
-        print('No data to plot')
+        print("No data to plot")
         return
     plt.figure(figsize=(8, 4))
     for name, scores in series.items():
         plt.plot(dates, scores, label=name)
-    plt.xlabel('Date')
-    plt.ylabel('AgentOpsScore')
+    plt.xlabel("Date")
+    plt.ylabel("AgentOpsScore")
     plt.legend()
     plt.tight_layout()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -66,11 +75,11 @@ def plot(series, dates, output: Path):
 
 def main():
     """CLI wrapper for generating the trend graph."""
-    history_dir = Path('data/history')
+    history_dir = Path("data/history")
     dates, snapshots = load_snapshots(history_dir)
     series, _ = build_timeseries(dates, snapshots)
-    plot(series, dates, Path('docs/trends/top5_scores.png'))
+    plot(series, dates, Path("docs/trends/top5_scores.png"))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

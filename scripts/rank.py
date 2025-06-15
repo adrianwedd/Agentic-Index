@@ -4,7 +4,7 @@
 import argparse
 
 from agentic_index_cli.config import load_config
-from agentic_index_cli.internal.rank import main, generate_badges
+from agentic_index_cli.internal.rank import generate_badges, main
 
 
 def parse_args(argv=None) -> argparse.Namespace:

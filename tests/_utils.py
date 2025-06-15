@@ -9,10 +9,10 @@ def parse_delta(val: str):
     val = val.strip()
     if not val:
         return 0
-    if val.lower().lstrip('+') == 'new':
-        return 'new'
+    if val.lower().lstrip("+") == "new":
+        return "new"
     # allow leading '+'
-    num = val.lstrip('+')
+    num = val.lstrip("+")
     try:
         if re.search(r"\.\d", num):
             return float(num)
@@ -52,9 +52,9 @@ def assert_readme_diff(old: str, new: str, *, delta: float = 0.02) -> None:
 
     old_lines = _extract_table_lines(old)
     new_lines = _extract_table_lines(new)
-    assert len(old_lines) == len(new_lines), (
-        f"row count {len(old_lines)} != {len(new_lines)}"
-    )
+    assert len(old_lines) == len(
+        new_lines
+    ), f"row count {len(old_lines)} != {len(new_lines)}"
 
     if old_lines:
         assert _normalize_header(old_lines[0]) == _normalize_header(new_lines[0])
@@ -63,9 +63,9 @@ def assert_readme_diff(old: str, new: str, *, delta: float = 0.02) -> None:
     for i, (ol, nl) in enumerate(zip(old_lines[2:], new_lines[2:]), start=2):
         ocells = [c.strip() for c in ol.strip().strip("|").split("|")]
         ncells = [c.strip() for c in nl.strip().strip("|").split("|")]
-        assert len(ocells) == len(ncells) == ncols, (
-            f"row {i} column count mismatch: {len(ocells)} vs {len(ncells)}"
-        )
+        assert (
+            len(ocells) == len(ncells) == ncols
+        ), f"row {i} column count mismatch: {len(ocells)} vs {len(ncells)}"
 
         errors: list[str] = []
 
@@ -78,14 +78,10 @@ def assert_readme_diff(old: str, new: str, *, delta: float = 0.02) -> None:
             if ocells[idx] and ncells[idx]:
                 try:
                     if abs(float(ocells[idx]) - float(ncells[idx])) > delta:
-                        errors.append(
-                            f"col {idx} {ocells[idx]} != {ncells[idx]}"
-                        )
+                        errors.append(f"col {idx} {ocells[idx]} != {ncells[idx]}")
                 except ValueError:
                     if ocells[idx] != ncells[idx]:
-                        errors.append(
-                            f"col {idx} '{ocells[idx]}' != '{ncells[idx]}'"
-                        )
+                        errors.append(f"col {idx} '{ocells[idx]}' != '{ncells[idx]}'")
 
         if ocells[5] != ncells[5]:
             errors.append(f"release '{ocells[5]}' != '{ncells[5]}'")

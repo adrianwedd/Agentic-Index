@@ -1,4 +1,5 @@
 import pytest
+
 from agentic_index_cli.internal.deltas import _fmt_delta
 
 

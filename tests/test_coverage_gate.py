@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from scripts.coverage_gate import main
 
 

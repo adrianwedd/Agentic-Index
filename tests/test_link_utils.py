@@ -1,4 +1,5 @@
 import pytest
+
 from agentic_index_cli.internal.link_integrity import slug
 
 

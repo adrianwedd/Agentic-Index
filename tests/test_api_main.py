@@ -16,4 +16,3 @@ def test_module_entry(monkeypatch):
     assert called["args"] == "agentic_index_api.server:app"
     assert called["host"] == "0.0.0.0"
     assert called["port"] == 8000
-

@@ -26,6 +26,7 @@ title: First task
 ```
 """
 
+
 def test_parse_and_sort(tmp_path, capsys):
     md = tmp_path / "codex_tasks.md"
     md.write_text(SAMPLE_MD)

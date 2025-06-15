@@ -2,13 +2,12 @@
 
 from __future__ import annotations
 
+import difflib
+import json
 import pathlib
 import sys
-import json
-import difflib
 
 from agentic_index_cli.config import load_config
-
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 README_PATH = ROOT / "README.md"
@@ -31,7 +30,7 @@ def _clamp_name(name: str, limit: int = 28) -> str:
     return safe[: limit - 3] + "..."
 
 
-def _load_rows(sort_by: str = 'score', *, limit: int = 100) -> list[str]:
+def _load_rows(sort_by: str = "score", *, limit: int = 100) -> list[str]:
     """Return table rows computed from repo data using v2 fields.
 
     If ``data/ranked.json`` is present it is used in preference to
@@ -99,14 +98,14 @@ def _load_rows(sort_by: str = 'score', *, limit: int = 100) -> list[str]:
         rows.append(
             "| {i} | {score:.2f} | {name} | {s30} | {maint} | {rel} | {docs} | {eco} | {lic} |".format(
                 i=i,
-                score=repo['score'],
-                name=_clamp_name(repo['name']),
-                s30=repo['stars_7d'],
-                maint=repo['maintenance'],
-                rel=repo['release'],
-                docs=repo['docs'],
-                eco=repo['ecosystem'],
-                lic=repo['license'],
+                score=repo["score"],
+                name=_clamp_name(repo["name"]),
+                s30=repo["stars_7d"],
+                maint=repo["maintenance"],
+                rel=repo["release"],
+                docs=repo["docs"],
+                eco=repo["ecosystem"],
+                lic=repo["license"],
             )
         )
     return rows
@@ -134,7 +133,7 @@ def _fmt_delta(val: str | int | float, *, is_int: bool = False) -> str:
         return val
 
 
-def build_readme(*, sort_by: str = 'score', limit: int | None = None) -> str:
+def build_readme(*, sort_by: str = "score", limit: int | None = None) -> str:
     """Return README text with the top100 table injected."""
     readme_text = README_PATH.read_text(encoding="utf-8")
     end_newline = readme_text.endswith("\n")
@@ -146,14 +145,14 @@ def build_readme(*, sort_by: str = 'score', limit: int | None = None) -> str:
 
     # always inject standard header for v2 schema
     header_lines = [
-        f"| Rank | <abbr title=\"{OVERALL_COL}\">📊</abbr> {OVERALL_COL} | Repo | <abbr title=\"Stars gained in last 7 days\">⭐ Δ7d</abbr> | <abbr title=\"Maintenance score\">🔧 Maint</abbr> | <abbr title=\"Last release date\">📅 Release</abbr> | <abbr title=\"Documentation score\">📚 Docs</abbr> | <abbr title=\"Ecosystem fit\">🧠 Fit</abbr> | <abbr title=\"License\">⚖️ License</abbr> |",
+        f'| Rank | <abbr title="{OVERALL_COL}">📊</abbr> {OVERALL_COL} | Repo | <abbr title="Stars gained in last 7 days">⭐ Δ7d</abbr> | <abbr title="Maintenance score">🔧 Maint</abbr> | <abbr title="Last release date">📅 Release</abbr> | <abbr title="Documentation score">📚 Docs</abbr> | <abbr title="Ecosystem fit">🧠 Fit</abbr> | <abbr title="License">⚖️ License</abbr> |',
         "|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|",
     ]
 
     cfg_limit = limit
     if cfg_limit is None:
         cfg = load_config()
-        cfg_limit = cfg.get('output', {}).get('markdown_table_limit', 100)
+        cfg_limit = cfg.get("output", {}).get("markdown_table_limit", 100)
 
     rows = _load_rows(sort_by, limit=cfg_limit)
     table = "\n".join(header_lines + rows)
@@ -184,7 +183,13 @@ def diff(new_text: str, readme_path: pathlib.Path | None = None) -> str:
     )
 
 
-def main(*, force: bool = False, check: bool = False, write: bool = True, sort_by: str = 'score') -> int:
+def main(
+    *,
+    force: bool = False,
+    check: bool = False,
+    write: bool = True,
+    sort_by: str = "score",
+) -> int:
     """Synchronise the README table.
 
     Parameters

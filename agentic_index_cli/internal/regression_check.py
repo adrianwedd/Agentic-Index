@@ -9,46 +9,49 @@ allowlist file. ``.regression.yml`` contains:
 ``regression_allowlist.yml`` provides regexes for lines that should be ignored
 entirely.
 """
+
 from __future__ import annotations
+
+import argparse
 import re
 import subprocess
 import sys
 from pathlib import Path
-import argparse
+
 import yaml
 
-CONFIG_PATH = Path('.regression.yml')
+CONFIG_PATH = Path(".regression.yml")
 
 
 def load_config(path: Path = CONFIG_PATH) -> dict:
     """Return regression config from ``path``."""
     if not path.exists():
         return {"forbidden": [], "allowed_regex": []}
-    with open(path, 'r', encoding='utf-8') as f:
+    with open(path, "r", encoding="utf-8") as f:
         cfg = yaml.safe_load(f) or {}
-    cfg.setdefault('forbidden', [])
-    cfg.setdefault('allowed_regex', [])
+    cfg.setdefault("forbidden", [])
+    cfg.setdefault("allowed_regex", [])
     return cfg
 
 
 DEFAULT_GLOBS = [
-    'agentic_index_cli/**/*.py',
-    'scripts/**/*.py',
-    'tests/**/*.py',
-    'docs/**/*.md',
-    'README.md',
+    "agentic_index_cli/**/*.py",
+    "scripts/**/*.py",
+    "tests/**/*.py",
+    "docs/**/*.md",
+    "README.md",
 ]
 
-ALLOWLIST_PATH = Path('regression_allowlist.yml')
+ALLOWLIST_PATH = Path("regression_allowlist.yml")
 
 
 def load_allowlist(path: Path = ALLOWLIST_PATH) -> list[str]:
     """Load allowed regex patterns from ``path``."""
     if not path.exists():
         return []
-    with open(path, 'r', encoding='utf-8') as f:
+    with open(path, "r", encoding="utf-8") as f:
         data = yaml.safe_load(f) or {}
-    return data.get('allow', [])
+    return data.get("allow", [])
 
 
 def gather_files(globs: list[str] | None = None) -> list[Path]:
@@ -56,7 +59,7 @@ def gather_files(globs: list[str] | None = None) -> list[Path]:
     globs = globs or DEFAULT_GLOBS
     files: list[Path] = []
     for g in globs:
-        out = subprocess.check_output(['git', 'ls-files', g], text=True)
+        out = subprocess.check_output(["git", "ls-files", g], text=True)
         files.extend(Path(p) for p in out.splitlines() if p)
     # deduplicate while preserving order
     seen = set()
@@ -70,15 +73,15 @@ def gather_files(globs: list[str] | None = None) -> list[Path]:
 
 def check_files(paths: list[Path], config: dict) -> list[str]:
     """Return list of forbidden-pattern failures."""
-    allowed = [re.compile(p) for p in config.get('allowed_regex', [])]
-    allowlist = [re.compile(p) for p in config.get('allowlist', [])]
-    forbidden = config.get('forbidden', [])
+    allowed = [re.compile(p) for p in config.get("allowed_regex", [])]
+    allowlist = [re.compile(p) for p in config.get("allowlist", [])]
+    forbidden = config.get("forbidden", [])
     failures = []
     for p in paths:
         if p.resolve() == CONFIG_PATH.resolve():
             continue
         try:
-            text = p.read_text(encoding='utf-8', errors='ignore')
+            text = p.read_text(encoding="utf-8", errors="ignore")
         except Exception:
             continue
         for lineno, line in enumerate(text.splitlines(), 1):
@@ -88,7 +91,7 @@ def check_files(paths: list[Path], config: dict) -> list[str]:
                 if pat in line:
                     if any(r.search(line) for r in allowed):
                         break
-                    failures.append(f'{p}:{lineno}: {pat}')
+                    failures.append(f"{p}:{lineno}: {pat}")
                     break
     return failures
 
@@ -96,25 +99,35 @@ def check_files(paths: list[Path], config: dict) -> list[str]:
 def main(argv: list[str] | None = None) -> int:
     """Command-line interface for regression checks."""
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--allowlist', type=Path, default=ALLOWLIST_PATH,
-                        help='YAML file containing allowed regex patterns')
-    parser.add_argument('--add-allow', action='append', default=[],
-                        dest='add_allow', help='Additional allowed regex')
-    parser.add_argument('paths', nargs='*', help='Files to check')
+    parser.add_argument(
+        "--allowlist",
+        type=Path,
+        default=ALLOWLIST_PATH,
+        help="YAML file containing allowed regex patterns",
+    )
+    parser.add_argument(
+        "--add-allow",
+        action="append",
+        default=[],
+        dest="add_allow",
+        help="Additional allowed regex",
+    )
+    parser.add_argument("paths", nargs="*", help="Files to check")
     args = parser.parse_args(argv)
 
     cfg = load_config()
-    cfg['allowlist'] = load_allowlist(args.allowlist)
-    cfg['allowed_regex'].extend(args.add_allow)
+    cfg["allowlist"] = load_allowlist(args.allowlist)
+    cfg["allowed_regex"].extend(args.add_allow)
 
     files = [Path(p) for p in args.paths] if args.paths else gather_files()
     fails = check_files(files, cfg)
     if fails:
-        print('Forbidden patterns found:')
+        print("Forbidden patterns found:")
         for f in fails:
             print(f)
         return 1
     return 0
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     sys.exit(main())

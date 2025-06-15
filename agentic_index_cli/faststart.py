@@ -38,11 +38,14 @@ def run(top: int, data_path: Path, output_path: Path | None = None) -> None:
     repos = load_repos(data_path)
 
     filtered = [
-        r for r in repos
-        if r.get("stars", 0) >= 5000 and r.get("doc_completeness") == 1
+        r for r in repos if r.get("stars", 0) >= 5000 and r.get("doc_completeness") == 1
     ]
 
-    ranked = sorted(filtered, key=lambda r: r.get("AgenticIndexScore", r.get("AgentOpsScore", 0)), reverse=True)
+    ranked = sorted(
+        filtered,
+        key=lambda r: r.get("AgenticIndexScore", r.get("AgentOpsScore", 0)),
+        reverse=True,
+    )
     ranked = ranked[:top]
 
     table = generate_table(ranked)
@@ -60,8 +63,8 @@ def main(argv=None):
     parser.add_argument("data_path", help="path to repos.json")
     args = parser.parse_args(argv)
 
-
     run(args.top, Path(args.data_path))
+
 
 if __name__ == "__main__":
     main()

@@ -4,7 +4,6 @@ import subprocess
 from pathlib import Path
 
 
-
 def test_rank_ordering_and_tiebreak(tmp_path, monkeypatch):
     base = {
         "recency_factor": 1,

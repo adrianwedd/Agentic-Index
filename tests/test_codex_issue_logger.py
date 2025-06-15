@@ -3,8 +3,8 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-import scripts.codex_task_runner as ctr
 import agentic_index_cli.issue_logger as il
+import scripts.codex_task_runner as ctr
 
 SAMPLE = """
 ```codex-task
@@ -37,4 +37,3 @@ def test_runner_creates_issue(monkeypatch, tmp_path):
         "o/r",
         ["auto", "codex"],
     )
-

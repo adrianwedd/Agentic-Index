@@ -24,9 +24,7 @@ def setup_repo(tmp_path):
     subprocess.run(
         ["git", "config", "user.email", "test@example.com"], cwd=tmp_path, check=True
     )
-    subprocess.run(
-        ["git", "config", "user.name", "Tester"], cwd=tmp_path, check=True
-    )
+    subprocess.run(["git", "config", "user.name", "Tester"], cwd=tmp_path, check=True)
     subprocess.run(["git", "add", "."], cwd=tmp_path, check=True)
     subprocess.run(["git", "commit", "-m", "init"], cwd=tmp_path, check=True)
 
@@ -40,4 +38,3 @@ def test_detect_changes_true(tmp_path):
 def test_detect_changes_false(tmp_path):
     setup_repo(tmp_path)
     assert detect_changes(tmp_path) is False
-

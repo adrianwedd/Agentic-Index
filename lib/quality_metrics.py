@@ -4,6 +4,7 @@ These functions convert raw repository data from the GitHub API into
 normalized scores used by the ranking scripts. Scores are expressed on
 A 0.0–1.0 scale.
 """
+
 from __future__ import annotations
 
 from typing import Iterable
