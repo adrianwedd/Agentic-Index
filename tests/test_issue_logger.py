@@ -1,4 +1,7 @@
+import io
+import json
 import os
+import sys
 
 import pytest
 import responses
@@ -156,3 +159,52 @@ def test_cli_update(monkeypatch):
     )
     assert called["url"].endswith("issues/1")
     assert called["body"] == "b"
+
+
+def test_cli_body_stdin(monkeypatch):
+    called = {}
+
+    def fake_comment(issue_url, body, debug=False):
+        called["url"] = issue_url
+        called["body"] = body
+        return "u"
+
+    monkeypatch.setattr(il, "post_comment", fake_comment)
+    monkeypatch.setattr(il, "get_token", lambda: "t")
+    monkeypatch.setattr(sys, "stdin", io.StringIO("line1\nline2\n"))
+    il.main(
+        [
+            "--comment",
+            "--repo",
+            "o/r",
+            "--issue-number",
+            "1",
+            "--body",
+            "-",
+        ]
+    )
+    assert called["body"] == "line1\nline2\n"
+
+
+def test_cli_worklog(monkeypatch, tmp_path):
+    data = {"task": "T"}
+    p = tmp_path / "wl.json"
+    p.write_text(json.dumps(data))
+    called = {}
+
+    def fake_post(url, d, debug=False):
+        called["url"] = url
+        called["data"] = d
+        return "u"
+
+    monkeypatch.setattr(il, "post_worklog_comment", fake_post)
+    il.main(
+        [
+            "--worklog",
+            str(p),
+            "--issue-url",
+            "https://api.github.com/repos/o/r/issues/1",
+        ]
+    )
+    assert called["url"].endswith("/1")
+    assert called["data"] == data
