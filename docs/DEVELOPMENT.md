@@ -88,5 +88,13 @@ python -m agentic_index_cli.issue_logger --update \
   --repo owner/repo --issue-number 5 --body "Updated text"
 ```
 
+You can also target an existing issue directly with a full URL:
+
+```bash
+python -m agentic_index_cli.issue_logger --comment \
+  --issue-url https://github.com/owner/repo/issues/5 \
+  --body "Looks good!"
+```
+
 Pass `--debug` to print API calls or `--dry-run` to simulate without creating
 anything.
