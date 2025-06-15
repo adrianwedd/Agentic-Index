@@ -26,11 +26,14 @@ def test_badge_block_formatting():
     seen = set()
     for m in matches:
         alt, url = re.match(r'!\[([^]]+)\]\(([^)]+)\)', m.group()).groups()
+
         key = (alt.strip(), url.strip())
         assert key not in seen, f"duplicate badge {alt}"
         seen.add(key)
 
     for line in markdown.splitlines():
+
         line_matches = re.findall(pattern, line)
         if len(line_matches) > 1:
             assert line.strip() == " ".join(line_matches), f"badge spacing error: {line}"
+

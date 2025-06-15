@@ -37,7 +37,7 @@ This catalogue is maintained by the Agentic-Index project and is updated regular
 * [🚀 Fast-Start Picks (Curated for Newcomers)](#-fast-start-picks-curated-for-newcomers)
 * [⚡ Installation & Quick-start](#-installation--quick-start)
 * [🏆 The Agentic-Index Top 100: AI Agent Repositories](#-the-agentic-index-top-100-ai-agent-repositories)
-  * [💎 Honourable Mentions / Niche & Novel Gems](#-honourable-mentions--niche--novel-gems)
+  * [💎 Honourable Mentions / Niche & Novel Gems](HONOURABLE.md)
     * [🔬 Our Methodology & Scoring Explained](#our-methodology--scoring-explained)
     * [🏷️ Category Definitions](#-category-definitions)
   * [🔄 Changelog](#-changelog)
@@ -207,7 +207,7 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 <details>
 <summary>📊 Metrics Legend</summary>
 
-- 📊 Score = 0.30*log2(stars+1) + 0.25*recency_factor + 0.20*issue_health + 0.15*doc_completeness + 0.07*license_freedom + 0.03*ecosystem_integration
+- Our score blends stars, recency, issue health, docs completeness, license freedom and ecosystem integration. **[See full formula →](./docs/methodology.md#scoring-formula)**
 - ⭐ Δ7d = stars gained in the last 7 days
 - 🔧 Maint = 1 / (days_since_last_commit * open_issue_ratio)
 - 📅 Release = 1 / days_since_last_release
@@ -219,17 +219,6 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 
 -----
 
-<a id="-honourable-mentions--niche--novel-gems"></a>
-## 💎 Honourable Mentions / Niche & Novel Gems
-
-Beyond the top-ranked, these projects are cooking up unique ideas, serving specific niches, or pushing experimental boundaries in Agentic-AI:
-
-  * **[daydreamsai/daydreams](https://github.com/daydreamsai/daydreams)**: 🎯 TypeScript framework for generative agents that live on-chain. AI meets web3. [17, 18]
-  * **[fetchai/agents-aea](https://github.com/fetchai/agents-aea) & [valory-xyz/open-aea](https://github.com/valory-xyz/open-aea)**: 🎯 Dedicated frameworks for Autonomous Economic Agents (AEAs) in decentralized systems. [17, 19, 20]
-  * **([https://github.com/ReversecLabs/damn-vulnerable-llm-agent](https://github.com/ReversecLabs/damn-vulnerable-llm-agent))**: 🛠️ Learn to break (and fix) ReAct agents. Essential for security-conscious devs. [21]
-  * **(https://github.com/video-db/Director)**: 🎯 AI agent framework for serious video magic: search, edit, compile, generate. [17, 22]
-  * **[msoedov/agentic\_security](https://github.com/msoedov/agentic_security)**: 🛠️ Open-source vulnerability scanner for Agent Workflows and LLMs. Stay safe out there. [23]
-
 -----
 ### Our Methodology & Scoring Explained
 
@@ -239,10 +228,7 @@ Beyond the top-ranked, these projects are cooking up unique ideas, serving speci
 
 Agentic-Index believes in full transparency. Here’s the lowdown on how we find, vet, and score repositories.
 
-The core Agentic-Index Scoring Formula:
-`Score = 0.30*log2(stars+1) + 0.25*recency_factor + 0.20*issue_health + 0.15*doc_completeness + 0.07*license_freedom + 0.03*ecosystem_integration`\<sup\>†\</sup\>
-
-\<sup\>†\</sup\> *Weights are reviewed and potentially tuned quarterly. Full math and reasoning in [`/docs/methodology.md`](./docs/methodology.md).*
+Our score balances stars, recency, maintenance health, documentation quality, license freedom, and ecosystem fit. **[See full formula →](./docs/methodology.md#scoring-formula)**
 
 **Quick Look at Components:**
 

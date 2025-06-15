@@ -22,23 +22,41 @@ We rank everything using a transparent scoring formula based on:
 | 🧠 | `ecosystem_fit` | Keyword-based tag affinity | Monthly | `score/ecosystem.py` |
 | ⚖️ | `license_score` | OSI compatibility / restrictiveness | Static | `score/license.py` |
 
-Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metrics Legend](#metrics-legend) for weighting details. The full JSON schema is documented in [SCHEMA.md](SCHEMA.md).
+Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metrics Legend](#metrics-legend) for metric details. The full JSON schema is documented in [SCHEMA.md](SCHEMA.md).
 
 > **🎯 TL;DR:** This isn’t just a list—it’s your launchpad for building with AI agents.
 
-Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
+[🚀 Jump to Fast-Start Picks →](FAST_START.md)
 
 -----
 
 <p align="center">
-![build](badges/build.svg)
-![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
-![docs](badges/docs.svg)
-![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index)
-![license](badges/license.svg)
-![PyPI](badges/pypi.svg)
-![Release Notes](https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases)
+  <a href="https://github.com/adrianwedd/Agentic-Index/actions/workflows/ci.yml">
+    <img src="badges/build.svg" alt="Build Status" />
+  </a>
+  <a href="https://github.com/adrianwedd/Agentic-Index/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/badge/coverage-80%25-brightgreen" alt="Coverage" />
+  </a>
+  <a href="https://pypi.org/project/agentic-index/">
+    <img src="badges/pypi.svg" alt="PyPI" />
+  </a>
+  <a href="./LICENSE">
+    <img src="badges/license.svg" alt="License" />
+  </a>
 </p>
+<details>
+<summary>More status badges</summary>
+
+<p align="center">
+  <img src="badges/docs.svg" alt="Documentation" />
+  <img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index" alt="Site Status" />
+  <img src="https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases" alt="Release Notes" />
+  <img src="badges/coc.svg" alt="Code of Conduct" />
+  <img src="badges/last_sync.svg" alt="Last Sync" />
+  <img src="badges/top_repo.svg" alt="Top Repo" />
+  <img src="badges/repo_count.svg" alt="Repo Count" />
+</p>
+</details>
 
 This catalogue is maintained by the Agentic-Index project and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
 
@@ -47,10 +65,9 @@ This catalogue is maintained by the Agentic-Index project and is updated regular
 ## TOC
 
 * [✨ Why Agentic Index is Different](#-why-agentic-index-is-different)
-* [🚀 Fast-Start Picks (Curated for Newcomers)](#-fast-start-picks-curated-for-newcomers)
 * [⚡ Installation & Quick-start](#-installation--quick-start)
 * [🏆 The Agentic-Index Top 100: AI Agent Repositories](#-the-agentic-index-top-100-ai-agent-repositories)
-  * [💎 Honourable Mentions / Niche & Novel Gems](#-honourable-mentions--niche--novel-gems)
+  * [💎 Honourable Mentions / Niche & Novel Gems](HONOURABLE.md)
     * [🔬 Our Methodology & Scoring Explained](#our-methodology--scoring-explained)
     * [🏷️ Category Definitions](#-category-definitions)
   * [🔄 Changelog](#-changelog)
@@ -91,19 +108,6 @@ cat README.md | less         # see table injected
 
 -----
 
-<a id="-fast-start-picks-curated-for-newcomers"></a>
-## 🚀 Fast-Start Picks (Curated for Newcomers)
-
-New to Agentic-AI or just want the good stuff fast? These repos are top-tier for usability, community, docs, or just plain cool ideas:
-
-  * **CrewAI ([crewAIInc/crewAI](https://github.com/crewAIInc/crewAI))**: Slick orchestration for role-playing, autonomous AI agents. Built for collaborative intelligence. [1]
-  * **AutoGen ([microsoft/autogen](https://github.com/microsoft/autogen))**: Microsoft's powerhouse for multi-agent conversational apps. Flexible and robust. [6, 7, 2]
-  * **Langchain ([langchain-ai/langchain](https://github.com/langchain-ai/langchain))**: The OG. A massive library for LLM apps with deep agent capabilities and tons of integrations. [8, 9]
-  * **AutoGPT ((https://github.com/Significant-Gravitas/AutoGPT))**: One of the first to show off truly autonomous GPT-4, making agentic concepts go viral. [10, 11]
-  * **BabyAGI ([yoheinakajima/babyagi](https://github.com/yoheinakajima/babyagi))**: Simple, elegant task management loop that inspired a generation of agent frameworks. [3]
-  * **VoltAgent ([VoltAgent/voltagent](https://github.com/VoltAgent/voltagent))**: Clean TypeScript framework for modular AI agent dev, with built-in observability. [12]
-
------
 
 <a id="-the-agentic-index-top-100-ai-agent-repositories"></a>
 ## 🏆 The Agentic-Index Top 100: AI Agent Repositories
@@ -222,7 +226,7 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 <details>
 <summary>📊 Metrics Legend</summary>
 
-- 📊 Score = 0.30*log2(stars+1) + 0.25*recency_factor + 0.20*issue_health + 0.15*doc_completeness + 0.07*license_freedom + 0.03*ecosystem_integration
+Our score blends stars, recency, issue health, docs completeness, license freedom and ecosystem integration. **[See full formula →](./docs/methodology.md#scoring-formula)**
 - ⭐ Δ7d = stars gained in the last 7 days
 - 🔧 Maint = 1 / (days_since_last_commit * open_issue_ratio)
 - 📅 Release = 1 / days_since_last_release
@@ -237,18 +241,6 @@ For a full description of every metric field, see [SCHEMA.md](./docs/SCHEMA.md).
 
 -----
 
-<a id="-honourable-mentions--niche--novel-gems"></a>
-## 💎 Honourable Mentions / Niche & Novel Gems
-
-Beyond the top-ranked, these projects are cooking up unique ideas, serving specific niches, or pushing experimental boundaries in Agentic-AI:
-
-  * **[daydreamsai/daydreams](https://github.com/daydreamsai/daydreams)**: 🎯 TypeScript framework for generative agents that live on-chain. AI meets web3. [17, 18]
-  * **[fetchai/agents-aea](https://github.com/fetchai/agents-aea) & [valory-xyz/open-aea](https://github.com/valory-xyz/open-aea)**: 🎯 Dedicated frameworks for Autonomous Economic Agents (AEAs) in decentralized systems. [17, 19, 20]
-  * **([https://github.com/ReversecLabs/damn-vulnerable-llm-agent](https://github.com/ReversecLabs/damn-vulnerable-llm-agent))**: 🛠️ Learn to break (and fix) ReAct agents. Essential for security-conscious devs. [21]
-  * **(https://github.com/video-db/Director)**: 🎯 AI agent framework for serious video magic: search, edit, compile, generate. [17, 22]
-  * **[msoedov/agentic\_security](https://github.com/msoedov/agentic_security)**: 🛠️ Open-source vulnerability scanner for Agent Workflows and LLMs. Stay safe out there. [23]
-
------
 ### Our Methodology & Scoring Explained
 
 <a id="our-methodology--scoring-explained"></a>
@@ -257,10 +249,7 @@ Beyond the top-ranked, these projects are cooking up unique ideas, serving speci
 
 Agentic-Index believes in full transparency. Here’s the lowdown on how we find, vet, and score repositories.
 
-The core Agentic-Index Scoring Formula:
-`Score = 0.30*log2(stars+1) + 0.25*recency_factor + 0.20*issue_health + 0.15*doc_completeness + 0.07*license_freedom + 0.03*ecosystem_integration`\<sup\>†\</sup\>
-
-\<sup\>†\</sup\> *Weights are reviewed and potentially tuned quarterly. Full math and reasoning in [`/docs/methodology.md`](./docs/methodology.md).*
+Our score balances stars, recency, maintenance health, documentation quality, license freedom, and ecosystem fit. **[See full formula →](./docs/methodology.md#scoring-formula)**
 
 **Quick Look at Components:**
 
@@ -393,7 +382,6 @@ For tips on keeping your branch in sync with `main` and resolving conflicts, see
 [CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).
 
 Let's build the best damn agent list together\!
-![Code of Conduct](badges/coc.svg)
 
 
 -----
@@ -411,6 +399,5 @@ The content of Agentic-Index (this `README.md`, files in `/docs/`, etc.) is lice
 Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 'em) are licensed under([https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)).
 
 © 2025 Agentic-Index Maintainers
-
 
 ![Last Sync](badges/last_sync.svg) ![Top Repo](badges/top_repo.svg) ![Repo Count](badges/repo_count.svg)
