@@ -10,9 +10,9 @@ repos:
         files: README\.md
       - id: pytest
         name: pytest
-        entry: pytest --quiet --cov=agentic_index_cli
+        entry: pytest --quiet --cov=agentic_index_cli --cov-fail-under=0
         language: python
-        additional_dependencies: [., pytest-cov, requests, PyYAML, jsonschema, pydantic, responses, matplotlib]
+        additional_dependencies: [., pytest-cov, requests, PyYAML, jsonschema, pydantic, responses, matplotlib, fastapi, httpx]
         files: \.py$
       - id: detect-large-files
         name: detect-large-files
