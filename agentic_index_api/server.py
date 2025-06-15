@@ -17,7 +17,7 @@ from fastapi.concurrency import run_in_threadpool
 
 from agentic_index_cli.internal.scrape import scrape
 from agentic_index_cli.validate import save_repos
-from agentic_index_cli.internal.rank import main as rank_main
+from agentic_index_cli.internal.rank import compute_score, SCORE_KEY
 from agentic_index_cli import issue_logger
 
 API_KEY = os.getenv("API_KEY")
@@ -68,16 +68,6 @@ def healthz() -> Response:
     return Response(status_code=200)
 
 
-@app.post("/score")
-def score() -> dict:
-    """Return list of repo names from ``state/sync_data.json``."""
-    repos = _load_sync_data()
-    names: List[str] = []
-    for r in repos:
-        name = r.get("full_name") or r.get("name")
-        if name:
-            names.append(name)
-    return {"top_scores": names}
 
 @app.post("/sync")
 async def sync(min_stars: int = 0) -> dict[str, Any]:
@@ -93,14 +83,19 @@ async def sync(min_stars: int = 0) -> dict[str, Any]:
 
 
 @app.post("/score")
-async def score() -> dict[str, str]:
-    """Run ranking pipeline on ``data/repos.json``."""
+def score() -> dict[str, Any]:
+    """Return top 5 repositories sorted by score."""
 
-    def _run() -> None:
-        rank_main("data/repos.json")
+    repos = _load_sync_data()
+    scored = []
+    for repo in repos:
+        score = compute_score(repo)
+        name = repo.get("full_name") or repo.get("name")
+        if name:
+            scored.append({"name": name, "score": score})
 
-    await run_in_threadpool(_run)
-    return {"status": "ok"}
+    scored.sort(key=lambda r: r["score"], reverse=True)
+    return {"top_scores": scored[:5]}
 
 
 @app.post("/render")
