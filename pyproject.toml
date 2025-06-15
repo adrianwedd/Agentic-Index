@@ -12,6 +12,7 @@ dependencies = [
     "PyYAML",
     "jsonschema>=3.2",
     "pydantic>=2",
+    "rich",
 ]
 
 [project.scripts]
@@ -23,3 +24,6 @@ dev = ["fastapi", "httpx"]
 
 [tool.coverage.report]
 fail_under = 70  # temporary threshold, will be raised after snapshot tolerance rollout
+
+[tool.isort]
+profile = "black"

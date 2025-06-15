@@ -1,7 +1,7 @@
 import re
 from pathlib import Path
 
-from _utils import assert_readme_diff
+from ._utils import assert_readme_diff
 
 ROOT = Path(__file__).resolve().parents[1]
 SNAP = ROOT / "tests" / "snapshots" / "README.md"
