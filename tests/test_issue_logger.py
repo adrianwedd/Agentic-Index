@@ -33,3 +33,54 @@ def test_post_comment_error(monkeypatch):
     )
     with pytest.raises(il.APIError):
         il.post_comment('https://api.github.com/repos/o/r/issues/1', 'msg', token='bad')
+
+
+@responses.activate
+def test_post_worklog_new(monkeypatch):
+    responses.add(
+        responses.GET,
+        'https://api.github.com/repos/o/r/issues/1/comments',
+        json=[],
+        status=200,
+    )
+    responses.add(
+        responses.POST,
+        'https://api.github.com/repos/o/r/issues/1/comments',
+        json={'html_url': 'u', 'id': 2},
+        status=201,
+    )
+    data = {'task': 'T', 'agent_id': 'A', 'files': ['f.py'], 'started': 's', 'finished': 'e'}
+    url = il.post_worklog_comment('https://api.github.com/repos/o/r/issues/1', data, token='t')
+    assert url == 'u'
+    assert '<!-- codex-log -->' in responses.calls[1].request.body.decode()
+
+
+@responses.activate
+def test_post_worklog_update(monkeypatch):
+    responses.add(
+        responses.GET,
+        'https://api.github.com/repos/o/r/issues/1/comments',
+        json=[{'id': 9, 'body': '<!-- codex-log --> old'}],
+        status=200,
+    )
+    responses.add(
+        responses.PATCH,
+        'https://api.github.com/repos/o/r/issues/comments/9',
+        json={'html_url': 'u'},
+        status=200,
+    )
+    data = {'task': 'T', 'agent_id': 'A'}
+    url = il.post_worklog_comment('https://api.github.com/repos/o/r/issues/1', data, token='t')
+    assert url == 'u'
+    assert responses.calls[1].request.method == 'PATCH'
+
+
+def test_post_worklog_fallback(monkeypatch, tmp_path):
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.delenv('GITHUB_TOKEN', raising=False)
+    monkeypatch.delenv('GITHUB_TOKEN_ISSUES', raising=False)
+    data = {'task': 'T'}
+    with pytest.raises(il.APIError):
+        il.post_worklog_comment('https://api.github.com/repos/o/r/issues/1', data)
+    pending = tmp_path / 'state' / 'worklog_pending.json'
+    assert pending.exists()
