@@ -123,13 +123,10 @@ async def issue(payload: IssueBody) -> Any:
 
     def _run() -> Any:
         if payload.issue_number is not None:
-            return issue_logger.post_comment(
-                payload.repo, payload.issue_number, payload.body, token=token
-            )
+            issue_url = f"https://api.github.com/repos/{payload.repo}/issues/{payload.issue_number}"
+            return issue_logger.post_comment(issue_url, payload.body, token=token)
         if not payload.title:
             raise HTTPException(status_code=400, detail="title required")
-        return issue_logger.create_issue(
-            payload.repo, payload.title, payload.body, token=token
-        )
+        return issue_logger.create_issue(payload.title, payload.body, payload.repo, token=token)
 
     return await run_in_threadpool(_run)

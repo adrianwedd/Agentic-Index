@@ -37,11 +37,12 @@ def issue_endpoint(payload: IssueRequest):
         if payload.type == "issue":
             if not payload.title:
                 raise HTTPException(status_code=400, detail="title required for new issue")
-            data = create_issue(payload.repo, payload.title, payload.body, token=token)
+            url = create_issue(payload.title, payload.body, payload.repo, token=token)
         else:
             if payload.issue_number is None:
                 raise HTTPException(status_code=400, detail="issue_number required for comment")
-            data = post_comment(payload.repo, payload.issue_number, payload.body, token=token)
+            issue_url = f"https://api.github.com/repos/{payload.repo}/issues/{payload.issue_number}"
+            url = post_comment(issue_url, payload.body, token=token)
     except APIError as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
-    return {"url": data.get("html_url", "")}
+    return {"url": url}

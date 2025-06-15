@@ -29,6 +29,8 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List
 
+from agentic_index_cli import issue_logger
+
 import yaml
 
 # Regex to extract fenced code blocks labelled "codex-task"
@@ -98,6 +100,16 @@ def write_summary(summary: str) -> None:
             fh.write(summary + "\n")
 
 
+def run_url() -> str:
+    """Return GitHub Actions run URL if available."""
+    server = os.getenv("GITHUB_SERVER_URL")
+    repo = os.getenv("GITHUB_REPOSITORY")
+    run_id = os.getenv("GITHUB_RUN_ID")
+    if server and repo and run_id:
+        return f"{server}/{repo}/actions/runs/{run_id}"
+    return ""
+
+
 def main(argv: List[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Process Codex tasks")
     parser.add_argument("--file", default="codex_tasks.md", help="Tasks markdown file")
@@ -126,7 +138,22 @@ def main(argv: List[str] | None = None) -> int:
         for t in tasks:
             output_lines.append(f"{t.get('id')}: {t.get('title', '')}")
     else:
+        run = run_url()
         for t in tasks:
+            if t.get("create_issue"):
+                repo = t.get("repo")
+                if not repo:
+                    logging.error("create_issue set but repo missing for %s", t.get("id"))
+                else:
+                    body = (t.get("body") or "") + f"\n\nTask ID: {t.get('id')}"
+                    if run:
+                        body += f"\nRun: {run}"
+                    labels = t.get("labels") or []
+                    try:
+                        url = issue_logger.create_issue(t.get("title", ""), body, repo, labels=labels)
+                        logging.info("Created issue %s", url)
+                    except issue_logger.APIError as exc:
+                        logging.error("Failed to create issue for %s: %s", t.get("id"), exc)
             output_lines.append(format_task(t))
             output_lines.append("")
 

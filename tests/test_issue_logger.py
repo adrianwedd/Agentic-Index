@@ -14,13 +14,13 @@ def test_token_fallback(monkeypatch):
 def test_cli_create_issue(monkeypatch):
     called = {}
 
-    def fake_create(repo, title, body):
-        called['args'] = (repo, title, body)
-        return {'html_url': 'x'}
+    def fake_create(title, body, repo):
+        called['args'] = (title, body, repo)
+        return 'x'
 
     monkeypatch.setattr(il, 'create_issue', fake_create)
     il.main(['--new-issue', '--repo', 'o/r', '--title', 't', '--body', 'b'])
-    assert called['args'] == ('o/r', 't', 'b')
+    assert called['args'] == ('t', 'b', 'o/r')
 
 
 @responses.activate
@@ -32,4 +32,4 @@ def test_post_comment_error(monkeypatch):
         status=401,
     )
     with pytest.raises(il.APIError):
-        il.post_comment('o/r', 1, 'msg', token='bad')
+        il.post_comment('https://api.github.com/repos/o/r/issues/1', 'msg', token='bad')
