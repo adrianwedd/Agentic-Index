@@ -1,15 +1,16 @@
+from __future__ import annotations
+
 from fastapi import FastAPI, Response
 from typing import List
 
 """Minimal API server with optional auth."""
-
-from __future__ import annotations
 
 import os
 from pathlib import Path
 from typing import Any, Optional
 
 from pydantic import BaseModel
+import json
 
 from fastapi import FastAPI, Response, HTTPException, Request
 from fastapi.concurrency import run_in_threadpool
@@ -24,6 +25,22 @@ _whitelist = os.getenv("IP_WHITELIST", "")
 IP_WHITELIST = {ip.strip() for ip in _whitelist.split(",") if ip.strip()}
 
 PROTECTED_PATHS = {"/sync", "/score", "/render", "/issue"}
+
+SYNC_DATA_PATH = Path("state/sync_data.json")
+
+
+def _load_sync_data() -> List[dict[str, Any]]:
+    """Return list of repos from :data:`SYNC_DATA_PATH`."""
+    try:
+        with SYNC_DATA_PATH.open() as fh:
+            data = json.load(fh)
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=400, detail="sync data missing") from exc
+    except json.JSONDecodeError as exc:
+        raise HTTPException(status_code=400, detail="invalid sync data") from exc
+    if not isinstance(data, list) or not all(isinstance(r, dict) for r in data):
+        raise HTTPException(status_code=400, detail="invalid sync data")
+    return data
 
 app = FastAPI()
 
@@ -53,8 +70,14 @@ def healthz() -> Response:
 
 @app.post("/score")
 def score() -> dict:
-    """Return placeholder scores list."""
-    return {"top_scores": ["example/repo"]}
+    """Return list of repo names from ``state/sync_data.json``."""
+    repos = _load_sync_data()
+    names: List[str] = []
+    for r in repos:
+        name = r.get("full_name") or r.get("name")
+        if name:
+            names.append(name)
+    return {"top_scores": names}
 
 @app.post("/sync")
 async def sync(min_stars: int = 0) -> dict[str, Any]:
