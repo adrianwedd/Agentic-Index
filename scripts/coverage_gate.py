@@ -1,7 +1,7 @@
 import sys
 import xml.etree.ElementTree as ET
 
-THRESHOLD = 49  # will auto-bump after next coverage uplift
+THRESHOLD = 80  # updated threshold for core logic tests
 
 
 def main(path: str = "coverage.xml") -> int:

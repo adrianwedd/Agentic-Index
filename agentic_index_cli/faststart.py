@@ -1,7 +1,7 @@
-import argparse
-import json
-from pathlib import Path
+"""Generate a FAST_START list of top repositories."""
 
+import argparse
+from pathlib import Path
 
 HEADER = (
     "| Rank | Repo (Click to Visit) | ★ Stars | Last Commit | Score | Category | One-Liner |\n"
@@ -10,12 +10,14 @@ HEADER = (
 
 
 def format_stars(stars: int) -> str:
+    """Return ``stars`` compacted for table display."""
     if stars >= 1000:
         return f"{stars/1000:.1f}k"
     return str(stars)
 
 
 def generate_table(repos):
+    """Return markdown table rows for ``repos``."""
     lines = [HEADER]
     for idx, repo in enumerate(repos, 1):
         repo_link = f"[{repo['full_name']}](https://github.com/{repo['full_name']})"
@@ -28,9 +30,12 @@ def generate_table(repos):
     return "\n".join(lines) + "\n"
 
 
+from .validate import load_repos
+
+
 def run(top: int, data_path: Path, output_path: Path | None = None) -> None:
-    with data_path.open() as f:
-        repos = json.load(f)
+    """Write a FAST_START table for the highest scored repos."""
+    repos = load_repos(data_path)
 
     filtered = [
         r for r in repos
@@ -49,6 +54,7 @@ def run(top: int, data_path: Path, output_path: Path | None = None) -> None:
 
 
 def main(argv=None):
+    """CLI wrapper for :func:`run`."""
     parser = argparse.ArgumentParser(description="Generate Fast Start table")
     parser.add_argument("--top", type=int, required=True, help="number of repos")
     parser.add_argument("data_path", help="path to repos.json")

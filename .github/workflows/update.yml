@@ -41,6 +41,8 @@ jobs:
         run: python -m agentic_index_cli.scraper --min-stars $MIN_STARS
       - name: Enrich factors
         run: python -m agentic_index_cli.enricher data/repos.json
+      - name: Validate data
+        run: python -m agentic_index_cli.validate data/repos.json
       - name: Rank repositories
         run: python -m agentic_index_cli.ranker data/repos.json
       - name: Run tests
@@ -54,7 +56,7 @@ jobs:
           if [ "${{ inputs.force-inject }}" = "true" ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           elif git diff --quiet --exit-code \
-                data/top50.md data/repos.json README.md; then
+                data/top100.md data/repos.json README.md; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"

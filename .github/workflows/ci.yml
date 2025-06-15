@@ -10,17 +10,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Clean snapshot
+        run: rm -f data/last_snapshot.json
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Install package
-        run: pip install -e .
+        run: pip install -e '.[dev]'
+      - name: Verify import
+        run: python -c "import agentic_index_cli"
       - name: README sync check
+        id: readme
         run: python scripts/inject_readme.py --check
+        continue-on-error: true
+      - name: Update README on drift
+        if: steps.readme.outcome == 'failure'
+        run: python scripts/inject_readme.py --write
+      - name: Auto-PR for README drift
+        if: steps.readme.outcome == 'failure'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "docs: sync README"
+          branch: readme-sync-${{ github.run_id }}
+          base: ${{ github.ref_name }}
+          title: "docs: sync README"
+          body: "Automated README table update"
+          delete-branch: true
       - name: Run regression guard
-        run: python scripts/regression_check.py
+        run: python scripts/regression_check.py --allowlist regression_allowlist.yml
       - name: Run tests with coverage
         run: pytest --cov=agentic_index_cli --cov-report=xml
         env:
@@ -29,6 +48,23 @@ jobs:
         run: python scripts/coverage_gate.py coverage.xml
         env:
           PYTHONHASHSEED: 0
+      - name: Coverage badge check
+        id: covbadge
+        run: python scripts/update_coverage_badge.py --check
+        continue-on-error: true
+      - name: Update coverage badge
+        if: steps.covbadge.outcome == 'failure'
+        run: python scripts/update_coverage_badge.py --write
+      - name: Auto-PR for coverage badge
+        if: steps.covbadge.outcome == 'failure'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "docs: update coverage badge"
+          branch: coverage-badge-${{ github.run_id }}
+          base: ${{ github.ref_name }}
+          title: "docs: update coverage badge"
+          body: "Automated coverage badge update"
+          delete-branch: true
       - name: Verify internal links
         run: python scripts/link_integrity.py
 
@@ -43,7 +79,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Install package
-        run: pip install -e .
+        run: pip install -e '.[dev]'
+      - name: Verify import
+        run: python -c "import agentic_index_cli"
       - name: Install pre-commit
         run: |
           pip install -i https://pypi.org/simple \
@@ -54,6 +92,9 @@ jobs:
           pip install pytest-socket
           pytest --disable-socket -q 2>&1 | tee pytest.log
           python scripts/network_guard.py pytest.log
+      - uses: pre-commit/action@v3.0.1
+        with:
+          extra_args: detect-large-files
 
   check_critical_tasks:
     name: Check for Outstanding Critical Review Tasks

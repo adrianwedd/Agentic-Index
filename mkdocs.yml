@@ -11,7 +11,8 @@ nav:
       - CI Audit Report: ci-audit.md
       - Conflict Resolution: CONFLICT_RESOLUTION.md
       - Coverage Baseline: coverage_baseline.md
-  - Methodology: METHODOLOGY.md
+      - Development Setup: DEVELOPMENT.md
+  - Methodology: methodology.md
   - CLI Usage: cli.md
   - API Reference:
       - agentic_index_cli: reference/agentic_index_cli.md

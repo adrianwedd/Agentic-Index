@@ -1,3 +1,25 @@
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-index"
+version = "0.1.0"
+description = "CLI for Agentic Index"
+requires-python = ">=3.8"
+dependencies = [
+    "requests",
+    "PyYAML",
+    "jsonschema>=3.2",
+    "pydantic>=2",
+]
+
+[project.scripts]
+agentic-index = "agentic_index_cli.__main__:main"
+
+[project.optional-dependencies]
+docs = ["sphinx", "pydantic"]
+dev = ["fastapi", "httpx"]
+
+[tool.coverage.report]
+fail_under = 70  # temporary threshold, will be raised after snapshot tolerance rollout

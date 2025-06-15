@@ -1,0 +1,14 @@
+name-template: "v$NEXT_PATCH_VERSION"
+tag-template: "v$NEXT_PATCH_VERSION"
+categories:
+  - title: "✨ Features"
+    labels: ["feature", "enhancement"]
+  - title: "🐛 Fixes"
+    labels: ["bug", "fix"]
+  - title: "🏗 CI"
+    labels: ["ci"]
+  - title: "📚 Docs"
+    labels: ["docs"]
+change-template: "- $TITLE by @$AUTHOR in #$NUMBER"
+include-labels: []
+exclude-labels: ["skip-changelog"]

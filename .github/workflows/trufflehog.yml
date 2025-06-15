@@ -1,0 +1,29 @@
+name: TruffleHog Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Secret scan with TruffleHog
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: .
+          base: ${{ github.event.before }}
+          head: ${{ github.sha }}
+          scanArguments: --format json --output trufflehog-results.json
+      - name: Upload TruffleHog results
+        if: ${{ always() && hashFiles('trufflehog-results.json') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: trufflehog-results
+          path: trufflehog-results.json

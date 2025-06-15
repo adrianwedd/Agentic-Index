@@ -9,8 +9,11 @@ To propose additions or changes:
 1. Fork the repo and create your branch.
 1. Make your changes with clear commits.
 1. Open a pull request describing what you changed.
+1. Tag your PR with `feature`, `enhancement`, `bug`, `fix`, `ci`, or `docs` so it appears in the release notes.
 
 We welcome fixes to data, new repo suggestions, and other improvements.
+
+Refer to [SCHEMA.md](./docs/SCHEMA.md) for details on metric fields used in `repos.json`.
 
 Before opening a pull request, ensure the README table is up to date:
 
@@ -23,6 +26,53 @@ To run the scraping and ranking tools locally, install the CLI:
 ```bash
 pip install agentic-index-cli
 ```
+
+### Architecture
+
+```
++---------+      +--------+      +----------+      +----------+
+| Scraper | ---> | Cache  | ---> | Injector | ---> | Pull Req |
++---------+      +--------+      +----------+      +----------+
+```
+Additional dependency diagrams live in `docs/architecture`. Generate them with
+`python scripts/gen_arch_diagrams.py` to explore how modules interact.
+
+## Development environment
+
+Set up Python 3.11 and install dependencies:
+
+```bash
+pip install -r requirements.txt
+pip install -e .
+pip install pre-commit
+pre-commit install
+```
+
+Run the full test suite before pushing changes:
+
+```bash
+pytest -q
+```
+To view an HTML coverage report, run:
+```bash
+coverage html -d cov_html && open cov_html/index.html
+```
+
+### Test and workflow quickstart
+
+```bash
+pip install -r requirements.txt
+pytest -q
+python scripts/inject_readme.py
+```
+
+## Adding a New Metric
+
+Touch files under `score/*.py`, update `scripts/inject_readme.py` and document your column in `README.md`. Include tests covering the metric and regenerate snapshots with the injector.
+New metrics should maintain overall test coverage (see badges) and update any affected snapshots.
+
+
+
 
 ## Working on Launch Readiness Review Issues
 

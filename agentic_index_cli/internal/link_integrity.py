@@ -1,5 +1,6 @@
-"""Check README and docs for broken internal links and badges."""
+"""Check Markdown links and badges for correctness."""
 from __future__ import annotations
+
 import re
 import sys
 from pathlib import Path
@@ -14,6 +15,7 @@ HTML_IMG_RE = re.compile(r'<img\s+[^>]*src="([^"]+)"')
 
 
 def slug(text: str) -> str:
+    """Return GitHub-style slug for ``text``."""
     s = re.sub(r'[\s]+', '-', re.sub(r'[^\x00-\x7F]+', '', text))
     s = re.sub(r'[^a-zA-Z0-9\- ]', '', s)
     s = s.replace(' ', '-')
@@ -21,6 +23,7 @@ def slug(text: str) -> str:
 
 
 def extract_headings(lines: Iterable[str]) -> set[str]:
+    """Return anchor IDs from markdown ``lines``."""
     anchors = set()
     for line in lines:
         m = HEAD_RE.match(line)
@@ -30,6 +33,7 @@ def extract_headings(lines: Iterable[str]) -> set[str]:
 
 
 def check_file(path: Path, headings: set[str], failures: list[str]) -> None:
+    """Validate links within ``path`` against ``headings``."""
     text = path.read_text(encoding="utf-8")
     for lineno, line in enumerate(text.splitlines(), 1):
         for anchor in ANCHOR_RE.findall(line):
@@ -45,6 +49,7 @@ def check_file(path: Path, headings: set[str], failures: list[str]) -> None:
 
 
 def http_ok(url: str) -> bool:
+    """Return ``True`` if ``url`` responds with status 200."""
     for _ in range(2):
         try:
             resp = requests.get(url, timeout=3)
@@ -56,6 +61,7 @@ def http_ok(url: str) -> bool:
 
 
 def main(paths: Iterable[str] | None = None) -> int:
+    """CLI entry for link and badge checks."""
     if paths is None:
         paths = ["README.md"] + [str(p) for p in Path("docs").glob("*.md")]
     failures: list[str] = []

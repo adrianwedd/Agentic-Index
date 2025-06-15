@@ -18,10 +18,10 @@ def test_enrich_schema(tmp_path):
         "owner": {"login": "owner"},
     }]
     path = tmp_path / "repos.json"
-    path.write_text(json.dumps(sample))
+    path.write_text(json.dumps({"schema_version": 1, "repos": sample}))
     subprocess.run(["python", "-m", "agentic_index_cli.enricher", str(path)], check=True)
     data = json.loads(path.read_text())
-    repo = data[0]
+    repo = data["repos"][0]
     for key in [
         "stars_log2",
         "recency_factor",

@@ -1,15 +1,24 @@
+# Python cache and build artefacts
 __pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
 .hypothesis/
 .coverage
+
+# Node packages
+node_modules/
 
 # Ignore generated trend plots
 /docs/trends/*.png
 # Ignore runtime JSON outputs
 repos.json
-
-__pycache__/
-*.pyc
-.pytest_cache/
-node_modules/
-agentic_index.egg-info/
-
+!tests/fixtures/data/repos.json
+!tests/fixtures/data/top100.md
+!tests/fixtures/data/last_snapshot.json
+!tests/fixtures/README_fixture.md
+!data/last_snapshot.json
+/docs/sphinx/_build/

@@ -29,3 +29,14 @@ For `update.yml` to refresh the data automatically, GitHub Actions must be allow
 2. Comment `/rebase` on the PR.
 3. The bot opens a draft PR named `<original>-rebased` for review.
 
+## Regression guard exceptions
+
+If a forbidden word appears legitimately (for example in a snapshot or test),
+add a regex to `regression_allowlist.yml`. You can try a pattern locally with:
+
+```bash
+python scripts/regression_check.py --add-allow "<regex>"
+```
+
+Commit the updated allowlist so future runs pass.
+

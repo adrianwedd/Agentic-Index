@@ -1,5 +1,6 @@
+"""Utilities for pruning stale repository data."""
+
 import argparse
-import json
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -7,18 +8,21 @@ CHANGELOG = Path("CHANGELOG.md")
 REPOS = Path("repos.json")
 
 
+from .validate import load_repos as _load, save_repos as _save
+
+
 def load_repos(path: Path = REPOS):
-    with open(path) as f:
-        return json.load(f)
+    """Return repository data from ``path``."""
+    return _load(path)
 
 
 def save_repos(repos, path: Path = REPOS):
-    with open(path, "w") as f:
-        json.dump(repos, f, indent=2)
-        f.write("\n")
+    """Write ``repos`` to ``path``."""
+    _save(path, repos)
 
 
 def append_changelog(entries, changelog: Path = CHANGELOG):
+    """Append changelog ``entries`` to ``changelog`` file."""
     if not entries:
         return
     if changelog.exists():
@@ -31,6 +35,7 @@ def append_changelog(entries, changelog: Path = CHANGELOG):
 
 
 def prune(inactive_days, repos_path: Path = REPOS, changelog_path: Path = CHANGELOG):
+    """Remove repos inactive for ``inactive_days`` days."""
     repos = load_repos(repos_path)
     keep = []
     removed_entries = []
@@ -51,6 +56,7 @@ def prune(inactive_days, repos_path: Path = REPOS, changelog_path: Path = CHANGE
 
 
 def main(argv=None):
+    """CLI wrapper for :func:`prune`."""
     parser = argparse.ArgumentParser(description='Prune inactive repositories')
     parser.add_argument('--inactive', type=int, required=True, help='Days since last push')
     parser.add_argument('--repos-path', type=Path, default=REPOS)

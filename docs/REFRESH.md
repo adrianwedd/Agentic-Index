@@ -8,7 +8,7 @@ This page explains how the automatic refresh of `repos.json` and the ranking tab
 4. **Webhook** – After merging, a webhook notifies any downstream services that new data is available.
 
 The workflow creates a refresh pull request only when any of
-`data/top50.md`, `data/repos.json`, or `README.md` change during the run.
+`data/top100.md`, `data/repos.json`, or `README.md` change during the run.
 If nothing changes, the job ends without opening a PR.
 
 See [`trigger_refresh.sh`](https://github.com/adrianwedd/Agentic-Index/blob/main/scripts/trigger_refresh.sh) for the command-line helper.

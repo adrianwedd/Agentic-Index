@@ -91,7 +91,7 @@ def quality_gate():
     try:
         run(["pre-commit", "run", "--all-files"])
         run(["pytest", "-q"])
-        run([sys.executable, "scripts/validate_top50.py"])
+        run([sys.executable, "scripts/validate_top100.py"])
         return True
     except subprocess.CalledProcessError:
         return False

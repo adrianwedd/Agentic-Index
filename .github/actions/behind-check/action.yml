@@ -2,14 +2,8 @@ name: behind-check
 runs:
   using: composite
   steps:
-    - run: git fetch --depth=0 origin "$GITHUB_HEAD_REF" "main"
-    - id: compare
-      run: |
-        behind=$(git rev-list --left-right --count origin/$GITHUB_HEAD_REF...origin/main | awk '{print $2}')
-        echo "behind=$behind" >> "$GITHUB_OUTPUT"
-    - run: |
-        if [ "${{ steps.compare.outputs.behind }}" -gt 0 ]; then
-          echo "Branch is behind main by ${{ steps.compare.outputs.behind }} commits" >&2
-          exit 1
-        fi
+    - shell: bash
+      run: echo "Checking branch status…"
+    - name: Run branch-behind check
       shell: bash
+      run: ./scripts/behind_check.sh

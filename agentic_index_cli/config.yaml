@@ -1,0 +1,6 @@
+ranking:
+  delta_days: 7
+  top_n: 100
+  min_stars: 0
+output:
+  markdown_table_limit: 100
