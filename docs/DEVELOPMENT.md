@@ -70,3 +70,23 @@ python -m agentic_index_cli.issue_logger \
 
 The tool reads a token from `GITHUB_TOKEN` or falls back to
 `GITHUB_TOKEN_ISSUES`.
+
+#### Examples
+
+Create an issue and assign a user:
+
+```bash
+python -m agentic_index_cli.issue_logger \
+  --repo owner/repo --new-issue --title "Bug" \
+  --body "Details" --assign your-user
+```
+
+Update the body of issue #5:
+
+```bash
+python -m agentic_index_cli.issue_logger --update \
+  --repo owner/repo --issue-number 5 --body "Updated text"
+```
+
+Pass `--debug` to print API calls or `--dry-run` to simulate without creating
+anything.

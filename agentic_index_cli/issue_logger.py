@@ -6,9 +6,31 @@ import argparse
 import json
 import os
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 import requests
+
+
+def _request(
+    method: str,
+    url: str,
+    *,
+    token: Optional[str],
+    json: Optional[Dict[str, Any]] = None,
+    debug: bool = False,
+) -> requests.Response:
+    """Perform a GitHub API request with standard headers."""
+    headers = _headers(token)
+    if debug:
+        print(f"{method} {url}")
+        if json:
+            print(json)
+    try:
+        resp = requests.request(method, url, json=json, headers=headers, timeout=10)
+    except Exception as exc:  # pragma: no cover - network issues
+        raise APIError(str(exc)) from exc
+    return resp
+
 
 from .exceptions import APIError
 
@@ -44,15 +66,55 @@ def create_issue(
     payload: Dict[str, Any] = {"title": title, "body": body}
     if labels:
         payload["labels"] = labels
-    resp = requests.post(
-        f"{API_URL}/repos/{repo}/issues",
+    resp = _request("POST", f"{API_URL}/repos/{repo}/issues", token=token, json=payload)
+    if resp.status_code >= 400:
+        raise APIError(f"{resp.status_code} {resp.text}")
+    return resp.json().get("html_url", "")
+
+
+def update_issue(
+    issue_url: str,
+    *,
+    body: str | None = None,
+    state: str | None = None,
+    assignees: List[str] | None = None,
+    milestone: int | None = None,
+    token: str | None = None,
+    debug: bool = False,
+) -> str:
+    """Update fields on an existing issue."""
+    token = token or get_token()
+    if not token:
+        raise APIError(
+            "Missing GITHUB_TOKEN. Set GITHUB_TOKEN or GITHUB_TOKEN_ISSUES to enable issue logging."
+        )
+    repo, issue_number = _parse_issue_url(issue_url)
+    payload: Dict[str, Any] = {}
+    if body is not None:
+        payload["body"] = body
+    if state is not None:
+        payload["state"] = state
+    if assignees is not None:
+        payload["assignees"] = assignees
+    if milestone is not None:
+        payload["milestone"] = milestone
+    resp = _request(
+        "PATCH",
+        f"{API_URL}/repos/{repo}/issues/{issue_number}",
+        token=token,
         json=payload,
-        headers=_headers(token),
-        timeout=10,
+        debug=debug,
     )
     if resp.status_code >= 400:
         raise APIError(f"{resp.status_code} {resp.text}")
     return resp.json().get("html_url", "")
+
+
+def close_issue(
+    issue_url: str, *, token: str | None = None, debug: bool = False
+) -> str:
+    """Close ``issue_url``."""
+    return update_issue(issue_url, state="closed", token=token, debug=debug)
 
 
 def _parse_issue_url(issue_url: str) -> tuple[str, int]:
@@ -95,11 +157,11 @@ def post_comment(issue_url: str, body: str, *, token: str | None = None) -> str:
             "Missing GITHUB_TOKEN. Set GITHUB_TOKEN or GITHUB_TOKEN_ISSUES to enable issue logging."
         )
     repo, issue_number = _parse_issue_url(issue_url)
-    resp = requests.post(
+    resp = _request(
+        "POST",
         f"{API_URL}/repos/{repo}/issues/{issue_number}/comments",
+        token=token,
         json={"body": body},
-        headers=_headers(token),
-        timeout=10,
     )
     if resp.status_code >= 400:
         raise APIError(f"{resp.status_code} {resp.text}")
@@ -190,11 +252,16 @@ def main(argv: list[str] | None = None) -> None:
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--new-issue", action="store_true", help="create a new issue")
     mode.add_argument("--comment", action="store_true", help="comment on an issue")
+    mode.add_argument("--update", action="store_true", help="update issue fields")
+    mode.add_argument("--close", action="store_true", help="close an issue")
     parser.add_argument("--repo", required=True, help="owner/repo")
     parser.add_argument("--title")
     parser.add_argument("--body", default="")
     parser.add_argument("--issue-number", type=int)
+    parser.add_argument("--assign", action="append", default=[])
+    parser.add_argument("--milestone", type=int)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--debug", action="store_true")
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args(argv)
 
@@ -208,27 +275,43 @@ def main(argv: list[str] | None = None) -> None:
         url = create_issue(args.title, args.body, args.repo)
         if args.verbose:
             print(url)
-    else:
-        if args.issue_number is None:
-            parser.error("--issue-number required for --comment")
-        if args.dry_run:
-            if args.verbose:
-                print(
-                    f"DRY RUN: would comment on issue {args.issue_number} in {args.repo}"
-                )
-            return
-        issue_url = (
-            f"https://api.github.com/repos/{args.repo}/issues/{args.issue_number}"
-        )
-        url = post_comment(issue_url, args.body)
+        return
+
+    if args.issue_number is None:
+        parser.error("--issue-number required")
+
+    issue_url = f"https://api.github.com/repos/{args.repo}/issues/{args.issue_number}"
+
+    if args.dry_run:
         if args.verbose:
-            print(url)
+            action = "comment" if args.comment else "update"
+            if args.close:
+                action = "close"
+            print(f"DRY RUN: would {action} issue {args.issue_number} in {args.repo}")
+        return
+
+    if args.comment:
+        url = post_comment(issue_url, args.body)
+    elif args.close:
+        url = close_issue(issue_url, debug=args.debug)
+    else:
+        url = update_issue(
+            issue_url,
+            body=args.body if args.update else None,
+            assignees=args.assign or None,
+            milestone=args.milestone,
+            debug=args.debug,
+        )
+    if args.verbose:
+        print(url)
 
 
 AGENT_ACTIONS = {
     "create_issue": create_issue,
     "post_comment": post_comment,
     "post_worklog_comment": post_worklog_comment,
+    "update_issue": update_issue,
+    "close_issue": close_issue,
 }
 
 

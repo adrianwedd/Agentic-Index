@@ -95,3 +95,47 @@ def test_post_worklog_fallback(monkeypatch, tmp_path):
         il.post_worklog_comment("https://api.github.com/repos/o/r/issues/1", data)
     pending = tmp_path / "state" / "worklog_pending.json"
     assert pending.exists()
+
+
+@responses.activate
+def test_update_issue(monkeypatch):
+    responses.add(
+        responses.PATCH,
+        "https://api.github.com/repos/o/r/issues/1",
+        json={"html_url": "u"},
+        status=200,
+    )
+    url = il.update_issue(
+        "https://api.github.com/repos/o/r/issues/1",
+        body="b",
+        assignees=["a"],
+        token="t",
+    )
+    assert url == "u"
+    body = responses.calls[0].request.body.decode()
+    assert "assignees" in body
+
+
+def test_cli_update(monkeypatch):
+    called = {}
+
+    def fake_update(issue_url, **kw):
+        called.update({"url": issue_url, **kw})
+        return "u"
+
+    monkeypatch.setattr(il, "update_issue", fake_update)
+    il.main(
+        [
+            "--update",
+            "--repo",
+            "o/r",
+            "--issue-number",
+            "1",
+            "--body",
+            "b",
+            "--assign",
+            "a",
+        ]
+    )
+    assert called["url"].endswith("issues/1")
+    assert called["body"] == "b"
