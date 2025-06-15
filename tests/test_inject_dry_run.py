@@ -8,9 +8,9 @@ import pytest
 # ensure project root is on the path
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-from helpers import assert_readme_equivalent
-
 import agentic_index_cli.internal.inject_readme as inj
+
+from .helpers import assert_readme_equivalent
 
 FIXTURE_DIR = Path(__file__).resolve().parent / "fixtures"
 README_SNAP = FIXTURE_DIR / "README_fixture.md"

@@ -4,7 +4,7 @@ from pathlib import Path
 # ensure project root is on the path
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-from helpers import _parse_table, assert_readme_equivalent
+from .helpers import _parse_table, assert_readme_equivalent
 
 
 def test_parse_table_strips_abbr():

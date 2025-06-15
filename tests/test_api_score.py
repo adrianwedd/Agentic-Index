@@ -3,7 +3,8 @@ import json
 from fastapi.testclient import TestClient
 
 from agentic_index_cli.internal.rank import compute_score
-from tests.test_api_auth import load_app
+
+from .test_api_auth import load_app
 
 
 def make_client(monkeypatch, tmp_path, data=None):
