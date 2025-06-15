@@ -33,7 +33,7 @@ jobs:
         run: python scripts/inject_readme.py --write
       - name: Auto-PR for README drift
         if: steps.readme.outcome == 'failure'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "docs: sync README"
           branch: readme-sync-${{ github.run_id }}
