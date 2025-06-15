@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import argparse
 import os
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 import requests
 
@@ -25,23 +25,50 @@ def get_token() -> str | None:
     return os.getenv("GITHUB_TOKEN") or os.getenv("GITHUB_TOKEN_ISSUES")
 
 
-def create_issue(repo: str, title: str, body: str, *, token: str | None = None) -> Dict[str, Any]:
-    """Create a new issue on ``repo`` and return the JSON response."""
+def create_issue(
+    title: str, body: str, repo: str, labels: List[str] | None = None, *, token: str | None = None
+) -> str:
+    """Create a new issue and return the HTML URL."""
     token = token or get_token()
+    if not token:
+        raise APIError(
+            "Missing GITHUB_TOKEN. Set GITHUB_TOKEN or GITHUB_TOKEN_ISSUES to enable issue logging."
+        )
+    payload: Dict[str, Any] = {"title": title, "body": body}
+    if labels:
+        payload["labels"] = labels
     resp = requests.post(
         f"{API_URL}/repos/{repo}/issues",
-        json={"title": title, "body": body},
+        json=payload,
         headers=_headers(token),
         timeout=10,
     )
     if resp.status_code >= 400:
         raise APIError(f"{resp.status_code} {resp.text}")
-    return resp.json()
+    return resp.json().get("html_url", "")
 
 
-def post_comment(repo: str, issue_number: int, body: str, *, token: str | None = None) -> Dict[str, Any]:
-    """Post a comment to an existing issue and return the JSON response."""
+def _parse_issue_url(issue_url: str) -> tuple[str, int]:
+    """Return ``repo`` and ``issue_number`` extracted from ``issue_url``."""
+    import re
+
+    api_match = re.search(r"repos/([^/]+/[^/]+)/issues/(\d+)", issue_url)
+    html_match = re.search(r"github.com/([^/]+/[^/]+)/issues/(\d+)", issue_url)
+    match = api_match or html_match
+    if not match:
+        raise ValueError(f"Invalid issue URL: {issue_url}")
+    repo, num = match.groups()
+    return repo, int(num)
+
+
+def post_comment(issue_url: str, body: str, *, token: str | None = None) -> str:
+    """Post a comment to ``issue_url`` and return the comment HTML URL."""
     token = token or get_token()
+    if not token:
+        raise APIError(
+            "Missing GITHUB_TOKEN. Set GITHUB_TOKEN or GITHUB_TOKEN_ISSUES to enable issue logging."
+        )
+    repo, issue_number = _parse_issue_url(issue_url)
     resp = requests.post(
         f"{API_URL}/repos/{repo}/issues/{issue_number}/comments",
         json={"body": body},
@@ -50,7 +77,7 @@ def post_comment(repo: str, issue_number: int, body: str, *, token: str | None =
     )
     if resp.status_code >= 400:
         raise APIError(f"{resp.status_code} {resp.text}")
-    return resp.json()
+    return resp.json().get("html_url", "")
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -74,9 +101,9 @@ def main(argv: list[str] | None = None) -> None:
             if args.verbose:
                 print(f"DRY RUN: would create issue in {args.repo}")
             return
-        data = create_issue(args.repo, args.title, args.body)
+        url = create_issue(args.title, args.body, args.repo)
         if args.verbose:
-            print(data.get("html_url", ""))
+            print(url)
     else:
         if args.issue_number is None:
             parser.error("--issue-number required for --comment")
@@ -84,9 +111,16 @@ def main(argv: list[str] | None = None) -> None:
             if args.verbose:
                 print(f"DRY RUN: would comment on issue {args.issue_number} in {args.repo}")
             return
-        data = post_comment(args.repo, args.issue_number, args.body)
+        issue_url = f"https://api.github.com/repos/{args.repo}/issues/{args.issue_number}"
+        url = post_comment(issue_url, args.body)
         if args.verbose:
-            print(data.get("html_url", ""))
+            print(url)
+
+
+AGENT_ACTIONS = {
+    "create_issue": create_issue,
+    "post_comment": post_comment,
+}
 
 
 if __name__ == "__main__":
