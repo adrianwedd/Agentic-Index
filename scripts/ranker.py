@@ -1,3 +1,5 @@
+"""Generate a dummy ``repos.json`` file for testing."""
+
 import json
 
 # Placeholder script generating example repos.json

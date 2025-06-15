@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Synchronize README table with ranking results."""
+
 import sys
 from pathlib import Path
 
