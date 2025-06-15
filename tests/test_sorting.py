@@ -54,7 +54,7 @@ def _setup(tmp_path: Path):
 @pytest.mark.parametrize(
     "field,first",
     [
-        ("score", "B"),
+        ("overall", "B"),
         ("stars_7d", "A"),
         ("maintenance", "B"),
         ("last_release", "A"),
