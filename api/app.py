@@ -63,3 +63,4 @@ def render_endpoint(req: RenderRequest):
         "json_file": str(json_file) if json_file else None,
         "markdown": markdown,
     }
+

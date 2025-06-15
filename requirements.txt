@@ -10,8 +10,8 @@ pydantic>=2
 fastapi
 httpx
 matplotlib
-
 pydeps
 sphinx
 sphinx_rtd_theme
 uvicorn
+httpx
