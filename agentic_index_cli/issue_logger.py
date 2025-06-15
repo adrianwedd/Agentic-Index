@@ -254,10 +254,11 @@ def main(argv: list[str] | None = None) -> None:
     mode.add_argument("--comment", action="store_true", help="comment on an issue")
     mode.add_argument("--update", action="store_true", help="update issue fields")
     mode.add_argument("--close", action="store_true", help="close an issue")
-    parser.add_argument("--repo", required=True, help="owner/repo")
+    parser.add_argument("--repo", help="owner/repo")
     parser.add_argument("--title")
     parser.add_argument("--body", default="")
     parser.add_argument("--issue-number", type=int)
+    parser.add_argument("--issue-url")
     parser.add_argument("--assign", action="append", default=[])
     parser.add_argument("--milestone", type=int)
     parser.add_argument("--dry-run", action="store_true")
@@ -277,10 +278,20 @@ def main(argv: list[str] | None = None) -> None:
             print(url)
         return
 
-    if args.issue_number is None:
-        parser.error("--issue-number required")
+    if not args.issue_number and not args.issue_url:
+        parser.error("--issue-number or --issue-url required")
 
-    issue_url = f"https://api.github.com/repos/{args.repo}/issues/{args.issue_number}"
+    if args.issue_url:
+        repo, num = _parse_issue_or_pr_url(args.issue_url)
+        issue_url = f"https://api.github.com/repos/{repo}/issues/{num}"
+        if not args.repo:
+            args.repo = repo
+    else:
+        if not args.repo:
+            parser.error("--repo required")
+        issue_url = (
+            f"https://api.github.com/repos/{args.repo}/issues/{args.issue_number}"
+        )
 
     if args.dry_run:
         if args.verbose:
