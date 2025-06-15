@@ -1,10 +1,7 @@
-import sys
 from pathlib import Path
 from fastapi.testclient import TestClient
 
-sys.path.append(str(Path(__file__).resolve().parents[1]))
-
-from agentic_index_cli.api import app
+from api.app import app
 
 
 def test_render_endpoint(tmp_path, monkeypatch):

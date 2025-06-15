@@ -12,8 +12,6 @@ dependencies = [
     "PyYAML",
     "jsonschema>=3.2",
     "pydantic>=2",
-    "fastapi",
-    "httpx",
 ]
 
 [project.scripts]
@@ -21,6 +19,7 @@ agentic-index = "agentic_index_cli.__main__:main"
 
 [project.optional-dependencies]
 docs = ["sphinx", "pydantic"]
+dev = ["fastapi", "httpx"]
 
 [tool.coverage.report]
 fail_under = 70  # temporary threshold, will be raised after snapshot tolerance rollout
