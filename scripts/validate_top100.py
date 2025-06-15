@@ -1,3 +1,5 @@
+"""Verify README table matches ``data/top100.md``."""
+
 import sys
 from pathlib import Path
 
@@ -8,6 +10,7 @@ END = '<!-- TOP50:END -->'
 
 
 def main() -> int:
+    """Return exit code ``1`` if README table is out of sync."""
     readme = README.read_text(encoding='utf-8')
     try:
         s = readme.index(START) + len(START)

@@ -1,3 +1,5 @@
+"""Plot score trends across repository snapshots."""
+
 import json
 from pathlib import Path
 from datetime import datetime
@@ -5,6 +7,7 @@ import matplotlib.pyplot as plt
 
 
 def load_snapshots(history_dir: Path):
+    """Return parsed snapshot data and corresponding dates."""
     files = sorted(history_dir.glob('*.json'))
     dates = []
     snapshots = []
@@ -25,11 +28,16 @@ def load_snapshots(history_dir: Path):
 
 
 def build_timeseries(dates, snapshots):
+    """Return score series for the top repositories."""
     if not snapshots:
         return {}, []
     latest = snapshots[-1]
-    # assume list of dicts with keys 'name' and 'AgentOpsScore'
-    scores_latest = {item.get('name'): item.get('AgentOpsScore') for item in latest if isinstance(item, dict)}
+    # Latest snapshot defines which repos to plot
+    scores_latest = {
+        item.get('name'): item.get('AgentOpsScore')
+        for item in latest
+        if isinstance(item, dict)
+    }
     top5 = sorted(scores_latest.items(), key=lambda x: x[1] if x[1] is not None else -1, reverse=True)[:5]
     repos = [name for name, _ in top5]
     series = {name: [] for name in repos}
@@ -41,6 +49,7 @@ def build_timeseries(dates, snapshots):
 
 
 def plot(series, dates, output: Path):
+    """Render a line plot for ``series`` and save to ``output``."""
     if not series:
         print('No data to plot')
         return
@@ -56,9 +65,10 @@ def plot(series, dates, output: Path):
 
 
 def main():
+    """CLI wrapper for generating the trend graph."""
     history_dir = Path('data/history')
     dates, snapshots = load_snapshots(history_dir)
-    series, repos = build_timeseries(dates, snapshots)
+    series, _ = build_timeseries(dates, snapshots)
     plot(series, dates, Path('docs/trends/top5_scores.png'))
 
 

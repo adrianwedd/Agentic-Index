@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Utilities for loading CLI configuration from YAML files."""
+
 from pathlib import Path
 import yaml
 

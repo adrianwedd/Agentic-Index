@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Parse review notes and emit ``gh issue create`` commands."""
+
 import argparse
 import re
 from pathlib import Path
@@ -28,6 +30,7 @@ def extract_next_finding_or_heading_index(lines, start_index):
     return len(lines)
 
 def main():
+    """Convert review markdown findings into issue commands."""
     parser = argparse.ArgumentParser(description="Generate GitHub issue creation commands from a review Markdown file.")
     parser.add_argument("filepath", type=Path, help="Path to the review Markdown file.")
     args = parser.parse_args()

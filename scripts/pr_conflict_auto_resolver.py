@@ -1,3 +1,5 @@
+"""Automatically resolve merge conflicts in open PRs."""
+
 import json
 import os
 import subprocess
@@ -8,6 +10,7 @@ DRY_RUN = os.getenv("DRY_RUN") == "1"
 
 
 def run(cmd, **kwargs):
+    """Execute ``cmd`` showing command text."""
     print("+", " ".join(cmd))
     if DRY_RUN:
         return subprocess.CompletedProcess(cmd, 0, "", "")
@@ -15,6 +18,7 @@ def run(cmd, **kwargs):
 
 
 def run_capture(cmd):
+    """Run ``cmd`` and capture stdout."""
     print("+", " ".join(cmd))
     if DRY_RUN:
         return ""
@@ -22,6 +26,7 @@ def run_capture(cmd):
 
 
 def get_conflict_prs():
+    """Return PRs with merge conflicts on the default branch."""
     out = run_capture(
         [
             "gh",
@@ -34,23 +39,32 @@ def get_conflict_prs():
         ]
     )
     prs = json.loads(out)
-    return [p for p in prs if p["mergeable"] == "CONFLICTING" and not p["isCrossRepository"]]
+    # Filter to same-repo PRs that need conflict resolution
+    return [
+        p
+        for p in prs
+        if p["mergeable"] == "CONFLICTING" and not p["isCrossRepository"]
+    ]
 
 
 def checkout_pr(number):
+    """Fetch and check out the branch for PR ``number``."""
     run(["gh", "pr", "checkout", str(number)])
 
 
 def conflict_files():
+    """Return files with merge conflicts."""
     out = run_capture(["git", "diff", "--name-only", "--diff-filter=U"])
     return [f.strip() for f in out.splitlines() if f.strip()]
 
 
 def resolve_file(path):
+    """Resolve merge conflict for ``path`` using heuristics."""
     if path == "README.md":
         run(["git", "checkout", "--ours", path])
         run([sys.executable, "scripts/inject_readme.py", "README.md"])
     elif path.startswith("data/") and (path.endswith(".md") or path.endswith(".json")):
+        # Prefer incoming changes for generated repo data
         run(["git", "checkout", "--theirs", path])
         run([sys.executable, "scripts/rank.py", "data/repos.json"])
         run([sys.executable, "scripts/inject_readme.py", "README.md"])
@@ -60,6 +74,7 @@ def resolve_file(path):
 
 
 def continue_rebase():
+    """Continue rebasing, resolving conflicts as they appear."""
     while True:
         try:
             run(["git", "rebase", "--continue"])
@@ -73,6 +88,7 @@ def continue_rebase():
 
 
 def rebase_main():
+    """Attempt to rebase the PR branch onto main."""
     try:
         run(["git", "rebase", "origin/main"])
         return True
@@ -88,6 +104,7 @@ def rebase_main():
 
 
 def quality_gate():
+    """Run pre-commit hooks and tests after merging."""
     try:
         run(["pre-commit", "run", "--all-files"])
         run(["pytest", "-q"])
@@ -98,6 +115,7 @@ def quality_gate():
 
 
 def main():
+    """Process all conflicting PRs in the repository."""
     prs = get_conflict_prs()
     fixed = []
     failed = []

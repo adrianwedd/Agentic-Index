@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+"""Minimal FastAPI server for posting GitHub issues or comments."""
+
 import os
 from typing import Literal
 
@@ -18,6 +20,8 @@ app = FastAPI()
 
 
 class IssueRequest(BaseModel):
+    """Payload for creating issues or comments."""
+
     repo: str
     type: Literal["issue", "comment"]
     body: str
@@ -27,6 +31,7 @@ class IssueRequest(BaseModel):
 
 @app.post("/issue")
 def issue_endpoint(payload: IssueRequest):
+    """Handle issue creation or commenting requests."""
     token = get_issue_token()
     try:
         if payload.type == "issue":
