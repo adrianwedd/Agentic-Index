@@ -1,4 +1,5 @@
 from fastapi.testclient import TestClient
+
 import agentic_index_cli.api_server as api
 
 
@@ -12,10 +13,10 @@ def test_issue_comment(monkeypatch):
     called = {}
 
     def fake_comment(issue_url, body, *, token=None):
-        called['args'] = (issue_url, body, token)
-        return 'u'
+        called["args"] = (issue_url, body, token)
+        return "u"
 
-    monkeypatch.setattr(api, 'post_comment', fake_comment)
+    monkeypatch.setattr(api, "post_comment", fake_comment)
     client = TestClient(api.app)
     resp = client.post(
         "/issue",
@@ -28,7 +29,7 @@ def test_issue_comment(monkeypatch):
     )
     assert resp.status_code == 200
     assert resp.json() == {"url": "u"}
-    assert called['args'] == ('https://api.github.com/repos/o/r/issues/1', 'msg', None)
+    assert called["args"] == ("https://api.github.com/repos/o/r/issues/1", "msg", None)
 
 
 def test_issue_missing_field(monkeypatch):

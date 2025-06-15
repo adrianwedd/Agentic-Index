@@ -29,9 +29,9 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List
 
-from agentic_index_cli import issue_logger
-
 import yaml
+
+from agentic_index_cli import issue_logger
 
 # Regex to extract fenced code blocks labelled "codex-task"
 CODE_BLOCK_RE = re.compile(r"```codex-task\n(?P<code>.*?)\n```", re.DOTALL)
@@ -113,8 +113,12 @@ def run_url() -> str:
 def main(argv: List[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Process Codex tasks")
     parser.add_argument("--file", default="codex_tasks.md", help="Tasks markdown file")
-    parser.add_argument("--start-from", metavar="ID", help="Start processing from this task ID")
-    parser.add_argument("--summary-only", action="store_true", help="Only output IDs and titles")
+    parser.add_argument(
+        "--start-from", metavar="ID", help="Start processing from this task ID"
+    )
+    parser.add_argument(
+        "--summary-only", action="store_true", help="Only output IDs and titles"
+    )
     args = parser.parse_args(argv)
 
     path = Path(args.file)
@@ -127,7 +131,9 @@ def main(argv: List[str] | None = None) -> int:
     tasks = sort_tasks(parse_tasks(path))
     if args.start_from:
         try:
-            start_index = next(i for i, t in enumerate(tasks) if t.get("id") == args.start_from)
+            start_index = next(
+                i for i, t in enumerate(tasks) if t.get("id") == args.start_from
+            )
             tasks = tasks[start_index:]
         except StopIteration:
             logging.warning("start-from id %s not found", args.start_from)
@@ -143,17 +149,23 @@ def main(argv: List[str] | None = None) -> int:
             if t.get("create_issue"):
                 repo = t.get("repo")
                 if not repo:
-                    logging.error("create_issue set but repo missing for %s", t.get("id"))
+                    logging.error(
+                        "create_issue set but repo missing for %s", t.get("id")
+                    )
                 else:
                     body = (t.get("body") or "") + f"\n\nTask ID: {t.get('id')}"
                     if run:
                         body += f"\nRun: {run}"
                     labels = t.get("labels") or []
                     try:
-                        url = issue_logger.create_issue(t.get("title", ""), body, repo, labels=labels)
+                        url = issue_logger.create_issue(
+                            t.get("title", ""), body, repo, labels=labels
+                        )
                         logging.info("Created issue %s", url)
                     except issue_logger.APIError as exc:
-                        logging.error("Failed to create issue for %s: %s", t.get("id"), exc)
+                        logging.error(
+                            "Failed to create issue for %s: %s", t.get("id"), exc
+                        )
             output_lines.append(format_task(t))
             output_lines.append("")
 

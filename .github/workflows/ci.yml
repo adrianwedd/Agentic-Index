@@ -96,6 +96,26 @@ jobs:
         with:
           extra_args: detect-large-files
 
+  codex-sanity:
+    runs-on: ubuntu-latest
+    needs: [test, offline-lint]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify AGENTS.md exists
+        run: |
+          if [ ! -f AGENTS.md ]; then
+            echo "AGENTS.md not found!"
+            exit 1
+          fi
+      - name: Setup environment
+        run: bash scripts/agent-setup.sh
+      - name: Lint
+        run: black --check . && isort --check-only .
+      - name: Run tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: pytest -q
+
   check_critical_tasks:
     name: Check for Outstanding Critical Review Tasks
     runs-on: ubuntu-latest

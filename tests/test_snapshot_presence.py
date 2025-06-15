@@ -1,5 +1,6 @@
-from pathlib import Path
 import shutil
+from pathlib import Path
+
 import agentic_index_cli.internal.inject_readme as inj
 
 ROOT = Path(__file__).resolve().parents[1]

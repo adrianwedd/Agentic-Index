@@ -1,21 +1,19 @@
-import sys
+import re
 import shutil
+import sys
 from pathlib import Path
 
-import re
 import pytest
 
 # ensure project root is on the path
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-import agentic_index_cli.internal.inject_readme as inj
 from helpers import assert_readme_equivalent
+
+import agentic_index_cli.internal.inject_readme as inj
 
 FIXTURE_DIR = Path(__file__).resolve().parent / "fixtures"
 README_SNAP = FIXTURE_DIR / "README_fixture.md"
-
-
-
 
 
 def _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
@@ -24,7 +22,9 @@ def _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
     shutil.copy(data_fixture_dir / "top100.md", data_dir / "top100.md")
     shutil.copy(data_fixture_dir / "repos.json", data_dir / "repos.json")
     try:
-        shutil.copy(data_fixture_dir / "last_snapshot.json", data_dir / "last_snapshot.json")
+        shutil.copy(
+            data_fixture_dir / "last_snapshot.json", data_dir / "last_snapshot.json"
+        )
     except FileNotFoundError:
         (data_dir / "last_snapshot.json").write_text("{}")
 
@@ -40,9 +40,15 @@ def _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
     return readme, modified
 
 
-@pytest.mark.xfail(not README_SNAP.exists(), reason="README fixture missing", strict=True)
-def test_inject_readme_check(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
-    readme, modified = _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir)
+@pytest.mark.xfail(
+    not README_SNAP.exists(), reason="README fixture missing", strict=True
+)
+def test_inject_readme_check(
+    tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir
+):
+    readme, modified = _setup(
+        tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir
+    )
     assert_readme_equivalent(readme.read_text().strip(), modified, {"score": 0.005})
     assert inj.main(check=True) == 0
 
@@ -78,12 +84,20 @@ def _change_cell(text: str, col: int, value: str) -> str:
         (lambda txt: _change_cell(txt, 0, "2"), False),
     ],
 )
-@pytest.mark.xfail(not README_SNAP.exists(), reason="README fixture missing", strict=True)
-def test_readme_tolerances(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir, modifier, should_pass):
-    readme, modified = _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir)
+@pytest.mark.xfail(
+    not README_SNAP.exists(), reason="README fixture missing", strict=True
+)
+def test_readme_tolerances(
+    tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir, modifier, should_pass
+):
+    readme, modified = _setup(
+        tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir
+    )
     modified = modifier(modified)
     if should_pass:
         assert_readme_equivalent(readme.read_text().strip(), modified, {"score": 0.005})
     else:
         with pytest.raises(AssertionError):
-            assert_readme_equivalent(readme.read_text().strip(), modified, {"score": 0.005})
+            assert_readme_equivalent(
+                readme.read_text().strip(), modified, {"score": 0.005}
+            )

@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 from typing import List
 
-from pydantic import BaseModel, ValidationError, ConfigDict
+from pydantic import BaseModel, ConfigDict, ValidationError
 
 
 class License(BaseModel):
@@ -114,7 +114,9 @@ def load_repos(path: Path) -> List[dict]:
 
 def save_repos(path: Path, repos: List[dict]) -> None:
     """Write validated ``repos`` to ``path``."""
-    payload = RepoFile(repos=[Repo(**_migrate_item(r)) for r in repos]).model_dump(exclude_none=True)
+    payload = RepoFile(repos=[Repo(**_migrate_item(r)) for r in repos]).model_dump(
+        exclude_none=True
+    )
     path.write_text(json.dumps(payload, indent=2) + "\n")
 
 

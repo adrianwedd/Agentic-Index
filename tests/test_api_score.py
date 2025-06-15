@@ -1,5 +1,7 @@
 import json
+
 from fastapi.testclient import TestClient
+
 from agentic_index_cli.internal.rank import compute_score
 from tests.test_api_auth import load_app
 
@@ -17,8 +19,26 @@ def make_client(monkeypatch, tmp_path, data=None):
 
 def test_score_endpoint_calculates_scores(tmp_path, monkeypatch):
     data = [
-        {"name": "B", "stargazers_count": 20, "open_issues_count": 0, "closed_issues": 20, "pushed_at": "2025-06-10T00:00:00Z", "license": {"spdx_id": "MIT"}, "doc_completeness": 0.8, "ecosystem_integration": 1.0},
-        {"name": "A", "stargazers_count": 10, "open_issues_count": 0, "closed_issues": 10, "pushed_at": "2025-06-01T00:00:00Z", "license": {"spdx_id": "MIT"}, "doc_completeness": 0.5, "ecosystem_integration": 0.0},
+        {
+            "name": "B",
+            "stargazers_count": 20,
+            "open_issues_count": 0,
+            "closed_issues": 20,
+            "pushed_at": "2025-06-10T00:00:00Z",
+            "license": {"spdx_id": "MIT"},
+            "doc_completeness": 0.8,
+            "ecosystem_integration": 1.0,
+        },
+        {
+            "name": "A",
+            "stargazers_count": 10,
+            "open_issues_count": 0,
+            "closed_issues": 10,
+            "pushed_at": "2025-06-01T00:00:00Z",
+            "license": {"spdx_id": "MIT"},
+            "doc_completeness": 0.5,
+            "ecosystem_integration": 0.0,
+        },
     ]
     client, headers = make_client(monkeypatch, tmp_path, data)
     resp = client.post("/score", json={}, headers=headers)

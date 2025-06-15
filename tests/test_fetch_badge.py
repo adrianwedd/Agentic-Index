@@ -1,7 +1,7 @@
+import io
 import urllib.error
 import urllib.request
 from pathlib import Path
-import io
 
 from agentic_index_cli.internal.rank import fetch_badge
 
@@ -77,6 +77,8 @@ def test_fetch_badge_error_no_overwrite(tmp_path, monkeypatch):
 def test_fetch_badge_strips_trailing_newline(tmp_path, monkeypatch):
     dest = tmp_path / "badge.svg"
     svg_ok = b'<svg xmlns="http://www.w3.org/2000/svg"></svg>'
-    monkeypatch.setattr(urllib.request, "urlopen", lambda url: DummyResp(svg_ok + b"\n"))
+    monkeypatch.setattr(
+        urllib.request, "urlopen", lambda url: DummyResp(svg_ok + b"\n")
+    )
     fetch_badge("http://example.com", dest)
     assert dest.read_bytes() == svg_ok

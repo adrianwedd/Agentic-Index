@@ -11,7 +11,9 @@ from pathlib import Path
 
 from agentic_index_cli.helpers.markdown import render_badge
 
-BADGE_RE = re.compile(r"!?\[coverage\]\(https://img\.shields\.io/badge/coverage-\d+%25-[a-zA-Z]+\)")
+BADGE_RE = re.compile(
+    r"!?\[coverage\]\(https://img\.shields\.io/badge/coverage-\d+%25-[a-zA-Z]+\)"
+)
 
 
 def fetch_badge(url: str, dest: Path) -> None:
@@ -66,7 +68,13 @@ def build_readme(readme_path: Path, percent: int) -> str:
     return new_text
 
 
-def main(readme: str = "README.md", xml: str = "coverage.xml", *, check: bool = False, write: bool = True) -> int:
+def main(
+    readme: str = "README.md",
+    xml: str = "coverage.xml",
+    *,
+    check: bool = False,
+    write: bool = True,
+) -> int:
     readme_path = Path(readme)
     xml_path = Path(xml)
     percent = _coverage_percent(xml_path)

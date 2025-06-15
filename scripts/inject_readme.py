@@ -17,8 +17,12 @@ if __name__ == "__main__":
 
     parser = _Parser(description="Synchronise README top100 table")
     group = parser.add_mutually_exclusive_group()
-    group.add_argument("--check", action="store_true", help="Fail if README is outdated")
-    group.add_argument("--write", action="store_true", help="Update README in place (default)")
+    group.add_argument(
+        "--check", action="store_true", help="Fail if README is outdated"
+    )
+    group.add_argument(
+        "--write", action="store_true", help="Update README in place (default)"
+    )
     group.add_argument("--dry-run", action="store_true", help="Alias for --check")
     parser.add_argument("--force", action="store_true", help="Write even if unchanged")
     parser.add_argument(

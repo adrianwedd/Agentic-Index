@@ -7,5 +7,6 @@ def cli(argv=None) -> None:
     """Run the scraper."""
     main()
 
+
 if __name__ == "__main__":
     cli()

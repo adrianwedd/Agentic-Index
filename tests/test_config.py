@@ -8,7 +8,7 @@ from agentic_index_cli.config import load_config
 
 def test_load_default():
     cfg = load_config()
-    assert cfg['ranking']['top_n'] == 100
+    assert cfg["ranking"]["top_n"] == 100
 
 
 def test_cli_override(tmp_path):
@@ -26,22 +26,27 @@ def test_cli_override(tmp_path):
     repo_file.write_text(json.dumps(data))
 
     cfg_file = tmp_path / "cfg.yaml"
-    cfg_file.write_text("""\
+    cfg_file.write_text(
+        """\
 ranking:
   top_n: 1
   delta_days: 7
   min_stars: 0
 output:
   markdown_table_limit: 1
-""")
+"""
+    )
 
     script = Path(__file__).resolve().parents[1] / "scripts" / "rank.py"
     env = os.environ.copy()
     env["PYTHONPATH"] = str(Path(__file__).resolve().parents[1])
     env.pop("PYTEST_CURRENT_TEST", None)
-    subprocess.run([
-        "python", str(script), str(repo_file), "--config", str(cfg_file)
-    ], check=True, cwd=tmp_path, env=env)
+    subprocess.run(
+        ["python", str(script), str(repo_file), "--config", str(cfg_file)],
+        check=True,
+        cwd=tmp_path,
+        env=env,
+    )
 
     top_md = tmp_path / "data" / "top100.md"
     lines = [l for l in top_md.read_text().splitlines() if l.startswith("|")]

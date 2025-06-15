@@ -1,4 +1,5 @@
 """Public ranking helpers."""
+
 from typing import Dict
 
 from .agentic_index import compute_score as _compute_score

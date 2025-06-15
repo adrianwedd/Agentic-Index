@@ -3,6 +3,7 @@ import agentic_index_cli.agentic_index as ai
 
 def test_search_and_harvest_pagination(monkeypatch):
     calls = []
+
     def fake_github_search(query, page):
         calls.append(page)
         return [{"full_name": f"repo{page}"}]

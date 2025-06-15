@@ -4,7 +4,6 @@ import json
 import sys
 from pathlib import Path
 
-
 NEW_FIELDS = {
     "stars_7d": 0,
     "maintenance": 0.0,

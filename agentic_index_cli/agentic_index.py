@@ -8,10 +8,11 @@ import os
 import sys
 import time
 from datetime import datetime, timedelta
-from rich.progress import track
 from pathlib import Path
 from typing import Dict, List, Optional
+
 import requests
+from rich.progress import track
 
 SCORE_KEY = "AgenticIndexScore"
 
@@ -58,7 +59,9 @@ def github_search(query: str, page: int = 1) -> List[Dict]:
         "per_page": 5,
         "page": page,
     }
-    resp = requests.get(f"{GITHUB_API}/search/repositories", params=params, headers=HEADERS)
+    resp = requests.get(
+        f"{GITHUB_API}/search/repositories", params=params, headers=HEADERS
+    )
     if resp.status_code != 200:
         print(f"GitHub search error {resp.status_code}: {resp.text}", file=sys.stderr)
         return []
@@ -85,6 +88,7 @@ def fetch_readme(full_name: str) -> str:
     data = resp.json()
     if "content" in data:
         import base64
+
         return base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
     return ""
 
@@ -195,7 +199,11 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
         "closed_issues": repo.get("closed_issues", 0),
         "last_commit": repo.get("pushed_at", ""),
         "language": repo.get("language", ""),
-        "license": (repo.get("license") if not isinstance(repo.get("license"), dict) else repo.get("license").get("spdx_id")),
+        "license": (
+            repo.get("license")
+            if not isinstance(repo.get("license"), dict)
+            else repo.get("license").get("spdx_id")
+        ),
         "maintainer": repo.get("owner", {}).get("login"),
         "topics": ",".join(repo.get("topics", [])),
         "readme_excerpt": first_paragraph,
@@ -274,9 +282,7 @@ def save_markdown(repos: List[Dict], path: Path):
         f.write("|---|------|----|------------|-------|----------|-----------|\n")
         for i, r in enumerate(repos, 1):
             date = r["last_commit"].split("T")[0]
-            line = (
-                f"| {i} | {r['name']} | {r['stars']} | {date} | {r[SCORE_KEY]} | {r['category']} | {r['description']} |\n"
-            )
+            line = f"| {i} | {r['name']} | {r['stars']} | {date} | {r[SCORE_KEY]} | {r['category']} | {r['description']} |\n"
             f.write(line)
 
 
@@ -311,7 +317,9 @@ def save_changelog(changes: List[Dict], path: Path):
             f.write(f"| {c['repo']} | {c['action']} |\n")
 
 
-def run_index(min_stars: int = 0, iterations: int = 1, output: Path = Path("data")) -> None:
+def run_index(
+    min_stars: int = 0, iterations: int = 1, output: Path = Path("data")
+) -> None:
     is_test = os.getenv("PYTEST_CURRENT_TEST") is not None
 
     """Run the full indexing workflow."""

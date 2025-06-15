@@ -20,4 +20,3 @@ def test_validation_ok(tmp_path):
         text=True,
     )
     assert result.returncode == 0
-

@@ -1,5 +1,6 @@
-from pathlib import Path
 import re
+from pathlib import Path
+
 from _utils import assert_readme_diff
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,18 +15,18 @@ def test_readme_snapshot():
 
 def test_badge_block_formatting():
     markdown = (ROOT / "README.md").read_text()
-    pattern = r'!\[[^\]]+\]\([^)]+\)'
+    pattern = r"!\[[^\]]+\]\([^)]+\)"
     matches = list(re.finditer(pattern, markdown))
 
     assert matches, "no badges found"
 
-    for m in re.finditer(r'!\[', markdown):
-        if not re.match(pattern, markdown[m.start():]):
+    for m in re.finditer(r"!\[", markdown):
+        if not re.match(pattern, markdown[m.start() :]):
             raise AssertionError(f"malformed badge near index {m.start()}")
 
     seen = set()
     for m in matches:
-        alt, url = re.match(r'!\[([^]]+)\]\(([^)]+)\)', m.group()).groups()
+        alt, url = re.match(r"!\[([^]]+)\]\(([^)]+)\)", m.group()).groups()
 
         key = (alt.strip(), url.strip())
         assert key not in seen, f"duplicate badge {alt}"
@@ -35,5 +36,6 @@ def test_badge_block_formatting():
 
         line_matches = re.findall(pattern, line)
         if len(line_matches) > 1:
-            assert line.strip() == " ".join(line_matches), f"badge spacing error: {line}"
-
+            assert line.strip() == " ".join(
+                line_matches
+            ), f"badge spacing error: {line}"

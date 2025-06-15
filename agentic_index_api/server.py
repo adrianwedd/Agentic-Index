@@ -1,24 +1,24 @@
 from __future__ import annotations
 
-from fastapi import FastAPI, Response
 from typing import List
+
+from fastapi import FastAPI, Response
 
 """Minimal API server with optional auth."""
 
+import json
 import os
 from pathlib import Path
 from typing import Any, Optional
 
-from pydantic import BaseModel
-import json
-
-from fastapi import FastAPI, Response, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, Response
 from fastapi.concurrency import run_in_threadpool
+from pydantic import BaseModel
 
+from agentic_index_cli import issue_logger
+from agentic_index_cli.internal.rank import SCORE_KEY, compute_score
 from agentic_index_cli.internal.scrape import scrape
 from agentic_index_cli.validate import save_repos
-from agentic_index_cli.internal.rank import compute_score, SCORE_KEY
-from agentic_index_cli import issue_logger
 
 API_KEY = os.getenv("API_KEY")
 _whitelist = os.getenv("IP_WHITELIST", "")
@@ -41,6 +41,7 @@ def _load_sync_data() -> List[dict[str, Any]]:
     if not isinstance(data, list) or not all(isinstance(r, dict) for r in data):
         raise HTTPException(status_code=400, detail="invalid sync data")
     return data
+
 
 app = FastAPI()
 
@@ -66,7 +67,6 @@ def status() -> dict:
 def healthz() -> Response:
     """Kubernetes style health check."""
     return Response(status_code=200)
-
 
 
 @app.post("/sync")
@@ -127,6 +127,8 @@ async def issue(payload: IssueBody) -> Any:
             return issue_logger.post_comment(issue_url, payload.body, token=token)
         if not payload.title:
             raise HTTPException(status_code=400, detail="title required")
-        return issue_logger.create_issue(payload.title, payload.body, payload.repo, token=token)
+        return issue_logger.create_issue(
+            payload.title, payload.body, payload.repo, token=token
+        )
 
     return await run_in_threadpool(_run)

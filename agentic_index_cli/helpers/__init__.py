@@ -13,6 +13,7 @@ def add(a: int, b: int) -> int:
     """
     return a + b
 
+
 from .markdown import render_badge
 
 __all__ = ["add", "render_badge"]

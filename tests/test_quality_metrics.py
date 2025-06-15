@@ -1,12 +1,13 @@
+import math
 import sys
 from pathlib import Path
-import math
+
 import pytest
 
 # ensure project root on path
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-from lib.quality_metrics import maintenance_score, docs_score, ecosystem_tag
+from lib.quality_metrics import docs_score, ecosystem_tag, maintenance_score
 
 
 def test_maintenance_score_basic():
@@ -24,7 +25,7 @@ def test_maintenance_score_clamps():
 
 def test_docs_score():
     assert docs_score(True, 1200) == 1.0
-    assert docs_score(False, 100) == round(100/1000, 2)
+    assert docs_score(False, 100) == round(100 / 1000, 2)
 
 
 @pytest.mark.parametrize(

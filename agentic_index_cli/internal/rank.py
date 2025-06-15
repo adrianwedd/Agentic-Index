@@ -9,18 +9,18 @@ import datetime
 import json
 import math
 import os
+import shutil
 import sys
 import urllib.request
 from pathlib import Path
-import shutil
 
-from agentic_index_cli.validate import load_repos, save_repos
 from agentic_index_cli.agentic_index import (
-    compute_recency_factor,
     compute_issue_health,
+    compute_recency_factor,
     license_freedom,
 )
 from agentic_index_cli.config import load_config
+from agentic_index_cli.validate import load_repos, save_repos
 
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
 
@@ -123,9 +123,7 @@ def generate_badges(top_repo: str, iso_date: str, repo_count: int) -> None:
         f"https://img.shields.io/static/v1?label=sync&message={iso_date}&color=blue"
     )
     top_badge = f"https://img.shields.io/static/v1?label=top&message={urllib.request.quote(top_repo)}&color=brightgreen"
-    count_badge = (
-        f"https://img.shields.io/static/v1?label=repos&message={repo_count}&color=informational"
-    )
+    count_badge = f"https://img.shields.io/static/v1?label=repos&message={repo_count}&color=informational"
 
     fetch_badge(sync_badge, badges / "last_sync.svg")
     fetch_badge(top_badge, badges / "top_repo.svg")
@@ -163,8 +161,8 @@ def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> N
     for repo in repos:
         if "AgentOpsScore" in repo:
             repo[SCORE_KEY] = repo.pop("AgentOpsScore")
-        if 'score' in repo and SCORE_KEY not in repo:
-            repo[SCORE_KEY] = repo.pop('score')
+        if "score" in repo and SCORE_KEY not in repo:
+            repo[SCORE_KEY] = repo.pop("score")
 
     # ensure essential fields exist; fall back to raw GitHub data when missing
     for repo in repos:
@@ -183,7 +181,9 @@ def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> N
             repo["license_freedom"] = license_freedom(lic)
         repo.setdefault("ecosystem_integration", 0.0)
     # avoid mutating tracked repo files during tests
-    skip_repo_write = is_test and Path(json_path).resolve() == Path("data/repos.json").resolve()
+    skip_repo_write = (
+        is_test and Path(json_path).resolve() == Path("data/repos.json").resolve()
+    )
     skip_top_write = is_test
 
     # score + categorise
@@ -192,10 +192,18 @@ def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> N
         repo["category"] = infer_category(repo)
         prev = prev_map.get(repo.get("full_name", repo.get("name")))
         if prev:
-            repo["stars_delta"] = repo.get("stars", 0) - prev.get("stars", prev.get("stargazers_count", 0))
-            repo["forks_delta"] = repo.get("forks_count", 0) - prev.get("forks_count", 0)
-            repo["issues_closed_delta"] = repo.get("closed_issues", 0) - prev.get("closed_issues", 0)
-            repo["score_delta"] = round(repo[SCORE_KEY] - float(prev.get(SCORE_KEY, 0)), 2)
+            repo["stars_delta"] = repo.get("stars", 0) - prev.get(
+                "stars", prev.get("stargazers_count", 0)
+            )
+            repo["forks_delta"] = repo.get("forks_count", 0) - prev.get(
+                "forks_count", 0
+            )
+            repo["issues_closed_delta"] = repo.get("closed_issues", 0) - prev.get(
+                "closed_issues", 0
+            )
+            repo["score_delta"] = round(
+                repo[SCORE_KEY] - float(prev.get(SCORE_KEY, 0)), 2
+            )
         else:
             repo["stars_delta"] = "+new"
             repo["forks_delta"] = "+new"
@@ -250,6 +258,3 @@ def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> N
     today_iso = datetime.date.today().isoformat()
     top_repo_name = repos[0]["name"] if repos else "unknown"
     generate_badges(top_repo_name, today_iso, len(repos))
-
-
-

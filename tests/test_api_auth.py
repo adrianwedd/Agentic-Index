@@ -1,4 +1,5 @@
 import importlib
+
 from fastapi.testclient import TestClient
 
 import agentic_index_api.server as srv
@@ -32,7 +33,9 @@ def test_api_key_header(monkeypatch, tmp_path):
     sync = tmp_path / "sync.json"
     sync.write_text("[]")
     monkeypatch.setattr(mod, "SYNC_DATA_PATH", sync)
-    import sys, types
+    import sys
+    import types
+
     dummy = types.SimpleNamespace(main=lambda *a, **k: None)
     monkeypatch.setitem(sys.modules, "agentic_index_cli.generate_outputs", dummy)
     monkeypatch.setattr(mod.issue_logger, "create_issue", lambda *a, **k: {})

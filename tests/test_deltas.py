@@ -10,21 +10,49 @@ def test_delta_calculation(tmp_path, monkeypatch):
     prev = {
         "schema_version": 1,
         "repos": [
-            {"name": "repo1", "full_name": "o/repo1", "stars": 5, "forks_count": 1, "closed_issues": 2,
-             "recency_factor": 1, "issue_health": 1, "doc_completeness": 0, "license_freedom": 1,
-             "ecosystem_integration": 0, rank_mod.SCORE_KEY: 1.0}
-        ]
+            {
+                "name": "repo1",
+                "full_name": "o/repo1",
+                "stars": 5,
+                "forks_count": 1,
+                "closed_issues": 2,
+                "recency_factor": 1,
+                "issue_health": 1,
+                "doc_completeness": 0,
+                "license_freedom": 1,
+                "ecosystem_integration": 0,
+                rank_mod.SCORE_KEY: 1.0,
+            }
+        ],
     }
     current = {
         "schema_version": 1,
         "repos": [
-            {"name": "repo1", "full_name": "o/repo1", "stars": 8, "forks_count": 2, "closed_issues": 4,
-             "recency_factor": 1, "issue_health": 1, "doc_completeness": 0, "license_freedom": 1,
-             "ecosystem_integration": 0},
-            {"name": "repo2", "full_name": "o/repo2", "stars": 3, "forks_count": 0, "closed_issues": 0,
-             "recency_factor": 1, "issue_health": 1, "doc_completeness": 0, "license_freedom": 1,
-             "ecosystem_integration": 0}
-        ]
+            {
+                "name": "repo1",
+                "full_name": "o/repo1",
+                "stars": 8,
+                "forks_count": 2,
+                "closed_issues": 4,
+                "recency_factor": 1,
+                "issue_health": 1,
+                "doc_completeness": 0,
+                "license_freedom": 1,
+                "ecosystem_integration": 0,
+            },
+            {
+                "name": "repo2",
+                "full_name": "o/repo2",
+                "stars": 3,
+                "forks_count": 0,
+                "closed_issues": 0,
+                "recency_factor": 1,
+                "issue_health": 1,
+                "doc_completeness": 0,
+                "license_freedom": 1,
+                "ecosystem_integration": 0,
+            },
+        ],
     }
 
     data_dir = tmp_path
@@ -46,4 +74,3 @@ def test_delta_calculation(tmp_path, monkeypatch):
 
     assert rep1["stars_delta"] == 3
     assert rep2["stars_delta"] == "+new"
-

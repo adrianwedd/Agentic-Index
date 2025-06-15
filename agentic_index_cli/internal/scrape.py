@@ -2,16 +2,16 @@
 
 import argparse
 import json
+import logging
 import os
 import time
-import logging
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import Any, Dict, List
 
 import requests
 from pydantic import BaseModel, ValidationError
 
-from ..exceptions import APIError, RateLimitError, InvalidRepoError
+from ..exceptions import APIError, InvalidRepoError, RateLimitError
 from ..validate import save_repos
 
 RATE_LIMIT_REMAINING = None
@@ -78,7 +78,10 @@ def _get(url: str, *, headers: dict, params: dict | None = None) -> requests.Res
             if attempt == 4:
                 raise APIError(str(e)) from e
         else:
-            if resp.status_code == 403 and resp.headers.get("X-RateLimit-Remaining") == "0":
+            if (
+                resp.status_code == 403
+                and resp.headers.get("X-RateLimit-Remaining") == "0"
+            ):
                 reset = int(resp.headers.get("X-RateLimit-Reset", "0"))
                 sleep_for = max(0, reset - int(time.time()))
                 logger.warning("Rate limit hit, sleeping %s seconds", sleep_for)
@@ -91,6 +94,7 @@ def _get(url: str, *, headers: dict, params: dict | None = None) -> requests.Res
         time.sleep(backoff)
         backoff *= 2
     raise APIError(f"failed GET {url} after retries")
+
 
 def _extract(item: Dict[str, Any]) -> Dict[str, Any]:
     try:
@@ -153,6 +157,3 @@ def main() -> None:
     logger.info("Wrote %s repos to %s", len(repos), path)
     if RATE_LIMIT_REMAINING is not None:
         logger.info("Rate limit remaining: %s", RATE_LIMIT_REMAINING)
-
-
-

@@ -1,8 +1,8 @@
+import difflib
+import math
 import os
 import re
-import math
-import difflib
-from typing import List, Tuple, Dict, Any
+from typing import Any, Dict, List, Tuple
 
 
 def _canonical(name: str) -> str:
@@ -81,7 +81,12 @@ def _format_row(row: List[str]) -> str:
     return "| " + " | ".join(row) + " |"
 
 
-def diff_row_cells(erow: List[str], arow: List[str], headers: List[str] | None = None, tols: Dict[str, float] | None = None) -> str:
+def diff_row_cells(
+    erow: List[str],
+    arow: List[str],
+    headers: List[str] | None = None,
+    tols: Dict[str, float] | None = None,
+) -> str:
     """Return a unified diff between two table rows with optional tolerance row."""
     left = []
     right = []
@@ -94,7 +99,9 @@ def diff_row_cells(erow: List[str], arow: List[str], headers: List[str] | None =
             right.append(_format_row(tol_row))
     left.append(_format_row(erow))
     right.append(_format_row(arow))
-    return "\n".join(difflib.unified_diff(left, right, "expected", "actual", lineterm=""))
+    return "\n".join(
+        difflib.unified_diff(left, right, "expected", "actual", lineterm="")
+    )
 
 
 def assert_readme_equivalent(
@@ -118,7 +125,9 @@ def assert_readme_equivalent(
 
     if exp_headers_raw != act_headers_raw:
         diff = "\n".join(
-            difflib.unified_diff(exp_headers_raw, act_headers_raw, "expected", "actual", lineterm="")
+            difflib.unified_diff(
+                exp_headers_raw, act_headers_raw, "expected", "actual", lineterm=""
+            )
         )
         raise AssertionError(f"Header mismatch:\n{diff}")
 
@@ -148,7 +157,12 @@ def assert_readme_equivalent(
                     print(f"Row {row_idx} {header} matches: {ecell}")
                 continue
             tol = tols.get(key, 0.0)
-            if kind1 == "int" and kind2 == "int" and "." not in ecell and "." not in acell:
+            if (
+                kind1 == "int"
+                and kind2 == "int"
+                and "." not in ecell
+                and "." not in acell
+            ):
                 if abs(val1 - val2) > tol:
                     diff = diff_row_cells(erow, arow, headers, tols)
                     raise AssertionError(
@@ -161,6 +175,4 @@ def assert_readme_equivalent(
                         f"{header} mismatch: expected {val1} got {val2} (tol={tol})\n{diff}"
                     )
             if verbose:
-                print(
-                    f"Row {row_idx} {header} ok: {val1} vs {val2} (tol={tol})"
-                )
+                print(f"Row {row_idx} {header} ok: {val1} vs {val2} (tol={tol})")

@@ -38,23 +38,31 @@ def test_faststart(tmp_path):
     with data_file.open("w") as f:
         json.dump({"schema_version": 1, "repos": data}, f)
 
-    subprocess.run([
-        "python",
-        "-m",
-        "agentic_index_cli.faststart",
-        "--top",
-        "2",
-        str(data_file),
-    ], check=True, cwd=tmp_path)
+    subprocess.run(
+        [
+            "python",
+            "-m",
+            "agentic_index_cli.faststart",
+            "--top",
+            "2",
+            str(data_file),
+        ],
+        check=True,
+        cwd=tmp_path,
+    )
 
     output = tmp_path / "FAST_START.md"
-    lines = [l for l in output.read_text().splitlines() if l.startswith("| ") and l[2].isdigit()]
+    lines = [
+        l
+        for l in output.read_text().splitlines()
+        if l.startswith("| ") and l[2].isdigit()
+    ]
     assert len(lines) == 2
 
     for line in lines:
-        parts = [p.strip() for p in line.strip('|').split('|')]
+        parts = [p.strip() for p in line.strip("|").split("|")]
         stars = parts[2]
-        if stars.endswith('k'):
+        if stars.endswith("k"):
             value = float(stars[:-1]) * 1000
         else:
             value = float(stars)

@@ -1,8 +1,6 @@
 import subprocess
 from pathlib import Path
 
-
-
 ROOT = Path(__file__).resolve().parents[1]
 INJECT = ROOT / "scripts" / "inject_readme.py"
 
@@ -20,11 +18,11 @@ def test_readme_synced():
         int(cells[0])
         float(cells[1])
         int(cells[3])
-        if cells[4] != '-':
+        if cells[4] != "-":
             float(cells[4])
-        if cells[6] != '-':
+        if cells[6] != "-":
             float(cells[6])
-        if cells[7] != '-':
+        if cells[7] != "-":
             float(cells[7])
 
 

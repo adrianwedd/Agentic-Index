@@ -41,9 +41,7 @@ def get_conflict_prs():
     prs = json.loads(out)
     # Filter to same-repo PRs that need conflict resolution
     return [
-        p
-        for p in prs
-        if p["mergeable"] == "CONFLICTING" and not p["isCrossRepository"]
+        p for p in prs if p["mergeable"] == "CONFLICTING" and not p["isCrossRepository"]
     ]
 
 
@@ -130,26 +128,30 @@ def main():
         if not quality_gate():
             run(["git", "rebase", "--abort"], check=False)
             if not DRY_RUN:
-                run([
+                run(
+                    [
+                        "gh",
+                        "pr",
+                        "comment",
+                        str(num),
+                        "-b",
+                        "⚠️ Auto-resolver failed tests after conflict merge. Needs manual review.",
+                    ]
+                )
+            failed.append(num)
+            continue
+        if not DRY_RUN:
+            run(["git", "push", "--force-with-lease"])
+            run(
+                [
                     "gh",
                     "pr",
                     "comment",
                     str(num),
                     "-b",
-                    "⚠️ Auto-resolver failed tests after conflict merge. Needs manual review.",
-                ])
-            failed.append(num)
-            continue
-        if not DRY_RUN:
-            run(["git", "push", "--force-with-lease"])
-            run([
-                "gh",
-                "pr",
-                "comment",
-                str(num),
-                "-b",
-                "✅ Auto-resolved merge conflicts and ensured CI green. Please review & merge.",
-            ])
+                    "✅ Auto-resolved merge conflicts and ensured CI green. Please review & merge.",
+                ]
+            )
         fixed.append(num)
     print("Fixed PRs:", fixed)
     print("Needs manual review:", failed)
@@ -158,4 +160,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-
