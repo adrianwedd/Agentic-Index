@@ -7,8 +7,11 @@ pytest-socket
 responses
 jsonschema>=3.2
 pydantic>=2
+fastapi
+httpx
 matplotlib
-
 pydeps
 sphinx
 sphinx_rtd_theme
+uvicorn
+httpx

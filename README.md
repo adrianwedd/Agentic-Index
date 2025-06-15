@@ -39,19 +39,6 @@ Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metr
 ![PyPI](badges/pypi.svg)
 ![Release Notes](https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases)
 </p>
-<details>
-<summary>More status badges</summary>
-
-<p align="center">
-  <img src="badges/docs.svg" alt="Documentation" />
-  <img src="https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index" alt="Site Status" />
-  <img src="https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases" alt="Release Notes" />
-  <img src="badges/coc.svg" alt="Code of Conduct" />
-  <img src="badges/last_sync.svg" alt="Last Sync" />
-  <img src="badges/top_repo.svg" alt="Top Repo" />
-  <img src="badges/repo_count.svg" alt="Repo Count" />
-</p>
-</details>
 
 This catalogue is maintained by the Agentic-Index project and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
 
@@ -394,3 +381,5 @@ The content of Agentic-Index (this `README.md`, files in `/docs/`, etc.) is lice
 Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 'em) are licensed under([https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)).
 
 © 2025 Agentic-Index Maintainers
+
+![Last Sync](badges/last_sync.svg) ![Top Repo](badges/top_repo.svg) ![Repo Count](badges/repo_count.svg)

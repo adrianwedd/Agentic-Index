@@ -15,26 +15,25 @@ def test_readme_snapshot():
 def test_badge_block_formatting():
     markdown = (ROOT / "README.md").read_text()
     pattern = r'!\[[^\]]+\]\([^)]+\)'
-    badges = re.findall(pattern, markdown)
+    matches = list(re.finditer(pattern, markdown))
 
-    assert badges, "no badges found"
+    assert matches, "no badges found"
 
     for m in re.finditer(r'!\[', markdown):
         if not re.match(pattern, markdown[m.start():]):
             raise AssertionError(f"malformed badge near index {m.start()}")
 
-    for m in re.finditer(r'!\s*\[', markdown):
-        if m.group() != '![':
-            raise AssertionError(f"malformed badge near index {m.start()}")
-
     seen = set()
-    for tag in badges:
-        alt, url = re.match(r'!\[([^]]+)\]\(([^)]+)\)', tag).groups()
+    for m in matches:
+        alt, url = re.match(r'!\[([^]]+)\]\(([^)]+)\)', m.group()).groups()
+
         key = (alt.strip(), url.strip())
         assert key not in seen, f"duplicate badge {alt}"
         seen.add(key)
 
     for line in markdown.splitlines():
-        line_badges = re.findall(pattern, line)
-        if len(line_badges) > 1:
-            assert line.strip() == " ".join(line_badges), f"badge spacing error: {line}"
+
+        line_matches = re.findall(pattern, line)
+        if len(line_matches) > 1:
+            assert line.strip() == " ".join(line_matches), f"badge spacing error: {line}"
+
