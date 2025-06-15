@@ -2,7 +2,10 @@
 
 Agentic-Index continuously scores and curates every open-source framework for building autonomous AI agents. Fast search, transparent metrics, zero BS.
 
-Our score balances stars, recency, maintenance health, documentation quality, license freedom, and ecosystem fit. **[See full formula →](./docs/methodology.md#scoring-formula)**
+We rank everything using a transparent scoring formula based on:
+
+  * 🌟 Stars & momentum
+* 🔧 Maintenance & issue health
 * 📚 Docs & examples
 * 🧠 Ecosystem fit
 * 📅 Recency
@@ -19,11 +22,11 @@ Our score balances stars, recency, maintenance health, documentation quality, li
 | 🧠 | `ecosystem_fit` | Keyword-based tag affinity | Monthly | `score/ecosystem.py` |
 | ⚖️ | `license_score` | OSI compatibility / restrictiveness | Static | `score/license.py` |
 
-Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metrics Legend](#metrics-legend) for weighting details. The full JSON schema is documented in [SCHEMA.md](SCHEMA.md).
+Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metrics Legend](#metrics-legend) for metric details. The full JSON schema is documented in [SCHEMA.md](SCHEMA.md).
 
 > **🎯 TL;DR:** This isn’t just a list—it’s your launchpad for building with AI agents.
 
-Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
+[🚀 Jump to Fast-Start Picks →](FAST_START.md)
 
 -----
 
@@ -44,7 +47,6 @@ This catalogue is maintained by the Agentic-Index project and is updated regular
 ## TOC
 
 * [✨ Why Agentic Index is Different](#-why-agentic-index-is-different)
-* [🚀 Fast-Start Picks (Curated for Newcomers)](#-fast-start-picks-curated-for-newcomers)
 * [⚡ Installation & Quick-start](#-installation--quick-start)
 * [🏆 The Agentic-Index Top 100: AI Agent Repositories](#-the-agentic-index-top-100-ai-agent-repositories)
   * [💎 Honourable Mentions / Niche & Novel Gems](HONOURABLE.md)
@@ -88,19 +90,6 @@ cat README.md | less         # see table injected
 
 -----
 
-<a id="-fast-start-picks-curated-for-newcomers"></a>
-## 🚀 Fast-Start Picks (Curated for Newcomers)
-
-New to Agentic-AI or just want the good stuff fast? These repos are top-tier for usability, community, docs, or just plain cool ideas:
-
-  * **CrewAI ([crewAIInc/crewAI](https://github.com/crewAIInc/crewAI))**: Slick orchestration for role-playing, autonomous AI agents. Built for collaborative intelligence. [1]
-  * **AutoGen ([microsoft/autogen](https://github.com/microsoft/autogen))**: Microsoft's powerhouse for multi-agent conversational apps. Flexible and robust. [6, 7, 2]
-  * **Langchain ([langchain-ai/langchain](https://github.com/langchain-ai/langchain))**: The OG. A massive library for LLM apps with deep agent capabilities and tons of integrations. [8, 9]
-  * **AutoGPT ((https://github.com/Significant-Gravitas/AutoGPT))**: One of the first to show off truly autonomous GPT-4, making agentic concepts go viral. [10, 11]
-  * **BabyAGI ([yoheinakajima/babyagi](https://github.com/yoheinakajima/babyagi))**: Simple, elegant task management loop that inspired a generation of agent frameworks. [3]
-  * **VoltAgent ([VoltAgent/voltagent](https://github.com/VoltAgent/voltagent))**: Clean TypeScript framework for modular AI agent dev, with built-in observability. [12]
-
------
 
 <a id="-the-agentic-index-top-100-ai-agent-repositories"></a>
 ## 🏆 The Agentic-Index Top 100: AI Agent Repositories
@@ -111,106 +100,106 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 <!-- TOP50:START -->
 | Rank | <abbr title="Overall">📊</abbr> Overall | Repo | <abbr title="Stars gained in last 7 days">⭐ Δ7d</abbr> | <abbr title="Maintenance score">🔧 Maint</abbr> | <abbr title="Last release date">📅 Release</abbr> | <abbr title="Documentation score">📚 Docs</abbr> | <abbr title="Ecosystem fit">🧠 Fit</abbr> | <abbr title="License">⚖️ License</abbr> |
 |-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|
-| 1 | 6.08 | dify | 123 | 0.90 | 2025-06-01 | 0.80 | 0.70 | NOASSERTION |
-| 2 | 5.96 | langflow | 0 | - | - | - | - | MIT |
-| 3 | 5.88 | browser-use | 0 | - | - | - | - | MIT |
-| 4 | 5.84 | OpenHands | 0 | - | - | - | - | MIT |
-| 5 | 5.83 | lobe-chat | 0 | - | - | - | - | NOASSERTION |
-| 6 | 5.82 | MetaGPT | 0 | - | - | - | - | MIT |
-| 7 | 5.81 | ragflow | 0 | - | - | - | - | Apache-2.0 |
-| 8 | 5.79 | LLaMA-Factory | 0 | - | - | - | - | Apache-2.0 |
-| 9 | 5.78 | system-prompts-and-models... | 0 | - | - | - | - | GPL-3.0 |
-| 10 | 5.72 | cline | 0 | - | - | - | - | Apache-2.0 |
-| 11 | 5.71 | anything-llm | 0 | - | - | - | - | MIT |
-| 12 | 5.68 | llama_index | 0 | - | - | - | - | MIT |
-| 13 | 5.67 | autogen | 0 | - | - | - | - | CC-BY-4.0 |
-| 14 | 5.63 | awesome-llm-apps | 0 | - | - | - | - | Apache-2.0 |
-| 15 | 5.60 | Flowise | 0 | - | - | - | - | NOASSERTION |
-| 16 | 5.57 | mem0 | 0 | - | - | - | - | Apache-2.0 |
-| 17 | 5.56 | ChatTTS | 0 | - | - | - | - | AGPL-3.0 |
-| 18 | 5.56 | Langchain-Chatchat | 0 | - | - | - | - | Apache-2.0 |
-| 19 | 5.55 | crewAI | 0 | - | - | - | - | MIT |
-| 20 | 5.51 | AgentGPT | 0 | - | - | - | - | GPL-3.0 |
-| 21 | 5.47 | agno | 0 | - | - | - | - | MPL-2.0 |
-| 22 | 5.46 | khoj | 0 | - | - | - | - | AGPL-3.0 |
-| 23 | 5.45 | ChatDev | 0 | - | - | - | - | Apache-2.0 |
-| 24 | 5.45 | LibreChat | 0 | - | - | - | - | MIT |
-| 25 | 5.43 | ai-agents-for-beginners | 0 | - | - | - | - | MIT |
-| 26 | 5.43 | cherry-studio | 0 | - | - | - | - | NOASSERTION |
-| 27 | 5.43 | Jobs_Applier_AI_Agent_AIHawk | 0 | - | - | - | - | AGPL-3.0 |
-| 28 | 5.42 | qlib | 0 | - | - | - | - | MIT |
-| 29 | 5.37 | composio | 0 | - | - | - | - | NOASSERTION |
-| 30 | 5.36 | FastGPT | 0 | - | - | - | - | NOASSERTION |
-| 31 | 5.35 | gpt-researcher | 0 | - | - | - | - | Apache-2.0 |
-| 32 | 5.33 | CopilotKit | 0 | - | - | - | - | MIT |
-| 33 | 5.33 | haystack | 0 | - | - | - | - | Apache-2.0 |
-| 34 | 5.26 | swarm | 0 | - | - | - | - | MIT |
-| 35 | 5.24 | agentic | 0 | - | - | - | - | MIT |
-| 36 | 5.23 | vanna | 0 | - | - | - | - | MIT |
-| 37 | 5.21 | DB-GPT | 0 | - | - | - | - | MIT |
-| 38 | 5.21 | deep-research | 0 | - | - | - | - | MIT |
-| 39 | 5.21 | letta | 0 | - | - | - | - | Apache-2.0 |
-| 40 | 5.20 | agenticSeek | 0 | - | - | - | - | GPL-3.0 |
-| 41 | 5.20 | SWE-agent | 0 | - | - | - | - | MIT |
-| 42 | 5.19 | eliza | 0 | - | - | - | - | MIT |
-| 43 | 5.19 | RagaAI-Catalyst | 0 | - | - | - | - | Apache-2.0 |
-| 44 | 5.18 | DocsGPT | 0 | - | - | - | - | MIT |
-| 45 | 5.17 | awesome-ai-agents | 0 | - | - | - | - | NOASSERTION |
-| 46 | 5.14 | devika | 0 | - | - | - | - | MIT |
-| 47 | 5.14 | goose | 0 | - | - | - | - | Apache-2.0 |
-| 48 | 5.13 | suna | 0 | - | - | - | - | Apache-2.0 |
-| 49 | 5.13 | SuperAGI | 0 | - | - | - | - | MIT |
-| 50 | 5.12 | ai-pdf-chatbot-langchain | 0 | - | - | - | - | MIT |
-| 51 | 5.12 | dagger | 0 | - | - | - | - | Apache-2.0 |
-| 52 | 5.11 | activepieces | 0 | - | - | - | - | NOASSERTION |
-| 53 | 5.11 | botpress | 0 | - | - | - | - | MIT |
-| 54 | 5.11 | plandex | 0 | - | - | - | - | MIT |
-| 55 | 5.11 | web-ui | 0 | - | - | - | - | MIT |
-| 56 | 5.10 | ai | 0 | - | - | - | - | NOASSERTION |
-| 57 | 5.10 | deer-flow | 0 | - | - | - | - | MIT |
-| 58 | 5.08 | camel | 0 | - | - | - | - | Apache-2.0 |
-| 59 | 5.08 | ChuanhuChatGPT | 0 | - | - | - | - | GPL-3.0 |
-| 60 | 5.08 | mastra | 0 | - | - | - | - | NOASSERTION |
-| 61 | 5.04 | GenAI_Agents | 0 | - | - | - | - | NOASSERTION |
-| 62 | 5.02 | Llama-Chinese | 0 | - | - | - | - | - |
-| 63 | 5.02 | openai-agents-python | 0 | - | - | - | - | MIT |
-| 64 | 5.01 | graphiti | 0 | - | - | - | - | Apache-2.0 |
-| 65 | 4.99 | LangBot | 0 | - | - | - | - | AGPL-3.0 |
-| 66 | 4.96 | pydantic-ai | 0 | - | - | - | - | MIT |
-| 67 | 4.95 | adk-python | 0 | - | - | - | - | Apache-2.0 |
-| 68 | 4.94 | ai-engineering-hub | 0 | - | - | - | - | MIT |
-| 69 | 4.93 | opik | 0 | - | - | - | - | Apache-2.0 |
-| 70 | 4.93 | Qwen-Agent | 0 | - | - | - | - | Apache-2.0 |
-| 71 | 4.89 | agent-zero | 0 | - | - | - | - | NOASSERTION |
-| 72 | 4.89 | bisheng | 0 | - | - | - | - | Apache-2.0 |
-| 73 | 4.88 | AstrBot | 0 | - | - | - | - | AGPL-3.0 |
-| 74 | 4.88 | E2B | 0 | - | - | - | - | Apache-2.0 |
-| 75 | 4.87 | cua | 0 | - | - | - | - | MIT |
-| 76 | 4.85 | Figma-Context-MCP | 0 | - | - | - | - | MIT |
-| 77 | 4.82 | Bert-VITS2 | 0 | - | - | - | - | AGPL-3.0 |
-| 78 | 4.81 | Upsonic | 0 | - | - | - | - | MIT |
-| 79 | 4.80 | agentscope | 0 | - | - | - | - | Apache-2.0 |
-| 80 | 4.80 | pr-agent | 0 | - | - | - | - | AGPL-3.0 |
-| 81 | 4.80 | UFO | 0 | - | - | - | - | MIT |
-| 82 | 4.79 | awesome-LLM-resources | 0 | - | - | - | - | Apache-2.0 |
-| 83 | 4.79 | WrenAI | 0 | - | - | - | - | AGPL-3.0 |
-| 84 | 4.78 | OpenRLHF | 0 | - | - | - | - | Apache-2.0 |
-| 85 | 4.78 | promptfoo | 0 | - | - | - | - | MIT |
-| 86 | 4.77 | aichat | 0 | - | - | - | - | Apache-2.0 |
-| 87 | 4.77 | R2R | 0 | - | - | - | - | MIT |
-| 88 | 4.75 | nanobrowser | 0 | - | - | - | - | Apache-2.0 |
-| 89 | 4.73 | intentkit | 0 | - | - | - | - | MIT |
-| 90 | 4.72 | agents | 0 | - | - | - | - | Apache-2.0 |
-| 91 | 4.71 | deep-searcher | 0 | - | - | - | - | Apache-2.0 |
-| 92 | 4.70 | XAgent | 0 | - | - | - | - | Apache-2.0 |
-| 93 | 4.69 | agent-squad | 0 | - | - | - | - | Apache-2.0 |
-| 94 | 4.68 | LLocalSearch | 0 | - | - | - | - | Apache-2.0 |
-| 95 | 4.68 | RD-Agent | 0 | - | - | - | - | MIT |
-| 96 | 4.67 | lamda | 0 | - | - | - | - | - |
-| 97 | 4.67 | TaskWeaver | 0 | - | - | - | - | MIT |
-| 98 | 4.66 | mcp-agent | 0 | - | - | - | - | Apache-2.0 |
-| 99 | 4.66 | superagent | 0 | - | - | - | - | MIT |
-| 100 | 4.66 | ten-framework | 0 | - | - | - | - | NOASSERTION |
+| 1 | 5.28 | dify | 0 | - | - | - | - | NOASSERTION |
+| 2 | 5.17 | langflow | 0 | - | - | - | - | MIT |
+| 3 | 5.10 | browser-use | 0 | - | - | - | - | MIT |
+| 4 | 5.07 | OpenHands | 0 | - | - | - | - | MIT |
+| 5 | 5.06 | lobe-chat | 0 | - | - | - | - | NOASSERTION |
+| 6 | 5.06 | MetaGPT | 0 | - | - | - | - | MIT |
+| 7 | 5.04 | ragflow | 0 | - | - | - | - | Apache-2.0 |
+| 8 | 5.03 | system-prompts-and-models... | 0 | - | - | - | - | GPL-3.0 |
+| 9 | 5.02 | LLaMA-Factory | 0 | - | - | - | - | Apache-2.0 |
+| 10 | 4.96 | anything-llm | 0 | - | - | - | - | MIT |
+| 11 | 4.96 | cline | 0 | - | - | - | - | Apache-2.0 |
+| 12 | 4.93 | autogen | 0 | - | - | - | - | CC-BY-4.0 |
+| 13 | 4.93 | llama_index | 0 | - | - | - | - | MIT |
+| 14 | 4.92 | awesome-llm-apps | 0 | - | - | - | - | Apache-2.0 |
+| 15 | 4.87 | Flowise | 0 | - | - | - | - | NOASSERTION |
+| 16 | 4.84 | ChatTTS | 0 | - | - | - | - | AGPL-3.0 |
+| 17 | 4.84 | mem0 | 0 | - | - | - | - | Apache-2.0 |
+| 18 | 4.82 | crewAI | 0 | - | - | - | - | MIT |
+| 19 | 4.81 | Langchain-Chatchat | 0 | - | - | - | - | Apache-2.0 |
+| 20 | 4.79 | AgentGPT | 0 | - | - | - | - | GPL-3.0 |
+| 21 | 4.76 | agno | 0 | - | - | - | - | MPL-2.0 |
+| 22 | 4.75 | khoj | 0 | - | - | - | - | AGPL-3.0 |
+| 23 | 4.74 | ChatDev | 0 | - | - | - | - | Apache-2.0 |
+| 24 | 4.73 | ai-agents-for-beginners | 0 | - | - | - | - | MIT |
+| 25 | 4.73 | LibreChat | 0 | - | - | - | - | MIT |
+| 26 | 4.72 | cherry-studio | 0 | - | - | - | - | NOASSERTION |
+| 27 | 4.72 | Jobs_Applier_AI_Agent_AIHawk | 0 | - | - | - | - | AGPL-3.0 |
+| 28 | 4.71 | qlib | 0 | - | - | - | - | MIT |
+| 29 | 4.68 | composio | 0 | - | - | - | - | NOASSERTION |
+| 30 | 4.66 | FastGPT | 0 | - | - | - | - | NOASSERTION |
+| 31 | 4.65 | gpt-researcher | 0 | - | - | - | - | Apache-2.0 |
+| 32 | 4.63 | CopilotKit | 0 | - | - | - | - | MIT |
+| 33 | 4.63 | haystack | 0 | - | - | - | - | Apache-2.0 |
+| 34 | 4.56 | swarm | 0 | - | - | - | - | MIT |
+| 35 | 4.55 | agentic | 0 | - | - | - | - | MIT |
+| 36 | 4.54 | vanna | 0 | - | - | - | - | MIT |
+| 37 | 4.53 | agenticSeek | 0 | - | - | - | - | GPL-3.0 |
+| 38 | 4.53 | DB-GPT | 0 | - | - | - | - | MIT |
+| 39 | 4.53 | deep-research | 0 | - | - | - | - | MIT |
+| 40 | 4.53 | letta | 0 | - | - | - | - | Apache-2.0 |
+| 41 | 4.52 | SWE-agent | 0 | - | - | - | - | MIT |
+| 42 | 4.51 | eliza | 0 | - | - | - | - | MIT |
+| 43 | 4.51 | RagaAI-Catalyst | 0 | - | - | - | - | Apache-2.0 |
+| 44 | 4.50 | DocsGPT | 0 | - | - | - | - | MIT |
+| 45 | 4.48 | awesome-ai-agents | 0 | - | - | - | - | NOASSERTION |
+| 46 | 4.47 | goose | 0 | - | - | - | - | Apache-2.0 |
+| 47 | 4.46 | activepieces | 0 | - | - | - | - | NOASSERTION |
+| 48 | 4.46 | suna | 0 | - | - | - | - | Apache-2.0 |
+| 49 | 4.45 | ai | 0 | - | - | - | - | NOASSERTION |
+| 50 | 4.45 | botpress | 0 | - | - | - | - | MIT |
+| 51 | 4.45 | dagger | 0 | - | - | - | - | Apache-2.0 |
+| 52 | 4.45 | plandex | 0 | - | - | - | - | MIT |
+| 53 | 4.44 | ai-pdf-chatbot-langchain | 0 | - | - | - | - | MIT |
+| 54 | 4.44 | deer-flow | 0 | - | - | - | - | MIT |
+| 55 | 4.44 | SuperAGI | 0 | - | - | - | - | MIT |
+| 56 | 4.44 | web-ui | 0 | - | - | - | - | MIT |
+| 57 | 4.42 | camel | 0 | - | - | - | - | Apache-2.0 |
+| 58 | 4.42 | mastra | 0 | - | - | - | - | NOASSERTION |
+| 59 | 4.41 | ChuanhuChatGPT | 0 | - | - | - | - | GPL-3.0 |
+| 60 | 4.41 | devika | 0 | - | - | - | - | MIT |
+| 61 | 4.39 | GenAI_Agents | 0 | - | - | - | - | NOASSERTION |
+| 62 | 4.37 | Llama-Chinese | 0 | - | - | - | - | - |
+| 63 | 4.36 | graphiti | 0 | - | - | - | - | Apache-2.0 |
+| 64 | 4.36 | openai-agents-python | 0 | - | - | - | - | MIT |
+| 65 | 4.35 | LangBot | 0 | - | - | - | - | AGPL-3.0 |
+| 66 | 4.32 | pydantic-ai | 0 | - | - | - | - | MIT |
+| 67 | 4.31 | adk-python | 0 | - | - | - | - | Apache-2.0 |
+| 68 | 4.30 | ai-engineering-hub | 0 | - | - | - | - | MIT |
+| 69 | 4.29 | opik | 0 | - | - | - | - | Apache-2.0 |
+| 70 | 4.29 | Qwen-Agent | 0 | - | - | - | - | Apache-2.0 |
+| 71 | 4.27 | agent-zero | 0 | - | - | - | - | NOASSERTION |
+| 72 | 4.26 | AstrBot | 0 | - | - | - | - | AGPL-3.0 |
+| 73 | 4.25 | bisheng | 0 | - | - | - | - | Apache-2.0 |
+| 74 | 4.24 | awesome-LLM-resources | 0 | - | - | - | - | Apache-2.0 |
+| 75 | 4.24 | cua | 0 | - | - | - | - | MIT |
+| 76 | 4.24 | E2B | 0 | - | - | - | - | Apache-2.0 |
+| 77 | 4.22 | Figma-Context-MCP | 0 | - | - | - | - | MIT |
+| 78 | 4.20 | Bert-VITS2 | 0 | - | - | - | - | AGPL-3.0 |
+| 79 | 4.18 | agentscope | 0 | - | - | - | - | Apache-2.0 |
+| 80 | 4.18 | pr-agent | 0 | - | - | - | - | AGPL-3.0 |
+| 81 | 4.18 | UFO | 0 | - | - | - | - | MIT |
+| 82 | 4.18 | Upsonic | 0 | - | - | - | - | MIT |
+| 83 | 4.18 | WrenAI | 0 | - | - | - | - | AGPL-3.0 |
+| 84 | 4.16 | OpenRLHF | 0 | - | - | - | - | Apache-2.0 |
+| 85 | 4.16 | promptfoo | 0 | - | - | - | - | MIT |
+| 86 | 4.15 | aichat | 0 | - | - | - | - | Apache-2.0 |
+| 87 | 4.15 | R2R | 0 | - | - | - | - | MIT |
+| 88 | 4.14 | nanobrowser | 0 | - | - | - | - | Apache-2.0 |
+| 89 | 4.11 | agents | 0 | - | - | - | - | Apache-2.0 |
+| 90 | 4.11 | intentkit | 0 | - | - | - | - | MIT |
+| 91 | 4.10 | deep-searcher | 0 | - | - | - | - | Apache-2.0 |
+| 92 | 4.09 | agent-squad | 0 | - | - | - | - | Apache-2.0 |
+| 93 | 4.08 | lamda | 0 | - | - | - | - | - |
+| 94 | 4.08 | RD-Agent | 0 | - | - | - | - | MIT |
+| 95 | 4.07 | LLocalSearch | 0 | - | - | - | - | Apache-2.0 |
+| 96 | 4.07 | TaskWeaver | 0 | - | - | - | - | MIT |
+| 97 | 4.06 | mcp-agent | 0 | - | - | - | - | Apache-2.0 |
+| 98 | 4.06 | ten-framework | 0 | - | - | - | - | NOASSERTION |
+| 99 | 4.05 | cognee | 0 | - | - | - | - | Apache-2.0 |
+| 100 | 4.05 | julep | 0 | - | - | - | - | Apache-2.0 |
 <!-- TOP50:END -->
 *➡️ Dig into how these scores are cooked up in our [Methodology section](#our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](./docs/methodology.md).*
 
@@ -219,7 +208,7 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 <details>
 <summary>📊 Metrics Legend</summary>
 
-- Our score blends stars, recency, issue health, docs completeness, license freedom and ecosystem integration. **[See full formula →](./docs/methodology.md#scoring-formula)**
+Our score blends stars, recency, issue health, docs completeness, license freedom and ecosystem integration. **[See full formula →](./docs/methodology.md#scoring-formula)**
 - ⭐ Δ7d = stars gained in the last 7 days
 - 🔧 Maint = 1 / (days_since_last_commit * open_issue_ratio)
 - 📅 Release = 1 / days_since_last_release
@@ -234,7 +223,6 @@ For a full description of every metric field, see [SCHEMA.md](./docs/SCHEMA.md).
 
 -----
 
------
 ### Our Methodology & Scoring Explained
 
 <a id="our-methodology--scoring-explained"></a>
@@ -282,14 +270,8 @@ This isn't a static list. It's alive\! See [CHANGELOG.md](./CHANGELOG.md) for al
 <a id="-architecture"></a>
 ## 🏗 Architecture
 
-```mermaid
-flowchart LR
-    A[User] --> B[Scrape]
-    B --> C[JSON]
-    C --> D[Rank]
-    D --> E[Markdown]
-    E --> F[View]
-```
+
+![System Architecture](docs/architecture.svg)
 
 -----
 
@@ -301,6 +283,9 @@ Run the indexer to fetch fresh repo data:
 ```bash
 python -m agentic_index_cli.agentic_index --min-stars 50 --iterations 1 --output data
 ```
+
+The CLI reads tuning parameters from `agentic_index_cli/config.yaml`. Use
+`--config my.yml` with any command to override these defaults.
 
 Generated tables live in the `data/` directory.
 
@@ -370,12 +355,12 @@ Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
   * Install [Git LFS](https://git-lfs.github.com/) and run `git lfs install`.
     PNG and GIF assets are tracked via LFS.
   * Set up your dev environment with [DEVELOPMENT.md](./docs/DEVELOPMENT.md).
+  * Install dependencies with `scripts/agent-setup.sh`.
 
 For tips on keeping your branch in sync with `main` and resolving conflicts, see
 [CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).
 
 Let's build the best damn agent list together\!
-![Code of Conduct](badges/coc.svg)
 
 
 -----
