@@ -1,7 +1,6 @@
 import json
 from fastapi.testclient import TestClient
-import importlib
-import agentic_index_api.server as srv
+from agentic_index_cli.internal.rank import compute_score
 from tests.test_api_auth import load_app
 
 
@@ -16,11 +15,22 @@ def make_client(monkeypatch, tmp_path, data=None):
     return TestClient(app), {"X-API-KEY": "k"}
 
 
-def test_score_endpoint_loads_data(tmp_path, monkeypatch):
-    client, headers = make_client(monkeypatch, tmp_path, [{"name": "repo1"}, {"full_name": "a/b"}])
+def test_score_endpoint_calculates_scores(tmp_path, monkeypatch):
+    data = [
+        {"name": "B", "stargazers_count": 20, "open_issues_count": 0, "closed_issues": 20, "pushed_at": "2025-06-10T00:00:00Z", "license": {"spdx_id": "MIT"}, "doc_completeness": 0.8, "ecosystem_integration": 1.0},
+        {"name": "A", "stargazers_count": 10, "open_issues_count": 0, "closed_issues": 10, "pushed_at": "2025-06-01T00:00:00Z", "license": {"spdx_id": "MIT"}, "doc_completeness": 0.5, "ecosystem_integration": 0.0},
+    ]
+    client, headers = make_client(monkeypatch, tmp_path, data)
     resp = client.post("/score", json={}, headers=headers)
     assert resp.status_code == 200
-    assert resp.json()["top_scores"] == ["repo1", "a/b"]
+    returned = resp.json()["top_scores"]
+
+    expected = []
+    for repo in data:
+        expected.append({"name": repo["name"], "score": compute_score(repo)})
+    expected.sort(key=lambda r: r["score"], reverse=True)
+
+    assert returned == expected[:5]
 
 
 def test_score_missing_file(tmp_path, monkeypatch):

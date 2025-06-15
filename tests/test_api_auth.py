@@ -25,11 +25,13 @@ def test_protected_requires_auth(monkeypatch):
         assert resp.status_code == 401
 
 
-def test_api_key_header(monkeypatch):
+def test_api_key_header(monkeypatch, tmp_path):
     app, mod = load_app(monkeypatch, key="sekret")
     monkeypatch.setattr(mod, "scrape", lambda *a, **k: [])
     monkeypatch.setattr(mod, "save_repos", lambda *a, **k: None)
-    monkeypatch.setattr(mod, "rank_main", lambda *a, **k: None)
+    sync = tmp_path / "sync.json"
+    sync.write_text("[]")
+    monkeypatch.setattr(mod, "SYNC_DATA_PATH", sync)
     import sys, types
     dummy = types.SimpleNamespace(main=lambda *a, **k: None)
     monkeypatch.setitem(sys.modules, "agentic_index_cli.generate_outputs", dummy)

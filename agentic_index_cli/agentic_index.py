@@ -336,8 +336,8 @@ def run_index(min_stars: int = 0, iterations: int = 1, output: Path = Path("data
         final_repos = top
 
     if not is_test or output != Path("data"):
-        save_csv(final_repos, output / "top50.csv")
-        save_markdown(final_repos, output / "top50.md")
+        save_csv(final_repos, output / "top100.csv")
+        save_markdown(final_repos, output / "top100.md")
         changes = changelog(prev_repos, [r["name"] for r in final_repos])
         save_changelog(changes, output / "CHANGELOG.md")
 
