@@ -6,3 +6,10 @@ Agentic Index Documentation
    :caption: Contents:
 
    modules
+
+System Architecture
+-------------------
+
+.. image:: ../architecture.svg
+   :alt: Agentic Index system architecture
+   :align: center

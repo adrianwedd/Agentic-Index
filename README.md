@@ -270,14 +270,8 @@ This isn't a static list. It's alive\! See [CHANGELOG.md](./CHANGELOG.md) for al
 <a id="-architecture"></a>
 ## 🏗 Architecture
 
-```mermaid
-flowchart LR
-    A[User] --> B[Scrape]
-    B --> C[JSON]
-    C --> D[Rank]
-    D --> E[Markdown]
-    E --> F[View]
-```
+
+![System Architecture](docs/architecture.svg)
 
 -----
 
