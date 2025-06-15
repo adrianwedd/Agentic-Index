@@ -54,8 +54,10 @@ def create_issue(
     body: str,
     repo: str,
     labels: List[str] | None = None,
+    milestone: int | None = None,
     *,
     token: str | None = None,
+    debug: bool = False,
 ) -> str:
     """Create a new issue and return the HTML URL."""
     token = token or get_token()
@@ -66,7 +68,15 @@ def create_issue(
     payload: Dict[str, Any] = {"title": title, "body": body}
     if labels:
         payload["labels"] = labels
-    resp = _request("POST", f"{API_URL}/repos/{repo}/issues", token=token, json=payload)
+    if milestone is not None:
+        payload["milestone"] = milestone
+    resp = _request(
+        "POST",
+        f"{API_URL}/repos/{repo}/issues",
+        token=token,
+        json=payload,
+        debug=debug,
+    )
     if resp.status_code >= 400:
         raise APIError(f"{resp.status_code} {resp.text}")
     return resp.json().get("html_url", "")
@@ -149,7 +159,9 @@ def _save_pending(url: str, data: Dict[str, Any]) -> None:
     path.write_text(json.dumps(entries, indent=2))
 
 
-def post_comment(issue_url: str, body: str, *, token: str | None = None) -> str:
+def post_comment(
+    issue_url: str, body: str, *, token: str | None = None, debug: bool = False
+) -> str:
     """Post a comment to ``issue_url`` and return the comment HTML URL."""
     token = token or get_token()
     if not token:
@@ -162,6 +174,7 @@ def post_comment(issue_url: str, body: str, *, token: str | None = None) -> str:
         f"{API_URL}/repos/{repo}/issues/{issue_number}/comments",
         token=token,
         json={"body": body},
+        debug=debug,
     )
     if resp.status_code >= 400:
         raise APIError(f"{resp.status_code} {resp.text}")
@@ -260,6 +273,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--issue-number", type=int)
     parser.add_argument("--issue-url")
     parser.add_argument("--assign", action="append", default=[])
+    parser.add_argument("--label", action="append", default=[])
     parser.add_argument("--milestone", type=int)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--debug", action="store_true")
@@ -273,7 +287,14 @@ def main(argv: list[str] | None = None) -> None:
             if args.verbose:
                 print(f"DRY RUN: would create issue in {args.repo}")
             return
-        url = create_issue(args.title, args.body, args.repo)
+        url = create_issue(
+            args.title,
+            args.body,
+            args.repo,
+            labels=args.label or None,
+            milestone=args.milestone,
+            debug=args.debug,
+        )
         if args.verbose:
             print(url)
         return
@@ -302,7 +323,7 @@ def main(argv: list[str] | None = None) -> None:
         return
 
     if args.comment:
-        url = post_comment(issue_url, args.body)
+        url = post_comment(issue_url, args.body, debug=args.debug)
     elif args.close:
         url = close_issue(issue_url, debug=args.debug)
     else:

@@ -78,7 +78,7 @@ Create an issue and assign a user:
 ```bash
 python -m agentic_index_cli.issue_logger \
   --repo owner/repo --new-issue --title "Bug" \
-  --body "Details" --assign your-user
+  --body "Details" --assign your-user --label bug --milestone 1
 ```
 
 Update the body of issue #5:

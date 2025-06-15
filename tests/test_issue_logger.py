@@ -15,13 +15,30 @@ def test_token_fallback(monkeypatch):
 def test_cli_create_issue(monkeypatch):
     called = {}
 
-    def fake_create(title, body, repo):
-        called["args"] = (title, body, repo)
+    def fake_create(
+        title, body, repo, labels=None, milestone=None, *, token=None, debug=False
+    ):
+        called["args"] = (title, body, repo, labels, milestone, debug)
         return "x"
 
     monkeypatch.setattr(il, "create_issue", fake_create)
-    il.main(["--new-issue", "--repo", "o/r", "--title", "t", "--body", "b"])
-    assert called["args"] == ("t", "b", "o/r")
+    il.main(
+        [
+            "--new-issue",
+            "--repo",
+            "o/r",
+            "--title",
+            "t",
+            "--body",
+            "b",
+            "--label",
+            "l1",
+            "--milestone",
+            "3",
+            "--debug",
+        ]
+    )
+    assert called["args"] == ("t", "b", "o/r", ["l1"], 3, True)
 
 
 @responses.activate
