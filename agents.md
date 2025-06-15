@@ -17,7 +17,8 @@ Agentic Index curates & ranks AI-agent repos so developers can quickly find reli
 | SyncAPI | POST /sync | `api/app.py` | Trigger repo sync | `state/sync_data.json` |
 | SafeRebase | comment /rebase | `.github/actions/safe-rebase/action.yml` | Rebase PR into new branch | draft <orig>-rebased PR |
 | IssueLogger | manual / CI | `agentic_index_cli/issue_logger.py` | Post GitHub issues/comments | Issue/Comment URLs |
-| RepoAPI | manual | `agentic_index_api/main.py` | Serve repo metadata & history | JSON endpoints |
+| APIServer | container | `agentic_index_api/server.py` | HTTP interface | JSON responses |
+
 
 Add any new agents as you implement them.*
 

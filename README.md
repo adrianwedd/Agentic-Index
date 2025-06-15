@@ -382,4 +382,5 @@ Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 
 
 © 2025 Agentic-Index Maintainers
 
+
 ![Last Sync](badges/last_sync.svg) ![Top Repo](badges/top_repo.svg) ![Repo Count](badges/repo_count.svg)
