@@ -161,8 +161,6 @@ def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> N
     for repo in repos:
         if "AgentOpsScore" in repo:
             repo[SCORE_KEY] = repo.pop("AgentOpsScore")
-        if "score" in repo and SCORE_KEY not in repo:
-            repo[SCORE_KEY] = repo.pop("score")
 
     # ensure essential fields exist; fall back to raw GitHub data when missing
     for repo in repos:

@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
-from agentic_index_cli.internal.inject_readme import main
+from agentic_index_cli.internal.inject_readme import DEFAULT_SORT_FIELD, main
 
 if __name__ == "__main__":
     import argparse
@@ -27,8 +27,8 @@ if __name__ == "__main__":
     parser.add_argument("--force", action="store_true", help="Write even if unchanged")
     parser.add_argument(
         "--sort-by",
-        default="score",
-        choices=["score", "stars_7d", "maintenance", "last_release"],
+        default=DEFAULT_SORT_FIELD,
+        choices=["overall", "stars_7d", "maintenance", "last_release"],
         help="Sort table by metric",
     )
     args = parser.parse_args()

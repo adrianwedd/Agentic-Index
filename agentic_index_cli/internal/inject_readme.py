@@ -17,6 +17,7 @@ RANKED_PATH = ROOT / "data" / "ranked.json"
 SNAPSHOT = ROOT / "data" / "last_snapshot.json"
 
 OVERALL_COL = "Overall"
+DEFAULT_SORT_FIELD = "overall"
 
 START = "<!-- TOP50:START -->"
 END = "<!-- TOP50:END -->"
@@ -30,7 +31,7 @@ def _clamp_name(name: str, limit: int = 28) -> str:
     return safe[: limit - 3] + "..."
 
 
-def _load_rows(sort_by: str = "score", *, limit: int = 100) -> list[str]:
+def _load_rows(sort_by: str = DEFAULT_SORT_FIELD, *, limit: int = 100) -> list[str]:
     """Return table rows computed from repo data using v2 fields.
 
     If ``data/ranked.json`` is present it is used in preference to
@@ -73,7 +74,7 @@ def _load_rows(sort_by: str = "score", *, limit: int = 100) -> list[str]:
         parsed.append(
             {
                 "name": name,
-                "score": repo_score,
+                "overall": repo_score,
                 "stars_7d": stars7,
                 "maintenance": maint_fmt,
                 "maintenance_sort": maint_val,
@@ -98,7 +99,7 @@ def _load_rows(sort_by: str = "score", *, limit: int = 100) -> list[str]:
         rows.append(
             "| {i} | {score:.2f} | {name} | {s30} | {maint} | {rel} | {docs} | {eco} | {lic} |".format(
                 i=i,
-                score=repo["score"],
+                score=repo["overall"],
                 name=_clamp_name(repo["name"]),
                 s30=repo["stars_7d"],
                 maint=repo["maintenance"],
@@ -133,7 +134,7 @@ def _fmt_delta(val: str | int | float, *, is_int: bool = False) -> str:
         return val
 
 
-def build_readme(*, sort_by: str = "score", limit: int | None = None) -> str:
+def build_readme(*, sort_by: str = DEFAULT_SORT_FIELD, limit: int | None = None) -> str:
     """Return README text with the top100 table injected."""
     readme_text = README_PATH.read_text(encoding="utf-8")
     end_newline = readme_text.endswith("\n")
@@ -188,7 +189,7 @@ def main(
     force: bool = False,
     check: bool = False,
     write: bool = True,
-    sort_by: str = "score",
+    sort_by: str = DEFAULT_SORT_FIELD,
 ) -> int:
     """Synchronise the README table.
 
@@ -201,7 +202,7 @@ def main(
     write:
         Whether to update ``README.md``. Defaults to ``True``.
     sort_by:
-        Field to sort by. One of ``score``, ``stars_7d``, ``maintenance``, or ``last_release``.
+        Field to sort by. One of ``overall``, ``stars_7d``, ``maintenance``, or ``last_release``.
     """
     try:
         new_text = build_readme(sort_by=sort_by)

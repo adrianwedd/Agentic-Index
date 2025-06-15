@@ -73,8 +73,6 @@ def _migrate_item(item: dict) -> dict:
     item = dict(item)
     if "AgentOpsScore" in item:
         item["AgenticIndexScore"] = item.pop("AgentOpsScore")
-    if "score" in item and "AgenticIndexScore" not in item:
-        item["AgenticIndexScore"] = item.pop("score")
     if isinstance(item.get("license"), dict):
         item["license"] = item["license"].get("spdx_id")
     return item
