@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import json
 import os
+from pathlib import Path
 from typing import Any, Dict, List
 
 import requests
@@ -50,15 +52,34 @@ def create_issue(
 
 def _parse_issue_url(issue_url: str) -> tuple[str, int]:
     """Return ``repo`` and ``issue_number`` extracted from ``issue_url``."""
+    return _parse_issue_or_pr_url(issue_url)
+
+
+def _parse_issue_or_pr_url(url: str) -> tuple[str, int]:
+    """Return ``repo`` and ``number`` extracted from issue or PR ``url``."""
     import re
 
-    api_match = re.search(r"repos/([^/]+/[^/]+)/issues/(\d+)", issue_url)
-    html_match = re.search(r"github.com/([^/]+/[^/]+)/issues/(\d+)", issue_url)
+    api_match = re.search(r"repos/([^/]+/[^/]+)/(issues|pulls)/(\d+)", url)
+    html_match = re.search(r"github.com/([^/]+/[^/]+)/(issues|pull)/(\d+)", url)
     match = api_match or html_match
     if not match:
-        raise ValueError(f"Invalid issue URL: {issue_url}")
-    repo, num = match.groups()
+        raise ValueError(f"Invalid issue or PR URL: {url}")
+    repo, _, num = match.groups()
     return repo, int(num)
+
+
+def _save_pending(url: str, data: Dict[str, Any]) -> None:
+    """Append ``data`` to ``state/worklog_pending.json``."""
+    path = Path("state/worklog_pending.json")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    entries: List[Dict[str, Any]] = []
+    if path.exists():
+        try:
+            entries = json.loads(path.read_text())
+        except Exception:
+            entries = []
+    entries.append({"url": url, "data": data})
+    path.write_text(json.dumps(entries, indent=2))
 
 
 def post_comment(issue_url: str, body: str, *, token: str | None = None) -> str:
@@ -77,6 +98,84 @@ def post_comment(issue_url: str, body: str, *, token: str | None = None) -> str:
     )
     if resp.status_code >= 400:
         raise APIError(f"{resp.status_code} {resp.text}")
+    return resp.json().get("html_url", "")
+
+
+def post_worklog_comment(
+    issue_or_pr_url: str, worklog_data: Dict[str, Any], *, token: str | None = None
+) -> str:
+    """Post or update a structured Codex worklog comment."""
+    token = token or get_token()
+    if not token:
+        _save_pending(issue_or_pr_url, worklog_data)
+        raise APIError(
+            "Missing GITHUB_TOKEN. Set GITHUB_TOKEN or GITHUB_TOKEN_ISSUES to enable issue logging."
+        )
+
+    repo, number = _parse_issue_or_pr_url(issue_or_pr_url)
+    comments_url = f"{API_URL}/repos/{repo}/issues/{number}/comments"
+
+    body_lines = ["<!-- codex-log -->"]
+    task = worklog_data.get("task") or worklog_data.get("task_name", "Task")
+    body_lines.append(f"### {task}")
+
+    table = [
+        ("Agent", worklog_data.get("agent_id", "")),
+        ("Started", worklog_data.get("started")),
+        ("Finished", worklog_data.get("finished")),
+        ("Commit", worklog_data.get("commit")),
+    ]
+    body_lines.append("| Key | Value |")
+    body_lines.append("| --- | --- |")
+    for k, v in table:
+        if v:
+            body_lines.append(f"| {k} | {v} |")
+
+    files = worklog_data.get("files") or []
+    if files:
+        body_lines.append("\n<details><summary>Files Touched</summary>\n")
+        for f in files:
+            body_lines.append(f"- `{f}`")
+        body_lines.append("</details>")
+
+    summary = worklog_data.get("summary")
+    if summary:
+        body_lines.append("")
+        body_lines.append(summary)
+
+    body = "\n".join(body_lines)
+
+    # check for existing codex-log comment
+    resp = requests.get(comments_url, headers=_headers(token), timeout=10)
+    if resp.status_code >= 400:
+        _save_pending(issue_or_pr_url, worklog_data)
+        raise APIError(f"{resp.status_code} {resp.text}")
+    existing = None
+    for c in resp.json():
+        if "<!-- codex-log -->" in c.get("body", ""):
+            existing = c
+            break
+
+    if existing:
+        cid = existing["id"]
+        resp = requests.patch(
+            f"{API_URL}/repos/{repo}/issues/comments/{cid}",
+            json={"body": body},
+            headers=_headers(token),
+            timeout=10,
+        )
+    else:
+        resp = requests.post(
+            comments_url,
+            json={"body": body},
+            headers=_headers(token),
+            timeout=10,
+        )
+
+    if resp.status_code >= 400:
+        _save_pending(issue_or_pr_url, worklog_data)
+        raise APIError(f"{resp.status_code} {resp.text}")
+
     return resp.json().get("html_url", "")
 
 
@@ -120,6 +219,7 @@ def main(argv: list[str] | None = None) -> None:
 AGENT_ACTIONS = {
     "create_issue": create_issue,
     "post_comment": post_comment,
+    "post_worklog_comment": post_worklog_comment,
 }
 
 
