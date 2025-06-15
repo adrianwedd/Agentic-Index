@@ -4,6 +4,8 @@ jobs:
   check:
     runs-on: ubuntu-latest
     if: github.event.pull_request.base.ref == 'main'
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - name: Ensure branch is ≤1 commit behind

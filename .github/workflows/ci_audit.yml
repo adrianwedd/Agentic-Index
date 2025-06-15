@@ -15,7 +15,7 @@ jobs:
       - name: Fetch failed runs (last 30 days)
         id: fetch
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           gh api -H "Accept: application/vnd.github+json" "repos/${{ github.repository }}/actions/runs?per_page=100&status=failed" | \
             jq '.workflow_runs[] | select(.created_at > (now - 2592000 | todateiso8601)) | {id,name,html_url,created_at,conclusion}' > failed_runs.json
