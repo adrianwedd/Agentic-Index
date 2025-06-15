@@ -1,3 +1,6 @@
+from fastapi import FastAPI, Response
+from typing import List
+
 """Minimal API server with optional auth."""
 
 from __future__ import annotations
@@ -47,6 +50,11 @@ def healthz() -> Response:
     """Kubernetes style health check."""
     return Response(status_code=200)
 
+
+@app.post("/score")
+def score() -> dict:
+    """Return placeholder scores list."""
+    return {"top_scores": ["example/repo"]}
 
 @app.post("/sync")
 async def sync(min_stars: int = 0) -> dict[str, Any]:
