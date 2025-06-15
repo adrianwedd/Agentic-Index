@@ -24,9 +24,11 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -e .
-      - name: Run scraper & inject README
+      - name: Refresh repo data and README
         run: |
-          python scripts/scrape.py
+          python -m agentic_index_cli.scraper --min-stars 50
+          python -m agentic_index_cli.enricher data/repos.json
+          python -m agentic_index_cli.ranker data/repos.json
           python scripts/inject_readme.py
           git diff --quiet || echo "CHANGES_DETECTED=true" >> "$GITHUB_ENV"
       - name: Summarize metrics
