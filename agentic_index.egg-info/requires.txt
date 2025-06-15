@@ -1,1 +1,13 @@
 requests
+PyYAML
+jsonschema>=3.2
+pydantic>=2
+rich
+
+[dev]
+fastapi
+httpx
+
+[docs]
+sphinx
+pydantic
