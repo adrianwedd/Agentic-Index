@@ -5,6 +5,8 @@ requests
 PyYAML
 pytest-socket
 responses
+rich
+typer[all]
 jsonschema>=3.2
 pydantic>=2
 fastapi

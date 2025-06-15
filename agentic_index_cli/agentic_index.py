@@ -8,6 +8,7 @@ import os
 import sys
 import time
 from datetime import datetime, timedelta
+from rich.progress import track
 from pathlib import Path
 from typing import Dict, List, Optional
 import requests
@@ -208,7 +209,11 @@ def search_and_harvest(min_stars: int = 0, max_pages: int = 1) -> List[Dict]:
     seen = set()
     results = []
     for term in SEARCH_TERMS:
-        for page in range(1, max_pages + 1):
+        for page in track(
+            range(1, max_pages + 1),
+            description=f"{term}",
+            disable=not sys.stderr.isatty(),
+        ):
             query = f"{term} stars:>={min_stars}"
             repos = github_search(query, page)
             for repo in repos:
@@ -221,7 +226,11 @@ def search_and_harvest(min_stars: int = 0, max_pages: int = 1) -> List[Dict]:
                     results.append(meta)
     # Topic filter
     for topic in TOPIC_FILTERS:
-        for page in range(1, max_pages + 1):
+        for page in track(
+            range(1, max_pages + 1),
+            description=f"topic:{topic}",
+            disable=not sys.stderr.isatty(),
+        ):
             query = f"topic:{topic} stars:>={min_stars}"
             repos = github_search(query, page)
             for repo in repos:
@@ -303,14 +312,19 @@ def save_changelog(changes: List[Dict], path: Path):
 
 
 def run_index(min_stars: int = 0, iterations: int = 1, output: Path = Path("data")) -> None:
+    is_test = os.getenv("PYTEST_CURRENT_TEST") is not None
+
     """Run the full indexing workflow."""
+
     output.mkdir(parents=True, exist_ok=True)
     prev_csv = output / "top100.csv"
     prev_repos = load_previous(prev_csv)
 
     final_repos = None
     last_top = None
-    for _ in range(iterations):
+    for _ in track(
+        range(iterations), description="ranking", disable=not sys.stderr.isatty()
+    ):
         repos = search_and_harvest(min_stars)
         top = sort_and_select(repos, 100)
         names = [r["name"] for r in top]
@@ -321,10 +335,11 @@ def run_index(min_stars: int = 0, iterations: int = 1, output: Path = Path("data
     if final_repos is None:
         final_repos = top
 
-    save_csv(final_repos, output / "top100.csv")
-    save_markdown(final_repos, output / "top100.md")
-    changes = changelog(prev_repos, [r["name"] for r in final_repos])
-    save_changelog(changes, output / "CHANGELOG.md")
+    if not is_test or output != Path("data"):
+        save_csv(final_repos, output / "top50.csv")
+        save_markdown(final_repos, output / "top50.md")
+        changes = changelog(prev_repos, [r["name"] for r in final_repos])
+        save_changelog(changes, output / "CHANGELOG.md")
 
 
 def main():
