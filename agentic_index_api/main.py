@@ -64,6 +64,8 @@ def get_history(name: str) -> dict[str, Any]:
         with path.open() as f:
             data = json.load(f)
         for entry in data:
+            if not isinstance(entry, dict):
+                continue
             if entry.get("name") == name or entry.get("full_name") == name:
                 for key in ("AgentOpsScore", "AgenticIndexScore", "score"):
                     if key in entry:
