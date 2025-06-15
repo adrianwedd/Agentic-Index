@@ -27,8 +27,10 @@ def test_runner_creates_issue(monkeypatch, tmp_path):
 
     called = {}
 
-    def fake_create(title, body, repo, labels=None, *, token=None):
-        called["args"] = (title, body, repo, labels)
+    def fake_create(
+        title, body, repo, labels=None, milestone=None, *, token=None, debug=False
+    ):
+        called["args"] = (title, body, repo, labels, milestone, debug)
         return "url"
 
     monkeypatch.setattr(il, "create_issue", fake_create)
@@ -39,4 +41,6 @@ def test_runner_creates_issue(monkeypatch, tmp_path):
         "body text\n\nTask ID: TEST-1",
         "o/r",
         ["auto", "codex"],
+        None,
+        False,
     )
