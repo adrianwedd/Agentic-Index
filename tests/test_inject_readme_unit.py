@@ -12,26 +12,29 @@ def _setup(tmp_path: Path, top_n: int = 50) -> Path:
     (data_dir / "repos.json").write_text(
         json.dumps(
             {
-                "schema_version": 2,
+                "schema_version": 3,
                 "repos": [
                     {
                         "name": "x",
                         "full_name": "o/x",
                         "AgenticIndexScore": 1.0,
-                        "stars_7d": 1,
-                        "maintenance": 0.5,
-                        "docs_score": 0.5,
-                        "ecosystem": 0.3,
-                        "last_release": None,
-                        "license": "MIT",
+                        "stars": 10,
+                        "stars_delta": 1,
                         "score_delta": 0,
+                        "recency_factor": 1.0,
+                        "issue_health": 0.5,
+                        "doc_completeness": 0.5,
+                        "license_freedom": 0.9,
+                        "ecosystem_integration": 0.3,
+                        "stars_log2": 3.32,
+                        "category": "General",
                     }
                 ],
             }
         )
     )
     (data_dir / "top100.md").write_text(
-        '| Rank | <abbr title="Overall">📊</abbr> Overall | Repo | <abbr title="Stars gained in last 7 days">⭐ Δ7d</abbr> | <abbr title="Maintenance score">🔧 Maint</abbr> | <abbr title="Last release date">📅 Release</abbr> | <abbr title="Documentation score">📚 Docs</abbr> | <abbr title="Ecosystem fit">🧠 Fit</abbr> | <abbr title="License">⚖️ License</abbr> |\n|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|\n| 1 | 1.00 | x | 1 | 0.50 | - | 0.50 | 0.30 | MIT |\n'
+        "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |\n|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|\n| 1 | x | 1.00 | 10 | +1 |  | 1.00 | 0.50 | 0.50 | 0.90 | 0.30 | 3.32 | General |\n"
     )
     (data_dir / "last_snapshot.json").write_text("[]")
     readme = tmp_path / "README.md"
@@ -54,7 +57,7 @@ def test_inject_and_check(tmp_path, monkeypatch):
 
     assert inj.main(top_n=50) == 0
     text = readme.read_text()
-    assert "| 1 | 1.00 | x |" in text
+    assert "| 1 | x | 1.00 |" in text
 
     assert inj.main(check=True, top_n=50) == 0
 
@@ -67,7 +70,8 @@ def test_check_fails_when_outdated(tmp_path, monkeypatch):
 
 
 @pytest.mark.parametrize(
-    "field", ["name", "full_name", "AgenticIndexScore", "score_delta"]
+    "field",
+    ["name", "full_name", "AgenticIndexScore", "stars"],
 )
 def test_missing_required_key(tmp_path, monkeypatch, field):
     _setup(tmp_path)

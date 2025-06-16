@@ -71,10 +71,10 @@ def assert_readme_diff(old: str, new: str, *, delta: float = 0.02) -> None:
 
         if ocells[0] != ncells[0]:
             errors.append(f"rank {ocells[0]} != {ncells[0]}")
-        if ocells[2] != ncells[2]:
-            errors.append(f"repo '{ocells[2]}' != '{ncells[2]}'")
+        if ocells[1] != ncells[1]:
+            errors.append(f"repo '{ocells[1]}' != '{ncells[1]}'")
 
-        for idx in (1, 3, 4, 6, 7):
+        for idx in range(2, 12):
             if ocells[idx] and ncells[idx]:
                 try:
                     if abs(float(ocells[idx]) - float(ncells[idx])) > delta:
@@ -82,10 +82,5 @@ def assert_readme_diff(old: str, new: str, *, delta: float = 0.02) -> None:
                 except ValueError:
                     if ocells[idx] != ncells[idx]:
                         errors.append(f"col {idx} '{ocells[idx]}' != '{ncells[idx]}'")
-
-        if ocells[5] != ncells[5]:
-            errors.append(f"release '{ocells[5]}' != '{ncells[5]}'")
-        if ocells[8] != ncells[8]:
-            errors.append(f"license '{ocells[8]}' != '{ncells[8]}'")
 
         assert not errors, f"row {i}: " + "; ".join(errors)

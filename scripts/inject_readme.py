@@ -32,10 +32,18 @@ if __name__ == "__main__":
     parser.add_argument(
         "--sort-by",
         default=DEFAULT_SORT_FIELD,
-        choices=["overall", "stars_7d", "maintenance", "last_release"],
+        choices=[
+            "score",
+            "stars",
+            "stars_delta",
+            "score_delta",
+            "recency",
+            "issue_health",
+        ],
         help="Sort table by metric",
     )
     parser.add_argument("--top-n", type=int, default=DEFAULT_TOP_N)
+    parser.add_argument("--limit", type=int, help="Maximum rows to render")
     args = parser.parse_args()
 
     check = args.check or args.dry_run
@@ -46,4 +54,5 @@ if __name__ == "__main__":
         write=write,
         sort_by=args.sort_by,
         top_n=args.top_n,
+        limit=args.limit,
     )

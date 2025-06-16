@@ -23,6 +23,16 @@ def _canonical(name: str) -> str:
         "fit": "fit",
         "license": "license",
         "rank": "rank",
+        "recency": "recency",
+        "issue health": "issue_health",
+        "doc complete": "docs",
+        "license freedom": "license_freedom",
+        "ecosystem": "ecosystem",
+        "log2stars": "log2stars",
+        "log₂stars": "log2stars",
+        "category": "category",
+        "delta stars": "stars_delta",
+        "delta score": "score_delta",
     }
     return mapping.get(name, name)
 
