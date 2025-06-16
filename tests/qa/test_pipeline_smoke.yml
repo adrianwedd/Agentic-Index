@@ -1,0 +1,10 @@
+# Pipeline Smoke Test for CR-AI-118
+
+- id: ST-1
+  steps:
+    - "Run \`scripts/scrape_repos.py --min-stars 0 --one-shot\` with fixtures"
+    - "Execute \`scripts/trigger_refresh.sh --all\`"
+    - "Invoke \`python scripts/inject_readme.py --force --all-categories\`"
+  expected: "data/, data/by_category/, README_*.md and README.md generated"
+  actual: "Pass on fixture dataset"
+  result: pass
