@@ -1,5 +1,9 @@
 from types import SimpleNamespace
 
+import pytest
+
+pytestmark = pytest.mark.network
+
 import agentic_index_cli.internal.link_integrity as li
 
 

@@ -1,3 +1,4 @@
+import importlib
 import os
 from pathlib import Path
 
@@ -39,6 +40,37 @@ def allow_testclient_unix_sockets():
     finally:
         pytest_socket.enable_socket()
         pytest_socket.disable_socket()
+
+
+def pytest_sessionstart(session):
+    required_env = ["CI_OFFLINE"]
+    missing = [var for var in required_env if os.getenv(var) is None]
+    if missing:
+        pytest.exit(
+            "Missing required environment variables: "
+            + ", ".join(missing)
+            + "\nSet them or run scripts/agent-setup.sh",
+            returncode=1,
+        )
+
+    missing_mods = []
+    for name in ["responses", "pytest_socket"]:
+        try:
+            importlib.import_module(name)
+        except Exception:  # pragma: no cover - import error path
+            missing_mods.append(name)
+    if missing_mods:
+        pytest.exit(
+            "Missing test dependencies: "
+            + ", ".join(missing_mods)
+            + "\nRun 'pip install -r requirements.txt'",
+            returncode=1,
+        )
+
+
+def pytest_runtest_setup(item):
+    if item.get_closest_marker("network") and os.getenv("CI_OFFLINE") == "1":
+        pytest.skip("network disabled")
 
 
 @pytest.fixture(scope="session")

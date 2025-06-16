@@ -273,6 +273,22 @@ CI runs tests with network access disabled. Set `CI_OFFLINE=1` or run
 An autouse fixture still permits UNIX-domain `socketpair()` calls so FastAPI's
 `TestClient` can start its event loop.
 
+### Troubleshooting
+
+If collection fails with messages like `ImportError: No module named 'responses'`,
+make sure all test dependencies are installed:
+
+```bash
+pip install -r requirements.txt
+```
+
+You may also see `Missing required environment variables:` errors when
+`CI_OFFLINE` or API tokens are unset. Export the variables before running tests:
+
+```bash
+export CI_OFFLINE=1
+```
+
 To check accessibility after building the site:
 
 ```bash

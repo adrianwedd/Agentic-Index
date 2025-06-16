@@ -254,6 +254,50 @@ checks pass. You can also trigger this process manually by running
 <a id="-testing"></a>
 ## 🧪 Testing
 
+This project uses `pytest` for unit tests and [pa11y](https://github.com/pa11y/pa11y) for accessibility checks. Ensure Chrome is installed before running pa11y:
+
+```bash
+# via puppeteer
+npx puppeteer browsers install chrome
+# or with apt
+sudo apt-get install -y chromium
+```
+
+Run tests with:
+
+```bash
+pytest -q
+```
+
+CI runs tests with network access disabled. Set `CI_OFFLINE=1` or run
+`pytest --disable-socket` locally to replicate the offline environment.
+An autouse fixture still permits UNIX-domain `socketpair()` calls so FastAPI's
+`TestClient` can start its event loop.
+
+### Troubleshooting
+
+If collection fails with messages like `ImportError: No module named 'responses'`,
+make sure all test dependencies are installed:
+
+```bash
+pip install -r requirements.txt
+```
+
+You may also see `Missing required environment variables:` errors when
+`CI_OFFLINE` or API tokens are unset. Export the variables before running tests:
+
+```bash
+export CI_OFFLINE=1
+```
+
+To check accessibility after building the site:
+
+```bash
+npx pa11y web/index.html
+```
+
+You can also run `./scripts/install_pa11y_deps.sh` to install pa11y and Chrome.
+
 See [ONBOARDING.md](docs/ONBOARDING.md#running-tests) for instructions on running the test suite and replicating CI's offline environment.
 
 ## 💻 Developer

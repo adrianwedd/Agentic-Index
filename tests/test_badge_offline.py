@@ -2,6 +2,10 @@ import os
 import subprocess
 from pathlib import Path
 
+import pytest
+
+pytestmark = pytest.mark.network
+
 
 def test_badges_offline(monkeypatch, tmp_path):
     badges = Path("badges")
