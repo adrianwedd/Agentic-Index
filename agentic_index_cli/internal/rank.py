@@ -14,6 +14,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
+import lib.quality_metrics  # ensure built-in metrics are registered
 from agentic_index_cli.agentic_index import (
     compute_issue_health,
     compute_recency_factor,
@@ -21,6 +22,7 @@ from agentic_index_cli.agentic_index import (
 )
 from agentic_index_cli.config import load_config
 from agentic_index_cli.validate import load_repos, save_repos
+from lib.metrics_registry import get_metrics
 
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
 
@@ -28,44 +30,15 @@ SCORE_KEY = "AgenticIndexScore"
 
 
 def compute_score(repo: dict) -> float:
-    """Return the Agentic Index score.
+    """Return the Agentic Index score using registered metrics."""
 
-    Equation::
-
-        S = 0.30 * log2(stars + 1)
-            + 0.25 * recency
-            + 0.20 * issue_health
-            + 0.15 * docs
-            + 0.07 * license
-            + 0.03 * ecosystem
-    """
-    stars = repo.get("stars", repo.get("stargazers_count", 0))
-    recency = repo.get("recency_factor")
-    if recency is None:
-        pushed = repo.get("pushed_at", "1970-01-01T00:00:00Z")
-        recency = compute_recency_factor(pushed)
-    issue_health = repo.get("issue_health")
-    if issue_health is None:
-        issue_health = compute_issue_health(
-            repo.get("open_issues_count", 0), repo.get("closed_issues", 0)
-        )
-    docs = repo.get("doc_completeness", 0)
-    license_free = repo.get("license_freedom")
-    if license_free is None:
-        lic = repo.get("license")
-        if isinstance(lic, dict):
-            lic = lic.get("spdx_id")
-        license_free = license_freedom(lic)
-    ecosys = repo.get("ecosystem_integration", 0)
-
-    score = (
-        0.30 * math.log2(stars + 1)
-        + 0.25 * recency
-        + 0.20 * issue_health
-        + 0.15 * docs
-        + 0.07 * license_free
-        + 0.03 * ecosys
-    )
+    score = 0.0
+    for metric in get_metrics():
+        try:
+            val = metric.score(repo)
+        except Exception:
+            val = 0.0
+        score += metric.weight * val
     return round(score, 2)
 
 

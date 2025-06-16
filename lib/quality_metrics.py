@@ -7,7 +7,16 @@ A 0.0–1.0 scale.
 
 from __future__ import annotations
 
+import math
 from typing import Iterable
+
+from agentic_index_cli.agentic_index import (
+    compute_issue_health,
+    compute_recency_factor,
+    license_freedom,
+)
+
+from .metrics_registry import FunctionMetric, register
 
 
 def _clamp(value: float, low: float = 0.0, high: float = 1.0) -> float:
@@ -66,3 +75,56 @@ def ecosystem_tag(
     if "rust" in lang:
         return "rust"
     return "other"
+
+
+# ---------------------------------------------------------------------------
+# Metric providers used by the ranking script
+# ---------------------------------------------------------------------------
+
+
+def _stars_metric(repo: dict) -> float:
+    return math.log2(repo.get("stars", repo.get("stargazers_count", 0)) + 1)
+
+
+def _recency_metric(repo: dict) -> float:
+    recency = repo.get("recency_factor")
+    if recency is None:
+        pushed = repo.get("pushed_at", "1970-01-01T00:00:00Z")
+        recency = compute_recency_factor(pushed)
+    return recency
+
+
+def _issues_metric(repo: dict) -> float:
+    issue_health = repo.get("issue_health")
+    if issue_health is None:
+        issue_health = compute_issue_health(
+            repo.get("open_issues_count", 0), repo.get("closed_issues", 0)
+        )
+    return issue_health
+
+
+def _docs_metric(repo: dict) -> float:
+    return repo.get("doc_completeness", 0.0)
+
+
+def _license_metric(repo: dict) -> float:
+    license_free = repo.get("license_freedom")
+    if license_free is None:
+        lic = repo.get("license")
+        if isinstance(lic, dict):
+            lic = lic.get("spdx_id")
+        license_free = license_freedom(lic)
+    return license_free
+
+
+def _ecosystem_metric(repo: dict) -> float:
+    return repo.get("ecosystem_integration", 0.0)
+
+
+# register built-in metrics
+register(FunctionMetric("stars", 0.30, _stars_metric))
+register(FunctionMetric("recency", 0.25, _recency_metric))
+register(FunctionMetric("issue_health", 0.20, _issues_metric))
+register(FunctionMetric("docs", 0.15, _docs_metric))
+register(FunctionMetric("license", 0.07, _license_metric))
+register(FunctionMetric("ecosystem", 0.03, _ecosystem_metric))
