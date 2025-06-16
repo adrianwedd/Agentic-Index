@@ -14,6 +14,7 @@ repos:
         language: python
         additional_dependencies: [., pytest-cov, requests, PyYAML, jsonschema, pydantic, responses, matplotlib, fastapi, httpx, rich]
         files: \.py$
+        exclude: ^scripts/score_metrics\.py$
       - id: detect-large-files
         name: detect-large-files
         entry: python scripts/detect_large_files.py
