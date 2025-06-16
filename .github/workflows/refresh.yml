@@ -35,57 +35,57 @@ jobs:
         id: metrics
         run: |
           python <<'PY'
-import json, os, pathlib
-path = pathlib.Path('data/repos.json')
-try:
-    data = json.load(path.open())
-    repos = data.get('repos', data)
-except Exception:
-    repos = []
-count = len(repos)
+          import json, os, pathlib
+          path = pathlib.Path('data/repos.json')
+          try:
+              data = json.load(path.open())
+              repos = data.get('repos', data)
+          except Exception:
+              repos = []
+          count = len(repos)
 
-def num(v):
-    if isinstance(v, str):
-        try:
-            return float(v.replace('+',''))
-        except Exception:
-            return -1e9
-    return float(v or 0)
+          def num(v):
+              if isinstance(v, str):
+                  try:
+                      return float(v.replace('+',''))
+                  except Exception:
+                      return -1e9
+              return float(v or 0)
 
-def fmt(v, int_fmt=False):
-    if isinstance(v, str):
-        if v == '+new':
-            return '+new'
-        try:
-            f = float(v)
-            return f"{f:+.2f}" if not int_fmt else f"{int(f):+d}"
-        except Exception:
-            return v
-    if int_fmt:
-        return f"{int(v):+d}"
-    return f"{float(v):+.2f}"
+          def fmt(v, int_fmt=False):
+              if isinstance(v, str):
+                  if v == '+new':
+                      return '+new'
+                  try:
+                      f = float(v)
+                      return f"{f:+.2f}" if not int_fmt else f"{int(f):+d}"
+                  except Exception:
+                      return v
+              if int_fmt:
+                  return f"{int(v):+d}"
+              return f"{float(v):+.2f}"
 
-score_repo = max(repos, key=lambda r: num(r.get('score_delta', 0)), default={})
-star_repo = max(repos, key=lambda r: num(r.get('stars_delta', 0)), default={})
-score_val = fmt(score_repo.get('score_delta',0))
-star_val = fmt(star_repo.get('stars_delta',0), int_fmt=True)
-score_name = score_repo.get('full_name') or score_repo.get('name','unknown')
-star_name = star_repo.get('full_name') or star_repo.get('name','unknown')
-summary = (
-    "🕒 Automated refresh of repo metrics.\n\n"
-    f"• Total repos: {count}\n"
-    f"• 🔼 Largest score delta: `{score_val}` ({score_name})\n"
-    f"• ⭐ Most stars gained: `{star_val}` ({star_name})\n\n"
-    "_Triggered via scheduled job. No manual action required._"
-)
-print(summary)
-step = os.environ.get('GITHUB_STEP_SUMMARY')
-if step:
-    with open(step, 'a') as fh:
-        fh.write(summary + "\n")
-with open('pr_body.txt','w') as fh:
-    fh.write(summary)
-PY
+          score_repo = max(repos, key=lambda r: num(r.get('score_delta', 0)), default={})
+          star_repo = max(repos, key=lambda r: num(r.get('stars_delta', 0)), default={})
+          score_val = fmt(score_repo.get('score_delta',0))
+          star_val = fmt(star_repo.get('stars_delta',0), int_fmt=True)
+          score_name = score_repo.get('full_name') or score_repo.get('name','unknown')
+          star_name = star_repo.get('full_name') or star_repo.get('name','unknown')
+          summary = (
+              "🕒 Automated refresh of repo metrics.\n\n"
+              f"• Total repos: {count}\n"
+              f"• 🔼 Largest score delta: `{score_val}` ({score_name})\n"
+              f"• ⭐ Most stars gained: `{star_val}` ({star_name})\n\n"
+              "_Triggered via scheduled job. No manual action required._"
+          )
+          print(summary)
+          step = os.environ.get('GITHUB_STEP_SUMMARY')
+          if step:
+              with open(step, 'a') as fh:
+                  fh.write(summary + "\n")
+          with open('pr_body.txt','w') as fh:
+              fh.write(summary)
+          PY
           body=$(cat pr_body.txt)
           printf "body<<EOF\n%s\nEOF\n" "$body" >> "$GITHUB_OUTPUT"
       - name: Report rate limit
@@ -94,19 +94,19 @@ PY
         run: |
           curl -s -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/rate_limit > rate.json
           python - <<'PY'
-import json, os
-try:
-    data = json.load(open('rate.json'))
-    core = data['resources']['core']
-    msg = f"GitHub API rate limit: {core['remaining']}/{core['limit']} remaining"
-    print(msg)
-    step = os.environ.get('GITHUB_STEP_SUMMARY')
-    if step:
-        with open(step,'a') as fh:
-            fh.write(msg + '\n')
-except Exception as e:
-    print('Rate limit status unavailable', e)
-PY
+          import json, os
+          try:
+              data = json.load(open('rate.json'))
+              core = data['resources']['core']
+              msg = f"GitHub API rate limit: {core['remaining']}/{core['limit']} remaining"
+              print(msg)
+              step = os.environ.get('GITHUB_STEP_SUMMARY')
+              if step:
+                  with open(step,'a') as fh:
+                      fh.write(msg + '\n')
+          except Exception as e:
+              print('Rate limit status unavailable', e)
+          PY
       - name: Create pull request
         if: env.CHANGES_DETECTED == 'true'
         uses: peter-evans/create-pull-request@v6
