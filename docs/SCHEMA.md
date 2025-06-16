@@ -6,15 +6,15 @@ This document defines the fields produced by the Agentic Index enrichment pipeli
 
 | Field Name | Type | Description | Source Module | Update Frequency |
 |------------|------|-------------|---------------|------------------|
-| `rank` | `int` | Position in score ranking | `score/__init__.py` | Nightly |
+| `rank` | `int` | Position in score ranking | `agentic_index_cli/agentic_index.py` | Nightly |
 | `repo` | `str` | GitHub `owner/name` | `scraper/github.py` | Static |
-| `score` | `float` | Composite score (0–10) | `score/__init__.py` | Nightly |
+| `score` | `float` | Composite score (0–10) | `agentic_index_cli/agentic_index.py` | Nightly |
 | `stars_7d` | `int` | Net new stars in last 7d | `scraper/github.py` | Nightly |
-| `maintenance` | `float` | Issue/PR hygiene (0–10) | `score/maintenance.py` | Weekly |
+| `maintenance` | `float` | Issue/PR hygiene (0–10) | `lib/quality_metrics.py` | Weekly |
 | `release_age` | `int` | Days since last release | `scraper/github.py` | Nightly |
-| `docs_quality` | `float` | Heuristic docs quality | `score/docs.py` | Monthly |
-| `ecosystem_fit` | `float` | Relevance to prompt/tooling space | `score/ecosystem.py` | Monthly |
-| `license_score` | `float` | Open-source license rating | `score/license.py` | Static |
+| `docs_quality` | `float` | Heuristic docs quality | `lib/quality_metrics.py` | Monthly |
+| `ecosystem_fit` | `float` | Relevance to prompt/tooling space | `lib/quality_metrics.py` | Monthly |
+| `license_score` | `float` | Open-source license rating | `lib/quality_metrics.py` | Static |
 
 ## Schema Versions
 

@@ -32,6 +32,6 @@ The complete JSON schema can be found in [`schemas/repo.schema.json`](schemas/re
 +---------+      +--------+      +----------+      +----------+
 ```
 
-The scraper collects GitHub metadata. Scoring modules in `score/` compute the derived fields. `inject_readme.py` then updates the README table. CI opens a pull request with refreshed data.
+The scraper collects GitHub metadata. Quality metrics in `lib/quality_metrics.py` compute the derived fields. The CLI in `agentic_index_cli/agentic_index.py` then updates the README table. CI opens a pull request with refreshed data.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for instructions on adding new metrics and running tests.
