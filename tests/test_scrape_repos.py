@@ -41,7 +41,7 @@ def test_one_shot_fields(tmp_path, monkeypatch):
     }
     release = {"published_at": "2025-05-01T00:00:00Z"}
 
-    def fake_get(url, headers=None):
+    def fake_get(url, headers=None, timeout=None):
         if url.endswith("/repos/owner/repo"):
             return make_response(repo)
         if url.endswith("/repos/owner/repo/releases/latest"):
