@@ -6,7 +6,7 @@ INJECT = ROOT / "scripts" / "inject_readme.py"
 
 
 def test_readme_synced():
-    subprocess.run(["python", str(INJECT), "--check"], check=True)
+    subprocess.run(["python", str(INJECT), "--check", "--top-n", "50"], check=True)
 
     text = (ROOT / "README.md").read_text()
     start = text.index("<!-- TOP50:START -->")
@@ -27,7 +27,7 @@ def test_readme_synced():
 
 
 def test_inject_idempotent(tmp_path):
-    subprocess.run(["python", str(INJECT)], check=True)
+    subprocess.run(["python", str(INJECT), "--top-n", "50"], check=True)
     first = (ROOT / "README.md").read_text()
-    subprocess.run(["python", str(INJECT)], check=True)
+    subprocess.run(["python", str(INJECT), "--top-n", "50"], check=True)
     assert (ROOT / "README.md").read_text() == first

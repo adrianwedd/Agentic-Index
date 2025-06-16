@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 import agentic_index_cli.internal.inject_readme as inj
 
 
@@ -22,6 +24,7 @@ def _setup(tmp_path: Path) -> Path:
                         "ecosystem": 0.3,
                         "last_release": None,
                         "license": "MIT",
+                        "score_delta": 0,
                     }
                 ],
             }
@@ -47,15 +50,24 @@ def _setup(tmp_path: Path) -> Path:
 def test_inject_and_check(tmp_path, monkeypatch):
     readme = _setup(tmp_path)
 
-    assert inj.main() == 0
+    assert inj.main(top_n=50) == 0
     text = readme.read_text()
     assert "| 1 | 1.00 | x |" in text
 
-    assert inj.main(check=True) == 0
+    assert inj.main(check=True, top_n=50) == 0
 
 
 def test_check_fails_when_outdated(tmp_path, monkeypatch):
     readme = _setup(tmp_path)
     # write incorrect content
     readme.write_text("start\n<!-- TOP50:START -->\nfoo\n<!-- TOP50:END -->\nend\n")
-    assert inj.main(check=True) == 1
+    assert inj.main(check=True, top_n=50) == 1
+
+
+def test_missing_required_key(tmp_path, monkeypatch):
+    readme = _setup(tmp_path)
+    data = json.loads((inj.REPOS_PATH).read_text())
+    del data["repos"][0]["stars_7d"]
+    (inj.REPOS_PATH).write_text(json.dumps(data))
+    with pytest.raises(KeyError, match="stars_7d"):
+        inj.build_readme(top_n=50)

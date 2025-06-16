@@ -175,12 +175,15 @@ def scrape(repos: List[str], min_stars: int = 0) -> List[Dict[str, Any]]:
 
 
 def main(argv: List[str] | None = None) -> None:
+    global DELTA_DAYS
     parser = argparse.ArgumentParser(description="Scrape GitHub repos")
     parser.add_argument("--one-shot", action="store_true", help="fetch once")
     parser.add_argument("--repos", nargs="*", default=DEFAULT_REPOS)
     parser.add_argument("--min-stars", type=int, default=0)
     parser.add_argument("--output", default="data/repos.json")
+    parser.add_argument("--delta-days", type=int, default=DELTA_DAYS)
     args = parser.parse_args(argv)
+    DELTA_DAYS = args.delta_days
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 

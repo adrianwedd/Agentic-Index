@@ -16,6 +16,7 @@ def _setup(tmp_path: Path):
             "AgenticIndexScore": 1.0,
             "stars_7d": 0,
             "license": "MIT",
+            "score_delta": 0,
         },
         {
             "name": "b",
@@ -26,6 +27,7 @@ def _setup(tmp_path: Path):
             "docs_score": 0.5,
             "ecosystem": 0.2,
             "license": "MIT",
+            "score_delta": 0,
         },
     ]
     (data_dir / "repos.json").write_text(
@@ -47,7 +49,7 @@ def _setup(tmp_path: Path):
 
 def test_no_all_zero_rows(tmp_path):
     _setup(tmp_path)
-    text = inj.build_readme()
+    text = inj.build_readme(top_n=50)
     lines = [l for l in text.splitlines() if l.startswith("|")][2:]
     for line in lines:
         parts = [p.strip() for p in line.split("|")]

@@ -98,7 +98,7 @@ def test_end_to_end(tmp_path, monkeypatch, min_stars):
     }.items():
         setattr(inj_mod, name, val)
 
-    inj_mod.main(force=True)
+    inj_mod.main(force=True, top_n=50)
 
     text = readme.read_text()
     assert "| 1 |" in text

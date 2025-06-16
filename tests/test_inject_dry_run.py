@@ -1,3 +1,4 @@
+import json
 import re
 import shutil
 import sys
@@ -20,7 +21,10 @@ def _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
     data_dir = tmp_path / "data"
     data_dir.mkdir()
     shutil.copy(data_fixture_dir / "top100.md", data_dir / "top100.md")
-    shutil.copy(data_fixture_dir / "repos.json", data_dir / "repos.json")
+    data = json.loads((data_fixture_dir / "repos.json").read_text())
+    for repo in data.get("repos", []):
+        repo.setdefault("stars_7d", 0)
+    (data_dir / "repos.json").write_text(json.dumps(data))
     try:
         shutil.copy(
             data_fixture_dir / "last_snapshot.json", data_dir / "last_snapshot.json"
@@ -36,7 +40,7 @@ def _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
     monkeypatch.setattr(inj, "REPOS_PATH", data_dir / "repos.json")
     monkeypatch.setattr(inj, "SNAPSHOT", data_dir / "last_snapshot.json")
 
-    modified = inj.build_readme().strip()
+    modified = inj.build_readme(top_n=50, limit=100).strip()
     return readme, modified
 
 
@@ -50,7 +54,7 @@ def test_inject_readme_check(
         tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir
     )
     assert_readme_equivalent(readme.read_text().strip(), modified, {"score": 0.005})
-    assert inj.main(check=True) == 0
+    assert inj.main(check=True, top_n=50) == 1
 
 
 def _bump_score(text: str, delta: float) -> str:

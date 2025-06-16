@@ -6,7 +6,7 @@ from typing import Any
 
 from fastapi import FastAPI, HTTPException
 
-DATA_FILE = Path("repos.json")
+DATA_FILE = Path("data/repos.json")
 HISTORY_DIR = Path("data/history")
 
 app = FastAPI(title="Agentic Index API")
