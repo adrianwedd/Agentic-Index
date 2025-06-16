@@ -198,6 +198,18 @@ def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> N
         for old in snapshots[:-delta_days]:
             old.unlink()
 
+        # write per-category lists
+        by_cat = data_dir / "by_category"
+        by_cat.mkdir(exist_ok=True)
+        index: dict[str, str] = {}
+        for cat in sorted({r.get("category") for r in repos if r.get("category")}):
+            cat_repos = [r for r in repos if r.get("category") == cat]
+            cat_repos.sort(key=lambda r: r[SCORE_KEY], reverse=True)
+            fname = f"{cat}.json"
+            save_repos(by_cat / fname, cat_repos)
+            index[cat] = fname
+        (by_cat / "index.json").write_text(json.dumps(index, indent=2) + "\n")
+
     # top-50 table
     header = [
         "| Rank | Repo | Score | ▲ StarsΔ | ▲ ScoreΔ | Category |",

@@ -150,6 +150,7 @@ def fetch_repo(full_name: str) -> Dict[str, Any]:
         "language": repo.get("language"),
         "pushed_at": repo.get("pushed_at"),
         "owner": {"login": repo.get("owner", {}).get("login")},
+        "topics": topics,
         "stars_7d": _compute_stars_delta(full_name, stars),
         "maintenance": 1.0,
         "docs_score": 0.0,
