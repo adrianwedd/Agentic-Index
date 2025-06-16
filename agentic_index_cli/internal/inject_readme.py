@@ -8,6 +8,7 @@ import json
 import os
 import pathlib
 import sys
+import traceback
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 README_PATH = ROOT / "README.md"
@@ -53,7 +54,7 @@ def _load_rows(sort_by: str = DEFAULT_SORT_FIELD, *, limit: int = 100) -> list[s
     except Exception as exc:
         raise ValueError(f"Failed to read {REPOS_PATH}: {exc}") from exc
 
-    required = ["name", "AgenticIndexScore", "stars_7d", "score_delta"]
+    required = ["name", "full_name", "AgenticIndexScore", "score_delta"]
     parsed = []
     for idx, repo in enumerate(repos):
         for key in required:
@@ -165,7 +166,9 @@ def build_readme(
         end_idx = readme_text.index(end_marker, start_idx)
     except ValueError as exc:
         missing = start_marker if start_marker not in readme_text else end_marker
-        raise ValueError(f"Marker {missing} not found in README") from exc
+        raise ValueError(
+            f"Marker '{missing}' for TOP{top_n} not found in README"
+        ) from exc
 
     before = readme_text[: start_idx + len(start_marker)].rstrip()
     after = "\n" + readme_text[end_idx + len(end_marker) :].lstrip()
@@ -235,8 +238,8 @@ def main(
     """
     try:
         new_text = build_readme(sort_by=sort_by, limit=top_n, top_n=top_n)
-    except Exception as exc:
-        print(f"{exc.__class__.__name__}: {exc}", file=sys.stderr)
+    except Exception:
+        traceback.print_exc()
         return 1
 
     if check:
