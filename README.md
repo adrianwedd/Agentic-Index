@@ -15,9 +15,9 @@ We rank everything using a transparent scoring formula based on:
 
 | Emoji | Field | Formula | Updated | Source |
 |-------|-------|---------|---------|--------|
-| ⭐ | `stars_7d` | GitHub star Δ (7 days) | Nightly | `scraper/github.py` |
+| ⭐ | `stars_7d` | GitHub star Δ (7 days) | Nightly | `scripts/scrape_repos.py` |
 | 🔧 | `maintenance` | Issue/PR hygiene score | Weekly | `score/maintenance.py` |
-| 📅 | `release_age` | Days since latest release | Nightly | `scraper/github.py` |
+| 📅 | `release_age` | Days since latest release | Nightly | `scripts/scrape_repos.py` |
 | 📚 | `docs_quality` | Heuristic score (README + examples) | Monthly | `score/docs.py` |
 | 🧠 | `ecosystem_fit` | Keyword-based tag affinity | Monthly | `score/ecosystem.py` |
 | ⚖️ | `license_score` | OSI compatibility / restrictiveness | Static | `score/license.py` |
@@ -292,8 +292,9 @@ Generated tables live in the `data/` directory.
 <a id="-how-refresh-works"></a>
 ## 🔄 How refresh works
 
-A scheduled GitHub Action keeps the index up to date. It runs the scraper and
-ranker, opens a pull request with any changes, and can auto-merge when all
+A scheduled GitHub Action keeps the index up to date. It runs the extended
+scraper and metric scoring before ranking repositories, then opens a pull
+request with any changes and can auto-merge when all
 checks pass. You can also trigger this process manually by running
 [`scripts/trigger_refresh.sh`](scripts/trigger_refresh.sh).
 
