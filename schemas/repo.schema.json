@@ -48,6 +48,10 @@
       "required": ["login"],
       "additionalProperties": true
     },
+    "topics": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
     "stars": {"type": "integer", "minimum": 0},
     "stars_delta": {"type": "integer"},
     "score_delta": {"type": "number"},

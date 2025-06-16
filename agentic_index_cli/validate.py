@@ -39,6 +39,7 @@ class Repo(BaseModel):
     language: str | None = None
     pushed_at: str | None = None
     owner: Owner | None = None
+    topics: list[str] | None = None
     AgenticIndexScore: float | None = None
     category: str | None = None
     stars: int | None = None
