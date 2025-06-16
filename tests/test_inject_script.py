@@ -7,10 +7,10 @@ def test_inject_readme(tmp_path, monkeypatch):
     readme = tmp_path / "README.md"
     data_dir = tmp_path / "data"
     data_dir.mkdir()
-    table = '| Rank | <abbr title="Overall">📊</abbr> Overall | Repo | <abbr title="Stars gained in last 7 days">⭐ Δ7d</abbr> | <abbr title="Maintenance score">🔧 Maint</abbr> | <abbr title="Last release date">📅 Release</abbr> | <abbr title="Documentation score">📚 Docs</abbr> | <abbr title="Ecosystem fit">🧠 Fit</abbr> | <abbr title="License">⚖️ License</abbr> |\n|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|\n| 1 | 1.00 | x | 1 | 0.50 | - | 0.50 | 0.30 | MIT |\n'
+    table = "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |\n|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|\n| 1 | x | 1.00 | 10 | +1 |  | 1.00 | 0.50 | 0.50 | 0.90 | 0.30 | 3.32 | Test |\n"
     (data_dir / "top100.md").write_text(table)
     (data_dir / "repos.json").write_text(
-        '{"schema_version":2,"repos":[{"name":"x","full_name":"o/x","AgenticIndexScore":1.0,"stars_7d":1,"maintenance":0.5,"docs_score":0.5,"ecosystem":0.3,"last_release":null,"license":"MIT","score_delta":0}]}'
+        '{"schema_version":3,"repos":[{"name":"x","full_name":"o/x","AgenticIndexScore":1.0,"stars":10,"stars_delta":1,"score_delta":0,"recency_factor":1.0,"issue_health":0.5,"doc_completeness":0.5,"license_freedom":0.9,"ecosystem_integration":0.3,"stars_log2":3.32,"category":"Test"}]}'
     )
 
     monkeypatch.setattr(inj, "REPOS_PATH", data_dir / "repos.json")
@@ -23,5 +23,5 @@ def test_inject_readme(tmp_path, monkeypatch):
 
     assert inj.main(top_n=50) == 0
     content = readme.read_text()
-    assert "| 1 | 1.00 | x |" in content
+    assert "| 1 | x | 1.00 |" in content
     assert content.count("<!-- TOP50:START -->") == 1

@@ -74,6 +74,13 @@ def test_end_to_end(tmp_path, monkeypatch, min_stars):
     assert data_file.exists()
     assert (tmp_path / "data/history").exists()
 
+    # enrich with derived metrics required for injection
+    enrich_path = Path("agentic_index_cli/enricher.py")
+    import importlib
+
+    enricher = importlib.import_module("agentic_index_cli.enricher")
+    enricher.enrich(data_file)
+
     scorer.main(str(data_file))
 
     env = os.environ.copy()

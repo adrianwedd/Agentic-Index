@@ -17,8 +17,7 @@ REPOS_PATH = ROOT / "data" / "repos.json"
 RANKED_PATH = ROOT / "data" / "ranked.json"
 SNAPSHOT = ROOT / "data" / "last_snapshot.json"
 
-OVERALL_COL = "Overall"
-DEFAULT_SORT_FIELD = "overall"
+DEFAULT_SORT_FIELD = "score"
 
 DEFAULT_TOP_N = 100
 
@@ -37,7 +36,7 @@ def _clamp_name(name: str, limit: int = 28) -> str:
 
 
 def _load_rows(sort_by: str = DEFAULT_SORT_FIELD, *, limit: int = 100) -> list[str]:
-    """Return table rows computed from repo data using v2 fields.
+    """Return table rows computed from repo data using v3 fields.
 
     If ``data/ranked.json`` is present it is used in preference to
     ``repos.json``. Missing metric values render as ``-`` to make it clear
@@ -54,7 +53,21 @@ def _load_rows(sort_by: str = DEFAULT_SORT_FIELD, *, limit: int = 100) -> list[s
     except Exception as exc:
         raise ValueError(f"Failed to read {REPOS_PATH}: {exc}") from exc
 
-    required = ["name", "full_name", "AgenticIndexScore", "score_delta"]
+    required = [
+        "name",
+        "full_name",
+        "AgenticIndexScore",
+        "stars",
+        "stars_delta",
+        "score_delta",
+        "recency_factor",
+        "issue_health",
+        "doc_completeness",
+        "license_freedom",
+        "ecosystem_integration",
+        "stars_log2",
+        "category",
+    ]
     parsed = []
     for idx, repo in enumerate(repos):
         for key in required:
@@ -65,65 +78,85 @@ def _load_rows(sort_by: str = DEFAULT_SORT_FIELD, *, limit: int = 100) -> list[s
                 )
         name = repo.get("name", "")
         repo_score = float(repo.get("AgenticIndexScore", 0))
-        stars7 = int(repo.get("stars_7d", 0))
-        maint_raw = repo.get("maintenance")
-        maint_val = float(maint_raw) if maint_raw is not None else 0.0
-        maint_fmt = "-" if maint_raw is None else f"{maint_val:.2f}"
-        release = repo.get("last_release") or "-"
-        if release and release != "-":
-            release = release.split("T")[0]
-        release_key = 0.0
-        if release and release != "-":
-            try:
-                release_key = float(release.replace("-", ""))
-            except Exception:
-                release_key = 0.0
-        docs_raw = repo.get("docs_score")
+        stars = int(repo.get("stars", 0))
+        stars_delta_raw = repo.get("stars_delta", 0)
+        score_delta_raw = repo.get("score_delta", 0)
+        rec_raw = repo.get("recency_factor")
+        rec_val = float(rec_raw) if rec_raw is not None else 0.0
+        rec_fmt = "-" if rec_raw is None else f"{rec_val:.2f}"
+        health_raw = repo.get("issue_health")
+        health_val = float(health_raw) if health_raw is not None else 0.0
+        health_fmt = "-" if health_raw is None else f"{health_val:.2f}"
+        docs_raw = repo.get("doc_completeness")
         docs_val = float(docs_raw) if docs_raw is not None else 0.0
         docs_fmt = "-" if docs_raw is None else f"{docs_val:.2f}"
-        ecosys_raw = repo.get("ecosystem")
-        ecosys_val = float(ecosys_raw) if ecosys_raw is not None else 0.0
-        ecosys_fmt = "-" if ecosys_raw is None else f"{ecosys_val:.2f}"
-        lic = repo.get("license")
-        if isinstance(lic, dict):
-            lic = lic.get("spdx_id")
-        lic = lic or "-"
+        lic_raw = repo.get("license_freedom")
+        lic_val = float(lic_raw) if lic_raw is not None else 0.0
+        lic_fmt = "-" if lic_raw is None else f"{lic_val:.2f}"
+        eco_raw = repo.get("ecosystem_integration")
+        eco_val = float(eco_raw) if eco_raw is not None else 0.0
+        eco_fmt = "-" if eco_raw is None else f"{eco_val:.2f}"
+        log_raw = repo.get("stars_log2")
+        log_val = float(log_raw) if log_raw is not None else 0.0
+        log_fmt = "-" if log_raw is None else f"{log_val:.2f}"
+        category = repo.get("category", "-")
         parsed.append(
             {
                 "name": name,
-                "overall": repo_score,
-                "stars_7d": stars7,
-                "maintenance": maint_fmt,
-                "maintenance_sort": maint_val,
-                "release": release,
-                "release_key": release_key,
-                "docs": docs_fmt,
-                "docs_sort": docs_val,
-                "ecosystem": ecosys_fmt,
-                "ecosystem_sort": ecosys_val,
-                "license": lic,
+                "score": repo_score,
+                "score_sort": repo_score,
+                "stars": stars,
+                "stars_sort": stars,
+                "stars_delta": _fmt_delta(stars_delta_raw, is_int=True),
+                "stars_delta_sort": (
+                    int(str(stars_delta_raw).lstrip("+"))
+                    if str(stars_delta_raw).lstrip("+-").isdigit()
+                    else 0
+                ),
+                "score_delta": _fmt_delta(score_delta_raw),
+                "score_delta_sort": (
+                    float(str(score_delta_raw).lstrip("+"))
+                    if str(score_delta_raw)
+                    .replace("+", "")
+                    .replace("-", "")
+                    .replace(".", "")
+                    .isdigit()
+                    else 0.0
+                ),
+                "recency": rec_fmt,
+                "recency_sort": rec_val,
+                "issue_health": health_fmt,
+                "issue_health_sort": health_val,
+                "doc_completeness": docs_fmt,
+                "doc_completeness_sort": docs_val,
+                "license_freedom": lic_fmt,
+                "license_freedom_sort": lic_val,
+                "ecosystem": eco_fmt,
+                "ecosystem_sort": eco_val,
+                "stars_log2": log_fmt,
+                "stars_log2_sort": log_val,
+                "category": category,
             }
         )
-    if sort_by == "last_release":
-        parsed.sort(key=lambda r: (-r["release_key"], r["name"].lower()))
-    elif sort_by == "maintenance":
-        parsed.sort(key=lambda r: (-r["maintenance_sort"], r["name"].lower()))
-    else:
-        parsed.sort(key=lambda r: (-r[sort_by], r["name"].lower()))
+    parsed.sort(key=lambda r: (-r.get(f"{sort_by}_sort", 0), r["name"].lower()))
 
     rows = []
     for i, repo in enumerate(parsed[:limit], start=1):
         rows.append(
-            "| {i} | {score:.2f} | {name} | {s30} | {maint} | {rel} | {docs} | {eco} | {lic} |".format(
+            "| {i} | {name} | {score:.2f} | {stars} | {sdelta} | {scdelta} | {rec} | {health} | {docs} | {licfr} | {eco} | {log2} | {cat} |".format(
                 i=i,
-                score=repo["overall"],
                 name=_clamp_name(repo["name"]),
-                s30=repo["stars_7d"],
-                maint=repo["maintenance"],
-                rel=repo["release"],
-                docs=repo["docs"],
+                score=repo["score"],
+                stars=repo["stars"],
+                sdelta=repo["stars_delta"],
+                scdelta=repo["score_delta"],
+                rec=repo["recency"],
+                health=repo["issue_health"],
+                docs=repo["doc_completeness"],
+                licfr=repo["license_freedom"],
                 eco=repo["ecosystem"],
-                lic=repo["license"],
+                log2=repo["stars_log2"],
+                cat=repo["category"],
             )
         )
     return rows
@@ -173,10 +206,10 @@ def build_readme(
     before = readme_text[: start_idx + len(start_marker)].rstrip()
     after = "\n" + readme_text[end_idx + len(end_marker) :].lstrip()
 
-    # always inject standard header for v2 schema
+    # standard header for schema v3 metrics
     header_lines = [
-        f'| Rank | <abbr title="{OVERALL_COL}">📊</abbr> {OVERALL_COL} | Repo | <abbr title="Stars gained in last 7 days">⭐ Δ7d</abbr> | <abbr title="Maintenance score">🔧 Maint</abbr> | <abbr title="Last release date">📅 Release</abbr> | <abbr title="Documentation score">📚 Docs</abbr> | <abbr title="Ecosystem fit">🧠 Fit</abbr> | <abbr title="License">⚖️ License</abbr> |',
-        "|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|",
+        "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |",
+        "|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|",
     ]
 
     cfg_limit = top_n if limit is None else limit
@@ -220,6 +253,7 @@ def main(
     write: bool = True,
     sort_by: str = DEFAULT_SORT_FIELD,
     top_n: int = DEFAULT_TOP_N,
+    limit: int | None = None,
 ) -> int:
     """Synchronise the README table.
 
@@ -232,12 +266,15 @@ def main(
     write:
         Whether to update ``README.md``. Defaults to ``True``.
     sort_by:
-        Field to sort by. One of ``overall``, ``stars_7d``, ``maintenance``, or ``last_release``.
+        Field to sort by.
     top_n:
-        Number of table rows and marker suffix.
+        Marker suffix used to locate the table.
+    limit:
+        Maximum number of rows to render. Defaults to ``top_n``.
     """
     try:
-        new_text = build_readme(sort_by=sort_by, limit=top_n, top_n=top_n)
+        row_limit = top_n if limit is None else limit
+        new_text = build_readme(sort_by=sort_by, limit=row_limit, top_n=top_n)
     except Exception:
         traceback.print_exc()
         return 1

@@ -14,24 +14,35 @@ def _setup(tmp_path: Path):
             "name": "a",
             "full_name": "o/a",
             "AgenticIndexScore": 1.0,
-            "stars_7d": 0,
-            "license": "MIT",
+            "stars": 0,
+            "stars_delta": 0,
             "score_delta": 0,
+            "recency_factor": 0.0,
+            "issue_health": 0.0,
+            "doc_completeness": 0.0,
+            "license_freedom": 0.0,
+            "ecosystem_integration": 0.0,
+            "stars_log2": 0.0,
+            "category": "Test",
         },
         {
             "name": "b",
             "full_name": "o/b",
             "AgenticIndexScore": 2.0,
-            "stars_7d": 0,
-            "maintenance": 0.5,
-            "docs_score": 0.5,
-            "ecosystem": 0.2,
-            "license": "MIT",
+            "stars": 0,
+            "stars_delta": 0,
             "score_delta": 0,
+            "recency_factor": 0.5,
+            "issue_health": 0.6,
+            "doc_completeness": 0.0,
+            "license_freedom": 0.0,
+            "ecosystem_integration": 0.2,
+            "stars_log2": 0.0,
+            "category": "Test",
         },
     ]
     (data_dir / "repos.json").write_text(
-        json.dumps({"schema_version": 2, "repos": repos})
+        json.dumps({"schema_version": 3, "repos": repos})
     )
     (data_dir / "top100.md").write_text("")
     (data_dir / "last_snapshot.json").write_text("[]")
@@ -53,6 +64,12 @@ def test_no_all_zero_rows(tmp_path):
     lines = [l for l in text.splitlines() if l.startswith("|")][2:]
     for line in lines:
         parts = [p.strip() for p in line.split("|")]
-        maint, docs, eco = parts[5], parts[7], parts[8]
-        if maint == docs == eco == "0.00":
+        rec, health, docs, lic, eco = (
+            parts[6],
+            parts[7],
+            parts[8],
+            parts[9],
+            parts[10],
+        )
+        if rec == health == docs == lic == eco == "0.00":
             raise AssertionError("row shows all zero metrics")

@@ -22,8 +22,6 @@ def _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
     data_dir.mkdir()
     shutil.copy(data_fixture_dir / "top100.md", data_dir / "top100.md")
     data = json.loads((data_fixture_dir / "repos.json").read_text())
-    for repo in data.get("repos", []):
-        repo.setdefault("stars_7d", 0)
     (data_dir / "repos.json").write_text(json.dumps(data))
     try:
         shutil.copy(
@@ -40,7 +38,7 @@ def _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
     monkeypatch.setattr(inj, "REPOS_PATH", data_dir / "repos.json")
     monkeypatch.setattr(inj, "SNAPSHOT", data_dir / "last_snapshot.json")
 
-    modified = inj.build_readme(top_n=50, limit=100).strip()
+    modified = inj.build_readme(top_n=50, limit=50).strip()
     return readme, modified
 
 
@@ -62,7 +60,7 @@ def _bump_score(text: str, delta: float) -> str:
     for i, line in enumerate(lines):
         if line.startswith("| 1 |"):
             cells = [c.strip() for c in line.strip().strip("|").split("|")]
-            cells[1] = f"{float(cells[1]) + delta:.2f}"
+            cells[2] = f"{float(cells[2]) + delta:.2f}"
             lines[i] = "| " + " | ".join(cells) + " |"
             break
     return "\n".join(lines)
@@ -84,7 +82,7 @@ def _change_cell(text: str, col: int, value: str) -> str:
     [
         (lambda txt: _bump_score(txt, 0.015), True),
         (lambda txt: _bump_score(txt, 0.05), False),
-        (lambda txt: _change_cell(txt, 8, "MIT"), False),
+        (lambda txt: _change_cell(txt, 12, "MIT"), False),
         (lambda txt: _change_cell(txt, 0, "2"), False),
     ],
 )

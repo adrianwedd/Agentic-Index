@@ -14,17 +14,20 @@ def _prepare(tmp_path: Path, top_n: int, repo_count: int) -> Path:
                 "name": f"r{i}",
                 "full_name": f"o/r{i}",
                 "AgenticIndexScore": 1.0 + i,
-                "stars_7d": i,
-                "maintenance": 0.5,
-                "docs_score": 0.5,
-                "ecosystem": 0.3,
-                "last_release": None,
-                "license": "MIT",
+                "stars": i,
+                "stars_delta": i,
                 "score_delta": 0,
+                "recency_factor": 1.0,
+                "issue_health": 1.0,
+                "doc_completeness": 0.5,
+                "license_freedom": 1.0,
+                "ecosystem_integration": 0.3,
+                "stars_log2": 1.0 + i,
+                "category": "c",
             }
         )
     (data_dir / "repos.json").write_text(
-        json.dumps({"schema_version": 2, "repos": repos})
+        json.dumps({"schema_version": 3, "repos": repos})
     )
     (data_dir / "last_snapshot.json").write_text("[]")
     readme = tmp_path / "README.md"

@@ -12,8 +12,6 @@ def test_injector_handles_missing_snapshot(tmp_path, capsys, monkeypatch):
     data_dir.mkdir()
     shutil.copy(ROOT / "data" / "top100.md", data_dir / "top100.md")
     data = json.loads((ROOT / "data" / "repos.json").read_text())
-    for repo in data.get("repos", []):
-        repo.setdefault("stars_7d", 0)
     (data_dir / "repos.json").write_text(json.dumps(data))
     # intentionally do not provide last_snapshot.json
 
