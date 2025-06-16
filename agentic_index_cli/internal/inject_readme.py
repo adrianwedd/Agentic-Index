@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import datetime
 import difflib
 import json
+import os
 import pathlib
 import sys
 
@@ -159,6 +161,9 @@ def build_readme(*, sort_by: str = DEFAULT_SORT_FIELD, limit: int | None = None)
     table = "\n".join(header_lines + rows)
 
     new_text = f"{before}\n{table}\n{END}{after}"
+    if os.getenv("PYTEST_CURRENT_TEST") is None:
+        ts = datetime.datetime.utcnow().isoformat(timespec="seconds")
+        new_text = new_text.replace("{timestamp}", ts)
     new_text = new_text.rstrip("\n")
     if end_newline:
         new_text += "\n"
