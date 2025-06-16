@@ -25,3 +25,12 @@
 - Include a short summary of changes and test results in the PR description.
 - Ensure CI passes before requesting review.
 
+## Codex Queue Sync
+- Keep `.codex/queue.yml` aligned with open Codex issues using
+  `scripts/check_queue_sync.py`.
+- The `queue-check` workflow runs on PRs that modify the queue file.
+
+## GitHub Comment Integration
+- `agentic_index_cli/internal/issue_logger.py` posts agent logs to issues.
+- Set `GITHUB_TOKEN` so automation jobs can comment on tasks.
+

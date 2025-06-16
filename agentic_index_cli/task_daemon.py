@@ -10,7 +10,11 @@ import time
 from pathlib import Path
 from typing import Dict, List, Optional
 
+import requests
+import yaml
+
 from . import issue_logger
+from .internal import issue_logger as internal_issue_logger
 
 TASK_RE = re.compile(r"^###\s+(GH-[^\s]+)\s*\u2022?\s*(.*)")
 STATE_PATH = Path("state/codex_state.json")
@@ -64,6 +68,26 @@ def task_hash(task: Task) -> str:
     return hashlib.sha1((task["title"] + task["body"]).encode()).hexdigest()
 
 
+def load_queue(path: Path) -> List[str]:
+    data = yaml.safe_load(path.read_text()) or {}
+    return list(data.get("queue", []))
+
+
+def find_issue_url(repo: str, task_id: str, token: str | None) -> str | None:
+    resp = requests.get(
+        f"{issue_logger.API_URL}/repos/{repo}/issues",
+        params={"state": "open", "labels": "source/codex"},
+        headers=issue_logger._headers(token),
+        timeout=10,
+    )
+    if resp.status_code >= 400:
+        return None
+    for item in resp.json():
+        if f"Task: {task_id}" in item.get("body", ""):
+            return item.get("url") or item.get("html_url")
+    return None
+
+
 def process_tasks(
     path: Path,
     repo: str,
@@ -97,6 +121,30 @@ def process_tasks(
     save_state(state)
 
 
+def process_queue(path: Path, repo: str) -> None:
+    state = load_state()
+    token = issue_logger.get_token()
+    queue_ids = load_queue(path)
+    for tid in queue_ids:
+        info = state.get(tid, {})
+        if info.get("started"):
+            continue
+        url = info.get("url")
+        if not url:
+            url = find_issue_url(repo, tid, token)
+            if not url:
+                continue
+            info["url"] = url
+        try:
+            internal_issue_logger.post_agent_log(url, f"Starting task {tid}")
+        except issue_logger.APIError as exc:
+            print(f"Failed to post start log for {tid}: {exc}")
+            continue
+        info["started"] = True
+        state[tid] = info
+    save_state(state)
+
+
 def process_worklogs() -> None:
     wl_dir = Path("worklog")
     if not wl_dir.is_dir():
@@ -116,12 +164,21 @@ def process_worklogs() -> None:
         url = info.get("url")
         if not url:
             continue
+        event = data.get("event")
         try:
-            issue_logger.post_worklog_comment(url, data)
+            if event == "start":
+                internal_issue_logger.post_agent_log(
+                    url, data.get("cr", ""), data.get("steps")
+                )
+                info["started"] = True
+            else:
+                issue_logger.post_worklog_comment(url, data)
+                info["completed"] = True
+                f.rename(f.with_suffix(".posted"))
         except issue_logger.APIError as exc:
             print(f"Failed to post worklog {f}: {exc}")
             continue
-        f.rename(f.with_suffix(".posted"))
+    save_state(state)
 
 
 def main(argv: Optional[List[str]] = None) -> None:
@@ -145,6 +202,7 @@ def main(argv: Optional[List[str]] = None) -> None:
                 task_id=args.task_id,
                 all_tasks=args.all,
             )
+            process_queue(Path(".codex/queue.yml"), args.repo)
             process_worklogs()
             time.sleep(args.interval)
     else:
@@ -155,6 +213,7 @@ def main(argv: Optional[List[str]] = None) -> None:
             task_id=args.task_id,
             all_tasks=args.all,
         )
+        process_queue(Path(".codex/queue.yml"), args.repo)
         process_worklogs()
 
 

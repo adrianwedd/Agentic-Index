@@ -1,0 +1,24 @@
+name: queue-check
+
+on:
+  pull_request:
+    paths:
+      - '.codex/queue.yml'
+  workflow_dispatch:
+
+jobs:
+  queue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install deps
+        run: |
+          pip install -r requirements.txt
+          pip install -e .
+      - name: Run queue sync check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/check_queue_sync.py --repo ${{ github.repository }}
