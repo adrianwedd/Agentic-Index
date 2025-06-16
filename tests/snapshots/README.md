@@ -16,11 +16,11 @@ We rank everything using a transparent scoring formula based on:
 | Emoji | Field | Formula | Updated | Source |
 |-------|-------|---------|---------|--------|
 | ⭐ | `stars_7d` | GitHub star Δ (7 days) | Nightly | `scraper/github.py` |
-| 🔧 | `maintenance` | Issue/PR hygiene score | Weekly | `score/maintenance.py` |
+| 🔧 | `maintenance` | Issue/PR hygiene score | Weekly | `lib/quality_metrics.py` |
 | 📅 | `release_age` | Days since latest release | Nightly | `scraper/github.py` |
-| 📚 | `docs_quality` | Heuristic score (README + examples) | Monthly | `score/docs.py` |
-| 🧠 | `ecosystem_fit` | Keyword-based tag affinity | Monthly | `score/ecosystem.py` |
-| ⚖️ | `license_score` | OSI compatibility / restrictiveness | Static | `score/license.py` |
+| 📚 | `docs_quality` | Heuristic score (README + examples) | Monthly | `lib/quality_metrics.py` |
+| 🧠 | `ecosystem_fit` | Keyword-based tag affinity | Monthly | `lib/quality_metrics.py` |
+| ⚖️ | `license_score` | OSI compatibility / restrictiveness | Static | `lib/quality_metrics.py` |
 
 Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metrics Legend](#metrics-legend) for metric details. The full JSON schema is documented in [SCHEMA.md](SCHEMA.md).
 
