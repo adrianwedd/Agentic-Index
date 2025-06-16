@@ -39,9 +39,17 @@ def refresh(category: str, out_dir: Path) -> None:
     enrich(data_path)
     rank(str(data_path))
 
-    inj.REPOS_PATH = out_dir / "by_category" / f"{category}.json"
-    inj.README_PATH = Path(f"README_{category}.md")
-    inj.main(force=True)
+    by_cat = out_dir / "by_category"
+    inj.REPOS_PATH = data_path
+    inj.write_category_readme(category, force=True)
+
+    index_file = by_cat / "index.json"
+    try:
+        current = json.loads(index_file.read_text())
+    except Exception:
+        current = {}
+    current[category] = f"{category}.json"
+    index_file.write_text(json.dumps(current, indent=2) + "\n")
 
 
 def main(argv: list[str] | None = None) -> None:

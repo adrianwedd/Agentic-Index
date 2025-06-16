@@ -234,6 +234,13 @@ def _build_category_list(index_path: pathlib.Path | None = None) -> str:
         else:
             fname = info.get("file") or info.get("path") or f"{cat}.json"
             topics = info.get("topics", [])
+        if not topics:
+            try:
+                data = json.loads((index_path.parent / fname).read_text())
+                repos = data.get("repos", data)
+                topics = _infer_topics(repos)
+            except Exception:
+                topics = []
         md_name = f"README_{pathlib.Path(fname).stem}.md"
         emoji = CATEGORY_ICONS.get(cat, "•")
         topic_line = ""

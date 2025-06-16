@@ -51,6 +51,13 @@ To mimic CI's network restrictions use:
 CI_OFFLINE=1 pytest --disable-socket
 ```
 
+### Generating Category READMEs
+After running the ranking pipeline you can create one `README_<Category>.md` per
+category with:
+```bash
+python scripts/inject_readme.py --all-categories
+```
+
 ## Troubleshooting
 - **Network errors when installing packages** – use the mirror described in [docs/CI_SETUP.md](CI_SETUP.md).
 - **GitHub API rate limits** – export `GITHUB_TOKEN_REPO_STATS` with a personal token or lower `--min-stars` when scraping.
