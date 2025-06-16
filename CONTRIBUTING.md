@@ -84,6 +84,24 @@ python scripts/codex_task_runner.py
 Define modular tasks in the YAML file to integrate with Codex tooling.
 
 
+## Deployment Workflow
+
+The website hosted via GitHub Pages is deployed automatically from the
+`deploy_site.yml` workflow. If you modify the deployment logic, ensure the
+following:
+
+1. Build assets into `web/dist` using `npm run build`.
+2. The workflow copies all contents (including hidden files) with `rsync` before
+   publishing to the `gh-pages` branch.
+3. `git remote rm origin` is guarded so the step succeeds even when the remote
+   is absent.
+4. Pull request previews are posted with the `create-or-update-comment` action
+   using `issue-number`.
+
+After editing the workflow, run `pre-commit` and `pytest -q` to confirm the repo
+passes formatting and tests before opening a pull request.
+
+
 
 
 
