@@ -34,3 +34,13 @@
 - `agentic_index_cli/internal/issue_logger.py` posts agent logs to issues.
 - Set `GITHUB_TOKEN` so automation jobs can comment on tasks.
 
+## PR–Issue Synchronization
+Pull requests automatically get a tracking issue via
+`.github/workflows/pr-sync.yml`. The workflow triggers on PR creation,
+ready-for-review, and merge events. It runs `agentic_index_cli/task_daemon.py
+sync-pr` with the event payload. The daemon creates a tracking issue when one
+is missing, posts worklog comments to both the PR and the issue, and closes the
+issue when the PR merges. The job requires `GITHUB_TOKEN` with permissions to
+read and write issues and pull requests. Look for a hidden `tracking-issue`
+comment on the PR to find the linked issue number.
+

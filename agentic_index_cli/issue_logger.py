@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -260,6 +261,65 @@ def post_worklog_comment(
     return resp.json().get("html_url", "")
 
 
+def _find_tracking_issue(repo: str, pr_number: int, token: str | None) -> str | None:
+    """Return issue API URL linked to PR ``pr_number`` if any."""
+    resp = requests.get(
+        f"{API_URL}/repos/{repo}/issues/{pr_number}/comments",
+        headers=_headers(token),
+        timeout=10,
+    )
+    if resp.status_code >= 400:
+        return None
+    for c in resp.json():
+        m = re.search(r"tracking-issue:(\d+)", c.get("body", ""))
+        if m:
+            num = int(m.group(1))
+            return f"{API_URL}/repos/{repo}/issues/{num}"
+    return None
+
+
+def create_issue_for_pr(event: Dict[str, Any], *, token: str | None = None) -> str:
+    """Create a tracking issue for ``event`` if one does not exist."""
+    token = token or get_token()
+    pr = event.get("pull_request", {})
+    repo = event.get("repository", {}).get("full_name")
+    if not repo or not pr:
+        raise APIError("Missing pull request data")
+    pr_number = pr.get("number")
+    issue_url = _find_tracking_issue(repo, pr_number, token)
+    if issue_url:
+        return issue_url
+
+    title = pr.get("title", "")
+    body_parts = []
+    if pr.get("body"):
+        body_parts.append(pr["body"])
+    body_parts.append(f"PR: {pr.get('html_url')}")
+    body = "\n\n".join(body_parts)
+
+    issue_html = create_issue(title, body, repo, token=token)
+    _, issue_number = _parse_issue_url(issue_html)
+    pr_api_url = f"{API_URL}/repos/{repo}/issues/{pr_number}"
+    comment = f"Created tracking issue #{issue_number}\n<!-- tracking-issue:{issue_number} -->"
+    post_comment(pr_api_url, comment, token=token)
+    return issue_html
+
+
+def close_issue_for_pr(event: Dict[str, Any], *, token: str | None = None) -> None:
+    """Close the tracking issue linked to ``event``."""
+    token = token or get_token()
+    pr = event.get("pull_request", {})
+    repo = event.get("repository", {}).get("full_name")
+    if not repo or not pr:
+        return
+    pr_number = pr.get("number")
+    issue_url = _find_tracking_issue(repo, pr_number, token)
+    if not issue_url:
+        return
+    post_comment(issue_url, f"PR #{pr_number} merged – closing issue.", token=token)
+    close_issue(issue_url, token=token)
+
+
 def main(argv: list[str] | None = None) -> None:
     """Entry point for issue/comment logging."""
     parser = argparse.ArgumentParser(description="Post GitHub issues or comments")
@@ -375,6 +435,8 @@ AGENT_ACTIONS = {
     "create_issue": create_issue,
     "post_comment": post_comment,
     "post_worklog_comment": post_worklog_comment,
+    "create_issue_for_pr": create_issue_for_pr,
+    "close_issue_for_pr": close_issue_for_pr,
     "update_issue": update_issue,
     "close_issue": close_issue,
 }

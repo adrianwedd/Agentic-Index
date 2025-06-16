@@ -1,0 +1,20 @@
+name: PR-Issue Sync
+
+on:
+  pull_request:
+    types: [opened, ready_for_review, closed]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install & Run PR–Issue Sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install -e .
+          python agentic_index_cli/task_daemon.py sync-pr "${{ toJson(github.event) }}"
