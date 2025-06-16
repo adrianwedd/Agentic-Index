@@ -81,3 +81,25 @@ def test_process_worklogs(monkeypatch, tmp_path):
     assert called["url"].endswith("/1")
     assert not (wl_dir / "log.json").exists()
     assert (wl_dir / "log.posted").exists()
+
+
+def test_process_worklogs_start(monkeypatch, tmp_path):
+    monkeypatch.chdir(tmp_path)
+    wl_dir = tmp_path / "worklog"
+    wl_dir.mkdir()
+    data = {"task_id": "GH-TASK-1", "event": "start", "cr": "cr", "steps": ["s"]}
+    (wl_dir / "log.json").write_text(json.dumps(data))
+    monkeypatch.setattr(td, "STATE_PATH", tmp_path / "state.json")
+    td.save_state(
+        {"GH-TASK-1": {"hash": "h", "url": "https://api.github.com/repos/o/r/issues/1"}}
+    )
+    called = {}
+
+    def fake_post(url, cr, steps=None):
+        called["url"] = url
+        called["cr"] = cr
+
+    monkeypatch.setattr(td.internal_issue_logger, "post_agent_log", fake_post)
+    td.process_worklogs()
+    assert called["url"].endswith("/1")
+    assert called["cr"] == "cr"
