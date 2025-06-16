@@ -1,6 +1,6 @@
 # Development Guide
 
-This page explains how to set up a working environment for Agentic Index contributors.
+See [ONBOARDING.md](./ONBOARDING.md) for full setup instructions. This file is kept for backward compatibility.
 
 ## Workflow
 
@@ -95,3 +95,4 @@ python -m agentic_index_cli.issue_logger --comment \
 
 Pass `--debug` to print API calls or `--dry-run` to simulate without creating
 anything.
+
