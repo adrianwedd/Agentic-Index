@@ -1,0 +1,13 @@
+name: pr-validate
+
+on: pull_request
+
+jobs:
+  validate-link:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate "Closes #" Link
+        run: |
+          ISSUE_ID=$(yq e '.queue[0].issue_id' .codex/queue.yml)
+          grep -qE "Closes #${ISSUE_ID}\b" <<<"${{ github.event.pull_request.body }}" || (echo "PR must include 'Closes #${ISSUE_ID}' in the description." && exit 1)
