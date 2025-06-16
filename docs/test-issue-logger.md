@@ -2,8 +2,7 @@
 
 This document describes manual testing of the `issue_logger.py` CLI tool.
 
-## Environment
-- dependencies installed via `scripts/agent-setup.sh`
+- dependencies installed via `scripts/setup-env.sh`
 - no valid `GITHUB_TOKEN` available
 
 ## Observed Behavior

@@ -15,9 +15,10 @@
   ```
 
 ## Setup
-- Use `scripts/agent-setup.sh` to install all dependencies and pre-commit hooks:
+- Source `scripts/setup-env.sh` to validate your Python version, install system
+  packages, and configure a virtual environment:
   ```bash
-  bash scripts/agent-setup.sh
+  source scripts/setup-env.sh
   ```
 
 ## PR Guidelines
