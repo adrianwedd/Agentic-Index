@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 from typing import List
 
-from pydantic import BaseModel, ConfigDict, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 
 class License(BaseModel):
@@ -53,11 +53,13 @@ class Repo(BaseModel):
     one_liner: str | None = None
     stars_7d: int | None = None
     maintenance: float | None = None
-    docs_score: float | None = None
-    ecosystem: float | None = None
+    docs_score: float | None = Field(None, alias="docs_quality")
+    ecosystem: float | None = Field(None, alias="ecosystem_fit")
+    release_age: int | None = None
+    license_score: float | None = None
     last_release: str | None = None
 
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="forbid", populate_by_name=True)
 
 
 class RepoFile(BaseModel):
@@ -66,7 +68,7 @@ class RepoFile(BaseModel):
     schema_version: int = 2
     repos: List[Repo]
 
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="forbid", populate_by_name=True)
 
 
 def _migrate_item(item: dict) -> dict:
