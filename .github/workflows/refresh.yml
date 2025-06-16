@@ -31,6 +31,12 @@ jobs:
           python -m agentic_index_cli.ranker data/repos.json
           python scripts/inject_readme.py
           git diff --quiet || echo "CHANGES_DETECTED=true" >> "$GITHUB_ENV"
+      - name: Verify artifacts
+        run: |
+          test -f data/repos.json
+          test -f data/top100.md
+          test -f README.md
+          test -f badges/last_sync.svg
       - name: Summarize metrics
         id: metrics
         run: |
