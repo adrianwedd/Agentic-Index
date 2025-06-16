@@ -6,7 +6,7 @@ import pytest
 import agentic_index_cli.internal.inject_readme as inj
 
 
-def _setup(tmp_path: Path) -> Path:
+def _setup(tmp_path: Path, top_n: int = 50) -> Path:
     data_dir = tmp_path / "data"
     data_dir.mkdir()
     (data_dir / "repos.json").write_text(
@@ -35,7 +35,9 @@ def _setup(tmp_path: Path) -> Path:
     )
     (data_dir / "last_snapshot.json").write_text("[]")
     readme = tmp_path / "README.md"
-    readme.write_text("start\n<!-- TOP50:START -->\nold\n<!-- TOP50:END -->\nend\n")
+    readme.write_text(
+        f"start\n<!-- TOP{top_n}:START -->\nold\n<!-- TOP{top_n}:END -->\nend\n"
+    )
 
     for name, val in {
         "README_PATH": readme,
@@ -64,10 +66,20 @@ def test_check_fails_when_outdated(tmp_path, monkeypatch):
     assert inj.main(check=True, top_n=50) == 1
 
 
-def test_missing_required_key(tmp_path, monkeypatch):
-    readme = _setup(tmp_path)
-    data = json.loads((inj.REPOS_PATH).read_text())
-    del data["repos"][0]["stars_7d"]
-    (inj.REPOS_PATH).write_text(json.dumps(data))
-    with pytest.raises(KeyError, match="stars_7d"):
+@pytest.mark.parametrize(
+    "field", ["name", "full_name", "AgenticIndexScore", "score_delta"]
+)
+def test_missing_required_key(tmp_path, monkeypatch, field):
+    _setup(tmp_path)
+    data = json.loads(inj.REPOS_PATH.read_text())
+    del data["repos"][0][field]
+    inj.REPOS_PATH.write_text(json.dumps(data))
+    with pytest.raises(KeyError, match=field):
+        inj.build_readme(top_n=50)
+
+
+def test_missing_repos_file(tmp_path, monkeypatch):
+    _setup(tmp_path)
+    inj.REPOS_PATH.unlink()
+    with pytest.raises(FileNotFoundError):
         inj.build_readme(top_n=50)
