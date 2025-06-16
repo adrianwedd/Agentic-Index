@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Repository",
+  "title": "Repository v3",
   "type": "object",
   "required": [
     "full_name",
@@ -8,15 +8,27 @@
     "forks_count",
     "open_issues_count",
     "pushed_at",
-    "license",
-    "owner"
+    "owner",
+    "stars",
+    "stars_delta",
+    "score_delta",
+    "recency_factor",
+    "issue_health",
+    "doc_completeness",
+    "license_freedom",
+    "ecosystem_integration",
+    "stars_log2",
+    "category"
   ],
   "properties": {
+    "name": {"type": "string"},
     "full_name": {"type": "string"},
+    "html_url": {"type": "string"},
+    "description": {"type": ["string", "null"]},
     "stargazers_count": {"type": "integer", "minimum": 0},
     "forks_count": {"type": "integer", "minimum": 0},
     "open_issues_count": {"type": "integer", "minimum": 0},
-    "pushed_at": {"type": "string", "format": "date-time"},
+    "archived": {"type": "boolean"},
     "license": {
       "oneOf": [
         {"type": "null"},
@@ -28,17 +40,24 @@
         }
       ]
     },
+    "language": {"type": ["string", "null"]},
+    "pushed_at": {"type": "string", "format": "date-time"},
     "owner": {
-      "oneOf": [
-        {"type": "null"},
-        {
-          "type": "object",
-          "properties": {"login": {"type": ["string", "null"]}},
-          "required": ["login"],
-          "additionalProperties": true
-        }
-      ]
-    }
+      "type": "object",
+      "properties": {"login": {"type": ["string", "null"]}},
+      "required": ["login"],
+      "additionalProperties": true
+    },
+    "stars": {"type": "integer", "minimum": 0},
+    "stars_delta": {"type": "integer"},
+    "score_delta": {"type": "number"},
+    "recency_factor": {"type": "number", "minimum": 0, "maximum": 1},
+    "issue_health": {"type": "number", "minimum": 0, "maximum": 1},
+    "doc_completeness": {"type": "number", "minimum": 0, "maximum": 1},
+    "license_freedom": {"type": "number", "minimum": 0, "maximum": 1},
+    "ecosystem_integration": {"type": "number", "minimum": 0, "maximum": 1},
+    "stars_log2": {"type": "number"},
+    "category": {"type": "string"}
   },
   "additionalProperties": true
 }

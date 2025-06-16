@@ -1,6 +1,6 @@
-# Repository Data Schema (v2)
+# Repository Data Schema (v3)
 
-Agentic-Index stores scraped repository data in `data/repos.json` using `schema_version: 2`.
+Agentic-Index stores scraped repository data in `data/repos.json` using `schema_version: 3`.
 Each entry includes raw GitHub fields plus derived metrics used for ranking.
 
 ## Key Fields
@@ -12,15 +12,17 @@ Each entry includes raw GitHub fields plus derived metrics used for ranking.
 | `forks_count` | GitHub forks |
 | `open_issues_count` | number of open issues |
 | `pushed_at` | last commit timestamp |
-| `license` | license object or `null` |
 | `owner.login` | repository owner |
-| `AgenticIndexScore` | overall ranking score |
-| `stars_7d` | star change over 7 days |
-| `maintenance` | issue/PR hygiene score |
-| `release_age` | days since latest release |
-| `docs_quality` | README/examples heuristic |
-| `ecosystem_fit` | keyword tag affinity |
-| `license_score` | OSI compatibility score |
+| `category` | manual project category |
+| `stars` | alias of stargazers_count |
+| `stars_delta` | star change since last run |
+| `score_delta` | ranking score change |
+| `recency_factor` | commit freshness metric |
+| `issue_health` | open vs closed issue ratio |
+| `doc_completeness` | README/docs coverage |
+| `license_freedom` | license compatibility score |
+| `ecosystem_integration` | ecosystem fit score |
+| `stars_log2` | log2 transformed stars |
 
 The complete JSON schema can be found in [`schemas/repo.schema.json`](schemas/repo.schema.json).
 
