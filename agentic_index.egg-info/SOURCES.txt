@@ -50,6 +50,7 @@ tests/__init__.py
 tests/_utils.py
 tests/conftest.py
 tests/helpers.py
+tests/test_agentic_index_network.py
 tests/test_agentic_index_utils.py
 tests/test_agents_md.py
 tests/test_api_auth.py
@@ -94,6 +95,7 @@ tests/test_parse_table_abbr.py
 tests/test_plot_trends.py
 tests/test_prune.py
 tests/test_quality_metrics.py
+tests/test_quality_metrics_extra.py
 tests/test_quota.py
 tests/test_rank_cli.py
 tests/test_rank_positive.py
@@ -121,5 +123,6 @@ tests/test_task_daemon.py
 tests/test_update_coverage_badge.py
 tests/test_update_diff.py
 tests/test_validation_dup.py
+tests/test_validation_extra.py
 tests/test_validation_migrate.py
 tests/test_validation_ok.py
