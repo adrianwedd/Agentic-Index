@@ -1,10 +1,13 @@
 """Validation helpers for repository JSON files."""
 
+from __future__ import annotations
+
 import json
 import sys
 from pathlib import Path
 from typing import List
 
+import click
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 
@@ -125,15 +128,23 @@ def validate_file(path: str) -> List[dict]:
     return load_repos(Path(path))
 
 
-def main(argv=None) -> int:
-    """CLI entry for validating repo files."""
-    argv = argv or sys.argv[1:]
-    json_path = Path(argv[0] if argv else "data/repos.json")
+@click.command(help="Validate repository JSON data")
+@click.argument("json_path", default="data/repos.json")
+def _cli(json_path: str) -> int:
     try:
-        validate_file(str(json_path))
+        validate_file(json_path)
     except ValidationError as e:
-        print(f"ValidationError: {e}", file=sys.stderr)
-        return 1
+        click.echo(f"ValidationError: {e}", err=True)
+        raise SystemExit(1)
+    return 0
+
+
+def main(argv: List[str] | None = None) -> int:
+    argv = argv or sys.argv[1:]
+    try:
+        _cli.main(args=argv, standalone_mode=False)
+    except SystemExit as exc:
+        return exc.code
     return 0
 
 
