@@ -5,7 +5,9 @@ from __future__ import annotations
 
 import argparse
 import datetime as _dt
+import functools
 import json
+import logging
 import os
 import sys
 import time
@@ -18,6 +20,8 @@ import requests
 
 from agentic_index_cli.validate import save_repos
 
+logger = logging.getLogger(__name__)
+
 HEADERS = {"Accept": "application/vnd.github+json"}
 TOKEN = os.getenv("GITHUB_TOKEN_REPO_STATS") or os.getenv("GITHUB_TOKEN")
 if TOKEN:
@@ -29,35 +33,56 @@ API_REMAINING = None
 CACHE_HITS = 0
 API_CALLS = 0
 
+REQUEST_TIMEOUT = 10
+MAX_RETRIES = 5
+
 DEFAULT_REPOS = ["octocat/Hello-World"]
 HIST_DIR = Path("data/hist")
 
 
+def retry(func):
+    """Retry ``func`` with exponential backoff."""
+
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        backoff = 1
+        for attempt in range(1, MAX_RETRIES + 1):
+            try:
+                return func(*args, **kwargs)
+            except requests.RequestException as exc:
+                if attempt == MAX_RETRIES:
+                    logger.error("Request failed after %s attempts: %s", attempt, exc)
+                    raise
+                logger.warning(
+                    "Request error: %s; retrying in %s seconds", exc, backoff
+                )
+                time.sleep(backoff)
+                backoff *= 2
+
+    return wrapper
+
+
+@retry
 def _get(url: str) -> requests.Response:
-    """GET with simple retry/backoff and rate-limit handling."""
+    """GET with retry, timeout and rate-limit handling."""
     global API_LIMIT, API_REMAINING, API_CALLS
-    backoff = 1
-    for _ in range(5):
-        resp = requests.get(url, headers=HEADERS)
-        API_CALLS += 1
-        if "X-RateLimit-Limit" in resp.headers and API_LIMIT is None:
-            API_LIMIT = int(resp.headers["X-RateLimit-Limit"])
-        if "X-RateLimit-Remaining" in resp.headers:
-            API_REMAINING = int(resp.headers["X-RateLimit-Remaining"])
-        if resp.status_code == 403 and resp.headers.get("X-RateLimit-Remaining") == "0":
-            reset = int(resp.headers.get("X-RateLimit-Reset", "0"))
-            sleep_for = max(0, reset - int(time.time()))
-            if sleep_for > 0:
-                time.sleep(sleep_for)
-                continue
-            raise RuntimeError("Rate limit exceeded")
-        if resp.status_code >= 500:
-            time.sleep(backoff)
-            backoff *= 2
-            continue
+    resp = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
+    API_CALLS += 1
+    if "X-RateLimit-Limit" in resp.headers and API_LIMIT is None:
+        API_LIMIT = int(resp.headers["X-RateLimit-Limit"])
+    if "X-RateLimit-Remaining" in resp.headers:
+        API_REMAINING = int(resp.headers["X-RateLimit-Remaining"])
+    if resp.status_code == 403 and resp.headers.get("X-RateLimit-Remaining") == "0":
+        reset = int(resp.headers.get("X-RateLimit-Reset", "0"))
+        sleep_for = max(0, reset - int(time.time()))
+        logger.warning("Rate limit exceeded, sleeping %s seconds", sleep_for)
+        time.sleep(sleep_for)
+        raise requests.HTTPError("rate limit", response=resp)
+    if resp.status_code >= 500:
+        raise requests.HTTPError(f"server error {resp.status_code}", response=resp)
+    if resp.status_code >= 400 and resp.status_code != 404:
         resp.raise_for_status()
-        return resp
-    raise RuntimeError(f"failed GET {url}")
+    return resp
 
 
 DELTA_DAYS = 7
@@ -101,10 +126,7 @@ def fetch_repo(full_name: str) -> Dict[str, Any]:
 
     repo_resp = _get(f"https://api.github.com/repos/{full_name}")
     repo = repo_resp.json()
-    release_resp = requests.get(
-        f"https://api.github.com/repos/{full_name}/releases/latest",
-        headers=HEADERS,
-    )
+    release_resp = _get(f"https://api.github.com/repos/{full_name}/releases/latest")
     last_release = None
     if release_resp.status_code == 200:
         try:
@@ -160,6 +182,8 @@ def main(argv: List[str] | None = None) -> None:
     parser.add_argument("--output", default="data/repos.json")
     args = parser.parse_args(argv)
 
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+
     repos = scrape(args.repos, args.min_stars)
     out_path = Path(args.output)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -173,7 +197,7 @@ def main(argv: List[str] | None = None) -> None:
         f"API {used}/{API_LIMIT if API_LIMIT is not None else '?'} used, "
         f"projected {projected}, cache hits {CACHE_HITS}"
     )
-    print(summary)
+    logger.info(summary)
     step = os.getenv("GITHUB_STEP_SUMMARY")
     if step:
         with open(step, "a", encoding="utf-8") as fh:
@@ -181,4 +205,8 @@ def main(argv: List[str] | None = None) -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as exc:  # pragma: no cover - CLI entry
+        logger.error("Scrape failed: %s", exc)
+        sys.exit(1)
