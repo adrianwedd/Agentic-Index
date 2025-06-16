@@ -28,6 +28,12 @@ def _setup(tmp_path: Path, top_n: int = 50) -> Path:
                         "ecosystem_integration": 0.3,
                         "stars_log2": 3.32,
                         "category": "General",
+                        "stars_7d": 1,
+                        "maintenance": 0.5,
+                        "docs_quality": 0.5,
+                        "ecosystem_fit": 0.3,
+                        "release_age": 1,
+                        "license_score": 1.0,
                     }
                 ],
             }

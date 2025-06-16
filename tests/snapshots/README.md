@@ -15,12 +15,12 @@ We rank everything using a transparent scoring formula based on:
 
 | Emoji | Field | Formula | Updated | Source |
 |-------|-------|---------|---------|--------|
-| ⭐ | `stars_7d` | GitHub star Δ (7 days) | Nightly | `scraper/github.py` |
-| 🔧 | `maintenance` | Issue/PR hygiene score | Weekly | `lib/quality_metrics.py` |
-| 📅 | `release_age` | Days since latest release | Nightly | `scraper/github.py` |
-| 📚 | `docs_quality` | Heuristic score (README + examples) | Monthly | `lib/quality_metrics.py` |
-| 🧠 | `ecosystem_fit` | Keyword-based tag affinity | Monthly | `lib/quality_metrics.py` |
-| ⚖️ | `license_score` | OSI compatibility / restrictiveness | Static | `lib/quality_metrics.py` |
+| ⭐ | `stars_7d` | GitHub star Δ (7 days) | Nightly | `scripts/scrape_repos.py` |
+| 🔧 | `maintenance` | Issue/PR hygiene score | Weekly | `score/maintenance.py` |
+| 📅 | `release_age` | Days since latest release | Nightly | `scripts/scrape_repos.py` |
+| 📚 | `docs_quality` | Heuristic score (README + examples) | Monthly | `score/docs.py` |
+| 🧠 | `ecosystem_fit` | Keyword-based tag affinity | Monthly | `score/ecosystem.py` |
+| ⚖️ | `license_score` | OSI compatibility / restrictiveness | Static | `score/license.py` |
 
 Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metrics Legend](#metrics-legend) for metric details. The full JSON schema is documented in [SCHEMA.md](SCHEMA.md).
 
@@ -33,6 +33,7 @@ Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metr
 <p align="center">
 ![build](badges/build.svg)
 ![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
+![security](https://img.shields.io/badge/security-0%20issues-brightgreen)
 ![docs](badges/docs.svg)
 ![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index)
 ![license](badges/license.svg)
@@ -98,108 +99,58 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 *(Data updated as of: {timestamp} UTC)*
 
 <!-- TOP50:START -->
-| Rank | <abbr title="Overall">📊</abbr> Overall | Repo | <abbr title="Stars gained in last 7 days">⭐ Δ7d</abbr> | <abbr title="Maintenance score">🔧 Maint</abbr> | <abbr title="Last release date">📅 Release</abbr> | <abbr title="Documentation score">📚 Docs</abbr> | <abbr title="Ecosystem fit">🧠 Fit</abbr> | <abbr title="License">⚖️ License</abbr> |
-|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|
-| 1 | 5.28 | dify | 0 | - | - | - | - | NOASSERTION |
-| 2 | 5.17 | langflow | 0 | - | - | - | - | MIT |
-| 3 | 5.10 | browser-use | 0 | - | - | - | - | MIT |
-| 4 | 5.07 | OpenHands | 0 | - | - | - | - | MIT |
-| 5 | 5.06 | lobe-chat | 0 | - | - | - | - | NOASSERTION |
-| 6 | 5.06 | MetaGPT | 0 | - | - | - | - | MIT |
-| 7 | 5.04 | ragflow | 0 | - | - | - | - | Apache-2.0 |
-| 8 | 5.03 | system-prompts-and-models... | 0 | - | - | - | - | GPL-3.0 |
-| 9 | 5.02 | LLaMA-Factory | 0 | - | - | - | - | Apache-2.0 |
-| 10 | 4.96 | anything-llm | 0 | - | - | - | - | MIT |
-| 11 | 4.96 | cline | 0 | - | - | - | - | Apache-2.0 |
-| 12 | 4.93 | autogen | 0 | - | - | - | - | CC-BY-4.0 |
-| 13 | 4.93 | llama_index | 0 | - | - | - | - | MIT |
-| 14 | 4.92 | awesome-llm-apps | 0 | - | - | - | - | Apache-2.0 |
-| 15 | 4.87 | Flowise | 0 | - | - | - | - | NOASSERTION |
-| 16 | 4.84 | ChatTTS | 0 | - | - | - | - | AGPL-3.0 |
-| 17 | 4.84 | mem0 | 0 | - | - | - | - | Apache-2.0 |
-| 18 | 4.82 | crewAI | 0 | - | - | - | - | MIT |
-| 19 | 4.81 | Langchain-Chatchat | 0 | - | - | - | - | Apache-2.0 |
-| 20 | 4.79 | AgentGPT | 0 | - | - | - | - | GPL-3.0 |
-| 21 | 4.76 | agno | 0 | - | - | - | - | MPL-2.0 |
-| 22 | 4.75 | khoj | 0 | - | - | - | - | AGPL-3.0 |
-| 23 | 4.74 | ChatDev | 0 | - | - | - | - | Apache-2.0 |
-| 24 | 4.73 | ai-agents-for-beginners | 0 | - | - | - | - | MIT |
-| 25 | 4.73 | LibreChat | 0 | - | - | - | - | MIT |
-| 26 | 4.72 | cherry-studio | 0 | - | - | - | - | NOASSERTION |
-| 27 | 4.72 | Jobs_Applier_AI_Agent_AIHawk | 0 | - | - | - | - | AGPL-3.0 |
-| 28 | 4.71 | qlib | 0 | - | - | - | - | MIT |
-| 29 | 4.68 | composio | 0 | - | - | - | - | NOASSERTION |
-| 30 | 4.66 | FastGPT | 0 | - | - | - | - | NOASSERTION |
-| 31 | 4.65 | gpt-researcher | 0 | - | - | - | - | Apache-2.0 |
-| 32 | 4.63 | CopilotKit | 0 | - | - | - | - | MIT |
-| 33 | 4.63 | haystack | 0 | - | - | - | - | Apache-2.0 |
-| 34 | 4.56 | swarm | 0 | - | - | - | - | MIT |
-| 35 | 4.55 | agentic | 0 | - | - | - | - | MIT |
-| 36 | 4.54 | vanna | 0 | - | - | - | - | MIT |
-| 37 | 4.53 | agenticSeek | 0 | - | - | - | - | GPL-3.0 |
-| 38 | 4.53 | DB-GPT | 0 | - | - | - | - | MIT |
-| 39 | 4.53 | deep-research | 0 | - | - | - | - | MIT |
-| 40 | 4.53 | letta | 0 | - | - | - | - | Apache-2.0 |
-| 41 | 4.52 | SWE-agent | 0 | - | - | - | - | MIT |
-| 42 | 4.51 | eliza | 0 | - | - | - | - | MIT |
-| 43 | 4.51 | RagaAI-Catalyst | 0 | - | - | - | - | Apache-2.0 |
-| 44 | 4.50 | DocsGPT | 0 | - | - | - | - | MIT |
-| 45 | 4.48 | awesome-ai-agents | 0 | - | - | - | - | NOASSERTION |
-| 46 | 4.47 | goose | 0 | - | - | - | - | Apache-2.0 |
-| 47 | 4.46 | activepieces | 0 | - | - | - | - | NOASSERTION |
-| 48 | 4.46 | suna | 0 | - | - | - | - | Apache-2.0 |
-| 49 | 4.45 | ai | 0 | - | - | - | - | NOASSERTION |
-| 50 | 4.45 | botpress | 0 | - | - | - | - | MIT |
-| 51 | 4.45 | dagger | 0 | - | - | - | - | Apache-2.0 |
-| 52 | 4.45 | plandex | 0 | - | - | - | - | MIT |
-| 53 | 4.44 | ai-pdf-chatbot-langchain | 0 | - | - | - | - | MIT |
-| 54 | 4.44 | deer-flow | 0 | - | - | - | - | MIT |
-| 55 | 4.44 | SuperAGI | 0 | - | - | - | - | MIT |
-| 56 | 4.44 | web-ui | 0 | - | - | - | - | MIT |
-| 57 | 4.42 | camel | 0 | - | - | - | - | Apache-2.0 |
-| 58 | 4.42 | mastra | 0 | - | - | - | - | NOASSERTION |
-| 59 | 4.41 | ChuanhuChatGPT | 0 | - | - | - | - | GPL-3.0 |
-| 60 | 4.41 | devika | 0 | - | - | - | - | MIT |
-| 61 | 4.39 | GenAI_Agents | 0 | - | - | - | - | NOASSERTION |
-| 62 | 4.37 | Llama-Chinese | 0 | - | - | - | - | - |
-| 63 | 4.36 | graphiti | 0 | - | - | - | - | Apache-2.0 |
-| 64 | 4.36 | openai-agents-python | 0 | - | - | - | - | MIT |
-| 65 | 4.35 | LangBot | 0 | - | - | - | - | AGPL-3.0 |
-| 66 | 4.32 | pydantic-ai | 0 | - | - | - | - | MIT |
-| 67 | 4.31 | adk-python | 0 | - | - | - | - | Apache-2.0 |
-| 68 | 4.30 | ai-engineering-hub | 0 | - | - | - | - | MIT |
-| 69 | 4.29 | opik | 0 | - | - | - | - | Apache-2.0 |
-| 70 | 4.29 | Qwen-Agent | 0 | - | - | - | - | Apache-2.0 |
-| 71 | 4.27 | agent-zero | 0 | - | - | - | - | NOASSERTION |
-| 72 | 4.26 | AstrBot | 0 | - | - | - | - | AGPL-3.0 |
-| 73 | 4.25 | bisheng | 0 | - | - | - | - | Apache-2.0 |
-| 74 | 4.24 | awesome-LLM-resources | 0 | - | - | - | - | Apache-2.0 |
-| 75 | 4.24 | cua | 0 | - | - | - | - | MIT |
-| 76 | 4.24 | E2B | 0 | - | - | - | - | Apache-2.0 |
-| 77 | 4.22 | Figma-Context-MCP | 0 | - | - | - | - | MIT |
-| 78 | 4.20 | Bert-VITS2 | 0 | - | - | - | - | AGPL-3.0 |
-| 79 | 4.18 | agentscope | 0 | - | - | - | - | Apache-2.0 |
-| 80 | 4.18 | pr-agent | 0 | - | - | - | - | AGPL-3.0 |
-| 81 | 4.18 | UFO | 0 | - | - | - | - | MIT |
-| 82 | 4.18 | Upsonic | 0 | - | - | - | - | MIT |
-| 83 | 4.18 | WrenAI | 0 | - | - | - | - | AGPL-3.0 |
-| 84 | 4.16 | OpenRLHF | 0 | - | - | - | - | Apache-2.0 |
-| 85 | 4.16 | promptfoo | 0 | - | - | - | - | MIT |
-| 86 | 4.15 | aichat | 0 | - | - | - | - | Apache-2.0 |
-| 87 | 4.15 | R2R | 0 | - | - | - | - | MIT |
-| 88 | 4.14 | nanobrowser | 0 | - | - | - | - | Apache-2.0 |
-| 89 | 4.11 | agents | 0 | - | - | - | - | Apache-2.0 |
-| 90 | 4.11 | intentkit | 0 | - | - | - | - | MIT |
-| 91 | 4.10 | deep-searcher | 0 | - | - | - | - | Apache-2.0 |
-| 92 | 4.09 | agent-squad | 0 | - | - | - | - | Apache-2.0 |
-| 93 | 4.08 | lamda | 0 | - | - | - | - | - |
-| 94 | 4.08 | RD-Agent | 0 | - | - | - | - | MIT |
-| 95 | 4.07 | LLocalSearch | 0 | - | - | - | - | Apache-2.0 |
-| 96 | 4.07 | TaskWeaver | 0 | - | - | - | - | MIT |
-| 97 | 4.06 | mcp-agent | 0 | - | - | - | - | Apache-2.0 |
-| 98 | 4.06 | ten-framework | 0 | - | - | - | - | NOASSERTION |
-| 99 | 4.05 | cognee | 0 | - | - | - | - | Apache-2.0 |
-| 100 | 4.05 | julep | 0 | - | - | - | - | Apache-2.0 |
+| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |
+|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|
+| 1 | dify | 5.28 | 103268 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 16.66 | General-purpose |
+| 2 | langflow | 5.17 | 73776 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 16.17 | DevTools |
+| 3 | browser-use | 5.10 | 63197 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.95 | General-purpose |
+| 4 | OpenHands | 5.07 | 58086 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.83 | General-purpose |
+| 5 | lobe-chat | 5.06 | 62457 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.93 | RAG-centric |
+| 6 | MetaGPT | 5.06 | 56406 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.78 | Multi-Agent Coordination |
+| 7 | ragflow | 5.04 | 55104 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.75 | RAG-centric |
+| 8 | system-prompts-and-models... | 5.03 | 57495 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.81 | DevTools |
+| 9 | LLaMA-Factory | 5.02 | 52281 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.67 | General-purpose |
+| 10 | anything-llm | 4.96 | 45309 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.47 | RAG-centric |
+| 11 | cline | 4.96 | 45704 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.48 | General-purpose |
+| 12 | autogen | 4.93 | 45993 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.49 | General-purpose |
+| 13 | llama_index | 4.93 | 42355 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.37 | General-purpose |
+| 14 | awesome-llm-apps | 4.92 | 41125 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.33 | RAG-centric |
+| 15 | Flowise | 4.87 | 40065 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.29 | General-purpose |
+| 16 | ChatTTS | 4.84 | 36799 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.17 | General-purpose |
+| 17 | mem0 | 4.84 | 34513 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.07 | General-purpose |
+| 18 | crewAI | 4.82 | 32933 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.01 | Multi-Agent Coordination |
+| 19 | Langchain-Chatchat | 4.81 | 35287 | +new | +new | 0.84 | 0.00 | 0.00 | 1.00 | 0.00 | 15.11 | RAG-centric |
+| 20 | AgentGPT | 4.79 | 34323 | +new | +new | 0.95 | 0.00 | 0.00 | 0.50 | 0.00 | 15.07 | General-purpose |
+| 21 | agno | 4.76 | 28280 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.79 | Multi-Agent Coordination |
+| 22 | khoj | 4.75 | 30327 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.89 | Experimental |
+| 23 | ChatDev | 4.74 | 27024 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.72 | Multi-Agent Coordination |
+| 24 | ai-agents-for-beginners | 4.73 | 26615 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.70 | General-purpose |
+| 25 | LibreChat | 4.73 | 26789 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.71 | General-purpose |
+| 26 | cherry-studio | 4.72 | 28444 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.80 | General-purpose |
+| 27 | Jobs_Applier_AI_Agent_AIHawk | 4.72 | 28310 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.79 | General-purpose |
+| 28 | qlib | 4.71 | 25192 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.62 | Experimental |
+| 29 | composio | 4.68 | 25499 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.64 | General-purpose |
+| 30 | FastGPT | 4.66 | 24718 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.59 | RAG-centric |
+| 31 | gpt-researcher | 4.65 | 21875 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.42 | Experimental |
+| 32 | CopilotKit | 4.63 | 21205 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.37 | General-purpose |
+| 33 | haystack | 4.63 | 21154 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.37 | RAG-centric |
+| 34 | swarm | 4.56 | 19920 | +new | +new | 0.80 | 0.00 | 0.00 | 1.00 | 0.00 | 14.28 | Multi-Agent Coordination |
+| 35 | agentic | 4.55 | 17639 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.11 | General-purpose |
+| 36 | vanna | 4.54 | 18127 | +new | +new | 0.89 | 0.00 | 0.00 | 1.00 | 0.00 | 14.15 | RAG-centric |
+| 37 | agenticSeek | 4.53 | 18268 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.16 | General-purpose |
+| 38 | DB-GPT | 4.53 | 16764 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.03 | General-purpose |
+| 39 | deep-research | 4.53 | 16638 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.02 | Experimental |
+| 40 | letta | 4.53 | 16861 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.04 | General-purpose |
+| 41 | SWE-agent | 4.52 | 16305 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.99 | General-purpose |
+| 42 | eliza | 4.51 | 16078 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.97 | General-purpose |
+| 43 | RagaAI-Catalyst | 4.51 | 16193 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.98 | RAG-centric |
+| 44 | DocsGPT | 4.50 | 15708 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.94 | DevTools |
+| 45 | awesome-ai-agents | 4.48 | 18587 | +new | +new | 0.76 | 0.00 | 0.00 | 0.50 | 0.00 | 14.18 | General-purpose |
+| 46 | goose | 4.47 | 14627 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.84 | General-purpose |
+| 47 | activepieces | 4.46 | 15291 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 13.90 | General-purpose |
+| 48 | suna | 4.46 | 14425 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.82 | General-purpose |
+| 49 | ai | 4.45 | 14955 | +new | +new | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 13.87 | DevTools |
+| 50 | botpress | 4.45 | 13805 | +new | +new | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.75 | General-purpose |
 <!-- TOP50:END -->
 *➡️ Dig into how these scores are cooked up in our [Methodology section](#our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](./docs/methodology.md).*
 
@@ -292,8 +243,9 @@ Generated tables live in the `data/` directory.
 <a id="-how-refresh-works"></a>
 ## 🔄 How refresh works
 
-A scheduled GitHub Action keeps the index up to date. It runs the scraper and
-ranker, opens a pull request with any changes, and can auto-merge when all
+A scheduled GitHub Action keeps the index up to date. It runs the extended
+scraper and metric scoring before ranking repositories, then opens a pull
+request with any changes and can auto-merge when all
 checks pass. You can also trigger this process manually by running
 [`scripts/trigger_refresh.sh`](scripts/trigger_refresh.sh).
 
