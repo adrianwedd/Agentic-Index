@@ -35,7 +35,13 @@ def _clamp_name(name: str, limit: int = 28) -> str:
     return safe[: limit - 3] + "..."
 
 
-def _load_rows(sort_by: str = DEFAULT_SORT_FIELD, *, limit: int = 100) -> list[str]:
+def _load_rows(
+    sort_by: str = DEFAULT_SORT_FIELD,
+    *,
+    limit: int = 100,
+    category: str | None = None,
+    return_repos: bool = False,
+) -> list[str] | tuple[list[str], list[dict]]:
     """Return table rows computed from repo data using v3 fields.
 
     If ``data/ranked.json`` is present it is used in preference to
@@ -69,7 +75,10 @@ def _load_rows(sort_by: str = DEFAULT_SORT_FIELD, *, limit: int = 100) -> list[s
         "category",
     ]
     parsed = []
+    filtered = []
     for idx, repo in enumerate(repos):
+        if category and repo.get("category") != category:
+            continue
         for key in required:
             if key not in repo:
                 ident = repo.get("full_name", repo.get("name"))
@@ -99,7 +108,7 @@ def _load_rows(sort_by: str = DEFAULT_SORT_FIELD, *, limit: int = 100) -> list[s
         log_raw = repo.get("stars_log2")
         log_val = float(log_raw) if log_raw is not None else 0.0
         log_fmt = "-" if log_raw is None else f"{log_val:.2f}"
-        category = repo.get("category", "-")
+        cat = repo.get("category", "-")
         parsed.append(
             {
                 "name": name,
@@ -135,10 +144,17 @@ def _load_rows(sort_by: str = DEFAULT_SORT_FIELD, *, limit: int = 100) -> list[s
                 "ecosystem_sort": eco_val,
                 "stars_log2": log_fmt,
                 "stars_log2_sort": log_val,
-                "category": category,
+                "category": cat,
             }
         )
+        filtered.append(repo)
     parsed.sort(key=lambda r: (-r.get(f"{sort_by}_sort", 0), r["name"].lower()))
+    filtered.sort(
+        key=lambda r: (
+            -float(r.get(sort_by if sort_by != "score" else "AgenticIndexScore", 0)),
+            r.get("name", "").lower(),
+        )
+    )
 
     rows = []
     for i, repo in enumerate(parsed[:limit], start=1):
@@ -159,6 +175,8 @@ def _load_rows(sort_by: str = DEFAULT_SORT_FIELD, *, limit: int = 100) -> list[s
                 cat=repo["category"],
             )
         )
+    if return_repos:
+        return rows, filtered[:limit]
     return rows
 
 
@@ -292,3 +310,84 @@ def main(
         README_PATH.write_text(new_text, encoding="utf-8")
 
     return 0
+
+
+def available_categories() -> list[str]:
+    """Return sorted list of categories present in ``REPOS_PATH``."""
+    try:
+        if RANKED_PATH.exists():
+            data = json.loads(RANKED_PATH.read_text())
+            repos = data.get("repos", data)
+        else:
+            repos = json.loads(REPOS_PATH.read_text()).get("repos", [])
+    except Exception:
+        return []
+    return sorted({r.get("category", "-") for r in repos if r.get("category")})
+
+
+def _infer_topics(repos: list[dict], limit: int = 5) -> list[str]:
+    """Infer a small list of topics from ``repos``."""
+    topics: list[str] = []
+    for repo in repos[:limit]:
+        for topic in repo.get("topics", []) or []:
+            if topic not in topics:
+                topics.append(topic)
+            if len(topics) >= limit:
+                break
+        if len(topics) >= limit:
+            break
+    return topics
+
+
+def build_category_table(
+    category: str,
+    *,
+    sort_by: str = DEFAULT_SORT_FIELD,
+    limit: int | None = None,
+) -> str:
+    """Return a markdown table for ``category`` with optional topic metadata."""
+    header_lines = [
+        "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |",
+        "|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|",
+    ]
+    cfg_limit = DEFAULT_TOP_N if limit is None else limit
+    rows, repos = _load_rows(
+        sort_by, limit=cfg_limit, category=category, return_repos=True
+    )
+    topics = _infer_topics(repos)
+    heading = f"## 🧠 Top Agentic-AI Repositories: {category}  \n"
+    if topics:
+        heading += "_GitHub Topics: " + ", ".join(f"`{t}`" for t in topics) + "_  \n"
+    return heading + "\n".join(header_lines + rows) + "\n"
+
+
+def write_category_readme(
+    category: str,
+    *,
+    force: bool = False,
+    check: bool = False,
+    write: bool = True,
+    sort_by: str = DEFAULT_SORT_FIELD,
+    top_n: int = DEFAULT_TOP_N,
+    limit: int | None = None,
+) -> int:
+    """Write or check ``README_<category>.md``."""
+    cfg_limit = top_n if limit is None else limit
+    text = build_category_table(category, sort_by=sort_by, limit=cfg_limit)
+    fname = f"README_{category.replace(' ', '_')}.md"
+    path = ROOT / fname
+    if check and path.exists() and diff(text, path):
+        print(f"{fname} is out of date", file=sys.stderr)
+        return 1
+    if write and (force or not path.exists() or diff(text, path)):
+        path.write_text(text, encoding="utf-8")
+    return 0
+
+
+def write_all_categories(**kwargs) -> int:
+    """Write or check README files for all categories."""
+    status = 0
+    for cat in available_categories():
+        ret = write_category_readme(cat, **kwargs)
+        status = max(status, ret)
+    return status

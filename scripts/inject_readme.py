@@ -9,6 +9,8 @@ from agentic_index_cli.internal.inject_readme import (
     DEFAULT_SORT_FIELD,
     DEFAULT_TOP_N,
     main,
+    write_all_categories,
+    write_category_readme,
 )
 
 if __name__ == "__main__":
@@ -44,15 +46,43 @@ if __name__ == "__main__":
     )
     parser.add_argument("--top-n", type=int, default=DEFAULT_TOP_N)
     parser.add_argument("--limit", type=int, help="Maximum rows to render")
+    cat_group = parser.add_mutually_exclusive_group()
+    cat_group.add_argument("--category", help="Generate README for one category")
+    cat_group.add_argument(
+        "--all-categories",
+        action="store_true",
+        help="Generate README_<cat>.md for all categories",
+    )
     args = parser.parse_args()
 
     check = args.check or args.dry_run
     write = args.write or not check
-    main(
-        force=args.force,
-        check=check,
-        write=write,
-        sort_by=args.sort_by,
-        top_n=args.top_n,
-        limit=args.limit,
-    )
+    if args.category or args.all_categories:
+        if args.all_categories:
+            write_all_categories(
+                force=args.force,
+                check=check,
+                write=write,
+                sort_by=args.sort_by,
+                top_n=args.top_n,
+                limit=args.limit,
+            )
+        else:
+            write_category_readme(
+                args.category,
+                force=args.force,
+                check=check,
+                write=write,
+                sort_by=args.sort_by,
+                top_n=args.top_n,
+                limit=args.limit,
+            )
+    else:
+        main(
+            force=args.force,
+            check=check,
+            write=write,
+            sort_by=args.sort_by,
+            top_n=args.top_n,
+            limit=args.limit,
+        )
