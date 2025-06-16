@@ -2,6 +2,7 @@
 
 Welcome! This document collects everything you need to set up a working development environment for Agentic Index.
 
+
 ## Table of Contents
 - [Prerequisites](#prerequisites)
 - [Fork & Clone](#fork--clone)
@@ -54,4 +55,17 @@ CI_OFFLINE=1 pytest --disable-socket
 - **Network errors when installing packages** – use the mirror described in [docs/CI_SETUP.md](CI_SETUP.md).
 - **GitHub API rate limits** – export `GITHUB_TOKEN_REPO_STATS` with a personal token or lower `--min-stars` when scraping.
 - **Windows path issues** – run tools inside WSL or use forward slashes.
+
+Use the provided dev container to get a consistent development setup.
+
+## GitHub Codespaces
+1. Open the repository on GitHub and click **Code**.
+2. Select the **Codespaces** tab and create a new codespace.
+3. The container builds automatically and runs `scripts/setup-env.sh` on first launch.
+
+## VS Code Remote – Containers
+1. Install the *Dev Containers* extension for VS Code.
+2. Clone this repository locally and open it in VS Code.
+3. Press `F1` and run **Dev Containers: Reopen in Container**.
+4. The environment builds and forwards port 8000 for the API server.
 

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Wrapper script for devcontainer initialization
+bash "$(dirname "$0")/agent-setup.sh"
+
 # Ensure the script is sourced so exports persist
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   echo "Please source this script: source scripts/setup-env.sh"

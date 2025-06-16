@@ -11,6 +11,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
     && apt-get install -y --no-install-recommends nodejs \
     && rm -rf /var/lib/apt/lists/*
 
+# Provide setup script inside the image for post-create hook
+COPY scripts/setup-env.sh /usr/local/bin/setup-env.sh
+RUN chmod +x /usr/local/bin/setup-env.sh
+
 # Install Python tooling
 # Use explicit index to avoid firewall blocks
 RUN pip install --no-cache-dir \
