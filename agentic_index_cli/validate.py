@@ -68,7 +68,7 @@ class Repo(BaseModel):
 class RepoFile(BaseModel):
     """Container for a list of :class:`Repo` objects."""
 
-    schema_version: int = 2
+    schema_version: int = 3
     repos: List[Repo]
 
     model_config = ConfigDict(extra="forbid", populate_by_name=True)
@@ -90,7 +90,7 @@ def load_repos(path: Path) -> List[dict]:
         items = raw
     elif isinstance(raw, dict):
         version = raw.get("schema_version", 1)
-        if version not in (1, 2):
+        if version not in (1, 2, 3):
             raise ValidationError(f"Unsupported schema_version {version}")
         items = raw.get("repos")
         if not isinstance(items, list):

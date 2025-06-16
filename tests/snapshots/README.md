@@ -151,6 +151,7 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 | 48 | suna | 4.46 | 14425 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.82 | General-purpose |
 | 49 | ai | 4.45 | 14955 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 13.87 | DevTools |
 | 50 | botpress | 4.45 | 13805 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.75 | General-purpose |
+
 <!-- TOP50:END -->
 *➡️ Dig into how these scores are cooked up in our [Methodology section](#our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](./docs/methodology.md).*
 
