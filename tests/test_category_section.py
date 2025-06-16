@@ -15,6 +15,12 @@ def test_category_section_injected(tmp_path, monkeypatch):
     }
     (by_cat / "index.json").write_text(json.dumps(index))
 
+    (by_cat / "NLP.json").write_text(
+        json.dumps(
+            {"schema_version": 3, "repos": [{"topics": ["nlp"], "category": "NLP"}]}
+        )
+    )
+
     (data_dir / "repos.json").write_text('{"schema_version":3,"repos":[]}')
     (data_dir / "top100.md").write_text(
         "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |\n|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|\n"
@@ -37,6 +43,15 @@ def test_category_section_injected(tmp_path, monkeypatch):
 
     assert inj.main(top_n=50) == 0
     out = readme.read_text()
-    assert "README_DevTools.md" in out
-    assert "`agents`, `cli`, `tools`" in out
-    assert "README_NLP.md" in out
+    start = out.index("<!-- CATEGORY:START -->") + len("<!-- CATEGORY:START -->")
+    end = out.index("<!-- CATEGORY:END -->", start)
+    snippet = out[start:end].strip()
+    expected = "\n".join(
+        [
+            "- 🛠️ [DevTools](README_DevTools.md)  ",
+            "_Topics: `agents`, `cli`, `tools`_",
+            "- • [NLP](README_NLP.md)  ",
+            "_Topics: `nlp`_",
+        ]
+    )
+    assert snippet == expected
