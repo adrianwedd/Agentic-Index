@@ -13,6 +13,7 @@ Each entry includes raw GitHub fields plus derived metrics used for ranking.
 | `open_issues_count` | number of open issues |
 | `pushed_at` | last commit timestamp |
 | `owner.login` | repository owner |
+| `topics[]` | repository topics |
 | `category` | manual project category |
 | `stars` | alias of stargazers_count |
 | `stars_delta` | star change since last run |

@@ -37,13 +37,19 @@ def test_one_shot_fields(tmp_path, monkeypatch):
         "language": "Python",
         "pushed_at": "2025-06-01T00:00:00Z",
         "owner": {"login": "owner"},
-        "topics": ["tool"],
     }
+    topics = {"names": ["tool", "agent"]}
     release = {"published_at": "2025-05-01T00:00:00Z"}
 
     def fake_get(url, headers=None, timeout=None):
         if url.endswith("/repos/owner/repo"):
             return make_response(repo)
+        if url.endswith("/repos/owner/repo/topics"):
+            assert (
+                headers
+                and headers.get("Accept") == "application/vnd.github.mercy-preview+json"
+            )
+            return make_response(topics)
         if url.endswith("/repos/owner/repo/releases/latest"):
             return make_response(release)
         raise AssertionError(url)
@@ -57,3 +63,4 @@ def test_one_shot_fields(tmp_path, monkeypatch):
     repo_data = data["repos"][0]
     for field in ["stars_7d", "maintenance", "docs_score", "ecosystem", "last_release"]:
         assert field in repo_data
+    assert repo_data["topics"] == ["tool", "agent"]

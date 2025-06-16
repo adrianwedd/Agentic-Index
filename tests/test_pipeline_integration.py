@@ -52,13 +52,18 @@ def test_end_to_end(tmp_path, monkeypatch, min_stars):
         "language": "Python",
         "pushed_at": "2025-06-01T00:00:00Z",
         "owner": {"login": "owner"},
-        "topics": ["tool"],
     }
     release = {"published_at": "2025-05-01T00:00:00Z"}
 
     def fake_get(url, headers=None, timeout=None):
         if url.endswith("/repos/owner/repo"):
             return _resp(repo)
+        if url.endswith("/repos/owner/repo/topics"):
+            assert (
+                headers
+                and headers.get("Accept") == "application/vnd.github.mercy-preview+json"
+            )
+            return _resp({"names": ["tool", "agent"]})
         if url.endswith("/repos/owner/repo/releases/latest"):
             return _resp(release)
         raise AssertionError(url)
