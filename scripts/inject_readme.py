@@ -5,7 +5,11 @@ import sys
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
-from agentic_index_cli.internal.inject_readme import DEFAULT_SORT_FIELD, main
+from agentic_index_cli.internal.inject_readme import (
+    DEFAULT_SORT_FIELD,
+    DEFAULT_TOP_N,
+    main,
+)
 
 if __name__ == "__main__":
     import argparse
@@ -31,8 +35,15 @@ if __name__ == "__main__":
         choices=["overall", "stars_7d", "maintenance", "last_release"],
         help="Sort table by metric",
     )
+    parser.add_argument("--top-n", type=int, default=DEFAULT_TOP_N)
     args = parser.parse_args()
 
     check = args.check or args.dry_run
     write = args.write or not check
-    main(force=args.force, check=check, write=write, sort_by=args.sort_by)
+    main(
+        force=args.force,
+        check=check,
+        write=write,
+        sort_by=args.sort_by,
+        top_n=args.top_n,
+    )

@@ -1,6 +1,6 @@
 """Helpers for injecting the top-50 table into ``README.md``."""
 
-from .internal.inject_readme import main
+from .internal.inject_readme import DEFAULT_TOP_N, main
 
 
 def cli(argv=None):
@@ -9,8 +9,9 @@ def cli(argv=None):
 
     parser = argparse.ArgumentParser(description="Inject README table")
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--top-n", type=int, default=DEFAULT_TOP_N)
     args = parser.parse_args(argv)
-    main(force=args.force)
+    main(force=args.force, top_n=args.top_n)
 
 
 if __name__ == "__main__":

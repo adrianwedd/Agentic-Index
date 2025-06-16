@@ -1,8 +1,21 @@
 from fastapi.testclient import TestClient
 
-from agentic_index_api.main import app
+from agentic_index_api import main as api_main
 
-client = TestClient(app)
+api_main.REPOS[:] = [
+    {
+        "name": "repo1",
+        "full_name": "repo1",
+        "stargazers_count": 1,
+        "AgenticIndexScore": 1.0,
+    }
+]
+api_main.RANKED[:] = api_main.REPOS[:]
+api_main.NAME_MAP.clear()
+for r in api_main.REPOS:
+    api_main.NAME_MAP[r["name"]] = r
+
+client = TestClient(api_main.app)
 
 
 def test_repo_endpoint():

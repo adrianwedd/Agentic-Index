@@ -20,6 +20,7 @@ def _setup(tmp_path: Path):
             "ecosystem": 0.0,
             "last_release": "2025-06-01T00:00:00Z",
             "license": "MIT",
+            "score_delta": 0,
         },
         {
             "name": "B",
@@ -31,6 +32,7 @@ def _setup(tmp_path: Path):
             "ecosystem": 0.0,
             "last_release": "2025-05-01T00:00:00Z",
             "license": "MIT",
+            "score_delta": 0,
         },
     ]
     (data_dir / "repos.json").write_text(
@@ -62,13 +64,13 @@ def _setup(tmp_path: Path):
 )
 def test_sort_order(tmp_path, field, first):
     _setup(tmp_path)
-    text = inj.build_readme(sort_by=field)
+    text = inj.build_readme(sort_by=field, top_n=50)
     lines = [l for l in text.splitlines() if l.startswith("|")][2:]
     assert lines[0].split("|")[3].strip() == first
 
 
 def test_stable_between_runs(tmp_path):
     _setup(tmp_path)
-    first = inj.build_readme(sort_by="stars_7d")
-    second = inj.build_readme(sort_by="stars_7d")
+    first = inj.build_readme(sort_by="stars_7d", top_n=50)
+    second = inj.build_readme(sort_by="stars_7d", top_n=50)
     assert first == second

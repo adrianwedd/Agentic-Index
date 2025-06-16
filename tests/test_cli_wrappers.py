@@ -35,12 +35,14 @@ def test_ranker_cli(monkeypatch, tmp_path):
 def test_inject_cli(monkeypatch):
     called = {}
 
-    def fake_main(force=False):
+    def fake_main(force=False, top_n=100):
         called["force"] = force
+        called["top_n"] = top_n
 
     monkeypatch.setattr(inject, "main", fake_main)
     inject.cli(["--force"])
     assert called["force"] is True
+    assert called["top_n"] == 100
 
 
 def test_generate_outputs(monkeypatch):

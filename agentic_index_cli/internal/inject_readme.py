@@ -9,8 +9,6 @@ import os
 import pathlib
 import sys
 
-from agentic_index_cli.config import load_config
-
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 README_PATH = ROOT / "README.md"
 DATA_PATH = ROOT / "data" / "top100.md"
@@ -21,8 +19,12 @@ SNAPSHOT = ROOT / "data" / "last_snapshot.json"
 OVERALL_COL = "Overall"
 DEFAULT_SORT_FIELD = "overall"
 
-START = "<!-- TOP50:START -->"
-END = "<!-- TOP50:END -->"
+DEFAULT_TOP_N = 100
+
+
+def _markers(n: int) -> tuple[str, str]:
+    """Return start and end markers for ``n``."""
+    return f"<!-- TOP{n}:START -->", f"<!-- TOP{n}:END -->"
 
 
 def _clamp_name(name: str, limit: int = 28) -> str:
@@ -40,14 +42,26 @@ def _load_rows(sort_by: str = DEFAULT_SORT_FIELD, *, limit: int = 100) -> list[s
     ``repos.json``. Missing metric values render as ``-`` to make it clear
     they were unavailable.
     """
-    if RANKED_PATH.exists():
-        data = json.loads(RANKED_PATH.read_text())
-        repos = data.get("repos", data)
-    else:
-        repos = json.loads(REPOS_PATH.read_text()).get("repos", [])
+    try:
+        if RANKED_PATH.exists():
+            data = json.loads(RANKED_PATH.read_text())
+            repos = data.get("repos", data)
+        else:
+            repos = json.loads(REPOS_PATH.read_text()).get("repos", [])
+    except FileNotFoundError as exc:
+        raise FileNotFoundError(f"Missing file: {exc.filename}") from exc
+    except Exception as exc:
+        raise ValueError(f"Failed to read {REPOS_PATH}: {exc}") from exc
 
+    required = ["name", "AgenticIndexScore", "stars_7d", "score_delta"]
     parsed = []
-    for repo in repos:
+    for idx, repo in enumerate(repos):
+        for key in required:
+            if key not in repo:
+                ident = repo.get("full_name", repo.get("name"))
+                raise KeyError(
+                    f"Missing required field '{key}' in repo at index {idx} (full_name={ident})"
+                )
         name = repo.get("name", "")
         repo_score = float(repo.get("AgenticIndexScore", 0))
         stars7 = int(repo.get("stars_7d", 0))
@@ -136,15 +150,25 @@ def _fmt_delta(val: str | int | float, *, is_int: bool = False) -> str:
         return val
 
 
-def build_readme(*, sort_by: str = DEFAULT_SORT_FIELD, limit: int | None = None) -> str:
-    """Return README text with the top100 table injected."""
+def build_readme(
+    *,
+    sort_by: str = DEFAULT_SORT_FIELD,
+    limit: int | None = None,
+    top_n: int = DEFAULT_TOP_N,
+) -> str:
+    """Return README text with the ranking table injected."""
+    start_marker, end_marker = _markers(top_n)
     readme_text = README_PATH.read_text(encoding="utf-8")
     end_newline = readme_text.endswith("\n")
-    start_idx = readme_text.index(START)
-    end_idx = readme_text.index(END, start_idx)
+    try:
+        start_idx = readme_text.index(start_marker)
+        end_idx = readme_text.index(end_marker, start_idx)
+    except ValueError as exc:
+        missing = start_marker if start_marker not in readme_text else end_marker
+        raise ValueError(f"Marker {missing} not found in README") from exc
 
-    before = readme_text[: start_idx + len(START)].rstrip()
-    after = "\n" + readme_text[end_idx + len(END) :].lstrip()
+    before = readme_text[: start_idx + len(start_marker)].rstrip()
+    after = "\n" + readme_text[end_idx + len(end_marker) :].lstrip()
 
     # always inject standard header for v2 schema
     header_lines = [
@@ -152,15 +176,12 @@ def build_readme(*, sort_by: str = DEFAULT_SORT_FIELD, limit: int | None = None)
         "|-----:|------:|------|-------:|-------:|-----------|-------:|-------:|---------|",
     ]
 
-    cfg_limit = limit
-    if cfg_limit is None:
-        cfg = load_config()
-        cfg_limit = cfg.get("output", {}).get("markdown_table_limit", 100)
+    cfg_limit = top_n if limit is None else limit
 
     rows = _load_rows(sort_by, limit=cfg_limit)
     table = "\n".join(header_lines + rows)
 
-    new_text = f"{before}\n{table}\n{END}{after}"
+    new_text = f"{before}\n{table}\n{end_marker}{after}"
     if os.getenv("PYTEST_CURRENT_TEST") is None:
         ts = datetime.datetime.utcnow().isoformat(timespec="seconds")
         new_text = new_text.replace("{timestamp}", ts)
@@ -195,6 +216,7 @@ def main(
     check: bool = False,
     write: bool = True,
     sort_by: str = DEFAULT_SORT_FIELD,
+    top_n: int = DEFAULT_TOP_N,
 ) -> int:
     """Synchronise the README table.
 
@@ -208,11 +230,13 @@ def main(
         Whether to update ``README.md``. Defaults to ``True``.
     sort_by:
         Field to sort by. One of ``overall``, ``stars_7d``, ``maintenance``, or ``last_release``.
+    top_n:
+        Number of table rows and marker suffix.
     """
     try:
-        new_text = build_readme(sort_by=sort_by)
-    except ValueError:
-        print("Markers not found in README.md", file=sys.stderr)
+        new_text = build_readme(sort_by=sort_by, limit=top_n, top_n=top_n)
+    except Exception as exc:
+        print(f"{exc.__class__.__name__}: {exc}", file=sys.stderr)
         return 1
 
     if check:
