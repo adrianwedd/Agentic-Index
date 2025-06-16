@@ -208,3 +208,27 @@ def test_cli_worklog(monkeypatch, tmp_path):
     )
     assert called["url"].endswith("/1")
     assert called["data"] == data
+
+
+@responses.activate
+def test_worklog_targets(monkeypatch):
+    responses.add(
+        responses.GET,
+        "https://api.github.com/repos/o/r/issues/1/comments",
+        json=[],
+        status=200,
+    )
+    responses.add(
+        responses.POST,
+        "https://api.github.com/repos/o/r/issues/1/comments",
+        json={"html_url": "u"},
+        status=201,
+    )
+    data = {"task": "T", "pr_url": "https://api.github.com/repos/o/r/issues/1"}
+    url = il.post_worklog_comment(
+        "https://api.github.com/repos/o/r/issues/1",
+        data,
+        token="t",
+        targets=["pr", "issue"],
+    )
+    assert url == "u"

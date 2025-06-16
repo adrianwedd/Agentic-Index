@@ -172,7 +172,7 @@ def process_worklogs() -> None:
                 )
                 info["started"] = True
             else:
-                issue_logger.post_worklog_comment(url, data)
+                issue_logger.post_worklog_comment(url, data, targets=["issue", "pr"])
                 info["completed"] = True
                 f.rename(f.with_suffix(".posted"))
         except issue_logger.APIError as exc:

@@ -44,3 +44,19 @@ issue when the PR merges. The job requires `GITHUB_TOKEN` with permissions to
 read and write issues and pull requests. Look for a hidden `tracking-issue`
 comment on the PR to find the linked issue number.
 
+
+## Issue-First Workflow
+The `queue-sync` job converts tasks in `.codex/queue.yml` into GitHub issues.
+Each entry is updated with `issue_id: <number>` after creation.
+Pull requests must reference the associated issue using `Closes #<issue_id>`.
+The `pr-validate` workflow blocks merges if the PR body lacks this link.
+During execution the agent posts worklogs to both the PR and the issue.
+A final log is archived on the issue when it closes.
+
+### Adding Tasks
+Add your task IDs under `queue:` in `.codex/queue.yml`. On push, the
+`queue-sync` workflow creates issues automatically.
+
+### Required Token Scopes
+Automation needs a token with `repo` and `issues` scopes so it can create and
+comment on issues and pull requests.

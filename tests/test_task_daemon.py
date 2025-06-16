@@ -72,7 +72,7 @@ def test_process_worklogs(monkeypatch, tmp_path):
     )
     called = {}
 
-    def fake_post(url, d):
+    def fake_post(url, d, **kw):
         called["url"] = url
         called["data"] = d
 

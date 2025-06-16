@@ -183,18 +183,10 @@ def post_comment(
     return resp.json().get("html_url", "")
 
 
-def post_worklog_comment(
-    issue_or_pr_url: str, worklog_data: Dict[str, Any], *, token: str | None = None
+def _post_worklog_single(
+    url: str, worklog_data: Dict[str, Any], *, token: str, debug: bool = False
 ) -> str:
-    """Post or update a structured Codex worklog comment."""
-    token = token or get_token()
-    if not token:
-        _save_pending(issue_or_pr_url, worklog_data)
-        raise APIError(
-            "Missing GITHUB_TOKEN. Set GITHUB_TOKEN or GITHUB_TOKEN_ISSUES to enable issue logging."
-        )
-
-    repo, number = _parse_issue_or_pr_url(issue_or_pr_url)
+    repo, number = _parse_issue_or_pr_url(url)
     comments_url = f"{API_URL}/repos/{repo}/issues/{number}/comments"
 
     body_lines = ["<!-- codex-log -->"]
@@ -227,10 +219,9 @@ def post_worklog_comment(
 
     body = "\n".join(body_lines)
 
-    # check for existing codex-log comment
     resp = requests.get(comments_url, headers=_headers(token), timeout=10)
     if resp.status_code >= 400:
-        _save_pending(issue_or_pr_url, worklog_data)
+        _save_pending(url, worklog_data)
         raise APIError(f"{resp.status_code} {resp.text}")
     existing = None
     for c in resp.json():
@@ -255,10 +246,39 @@ def post_worklog_comment(
         )
 
     if resp.status_code >= 400:
-        _save_pending(issue_or_pr_url, worklog_data)
+        _save_pending(url, worklog_data)
         raise APIError(f"{resp.status_code} {resp.text}")
 
     return resp.json().get("html_url", "")
+
+
+def post_worklog_comment(
+    issue_or_pr_url: str,
+    worklog_data: Dict[str, Any],
+    *,
+    token: str | None = None,
+    targets: list[str] | None = None,
+    debug: bool = False,
+) -> str:
+    """Post or update a structured Codex worklog comment."""
+    token = token or get_token()
+    if not token:
+        _save_pending(issue_or_pr_url, worklog_data)
+        raise APIError(
+            "Missing GITHUB_TOKEN. Set GITHUB_TOKEN or GITHUB_TOKEN_ISSUES to enable issue logging."
+        )
+    if targets:
+        last = ""
+        for t in targets:
+            url = issue_or_pr_url
+            if t == "pr":
+                url = worklog_data.get("pr_url", issue_or_pr_url)
+            elif t == "issue":
+                url = worklog_data.get("issue_url", issue_or_pr_url)
+            last = _post_worklog_single(url, worklog_data, token=token, debug=debug)
+        return last
+
+    return _post_worklog_single(issue_or_pr_url, worklog_data, token=token, debug=debug)
 
 
 def _find_tracking_issue(repo: str, pr_number: int, token: str | None) -> str | None:

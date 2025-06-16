@@ -1,0 +1,22 @@
+name: queue-sync
+
+on:
+  push:
+    paths:
+      - '.codex/queue.yml'
+
+jobs:
+  sync-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Sync Tasks to Issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          pip install -e .
+          python scripts/sync_queue_to_issues.py .codex/queue.yml
