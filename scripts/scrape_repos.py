@@ -189,6 +189,15 @@ def main(argv: List[str] | None = None) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     save_repos(out_path, repos)
 
+    # write a timestamped snapshot alongside the primary output
+    hist_dir = out_path.parent / "history"
+    hist_dir.mkdir(parents=True, exist_ok=True)
+    today = _dt.date.today().isoformat()
+    snapshot_path = hist_dir / f"{today}.json"
+    save_repos(snapshot_path, repos)
+    (out_path.parent / "last_snapshot.txt").write_text(str(snapshot_path))
+    logger.info("Saved snapshot to %s", snapshot_path)
+
     projected = len(args.repos) * 2
     used = None
     if API_LIMIT is not None and API_REMAINING is not None:
