@@ -53,6 +53,7 @@ This catalogue is maintained by the Agentic-Index project and is updated regular
   * [💎 Honourable Mentions / Niche & Novel Gems](HONOURABLE.md)
     * [🔬 Our Methodology & Scoring Explained](#our-methodology--scoring-explained)
     * [🏷️ Category Definitions](#-category-definitions)
+  * [📚 Explore by Category](#-explore-by-category)
   * [🔄 Changelog](#-changelog)
   * [🏗 Architecture](#-architecture)
   * [🔧 Usage](#-usage)
@@ -211,6 +212,11 @@ Quick guide to our categories (and the icons you'll see in the table):
   * 🛠️ **DevTools:** Libraries and platforms to help you build, test, deploy, or secure agents (e.g., `msoedov/agentic_security` [23]).
   * 🧪 **Experimental:** Bleeding-edge, research-heavy, or early-stage projects (e.g., BabyAGI [3]).
 
+<a id="-explore-by-category"></a>
+## 📚 Explore by Category
+<!-- CATEGORY:START -->
+
+<!-- CATEGORY:END -->
 -----
 
 <a id="-changelog"></a>
