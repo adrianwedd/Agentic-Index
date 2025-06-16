@@ -12,7 +12,15 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
+      - name: Fix detached HEAD
+        if: github.event_name == 'pull_request'
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: git symbolic-ref HEAD refs/heads/$HEAD_REF
       - name: Clean snapshot
         run: rm -f data/last_snapshot.json
       - uses: actions/setup-python@v5
@@ -37,7 +45,7 @@ jobs:
         with:
           commit-message: "docs: sync README"
           branch: readme-sync-${{ github.run_id }}
-          base: ${{ github.ref_name }}
+          base: ${{ github.event.repository.default_branch }}
           title: "docs: sync README"
           body: "Automated README table update"
           delete-branch: true
@@ -64,7 +72,7 @@ jobs:
         with:
           commit-message: "docs: update coverage badge"
           branch: coverage-badge-${{ github.run_id }}
-          base: ${{ github.ref_name }}
+          base: ${{ github.event.repository.default_branch }}
           title: "docs: update coverage badge"
           body: "Automated coverage badge update"
           delete-branch: true
