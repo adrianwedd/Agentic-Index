@@ -40,10 +40,10 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -e .
-      - name: Scrape repositories
-        run: python -m agentic_index_cli.scraper --min-stars $MIN_STARS
-      - name: Enrich factors
-        run: python -m agentic_index_cli.enricher data/repos.json
+      - name: Run extended scraper & scoring
+        run: |
+          python scripts/scrape_repos.py --min-stars $MIN_STARS --output data/repos.json
+          python scripts/score_metrics.py data/repos.json
       - name: Validate data
         run: python -m agentic_index_cli.validate data/repos.json
       - name: Rank repositories
