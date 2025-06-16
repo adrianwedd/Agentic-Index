@@ -4,6 +4,8 @@ set -euo pipefail
 # Install project dependencies
 pip install -r requirements.txt
 pip install -e .
+# Install tooling used in CI
+pip install black isort
 # Install pre-commit hooks for linting
 pip install pre-commit
 pre-commit install --install-hooks
