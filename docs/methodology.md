@@ -16,6 +16,8 @@ Score = 0.30*log2(stars + 1)
 
 Each component captures a different signal: community adoption, recent activity, maintenance health, documentation quality, licensing freedom, and how well the project fits in the wider ecosystem. Weights are reviewed quarterly and may be adjusted as the landscape evolves.
 
+Metric functions are discovered at runtime via a small plugin registry. See [plugin-metrics](plugin-metrics.md) for how to add custom metrics.
+
 ## Formula History
 
 | Version | Formula | Notes |
