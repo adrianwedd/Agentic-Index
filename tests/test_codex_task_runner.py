@@ -13,6 +13,8 @@ SAMPLE_MD = """
 id: TASK-2
 priority: 2
 title: Second task
+timeout: 100
+retries: 1
 steps:
   - step two
 acceptance_criteria:
@@ -23,6 +25,8 @@ acceptance_criteria:
 id: TASK-1
 priority: 1
 title: First task
+timeout: 50
+retries: 0
 ```
 """
 
@@ -33,6 +37,8 @@ def test_parse_and_sort(tmp_path, capsys):
 
     tasks = ctr.sort_tasks(ctr.parse_tasks(md))
     assert [t["id"] for t in tasks] == ["TASK-1", "TASK-2"]
+    assert tasks[0]["timeout"] == 50
+    assert tasks[1]["retries"] == 1
 
     ctr.main(["--file", str(md), "--summary-only"])
     out = capsys.readouterr().out
