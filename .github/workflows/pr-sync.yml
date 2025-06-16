@@ -12,9 +12,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install & Run PR–Issue Sync
+      - name: Smoke test install
+        run: pip install -e .
+      - name: Run PR–Issue Sync
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          pip install -e .
-          python agentic_index_cli/task_daemon.py sync-pr "${{ toJson(github.event) }}"
+        run: python agentic_index_cli/task_daemon.py sync-pr '${{ toJson(github.event) }}'
