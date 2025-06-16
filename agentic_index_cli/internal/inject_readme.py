@@ -16,6 +16,19 @@ DATA_PATH = ROOT / "data" / "top100.md"
 REPOS_PATH = ROOT / "data" / "repos.json"
 RANKED_PATH = ROOT / "data" / "ranked.json"
 SNAPSHOT = ROOT / "data" / "last_snapshot.json"
+BY_CAT_INDEX = ROOT / "data" / "by_category" / "index.json"
+
+CATEGORY_START = "<!-- CATEGORY:START -->"
+CATEGORY_END = "<!-- CATEGORY:END -->"
+
+CATEGORY_ICONS = {
+    "General-purpose": "🌐",
+    "Multi-Agent Coordination": "🤖",
+    "RAG-centric": "📚",
+    "Domain-Specific": "🎯",
+    "DevTools": "🛠️",
+    "Experimental": "🧪",
+}
 
 DEFAULT_SORT_FIELD = "score"
 
@@ -202,6 +215,47 @@ def _fmt_delta(val: str | int | float, *, is_int: bool = False) -> str:
         return val
 
 
+def _build_category_list(index_path: pathlib.Path | None = None) -> str:
+    """Return markdown bullet list for category navigation."""
+    if index_path is None:
+        index_path = BY_CAT_INDEX
+    if not index_path.exists():
+        return ""
+    try:
+        index = json.loads(index_path.read_text())
+    except Exception:
+        return ""
+    lines: list[str] = []
+    for cat in sorted(index):
+        info = index[cat]
+        if isinstance(info, str):
+            fname = info
+            topics: list[str] = []
+        else:
+            fname = info.get("file") or info.get("path") or f"{cat}.json"
+            topics = info.get("topics", [])
+        md_name = f"README_{pathlib.Path(fname).stem}.md"
+        emoji = CATEGORY_ICONS.get(cat, "•")
+        topic_line = ""
+        if topics:
+            topic_line = "  \n_Topics: `" + "`, `".join(topics[:3]) + "`_"
+        lines.append(f"- {emoji} [{cat}]({md_name}){topic_line}")
+    return "\n".join(lines)
+
+
+def _inject_category_section(text: str) -> str:
+    """Inject category navigation section if markers are present."""
+    try:
+        start = text.index(CATEGORY_START)
+        end = text.index(CATEGORY_END, start)
+    except ValueError:
+        return text
+    body = _build_category_list()
+    before = text[: start + len(CATEGORY_START)].rstrip()
+    after = "\n" + text[end + len(CATEGORY_END) :].lstrip()
+    return f"{before}\n{body}\n{CATEGORY_END}{after}"
+
+
 def build_readme(
     *,
     sort_by: str = DEFAULT_SORT_FIELD,
@@ -236,6 +290,7 @@ def build_readme(
     table = "\n".join(header_lines + rows)
 
     new_text = f"{before}\n{table}\n{end_marker}{after}"
+    new_text = _inject_category_section(new_text)
     if os.getenv("PYTEST_CURRENT_TEST") is None:
         ts = datetime.datetime.utcnow().isoformat(timespec="seconds")
         new_text = new_text.replace("{timestamp}", ts)
