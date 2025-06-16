@@ -17,17 +17,17 @@
         "login": "langgenius"
       },
       "AgenticIndexScore": 5.28,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 103268,
       "recency_factor": 1.0,
       "issue_health": 1.2870012833232636e-09,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 16.656047715490637
     },
     {
@@ -53,10 +53,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 16.170883505352062
     },
     {
@@ -82,10 +82,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.947591282323067
     },
     {
@@ -111,10 +111,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.82592770094028
     },
     {
@@ -140,10 +140,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.93059875236169
     },
     {
@@ -162,17 +162,17 @@
         "login": "FoundationAgents"
       },
       "AgenticIndexScore": 5.06,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 56406,
       "recency_factor": 1.0,
       "issue_health": 1.3513513308360814e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.783586588957835
     },
     {
@@ -198,10 +198,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.749895608471729
     },
     {
@@ -226,10 +226,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.81117397072132
     },
     {
@@ -255,10 +255,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.674026710715161
     },
     {
@@ -284,10 +284,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.480064380295005
     },
     {
@@ -313,10 +313,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.467541870400751
     },
     {
@@ -342,10 +342,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.48915805083155
     },
     {
@@ -371,10 +371,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.37027873062086
     },
     {
@@ -400,10 +400,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.3277631387013
     },
     {
@@ -429,10 +429,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.290090864655877
     },
     {
@@ -458,10 +458,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.167418145831737
     },
     {
@@ -487,10 +487,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.074894064153025
     },
     {
@@ -509,17 +509,17 @@
         "login": "crewAIInc"
       },
       "AgenticIndexScore": 4.82,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 32933,
       "recency_factor": 1.0,
       "issue_health": 9.803921452444797e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.007290124695714
     },
     {
@@ -540,15 +540,15 @@
       "AgenticIndexScore": 4.81,
       "category": "RAG-centric",
       "stars": 35287,
-      "recency_factor": 0.844776119402985,
+      "recency_factor": 0.8417910447761194,
       "issue_health": 5.464480867800603e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.106890045092218
     },
     {
@@ -574,10 +574,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 15.066930068864098
     },
     {
@@ -596,17 +596,17 @@
         "login": "agno-agi"
       },
       "AgenticIndexScore": 4.76,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 28280,
       "recency_factor": 1.0,
       "issue_health": 6.896551663082562e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.787545513470953
     },
     {
@@ -632,10 +632,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.888362741170644
     },
     {
@@ -654,17 +654,17 @@
         "login": "OpenBMB"
       },
       "AgenticIndexScore": 4.74,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 27024,
       "recency_factor": 1.0,
       "issue_health": 2.1739129940634427e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.722006997509375
     },
     {
@@ -690,10 +690,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.70940696072974
     },
     {
@@ -719,10 +719,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.700006150882865
     },
     {
@@ -748,10 +748,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.795887460582124
     },
     {
@@ -777,10 +777,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.789075088509152
     },
     {
@@ -806,10 +806,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.620735308982331
     },
     {
@@ -835,10 +835,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.638209626633582
     },
     {
@@ -864,10 +864,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.593332760161381
     },
     {
@@ -893,10 +893,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.41706134676029
     },
     {
@@ -922,10 +922,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.368711065243712
     },
     {
@@ -951,10 +951,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.37218489648635
     },
     {
@@ -973,17 +973,17 @@
         "login": "openai"
       },
       "AgenticIndexScore": 4.56,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 19920,
-      "recency_factor": 0.8029850746268656,
+      "recency_factor": 0.8,
       "issue_health": 9.99999899553572e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.282002449587464
     },
     {
@@ -1009,10 +1009,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.106562940444883
     },
     {
@@ -1038,10 +1038,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.145932145820515
     },
     {
@@ -1067,10 +1067,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.041488043881468
     },
     {
@@ -1089,17 +1089,17 @@
         "login": "eosphoros-ai"
       },
       "AgenticIndexScore": 4.53,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 16764,
       "recency_factor": 1.0,
       "issue_health": 2.421307487843194e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.033164862681147
     },
     {
@@ -1125,10 +1125,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.157110046107903
     },
     {
@@ -1154,10 +1154,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.022281110000039
     },
     {
@@ -1176,17 +1176,17 @@
         "login": "SWE-agent"
       },
       "AgenticIndexScore": 4.52,
-      "category": "General-purpose",
+      "category": "Domain-Specific",
       "stars": 16305,
       "recency_factor": 1.0,
       "issue_health": 2.0408162826335285e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.993115299679177
     },
     {
@@ -1205,17 +1205,17 @@
         "login": "raga-ai-hub"
       },
       "AgenticIndexScore": 4.51,
-      "category": "RAG-centric",
+      "category": "Multi-Agent",
       "stars": 16193,
       "recency_factor": 1.0,
       "issue_health": 7.692307091300421e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.983171762188007
     },
     {
@@ -1241,10 +1241,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.972890063435528
     },
     {
@@ -1263,17 +1263,17 @@
         "login": "arc53"
       },
       "AgenticIndexScore": 4.5,
-      "category": "DevTools",
+      "category": "RAG-centric",
       "stars": 15708,
       "recency_factor": 1.0,
       "issue_health": 2.56410249699357e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.939303724347104
     },
     {
@@ -1293,15 +1293,15 @@
       "AgenticIndexScore": 4.48,
       "category": "General-purpose",
       "stars": 18587,
-      "recency_factor": 0.764179104477612,
+      "recency_factor": 0.7611940298507462,
       "issue_health": 1.7857142542432314e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.182083929510725
     },
     {
@@ -1320,17 +1320,17 @@
         "login": "block"
       },
       "AgenticIndexScore": 4.47,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 14627,
       "recency_factor": 1.0,
       "issue_health": 2.680965116574896e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.836444911341369
     },
     {
@@ -1356,10 +1356,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.816383708474726
     },
     {
@@ -1385,10 +1385,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.90048948483465
     },
     {
@@ -1414,10 +1414,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.868436755858168
     },
     {
@@ -1443,10 +1443,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.753007768945245
     },
     {
@@ -1472,10 +1472,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.75143945153796
     },
     {
@@ -1494,17 +1494,17 @@
         "login": "dagger"
       },
       "AgenticIndexScore": 4.45,
-      "category": "DevTools",
+      "category": "General-purpose",
       "stars": 13931,
       "recency_factor": 1.0,
       "issue_health": 1.3071895788030474e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.766114757586722
     },
     {
@@ -1530,10 +1530,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.002727129460343
     },
     {
@@ -1559,10 +1559,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.723767585578003
     },
     {
@@ -1588,10 +1588,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.926944542798726
     },
     {
@@ -1617,10 +1617,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.739042199689782
     },
     {
@@ -1646,10 +1646,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.794821973331223
     },
     {
@@ -1668,17 +1668,17 @@
         "login": "camel-ai"
       },
       "AgenticIndexScore": 4.42,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 12909,
       "recency_factor": 1.0,
       "issue_health": 1.930501869473744e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.656201380194553
     },
     {
@@ -1699,15 +1699,15 @@
       "AgenticIndexScore": 4.41,
       "category": "General-purpose",
       "stars": 15414,
-      "recency_factor": 0.808955223880597,
+      "recency_factor": 0.8059701492537313,
       "issue_health": 8.196721190678602e-09,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.912047268994538
     },
     {
@@ -1726,17 +1726,17 @@
         "login": "stitionai"
       },
       "AgenticIndexScore": 4.41,
-      "category": "Experimental",
+      "category": "DevTools",
       "stars": 19329,
-      "recency_factor": 0.28656716417910444,
+      "recency_factor": 0.28358208955223885,
       "issue_health": 5.3763440366338955e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 14.238554017098599
     },
     {
@@ -1762,10 +1762,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.691089186236532
     },
     {
@@ -1785,15 +1785,15 @@
       "AgenticIndexScore": 4.37,
       "category": "General-purpose",
       "stars": 14611,
-      "recency_factor": 0.8805970149253731,
+      "recency_factor": 0.8776119402985074,
       "issue_health": 5.076142062243605e-09,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.834866038362017
     },
     {
@@ -1812,17 +1812,17 @@
         "login": "openai"
       },
       "AgenticIndexScore": 4.36,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 11447,
       "recency_factor": 1.0,
       "issue_health": 4.7619047593983055e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.482807956726667
     },
     {
@@ -1848,10 +1848,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.462630074789038
     },
     {
@@ -1877,10 +1877,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.5427900615549
     },
     {
@@ -1906,10 +1906,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.321928094887362
     },
     {
@@ -1935,10 +1935,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.30449392978285
     },
     {
@@ -1964,10 +1964,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.255618749839597
     },
     {
@@ -1993,10 +1993,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.218109106274904
     },
     {
@@ -2022,10 +2022,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.249706056969705
     },
     {
@@ -2051,10 +2051,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.269272811845505
     },
     {
@@ -2080,10 +2080,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.246889016274343
     },
     {
@@ -2109,10 +2109,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.110483309816226
     },
     {
@@ -2131,17 +2131,17 @@
         "login": "e2b-dev"
       },
       "AgenticIndexScore": 4.24,
-      "category": "DevTools",
+      "category": "General-purpose",
       "stars": 8628,
       "recency_factor": 1.0,
       "issue_health": 3.124999892190061e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.074977662301151
     },
     {
@@ -2166,10 +2166,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.410716333604269
     },
     {
@@ -2195,10 +2195,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.068778277985412
     },
     {
@@ -2224,10 +2224,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.99276135094313
     },
     {
@@ -2253,10 +2253,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.047975914170848
     },
     {
@@ -2282,10 +2282,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.877284133523196
     },
     {
@@ -2311,10 +2311,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.97405602262563
     },
     {
@@ -2333,17 +2333,17 @@
         "login": "modelscope"
       },
       "AgenticIndexScore": 4.18,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 7489,
       "recency_factor": 1.0,
       "issue_health": 1.3157894551696359e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.870750003346114
     },
     {
@@ -2369,10 +2369,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.850382205652151
     },
     {
@@ -2398,10 +2398,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.988684686772165
     },
     {
@@ -2427,10 +2427,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.788922203960619
     },
     {
@@ -2456,10 +2456,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.81277897162766
     },
     {
@@ -2485,10 +2485,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.777871719833168
     },
     {
@@ -2514,10 +2514,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.767356854125685
     },
     {
@@ -2536,17 +2536,17 @@
         "login": "nanobrowser"
       },
       "AgenticIndexScore": 4.14,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 6803,
       "recency_factor": 1.0,
       "issue_health": 3.448275742723439e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.732167425663386
     },
     {
@@ -2572,10 +2572,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.648582283363735
     },
     {
@@ -2601,10 +2601,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.626165319904498
     },
     {
@@ -2630,10 +2630,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.610563503925041
     },
     {
@@ -2659,10 +2659,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.558420713268664
     },
     {
@@ -2687,10 +2687,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.779308973959898
     },
     {
@@ -2709,17 +2709,17 @@
         "login": "microsoft"
       },
       "AgenticIndexScore": 4.08,
-      "category": "Experimental",
+      "category": "DevTools",
       "stars": 5872,
       "recency_factor": 1.0,
       "issue_health": 1.333333310427065e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.519881922497428
     },
     {
@@ -2745,10 +2745,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.493104892539135
     },
     {
@@ -2769,15 +2769,15 @@
       "AgenticIndexScore": 4.07,
       "category": "General-purpose",
       "stars": 5928,
-      "recency_factor": 0.9462686567164179,
+      "recency_factor": 0.9432835820895522,
       "issue_health": 1.724137899117295e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.533573081389802
     },
     {
@@ -2803,10 +2803,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.588246152044817
     },
     {
@@ -2832,10 +2832,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.482051629033913
     },
     {
@@ -2854,17 +2854,17 @@
         "login": "superagent-ai"
       },
       "AgenticIndexScore": 4.05,
-      "category": "RAG-centric",
+      "category": "General-purpose",
       "stars": 5922,
-      "recency_factor": 0.8656716417910448,
+      "recency_factor": 0.8626865671641791,
       "issue_health": 1.5624999738506062e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.532112370794998
     },
     {
@@ -2890,10 +2890,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.438012087651131
     },
     {
@@ -2919,10 +2919,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.434888806530395
     },
     {
@@ -2948,10 +2948,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.414949441474263
     },
     {
@@ -2977,10 +2977,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.414949441474263
     },
     {
@@ -3001,15 +3001,15 @@
       "AgenticIndexScore": 4.03,
       "category": "General-purpose",
       "stars": 5882,
-      "recency_factor": 0.826865671641791,
+      "recency_factor": 0.8238805970149254,
       "issue_health": 1.1363636254202447e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.522336320913306
     },
     {
@@ -3028,17 +3028,17 @@
         "login": "InternLM"
       },
       "AgenticIndexScore": 4.02,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 6388,
-      "recency_factor": 0.6179104477611941,
+      "recency_factor": 0.6149253731343284,
       "issue_health": 2.0408162826335285e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.641374424294513
     },
     {
@@ -3059,15 +3059,15 @@
       "AgenticIndexScore": 4.02,
       "category": "General-purpose",
       "stars": 8370,
-      "recency_factor": 0.17313432835820897,
+      "recency_factor": 0.17014925373134326,
       "issue_health": 1.8867924111987122e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 13.031184262140842
     },
     {
@@ -3088,15 +3088,15 @@
       "AgenticIndexScore": 4.02,
       "category": "Experimental",
       "stars": 5718,
-      "recency_factor": 0.973134328358209,
+      "recency_factor": 0.9701492537313433,
       "issue_health": 2.3809523130857713e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.481547190203287
     },
     {
@@ -3122,10 +3122,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.336785476203755
     },
     {
@@ -3144,17 +3144,17 @@
         "login": "lavague-ai"
       },
       "AgenticIndexScore": 4.01,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 6072,
-      "recency_factor": 0.6567164179104478,
+      "recency_factor": 0.6537313432835821,
       "issue_health": 1.063829768721547e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.568193653850074
     },
     {
@@ -3180,10 +3180,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.312599378862629
     },
     {
@@ -3204,15 +3204,15 @@
       "AgenticIndexScore": 4.01,
       "category": "General-purpose",
       "stars": 5074,
-      "recency_factor": 0.9880597014925373,
+      "recency_factor": 0.9850746268656716,
       "issue_health": 3.999999842463353e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.309192106959902
     },
     {
@@ -3231,17 +3231,17 @@
         "login": "kyegomez"
       },
       "AgenticIndexScore": 4.0,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 4925,
       "recency_factor": 1.0,
       "issue_health": 2.6315788659303507e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.266200912498961
     },
     {
@@ -3267,10 +3267,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.256503567433041
     },
     {
@@ -3289,17 +3289,17 @@
         "login": "MervinPraison"
       },
       "AgenticIndexScore": 3.99,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 4857,
       "recency_factor": 1.0,
       "issue_health": 3.7037035660603124e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.246146774635864
     },
     {
@@ -3325,10 +3325,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.19198451336031
     },
     {
@@ -3347,17 +3347,17 @@
         "login": "AgentOps-AI"
       },
       "AgenticIndexScore": 3.97,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 4548,
       "recency_factor": 1.0,
       "issue_health": 1.4705882067644893e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.151333719291655
     },
     {
@@ -3383,10 +3383,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.178353623512892
     },
     {
@@ -3412,10 +3412,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.164906926675688
     },
     {
@@ -3441,10 +3441,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.274669342073851
     },
     {
@@ -3465,15 +3465,15 @@
       "AgenticIndexScore": 3.93,
       "category": "Experimental",
       "stars": 4518,
-      "recency_factor": 0.8507462686567164,
+      "recency_factor": 0.8477611940298507,
       "issue_health": 1.8867924111987122e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.141787841671004
     },
     {
@@ -3494,15 +3494,15 @@
       "AgenticIndexScore": 3.93,
       "category": "General-purpose",
       "stars": 4316,
-      "recency_factor": 0.9641791044776119,
+      "recency_factor": 0.9611940298507463,
       "issue_health": 2.0833332836645013e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.075813377461454
     },
     {
@@ -3528,10 +3528,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.03307880613062
     },
     {
@@ -3557,10 +3557,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.132178380915544
     },
     {
@@ -3579,17 +3579,17 @@
         "login": "alibaba"
       },
       "AgenticIndexScore": 3.92,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 4081,
       "recency_factor": 1.0,
       "issue_health": 4.329004266168113e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.995060467032719
     },
     {
@@ -3615,10 +3615,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.098032082960527
     },
     {
@@ -3637,17 +3637,17 @@
         "login": "TauricResearch"
       },
       "AgenticIndexScore": 3.91,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 4043,
       "recency_factor": 1.0,
       "issue_health": 4.9999997586702705e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.981567281903015
     },
     {
@@ -3671,10 +3671,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.914758838941857
     },
     {
@@ -3700,10 +3700,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.961811408087163
     },
     {
@@ -3729,10 +3729,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.95637615724967
     },
     {
@@ -3751,17 +3751,17 @@
         "login": "SerpentAI"
       },
       "AgenticIndexScore": 3.9,
-      "category": "General-purpose",
+      "category": "Domain-Specific",
       "stars": 6897,
       "recency_factor": 0.0,
       "issue_health": 4.999997500476638e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.751962413460854
     },
     {
@@ -3780,17 +3780,17 @@
         "login": "TaskingAI"
       },
       "AgenticIndexScore": 3.9,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 5129,
       "recency_factor": 0.5074626865671642,
       "issue_health": 2.6315788659303507e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.324743110494417
     },
     {
@@ -3814,10 +3814,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.583082767502933
     },
     {
@@ -3843,10 +3843,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.914385132155443
     },
     {
@@ -3872,10 +3872,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.457380879072534
     },
     {
@@ -3901,10 +3901,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.851358649033513
     },
     {
@@ -3930,10 +3930,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.881113960675096
     },
     {
@@ -3959,10 +3959,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.867278739709661
     },
     {
@@ -3988,10 +3988,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.821574700936907
     },
     {
@@ -4010,17 +4010,17 @@
         "login": "run-llama"
       },
       "AgenticIndexScore": 3.87,
-      "category": "RAG-centric",
+      "category": "General-purpose",
       "stars": 6470,
       "recency_factor": 0.0,
       "issue_health": 2.7777776967496948e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.659772961881611
     },
     {
@@ -4038,17 +4038,17 @@
         "login": "fr0gger"
       },
       "AgenticIndexScore": 3.87,
-      "category": "General-purpose",
+      "category": "Domain-Specific",
       "stars": 6093,
       "recency_factor": 0.10746268656716418,
       "issue_health": 1.4285712246486781e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.573173784686485
     },
     {
@@ -4065,17 +4065,17 @@
         "login": "FunnyWolf"
       },
       "AgenticIndexScore": 3.87,
-      "category": "General-purpose",
+      "category": "Multi-Agent",
       "stars": 4331,
       "recency_factor": 1.0,
       "issue_health": 4.999997500476638e-07,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.080817527608327
     },
     {
@@ -4101,10 +4101,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.662668375517542
     },
     {
@@ -4125,15 +4125,15 @@
       "AgenticIndexScore": 3.86,
       "category": "RAG-centric",
       "stars": 4102,
-      "recency_factor": 0.7492537313432837,
+      "recency_factor": 0.7462686567164178,
       "issue_health": 6.249999617846669e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.002463438892535
     },
     {
@@ -4159,10 +4159,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.097373768990222
     },
     {
@@ -4181,17 +4181,17 @@
         "login": "kuafuai"
       },
       "AgenticIndexScore": 3.84,
-      "category": "Multi-Agent Coordination",
+      "category": "DevTools",
       "stars": 5920,
-      "recency_factor": 0.17910447761194026,
+      "recency_factor": 0.17611940298507467,
       "issue_health": 5.5555552491703963e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.531625138422624
     },
     {
@@ -4210,17 +4210,17 @@
         "login": "langroid"
       },
       "AgenticIndexScore": 3.84,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 3402,
       "recency_factor": 1.0,
       "issue_health": 1.6949152192857753e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.73259143596501
     },
     {
@@ -4246,10 +4246,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.69479315499995
     },
     {
@@ -4270,15 +4270,15 @@
       "AgenticIndexScore": 3.83,
       "category": "RAG-centric",
       "stars": 3706,
-      "recency_factor": 0.9522388059701492,
+      "recency_factor": 0.9492537313432836,
       "issue_health": 3.999999842463353e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.856036399819155
     },
     {
@@ -4304,10 +4304,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.638435913990472
     },
     {
@@ -4328,15 +4328,15 @@
       "AgenticIndexScore": 3.81,
       "category": "General-purpose",
       "stars": 4334,
-      "recency_factor": 0.4656716417910448,
+      "recency_factor": 0.4626865671641791,
       "issue_health": 8.333332635057644e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.081816278109198
     },
     {
@@ -4362,10 +4362,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.172427508645482
     },
     {
@@ -4386,15 +4386,15 @@
       "AgenticIndexScore": 3.79,
       "category": "General-purpose",
       "stars": 3321,
-      "recency_factor": 0.8477611940298507,
+      "recency_factor": 0.844776119402985,
       "issue_health": 2.56410249699357e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.697836357962377
     },
     {
@@ -4420,10 +4420,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 12.3437409184722
     },
     {
@@ -4442,17 +4442,17 @@
         "login": "SciSharp"
       },
       "AgenticIndexScore": 3.75,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 2766,
       "recency_factor": 1.0,
       "issue_health": 2.6315788659303507e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.434106928609955
     },
     {
@@ -4478,10 +4478,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.39231742277876
     },
     {
@@ -4507,10 +4507,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.685624839726355
     },
     {
@@ -4531,15 +4531,15 @@
       "AgenticIndexScore": 3.73,
       "category": "General-purpose",
       "stars": 3600,
-      "recency_factor": 0.4626865671641791,
+      "recency_factor": 0.4597014925373134,
       "issue_health": 2.1276595263408637e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.81418188419028
     },
     {
@@ -4565,10 +4565,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.454299293619899
     },
     {
@@ -4594,10 +4594,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.3009244909763
     },
     {
@@ -4623,10 +4623,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.263269200372662
     },
     {
@@ -4652,10 +4652,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.250890535723341
     },
     {
@@ -4681,10 +4681,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.709514660706716
     },
     {
@@ -4710,10 +4710,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.204571144249204
     },
     {
@@ -4739,10 +4739,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.555068391333338
     },
     {
@@ -4768,10 +4768,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.177419537989236
     },
     {
@@ -4797,10 +4797,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.237807473723135
     },
     {
@@ -4826,10 +4826,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.147840893672337
     },
     {
@@ -4855,10 +4855,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.067434360756522
     },
     {
@@ -4884,10 +4884,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.024447124040647
     },
     {
@@ -4913,10 +4913,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.99081307915361
     },
     {
@@ -4942,10 +4942,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.98370619265935
     },
     {
@@ -4964,17 +4964,17 @@
         "login": "LazyAGI"
       },
       "AgenticIndexScore": 3.61,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 2011,
       "recency_factor": 1.0,
       "issue_health": 4.9999997586702705e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.974414589805527
     },
     {
@@ -5000,10 +5000,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.84313591111135
     },
     {
@@ -5029,10 +5029,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.583082767502933
     },
     {
@@ -5058,10 +5058,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.675074920385445
     },
     {
@@ -5087,10 +5087,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.669770888525518
     },
     {
@@ -5116,10 +5116,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.757390009366638
     },
     {
@@ -5145,10 +5145,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.1357092861044
     },
     {
@@ -5174,10 +5174,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.59898297103609
     },
     {
@@ -5203,10 +5203,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.044394119358454
     },
     {
@@ -5225,17 +5225,17 @@
         "login": "agentuniverse-ai"
       },
       "AgenticIndexScore": 3.48,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 1485,
       "recency_factor": 1.0,
       "issue_health": 2.1739129940634427e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.537218400538595
     },
     {
@@ -5261,10 +5261,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.287712379549449
     },
     {
@@ -5290,10 +5290,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.461479447286155
     },
     {
@@ -5312,17 +5312,17 @@
         "login": "trypromptly"
       },
       "AgenticIndexScore": 3.45,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 1961,
       "recency_factor": 0.5343283582089553,
       "issue_health": 7.142856628394867e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.938109326219239
     },
     {
@@ -5348,10 +5348,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.43567026093655
     },
     {
@@ -5376,10 +5376,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.644757592516257
     },
     {
@@ -5404,10 +5404,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.722807531169547
     },
     {
@@ -5426,17 +5426,17 @@
         "login": "AgentEra"
       },
       "AgenticIndexScore": 3.43,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 1354,
-      "recency_factor": 0.9641791044776119,
+      "recency_factor": 0.9611940298507463,
       "issue_health": 3.448275742723439e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.404077136241234
     },
     {
@@ -5462,10 +5462,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.162391328756906
     },
     {
@@ -5491,10 +5491,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.277287400130357
     },
     {
@@ -5515,15 +5515,15 @@
       "AgenticIndexScore": 3.39,
       "category": "General-purpose",
       "stars": 1376,
-      "recency_factor": 0.9164179104477612,
+      "recency_factor": 0.9134328358208955,
       "issue_health": 5.291005300556151e-09,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.427312844134963
     },
     {
@@ -5549,10 +5549,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.236014191900084
     },
     {
@@ -5578,10 +5578,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.217957697864113
     },
     {
@@ -5607,10 +5607,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 11.198445041452363
     },
     {
@@ -5636,10 +5636,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.237209960755022
     },
     {
@@ -5665,10 +5665,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.221587121264806
     },
     {
@@ -5694,10 +5694,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.215532999745657
     },
     {
@@ -5716,17 +5716,17 @@
         "login": "oxwhirl"
       },
       "AgenticIndexScore": 3.37,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 2033,
       "recency_factor": 0.0,
       "issue_health": 1.6129031998879384e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.9901039638575
     },
     {
@@ -5752,10 +5752,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.253847484987404
     },
     {
@@ -5774,17 +5774,17 @@
         "login": "kaiban-ai"
       },
       "AgenticIndexScore": 3.37,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 1160,
       "recency_factor": 1.0,
       "issue_health": 1.6129031998879384e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.181152256865566
     },
     {
@@ -5803,15 +5803,15 @@
       "AgenticIndexScore": 3.36,
       "category": "RAG-centric",
       "stars": 1497,
-      "recency_factor": 0.7671641791044777,
+      "recency_factor": 0.764179104477612,
       "issue_health": 1.0881392453754302e-09,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.54882190845875
     },
     {
@@ -5837,10 +5837,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.348728154231077
     },
     {
@@ -5866,10 +5866,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.130570562805426
     },
     {
@@ -5893,10 +5893,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.349834091457247
     },
     {
@@ -5915,17 +5915,17 @@
         "login": "TrafficGuard"
       },
       "AgenticIndexScore": 3.34,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 1077,
       "recency_factor": 1.0,
       "issue_health": 1.9999996003772225e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.074141462752506
     },
     {
@@ -5944,17 +5944,17 @@
         "login": "ThousandBirdsInc"
       },
       "AgenticIndexScore": 3.33,
-      "category": "DevTools",
+      "category": "General-purpose",
       "stars": 1316,
-      "recency_factor": 0.6179104477611941,
+      "recency_factor": 0.6149253731343284,
       "issue_health": 9.99998999939855e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.363039630256514
     },
     {
@@ -5975,15 +5975,15 @@
       "AgenticIndexScore": 3.32,
       "category": "General-purpose",
       "stars": 1060,
-      "recency_factor": 0.9462686567164179,
+      "recency_factor": 0.9432835820895522,
       "issue_health": 4.999997500476638e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.051208940914766
     },
     {
@@ -6009,10 +6009,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.992938336165814
     },
     {
@@ -6038,10 +6038,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.845490050944376
     },
     {
@@ -6067,10 +6067,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.64565843240871
     },
     {
@@ -6091,15 +6091,15 @@
       "AgenticIndexScore": 3.25,
       "category": "DevTools",
       "stars": 1074,
-      "recency_factor": 0.7611940298507462,
+      "recency_factor": 0.7582089552238807,
       "issue_health": 3.5714284529753115e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.070120944476823
     },
     {
@@ -6118,17 +6118,17 @@
         "login": "huawei-noah"
       },
       "AgenticIndexScore": 3.25,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 1037,
       "recency_factor": 0.6865671641791045,
       "issue_health": 4.385964924580321e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.019590728357882
     },
     {
@@ -6149,15 +6149,15 @@
       "AgenticIndexScore": 3.25,
       "category": "General-purpose",
       "stars": 1025,
-      "recency_factor": 0.7074626865671642,
+      "recency_factor": 0.7044776119402985,
       "issue_health": 1.4705882067644893e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.002815015607053
     },
     {
@@ -6183,10 +6183,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.521600439723727
     },
     {
@@ -6211,10 +6211,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.92481250360578
     },
     {
@@ -6240,10 +6240,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.85642552862553
     },
     {
@@ -6264,15 +6264,15 @@
       "AgenticIndexScore": 3.2,
       "category": "General-purpose",
       "stars": 922,
-      "recency_factor": 0.6835820895522389,
+      "recency_factor": 0.6805970149253731,
       "issue_health": 9.99998999939855e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.850186837645774
     },
     {
@@ -6298,10 +6298,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.419960177847889
     },
     {
@@ -6327,10 +6327,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.61654884377899
     },
     {
@@ -6348,17 +6348,17 @@
         "login": "HITsz-TMG"
       },
       "AgenticIndexScore": 3.19,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 976,
       "recency_factor": 0.8238805970149254,
       "issue_health": 6.666666219068418e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.932214751968385
     },
     {
@@ -6384,10 +6384,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.372865060112588
     },
     {
@@ -6406,15 +6406,15 @@
       "AgenticIndexScore": 3.16,
       "category": "DevTools",
       "stars": 951,
-      "recency_factor": 0.764179104477612,
+      "recency_factor": 0.7611940298507462,
       "issue_health": 5.8823526050133523e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.894817763307943
     },
     {
@@ -6432,17 +6432,17 @@
         "login": "Lesterpaintstheworld"
       },
       "AgenticIndexScore": 3.16,
-      "category": "General-purpose",
+      "category": "Multi-Agent",
       "stars": 1029,
-      "recency_factor": 0.6119402985074627,
+      "recency_factor": 0.6089552238805971,
       "issue_health": 9.99998999939855e-07,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.00842862207058
     },
     {
@@ -6461,17 +6461,17 @@
         "login": "victordibia"
       },
       "AgenticIndexScore": 3.14,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 931,
       "recency_factor": 0.4507462686567164,
       "issue_health": 7.142856628394867e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.86418614465428
     },
     {
@@ -6492,15 +6492,15 @@
       "AgenticIndexScore": 3.13,
       "category": "General-purpose",
       "stars": 443,
-      "recency_factor": 0.8835820895522388,
+      "recency_factor": 0.8805970149253731,
       "issue_health": 1.0,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.794415866350105
     },
     {
@@ -6521,15 +6521,15 @@
       "AgenticIndexScore": 3.11,
       "category": "RAG-centric",
       "stars": 1189,
-      "recency_factor": 0.047761194029850795,
+      "recency_factor": 0.04477611940298509,
       "issue_health": 1.9999996003772225e-07,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.216745858195306
     },
     {
@@ -6548,17 +6548,17 @@
         "login": "microsoft"
       },
       "AgenticIndexScore": 3.1,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 614,
       "recency_factor": 1.0,
       "issue_health": 3.333332222466012e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.264442600226602
     },
     {
@@ -6577,17 +6577,17 @@
         "login": "henryalps"
       },
       "AgenticIndexScore": 3.09,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 645,
       "recency_factor": 1.0,
       "issue_health": 1.6666663893438738e-07,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.335390354693924
     },
     {
@@ -6613,10 +6613,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.226412192788786
     },
     {
@@ -6642,10 +6642,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.558420713268664
     },
     {
@@ -6671,10 +6671,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 10.00842862207058
     },
     {
@@ -6693,17 +6693,17 @@
         "login": "TransformerOptimus"
       },
       "AgenticIndexScore": 3.07,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 938,
-      "recency_factor": 0.14328358208955227,
+      "recency_factor": 0.14029850746268657,
       "issue_health": 3.5714284529753115e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.874981347653774
     },
     {
@@ -6722,17 +6722,17 @@
         "login": "Undertone0809"
       },
       "AgenticIndexScore": 3.07,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 576,
       "recency_factor": 1.0,
       "issue_health": 9.433962167015864e-09,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.172427508645482
     },
     {
@@ -6756,10 +6756,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.361943773735241
     },
     {
@@ -6785,10 +6785,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.479780264029099
     },
     {
@@ -6813,10 +6813,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.306061689428342
     },
     {
@@ -6835,17 +6835,17 @@
         "login": "modal-labs"
       },
       "AgenticIndexScore": 3.0,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 459,
       "recency_factor": 0.28656716417910444,
       "issue_health": 1.0,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.845490050944376
     },
     {
@@ -6864,17 +6864,17 @@
         "login": "machinegpt"
       },
       "AgenticIndexScore": 3.0,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 307,
       "recency_factor": 1.0,
       "issue_health": 1.0,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.266786540694902
     },
     {
@@ -6898,10 +6898,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.449148645375436
     },
     {
@@ -6922,15 +6922,15 @@
       "AgenticIndexScore": 2.98,
       "category": "General-purpose",
       "stars": 527,
-      "recency_factor": 0.764179104477612,
+      "recency_factor": 0.7611940298507462,
       "issue_health": 2.499999375293882e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.044394119358454
     },
     {
@@ -6951,15 +6951,15 @@
       "AgenticIndexScore": 2.98,
       "category": "RAG-centric",
       "stars": 292,
-      "recency_factor": 0.9970149253731343,
+      "recency_factor": 0.9940298507462687,
       "issue_health": 1.0,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.194756854422248
     },
     {
@@ -6985,10 +6985,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.848622940429339
     },
     {
@@ -7014,10 +7014,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.640244936222345
     },
     {
@@ -7043,10 +7043,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.768184324776927
     },
     {
@@ -7065,17 +7065,17 @@
         "login": "dapr"
       },
       "AgenticIndexScore": 2.94,
-      "category": "General-purpose",
+      "category": "Domain-Specific",
       "stars": 422,
       "recency_factor": 1.0,
       "issue_health": 3.7037035660603124e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.72451385311995
     },
     {
@@ -7092,17 +7092,17 @@
         "login": "Little-Podi"
       },
       "AgenticIndexScore": 2.93,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 492,
       "recency_factor": 1.0,
       "issue_health": 9.99998999939855e-07,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.945443836377912
     },
     {
@@ -7128,10 +7128,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.342074667999139
     },
     {
@@ -7152,15 +7152,15 @@
       "AgenticIndexScore": 2.86,
       "category": "General-purpose",
       "stars": 545,
-      "recency_factor": 0.25671641791044775,
+      "recency_factor": 0.25373134328358204,
       "issue_health": 2.499999375293882e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.092757140919852
     },
     {
@@ -7179,17 +7179,17 @@
         "login": "vxcontrol"
       },
       "AgenticIndexScore": 2.85,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 342,
       "recency_factor": 1.0,
       "issue_health": 1.4285712246486781e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.422064766172813
     },
     {
@@ -7215,10 +7215,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.285402218862249
     },
     {
@@ -7244,10 +7244,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.39231742277876
     },
     {
@@ -7268,15 +7268,15 @@
       "AgenticIndexScore": 2.81,
       "category": "General-purpose",
       "stars": 467,
-      "recency_factor": 0.30746268656716413,
+      "recency_factor": 0.30447761194029854,
       "issue_health": 1.9999996003772225e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.870364719583405
     },
     {
@@ -7297,15 +7297,15 @@
       "AgenticIndexScore": 2.81,
       "category": "General-purpose",
       "stars": 436,
-      "recency_factor": 0.426865671641791,
+      "recency_factor": 0.4238805970149254,
       "issue_health": 9.99999899553572e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.7714894695006
     },
     {
@@ -7324,17 +7324,17 @@
         "login": "DigiRL-agent"
       },
       "AgenticIndexScore": 2.81,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 360,
       "recency_factor": 0.7492537313432837,
       "issue_health": 4.999997500476638e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.49585502688717
     },
     {
@@ -7353,17 +7353,17 @@
         "login": "MODSetter"
       },
       "AgenticIndexScore": 2.77,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 232,
       "recency_factor": 0.5582089552238806,
       "issue_health": 1.0,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 7.864186144654281
     },
     {
@@ -7389,10 +7389,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.169925001442312
     },
     {
@@ -7418,10 +7418,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.661778097771988
     },
     {
@@ -7440,17 +7440,17 @@
         "login": "meshula"
       },
       "AgenticIndexScore": 2.75,
-      "category": "General-purpose",
+      "category": "Domain-Specific",
       "stars": 332,
       "recency_factor": 0.0,
       "issue_health": 1.0,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.379378367071261
     },
     {
@@ -7475,10 +7475,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.219168520462162
     },
     {
@@ -7504,10 +7504,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 7.6865005271832185
     },
     {
@@ -7532,10 +7532,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.614709844115207
     },
     {
@@ -7553,17 +7553,17 @@
         "login": "BuilderIO"
       },
       "AgenticIndexScore": 2.71,
-      "category": "Experimental",
+      "category": "General-purpose",
       "stars": 521,
       "recency_factor": 0.0,
       "issue_health": 1.4285712246486781e-07,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 9.027905996569885
     },
     {
@@ -7589,10 +7589,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.7714894695006
     },
     {
@@ -7612,15 +7612,15 @@
       "AgenticIndexScore": 2.69,
       "category": "General-purpose",
       "stars": 316,
-      "recency_factor": 0.791044776119403,
+      "recency_factor": 0.7880597014925373,
       "issue_health": 4.5454543462497554e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.308339030139408
     },
     {
@@ -7646,10 +7646,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.679480099505446
     },
     {
@@ -7675,10 +7675,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 7.965784284662087
     },
     {
@@ -7704,10 +7704,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.710806433699352
     },
     {
@@ -7733,10 +7733,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.603626344986193
     },
     {
@@ -7762,10 +7762,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.39231742277876
     },
     {
@@ -7790,10 +7790,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.794415866350105
     },
     {
@@ -7819,10 +7819,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.57742882803575
     },
     {
@@ -7841,17 +7841,17 @@
         "login": "ruvnet"
       },
       "AgenticIndexScore": 2.64,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 211,
       "recency_factor": 1.0,
       "issue_health": 6.666666219068418e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 7.727920454563199
     },
     {
@@ -7870,17 +7870,17 @@
         "login": "praveen-palanisamy"
       },
       "AgenticIndexScore": 2.62,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 361,
       "recency_factor": 0.0,
       "issue_health": 6.249999617846669e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.499845887083206
     },
     {
@@ -7899,17 +7899,17 @@
         "login": "genlayerlabs"
       },
       "AgenticIndexScore": 2.62,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 304,
       "recency_factor": 0.28059701492537314,
       "issue_health": 1.6666663893438738e-07,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.252665432450248
     },
     {
@@ -7935,10 +7935,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 7.672425341971495
     },
     {
@@ -7959,15 +7959,15 @@
       "AgenticIndexScore": 2.58,
       "category": "General-purpose",
       "stars": 207,
-      "recency_factor": 0.9492537313432836,
+      "recency_factor": 0.9462686567164179,
       "issue_health": 7.692307091300421e-08,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 7.700439718141092
     },
     {
@@ -7993,10 +7993,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.312882955284355
     },
     {
@@ -8017,15 +8017,15 @@
       "AgenticIndexScore": 2.56,
       "category": "General-purpose",
       "stars": 295,
-      "recency_factor": 0.24776119402985075,
+      "recency_factor": 0.24477611940298505,
       "issue_health": 9.99998999939855e-07,
       "doc_completeness": 0.0,
       "license_freedom": 0.5,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.20945336562895
     },
     {
@@ -8051,10 +8051,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.044394119358454
     },
     {
@@ -8073,17 +8073,17 @@
         "login": "HKUST-Aerial-Robotics"
       },
       "AgenticIndexScore": 2.48,
-      "category": "Multi-Agent Coordination",
+      "category": "Multi-Agent",
       "stars": 258,
-      "recency_factor": 0.008955223880596996,
+      "recency_factor": 0.005970149253731294,
       "issue_health": 3.999999842463353e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.016808287686555
     },
     {
@@ -8101,17 +8101,17 @@
         "login": "a16z-infra"
       },
       "AgenticIndexScore": 2.48,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 193,
       "recency_factor": 0.0,
       "issue_health": 1.0,
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 7.599912842187128
     },
     {
@@ -8136,10 +8136,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 7.636624620543649
     },
     {
@@ -8163,10 +8163,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 8.139551352398794
     },
     {
@@ -8185,17 +8185,17 @@
         "login": "fetchai"
       },
       "AgenticIndexScore": 2.42,
-      "category": "General-purpose",
+      "category": "DevTools",
       "stars": 228,
       "recency_factor": 0.0,
       "issue_health": 1.1363636254202447e-08,
       "doc_completeness": 0.0,
       "license_freedom": 1.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 7.839203788096944
     },
     {
@@ -8220,10 +8220,10 @@
       "doc_completeness": 0.0,
       "license_freedom": 0.0,
       "ecosystem_integration": 0.0,
-      "stars_delta": "+new",
+      "stars_delta": 0,
       "forks_delta": "+new",
       "issues_closed_delta": "+new",
-      "score_delta": "+new",
+      "score_delta": 0.0,
       "stars_log2": 7.977279923499917
     }
   ]
