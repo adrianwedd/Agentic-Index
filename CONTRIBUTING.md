@@ -67,6 +67,16 @@ pytest -q
 python scripts/inject_readme.py
 ```
 
+### Nightly Metrics Refresh
+
+Our scheduled workflow keeps metrics current by running these steps:
+
+1. `scripts/scrape_repos.py` collects GitHub metadata.
+2. `scripts/score_metrics.py` computes `stars_7d`, maintenance, docs, and ecosystem values.
+3. `agentic_index_cli.ranker` sorts repos and updates `data/top100.md`.
+4. `scripts/inject_readme.py` writes the table into `README.md`.
+5. Changes are committed automatically via a pull request.
+
 ## Adding a New Metric
 
 Touch files under `score/*.py`, update `scripts/inject_readme.py` and document your column in `README.md`. Include tests covering the metric and regenerate snapshots with the injector.
