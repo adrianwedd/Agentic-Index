@@ -63,10 +63,11 @@ def retry(func):
 
 
 @retry
-def _get(url: str) -> requests.Response:
+def _get(url: str, headers: Dict[str, str] | None = None) -> requests.Response:
     """GET with retry, timeout and rate-limit handling."""
     global API_LIMIT, API_REMAINING, API_CALLS
-    resp = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
+    _headers = HEADERS if headers is None else {**HEADERS, **headers}
+    resp = requests.get(url, headers=_headers, timeout=REQUEST_TIMEOUT)
     API_CALLS += 1
     if "X-RateLimit-Limit" in resp.headers and API_LIMIT is None:
         API_LIMIT = int(resp.headers["X-RateLimit-Limit"])
@@ -126,6 +127,16 @@ def fetch_repo(full_name: str) -> Dict[str, Any]:
 
     repo_resp = _get(f"https://api.github.com/repos/{full_name}")
     repo = repo_resp.json()
+    topics_resp = _get(
+        f"https://api.github.com/repos/{full_name}/topics",
+        headers={"Accept": "application/vnd.github.mercy-preview+json"},
+    )
+    topics = []
+    if topics_resp.status_code == 200:
+        try:
+            topics = topics_resp.json().get("names", [])
+        except Exception:
+            topics = []
     release_resp = _get(f"https://api.github.com/repos/{full_name}/releases/latest")
     last_release = None
     if release_resp.status_code == 200:
@@ -135,7 +146,6 @@ def fetch_repo(full_name: str) -> Dict[str, Any]:
             last_release = None
 
     stars = repo.get("stargazers_count", 0)
-    topics = repo.get("topics", [])
 
     data = {
         "name": repo.get("name"),
