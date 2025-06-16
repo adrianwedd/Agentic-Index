@@ -32,7 +32,7 @@ Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metr
 
 <p align="center">
 ![build](badges/build.svg)
-![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
+![coverage](https://img.shields.io/badge/coverage-81%25-brightgreen)
 ![security](https://img.shields.io/badge/security-0%20issues-brightgreen)
 ![docs](badges/docs.svg)
 ![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index)
@@ -151,56 +151,6 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 | 48 | 4.46 | suna | 0 | - | - | - | - | Apache-2.0 |
 | 49 | 4.45 | ai | 0 | - | - | - | - | NOASSERTION |
 | 50 | 4.45 | botpress | 0 | - | - | - | - | MIT |
-| 51 | 4.45 | dagger | 0 | - | - | - | - | Apache-2.0 |
-| 52 | 4.45 | plandex | 0 | - | - | - | - | MIT |
-| 53 | 4.44 | ai-pdf-chatbot-langchain | 0 | - | - | - | - | MIT |
-| 54 | 4.44 | deer-flow | 0 | - | - | - | - | MIT |
-| 55 | 4.44 | SuperAGI | 0 | - | - | - | - | MIT |
-| 56 | 4.44 | web-ui | 0 | - | - | - | - | MIT |
-| 57 | 4.42 | camel | 0 | - | - | - | - | Apache-2.0 |
-| 58 | 4.42 | mastra | 0 | - | - | - | - | NOASSERTION |
-| 59 | 4.41 | ChuanhuChatGPT | 0 | - | - | - | - | GPL-3.0 |
-| 60 | 4.41 | devika | 0 | - | - | - | - | MIT |
-| 61 | 4.39 | GenAI_Agents | 0 | - | - | - | - | NOASSERTION |
-| 62 | 4.37 | Llama-Chinese | 0 | - | - | - | - | - |
-| 63 | 4.36 | graphiti | 0 | - | - | - | - | Apache-2.0 |
-| 64 | 4.36 | openai-agents-python | 0 | - | - | - | - | MIT |
-| 65 | 4.35 | LangBot | 0 | - | - | - | - | AGPL-3.0 |
-| 66 | 4.32 | pydantic-ai | 0 | - | - | - | - | MIT |
-| 67 | 4.31 | adk-python | 0 | - | - | - | - | Apache-2.0 |
-| 68 | 4.30 | ai-engineering-hub | 0 | - | - | - | - | MIT |
-| 69 | 4.29 | opik | 0 | - | - | - | - | Apache-2.0 |
-| 70 | 4.29 | Qwen-Agent | 0 | - | - | - | - | Apache-2.0 |
-| 71 | 4.27 | agent-zero | 0 | - | - | - | - | NOASSERTION |
-| 72 | 4.26 | AstrBot | 0 | - | - | - | - | AGPL-3.0 |
-| 73 | 4.25 | bisheng | 0 | - | - | - | - | Apache-2.0 |
-| 74 | 4.24 | awesome-LLM-resources | 0 | - | - | - | - | Apache-2.0 |
-| 75 | 4.24 | cua | 0 | - | - | - | - | MIT |
-| 76 | 4.24 | E2B | 0 | - | - | - | - | Apache-2.0 |
-| 77 | 4.22 | Figma-Context-MCP | 0 | - | - | - | - | MIT |
-| 78 | 4.20 | Bert-VITS2 | 0 | - | - | - | - | AGPL-3.0 |
-| 79 | 4.18 | agentscope | 0 | - | - | - | - | Apache-2.0 |
-| 80 | 4.18 | pr-agent | 0 | - | - | - | - | AGPL-3.0 |
-| 81 | 4.18 | UFO | 0 | - | - | - | - | MIT |
-| 82 | 4.18 | Upsonic | 0 | - | - | - | - | MIT |
-| 83 | 4.18 | WrenAI | 0 | - | - | - | - | AGPL-3.0 |
-| 84 | 4.16 | OpenRLHF | 0 | - | - | - | - | Apache-2.0 |
-| 85 | 4.16 | promptfoo | 0 | - | - | - | - | MIT |
-| 86 | 4.15 | aichat | 0 | - | - | - | - | Apache-2.0 |
-| 87 | 4.15 | R2R | 0 | - | - | - | - | MIT |
-| 88 | 4.14 | nanobrowser | 0 | - | - | - | - | Apache-2.0 |
-| 89 | 4.11 | agents | 0 | - | - | - | - | Apache-2.0 |
-| 90 | 4.11 | intentkit | 0 | - | - | - | - | MIT |
-| 91 | 4.10 | deep-searcher | 0 | - | - | - | - | Apache-2.0 |
-| 92 | 4.09 | agent-squad | 0 | - | - | - | - | Apache-2.0 |
-| 93 | 4.08 | lamda | 0 | - | - | - | - | - |
-| 94 | 4.08 | RD-Agent | 0 | - | - | - | - | MIT |
-| 95 | 4.07 | LLocalSearch | 0 | - | - | - | - | Apache-2.0 |
-| 96 | 4.07 | TaskWeaver | 0 | - | - | - | - | MIT |
-| 97 | 4.06 | mcp-agent | 0 | - | - | - | - | Apache-2.0 |
-| 98 | 4.06 | ten-framework | 0 | - | - | - | - | NOASSERTION |
-| 99 | 4.05 | cognee | 0 | - | - | - | - | Apache-2.0 |
-| 100 | 4.05 | julep | 0 | - | - | - | - | Apache-2.0 |
 <!-- TOP50:END -->
 *➡️ Dig into how these scores are cooked up in our [Methodology section](#our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](./docs/methodology.md).*
 
