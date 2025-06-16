@@ -44,6 +44,7 @@ Set up Python 3.11 and install dependencies:
 ```bash
 pip install -r requirements.txt
 pip install -e .
+pip install black isort  # formatting tools
 pip install pre-commit
 pre-commit install
 ```
