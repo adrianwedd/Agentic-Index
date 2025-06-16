@@ -1,0 +1,22 @@
+name: propagate-pr-tasks
+
+on:
+  workflow_dispatch:
+
+jobs:
+  propagate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install deps
+        run: |
+          pip install -r requirements.txt
+          pip install -e .
+      - name: Propagate tasks
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/propagate_pr_tasks.py --repo ${{ github.repository }}
