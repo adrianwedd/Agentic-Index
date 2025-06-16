@@ -1,6 +1,6 @@
 # Development Guide
 
-This page explains how to set up a working environment for Agentic Index contributors.
+See [ONBOARDING.md](./ONBOARDING.md) for full setup instructions. This file is kept for backward compatibility.
 
 ## Workflow
 
@@ -15,21 +15,18 @@ graph TD
     G --> H(Push and open PR)
 ```
 
-## Common commands
+## Quick setup
+
+Run the helper script to prepare your environment:
 
 ```bash
-# install runtime deps
-pip install -r requirements.txt
-
-# install the package in editable mode
-pip install -e .
-
-# set up hooks and run lint/tests automatically
-pre-commit install
-
-# run the full test suite
-pytest -q
+source scripts/setup-env.sh
 ```
+
+The script verifies Python ≥3.10, installs required system packages, creates a
+virtual environment with all dependencies, exports `PYTHONPATH`, and installs
+pre-commit hooks. It also loads any variables in a `.env` file or prompts for
+missing values such as API keys.
 
 ## Troubleshooting FAQ
 
@@ -98,3 +95,4 @@ python -m agentic_index_cli.issue_logger --comment \
 
 Pass `--debug` to print API calls or `--dry-run` to simulate without creating
 anything.
+

@@ -80,6 +80,8 @@ Agentic-Index is built to be a reliable, data-driven launchpad for your next Age
 
 ## ⚡ Installation & Quick-start
 
+New contributors should start with the [ONBOARDING guide](docs/ONBOARDING.md) for environment setup and troubleshooting.
+
 ```bash
 pip install agentic-index-cli
 
@@ -252,33 +254,7 @@ checks pass. You can also trigger this process manually by running
 <a id="-testing"></a>
 ## 🧪 Testing
 
-This project uses `pytest` for unit tests and [pa11y](https://github.com/pa11y/pa11y) for accessibility checks. Ensure Chrome is installed before running pa11y:
-
-```bash
-# via puppeteer
-npx puppeteer browsers install chrome
-# or with apt
-sudo apt-get install -y chromium
-```
-
-Run tests with:
-
-```bash
-pytest -q
-```
-
-CI runs tests with network access disabled. Set `CI_OFFLINE=1` or run
-`pytest --disable-socket` locally to replicate the offline environment.
-An autouse fixture still permits UNIX-domain `socketpair()` calls so FastAPI's
-`TestClient` can start its event loop.
-
-To check accessibility after building the site:
-
-```bash
-npx pa11y web/index.html
-```
-
-You can also run `./scripts/install_pa11y_deps.sh` to install pa11y and Chrome.
+See [ONBOARDING.md](docs/ONBOARDING.md#running-tests) for instructions on running the test suite and replicating CI's offline environment.
 
 ## 💻 Developer
 
@@ -307,7 +283,8 @@ Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
   * Install [Git LFS](https://git-lfs.github.com/) and run `git lfs install`.
     PNG and GIF assets are tracked via LFS.
   * Set up your dev environment with [DEVELOPMENT.md](./docs/DEVELOPMENT.md).
-  * Install dependencies with `scripts/agent-setup.sh` (includes formatting tools).
+  * Run `source scripts/setup-env.sh` to configure your environment.
+
 
 For tips on keeping your branch in sync with `main` and resolving conflicts, see
 [CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).
