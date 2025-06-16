@@ -181,39 +181,71 @@ def process_worklogs() -> None:
     save_state(state)
 
 
+def sync_pr(event_json: str) -> None:
+    """Handle PR open/ready/closed events."""
+    event = json.loads(event_json)
+    action = event.get("action")
+    if action in {"opened", "ready_for_review"}:
+        try:
+            issue_logger.create_issue_for_pr(event)
+        except issue_logger.APIError as exc:
+            print(f"Failed to create tracking issue: {exc}")
+    elif action == "closed" and event.get("pull_request", {}).get("merged"):
+        try:
+            issue_logger.close_issue_for_pr(event)
+        except issue_logger.APIError as exc:
+            print(f"Failed to close tracking issue: {exc}")
+
+
 def main(argv: Optional[List[str]] = None) -> None:
-    parser = argparse.ArgumentParser(description="Process Codex tasks")
-    parser.add_argument("--repo", required=True)
-    parser.add_argument("--file", default="codex_tasks.md")
-    parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--task-id")
-    parser.add_argument("--all", action="store_true")
-    parser.add_argument("--watch", action="store_true")
-    parser.add_argument("--interval", type=int, default=30)
+    parser = argparse.ArgumentParser(description="Codex automation utilities")
+    sub = parser.add_subparsers(dest="cmd")
+
+    run_p = sub.add_parser("run", help="Process Codex tasks")
+    run_p.add_argument("--repo", required=True)
+    run_p.add_argument("--file", default="codex_tasks.md")
+    run_p.add_argument("--dry-run", action="store_true")
+    run_p.add_argument("--task-id")
+    run_p.add_argument("--all", action="store_true")
+    run_p.add_argument("--watch", action="store_true")
+    run_p.add_argument("--interval", type=int, default=30)
+
+    pr_p = sub.add_parser("sync-pr", help="Sync PR issue")
+    pr_p.add_argument("event")
+
     args = parser.parse_args(argv)
+
+    if args.cmd == "sync-pr":
+        sync_pr(args.event)
+        return
+
+    # default to run tasks if no subcommand given
+    repo = getattr(args, "repo", None)
+    if not repo:
+        parser.error("--repo required")
 
     path = Path(args.file)
     if args.watch:
         while True:
             process_tasks(
                 path,
-                args.repo,
+                repo,
                 dry_run=args.dry_run,
                 task_id=args.task_id,
                 all_tasks=args.all,
             )
-            process_queue(Path(".codex/queue.yml"), args.repo)
+            process_queue(Path(".codex/queue.yml"), repo)
             process_worklogs()
             time.sleep(args.interval)
     else:
         process_tasks(
             path,
-            args.repo,
+            repo,
             dry_run=args.dry_run,
             task_id=args.task_id,
             all_tasks=args.all,
         )
-        process_queue(Path(".codex/queue.yml"), args.repo)
+        process_queue(Path(".codex/queue.yml"), repo)
         process_worklogs()
 
 
