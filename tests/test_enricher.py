@@ -1,5 +1,8 @@
 import json
 import subprocess
+from pathlib import Path
+
+from jsonschema import Draft7Validator
 
 
 def test_enrich_schema(tmp_path):
@@ -34,5 +37,16 @@ def test_enrich_schema(tmp_path):
         "license_freedom",
         "ecosystem_integration",
         "stars",
+        "stars_delta",
+        "score_delta",
+        "category",
     ]:
         assert key in repo
+
+    schema_path = Path(__file__).resolve().parents[1] / "schemas" / "repo.schema.json"
+    schema = json.loads(schema_path.read_text())
+    lic = repo.get("license")
+    if isinstance(lic, str):
+        repo = dict(repo)
+        repo["license"] = {"spdx_id": lic}
+    Draft7Validator(schema).validate(repo)
