@@ -3,6 +3,10 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+import pytest
+
+pytestmark = pytest.mark.network
+
 spec = importlib.util.spec_from_file_location("rank_mod", Path("scripts/rank.py"))
 rank_mod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(rank_mod)

@@ -12,7 +12,7 @@ repos:
         name: pytest
         entry: pytest --quiet --cov=agentic_index_cli --cov-fail-under=0
         language: python
-        additional_dependencies: [., pytest, pytest-cov, requests, PyYAML, jsonschema, pydantic, responses, matplotlib, fastapi, httpx, rich, click]
+        additional_dependencies: [., pytest, pytest-cov, requests, PyYAML, jsonschema, pydantic, responses, pytest-socket, pytest-env, "typer[all]", matplotlib, fastapi, httpx, rich, click]
         files: \.py$
         exclude: ^scripts/(score_metrics|propagate_pr_tasks)\.py$
       - id: detect-large-files

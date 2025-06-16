@@ -3,6 +3,8 @@ from unittest import mock
 import pytest
 import requests
 
+pytestmark = pytest.mark.network
+
 from agentic_index_cli.__main__ import run
 
 

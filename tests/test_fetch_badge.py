@@ -3,6 +3,10 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+import pytest
+
+pytestmark = pytest.mark.network
+
 from agentic_index_cli.internal.rank import fetch_badge
 
 
