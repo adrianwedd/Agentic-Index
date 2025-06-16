@@ -124,7 +124,7 @@ def fetch_repo(full_name: str) -> Dict[str, Any]:
         "forks_count": repo.get("forks_count"),
         "open_issues_count": repo.get("open_issues_count"),
         "archived": repo.get("archived"),
-        "license": repo.get("license", {}).get("spdx_id"),
+        "license": (repo.get("license") or {}).get("spdx_id"),
         "language": repo.get("language"),
         "pushed_at": repo.get("pushed_at"),
         "owner": {"login": repo.get("owner", {}).get("login")},
