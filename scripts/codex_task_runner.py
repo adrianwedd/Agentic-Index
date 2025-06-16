@@ -54,19 +54,28 @@ def parse_tasks(path: Path) -> List[Dict[str, Any]]:
             logging.warning("Skipping task block, expected mapping but got %r", data)
             continue
 
-        task_id = data.get("id")
-        if not task_id:
-            logging.warning("Skipping task block with missing 'id'")
+        task_id = str(data.get("id", "")).strip()
+        title = str(data.get("title", "")).strip()
+        if not task_id or not title:
+            logging.warning("Skipping task block with missing id or title")
             continue
         if task_id in seen_ids:
             logging.warning("Duplicate task id %s skipped", task_id)
             continue
 
-        try:
-            data["priority"] = int(data.get("priority", 0))
-        except (ValueError, TypeError):
-            logging.warning("Invalid priority for task %s; defaulting to 0", task_id)
-            data["priority"] = 0
+        def to_int(val: Any, default: int = 0) -> int:
+            try:
+                return int(val)
+            except (ValueError, TypeError):
+                return default
+
+        data["priority"] = to_int(data.get("priority", 0))
+        data["retries"] = to_int(data.get("retries", 0))
+        data["timeout"] = to_int(data.get("timeout", 0))
+
+        for key in ("steps", "acceptance_criteria"):
+            if key in data and not isinstance(data[key], list):
+                data[key] = [data[key]]
 
         tasks.append(data)
         seen_ids.add(task_id)

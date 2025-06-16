@@ -60,3 +60,26 @@ Add your task IDs under `queue:` in `.codex/queue.yml`. On push, the
 ### Required Token Scopes
 Automation needs a token with `repo` and `issues` scopes so it can create and
 comment on issues and pull requests.
+
+## Codex Tasks
+Automation tasks are defined in markdown files using fenced `codex-task`
+blocks. Each task block follows this schema:
+
+```codex-task
+id: GH-DEMO-1
+title: Demo task
+priority: 1           # lower numbers processed first
+timeout: 3600         # optional, seconds
+retries: 2            # optional retry count
+create_issue: true    # create a GitHub issue
+repo: owner/repo      # required when `create_issue` is true
+steps:
+  - short bullet
+acceptance_criteria:
+  - expected result
+labels: [auto, codex]
+```
+
+Run `python scripts/codex_task_runner.py --file codex_tasks.md` to validate and
+process tasks. The runner checks for duplicate IDs, missing fields, and invalid
+values before creating issues or printing summaries.
