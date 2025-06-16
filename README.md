@@ -80,6 +80,8 @@ Agentic-Index is built to be a reliable, data-driven launchpad for your next Age
 
 ## ⚡ Installation & Quick-start
 
+New contributors should start with the [ONBOARDING guide](docs/ONBOARDING.md) for environment setup and troubleshooting.
+
 ```bash
 pip install agentic-index-cli
 
@@ -296,6 +298,8 @@ npx pa11y web/index.html
 
 You can also run `./scripts/install_pa11y_deps.sh` to install pa11y and Chrome.
 
+See [ONBOARDING.md](docs/ONBOARDING.md#running-tests) for instructions on running the test suite and replicating CI's offline environment.
+
 ## 💻 Developer
 
 To trigger a data refresh via GitHub Actions, run:
@@ -323,7 +327,8 @@ Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
   * Install [Git LFS](https://git-lfs.github.com/) and run `git lfs install`.
     PNG and GIF assets are tracked via LFS.
   * Set up your dev environment with [DEVELOPMENT.md](./docs/DEVELOPMENT.md).
-  * Install dependencies with `scripts/agent-setup.sh` (includes formatting tools).
+  * Run `source scripts/setup-env.sh` to configure your environment.
+
 
 For tips on keeping your branch in sync with `main` and resolving conflicts, see
 [CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).

@@ -324,7 +324,7 @@ Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
   * Install [Git LFS](https://git-lfs.github.com/) and run `git lfs install`.
     PNG and GIF assets are tracked via LFS.
   * Set up your dev environment with [DEVELOPMENT.md](./docs/DEVELOPMENT.md).
-  * Install dependencies with `scripts/agent-setup.sh` (includes formatting tools).
+  * Run `source scripts/setup-env.sh` to configure your environment.
 
 For tips on keeping your branch in sync with `main` and resolving conflicts, see
 [CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).
