@@ -139,13 +139,16 @@ def fetch_repo(full_name: str) -> Dict[str, Any]:
     return data
 
 
-def scrape(repos: List[str]) -> List[Dict[str, Any]]:
+def scrape(repos: List[str], min_stars: int = 0) -> List[Dict[str, Any]]:
     results = []
     for r in repos:
         try:
-            results.append(fetch_repo(r))
+            repo = fetch_repo(r)
         except Exception as e:
             print(f"Failed to fetch {r}: {e}")
+        else:
+            if repo.get("stargazers_count", 0) >= min_stars:
+                results.append(repo)
     return results
 
 
@@ -153,11 +156,14 @@ def main(argv: List[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Scrape GitHub repos")
     parser.add_argument("--one-shot", action="store_true", help="fetch once")
     parser.add_argument("--repos", nargs="*", default=DEFAULT_REPOS)
+    parser.add_argument("--min-stars", type=int, default=0)
+    parser.add_argument("--output", default="data/repos.json")
     args = parser.parse_args(argv)
 
-    repos = scrape(args.repos)
-    Path("data").mkdir(exist_ok=True)
-    save_repos(Path("data/repos.json"), repos)
+    repos = scrape(args.repos, args.min_stars)
+    out_path = Path(args.output)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    save_repos(out_path, repos)
 
     projected = len(args.repos) * 2
     used = None
