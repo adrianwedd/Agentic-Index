@@ -28,6 +28,7 @@ jobs:
           publish_dir: web/dist
           publish_branch: gh-pages
           github_token: ${{ github.token }}
+          force_orphan: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
