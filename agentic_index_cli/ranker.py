@@ -1,23 +1,31 @@
 """Command line interface for ranking repositories."""
 
-import argparse
+from __future__ import annotations
+
+import click
 
 from .config import load_config
-from .internal.rank import main
+from .helpers.click_options import config_option
+from .internal.rank import main as rank_main
+
+# re-export for backward compatibility
+main = rank_main
 
 
-def cli(argv=None) -> None:
-    """Run the ranking command."""
-    parser = argparse.ArgumentParser(description="Rank repositories")
-    parser.add_argument("path", nargs="?", default="data/repos.json")
-    parser.add_argument("--config", dest="config")
-    args = parser.parse_args(argv)
-
-    cfg = load_config(args.config) if args.config else None
+@click.command(help="Rank repositories")
+@click.argument("path", default="data/repos.json")
+@config_option
+def _cli(path: str, config: str | None) -> None:
+    cfg = load_config(config) if config else None
     if cfg is None:
-        main(args.path)
+        main(path)
     else:
-        main(args.path, config=cfg)
+        main(path, config=cfg)
+
+
+def cli(argv: list[str] | None = None) -> None:
+    """Run the ranking command."""
+    _cli.main(args=argv, standalone_mode=False)
 
 
 if __name__ == "__main__":
