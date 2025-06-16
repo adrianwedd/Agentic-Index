@@ -33,6 +33,7 @@ Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metr
 <p align="center">
 ![build](badges/build.svg)
 ![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
+![security](https://img.shields.io/badge/security-0%20issues-brightgreen)
 ![docs](badges/docs.svg)
 ![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index)
 ![license](badges/license.svg)
