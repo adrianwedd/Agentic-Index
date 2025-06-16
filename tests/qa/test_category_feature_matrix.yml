@@ -1,0 +1,46 @@
+# QA Matrix for CR-AI-114
+
+- id: TC-A1
+  cr: CR-AI-105A
+  steps:
+    - "Inspect data/by_category for JSON files"
+    - "Check index.json mapping"
+  expected: "One JSON per category and valid index"
+  actual: "Directory missing"
+  result: fail
+
+- id: TC-B1
+  cr: CR-AI-105B
+  steps:
+    - "Run write_all_categories()"
+    - "Verify README_<Category>.md exists"
+  expected: "README files generated"
+  actual: "Files absent"
+  result: fail
+
+- id: TC-C1
+  cr: CR-AI-105C
+  steps:
+    - "Execute scripts/trigger_refresh.sh DevTools"
+    - "Observe only DevTools data updated"
+  expected: "Script exits 0 and updates one category"
+  actual: "Script present; manual run not performed"
+  result: pass
+
+- id: TC-D1
+  cr: CR-AI-105D
+  steps:
+    - "Open README.md between CATEGORY markers"
+  expected: "List of categories present"
+  actual: "Section empty"
+  result: fail
+
+- id: TC-E1
+  cr: CR-AI-105E
+  steps:
+    - "Validate schemas/repo.schema.json includes topics"
+    - "Check scraper populates topics[]"
+  expected: "Optional topics array"
+  actual: "Present as designed"
+  result: pass
+
