@@ -1,6 +1,7 @@
 # Index Schema
 
 This document defines the fields produced by the Agentic Index enrichment pipeline. The resulting JSON is used by ranking tools and the website.
+For detailed metric descriptions and GitHub field mappings see [METRICS_SCHEMA.md](METRICS_SCHEMA.md).
 
 ## Field Reference
 

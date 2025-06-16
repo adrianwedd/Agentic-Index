@@ -1,6 +1,6 @@
 # CLI Usage
 
-The `agentic_index_cli` module exposes a command line interface for ranking agent frameworks.
+The `agentic_index_cli` module exposes a command line interface for ranking agent frameworks. Metric field definitions are documented in [METRICS_SCHEMA.md](METRICS_SCHEMA.md).
 
 Example:
 
