@@ -27,3 +27,6 @@ fail_under = 70  # temporary threshold, will be raised after snapshot tolerance 
 
 [tool.isort]
 profile = "black"
+
+[tool.setuptools.packages.find]
+exclude = ["tests*", "docs*", "scripts*"]

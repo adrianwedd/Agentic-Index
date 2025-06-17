@@ -20,3 +20,12 @@ immediate update via GitHub:
 
 1. Navigate to **Actions** → **Daily README Injection**.
 2. Click **Run workflow** and set `force` to `true`.
+
+## Editable Install
+
+After cloning the repository, install the CLI in editable mode so the
+`agentic-index` command is available on your path:
+
+```bash
+pip install -e .
+```

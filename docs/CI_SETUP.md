@@ -9,3 +9,14 @@ pip install -i https://pypi.org/simple \
 ```
 
 Using this mirror (Option B) avoids firewall issues while keeping the installation steps simple.
+
+## Example Workflow Step
+
+Install the package in editable mode and run the ranking command:
+
+```yaml
+- name: Install dependencies
+  run: pip install -e .
+- name: Run ranking script
+  run: agentic-index rank data/repos.json
+```
