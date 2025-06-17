@@ -22,3 +22,4 @@ repos.json
 !tests/fixtures/README_fixture.md
 !data/last_snapshot.json
 /docs/sphinx/_build/
+.venv/

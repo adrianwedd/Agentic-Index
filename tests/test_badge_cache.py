@@ -7,9 +7,7 @@ import pytest
 
 pytestmark = pytest.mark.network
 
-spec = importlib.util.spec_from_file_location("rank_mod", Path("scripts/rank.py"))
-rank_mod = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(rank_mod)
+import agentic_index_cli.internal.rank as rank_mod
 
 generate_badges = rank_mod.generate_badges
 

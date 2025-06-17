@@ -64,7 +64,7 @@ def resolve_file(path):
     elif path.startswith("data/") and (path.endswith(".md") or path.endswith(".json")):
         # Prefer incoming changes for generated repo data
         run(["git", "checkout", "--theirs", path])
-        run([sys.executable, "scripts/rank.py", "data/repos.json"])
+        run([sys.executable, "-m", "agentic_index_cli.ranker", "data/repos.json"])
         run([sys.executable, "scripts/inject_readme.py", "README.md"])
     else:
         run(["git", "checkout", "--theirs", path])
