@@ -56,6 +56,7 @@ def _setup(tmp_path: Path):
         "SNAPSHOT": data_dir / "last_snapshot.json",
     }.items():
         setattr(inj, name, val)
+    inj.DATA_PATH = Path("nonexistent")
     return readme
 
 

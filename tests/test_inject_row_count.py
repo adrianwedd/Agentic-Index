@@ -38,6 +38,7 @@ def _prepare(tmp_path: Path, top_n: int, repo_count: int) -> Path:
         "SNAPSHOT": data_dir / "last_snapshot.json",
     }.items():
         setattr(inj, name, val)
+    inj.DATA_PATH = Path("nonexistent")
     return readme
 
 

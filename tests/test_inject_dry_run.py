@@ -82,7 +82,7 @@ def _change_cell(text: str, col: int, value: str) -> str:
     [
         (lambda txt: _bump_score(txt, 0.015), True),
         (lambda txt: _bump_score(txt, 0.05), False),
-        (lambda txt: _change_cell(txt, 12, "MIT"), False),
+        (lambda txt: _change_cell(txt, 5, "MIT"), False),
         (lambda txt: _change_cell(txt, 0, "2"), False),
     ],
 )

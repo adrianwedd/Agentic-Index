@@ -40,7 +40,7 @@ def _setup(tmp_path: Path, top_n: int = 50) -> Path:
         )
     )
     (data_dir / "top100.md").write_text(
-        "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |\n|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|\n| 1 | x | 1.00 | 10 | +1 |  | 1.00 | 0.50 | 0.50 | 0.90 | 0.30 | 3.32 | General |\n"
+        "| Rank | Repo | Score | ▲ StarsΔ | ▲ ScoreΔ | Category |\n|-----:|------|------:|-------:|--------:|----------|\n| 1 | x | 1.00 | +1 |  | General |\n"
     )
     (data_dir / "last_snapshot.json").write_text("[]")
     readme = tmp_path / "README.md"
@@ -81,6 +81,7 @@ def test_check_fails_when_outdated(tmp_path, monkeypatch):
 )
 def test_missing_required_key(tmp_path, monkeypatch, field):
     _setup(tmp_path)
+    inj.DATA_PATH = Path("nonexistent")
     data = json.loads(inj.REPOS_PATH.read_text())
     del data["repos"][0][field]
     inj.REPOS_PATH.write_text(json.dumps(data))
@@ -90,6 +91,7 @@ def test_missing_required_key(tmp_path, monkeypatch, field):
 
 def test_missing_repos_file(tmp_path, monkeypatch):
     _setup(tmp_path)
+    inj.DATA_PATH = Path("nonexistent")
     inj.REPOS_PATH.unlink()
     with pytest.raises(FileNotFoundError):
         inj.build_readme(top_n=50)

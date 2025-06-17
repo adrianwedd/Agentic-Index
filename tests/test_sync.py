@@ -14,16 +14,9 @@ def test_readme_synced():
     lines = [l for l in text[start:end].splitlines() if l.startswith("|")]
     for line in lines[2:]:
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        assert len(cells) >= 13
+        assert len(cells) == 6
         int(cells[0])
         float(cells[2])
-        int(cells[3])
-        if cells[4] and cells[4] != "+new":
-            int(cells[4].replace("+", ""))
-        if cells[5] and cells[5] != "+new":
-            float(cells[5].replace("+", ""))
-        if cells[6] != "-":
-            float(cells[6])
 
 
 def test_inject_idempotent(tmp_path):

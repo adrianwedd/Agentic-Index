@@ -35,6 +35,17 @@ DEFAULT_SORT_FIELD = "score"
 DEFAULT_TOP_N = 100
 
 
+def _load_top_table(limit: int = DEFAULT_TOP_N) -> list[str]:
+    """Return lines from ``DATA_PATH`` limited to ``limit`` rows."""
+    try:
+        lines = DATA_PATH.read_text(encoding="utf-8").splitlines()
+    except FileNotFoundError as exc:
+        raise FileNotFoundError(f"Missing file: {DATA_PATH}") from exc
+    header = lines[:2]
+    rows = lines[2 : 2 + limit]
+    return header + rows
+
+
 def _markers(n: int) -> tuple[str, str]:
     """Return start and end markers for ``n``."""
     return f"<!-- TOP{n}:START -->", f"<!-- TOP{n}:END -->"
@@ -285,16 +296,19 @@ def build_readme(
     before = readme_text[: start_idx + len(start_marker)].rstrip()
     after = "\n" + readme_text[end_idx + len(end_marker) :].lstrip()
 
-    # standard header for schema v3 metrics
-    header_lines = [
-        "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |",
-        "|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|",
-    ]
-
     cfg_limit = top_n if limit is None else limit
 
-    rows = _load_rows(sort_by, limit=cfg_limit)
-    table = "\n".join(header_lines + rows)
+    header_lines = [
+        "| Rank | Repo | Score | ▲ StarsΔ | ▲ ScoreΔ | Category |",
+        "|-----:|------|------:|-------:|--------:|----------|",
+    ]
+
+    if DATA_PATH.exists():
+        table_lines = _load_top_table(cfg_limit)
+    else:
+        rows = _load_rows(sort_by, limit=cfg_limit)
+        table_lines = header_lines + rows
+    table = "\n".join(table_lines)
 
     new_text = f"{before}\n{table}\n{end_marker}{after}"
     new_text = _inject_category_section(new_text)
@@ -409,18 +423,29 @@ def build_category_table(
 ) -> str:
     """Return a markdown table for ``category`` with optional topic metadata."""
     header_lines = [
-        "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |",
-        "|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|",
+        "| Rank | Repo | Score | ▲ StarsΔ | ▲ ScoreΔ | Category |",
+        "|-----:|------|------:|-------:|--------:|----------|",
     ]
     cfg_limit = DEFAULT_TOP_N if limit is None else limit
-    rows, repos = _load_rows(
+    _, repos = _load_rows(
         sort_by, limit=cfg_limit, category=category, return_repos=True
     )
     topics = _infer_topics(repos)
     heading = f"## 🧠 Top Agentic-AI Repositories: {category}  \n"
     if topics:
         heading += "_GitHub Topics: " + ", ".join(f"`{t}`" for t in topics) + "_  \n"
-    return heading + "\n".join(header_lines + rows) + "\n"
+    rows_small = [
+        "| {i} | {name} | {score:.2f} | {sd} | {qd} | {cat} |".format(
+            i=i,
+            name=_clamp_name(repo.get("name", "")),
+            score=float(repo.get("AgenticIndexScore", 0)),
+            sd=_fmt_delta(repo.get("stars_delta", 0), is_int=True),
+            qd=_fmt_delta(repo.get("score_delta", 0)),
+            cat=repo.get("category", "-"),
+        )
+        for i, repo in enumerate(repos[:cfg_limit], start=1)
+    ]
+    return heading + "\n".join(header_lines + rows_small) + "\n"
 
 
 def write_category_readme(

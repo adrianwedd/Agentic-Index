@@ -81,6 +81,8 @@ Agentic-Index is built to be a reliable, data-driven launchpad for your next Age
 
 ## ⚡ Installation & Quick-start
 
+New contributors should start with the [ONBOARDING guide](docs/ONBOARDING.md) for environment setup and troubleshooting.
+
 ```bash
 pip install agentic-index-cli
 
@@ -97,62 +99,61 @@ cat README.md | less         # see table injected
 ## 🏆 The Agentic-Index Top 100: AI Agent Repositories
 
 The definitive list of Agentic-AI repositories, ranked by the Agentic Index Score. This score is a holistic measure of project quality, activity, and community love.
-*(Data updated as of: {timestamp})*
+*(Data updated as of: 2025-06-16T05:56:02 UTC)*
 
 <!-- TOP50:START -->
-| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |
-|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|
-| 1 | dify | 5.28 | 103268 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 16.66 | DevTools |
-| 2 | langflow | 5.17 | 73776 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 16.17 | DevTools |
-| 3 | browser-use | 5.10 | 63197 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.95 | General-purpose |
-| 4 | OpenHands | 5.07 | 58086 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.83 | General-purpose |
-| 5 | lobe-chat | 5.06 | 62457 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.93 | RAG-centric |
-| 6 | MetaGPT | 5.06 | 56406 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.78 | Multi-Agent |
-| 7 | ragflow | 5.04 | 55104 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.75 | RAG-centric |
-| 8 | system-prompts-and-models... | 5.03 | 57495 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.81 | DevTools |
-| 9 | LLaMA-Factory | 5.02 | 52281 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.67 | General-purpose |
-| 10 | anything-llm | 4.96 | 45309 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.47 | RAG-centric |
-| 11 | cline | 4.96 | 45704 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.48 | General-purpose |
-| 12 | autogen | 4.93 | 45993 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.49 | General-purpose |
-| 13 | llama_index | 4.93 | 42355 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.37 | General-purpose |
-| 14 | awesome-llm-apps | 4.92 | 41125 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.33 | RAG-centric |
-| 15 | Flowise | 4.87 | 40065 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.29 | General-purpose |
-| 16 | ChatTTS | 4.84 | 36799 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.17 | General-purpose |
-| 17 | mem0 | 4.84 | 34513 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.07 | General-purpose |
-| 18 | crewAI | 4.82 | 32933 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.01 | Multi-Agent |
-| 19 | Langchain-Chatchat | 4.81 | 35287 |  |  | 0.84 | 0.00 | 0.00 | 1.00 | 0.00 | 15.11 | RAG-centric |
-| 20 | AgentGPT | 4.79 | 34323 |  |  | 0.95 | 0.00 | 0.00 | 0.50 | 0.00 | 15.07 | General-purpose |
-| 21 | agno | 4.76 | 28280 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.79 | Multi-Agent |
-| 22 | khoj | 4.75 | 30327 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.89 | Experimental |
-| 23 | ChatDev | 4.74 | 27024 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.72 | Multi-Agent |
-| 24 | ai-agents-for-beginners | 4.73 | 26615 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.70 | General-purpose |
-| 25 | LibreChat | 4.73 | 26789 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.71 | General-purpose |
-| 26 | cherry-studio | 4.72 | 28444 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.80 | General-purpose |
-| 27 | Jobs_Applier_AI_Agent_AIHawk | 4.72 | 28310 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.79 | General-purpose |
-| 28 | qlib | 4.71 | 25192 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.62 | Experimental |
-| 29 | composio | 4.68 | 25499 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.64 | General-purpose |
-| 30 | FastGPT | 4.66 | 24718 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.59 | RAG-centric |
-| 31 | gpt-researcher | 4.65 | 21875 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.42 | Experimental |
-| 32 | CopilotKit | 4.63 | 21205 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.37 | General-purpose |
-| 33 | haystack | 4.63 | 21154 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.37 | RAG-centric |
-| 34 | swarm | 4.56 | 19920 |  |  | 0.80 | 0.00 | 0.00 | 1.00 | 0.00 | 14.28 | Multi-Agent |
-| 35 | agentic | 4.55 | 17639 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.11 | General-purpose |
-| 36 | vanna | 4.54 | 18127 |  |  | 0.89 | 0.00 | 0.00 | 1.00 | 0.00 | 14.15 | RAG-centric |
-| 37 | agenticSeek | 4.53 | 18268 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.16 | General-purpose |
-| 38 | DB-GPT | 4.53 | 16764 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.03 | DevTools |
-| 39 | deep-research | 4.53 | 16638 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.02 | Experimental |
-| 40 | letta | 4.53 | 16861 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.04 | General-purpose |
-| 41 | SWE-agent | 4.52 | 16305 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.99 | Domain-Specific |
-| 42 | eliza | 4.51 | 16078 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.97 | General-purpose |
-| 43 | RagaAI-Catalyst | 4.51 | 16193 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.98 | Multi-Agent |
-| 44 | DocsGPT | 4.50 | 15708 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.94 | RAG-centric |
-| 45 | awesome-ai-agents | 4.48 | 18587 |  |  | 0.76 | 0.00 | 0.00 | 0.50 | 0.00 | 14.18 | General-purpose |
-| 46 | goose | 4.47 | 14627 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.84 | DevTools |
-| 47 | activepieces | 4.46 | 15291 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 13.90 | General-purpose |
-| 48 | suna | 4.46 | 14425 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.82 | General-purpose |
-| 49 | ai | 4.45 | 14955 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 13.87 | DevTools |
-| 50 | botpress | 4.45 | 13805 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.75 | General-purpose |
-
+| Rank | Repo | Score | ▲ StarsΔ | ▲ ScoreΔ | Category |
+|-----:|------|------:|-------:|--------:|----------|
+| 1 | dify | 5.28 | +new | +new | General-purpose |
+| 2 | langflow | 5.17 | +new | +new | DevTools |
+| 3 | browser-use | 5.10 | +new | +new | General-purpose |
+| 4 | OpenHands | 5.07 | +new | +new | General-purpose |
+| 5 | lobe-chat | 5.06 | +new | +new | RAG-centric |
+| 6 | MetaGPT | 5.06 | +new | +new | Multi-Agent Coordination |
+| 7 | ragflow | 5.04 | +new | +new | RAG-centric |
+| 8 | system-prompts-and-models-of-ai-tools | 5.03 | +new | +new | DevTools |
+| 9 | LLaMA-Factory | 5.02 | +new | +new | General-purpose |
+| 10 | cline | 4.96 | +new | +new | General-purpose |
+| 11 | anything-llm | 4.96 | +new | +new | RAG-centric |
+| 12 | autogen | 4.93 | +new | +new | General-purpose |
+| 13 | llama_index | 4.93 | +new | +new | General-purpose |
+| 14 | awesome-llm-apps | 4.92 | +new | +new | RAG-centric |
+| 15 | Flowise | 4.87 | +new | +new | General-purpose |
+| 16 | ChatTTS | 4.84 | +new | +new | General-purpose |
+| 17 | mem0 | 4.84 | +new | +new | General-purpose |
+| 18 | crewAI | 4.82 | +new | +new | Multi-Agent Coordination |
+| 19 | Langchain-Chatchat | 4.81 | +new | +new | RAG-centric |
+| 20 | AgentGPT | 4.79 | +new | +new | General-purpose |
+| 21 | agno | 4.76 | +new | +new | Multi-Agent Coordination |
+| 22 | khoj | 4.75 | +new | +new | Experimental |
+| 23 | ChatDev | 4.74 | +new | +new | Multi-Agent Coordination |
+| 24 | LibreChat | 4.73 | +new | +new | General-purpose |
+| 25 | ai-agents-for-beginners | 4.73 | +new | +new | General-purpose |
+| 26 | cherry-studio | 4.72 | +new | +new | General-purpose |
+| 27 | Jobs_Applier_AI_Agent_AIHawk | 4.72 | +new | +new | General-purpose |
+| 28 | qlib | 4.71 | +new | +new | Experimental |
+| 29 | composio | 4.68 | +new | +new | General-purpose |
+| 30 | FastGPT | 4.66 | +new | +new | RAG-centric |
+| 31 | gpt-researcher | 4.65 | +new | +new | Experimental |
+| 32 | haystack | 4.63 | +new | +new | RAG-centric |
+| 33 | CopilotKit | 4.63 | +new | +new | General-purpose |
+| 34 | swarm | 4.56 | +new | +new | Multi-Agent Coordination |
+| 35 | agentic | 4.55 | +new | +new | General-purpose |
+| 36 | vanna | 4.54 | +new | +new | RAG-centric |
+| 37 | letta | 4.53 | +new | +new | General-purpose |
+| 38 | DB-GPT | 4.53 | +new | +new | General-purpose |
+| 39 | agenticSeek | 4.53 | +new | +new | General-purpose |
+| 40 | deep-research | 4.53 | +new | +new | Experimental |
+| 41 | SWE-agent | 4.52 | +new | +new | General-purpose |
+| 42 | RagaAI-Catalyst | 4.51 | +new | +new | RAG-centric |
+| 43 | eliza | 4.51 | +new | +new | General-purpose |
+| 44 | DocsGPT | 4.50 | +new | +new | DevTools |
+| 45 | awesome-ai-agents | 4.48 | +new | +new | General-purpose |
+| 46 | goose | 4.47 | +new | +new | General-purpose |
+| 47 | suna | 4.46 | +new | +new | General-purpose |
+| 48 | activepieces | 4.46 | +new | +new | General-purpose |
+| 49 | ai | 4.45 | +new | +new | DevTools |
+| 50 | botpress | 4.45 | +new | +new | General-purpose |
 <!-- TOP50:END -->
 *➡️ Dig into how these scores are cooked up in our [Methodology section](#our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](./docs/methodology.md).*
 
@@ -214,8 +215,8 @@ Quick guide to our categories (and the icons you'll see in the table):
 <a id="-explore-by-category"></a>
 ## 📚 Explore by Category
 <!-- CATEGORY:START -->
-<!-- CATEGORY:END -->
 
+<!-- CATEGORY:END -->
 -----
 
 <a id="-changelog"></a>
@@ -303,6 +304,8 @@ npx pa11y web/index.html
 
 You can also run `./scripts/install_pa11y_deps.sh` to install pa11y and Chrome.
 
+See [ONBOARDING.md](docs/ONBOARDING.md#running-tests) for instructions on running the test suite and replicating CI's offline environment.
+
 ## 💻 Developer
 
 To trigger a data refresh via GitHub Actions, run:
@@ -331,6 +334,7 @@ Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
     PNG and GIF assets are tracked via LFS.
   * Set up your dev environment with [DEVELOPMENT.md](./docs/DEVELOPMENT.md).
   * Run `source scripts/setup-env.sh` to configure your environment.
+
 
 For tips on keeping your branch in sync with `main` and resolving conflicts, see
 [CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).

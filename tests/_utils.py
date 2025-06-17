@@ -74,7 +74,7 @@ def assert_readme_diff(old: str, new: str, *, delta: float = 0.02) -> None:
         if ocells[1] != ncells[1]:
             errors.append(f"repo '{ocells[1]}' != '{ncells[1]}'")
 
-        for idx in range(2, 12):
+        for idx in range(2, ncols):
             if ocells[idx] and ncells[idx]:
                 try:
                     if abs(float(ocells[idx]) - float(ncells[idx])) > delta:

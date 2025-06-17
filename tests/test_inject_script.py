@@ -7,7 +7,7 @@ def test_inject_readme(tmp_path, monkeypatch):
     readme = tmp_path / "README.md"
     data_dir = tmp_path / "data"
     data_dir.mkdir()
-    table = "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |\n|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|\n| 1 | x | 1.00 | 10 | +1 |  | 1.00 | 0.50 | 0.50 | 0.90 | 0.30 | 3.32 | Test |\n"
+    table = "| Rank | Repo | Score | ▲ StarsΔ | ▲ ScoreΔ | Category |\n|-----:|------|------:|-------:|--------:|----------|\n| 1 | x | 1.00 | +1 |  | Test |\n"
     (data_dir / "top100.md").write_text(table)
     (data_dir / "repos.json").write_text(
         '{"schema_version":3,"repos":[{"name":"x","full_name":"o/x","AgenticIndexScore":1.0,"stars":10,"stars_delta":1,"score_delta":0,"recency_factor":1.0,"issue_health":0.5,"doc_completeness":0.5,"license_freedom":0.9,"ecosystem_integration":0.3,"stars_log2":3.32,"category":"Test"}]}'
