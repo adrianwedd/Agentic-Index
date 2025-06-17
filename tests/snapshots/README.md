@@ -30,16 +30,7 @@ Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metr
 
 -----
 
-<p align="center">
-![build](badges/build.svg)
-![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
-![security](https://img.shields.io/badge/security-0%20issues-brightgreen)
-![docs](badges/docs.svg)
-![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index)
-![license](badges/license.svg)
-![PyPI](badges/pypi.svg)
-![Release Notes](https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases)
-</p>
+![build](badges/build.svg) ![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen) ![security](https://img.shields.io/badge/security-0%20issues-brightgreen) ![docs](badges/docs.svg) ![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index) ![license](badges/license.svg) ![PyPI](badges/pypi.svg) ![Release Notes](https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases)
 
 This catalogue is maintained by the Agentic-Index project and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
 
@@ -180,8 +171,8 @@ For a full description of every metric field, see [SCHEMA.md](./docs/SCHEMA.md) 
 ### Our Methodology & Scoring Explained
 
 <a id="our-methodology--scoring-explained"></a>
-\<details\>
-\<summary\>🔬 Our Methodology & Scoring Explained (Click to Expand)\</summary\>
+<details>
+<summary>🔬 Our Methodology & Scoring Explained (Click to Expand)</summary>
 
 Agentic-Index believes in full transparency. Here’s the lowdown on how we find, vet, and score repositories.
 
@@ -196,7 +187,7 @@ Our score balances stars, recency, maintenance health, documentation quality, li
 
 For the full, unabridged version, see **[./docs/methodology.md](./docs/methodology.md)**.
 
-\</details\>
+</details>
 
 -----
 
