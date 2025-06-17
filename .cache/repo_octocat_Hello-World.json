@@ -1,0 +1,22 @@
+{
+  "name": "Hello-World",
+  "full_name": "octocat/Hello-World",
+  "html_url": "https://github.com/octocat/Hello-World",
+  "description": "My first repository on GitHub!",
+  "stargazers_count": 2986,
+  "forks_count": 3123,
+  "open_issues_count": 1752,
+  "archived": false,
+  "license": null,
+  "language": null,
+  "pushed_at": "2024-08-20T23:54:42Z",
+  "owner": {
+    "login": "octocat"
+  },
+  "topics": [],
+  "stars_7d": 2986,
+  "maintenance": 1.0,
+  "docs_score": 0.0,
+  "ecosystem": 0.0,
+  "last_release": null
+}

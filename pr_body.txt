@@ -1,0 +1,7 @@
+🕒 Automated refresh of repo metrics.
+
+• Total repos: 1
+• 🔼 Largest score delta: `+3.51` (octocat/Hello-World)
+• ⭐ Most stars gained: `+0` (octocat/Hello-World)
+
+_Triggered via scheduled job. No manual action required._
