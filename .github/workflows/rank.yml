@@ -5,11 +5,12 @@ on:
   schedule:
     - cron: '0 0 * * 0'
 
+permissions:
+  contents: write
+
 jobs:
   run:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
@@ -21,7 +22,7 @@ jobs:
         run: |
           echo "running ranker"
           # Placeholder for ranking logic generating repos.json
-          python scripts/ranker.py || true
+          python scripts/ranker.py
       - name: Archive repos.json
         run: |
           mkdir -p data/history
