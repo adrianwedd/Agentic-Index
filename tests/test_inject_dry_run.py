@@ -11,10 +11,19 @@ sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 import agentic_index_cli.internal.inject_readme as inj
 
-from .helpers import assert_readme_equivalent
+from .helpers import _parse_table, assert_readme_equivalent
 
 FIXTURE_DIR = Path(__file__).resolve().parent / "fixtures"
 README_SNAP = FIXTURE_DIR / "README_fixture.md"
+
+EXPECTED_HEADERS = [
+    "Rank",
+    "Repo",
+    "Description",
+    "Score",
+    "Stars",
+    "Δ Stars",
+]
 
 
 def _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
@@ -51,6 +60,9 @@ def test_inject_readme_check(
     readme, modified = _setup(
         tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir
     )
+    headers, rows = _parse_table(modified)
+    assert headers == EXPECTED_HEADERS
+    assert all(len(r) == len(EXPECTED_HEADERS) for r in rows)
     assert_readme_equivalent(readme.read_text().strip(), modified, {"score": 0.005})
     assert inj.main(check=True, top_n=50) == 1
 
@@ -96,6 +108,9 @@ def test_readme_tolerances(
         tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir
     )
     modified = modifier(modified)
+    headers, rows = _parse_table(modified)
+    assert headers == EXPECTED_HEADERS
+    assert all(len(r) == len(EXPECTED_HEADERS) for r in rows)
     if should_pass:
         assert_readme_equivalent(readme.read_text().strip(), modified, {"score": 0.005})
     else:
@@ -103,3 +118,15 @@ def test_readme_tolerances(
             assert_readme_equivalent(
                 readme.read_text().strip(), modified, {"score": 0.005}
             )
+
+
+@pytest.mark.xfail(
+    not README_SNAP.exists(), reason="README fixture missing", strict=True
+)
+def test_env_tolerance(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
+    readme, modified = _setup(
+        tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir
+    )
+    modified = _bump_score(modified, 0.004)
+    monkeypatch.setenv("README_TOLERANCES", "Score=0.005")
+    assert_readme_equivalent(readme.read_text().strip(), modified)
