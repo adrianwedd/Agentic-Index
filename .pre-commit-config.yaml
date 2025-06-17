@@ -8,6 +8,11 @@ repos:
         types: [markdown]
         pass_filenames: false
         files: README\.md
+      - id: fixtures-validate
+        name: Validate README fixtures
+        entry: python scripts/validate_fixtures.py
+        language: system
+        pass_filenames: false
       - id: pytest
         name: pytest
         entry: pytest --quiet --cov=agentic_index_cli --cov-fail-under=0
