@@ -2,6 +2,11 @@
 """CLI wrapper for ranking repositories."""
 
 import argparse
+import sys
+from pathlib import Path
+
+# ensure agentic_index_cli is importable when executed via `python scripts/rank.py`
+sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 from agentic_index_cli.config import load_config
 from agentic_index_cli.internal.rank import generate_badges, main
