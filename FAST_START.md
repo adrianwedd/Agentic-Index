@@ -1,6 +1,13 @@
 ## 🚀 Fast-Start Picks
 
 These curated repositories provide a quick path to building with Agentic AI.
+`FAST_START.md` is generated from the latest `repos.json` using the CLI:
+
+```bash
+agentic-index faststart --top 3 data/repos.json
+```
+
+Run this after the `scrape` and `enrich` steps to refresh the table.
 
 | Rank | Repo (Click to Visit) | ★ Stars | Last Commit | Score | Category | One-Liner |
 |------|-----------------------|---------|-------------|-------|----------|-----------|
