@@ -14,3 +14,12 @@ make regen-fixtures
 
 The command rebuilds `README.md` and copies the result into the fixture file.
 Pre-commit and CI will fail if the snapshot drifts.
+
+## Editable Install
+
+After cloning the repository, install the CLI in editable mode so the
+`agentic-index` command is available on your path:
+
+```bash
+pip install -e .
+```
