@@ -38,6 +38,9 @@ def enrich(path: Path) -> None:
     """Add derived fields to a repository JSON file."""
     data = load_repos(path)
     prev_map = _previous_map(path)
+    schema_path = Path(__file__).resolve().parents[1] / "schemas" / "repo.schema.json"
+    schema = json.loads(schema_path.read_text())
+    validator = Draft7Validator(schema)
     for repo in data:
         stars = repo.get("stargazers_count", 0)
         repo["stars"] = stars
@@ -75,11 +78,11 @@ def enrich(path: Path) -> None:
             repo["stars_delta"] = 0
             repo["score_delta"] = 0.0
 
+        # validate after enrichment
+        validator.validate({**repo})
+
     save_repos(path, data)
 
-    schema_path = Path(__file__).resolve().parents[1] / "schemas" / "repo.schema.json"
-    schema = json.loads(schema_path.read_text())
-    validator = Draft7Validator(schema)
     saved = json.loads(path.read_text())
     repos = saved.get("repos", saved)
     for item in repos:

@@ -33,7 +33,9 @@ CACHE_TTL = 86400  # seconds
 
 
 def _load_cache(path: Path) -> Any | None:
-    if path.exists() and time.time() - path.stat().st_mtime < CACHE_TTL:
+    import time as _time
+
+    if path.exists() and _time.time() - path.stat().st_mtime < CACHE_TTL:
         try:
             with path.open() as fh:
                 return json.load(fh)
@@ -127,9 +129,11 @@ def fetch_repo(full_name: str) -> Optional[Dict]:
 
 def fetch_readme(full_name: str) -> str:
     """Return decoded README text for ``full_name``."""
+    import time as _time
+
     cache_file = CACHE_DIR / f"readme_{full_name.replace('/', '_')}.txt"
     cached = None
-    if cache_file.exists() and time.time() - cache_file.stat().st_mtime < CACHE_TTL:
+    if cache_file.exists() and _time.time() - cache_file.stat().st_mtime < CACHE_TTL:
         cached = cache_file.read_text()
     if cached:
         return cached
