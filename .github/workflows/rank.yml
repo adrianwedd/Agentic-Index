@@ -6,11 +6,13 @@ on:
     - cron: '0 0 * * 0'
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   run:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
@@ -20,9 +22,9 @@ jobs:
         run: pip install matplotlib
       - name: Run ranker
         run: |
-          echo "running ranker"
+          echo "running ranker" | tee rank.log
           # Placeholder for ranking logic generating repos.json
-          python scripts/ranker.py
+          python scripts/ranker.py >> rank.log 2>&1
       - name: Archive repos.json
         run: |
           mkdir -p data/history
@@ -35,4 +37,17 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update history and trends
+      - name: Upload history
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rank-history
+          path: data/history/*.json
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rank-logs
+          path: rank.log
+          if-no-files-found: ignore
 
