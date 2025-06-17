@@ -7,6 +7,8 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
+from jsonschema import Draft7Validator
+
 from lib.quality_metrics import docs_score, maintenance_score
 
 
@@ -24,6 +26,9 @@ def main(path: str = "data/repos.json") -> None:
     p = Path(path)
     data = json.loads(p.read_text())
     repos = data.get("repos", data)
+    schema_path = Path(__file__).resolve().parents[1] / "schemas" / "repo.schema.json"
+    schema = json.loads(schema_path.read_text())
+    validator = Draft7Validator(schema)
     for repo in repos:
         # maintenance score from recency and issue ratio
         days_since_commit = 0.0
@@ -50,7 +55,23 @@ def main(path: str = "data/repos.json") -> None:
         repo["license_score"] = round(float(repo.get("license_freedom", 0.0)) * 10, 2)
 
         repo["release_age"] = _release_age(repo.get("last_release"))
+
+        lic = repo.get("license")
+        if isinstance(lic, str):
+            check_item = dict(repo)
+            check_item["license"] = {"spdx_id": lic}
+        else:
+            check_item = repo
+        validator.validate(check_item)
     p.write_text(json.dumps({"schema_version": 2, "repos": repos}, indent=2) + "\n")
+
+    saved = json.loads(p.read_text())
+    for item in saved.get("repos", saved):
+        lic = item.get("license")
+        if isinstance(lic, str):
+            item = dict(item)
+            item["license"] = {"spdx_id": lic}
+        validator.validate(item)
 
 
 if __name__ == "__main__":

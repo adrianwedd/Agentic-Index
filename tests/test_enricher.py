@@ -50,3 +50,21 @@ def test_enrich_schema(tmp_path):
         repo = dict(repo)
         repo["license"] = {"spdx_id": lic}
     Draft7Validator(schema).validate(repo)
+
+
+import pytest
+
+
+def test_enrich_schema_error(tmp_path):
+    repo = {
+        "full_name": "owner/repo",
+        "stargazers_count": 1,
+        "forks_count": 0,
+        "open_issues_count": 0,
+        "license": {"spdx_id": "MIT"},
+        "owner": {"login": "owner"},
+    }
+    path = tmp_path / "bad.json"
+    path.write_text(json.dumps({"schema_version": 1, "repos": [repo]}))
+    with pytest.raises(Exception):
+        enricher.enrich(path)
