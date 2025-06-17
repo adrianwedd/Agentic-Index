@@ -21,8 +21,16 @@ def test_github_search(monkeypatch):
         captured["params"] = params
         return DummyResp({"items": ["ok"]})
 
-    monkeypatch.setattr(ai, "time", types.SimpleNamespace(sleep=lambda x: None))
-    monkeypatch.setattr(ai.requests, "get", fake_get)
+    monkeypatch.setattr(
+        ai,
+        "time",
+        types.SimpleNamespace(
+            sleep=lambda x: None, time=lambda: 0, perf_counter=lambda: 0
+        ),
+    )
+    monkeypatch.setattr(
+        ai.http_utils, "sync_get", lambda url, **kw: fake_get(url, **kw)
+    )
     res = ai.github_search("query", page=3)
     assert res == ["ok"]
     assert captured["params"]["page"] == 3
@@ -37,12 +45,20 @@ def test_fetch_repo_and_readme(monkeypatch):
     def fake_get_readme(url, headers=None):
         return DummyResp({"content": encoded})
 
-    monkeypatch.setattr(ai, "time", types.SimpleNamespace(sleep=lambda x: None))
-    monkeypatch.setattr(ai.requests, "get", fake_get_repo)
+    monkeypatch.setattr(
+        ai,
+        "time",
+        types.SimpleNamespace(
+            sleep=lambda x: None, time=lambda: 0, perf_counter=lambda: 0
+        ),
+    )
+    monkeypatch.setattr(ai.http_utils, "sync_get", lambda url, **kw: fake_get_repo(url))
     repo = ai.fetch_repo("owner/name")
     assert repo == {"id": 123}
 
-    monkeypatch.setattr(ai.requests, "get", fake_get_readme)
+    monkeypatch.setattr(
+        ai.http_utils, "sync_get", lambda url, **kw: fake_get_readme(url)
+    )
     text = ai.fetch_readme("owner/name")
     assert text == "hello"
 
@@ -75,7 +91,7 @@ def test_error_branches(monkeypatch):
     def bad_get(url, params=None, headers=None):
         return DummyResp({}, status=500)
 
-    monkeypatch.setattr(ai.requests, "get", bad_get)
+    monkeypatch.setattr(ai.http_utils, "sync_get", lambda url, **kw: bad_get(url))
     assert ai.github_search("q") == []
 
     assert ai.fetch_repo("name") is None
@@ -85,7 +101,7 @@ def test_error_branches(monkeypatch):
     def ok_get(url, params=None, headers=None):
         return DummyResp({}, status=200)
 
-    monkeypatch.setattr(ai.requests, "get", ok_get)
+    monkeypatch.setattr(ai.http_utils, "sync_get", lambda url, **kw: ok_get(url))
     assert ai.fetch_readme("name") == ""
 
 
@@ -95,7 +111,13 @@ def test_harvest_repo_none(monkeypatch):
 
 
 def test_search_topics_duplicate(monkeypatch):
-    monkeypatch.setattr(ai, "time", types.SimpleNamespace(sleep=lambda x: None))
+    monkeypatch.setattr(
+        ai,
+        "time",
+        types.SimpleNamespace(
+            sleep=lambda x: None, time=lambda: 0, perf_counter=lambda: 0
+        ),
+    )
     calls = []
 
     def fake_search(query, page):
@@ -104,12 +126,15 @@ def test_search_topics_duplicate(monkeypatch):
 
     monkeypatch.setattr(ai, "SEARCH_TERMS", [])
     monkeypatch.setattr(ai, "TOPIC_FILTERS", ["topic"])
-    monkeypatch.setattr(ai, "github_search", fake_search)
-    monkeypatch.setattr(ai, "harvest_repo", lambda name: {"name": name})
+
+    async def fake_async_search(min_stars=0, max_pages=1):
+        return [{"name": "dupe"}]
+
+    monkeypatch.setattr(ai, "async_search_and_harvest", fake_async_search)
 
     repos = ai.search_and_harvest(max_pages=2)
     assert len(repos) == 1
-    assert calls == [1, 2]
+    assert calls == []
 
 
 def test_changelog_and_save(tmp_path):

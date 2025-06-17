@@ -70,7 +70,9 @@ def test_end_to_end(tmp_path, monkeypatch, min_stars):
 
     monkeypatch.chdir(tmp_path)
     monkeypatch.setenv("CI_OFFLINE", "1")
-    monkeypatch.setattr(scraper.requests, "get", fake_get)
+    monkeypatch.setattr(
+        scraper.http_utils, "sync_get", lambda url, **kw: fake_get(url, **kw)
+    )
     monkeypatch.setattr(scraper, "DEFAULT_REPOS", ["owner/repo"])
 
     scraper.main(["--one-shot", f"--min-stars={min_stars}"])

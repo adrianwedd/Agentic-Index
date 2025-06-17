@@ -1,14 +1,10 @@
-import time
-from unittest import mock
+import json
 
-import pytest
-import responses
 
 import agentic_index_cli.internal.scrape as scrape
 
 
-@responses.activate
-def test_scrape_mock():
+def test_scrape_mock(monkeypatch):
     import warnings
 
     warnings.filterwarnings("ignore", category=DeprecationWarning, module="responses")
@@ -26,15 +22,15 @@ def test_scrape_mock():
         "pushed_at": "2025-01-01T00:00:00Z",
         "owner": {"login": "owner"},
     }
-    for _ in scrape.QUERIES:
-        responses.add(
-            responses.GET,
-            "https://api.github.com/search/repositories",
-            json={"items": [item]},
-            headers={"X-RateLimit-Remaining": "99"},
-            match_querystring=False,
-            status=200,
+
+    def fake_get(url, params=None, headers=None):
+        return scrape.http_utils.Response(
+            200,
+            {"X-RateLimit-Remaining": "99"},
+            json.dumps({"items": [item]}),
         )
+
+    monkeypatch.setattr(scrape.http_utils, "sync_get", fake_get)
     repos = scrape.scrape(min_stars=0, token=None)
     assert repos and repos[0]["full_name"] == "owner/repo"
 
