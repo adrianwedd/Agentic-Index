@@ -23,7 +23,8 @@ def test_category_section_injected(tmp_path, monkeypatch):
 
     (data_dir / "repos.json").write_text('{"schema_version":3,"repos":[]}')
     (data_dir / "top100.md").write_text(
-        "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |\n|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|\n"
+        "| Rank | Repo | Description | Score | Stars | Δ Stars |\n"
+        "|-----:|------|-------------|------:|------:|--------:|\n"
     )
     (data_dir / "last_snapshot.json").write_text("[]")
 

@@ -60,7 +60,7 @@ def _bump_score(text: str, delta: float) -> str:
     for i, line in enumerate(lines):
         if line.startswith("| 1 |"):
             cells = [c.strip() for c in line.strip().strip("|").split("|")]
-            cells[2] = f"{float(cells[2]) + delta:.2f}"
+            cells[3] = f"{float(cells[3]) + delta:.2f}"
             lines[i] = "| " + " | ".join(cells) + " |"
             break
     return "\n".join(lines)
@@ -82,7 +82,7 @@ def _change_cell(text: str, col: int, value: str) -> str:
     [
         (lambda txt: _bump_score(txt, 0.015), True),
         (lambda txt: _bump_score(txt, 0.05), False),
-        (lambda txt: _change_cell(txt, 12, "MIT"), False),
+        (lambda txt: _change_cell(txt, 5, "MIT"), False),
         (lambda txt: _change_cell(txt, 0, "2"), False),
     ],
 )

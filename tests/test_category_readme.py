@@ -11,6 +11,7 @@ def _setup(tmp_path: Path):
         {
             "name": "a",
             "full_name": "o/a",
+            "html_url": "https://github.com/o/a",
             "AgenticIndexScore": 1.0,
             "stars": 10,
             "stars_delta": 1,
@@ -27,6 +28,7 @@ def _setup(tmp_path: Path):
         {
             "name": "b",
             "full_name": "o/b",
+            "html_url": "https://github.com/o/b",
             "AgenticIndexScore": 2.0,
             "stars": 5,
             "stars_delta": 0,
@@ -64,7 +66,7 @@ def test_write_category_readme(tmp_path):
     text = (tmp_path / "README_CatA.md").read_text()
     assert "Top Agentic-AI Repositories: CatA" in text
     assert "`ai-agent`" in text
-    assert "| 1 | a |" in text
+    assert "| 1 | [a](https://github.com/o/a) |" in text
 
 
 def test_write_all_categories(tmp_path):

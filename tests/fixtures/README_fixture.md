@@ -5,21 +5,35 @@ Agentic-Index continuously scores and curates every open-source framework for bu
 We rank everything using a transparent scoring formula based on:
 
   * 🌟 Stars & momentum
-  * 🔧 Maintenance & issue health
-  * 📚 Docs & examples
-  * 🧠 Ecosystem fit
-  * 📅 Recency
-  * ⚖️ Licensing
+* 🔧 Maintenance & issue health
+* 📚 Docs & examples
+* 🧠 Ecosystem fit
+* 📅 Recency
+* ⚖️ Licensing
+
+### Metrics Explained
+
+| Emoji | Field | Formula | Updated | Source |
+|-------|-------|---------|---------|--------|
+| ⭐ | `stars_7d` | GitHub star Δ (7 days) | Nightly | `scripts/scrape_repos.py` |
+| 🔧 | `maintenance` | Issue/PR hygiene score | Weekly | `score/maintenance.py` |
+| 📅 | `release_age` | Days since latest release | Nightly | `scripts/scrape_repos.py` |
+| 📚 | `docs_quality` | Heuristic score (README + examples) | Monthly | `score/docs.py` |
+| 🧠 | `ecosystem_fit` | Keyword-based tag affinity | Monthly | `score/ecosystem.py` |
+| ⚖️ | `license_score` | OSI compatibility / restrictiveness | Static | `score/license.py` |
+
+Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metrics Legend](#metrics-legend) for metric details. The full JSON schema is documented in [SCHEMA.md](SCHEMA.md). Detailed metric fields live in [docs/METRICS_SCHEMA.md](docs/METRICS_SCHEMA.md).
 
 > **🎯 TL;DR:** This isn’t just a list—it’s your launchpad for building with AI agents.
 
-Want a shortcut? Jump to the [Fast-Start table](FAST_START.md).
+[🚀 Jump to Fast-Start Picks →](FAST_START.md)
 
 -----
 
 <p align="center">
 ![build](badges/build.svg)
 ![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
+![security](https://img.shields.io/badge/security-0%20issues-brightgreen)
 ![docs](badges/docs.svg)
 ![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index)
 ![license](badges/license.svg)
@@ -34,12 +48,12 @@ This catalogue is maintained by the Agentic-Index project and is updated regular
 ## TOC
 
 * [✨ Why Agentic Index is Different](#-why-agentic-index-is-different)
-* [🚀 Fast-Start Picks (Curated for Newcomers)](#-fast-start-picks-curated-for-newcomers)
 * [⚡ Installation & Quick-start](#-installation--quick-start)
 * [🏆 The Agentic-Index Top 100: AI Agent Repositories](#-the-agentic-index-top-100-ai-agent-repositories)
   * [💎 Honourable Mentions / Niche & Novel Gems](HONOURABLE.md)
     * [🔬 Our Methodology & Scoring Explained](#our-methodology--scoring-explained)
     * [🏷️ Category Definitions](#-category-definitions)
+  * [📚 Explore by Category](#-explore-by-category)
   * [🔄 Changelog](#-changelog)
   * [🏗 Architecture](#-architecture)
   * [🔧 Usage](#-usage)
@@ -67,6 +81,8 @@ Agentic-Index is built to be a reliable, data-driven launchpad for your next Age
 
 ## ⚡ Installation & Quick-start
 
+New contributors should start with the [ONBOARDING guide](docs/ONBOARDING.md) for environment setup and troubleshooting.
+
 ```bash
 pip install agentic-index-cli
 
@@ -78,98 +94,89 @@ cat README.md | less         # see table injected
 
 -----
 
-<a id="-fast-start-picks-curated-for-newcomers"></a>
-## 🚀 Fast-Start Picks (Curated for Newcomers)
-
-New to Agentic-AI or just want the good stuff fast? These repos are top-tier for usability, community, docs, or just plain cool ideas:
-
-  * **CrewAI ([crewAIInc/crewAI](https://github.com/crewAIInc/crewAI))**: Slick orchestration for role-playing, autonomous AI agents. Built for collaborative intelligence. [1]
-  * **AutoGen ([microsoft/autogen](https://github.com/microsoft/autogen))**: Microsoft's powerhouse for multi-agent conversational apps. Flexible and robust. [6, 7, 2]
-  * **Langchain ([langchain-ai/langchain](https://github.com/langchain-ai/langchain))**: The OG. A massive library for LLM apps with deep agent capabilities and tons of integrations. [8, 9]
-  * **AutoGPT ((https://github.com/Significant-Gravitas/AutoGPT))**: One of the first to show off truly autonomous GPT-4, making agentic concepts go viral. [10, 11]
-  * **BabyAGI ([yoheinakajima/babyagi](https://github.com/yoheinakajima/babyagi))**: Simple, elegant task management loop that inspired a generation of agent frameworks. [3]
-  * **VoltAgent ([VoltAgent/voltagent](https://github.com/VoltAgent/voltagent))**: Clean TypeScript framework for modular AI agent dev, with built-in observability. [12]
-
------
 
 <a id="-the-agentic-index-top-100-ai-agent-repositories"></a>
 ## 🏆 The Agentic-Index Top 100: AI Agent Repositories
 
 The definitive list of Agentic-AI repositories, ranked by the Agentic Index Score. This score is a holistic measure of project quality, activity, and community love.
-*(Data updated as of: 2025-06-16T17:39:49 UTC)*
+*(Data updated as of: 2025-06-16T05:56:02 UTC)*
 
 <!-- TOP50:START -->
-| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |
-|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|
-| 1 | dify | 6.07 | 103135 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 16.65 | General-purpose |
-| 2 | langflow | 5.96 | 73030 |  | +0 | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 16.16 | DevTools |
-| 3 | browser-use | 5.88 | 63085 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.95 | General-purpose |
-| 4 | OpenHands | 5.84 | 57980 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.82 | General-purpose |
-| 5 | lobe-chat | 5.83 | 62452 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.93 | RAG-centric |
-| 6 | MetaGPT | 5.82 | 56381 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.78 | Multi-Agent Coordination |
-| 7 | ragflow | 5.81 | 55032 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.75 | RAG-centric |
-| 8 | LLaMA-Factory | 5.79 | 52214 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.67 | General-purpose |
-| 9 | system-prompts-and-models... | 5.78 | 57188 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.80 | DevTools |
-| 10 | cline | 5.72 | 45640 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.48 | General-purpose |
-| 11 | anything-llm | 5.71 | 45276 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.47 | RAG-centric |
-| 12 | llama_index | 5.68 | 42328 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.37 | General-purpose |
-| 13 | autogen | 5.67 | 45934 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.49 | General-purpose |
-| 14 | awesome-llm-apps | 5.63 | 38434 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.23 | RAG-centric |
-| 15 | Flowise | 5.60 | 39990 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.29 | General-purpose |
-| 16 | mem0 | 5.57 | 34409 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.07 | General-purpose |
-| 17 | ChatTTS | 5.56 | 36777 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.17 | General-purpose |
-| 18 | Langchain-Chatchat | 5.56 | 35279 |  |  | 0.85 | 0.00 | 0.00 | 1.00 | 0.00 | 15.11 | RAG-centric |
-| 19 | crewAI | 5.55 | 32869 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.00 | Multi-Agent Coordination |
-| 20 | AgentGPT | 5.51 | 34319 |  |  | 0.95 | 0.00 | 0.00 | 0.50 | 0.00 | 15.07 | General-purpose |
-| 21 | agno | 5.47 | 28227 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.78 | Multi-Agent Coordination |
-| 22 | khoj | 5.46 | 30318 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.89 | Experimental |
-| 23 | ChatDev | 5.45 | 27021 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.72 | Multi-Agent Coordination |
-| 24 | LibreChat | 5.45 | 26727 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.71 | General-purpose |
-| 25 | ai-agents-for-beginners | 5.43 | 26018 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.67 | General-purpose |
-| 26 | cherry-studio | 5.43 | 28392 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.79 | General-purpose |
-| 27 | Jobs_Applier_AI_Agent_AIHawk | 5.43 | 28304 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.79 | General-purpose |
-| 28 | qlib | 5.42 | 25080 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.61 | Experimental |
-| 29 | composio | 5.37 | 25493 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.64 | General-purpose |
-| 30 | FastGPT | 5.36 | 24714 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.59 | RAG-centric |
-| 31 | gpt-researcher | 5.35 | 21855 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.42 | Experimental |
-| 32 | CopilotKit | 5.33 | 21149 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.37 | General-purpose |
-| 33 | haystack | 5.33 | 21141 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.37 | RAG-centric |
-| 34 | swarm | 5.26 | 19917 |  |  | 0.81 | 0.00 | 0.00 | 1.00 | 0.00 | 14.28 | Multi-Agent Coordination |
-| 35 | agentic | 5.24 | 17632 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.11 | General-purpose |
-| 36 | vanna | 5.23 | 18102 |  |  | 0.90 | 0.00 | 0.00 | 1.00 | 0.00 | 14.14 | RAG-centric |
-| 37 | DB-GPT | 5.21 | 16757 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.03 | General-purpose |
-| 38 | deep-research | 5.21 | 16627 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.02 | Experimental |
-| 39 | letta | 5.21 | 16841 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.04 | General-purpose |
-| 40 | agenticSeek | 5.20 | 18115 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.14 | General-purpose |
-| 41 | SWE-agent | 5.20 | 16282 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.99 | General-purpose |
-| 42 | eliza | 5.19 | 16065 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.97 | General-purpose |
-| 43 | RagaAI-Catalyst | 5.19 | 16188 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.98 | RAG-centric |
-| 44 | DocsGPT | 5.18 | 15708 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.94 | DevTools |
-| 45 | awesome-ai-agents | 5.17 | 18563 |  |  | 0.77 | 0.00 | 0.00 | 0.50 | 0.00 | 14.18 | General-purpose |
-| 46 | devika | 5.14 | 19330 |  |  | 0.29 | 0.00 | 0.00 | 1.00 | 0.00 | 14.24 | Experimental |
-| 47 | goose | 5.14 | 14558 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.83 | General-purpose |
-| 48 | suna | 5.13 | 14367 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.81 | General-purpose |
-| 49 | SuperAGI | 5.13 | 16412 |  |  | 0.67 | 0.00 | 0.00 | 1.00 | 0.00 | 14.00 | RAG-centric |
-| 50 | ai-pdf-chatbot-langchain | 5.12 | 15572 |  |  | 0.75 | 0.00 | 0.00 | 1.00 | 0.00 | 13.93 | General-purpose |
+| Rank | Repo | Description | Score | Stars | Δ Stars |
+|-----:|------|-------------|------:|------:|--------:|
+| 1 | [dify](https://github.com/langgenius/dify) | Production-ready platform for agentic workflow development. | 6.08 | 103135 |  |
+| 2 | [langflow](https://github.com/langflow-ai/langflow) | Langflow is a powerful tool for building and deploying AI-powered agents and workflows. | 5.96 | 73030 |  |
+| 3 | [browser-use](https://github.com/browser-use/browser-use) | 🌐 Make websites accessible for AI agents. Automate tasks online with ease. | 5.88 | 63085 |  |
+| 4 | [OpenHands](https://github.com/All-Hands-AI/OpenHands) | 🙌 OpenHands: Code Less, Make More | 5.84 | 57980 |  |
+| 5 | [lobe-chat](https://github.com/lobehub/lobe-chat) | 🤯 Lobe Chat - an open-source, modern-design AI chat framework. Supports Multi AI Providers( OpenAI / Claude 4 / Gemini / Ollama / DeepSeek / Qwen),... | 5.83 | 62452 |  |
+| 6 | [MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming | 5.82 | 56381 |  |
+| 7 | [ragflow](https://github.com/infiniflow/ragflow) | RAGFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding. | 5.81 | 55032 |  |
+| 8 | [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) | Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024) | 5.79 | 52214 |  |
+| 9 | [system-prompts-and-models...](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | FULL v0, Cursor, Manus, Same.dev, Lovable, Devin, Replit Agent, Windsurf Agent, VSCode Agent, Dia Browser & Trae AI (And other Open Sourced) System... | 5.78 | 57188 |  |
+| 10 | [cline](https://github.com/cline/cline) | Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission ... | 5.72 | 45640 |  |
+| 11 | [anything-llm](https://github.com/Mintplex-Labs/anything-llm) | The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, MCP compatibility,  and more. | 5.71 | 45276 |  |
+| 12 | [llama_index](https://github.com/run-llama/llama_index) | LlamaIndex is the leading framework for building LLM-powered agents over your data. | 5.68 | 42328 |  |
+| 13 | [autogen](https://github.com/microsoft/autogen) | A programming framework for agentic AI 🤖 PyPi: autogen-agentchat Discord: https://aka.ms/autogen-discord Office Hour: https://aka.ms/autogen-office... | 5.67 | 45934 |  |
+| 14 | [awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models. | 5.63 | 38434 |  |
+| 15 | [Flowise](https://github.com/FlowiseAI/Flowise) | Build AI Agents, Visually | 5.60 | 39990 |  |
+| 16 | [mem0](https://github.com/mem0ai/mem0) | Memory for AI Agents; Announcing OpenMemory MCP - local and secure memory management. | 5.57 | 34409 |  |
+| 17 | [ChatTTS](https://github.com/2noise/ChatTTS) | A generative speech model for daily dialogue. | 5.56 | 36777 |  |
+| 18 | [Langchain-Chatchat](https://github.com/chatchat-space/Langchain-Chatchat) | Langchain-Chatchat（原Langchain-ChatGLM）基于 Langchain 与 ChatGLM, Qwen 与 Llama 等语言模型的 RAG 与 Agent 应用 / Langchain-Chatchat (formerly langchain-ChatGLM),... | 5.56 | 35279 |  |
+| 19 | [crewAI](https://github.com/crewAIInc/crewAI) | Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together se... | 5.55 | 32869 |  |
+| 20 | [AgentGPT](https://github.com/reworkd/AgentGPT) | 🤖 Assemble, configure, and deploy autonomous AI Agents in your browser. | 5.51 | 34319 |  |
+| 21 | [agno](https://github.com/agno-agi/agno) | Full-stack framework for building Multi-Agent Systems with memory, knowledge and reasoning. | 5.47 | 28227 |  |
+| 22 | [khoj](https://github.com/khoj-ai/khoj) | Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any o... | 5.46 | 30318 |  |
+| 23 | [ChatDev](https://github.com/OpenBMB/ChatDev) | Create Customized Software using Natural Language Idea (through LLM-powered Multi-Agent Collaboration) | 5.45 | 27021 |  |
+| 24 | [LibreChat](https://github.com/danny-avila/LibreChat) | Enhanced ChatGPT Clone: Features Agents, DeepSeek, Anthropic, AWS, OpenAI, Assistants API, Azure, Groq, o1, GPT-4o, Mistral, OpenRouter, Vertex AI,... | 5.45 | 26727 |  |
+| 25 | [ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners) | 11 Lessons to Get Started Building AI Agents | 5.43 | 26018 |  |
+| 26 | [cherry-studio](https://github.com/CherryHQ/cherry-studio) | 🍒 Cherry Studio is a desktop client that supports for multiple LLM providers. | 5.43 | 28392 |  |
+| 27 | [Jobs_Applier_AI_Agent_AIHawk](https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk) | AIHawk aims to easy job hunt process by automating the job application process. Utilizing artificial intelligence, it enables users to apply for mu... | 5.43 | 28304 |  |
+| 28 | [qlib](https://github.com/microsoft/qlib) | Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productio... | 5.42 | 25080 |  |
+| 29 | [composio](https://github.com/ComposioHQ/composio) | Composio equips your AI agents & LLMs with 100+ high-quality integrations via function calling | 5.37 | 25493 |  |
+| 30 | [FastGPT](https://github.com/labring/FastGPT) | FastGPT is a knowledge-based platform built on the LLMs, offers a comprehensive suite of out-of-the-box capabilities such as data processing, RAG r... | 5.36 | 24714 |  |
+| 31 | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | LLM based autonomous agent that conducts deep local and web research on any topic and generates a long report with citations. | 5.35 | 21855 |  |
+| 32 | [CopilotKit](https://github.com/CopilotKit/CopilotKit) | React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic last-mile 🪁 | 5.33 | 21149 |  |
+| 33 | [haystack](https://github.com/deepset-ai/haystack) | AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pi... | 5.33 | 21141 |  |
+| 34 | [swarm](https://github.com/openai/swarm) | Educational framework exploring ergonomic, lightweight multi-agent orchestration. Managed by OpenAI Solution team. | 5.26 | 19917 |  |
+| 35 | [agentic](https://github.com/transitive-bullshit/agentic) | AI agent stdlib that works with any LLM and TypeScript AI SDK. | 5.24 | 17632 |  |
+| 36 | [vanna](https://github.com/vanna-ai/vanna) | 🤖 Chat with your SQL database 📊. Accurate Text-to-SQL Generation via LLMs using RAG 🔄. | 5.23 | 18102 |  |
+| 37 | [DB-GPT](https://github.com/eosphoros-ai/DB-GPT) | AI Native Data App Development framework with AWEL(Agentic Workflow Expression Language) and Agents | 5.21 | 16757 |  |
+| 38 | [deep-research](https://github.com/dzhng/deep-research) | An AI-powered research assistant that performs iterative, deep research on any topic by combining search engines, web scraping, and large language ... | 5.21 | 16627 |  |
+| 39 | [letta](https://github.com/letta-ai/letta) | Letta (formerly MemGPT) is the stateful agents framework with memory, reasoning, and context management. | 5.21 | 16841 |  |
+| 40 | [agenticSeek](https://github.com/Fosowl/agenticSeek) | Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electri... | 5.20 | 18115 |  |
+| 41 | [SWE-agent](https://github.com/SWE-agent/SWE-agent) | SWE-agent takes a GitHub issue and tries to automatically fix it, using your LM of choice. It can also be employed for offensive cybersecurity or c... | 5.20 | 16282 |  |
+| 42 | [eliza](https://github.com/elizaOS/eliza) | Autonomous agents for everyone | 5.19 | 16065 |  |
+| 43 | [RagaAI-Catalyst](https://github.com/raga-ai-hub/RagaAI-Catalyst) | Python SDK for Agent AI Observability, Monitoring and Evaluation Framework. Includes features like agent, llm and tools tracing, debugging multi-ag... | 5.19 | 16188 |  |
+| 44 | [DocsGPT](https://github.com/arc53/DocsGPT) | DocsGPT is an open-source genAI tool that helps users get reliable answers from knowledge source, while avoiding hallucinations. It enables private... | 5.18 | 15708 |  |
+| 45 | [awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents) | A list of AI autonomous agents | 5.17 | 18563 |  |
+| 46 | [devika](https://github.com/stitionai/devika) | Devika is an Agentic AI Software Engineer that can understand high-level human instructions, break them down into steps, research relevant informat... | 5.14 | 19330 |  |
+| 47 | [goose](https://github.com/block/goose) | an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM | 5.14 | 14558 |  |
+| 48 | [suna](https://github.com/kortix-ai/suna) | Suna - Open Source Generalist AI Agent | 5.13 | 14367 |  |
+| 49 | [SuperAGI](https://github.com/TransformerOptimus/SuperAGI) | <⚡️> SuperAGI - A dev-first open source autonomous AI agent framework. Enabling developers to build, manage & run useful autonomous agents quickly ... | 5.13 | 16412 |  |
+| 50 | [ai-pdf-chatbot-langchain](https://github.com/mayooear/ai-pdf-chatbot-langchain) | AI PDF chatbot agent built with LangChain & LangGraph  | 5.12 | 15572 |  |
 <!-- TOP50:END -->
 *➡️ Dig into how these scores are cooked up in our [Methodology section](#our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](./docs/methodology.md).*
+
+<a id="metrics-legend"></a>
 
 <details>
 <summary>📊 Metrics Legend</summary>
 
-- Our score blends stars, recency, issue health, docs completeness, license freedom and ecosystem integration. **[See full formula →](./docs/methodology.md#scoring-formula)**
+Our score blends stars, recency, issue health, docs completeness, license freedom and ecosystem integration. **[See full formula →](./docs/methodology.md#scoring-formula)**
 - ⭐ Δ7d = stars gained in the last 7 days
 - 🔧 Maint = 1 / (days_since_last_commit * open_issue_ratio)
 - 📅 Release = 1 / days_since_last_release
 - 📚 Docs = 1 if README > 300 words & has code else 0
 - 🧠 Fit = fraction of ecosystem keywords matched
 - ⚖️ License = 1 for permissive, 0.5 for viral, 0 if none
+- Missing data for a metric shows as `-` instead of `0.00`
 
 </details>
 
------
+For a full description of every metric field, see [SCHEMA.md](./docs/SCHEMA.md) and [docs/METRICS_SCHEMA.md](docs/METRICS_SCHEMA.md).
 
 -----
+
 ### Our Methodology & Scoring Explained
 
 <a id="our-methodology--scoring-explained"></a>
@@ -205,6 +212,11 @@ Quick guide to our categories (and the icons you'll see in the table):
   * 🛠️ **DevTools:** Libraries and platforms to help you build, test, deploy, or secure agents (e.g., `msoedov/agentic_security` [23]).
   * 🧪 **Experimental:** Bleeding-edge, research-heavy, or early-stage projects (e.g., BabyAGI [3]).
 
+<a id="-explore-by-category"></a>
+## 📚 Explore by Category
+<!-- CATEGORY:START -->
+
+<!-- CATEGORY:END -->
 -----
 
 <a id="-changelog"></a>
@@ -217,14 +229,8 @@ This isn't a static list. It's alive\! See [CHANGELOG.md](./CHANGELOG.md) for al
 <a id="-architecture"></a>
 ## 🏗 Architecture
 
-```mermaid
-flowchart LR
-    A[User] --> B[Scrape]
-    B --> C[JSON]
-    C --> D[Rank]
-    D --> E[Markdown]
-    E --> F[View]
-```
+
+![System Architecture](docs/architecture.svg)
 
 -----
 
@@ -237,13 +243,17 @@ Run the indexer to fetch fresh repo data:
 python -m agentic_index_cli.agentic_index --min-stars 50 --iterations 1 --output data
 ```
 
+The CLI reads tuning parameters from `agentic_index_cli/config.yaml`. Use
+`--config my.yml` with any command to override these defaults.
+
 Generated tables live in the `data/` directory.
 
 <a id="-how-refresh-works"></a>
 ## 🔄 How refresh works
 
-A scheduled GitHub Action keeps the index up to date. It runs the scraper and
-ranker, opens a pull request with any changes, and can auto-merge when all
+A scheduled GitHub Action keeps the index up to date. It runs the extended
+scraper and metric scoring before ranking repositories, then opens a pull
+request with any changes and can auto-merge when all
 checks pass. You can also trigger this process manually by running
 [`scripts/trigger_refresh.sh`](scripts/trigger_refresh.sh).
 
@@ -294,6 +304,8 @@ npx pa11y web/index.html
 
 You can also run `./scripts/install_pa11y_deps.sh` to install pa11y and Chrome.
 
+See [ONBOARDING.md](docs/ONBOARDING.md#running-tests) for instructions on running the test suite and replicating CI's offline environment.
+
 ## 💻 Developer
 
 To trigger a data refresh via GitHub Actions, run:
@@ -303,6 +315,7 @@ bash scripts/trigger_refresh.sh 75
 ```
 
 Replace `75` with your desired minimum star count. The script requires the GitHub CLI and an authenticated token.
+Set a personal access token via the `GITHUB_TOKEN_REPO_STATS` environment variable to avoid hitting rate limits when scraping.
 
 -----
 
@@ -320,12 +333,13 @@ Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
   * Install [Git LFS](https://git-lfs.github.com/) and run `git lfs install`.
     PNG and GIF assets are tracked via LFS.
   * Set up your dev environment with [DEVELOPMENT.md](./docs/DEVELOPMENT.md).
+  * Run `source scripts/setup-env.sh` to configure your environment.
+
 
 For tips on keeping your branch in sync with `main` and resolving conflicts, see
 [CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).
 
 Let's build the best damn agent list together\!
-![Code of Conduct](badges/coc.svg)
 
 
 -----

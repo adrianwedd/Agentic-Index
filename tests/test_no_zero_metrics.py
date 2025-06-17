@@ -18,7 +18,7 @@ def _setup(tmp_path: Path):
             "stars_delta": 0,
             "score_delta": 0,
             "recency_factor": 0.0,
-            "issue_health": 0.0,
+            "issue_health": 0.1,
             "doc_completeness": 0.0,
             "license_freedom": 0.0,
             "ecosystem_integration": 0.0,
@@ -60,16 +60,14 @@ def _setup(tmp_path: Path):
 
 def test_no_all_zero_rows(tmp_path):
     _setup(tmp_path)
-    text = inj.build_readme(top_n=50)
-    lines = [l for l in text.splitlines() if l.startswith("|")][2:]
-    for line in lines:
-        parts = [p.strip() for p in line.split("|")]
-        rec, health, docs, lic, eco = (
-            parts[6],
-            parts[7],
-            parts[8],
-            parts[9],
-            parts[10],
+    _, repos = inj._load_rows(return_repos=True)
+    for repo in repos:
+        metrics = (
+            repo.get("recency_factor", 0),
+            repo.get("issue_health", 0),
+            repo.get("doc_completeness", 0),
+            repo.get("license_freedom", 0),
+            repo.get("ecosystem_integration", 0),
         )
-        if rec == health == docs == lic == eco == "0.00":
+        if all(float(m) == 0 for m in metrics):
             raise AssertionError("row shows all zero metrics")

@@ -102,58 +102,58 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 *(Data updated as of: 2025-06-16T05:56:02 UTC)*
 
 <!-- TOP50:START -->
-| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |
-|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|
-| 1 | dify | 5.28 | 103268 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 16.66 | DevTools |
-| 2 | langflow | 5.17 | 73776 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 16.17 | DevTools |
-| 3 | browser-use | 5.10 | 63197 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.95 | General-purpose |
-| 4 | OpenHands | 5.07 | 58086 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.83 | General-purpose |
-| 5 | lobe-chat | 5.06 | 62457 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.93 | RAG-centric |
-| 6 | MetaGPT | 5.06 | 56406 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.78 | Multi-Agent |
-| 7 | ragflow | 5.04 | 55104 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.75 | RAG-centric |
-| 8 | system-prompts-and-models... | 5.03 | 57495 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.81 | DevTools |
-| 9 | LLaMA-Factory | 5.02 | 52281 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.67 | General-purpose |
-| 10 | anything-llm | 4.96 | 45309 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.47 | RAG-centric |
-| 11 | cline | 4.96 | 45704 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.48 | General-purpose |
-| 12 | autogen | 4.93 | 45993 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.49 | General-purpose |
-| 13 | llama_index | 4.93 | 42355 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.37 | General-purpose |
-| 14 | awesome-llm-apps | 4.92 | 41125 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.33 | RAG-centric |
-| 15 | Flowise | 4.87 | 40065 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.29 | General-purpose |
-| 16 | ChatTTS | 4.84 | 36799 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.17 | General-purpose |
-| 17 | mem0 | 4.84 | 34513 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.07 | General-purpose |
-| 18 | crewAI | 4.82 | 32933 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 15.01 | Multi-Agent |
-| 19 | Langchain-Chatchat | 4.81 | 35287 |  |  | 0.84 | 0.00 | 0.00 | 1.00 | 0.00 | 15.11 | RAG-centric |
-| 20 | AgentGPT | 4.79 | 34323 |  |  | 0.95 | 0.00 | 0.00 | 0.50 | 0.00 | 15.07 | General-purpose |
-| 21 | agno | 4.76 | 28280 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.79 | Multi-Agent |
-| 22 | khoj | 4.75 | 30327 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.89 | Experimental |
-| 23 | ChatDev | 4.74 | 27024 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.72 | Multi-Agent |
-| 24 | ai-agents-for-beginners | 4.73 | 26615 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.70 | General-purpose |
-| 25 | LibreChat | 4.73 | 26789 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.71 | General-purpose |
-| 26 | cherry-studio | 4.72 | 28444 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.80 | General-purpose |
-| 27 | Jobs_Applier_AI_Agent_AIHawk | 4.72 | 28310 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.79 | General-purpose |
-| 28 | qlib | 4.71 | 25192 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.62 | Experimental |
-| 29 | composio | 4.68 | 25499 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.64 | General-purpose |
-| 30 | FastGPT | 4.66 | 24718 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.59 | RAG-centric |
-| 31 | gpt-researcher | 4.65 | 21875 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.42 | Experimental |
-| 32 | CopilotKit | 4.63 | 21205 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.37 | General-purpose |
-| 33 | haystack | 4.63 | 21154 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.37 | RAG-centric |
-| 34 | swarm | 4.56 | 19920 |  |  | 0.80 | 0.00 | 0.00 | 1.00 | 0.00 | 14.28 | Multi-Agent |
-| 35 | agentic | 4.55 | 17639 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.11 | General-purpose |
-| 36 | vanna | 4.54 | 18127 |  |  | 0.89 | 0.00 | 0.00 | 1.00 | 0.00 | 14.15 | RAG-centric |
-| 37 | agenticSeek | 4.53 | 18268 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 14.16 | General-purpose |
-| 38 | DB-GPT | 4.53 | 16764 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.03 | DevTools |
-| 39 | deep-research | 4.53 | 16638 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.02 | Experimental |
-| 40 | letta | 4.53 | 16861 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.04 | General-purpose |
-| 41 | SWE-agent | 4.52 | 16305 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.99 | Domain-Specific |
-| 42 | eliza | 4.51 | 16078 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.97 | General-purpose |
-| 43 | RagaAI-Catalyst | 4.51 | 16193 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.98 | Multi-Agent |
-| 44 | DocsGPT | 4.50 | 15708 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.94 | RAG-centric |
-| 45 | awesome-ai-agents | 4.48 | 18587 |  |  | 0.76 | 0.00 | 0.00 | 0.50 | 0.00 | 14.18 | General-purpose |
-| 46 | goose | 4.47 | 14627 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.84 | DevTools |
-| 47 | activepieces | 4.46 | 15291 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 13.90 | General-purpose |
-| 48 | suna | 4.46 | 14425 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.82 | General-purpose |
-| 49 | ai | 4.45 | 14955 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 13.87 | DevTools |
-| 50 | botpress | 4.45 | 13805 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.75 | General-purpose |
+| Rank | Repo | Description | Score | Stars | Δ Stars |
+|-----:|------|-------------|------:|------:|--------:|
+| 1 | [dify](https://github.com/langgenius/dify) | Production-ready platform for agentic workflow development. | 5.28 | 103268 |  |
+| 2 | [langflow](https://github.com/langflow-ai/langflow) | Langflow is a powerful tool for building and deploying AI-powered agents and workflows. | 5.17 | 73776 |  |
+| 3 | [browser-use](https://github.com/browser-use/browser-use) | 🌐 Make websites accessible for AI agents. Automate tasks online with ease. | 5.10 | 63197 |  |
+| 4 | [OpenHands](https://github.com/All-Hands-AI/OpenHands) | 🙌 OpenHands: Code Less, Make More | 5.07 | 58086 |  |
+| 5 | [lobe-chat](https://github.com/lobehub/lobe-chat) | 🤯 Lobe Chat - an open-source, modern-design AI chat framework. Supports Multi AI Providers( OpenAI / Claude 4 / Gemini / Ollama / DeepSeek / Qwen),... | 5.06 | 62457 |  |
+| 6 | [MetaGPT](https://github.com/FoundationAgents/MetaGPT) | 🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming | 5.06 | 56406 |  |
+| 7 | [ragflow](https://github.com/infiniflow/ragflow) | RAGFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding. | 5.04 | 55104 |  |
+| 8 | [system-prompts-and-models...](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | FULL v0, Cursor, Manus, Same.dev, Lovable, Devin, Replit Agent, Windsurf Agent, VSCode Agent, Dia Browser & Trae AI (And other Open Sourced) System... | 5.03 | 57495 |  |
+| 9 | [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) | Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024) | 5.02 | 52281 |  |
+| 10 | [anything-llm](https://github.com/Mintplex-Labs/anything-llm) | The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, MCP compatibility,  and more. | 4.96 | 45309 |  |
+| 11 | [cline](https://github.com/cline/cline) | Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission ... | 4.96 | 45704 |  |
+| 12 | [autogen](https://github.com/microsoft/autogen) | A programming framework for agentic AI 🤖 PyPi: autogen-agentchat Discord: https://aka.ms/autogen-discord Office Hour: https://aka.ms/autogen-office... | 4.93 | 45993 |  |
+| 13 | [llama_index](https://github.com/run-llama/llama_index) | LlamaIndex is the leading framework for building LLM-powered agents over your data. | 4.93 | 42355 |  |
+| 14 | [awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models. | 4.92 | 41125 |  |
+| 15 | [Flowise](https://github.com/FlowiseAI/Flowise) | Build AI Agents, Visually | 4.87 | 40065 |  |
+| 16 | [ChatTTS](https://github.com/2noise/ChatTTS) | A generative speech model for daily dialogue. | 4.84 | 36799 |  |
+| 17 | [mem0](https://github.com/mem0ai/mem0) | Memory for AI Agents; Announcing OpenMemory MCP - local and secure memory management. | 4.84 | 34513 |  |
+| 18 | [crewAI](https://github.com/crewAIInc/crewAI) | Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together se... | 4.82 | 32933 |  |
+| 19 | [Langchain-Chatchat](https://github.com/chatchat-space/Langchain-Chatchat) | Langchain-Chatchat（原Langchain-ChatGLM）基于 Langchain 与 ChatGLM, Qwen 与 Llama 等语言模型的 RAG 与 Agent 应用 / Langchain-Chatchat (formerly langchain-ChatGLM),... | 4.81 | 35287 |  |
+| 20 | [AgentGPT](https://github.com/reworkd/AgentGPT) | 🤖 Assemble, configure, and deploy autonomous AI Agents in your browser. | 4.79 | 34323 |  |
+| 21 | [agno](https://github.com/agno-agi/agno) | Full-stack framework for building Multi-Agent Systems with memory, knowledge and reasoning. | 4.76 | 28280 |  |
+| 22 | [khoj](https://github.com/khoj-ai/khoj) | Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any o... | 4.75 | 30327 |  |
+| 23 | [ChatDev](https://github.com/OpenBMB/ChatDev) | Create Customized Software using Natural Language Idea (through LLM-powered Multi-Agent Collaboration) | 4.74 | 27024 |  |
+| 24 | [ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners) | 11 Lessons to Get Started Building AI Agents | 4.73 | 26615 |  |
+| 25 | [LibreChat](https://github.com/danny-avila/LibreChat) | Enhanced ChatGPT Clone: Features Agents, DeepSeek, Anthropic, AWS, OpenAI, Assistants API, Azure, Groq, o1, GPT-4o, Mistral, OpenRouter, Vertex AI,... | 4.73 | 26789 |  |
+| 26 | [cherry-studio](https://github.com/CherryHQ/cherry-studio) | 🍒 Cherry Studio is a desktop client that supports for multiple LLM providers. | 4.72 | 28444 |  |
+| 27 | [Jobs_Applier_AI_Agent_AIHawk](https://github.com/feder-cr/Jobs_Applier_AI_Agent_AIHawk) | AIHawk aims to easy job hunt process by automating the job application process. Utilizing artificial intelligence, it enables users to apply for mu... | 4.72 | 28310 |  |
+| 28 | [qlib](https://github.com/microsoft/qlib) | Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productio... | 4.71 | 25192 |  |
+| 29 | [composio](https://github.com/ComposioHQ/composio) | Composio equips your AI agents & LLMs with 100+ high-quality integrations via function calling | 4.68 | 25499 |  |
+| 30 | [FastGPT](https://github.com/labring/FastGPT) | FastGPT is a knowledge-based platform built on the LLMs, offers a comprehensive suite of out-of-the-box capabilities such as data processing, RAG r... | 4.66 | 24718 |  |
+| 31 | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | LLM based autonomous agent that conducts deep local and web research on any topic and generates a long report with citations. | 4.65 | 21875 |  |
+| 32 | [CopilotKit](https://github.com/CopilotKit/CopilotKit) | React UI + elegant infrastructure for AI Copilots, AI chatbots, and in-app AI agents. The Agentic last-mile 🪁 | 4.63 | 21205 |  |
+| 33 | [haystack](https://github.com/deepset-ai/haystack) | AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pi... | 4.63 | 21154 |  |
+| 34 | [swarm](https://github.com/openai/swarm) | Educational framework exploring ergonomic, lightweight multi-agent orchestration. Managed by OpenAI Solution team. | 4.56 | 19920 |  |
+| 35 | [agentic](https://github.com/transitive-bullshit/agentic) | AI agent stdlib that works with any LLM and TypeScript AI SDK. | 4.55 | 17639 |  |
+| 36 | [vanna](https://github.com/vanna-ai/vanna) | 🤖 Chat with your SQL database 📊. Accurate Text-to-SQL Generation via LLMs using RAG 🔄. | 4.54 | 18127 |  |
+| 37 | [agenticSeek](https://github.com/Fosowl/agenticSeek) | Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electri... | 4.53 | 18268 |  |
+| 38 | [DB-GPT](https://github.com/eosphoros-ai/DB-GPT) | AI Native Data App Development framework with AWEL(Agentic Workflow Expression Language) and Agents | 4.53 | 16764 |  |
+| 39 | [deep-research](https://github.com/dzhng/deep-research) | An AI-powered research assistant that performs iterative, deep research on any topic by combining search engines, web scraping, and large language ... | 4.53 | 16638 |  |
+| 40 | [letta](https://github.com/letta-ai/letta) | Letta (formerly MemGPT) is the stateful agents framework with memory, reasoning, and context management. | 4.53 | 16861 |  |
+| 41 | [SWE-agent](https://github.com/SWE-agent/SWE-agent) | SWE-agent takes a GitHub issue and tries to automatically fix it, using your LM of choice. It can also be employed for offensive cybersecurity or c... | 4.52 | 16305 |  |
+| 42 | [eliza](https://github.com/elizaOS/eliza) | Autonomous agents for everyone | 4.51 | 16078 |  |
+| 43 | [RagaAI-Catalyst](https://github.com/raga-ai-hub/RagaAI-Catalyst) | Python SDK for Agent AI Observability, Monitoring and Evaluation Framework. Includes features like agent, llm and tools tracing, debugging multi-ag... | 4.51 | 16193 |  |
+| 44 | [DocsGPT](https://github.com/arc53/DocsGPT) | DocsGPT is an open-source genAI tool that helps users get reliable answers from knowledge source, while avoiding hallucinations. It enables private... | 4.50 | 15708 |  |
+| 45 | [awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents) | A list of AI autonomous agents | 4.48 | 18587 |  |
+| 46 | [goose](https://github.com/block/goose) | an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM | 4.47 | 14627 |  |
+| 47 | [activepieces](https://github.com/activepieces/activepieces) | AI Agents & MCPs & AI Workflow Automation • (280+ MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs... | 4.46 | 15291 |  |
+| 48 | [suna](https://github.com/kortix-ai/suna) | Suna - Open Source Generalist AI Agent | 4.46 | 14425 |  |
+| 49 | [ai](https://github.com/vercel/ai) | The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents  | 4.45 | 14955 |  |
+| 50 | [botpress](https://github.com/botpress/botpress) | The open-source hub to build & deploy GPT/LLM Agents ⚡️ | 4.45 | 13805 |  |
 <!-- TOP50:END -->
 *➡️ Dig into how these scores are cooked up in our [Methodology section](#our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](./docs/methodology.md).*
 
