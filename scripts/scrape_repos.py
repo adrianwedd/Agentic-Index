@@ -16,8 +16,7 @@ from typing import Any, Dict, List
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-import requests
-
+from agentic_index_cli.internal import http_utils
 from agentic_index_cli.validate import save_repos
 
 logger = logging.getLogger(__name__)
@@ -49,7 +48,7 @@ def retry(func):
         for attempt in range(1, MAX_RETRIES + 1):
             try:
                 return func(*args, **kwargs)
-            except requests.RequestException as exc:
+            except Exception as exc:
                 if attempt == MAX_RETRIES:
                     logger.error("Request failed after %s attempts: %s", attempt, exc)
                     raise
@@ -63,11 +62,11 @@ def retry(func):
 
 
 @retry
-def _get(url: str, headers: Dict[str, str] | None = None) -> requests.Response:
+def _get(url: str, headers: Dict[str, str] | None = None) -> http_utils.Response:
     """GET with retry, timeout and rate-limit handling."""
     global API_LIMIT, API_REMAINING, API_CALLS
     _headers = HEADERS if headers is None else {**HEADERS, **headers}
-    resp = requests.get(url, headers=_headers, timeout=REQUEST_TIMEOUT)
+    resp = http_utils.sync_get(url, headers=_headers)
     API_CALLS += 1
     if "X-RateLimit-Limit" in resp.headers and API_LIMIT is None:
         API_LIMIT = int(resp.headers["X-RateLimit-Limit"])
@@ -78,11 +77,11 @@ def _get(url: str, headers: Dict[str, str] | None = None) -> requests.Response:
         sleep_for = max(0, reset - int(time.time()))
         logger.warning("Rate limit exceeded, sleeping %s seconds", sleep_for)
         time.sleep(sleep_for)
-        raise requests.HTTPError("rate limit", response=resp)
+        raise RuntimeError("rate limit")
     if resp.status_code >= 500:
-        raise requests.HTTPError(f"server error {resp.status_code}", response=resp)
+        raise RuntimeError(f"server error {resp.status_code}")
     if resp.status_code >= 400 and resp.status_code != 404:
-        resp.raise_for_status()
+        raise RuntimeError(f"http {resp.status_code}")
     return resp
 
 

@@ -1,8 +1,10 @@
 """GitHub scraping and ranking helpers used by the CLI."""
 
 import argparse
+import asyncio
 import csv
 import json
+import logging
 import math
 import os
 import sys
@@ -11,8 +13,10 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-import requests
+import aiohttp
 from rich.progress import track
+
+from agentic_index_cli.internal import http_utils
 
 SCORE_KEY = "AgenticIndexScore"
 
@@ -70,25 +74,15 @@ VIRAL_LICENSES = {
 
 def _get(
     url: str, *, params: dict | None = None, headers: dict | None = None
-) -> requests.Response:
+) -> http_utils.Response:
     """GET with retry and adaptive rate limit handling."""
-    backoff = 1
-    for attempt in range(5):
-        kwargs = {"headers": headers or HEADERS}
-        if params is not None:
-            kwargs["params"] = params
-        resp = requests.get(url, **kwargs)
-        if resp.status_code == 403 and resp.headers.get("X-RateLimit-Remaining") == "0":
-            reset = int(resp.headers.get("X-RateLimit-Reset", "0"))
-            sleep_for = max(0, reset - int(time.time()))
-            time.sleep(sleep_for)
-            continue
-        if resp.status_code >= 500:
-            time.sleep(backoff)
-            backoff *= 2
-            continue
-        return resp
-    raise requests.HTTPError(f"failed GET {url} after retries")
+    kwargs = {"headers": headers or HEADERS}
+    if params is not None:
+        kwargs["params"] = params
+    return http_utils.sync_get(url, **kwargs)
+
+
+logger = logging.getLogger(__name__)
 
 
 def github_search(query: str, page: int = 1) -> List[Dict]:
@@ -102,11 +96,11 @@ def github_search(query: str, page: int = 1) -> List[Dict]:
     }
     try:
         resp = _get(f"{GITHUB_API}/search/repositories", params=params)
-    except requests.RequestException as exc:
-        print(f"GitHub search error: {exc}", file=sys.stderr)
+    except Exception as exc:
+        logger.error("GitHub search error: %s", exc)
         return []
     if resp.status_code != 200:
-        print(f"GitHub search error {resp.status_code}: {resp.text}", file=sys.stderr)
+        logger.error("GitHub search error %s: %s", resp.status_code, resp.text)
         return []
     data = resp.json()
     return data.get("items", [])
@@ -120,11 +114,11 @@ def fetch_repo(full_name: str) -> Optional[Dict]:
         return cached
     try:
         resp = _get(f"{GITHUB_API}/repos/{full_name}")
-    except requests.RequestException as exc:
-        print(f"Repo fetch error {full_name}: {exc}", file=sys.stderr)
+    except Exception as exc:
+        logger.error("Repo fetch error %s: %s", full_name, exc)
         return None
     if resp.status_code != 200:
-        print(f"Repo fetch error {full_name} {resp.status_code}", file=sys.stderr)
+        logger.error("Repo fetch error %s %s", full_name, resp.status_code)
         return None
     data = resp.json()
     _save_cache(cache_file, data)
@@ -141,7 +135,8 @@ def fetch_readme(full_name: str) -> str:
         return cached
     try:
         resp = _get(f"{GITHUB_API}/repos/{full_name}/readme")
-    except requests.RequestException:
+    except Exception as exc:
+        logger.error("Readme fetch error %s: %s", full_name, exc)
         return ""
     if resp.status_code != 200:
         return ""
@@ -244,6 +239,93 @@ def compute_score(repo: Dict, readme: str) -> float:
     return round(score * 100 / 8, 2)  # normalized roughly to 0-100
 
 
+async def async_fetch_repo(
+    full_name: str, session: aiohttp.ClientSession
+) -> Optional[Dict]:
+    cache_file = CACHE_DIR / f"repo_{full_name.replace('/', '_')}.json"
+    cached = _load_cache(cache_file)
+    if cached:
+        return cached
+    try:
+        resp = await http_utils.async_get(
+            f"{GITHUB_API}/repos/{full_name}", session=session
+        )
+    except Exception as exc:
+        logger.error("Repo fetch error %s: %s", full_name, exc)
+        return None
+    if resp.status_code != 200:
+        logger.error("Repo fetch error %s %s", full_name, resp.status_code)
+        return None
+    data = resp.json()
+    _save_cache(cache_file, data)
+    return data
+
+
+async def async_fetch_readme(full_name: str, session: aiohttp.ClientSession) -> str:
+    cache_file = CACHE_DIR / f"readme_{full_name.replace('/', '_')}.txt"
+    cached = None
+    if cache_file.exists() and time.time() - cache_file.stat().st_mtime < CACHE_TTL:
+        cached = cache_file.read_text()
+    if cached:
+        return cached
+    try:
+        resp = await http_utils.async_get(
+            f"{GITHUB_API}/repos/{full_name}/readme", session=session
+        )
+    except Exception as exc:
+        logger.error("Readme fetch error %s: %s", full_name, exc)
+        return ""
+    if resp.status_code != 200:
+        return ""
+    data = resp.json()
+    if "content" in data:
+        import base64
+
+        text = base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
+        cache_file.parent.mkdir(parents=True, exist_ok=True)
+        cache_file.write_text(text)
+        return text
+    return ""
+
+
+async def async_harvest_repo(
+    full_name: str, session: aiohttp.ClientSession
+) -> Optional[Dict]:
+    cache_file = CACHE_DIR / f"meta_{full_name.replace('/', '_')}.json"
+    cached = _load_cache(cache_file)
+    if cached:
+        return cached
+    repo = await async_fetch_repo(full_name, session)
+    if not repo:
+        return None
+    readme = await async_fetch_readme(full_name, session)
+    score = compute_score(repo, readme)
+    category = categorize(repo.get("description", ""), repo.get("topics", []))
+    first_paragraph = readme.split("\n\n")[0][:200]
+    data = {
+        "name": full_name,
+        "description": repo.get("description", ""),
+        "stars": repo.get("stargazers_count", 0),
+        "forks": repo.get("forks_count", 0),
+        "open_issues": repo.get("open_issues_count", 0),
+        "closed_issues": repo.get("closed_issues", 0),
+        "last_commit": repo.get("pushed_at", ""),
+        "language": repo.get("language", ""),
+        "license": (
+            repo.get("license")
+            if not isinstance(repo.get("license"), dict)
+            else repo.get("license").get("spdx_id")
+        ),
+        "maintainer": repo.get("owner", {}).get("login"),
+        "topics": ",".join(repo.get("topics", [])),
+        "readme_excerpt": first_paragraph,
+        SCORE_KEY: score,
+        "category": category,
+    }
+    _save_cache(cache_file, data)
+    return data
+
+
 def harvest_repo(full_name: str) -> Optional[Dict]:
     """Return normalized data for ``full_name``."""
     cache_file = CACHE_DIR / f"meta_{full_name.replace('/', '_')}.json"
@@ -281,43 +363,77 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
     return data
 
 
+async def async_search_and_harvest(
+    min_stars: int = 0, max_pages: int = 1
+) -> List[Dict]:
+    seen = set()
+    results: List[Dict] = []
+    async with aiohttp.ClientSession() as session:
+        tasks = []
+        for term in SEARCH_TERMS:
+            for page in range(1, max_pages + 1):
+                query = f"{term} stars:>={min_stars}"
+                resp = await http_utils.async_get(
+                    f"{GITHUB_API}/search/repositories",
+                    params={
+                        "q": query,
+                        "sort": "stars",
+                        "order": "desc",
+                        "per_page": 100,
+                        "page": page,
+                    },
+                    session=session,
+                )
+                items = resp.json().get("items", [])
+                for repo in items:
+                    full_name = repo["full_name"]
+                    if full_name in seen:
+                        continue
+                    seen.add(full_name)
+                    tasks.append(
+                        asyncio.create_task(async_harvest_repo(full_name, session))
+                    )
+
+        for topic in TOPIC_FILTERS:
+            for page in range(1, max_pages + 1):
+                query = f"topic:{topic} stars:>={min_stars}"
+                resp = await http_utils.async_get(
+                    f"{GITHUB_API}/search/repositories",
+                    params={
+                        "q": query,
+                        "sort": "stars",
+                        "order": "desc",
+                        "per_page": 100,
+                        "page": page,
+                    },
+                    session=session,
+                )
+                items = resp.json().get("items", [])
+                for repo in items:
+                    full_name = repo["full_name"]
+                    if full_name in seen:
+                        continue
+                    seen.add(full_name)
+                    tasks.append(
+                        asyncio.create_task(async_harvest_repo(full_name, session))
+                    )
+
+        for fut in asyncio.as_completed(tasks):
+            try:
+                meta = await fut
+            except Exception as exc:
+                logger.error("harvest failed: %s", exc)
+                continue
+            if meta:
+                results.append(meta)
+    return results
+
+
 def search_and_harvest(min_stars: int = 0, max_pages: int = 1) -> List[Dict]:
     """Search GitHub and harvest repo metadata."""
-    seen = set()
-    results = []
-    for term in SEARCH_TERMS:
-        for page in track(
-            range(1, max_pages + 1),
-            description=f"{term}",
-            disable=not sys.stderr.isatty(),
-        ):
-            query = f"{term} stars:>={min_stars}"
-            repos = github_search(query, page)
-            for repo in repos:
-                full_name = repo["full_name"]
-                if full_name in seen:
-                    continue
-                seen.add(full_name)
-                meta = harvest_repo(full_name)
-                if meta:
-                    results.append(meta)
-    # Topic filter
-    for topic in TOPIC_FILTERS:
-        for page in track(
-            range(1, max_pages + 1),
-            description=f"topic:{topic}",
-            disable=not sys.stderr.isatty(),
-        ):
-            query = f"topic:{topic} stars:>={min_stars}"
-            repos = github_search(query, page)
-            for repo in repos:
-                full_name = repo["full_name"]
-                if full_name in seen:
-                    continue
-                seen.add(full_name)
-                meta = harvest_repo(full_name)
-                if meta:
-                    results.append(meta)
+    start = time.perf_counter()
+    results = asyncio.run(async_search_and_harvest(min_stars, max_pages))
+    logger.info("search_and_harvest completed in %.2fs", time.perf_counter() - start)
     return results
 
 

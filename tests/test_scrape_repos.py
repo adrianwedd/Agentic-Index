@@ -55,7 +55,9 @@ def test_one_shot_fields(tmp_path, monkeypatch):
         raise AssertionError(url)
 
     monkeypatch.chdir(tmp_path)
-    monkeypatch.setattr(scraper.requests, "get", fake_get)
+    monkeypatch.setattr(
+        scraper.http_utils, "sync_get", lambda url, **kw: fake_get(url, **kw)
+    )
     monkeypatch.setattr(scraper, "DEFAULT_REPOS", ["owner/repo"])
     scraper.main(["--one-shot"])
 
