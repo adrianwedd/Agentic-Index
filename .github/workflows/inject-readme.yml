@@ -1,0 +1,41 @@
+name: Daily README Injection
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force README injection outside schedule'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  inject-readme:
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'schedule'
+      || (github.event_name == 'workflow_dispatch' && github.event.inputs.force == 'true')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -e '.[dev]'
+      - name: Run README Injection
+        run: python -m agentic_index_cli.internal.inject_readme --all
+      - name: Commit & Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if ! git diff --quiet; then
+            git commit -m "chore: daily README table update"
+            git push
+          else
+            echo "No changes to inject."
+          fi
