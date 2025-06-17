@@ -9,7 +9,7 @@ import sys
 import time
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional
 
 import requests
 from rich.progress import track
@@ -23,6 +23,25 @@ HEADERS = {
 TOKEN = os.getenv("GITHUB_TOKEN")
 if TOKEN:
     HEADERS["Authorization"] = f"Bearer {TOKEN}"
+
+CACHE_DIR = Path(".cache")
+CACHE_TTL = 86400  # seconds
+
+
+def _load_cache(path: Path) -> Any | None:
+    if path.exists() and time.time() - path.stat().st_mtime < CACHE_TTL:
+        try:
+            with path.open() as fh:
+                return json.load(fh)
+        except Exception:
+            return None
+    return None
+
+
+def _save_cache(path: Path, data: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2) + "\n")
+
 
 SEARCH_TERMS = [
     "agent framework",
@@ -49,19 +68,43 @@ VIRAL_LICENSES = {
 }
 
 
+def _get(
+    url: str, *, params: dict | None = None, headers: dict | None = None
+) -> requests.Response:
+    """GET with retry and adaptive rate limit handling."""
+    backoff = 1
+    for attempt in range(5):
+        kwargs = {"headers": headers or HEADERS}
+        if params is not None:
+            kwargs["params"] = params
+        resp = requests.get(url, **kwargs)
+        if resp.status_code == 403 and resp.headers.get("X-RateLimit-Remaining") == "0":
+            reset = int(resp.headers.get("X-RateLimit-Reset", "0"))
+            sleep_for = max(0, reset - int(time.time()))
+            time.sleep(sleep_for)
+            continue
+        if resp.status_code >= 500:
+            time.sleep(backoff)
+            backoff *= 2
+            continue
+        return resp
+    raise requests.HTTPError(f"failed GET {url} after retries")
+
+
 def github_search(query: str, page: int = 1) -> List[Dict]:
     """Return GitHub search results for ``query``."""
-    time.sleep(1)  # rate limiting
     params = {
         "q": query,
         "sort": "stars",
         "order": "desc",
-        "per_page": 5,
+        "per_page": 100,
         "page": page,
     }
-    resp = requests.get(
-        f"{GITHUB_API}/search/repositories", params=params, headers=HEADERS
-    )
+    try:
+        resp = _get(f"{GITHUB_API}/search/repositories", params=params)
+    except requests.RequestException as exc:
+        print(f"GitHub search error: {exc}", file=sys.stderr)
+        return []
     if resp.status_code != 200:
         print(f"GitHub search error {resp.status_code}: {resp.text}", file=sys.stderr)
         return []
@@ -71,25 +114,45 @@ def github_search(query: str, page: int = 1) -> List[Dict]:
 
 def fetch_repo(full_name: str) -> Optional[Dict]:
     """Return repository metadata for ``full_name``."""
-    time.sleep(1)
-    resp = requests.get(f"{GITHUB_API}/repos/{full_name}", headers=HEADERS)
+    cache_file = CACHE_DIR / f"repo_{full_name.replace('/', '_')}.json"
+    cached = _load_cache(cache_file)
+    if cached:
+        return cached
+    try:
+        resp = _get(f"{GITHUB_API}/repos/{full_name}")
+    except requests.RequestException as exc:
+        print(f"Repo fetch error {full_name}: {exc}", file=sys.stderr)
+        return None
     if resp.status_code != 200:
         print(f"Repo fetch error {full_name} {resp.status_code}", file=sys.stderr)
         return None
-    return resp.json()
+    data = resp.json()
+    _save_cache(cache_file, data)
+    return data
 
 
 def fetch_readme(full_name: str) -> str:
     """Return decoded README text for ``full_name``."""
-    time.sleep(1)
-    resp = requests.get(f"{GITHUB_API}/repos/{full_name}/readme", headers=HEADERS)
+    cache_file = CACHE_DIR / f"readme_{full_name.replace('/', '_')}.txt"
+    cached = None
+    if cache_file.exists() and time.time() - cache_file.stat().st_mtime < CACHE_TTL:
+        cached = cache_file.read_text()
+    if cached:
+        return cached
+    try:
+        resp = _get(f"{GITHUB_API}/repos/{full_name}/readme")
+    except requests.RequestException:
+        return ""
     if resp.status_code != 200:
         return ""
     data = resp.json()
     if "content" in data:
         import base64
 
-        return base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
+        text = base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
+        cache_file.parent.mkdir(parents=True, exist_ok=True)
+        cache_file.write_text(text)
+        return text
     return ""
 
 
@@ -183,6 +246,10 @@ def compute_score(repo: Dict, readme: str) -> float:
 
 def harvest_repo(full_name: str) -> Optional[Dict]:
     """Return normalized data for ``full_name``."""
+    cache_file = CACHE_DIR / f"meta_{full_name.replace('/', '_')}.json"
+    cached = _load_cache(cache_file)
+    if cached:
+        return cached
     repo = fetch_repo(full_name)
     if not repo:
         return None
@@ -190,7 +257,7 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
     score = compute_score(repo, readme)
     category = categorize(repo.get("description", ""), repo.get("topics", []))
     first_paragraph = readme.split("\n\n")[0][:200]
-    return {
+    data = {
         "name": full_name,
         "description": repo.get("description", ""),
         "stars": repo.get("stargazers_count", 0),
@@ -210,6 +277,8 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
         SCORE_KEY: score,
         "category": category,
     }
+    _save_cache(cache_file, data)
+    return data
 
 
 def search_and_harvest(min_stars: int = 0, max_pages: int = 1) -> List[Dict]:
