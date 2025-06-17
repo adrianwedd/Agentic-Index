@@ -13,6 +13,22 @@ To propose additions or changes:
 
 We welcome fixes to data, new repo suggestions, and other improvements.
 
+## Quick Setup
+
+After cloning the repository, run the environment setup script and install the package in editable mode:
+
+```bash
+source scripts/setup-env.sh
+pip install -e .
+pre-commit install
+```
+
+Run the test suite to ensure everything works:
+
+```bash
+PYTHONPATH="$PWD" pytest -q
+```
+
 Refer to [SCHEMA.md](./docs/SCHEMA.md) for details on metric fields used in `repos.json`.
 
 Before opening a pull request, ensure the README table is up to date:

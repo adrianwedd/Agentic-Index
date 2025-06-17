@@ -88,8 +88,8 @@ pip install agentic-index-cli
 
 agentic-index scrape --min-stars 100
 agentic-index enrich data/repos.json
-agentic-index rank data/repos.json
-cat README.md | less         # see table injected
+agentic-index faststart --top 3 data/repos.json
+cat FAST_START.md | less     # see table injected
 ```
 
 -----
