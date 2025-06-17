@@ -1,5 +1,10 @@
 import json
+import time
+from unittest import mock
 
+import pytest
+import requests
+import responses
 
 import agentic_index_cli.internal.scrape as scrape
 
@@ -57,17 +62,19 @@ def test_scrape_timeout_retry(monkeypatch):
     monkeypatch.setattr(scrape, "QUERIES", ["q"])
     calls = {"n": 0}
 
-    def fake_get(url, headers=None, params=None):
-        calls["n"] += 1
-        if calls["n"] < 3:
-            raise requests.Timeout("timeout")
-        resp = mock.Mock()
-        resp.status_code = 200
-        resp.json.return_value = {"items": [item]}
-        resp.headers = {"X-RateLimit-Remaining": "1"}
-        return resp
+    def fake_get(url, headers=None, params=None, retries=5):
+        for _ in range(retries):
+            calls["n"] += 1
+            if calls["n"] < 3:
+                continue
+            return scrape.http_utils.Response(
+                200,
+                {"X-RateLimit-Remaining": "1"},
+                json.dumps({"items": [item]}),
+            )
+        raise scrape.APIError("timeout")
 
-    monkeypatch.setattr(scrape.requests, "get", fake_get)
+    monkeypatch.setattr(scrape.http_utils, "sync_get", fake_get)
     monkeypatch.setattr(scrape.time, "sleep", lambda s: None)
     repos = scrape.scrape(min_stars=0, token=None)
     assert calls["n"] >= 3
@@ -79,9 +86,9 @@ def test_scrape_timeout_fail(monkeypatch):
     monkeypatch.setattr(scrape, "QUERIES", ["q"])
 
     def fail_get(*a, **k):
-        raise requests.Timeout("boom")
+        raise scrape.APIError("boom")
 
-    monkeypatch.setattr(scrape.requests, "get", fail_get)
+    monkeypatch.setattr(scrape.http_utils, "sync_get", fail_get)
     monkeypatch.setattr(scrape.time, "sleep", lambda s: None)
     with pytest.raises(scrape.APIError):
         scrape.scrape(min_stars=0, token=None)
@@ -106,22 +113,26 @@ def test_scrape_rate_limit_retry(monkeypatch):
     monkeypatch.setattr(scrape, "QUERIES", ["q"])
     calls = {"n": 0}
 
-    def rate_limit_get(url, headers=None, params=None):
-        calls["n"] += 1
-        resp = mock.Mock()
-        if calls["n"] == 1:
-            resp.status_code = 403
-            resp.headers = {
+    def rate_limit_get(url, headers=None, params=None, retries=5):
+        for _ in range(retries):
+            calls["n"] += 1
+            if calls["n"] == 1:
+                continue
+            return scrape.http_utils.Response(
+                200,
+                {"X-RateLimit-Remaining": "1"},
+                json.dumps({"items": [item]}),
+            )
+        return scrape.http_utils.Response(
+            403,
+            {
                 "X-RateLimit-Remaining": "0",
                 "X-RateLimit-Reset": str(int(time.time())),
-            }
-            return resp
-        resp.status_code = 200
-        resp.json.return_value = {"items": [item]}
-        resp.headers = {"X-RateLimit-Remaining": "1"}
-        return resp
+            },
+            json.dumps({"items": []}),
+        )
 
-    monkeypatch.setattr(scrape.requests, "get", rate_limit_get)
+    monkeypatch.setattr(scrape.http_utils, "sync_get", rate_limit_get)
     monkeypatch.setattr(scrape.time, "sleep", lambda s: None)
     repos = scrape.scrape(min_stars=0, token=None)
     assert calls["n"] >= 2
