@@ -66,7 +66,11 @@ def test_delta_calculation(tmp_path, monkeypatch):
 
     env = os.environ.copy()
     env["PYTEST_CURRENT_TEST"] = "y"
-    subprocess.run(["python", "scripts/rank.py", str(repo_file)], check=True, env=env)
+    subprocess.run(
+        ["python", "-m", "agentic_index_cli.ranker", str(repo_file)],
+        check=True,
+        env=env,
+    )
 
     data = json.loads(repo_file.read_text())
     rep1 = next(r for r in data["repos"] if r["name"] == "repo1")

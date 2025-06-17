@@ -12,7 +12,7 @@
             ],
             "workspaceCommands": [
                 {"name": "Run Tests", "command": "pytest -q"},
-                {"name": "Run Scrape", "command": "python scripts/scrape.py"},
+                {"name": "Run Scrape", "command": "python -m agentic_index_cli.scraper"},
             ],
         }
     },
