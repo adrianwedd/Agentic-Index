@@ -17,6 +17,8 @@ def _setup(tmp_path: Path, top_n: int = 50) -> Path:
                     {
                         "name": "x",
                         "full_name": "o/x",
+                        "html_url": "https://github.com/o/x",
+                        "description": "test repo",
                         "AgenticIndexScore": 1.0,
                         "stars": 10,
                         "stars_delta": 1,
@@ -40,7 +42,9 @@ def _setup(tmp_path: Path, top_n: int = 50) -> Path:
         )
     )
     (data_dir / "top100.md").write_text(
-        "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |\n|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|\n| 1 | x | 1.00 | 10 | +1 |  | 1.00 | 0.50 | 0.50 | 0.90 | 0.30 | 3.32 | General |\n"
+        "| Rank | Repo | Description | Score | Stars | Δ Stars |\n"
+        "|-----:|------|-------------|------:|------:|--------:|\n"
+        "| 1 | [x](https://github.com/o/x) | test repo | 1.00 | 10 | +1 |\n"
     )
     (data_dir / "last_snapshot.json").write_text("[]")
     readme = tmp_path / "README.md"
@@ -63,7 +67,7 @@ def test_inject_and_check(tmp_path, monkeypatch):
 
     assert inj.main(top_n=50) == 0
     text = readme.read_text()
-    assert "| 1 | x | 1.00 |" in text
+    assert "| 1 | [x](https://github.com/o/x) | test repo | 1.00 | 10 | +1 |" in text
 
     assert inj.main(check=True, top_n=50) == 0
 

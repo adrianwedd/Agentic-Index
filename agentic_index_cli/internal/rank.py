@@ -24,6 +24,8 @@ from agentic_index_cli.config import load_config
 from agentic_index_cli.validate import load_repos, save_repos
 from lib.metrics_registry import get_metrics
 
+from .inject_readme import _format_link, _short_desc
+
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
 
 SCORE_KEY = "AgenticIndexScore"
@@ -212,8 +214,8 @@ def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> N
 
     # top-50 table
     header = [
-        "| Rank | Repo | Score | ▲ StarsΔ | ▲ ScoreΔ | Category |",
-        "|-----:|------|------:|-------:|--------:|----------|",
+        "| Rank | Repo | Description | Score | Stars | Δ Stars |",
+        "|-----:|------|-------------|------:|------:|--------:|",
     ]
 
     def fmt(val):
@@ -223,13 +225,13 @@ def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> N
         return f"{sign}{val}"
 
     rows = [
-        "| {i} | {name} | {score:.2f} | {sd} | {qd} | {cat} |".format(
+        "| {i} | {name} | {desc} | {score:.2f} | {stars} | {sd} |".format(
             i=i,
-            name=repo["name"],
+            name=_format_link(repo["name"], repo.get("html_url")),
+            desc=_short_desc(repo.get("description")),
             score=repo[SCORE_KEY],
+            stars=repo.get("stars", repo.get("stargazers_count", 0)),
             sd=fmt(repo["stars_delta"]),
-            qd=fmt(repo["score_delta"]),
-            cat=repo["category"],
         )
         for i, repo in enumerate(repos[:top_n], start=1)
     ]

@@ -10,7 +10,8 @@ def test_missing_markers(tmp_path, monkeypatch):
     data_dir = tmp_path / "data"
     data_dir.mkdir()
     (data_dir / "top100.md").write_text(
-        "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |\n|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|\n"
+        "| Rank | Repo | Description | Score | Stars | Δ Stars |\n"
+        "|-----:|------|-------------|------:|------:|--------:|\n"
     )
     readme.write_text("no table here")
 

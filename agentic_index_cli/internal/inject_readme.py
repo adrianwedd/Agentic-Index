@@ -48,12 +48,32 @@ def _clamp_name(name: str, limit: int = 28) -> str:
     return safe[: limit - 3] + "..."
 
 
+def _format_link(name: str, url: str | None, *, limit: int = 28) -> str:
+    """Return a markdown link for ``name`` clamped to ``limit``."""
+    text = _clamp_name(name, limit)
+    if url:
+        return f"[{text}]({url})"
+    return text
+
+
+def _short_desc(desc: str | None, limit: int = 150) -> str:
+    """Return ``desc`` escaped for markdown and truncated."""
+    if not desc:
+        return ""
+    desc = desc.replace("|", "/").replace("`", "\\`").replace("\n", " ")
+    if len(desc) <= limit:
+        return desc
+    return desc[: limit - 3] + "..."
+
+
 def _load_rows(
     sort_by: str = DEFAULT_SORT_FIELD,
     *,
     limit: int = 100,
     category: str | None = None,
     return_repos: bool = False,
+    link: bool = False,
+    summary: bool = False,
 ) -> list[str] | tuple[list[str], list[dict]]:
     """Return table rows computed from repo data using v3 fields.
 
@@ -125,6 +145,8 @@ def _load_rows(
         parsed.append(
             {
                 "name": name,
+                "html_url": repo.get("html_url"),
+                "description": repo.get("description"),
                 "score": repo_score,
                 "score_sort": repo_score,
                 "stars": stars,
@@ -171,10 +193,25 @@ def _load_rows(
 
     rows = []
     for i, repo in enumerate(parsed[:limit], start=1):
-        rows.append(
-            "| {i} | {name} | {score:.2f} | {stars} | {sdelta} | {scdelta} | {rec} | {health} | {docs} | {licfr} | {eco} | {log2} | {cat} |".format(
+        name = repo["name"]
+        if link:
+            name = _format_link(name, repo.get("html_url"))
+        else:
+            name = _clamp_name(name)
+        if summary:
+            desc = _short_desc(repo.get("description"))
+            row = "| {i} | {name} | {desc} | {score:.2f} | {stars} | {sdelta} |".format(
                 i=i,
-                name=_clamp_name(repo["name"]),
+                name=name,
+                desc=desc,
+                score=repo["score"],
+                stars=repo["stars"],
+                sdelta=repo["stars_delta"],
+            )
+        else:
+            row = "| {i} | {name} | {score:.2f} | {stars} | {sdelta} | {scdelta} | {rec} | {health} | {docs} | {licfr} | {eco} | {log2} | {cat} |".format(
+                i=i,
+                name=name,
                 score=repo["score"],
                 stars=repo["stars"],
                 sdelta=repo["stars_delta"],
@@ -187,7 +224,7 @@ def _load_rows(
                 log2=repo["stars_log2"],
                 cat=repo["category"],
             )
-        )
+        rows.append(row)
     if return_repos:
         return rows, filtered[:limit]
     return rows
@@ -285,15 +322,14 @@ def build_readme(
     before = readme_text[: start_idx + len(start_marker)].rstrip()
     after = "\n" + readme_text[end_idx + len(end_marker) :].lstrip()
 
-    # standard header for schema v3 metrics
     header_lines = [
-        "| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |",
-        "|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|",
+        "| Rank | Repo | Description | Score | Stars | Δ Stars |",
+        "|-----:|------|-------------|------:|------:|--------:|",
     ]
 
     cfg_limit = top_n if limit is None else limit
 
-    rows = _load_rows(sort_by, limit=cfg_limit)
+    rows = _load_rows(sort_by, limit=cfg_limit, link=True, summary=True)
     table = "\n".join(header_lines + rows)
 
     new_text = f"{before}\n{table}\n{end_marker}{after}"
@@ -414,7 +450,11 @@ def build_category_table(
     ]
     cfg_limit = DEFAULT_TOP_N if limit is None else limit
     rows, repos = _load_rows(
-        sort_by, limit=cfg_limit, category=category, return_repos=True
+        sort_by,
+        limit=cfg_limit,
+        category=category,
+        return_repos=True,
+        link=True,
     )
     topics = _infer_topics(repos)
     heading = f"## 🧠 Top Agentic-AI Repositories: {category}  \n"
