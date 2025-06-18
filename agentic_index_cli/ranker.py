@@ -16,11 +16,14 @@ main = rank_main
 @click.argument("path", default="data/repos.json")
 @config_option
 def _cli(path: str, config: str | None) -> None:
-    cfg = load_config(config) if config else None
-    if cfg is None:
-        main(path)
-    else:
-        main(path, config=cfg)
+    """Wrapper for the ranking CLI."""
+    try:
+        cfg = load_config(config)
+    except ValueError as exc:
+        click.echo(f"Config error: {exc}", err=True)
+        raise SystemExit(1)
+
+    main(path, config=cfg)
 
 
 def cli(argv: list[str] | None = None) -> None:

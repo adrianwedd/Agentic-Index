@@ -24,12 +24,14 @@ def test_scraper_cli(monkeypatch):
 def test_ranker_cli(monkeypatch, tmp_path):
     called = {}
 
-    def fake_main(path):
+    def fake_main(path, *, config=None):
         called["path"] = path
+        called["config"] = config
 
     monkeypatch.setattr(ranker, "main", fake_main)
     ranker.cli([str(tmp_path / "repos.json")])
     assert called["path"].endswith("repos.json")
+    assert isinstance(called["config"], dict)
 
 
 def test_inject_cli(monkeypatch):
