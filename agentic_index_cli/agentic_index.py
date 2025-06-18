@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import aiohttp
+from jinja2 import Template
 from rich.progress import track
 
 from agentic_index_cli.internal import http_utils
@@ -466,13 +467,31 @@ def save_csv(repos: List[Dict], path: Path):
 
 def save_markdown(repos: List[Dict], path: Path):
     """Write a Markdown table of ``repos`` to ``path``."""
-    with path.open("w") as f:
-        f.write("| # | Repo | ★ | Last Commit | Score | Category | One-liner |\n")
-        f.write("|---|------|----|------------|-------|----------|-----------|\n")
-        for i, r in enumerate(repos, 1):
-            date = r["last_commit"].split("T")[0]
-            line = f"| {i} | {r['name']} | {r['stars']} | {date} | {r[SCORE_KEY]} | {r['category']} | {r['description']} |\n"
-            f.write(line)
+
+    tmpl = Template(
+        """
+| # | Repo | ★ | Last Commit | Score | Category | One-liner |
+|---|------|----|------------|-------|----------|-----------|
+{% for i, r in rows %}| {{ i }} | {{ r.name }} | {{ r.stars }} | {{ r.date }} | {{ r.score }} | {{ r.category }} | {{ r.description }} |
+{% endfor %}"""
+    )
+
+    rows = [
+        (
+            i,
+            {
+                "name": r["name"],
+                "stars": r["stars"],
+                "date": r["last_commit"].split("T")[0],
+                "score": r[SCORE_KEY],
+                "category": r["category"],
+                "description": r["description"],
+            },
+        )
+        for i, r in enumerate(repos, 1)
+    ]
+
+    path.write_text(tmpl.render(rows=rows))
 
 
 def load_previous(path: Path) -> List[str]:
