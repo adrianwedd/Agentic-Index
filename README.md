@@ -49,6 +49,7 @@ This catalogue is maintained by the Agentic-Index project and is updated regular
   * [🔧 Usage](#-usage)
   * [🔄 How refresh works](#-how-refresh-works)
   * [🧪 Testing](#-testing)
+  * [📝 Forcing README injection](#-forcing-readme-injection)
   * [🤝 How to Contribute](#-how-to-contribute)
   * [🛡 Code of Conduct](#-code-of-conduct)
   * [📜 License](#-license)
@@ -306,6 +307,16 @@ bash scripts/trigger_refresh.sh 75
 
 Replace `75` with your desired minimum star count. The script requires the GitHub CLI and an authenticated token.
 Set a personal access token via the `GITHUB_TOKEN_REPO_STATS` environment variable to avoid hitting rate limits when scraping.
+
+### 📝 Forcing README injection
+
+The injector normally skips writing `README.md` when no changes are detected. Use `--force` to rewrite the table regardless:
+
+```bash
+python scripts/inject_readme.py --force
+```
+
+This can be handy after metric tweaks that don't change rankings but should refresh the snapshot.
 
 -----
 
