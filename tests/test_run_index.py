@@ -1,7 +1,7 @@
 import csv
 from pathlib import Path
 
-import agentic_index_cli.agentic_index as ai
+import agentic_index_cli.cli as ai
 
 
 def test_run_index_creates_outputs(tmp_path, monkeypatch):

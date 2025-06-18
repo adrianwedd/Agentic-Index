@@ -7,7 +7,7 @@ from pathlib import Path
 
 from jsonschema import Draft7Validator
 
-from .agentic_index import (
+from .scoring import (
     categorize,
     compute_issue_health,
     compute_recency_factor,

@@ -3,10 +3,10 @@ import runpy
 import sys
 from pathlib import Path
 
-import agentic_index_cli.agentic_index as ai
 import agentic_index_cli.enricher as enricher
 import agentic_index_cli.internal.inject_readme as inj
 import agentic_index_cli.internal.rank_main as rank
+from agentic_index_cli import scoring as ai
 
 
 def test_cli_all_categories(tmp_path, monkeypatch):

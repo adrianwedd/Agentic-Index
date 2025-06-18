@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import agentic_index_cli.__main__ as main
-import agentic_index_cli.agentic_index as ai
+import agentic_index_cli.cli as ai
 
 
 def test_main_scrape(monkeypatch, tmp_path):

@@ -13,7 +13,7 @@ def test_network_exitcode():
         raise requests.RequestException("fail")
 
     with mock.patch(
-        "agentic_index_cli.agentic_index.http_utils.sync_get",
+        "agentic_index_cli.network.http_utils.sync_get",
         lambda *a, **k: (_ for _ in ()).throw(requests.RequestException("fail")),
     ):
         with pytest.raises(SystemExit) as exc:

@@ -7,7 +7,7 @@ from typing import List, Optional
 
 import structlog
 
-from agentic_index_cli.agentic_index import search_and_harvest
+from agentic_index_cli.network import search_and_harvest
 
 STATE_PATH = Path("state/sync_data.json")
 logger = structlog.get_logger(__name__).bind(file=__file__)

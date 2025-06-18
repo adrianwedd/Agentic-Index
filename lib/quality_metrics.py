@@ -10,7 +10,7 @@ from __future__ import annotations
 import math
 from typing import Iterable
 
-from agentic_index_cli.agentic_index import (
+from agentic_index_cli.scoring import (
     compute_issue_health,
     compute_recency_factor,
     license_freedom,
