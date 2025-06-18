@@ -33,3 +33,19 @@ Install the package in editable mode and run the ranking command:
 - name: Run ranking script
   run: agentic-index rank data/repos.json
 ```
+
+## Recommended Environment Variables
+
+Several workflows export `PYTHONFAULTHANDLER=1` so that Python prints full
+tracebacks on failure. Mirroring this locally can make debugging easier:
+
+```bash
+export PYTHONFAULTHANDLER=1
+```
+
+The integration tests and nightly refresh jobs also support an offline mode.
+Set `CI_OFFLINE=1` to disable network calls when running tests locally:
+
+```bash
+CI_OFFLINE=1 pytest --disable-socket
+```
