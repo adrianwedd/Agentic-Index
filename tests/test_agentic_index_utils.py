@@ -1,4 +1,4 @@
-import agentic_index_cli.agentic_index as ai
+from agentic_index_cli import scoring as ai
 
 
 def test_compute_score_simple():

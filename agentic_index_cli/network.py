@@ -1,32 +1,25 @@
-"""GitHub scraping and ranking helpers used by the CLI."""
+"""GitHub network access and caching utilities."""
 
-import argparse
+from __future__ import annotations
+
 import asyncio
-import csv
+import base64
 import json
-import logging
-import math
 import os
-import sys
 import time
-import uuid
-from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import aiohttp
 import structlog
-from jinja2 import Template
-from rich.progress import track
 
-from agentic_index_cli.internal import http_utils
+from .internal import http_utils
+from .scoring import SCORE_KEY, categorize, compute_score
 
-SCORE_KEY = "AgenticIndexScore"
+logger = structlog.get_logger(__name__).bind(file=__file__)
 
 GITHUB_API = "https://api.github.com"
-HEADERS = {
-    "Accept": "application/vnd.github+json",
-}
+HEADERS = {"Accept": "application/vnd.github+json"}
 TOKEN = os.getenv("GITHUB_TOKEN")
 if TOKEN:
     HEADERS["Authorization"] = f"Bearer {TOKEN}"
@@ -34,11 +27,12 @@ if TOKEN:
 CACHE_DIR = Path(".cache")
 CACHE_TTL = 86400  # seconds
 
+SEARCH_TERMS = ["agent framework", "LLM agent"]
+TOPIC_FILTERS = ["agent"]
+
 
 def _load_cache(path: Path) -> Any | None:
-    import time as _time
-
-    if path.exists() and _time.time() - path.stat().st_mtime < CACHE_TTL:
+    if path.exists() and time.time() - path.stat().st_mtime < CACHE_TTL:
         try:
             with path.open() as fh:
                 return json.load(fh)
@@ -52,31 +46,6 @@ def _save_cache(path: Path, data: Any) -> None:
     path.write_text(json.dumps(data, indent=2) + "\n")
 
 
-SEARCH_TERMS = [
-    "agent framework",
-    "LLM agent",
-]
-TOPIC_FILTERS = [
-    "agent",
-]
-
-PERMISSIVE_LICENSES = {
-    "mit",
-    "apache-2.0",
-    "bsd-2-clause",
-    "bsd-3-clause",
-    "isc",
-    "zlib",
-    "mpl-2.0",
-}
-VIRAL_LICENSES = {
-    "gpl-3.0",
-    "gpl-2.0",
-    "agpl-3.0",
-    "agpl-2.0",
-}
-
-
 def _get(
     url: str, *, params: dict | None = None, headers: dict | None = None
 ) -> http_utils.Response:
@@ -85,9 +54,6 @@ def _get(
     if params is not None:
         kwargs["params"] = params
     return http_utils.sync_get(url, **kwargs)
-
-
-logger = structlog.get_logger(__name__).bind(file=__file__)
 
 
 def github_search(query: str, page: int = 1) -> List[Dict]:
@@ -101,14 +67,13 @@ def github_search(query: str, page: int = 1) -> List[Dict]:
     }
     try:
         resp = _get(f"{GITHUB_API}/search/repositories", params=params)
-    except Exception as exc:
+    except Exception as exc:  # pragma: no cover - network error path
         logger.error("GitHub search error: %s", exc)
         return []
     if resp.status_code != 200:
         logger.error("GitHub search error %s: %s", resp.status_code, resp.text)
         return []
-    data = resp.json()
-    return data.get("items", [])
+    return resp.json().get("items", [])
 
 
 def fetch_repo(full_name: str) -> Optional[Dict]:
@@ -119,7 +84,7 @@ def fetch_repo(full_name: str) -> Optional[Dict]:
         return cached
     try:
         resp = _get(f"{GITHUB_API}/repos/{full_name}")
-    except Exception as exc:
+    except Exception as exc:  # pragma: no cover - network error path
         logger.error("Repo fetch error %s: %s", full_name, exc)
         return None
     if resp.status_code != 200:
@@ -132,128 +97,23 @@ def fetch_repo(full_name: str) -> Optional[Dict]:
 
 def fetch_readme(full_name: str) -> str:
     """Return decoded README text for ``full_name``."""
-    import time as _time
-
     cache_file = CACHE_DIR / f"readme_{full_name.replace('/', '_')}.txt"
-    cached = None
-    if cache_file.exists() and _time.time() - cache_file.stat().st_mtime < CACHE_TTL:
-        cached = cache_file.read_text()
-    if cached:
-        return cached
+    if cache_file.exists() and time.time() - cache_file.stat().st_mtime < CACHE_TTL:
+        return cache_file.read_text()
     try:
         resp = _get(f"{GITHUB_API}/repos/{full_name}/readme")
-    except Exception as exc:
+    except Exception as exc:  # pragma: no cover - network error path
         logger.error("Readme fetch error %s: %s", full_name, exc)
         return ""
     if resp.status_code != 200:
         return ""
     data = resp.json()
     if "content" in data:
-        import base64
-
         text = base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
         cache_file.parent.mkdir(parents=True, exist_ok=True)
         cache_file.write_text(text)
         return text
     return ""
-
-
-def compute_recency_factor(pushed_at: str) -> float:
-    """Return a freshness score based on ``pushed_at`` timestamp."""
-    pushed_date = datetime.strptime(pushed_at, "%Y-%m-%dT%H:%M:%SZ")
-    days = (datetime.utcnow() - pushed_date).days
-    if days <= 30:
-        return 1.0
-    if days >= 365:
-        return 0.0
-    return max(0.0, 1 - (days - 30) / 335)
-
-
-def compute_issue_health(open_issues: int, closed_issues: int) -> float:
-    """Return ratio of closed to total issues."""
-    denom = open_issues + closed_issues + 1e-6
-    return 1 - open_issues / denom
-
-
-def readme_doc_completeness(readme: str) -> float:
-    """Return 1.0 if README is long and contains code blocks."""
-    words = len(readme.split())
-    has_code = "```" in readme
-    if words >= 300 and has_code:
-        return 1.0
-    return 0.0
-
-
-def license_freedom(license_spdx: Optional[str]) -> float:
-    """Score how permissive a license is."""
-    if not license_spdx:
-        return 0.0
-    key = license_spdx.lower()
-    if key in PERMISSIVE_LICENSES:
-        return 1.0
-    if key in VIRAL_LICENSES:
-        return 0.5
-    return 0.5
-
-
-def ecosystem_integration(topics: List[str], readme: str) -> float:
-    """Return 1.0 if popular ecosystem keywords are present."""
-    text = " ".join(topics).lower() + " " + readme.lower()
-    keywords = ["langchain", "plugin", "openai", "tool", "extension", "framework"]
-    for k in keywords:
-        if k in text:
-            return 1.0
-    return 0.0
-
-
-def categorize(description: str, topics: List[str]) -> str:
-    """Return a coarse category for a project."""
-    text = (description or "").lower() + " " + " ".join(topics).lower()
-    if "rag" in text or "retrieval" in text:
-        return "RAG-centric"
-    if "multi-agent" in text or "crew" in text or "team" in text:
-        return "Multi-Agent"
-    if "dev" in text or "tool" in text or "test" in text:
-        return "DevTools"
-    if any(domain in text for domain in ["video", "game", "finance", "security"]):
-        return "Domain-Specific"
-    if "experimental" in text or "research" in text:
-        return "Experimental"
-    return "General-purpose"
-
-
-def compute_score(repo: Dict, readme: str) -> float:
-    """Compute the Agentic Index score for ``repo``."""
-    request_id = str(uuid.uuid4())
-    log = logger.bind(func="compute_score", request_id=request_id)
-    start = time.perf_counter()
-    stars = repo.get("stargazers_count", 0)
-    open_issues = repo.get("open_issues_count", 0)
-    closed_issues = repo.get("closed_issues", 0)
-    recency = compute_recency_factor(repo.get("pushed_at"))
-    issue_health = compute_issue_health(open_issues, closed_issues)
-    doc_comp = readme_doc_completeness(readme)
-    lic = repo.get("license")
-    if isinstance(lic, dict):
-        lic = lic.get("spdx_id")
-    license_free = license_freedom(lic)
-    eco = ecosystem_integration(repo.get("topics", []), readme)
-    score = (
-        0.30 * math.log2(stars + 1)
-        + 0.25 * recency
-        + 0.20 * issue_health
-        + 0.15 * doc_comp
-        + 0.07 * license_free
-        + 0.03 * eco
-    )
-    final = round(score * 100 / 8, 2)
-    log.debug(
-        "score-computed",
-        repo=repo.get("full_name", repo.get("name")),
-        score=final,
-        duration=time.perf_counter() - start,
-    )
-    return final
 
 
 async def async_fetch_repo(
@@ -267,7 +127,7 @@ async def async_fetch_repo(
         resp = await http_utils.async_get(
             f"{GITHUB_API}/repos/{full_name}", session=session
         )
-    except Exception as exc:
+    except Exception as exc:  # pragma: no cover - network error path
         logger.error("Repo fetch error %s: %s", full_name, exc)
         return None
     if resp.status_code != 200:
@@ -280,24 +140,19 @@ async def async_fetch_repo(
 
 async def async_fetch_readme(full_name: str, session: aiohttp.ClientSession) -> str:
     cache_file = CACHE_DIR / f"readme_{full_name.replace('/', '_')}.txt"
-    cached = None
     if cache_file.exists() and time.time() - cache_file.stat().st_mtime < CACHE_TTL:
-        cached = cache_file.read_text()
-    if cached:
-        return cached
+        return cache_file.read_text()
     try:
         resp = await http_utils.async_get(
             f"{GITHUB_API}/repos/{full_name}/readme", session=session
         )
-    except Exception as exc:
+    except Exception as exc:  # pragma: no cover - network error path
         logger.error("Readme fetch error %s: %s", full_name, exc)
         return ""
     if resp.status_code != 200:
         return ""
     data = resp.json()
     if "content" in data:
-        import base64
-
         text = base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
         cache_file.parent.mkdir(parents=True, exist_ok=True)
         cache_file.write_text(text)
@@ -344,7 +199,6 @@ async def async_harvest_repo(
 
 
 def harvest_repo(full_name: str) -> Optional[Dict]:
-    """Return normalized data for ``full_name``."""
     cache_file = CACHE_DIR / f"meta_{full_name.replace('/', '_')}.json"
     cached = _load_cache(cache_file)
     if cached:
@@ -401,8 +255,7 @@ async def async_search_and_harvest(
                     },
                     session=session,
                 )
-                items = resp.json().get("items", [])
-                for repo in items:
+                for repo in resp.json().get("items", []):
                     full_name = repo["full_name"]
                     if full_name in seen:
                         continue
@@ -425,8 +278,7 @@ async def async_search_and_harvest(
                     },
                     session=session,
                 )
-                items = resp.json().get("items", [])
-                for repo in items:
+                for repo in resp.json().get("items", []):
                     full_name = repo["full_name"]
                     if full_name in seen:
                         continue
@@ -438,7 +290,7 @@ async def async_search_and_harvest(
         for fut in asyncio.as_completed(tasks):
             try:
                 meta = await fut
-            except Exception as exc:
+            except Exception as exc:  # pragma: no cover - worker error path
                 logger.error("harvest failed: %s", exc)
                 continue
             if meta:
@@ -447,139 +299,7 @@ async def async_search_and_harvest(
 
 
 def search_and_harvest(min_stars: int = 0, max_pages: int = 1) -> List[Dict]:
-    """Search GitHub and harvest repo metadata."""
     start = time.perf_counter()
     results = asyncio.run(async_search_and_harvest(min_stars, max_pages))
     logger.info("search_and_harvest completed in %.2fs", time.perf_counter() - start)
     return results
-
-
-def sort_and_select(repos: List[Dict], limit: int = 100) -> List[Dict]:
-    """Return the top ``limit`` repos sorted by score."""
-    repos.sort(key=lambda x: x[SCORE_KEY], reverse=True)
-    return repos[:limit]
-
-
-def save_csv(repos: List[Dict], path: Path):
-    """Write ``repos`` to ``path`` as CSV."""
-    keys = [
-        "name",
-        "stars",
-        "last_commit",
-        SCORE_KEY,
-        "category",
-        "description",
-    ]
-    with path.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=keys)
-        writer.writeheader()
-        for r in repos:
-            writer.writerow({k: r[k] for k in keys})
-
-
-def save_markdown(repos: List[Dict], path: Path):
-    """Write a Markdown table of ``repos`` to ``path``."""
-
-    tmpl = Template(
-        """
-| # | Repo | ★ | Last Commit | Score | Category | One-liner |
-|---|------|----|------------|-------|----------|-----------|
-{% for i, r in rows %}| {{ i }} | {{ r.name }} | {{ r.stars }} | {{ r.date }} | {{ r.score }} | {{ r.category }} | {{ r.description }} |
-{% endfor %}"""
-    )
-
-    rows = [
-        (
-            i,
-            {
-                "name": r["name"],
-                "stars": r["stars"],
-                "date": r["last_commit"].split("T")[0],
-                "score": r[SCORE_KEY],
-                "category": r["category"],
-                "description": r["description"],
-            },
-        )
-        for i, r in enumerate(repos, 1)
-    ]
-
-    path.write_text(tmpl.render(rows=rows))
-
-
-def load_previous(path: Path) -> List[str]:
-    """Load previously ranked repository names from ``path``."""
-    if not path.exists():
-        return []
-    with path.open() as f:
-        reader = csv.DictReader(f)
-        return [row["name"] for row in reader]
-
-
-def changelog(old: List[str], new: List[str]) -> List[Dict]:
-    """Return changelog entries comparing old and new repo lists."""
-    old_set = set(old)
-    new_set = set(new)
-    changes = []
-    for name in new_set - old_set:
-        changes.append({"repo": name, "action": "Added"})
-    for name in old_set - new_set:
-        changes.append({"repo": name, "action": "Removed"})
-    return changes
-
-
-def save_changelog(changes: List[Dict], path: Path):
-    """Write changelog entries to ``path``."""
-    if not changes:
-        return
-    with path.open("w") as f:
-        f.write("| Repo | Action |\n|------|--------|\n")
-        for c in changes:
-            f.write(f"| {c['repo']} | {c['action']} |\n")
-
-
-def run_index(
-    min_stars: int = 0, iterations: int = 1, output: Path = Path("data")
-) -> None:
-    is_test = os.getenv("PYTEST_CURRENT_TEST") is not None
-
-    """Run the full indexing workflow."""
-
-    output.mkdir(parents=True, exist_ok=True)
-    prev_csv = output / "top100.csv"
-    prev_repos = load_previous(prev_csv)
-
-    final_repos = None
-    last_top = None
-    for _ in track(
-        range(iterations), description="ranking", disable=not sys.stderr.isatty()
-    ):
-        repos = search_and_harvest(min_stars)
-        top = sort_and_select(repos, 100)
-        names = [r["name"] for r in top]
-        if names == last_top:
-            break
-        last_top = names
-        final_repos = top
-    if final_repos is None:
-        final_repos = top
-
-    if not is_test or output != Path("data"):
-        save_csv(final_repos, output / "top100.csv")
-        save_markdown(final_repos, output / "top100.md")
-        changes = changelog(prev_repos, [r["name"] for r in final_repos])
-        save_changelog(changes, output / "CHANGELOG.md")
-
-
-def main():
-    """CLI for running :func:`run_index`."""
-    parser = argparse.ArgumentParser(description="Agentic Index Repo Indexer")
-    parser.add_argument("--min-stars", type=int, default=0)
-    parser.add_argument("--iterations", type=int, default=1)
-    parser.add_argument("--output", type=Path, default=Path("data"))
-    args = parser.parse_args()
-
-    run_index(args.min_stars, args.iterations, args.output)
-
-
-if __name__ == "__main__":
-    main()

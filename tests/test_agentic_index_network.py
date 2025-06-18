@@ -1,7 +1,9 @@
 import base64
 import types
 
-import agentic_index_cli.agentic_index as ai
+import agentic_index_cli.network as ai
+import agentic_index_cli.render as rn
+import agentic_index_cli.scoring as sc
 
 
 class DummyResp:
@@ -78,11 +80,11 @@ def test_harvest_repo(monkeypatch):
     }
     monkeypatch.setattr(ai, "fetch_repo", lambda name: meta)
     monkeypatch.setattr(ai, "fetch_readme", lambda name: "README")
-    monkeypatch.setattr(ai, "compute_score", lambda r, rd: 1.0)
-    monkeypatch.setattr(ai, "categorize", lambda desc, t: "General")
+    monkeypatch.setattr(sc, "compute_score", lambda r, rd: 1.0)
+    monkeypatch.setattr(sc, "categorize", lambda desc, t: "General")
     res = ai.harvest_repo("owner/name")
     assert res["name"] == "owner/name"
-    assert ai.SCORE_KEY in res
+    assert sc.SCORE_KEY in res
 
 
 def test_error_branches(monkeypatch):
@@ -138,12 +140,12 @@ def test_search_topics_duplicate(monkeypatch):
 
 
 def test_changelog_and_save(tmp_path):
-    changes = ai.changelog(["a", "b"], ["b", "c"])
+    changes = rn.changelog(["a", "b"], ["b", "c"])
     path = tmp_path / "changelog.md"
-    ai.save_changelog(changes, path)
+    rn.save_changelog(changes, path)
     assert path.exists()
 
-    empty = ai.changelog(["a"], ["a"])
+    empty = rn.changelog(["a"], ["a"])
     path2 = tmp_path / "none.md"
-    ai.save_changelog(empty, path2)
+    rn.save_changelog(empty, path2)
     assert not path2.exists()

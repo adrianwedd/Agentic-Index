@@ -10,7 +10,8 @@ import requests
 import structlog
 import typer
 
-from . import agentic_index, enricher, faststart, prune
+from . import cli as agentic_index
+from . import enricher, faststart, prune
 from .logging_config import configure_logging, configure_sentry
 
 app = typer.Typer(add_completion=True, help="Agentic Index CLI")

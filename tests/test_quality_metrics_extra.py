@@ -1,7 +1,7 @@
 import math
 from datetime import datetime, timedelta
 
-import agentic_index_cli.agentic_index as ai
+from agentic_index_cli import scoring as ai
 from lib.quality_metrics import _clamp
 
 

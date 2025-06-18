@@ -231,7 +231,7 @@ This isn't a static list. It's alive\! See [CHANGELOG.md](./CHANGELOG.md) for al
 Run the indexer to fetch fresh repo data:
 
 ```bash
-python -m agentic_index_cli.agentic_index --min-stars 50 --iterations 1 --output data
+python -m agentic_index_cli.cli --min-stars 50 --iterations 1 --output data
 ```
 
 The CLI reads tuning parameters from `agentic_index_cli/config.yaml`. Use

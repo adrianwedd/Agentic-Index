@@ -9,7 +9,7 @@ Agentic Index curates & ranks AI-agent repos so developers can quickly find reli
 | Agent Name | Trigger | Code Location | Main Function | Outputs |
 |------------|---------|---------------|---------------|---------|
 | ScraperCLI | manual / update.yml | `scripts/scrape_repos.py` | Fetch repos via GitHub API | `data/repos.json` |
-| MetricsScorer | update.yml | `agentic_index_cli/agentic_index.py` | Compute maintenance/docs/eco metrics | updated `repos.json` |
+| MetricsScorer | update.yml | `agentic_index_cli/scoring.py` | Compute maintenance/docs/eco metrics | updated `repos.json` |
 | RankerCLI | manual / update.yml | `agentic_index_cli/ranker.py` | Compute score & top-100 | `data/top100.md`, badges |
 | READMEInjector | pre-commit / update.yml | `agentic_index_cli/inject_readme.py` | Update README table | updated README |
 | FastStartPicker | manual | `agentic_index_cli/faststart.py` | Generate FAST_START | `FAST_START.md` |

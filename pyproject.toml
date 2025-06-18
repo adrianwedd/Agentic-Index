@@ -22,7 +22,7 @@ dependencies = [
 ]
 
 [project.scripts]
-agentic-index = "agentic_index_cli.__main__:main"
+agentic-index = "agentic_index_cli.cli:main"
 
 [project.optional-dependencies]
 docs = ["sphinx", "pydantic"]

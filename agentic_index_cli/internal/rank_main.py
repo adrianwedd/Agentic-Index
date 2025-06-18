@@ -8,12 +8,12 @@ from pathlib import Path
 from jinja2 import Template
 
 import lib.quality_metrics  # ensure built-in metrics are registered
-from agentic_index_cli.agentic_index import (
+from agentic_index_cli.config import load_config
+from agentic_index_cli.scoring import (
     compute_issue_health,
     compute_recency_factor,
     license_freedom,
 )
-from agentic_index_cli.config import load_config
 from agentic_index_cli.validate import load_repos, save_repos
 
 from .badges import generate_badges
