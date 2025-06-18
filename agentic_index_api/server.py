@@ -7,6 +7,7 @@ from fastapi import FastAPI, Response
 """Minimal API server with optional auth."""
 
 import json
+import logging
 import os
 from pathlib import Path
 from typing import Any, Optional
@@ -19,6 +20,8 @@ from agentic_index_cli import issue_logger
 from agentic_index_cli.internal.rank import SCORE_KEY, compute_score
 from agentic_index_cli.internal.scrape import scrape
 from agentic_index_cli.validate import save_repos
+
+logger = logging.getLogger(__name__)
 
 API_KEY = os.getenv("API_KEY")
 _whitelist = os.getenv("IP_WHITELIST", "")
@@ -50,10 +53,24 @@ app = FastAPI()
 async def _auth(request: Request, call_next):
     if request.url.path in PROTECTED_PATHS:
         client_ip = request.client.host if request.client else None
-        if client_ip not in IP_WHITELIST:
-            key = request.headers.get("X-API-KEY")
-            if not API_KEY or key != API_KEY:
-                return Response(status_code=401)
+        key = request.headers.get("X-API-KEY")
+        had_key = key is not None
+        key_valid = bool(API_KEY and key == API_KEY)
+        logger.info(
+            "auth check",
+            extra={
+                "path": request.url.path,
+                "client_ip": client_ip,
+                "had_key": had_key,
+                "key_valid": key_valid,
+            },
+        )
+        if client_ip not in IP_WHITELIST and not key_valid:
+            return Response(
+                json.dumps({"detail": "unauthorized"}),
+                status_code=401,
+                media_type="application/json",
+            )
     return await call_next(request)
 
 
