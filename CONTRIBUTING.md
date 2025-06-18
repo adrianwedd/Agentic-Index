@@ -178,6 +178,19 @@ trivy fs .
 ```
 
 
+### License Summary
+
+Generate a report of third-party licenses to help verify compliance.
+Install dependencies as described in
+[docs/CI_SETUP.md](./docs/CI_SETUP.md) and run:
+
+```bash
+pip-licenses --format=json --output-file=reports/licenses.json
+```
+
+The resulting JSON file lists each package and license used by the project.
+
+
 
 
 
