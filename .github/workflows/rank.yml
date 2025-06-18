@@ -28,8 +28,8 @@ jobs:
       - name: Archive repos.json
         run: |
           mkdir -p data/history
-          if [ -f repos.json ]; then
-            cp repos.json data/history/$(date +%F).json
+          if [ -f data/repos.json ]; then
+            cp data/repos.json data/history/$(date +%F).json
           fi
       - name: Plot trends
         run: python scripts/plot_trends.py
