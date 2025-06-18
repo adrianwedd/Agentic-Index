@@ -16,3 +16,71 @@
   dependencies: []
   priority: 3
   status: done
+- id: CR-AGENTIC-001
+  description: Add comprehensive unit tests for all CLI commands (scrape, enrich, inject, faststart, plot_trends), mocking external HTTP calls and file I/O using pytest and monkeypatch
+  component: tests
+  dependencies: []
+  priority: 1
+  status: todo
+- id: CR-AGENTIC-002
+  description: Introduce full type annotations in core modules (cli.py, enricher.py, inject_readme.py, network.py) and enforce with mypy in CI
+  component: code
+  dependencies: []
+  priority: 2
+  status: todo
+- id: CR-AGENTIC-003
+  description: Refactor duplicate README-injection logic by extracting common functions from `inject_readme.py` and `internal/inject_readme.py` into a shared utility module
+  component: code
+  dependencies: []
+  priority: 2
+  status: todo
+- id: CR-AGENTIC-004
+  description: Harden HTTP clients in `network.py` and `http_utils.py` with configurable retries, exponential backoff, timeouts, and clear error wrapping
+  component: code
+  dependencies: []
+  priority: 2
+  status: todo
+- id: CR-AGENTIC-005
+  description: Validate `config.yaml` at startup against a pydantic or jsonschema schema, and surface user-friendly error messages for missing/invalid fields
+  component: code
+  dependencies: []
+  priority: 3
+  status: todo
+- id: CR-AGENTIC-006
+  description: Build integration tests for the API server (`api_server.py`), starting a test instance and exercising all REST endpoints including failure cases
+  component: tests
+  dependencies:
+    - CR-AGENTIC-001
+  priority: 1
+  status: todo
+- id: CR-AGENTIC-007
+  description: Update `ARCHITECTURE.md` and in-repo diagrams (via `scripts/gen_arch_diagrams.py`) to match current code structure, and add concrete CLI usage examples to `README.md` and `FAST_START.md`
+  component: docs
+  dependencies: []
+  priority: 3
+  status: todo
+- id: CR-AGENTIC-008
+  description: Enhance CI workflows to enforce:
+    - 80%+ code coverage with pytest-cov
+    - mypy type-checking
+    - flake8 linting
+    - SBOM generation and Trivy scan failing the build on high-severity vulns
+  component: ci
+  dependencies:
+    - CR-AGENTIC-001
+    - CR-AGENTIC-002
+  priority: 2
+  status: todo
+- id: CR-AGENTIC-009
+  description: Optimize repository scraping in `internal/scrape.py` by adding asynchronous or multithreaded fetching to improve throughput for large index sizes
+  component: performance
+  dependencies: []
+  priority: 3
+  status: todo
+- id: CR-AGENTIC-010
+  description: Add regression tests that detect unintended changes in README injection output, driven by `regression_allowlist.yml`, and fail CI on diffs
+  component: tests
+  dependencies:
+    - CR-AGENTIC-001
+  priority: 2
+  status: todo
