@@ -15,6 +15,13 @@ Large `repos.json` files can slow down table generation and diff checks.
   ```bash
   pip install ijson
   ```
-  Then call `load_repos(..., use_stream=True)`.
-- Run `scripts/benchmark_ops.py` to measure sort and diff times. The script
-  prints a warning when operations exceed built-in baselines.
+- Then call `load_repos(..., use_stream=True)`.
+- Run `scripts/benchmark_ops.py` to benchmark sort, diff and star-delta
+  calculations. The script prints a warning when any operation exceeds its
+  baseline.
+
+### CI Benchmarks
+
+The `benchmarks` job in `ci.yml` runs only when triggered via
+`workflow_dispatch` with `run-benchmarks: true`. It executes the benchmarking
+script and uploads the results as an artifact.
