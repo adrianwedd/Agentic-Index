@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 import aiohttp
 import structlog
 
+from .exceptions import APIError
 from .internal import http_utils
 from .scoring import SCORE_KEY, categorize, compute_score
 
@@ -29,6 +30,10 @@ CACHE_TTL = 86400  # seconds
 
 SEARCH_TERMS = ["agent framework", "LLM agent"]
 TOPIC_FILTERS = ["agent"]
+
+MAX_RETRIES = int(os.getenv("NETWORK_RETRIES", str(http_utils.DEFAULT_RETRIES)))
+REQUEST_TIMEOUT = float(os.getenv("NETWORK_TIMEOUT", str(http_utils.DEFAULT_TIMEOUT)))
+BACKOFF_FACTOR = float(os.getenv("NETWORK_BACKOFF", str(http_utils.DEFAULT_BACKOFF)))
 
 
 def _load_cache(path: Path) -> Any | None:
@@ -50,10 +55,18 @@ def _get(
     url: str, *, params: dict | None = None, headers: dict | None = None
 ) -> http_utils.Response:
     """GET with retry and adaptive rate limit handling."""
-    kwargs = {"headers": headers or HEADERS}
+    kwargs = {
+        "headers": headers or HEADERS,
+        "retries": MAX_RETRIES,
+        "timeout": REQUEST_TIMEOUT,
+        "backoff_factor": BACKOFF_FACTOR,
+    }
     if params is not None:
         kwargs["params"] = params
-    return http_utils.sync_get(url, **kwargs)
+    try:
+        return http_utils.sync_get(url, **kwargs)
+    except Exception as exc:  # pragma: no cover - network error path
+        raise APIError(f"GET {url} failed: {exc}") from exc
 
 
 def github_search(query: str, page: int = 1) -> List[Dict]:
@@ -125,7 +138,11 @@ async def async_fetch_repo(
         return cached
     try:
         resp = await http_utils.async_get(
-            f"{GITHUB_API}/repos/{full_name}", session=session
+            f"{GITHUB_API}/repos/{full_name}",
+            session=session,
+            retries=MAX_RETRIES,
+            timeout=REQUEST_TIMEOUT,
+            backoff_factor=BACKOFF_FACTOR,
         )
     except Exception as exc:  # pragma: no cover - network error path
         logger.error("Repo fetch error %s: %s", full_name, exc)
@@ -144,7 +161,11 @@ async def async_fetch_readme(full_name: str, session: aiohttp.ClientSession) -> 
         return cache_file.read_text()
     try:
         resp = await http_utils.async_get(
-            f"{GITHUB_API}/repos/{full_name}/readme", session=session
+            f"{GITHUB_API}/repos/{full_name}/readme",
+            session=session,
+            retries=MAX_RETRIES,
+            timeout=REQUEST_TIMEOUT,
+            backoff_factor=BACKOFF_FACTOR,
         )
     except Exception as exc:  # pragma: no cover - network error path
         logger.error("Readme fetch error %s: %s", full_name, exc)
@@ -250,6 +271,9 @@ async def async_search_and_harvest(
                         "page": page,
                     },
                     session=session,
+                    retries=MAX_RETRIES,
+                    timeout=REQUEST_TIMEOUT,
+                    backoff_factor=BACKOFF_FACTOR,
                 )
                 for repo in resp.json().get("items", []):
                     full_name = repo["full_name"]
@@ -273,6 +297,9 @@ async def async_search_and_harvest(
                         "page": page,
                     },
                     session=session,
+                    retries=MAX_RETRIES,
+                    timeout=REQUEST_TIMEOUT,
+                    backoff_factor=BACKOFF_FACTOR,
                 )
                 for repo in resp.json().get("items", []):
                     full_name = repo["full_name"]

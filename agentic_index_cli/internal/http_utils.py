@@ -7,10 +7,16 @@ from typing import Any, Dict, Optional
 
 import aiohttp
 
+from ..exceptions import APIError
+
 logger = logging.getLogger(__name__)
 
 CONCURRENCY_LIMIT = 5
 _semaphore = asyncio.Semaphore(CONCURRENCY_LIMIT)
+
+DEFAULT_RETRIES = 5
+DEFAULT_TIMEOUT = 10
+DEFAULT_BACKOFF = 1.0
 
 
 @dataclass
@@ -29,14 +35,18 @@ async def async_get(
     params: Optional[Dict[str, Any]] = None,
     headers: Optional[Dict[str, str]] = None,
     session: aiohttp.ClientSession,
-    retries: int = 5,
+    retries: int = DEFAULT_RETRIES,
+    timeout: float = DEFAULT_TIMEOUT,
+    backoff_factor: float = DEFAULT_BACKOFF,
 ) -> Response:
-    """GET with exponential backoff and rate limit handling."""
-    backoff = 1
+    """GET with exponential backoff, timeout and rate limit handling."""
+    backoff = backoff_factor
     for attempt in range(retries):
         try:
             async with _semaphore:
-                async with session.get(url, params=params, headers=headers) as resp:
+                async with session.get(
+                    url, params=params, headers=headers, timeout=timeout
+                ) as resp:
                     text = await resp.text()
                     if (
                         resp.status == 403
@@ -53,13 +63,13 @@ async def async_get(
                         backoff *= 2
                         continue
                     return Response(resp.status, dict(resp.headers), text)
-        except aiohttp.ClientError as exc:
+        except (aiohttp.ClientError, asyncio.TimeoutError) as exc:
             if attempt == retries - 1:
-                raise
+                raise APIError(f"GET {url} failed: {exc}") from exc
             logger.warning("Request error: %s; retrying in %s seconds", exc, backoff)
             await asyncio.sleep(backoff)
             backoff *= 2
-    raise aiohttp.ClientError(f"failed GET {url} after retries")
+    raise APIError(f"GET {url} failed after retries")
 
 
 def sync_get(
@@ -67,14 +77,22 @@ def sync_get(
     *,
     params: Optional[Dict[str, Any]] = None,
     headers: Optional[Dict[str, str]] = None,
-    retries: int = 5,
+    retries: int = DEFAULT_RETRIES,
+    timeout: float = DEFAULT_TIMEOUT,
+    backoff_factor: float = DEFAULT_BACKOFF,
 ) -> Response:
     """Synchronous wrapper around :func:`async_get`."""
 
     async def runner() -> Response:
         async with aiohttp.ClientSession() as session:
             return await async_get(
-                url, params=params, headers=headers, session=session, retries=retries
+                url,
+                params=params,
+                headers=headers,
+                session=session,
+                retries=retries,
+                timeout=timeout,
+                backoff_factor=backoff_factor,
             )
 
     return asyncio.run(runner())
