@@ -30,12 +30,16 @@ def _prepare(tmp_path: Path, top_n: int, repo_count: int) -> Path:
         json.dumps({"schema_version": 3, "repos": repos})
     )
     (data_dir / "last_snapshot.json").write_text("[]")
+    by_cat = data_dir / "by_category"
+    by_cat.mkdir()
+    (by_cat / "index.json").write_text("{}")
     readme = tmp_path / "README.md"
     readme.write_text(f"start\n<!-- TOP{top_n}:START -->\n<!-- TOP{top_n}:END -->\n")
     for name, val in {
         "README_PATH": readme,
         "REPOS_PATH": data_dir / "repos.json",
         "SNAPSHOT": data_dir / "last_snapshot.json",
+        "BY_CAT_INDEX": data_dir / "by_category" / "index.json",
     }.items():
         setattr(inj, name, val)
     return readme

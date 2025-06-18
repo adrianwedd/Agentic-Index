@@ -46,6 +46,10 @@ def _setup(tmp_path, monkeypatch, readme_fixture_path, data_fixture_dir):
     monkeypatch.setattr(inj, "DATA_PATH", data_dir / "top100.md")
     monkeypatch.setattr(inj, "REPOS_PATH", data_dir / "repos.json")
     monkeypatch.setattr(inj, "SNAPSHOT", data_dir / "last_snapshot.json")
+    by_cat = data_dir / "by_category"
+    by_cat.mkdir()
+    (by_cat / "index.json").write_text("{}")
+    monkeypatch.setattr(inj, "BY_CAT_INDEX", by_cat / "index.json")
 
     modified = inj.build_readme(top_n=50, limit=50).strip()
     return readme, modified

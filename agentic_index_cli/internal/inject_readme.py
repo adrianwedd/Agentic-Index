@@ -16,7 +16,7 @@ DATA_PATH = ROOT / "data" / "top100.md"
 REPOS_PATH = ROOT / "data" / "repos.json"
 RANKED_PATH = ROOT / "data" / "ranked.json"
 SNAPSHOT = ROOT / "data" / "last_snapshot.json"
-BY_CAT_INDEX = ROOT / "data" / "by_category" / "index.json"
+BY_CAT_INDEX = ROOT.joinpath("data/by_category/index.json")
 
 CATEGORY_START = "<!-- CATEGORY:START -->"
 CATEGORY_END = "<!-- CATEGORY:END -->"
@@ -86,11 +86,12 @@ def _load_rows(
             data = json.loads(RANKED_PATH.read_text())
             repos = data.get("repos", data)
         else:
+            if not REPOS_PATH.exists():
+                raise FileNotFoundError(str(REPOS_PATH))
             repos = json.loads(REPOS_PATH.read_text()).get("repos", [])
-    except FileNotFoundError as exc:
-        raise FileNotFoundError(f"Missing file: {exc.filename}") from exc
-    except Exception as exc:
-        raise ValueError(f"Failed to read {REPOS_PATH}: {exc}") from exc
+    except Exception:
+        traceback.print_exc()
+        raise
 
     required = [
         "name",
@@ -257,11 +258,12 @@ def _build_category_list(index_path: pathlib.Path | None = None) -> str:
     if index_path is None:
         index_path = BY_CAT_INDEX
     if not index_path.exists():
-        return ""
+        raise FileNotFoundError(str(index_path))
     try:
         index = json.loads(index_path.read_text())
     except Exception:
-        return ""
+        traceback.print_exc()
+        raise
     lines: list[str] = []
     for cat in sorted(index):
         info = index[cat]
@@ -308,7 +310,13 @@ def build_readme(
 ) -> str:
     """Return README text with the ranking table injected."""
     start_marker, end_marker = _markers(top_n)
-    readme_text = README_PATH.read_text(encoding="utf-8")
+    if not README_PATH.exists():
+        raise FileNotFoundError(str(README_PATH))
+    try:
+        readme_text = README_PATH.read_text(encoding="utf-8")
+    except Exception:
+        traceback.print_exc()
+        raise
     end_newline = readme_text.endswith("\n")
     try:
         start_idx = readme_text.index(start_marker)
@@ -347,7 +355,13 @@ def diff(new_text: str, readme_path: pathlib.Path | None = None) -> str:
     """Return a unified diff comparing ``new_text`` with ``readme_path``."""
     if readme_path is None:
         readme_path = README_PATH
-    old_text = readme_path.read_text(encoding="utf-8")
+    if not readme_path.exists():
+        raise FileNotFoundError(str(readme_path))
+    try:
+        old_text = readme_path.read_text(encoding="utf-8")
+    except Exception:
+        traceback.print_exc()
+        raise
     if not new_text.endswith("\n"):
         new_text += "\n"
     if not old_text.endswith("\n"):
@@ -367,6 +381,7 @@ def main(
     force: bool = False,
     check: bool = False,
     write: bool = True,
+    dry_run: bool = False,
     sort_by: str = DEFAULT_SORT_FIELD,
     top_n: int = DEFAULT_TOP_N,
     limit: int | None = None,
@@ -388,6 +403,11 @@ def main(
     limit:
         Maximum number of rows to render. Defaults to ``top_n``.
     """
+    for path in (DATA_PATH, REPOS_PATH, SNAPSHOT, BY_CAT_INDEX):
+        if not path.exists():
+            raise FileNotFoundError(str(path))
+    if not (RANKED_PATH.exists() or REPOS_PATH.exists()):
+        raise FileNotFoundError(str(REPOS_PATH))
     try:
         row_limit = top_n if limit is None else limit
         new_text = build_readme(sort_by=sort_by, limit=row_limit, top_n=top_n)
@@ -404,8 +424,16 @@ def main(
             return 1
         return 0
 
+    if dry_run:
+        print(diff(new_text))
+        return 0
+
     if write and (force or diff(new_text)):
-        README_PATH.write_text(new_text, encoding="utf-8")
+        try:
+            README_PATH.write_text(new_text, encoding="utf-8")
+        except Exception:
+            traceback.print_exc()
+            raise
 
     return 0
 
@@ -482,7 +510,11 @@ def write_category_readme(
         print(f"{fname} is out of date", file=sys.stderr)
         return 1
     if write and (force or not path.exists() or diff(text, path)):
-        path.write_text(text, encoding="utf-8")
+        try:
+            path.write_text(text, encoding="utf-8")
+        except Exception:
+            traceback.print_exc()
+            raise
     return 0
 
 
