@@ -55,3 +55,21 @@ def test_inject_script_all_categories(monkeypatch):
     sys.argv = [str(script), "--all-categories"]
     runpy.run_path(script, run_name="__main__")
     assert called != {}
+
+
+def test_inject_script_dry_run(monkeypatch):
+    called = {}
+
+    def fake_main(**kwargs):
+        called.update(kwargs)
+        return 0
+
+    monkeypatch.setattr(
+        "agentic_index_cli.internal.inject_readme.main",
+        fake_main,
+    )
+    script = Path(__file__).resolve().parents[1] / "scripts" / "inject_readme.py"
+    sys.argv = [str(script), "--dry-run"]
+    runpy.run_path(script, run_name="__main__")
+    assert called["check"] is True
+    assert called["write"] is False

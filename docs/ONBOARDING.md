@@ -30,6 +30,13 @@ Use the helper script to install all runtime and development dependencies and se
 bash scripts/agent-setup.sh
 ```
 This installs `pre-commit` and performs a `pip install -e .` under the hood.
+CI and production run on **Python 3.11** with dependencies pinned in
+`requirements.lock`. Use the same version locally to avoid surprises:
+```bash
+pyenv install 3.11.12  # if needed
+pyenv local 3.11.12
+pip install -r requirements.lock
+```
 
 ## Pre-commit Hooks
 Activate hooks so formatting and lint checks run before each commit. The hooks

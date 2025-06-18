@@ -23,10 +23,11 @@ Run the helper script to prepare your environment:
 source scripts/setup-env.sh
 ```
 
-The script verifies Python ≥3.10, installs required system packages, creates a
-virtual environment with all dependencies, exports `PYTHONPATH`, and installs
-pre-commit hooks. It also loads any variables in a `.env` file or prompts for
-missing values such as API keys.
+The script verifies Python **3.11** or newer, installs required system packages,
+creates a virtual environment with the pinned dependencies from
+`requirements.lock`, exports `PYTHONPATH`, and installs pre-commit hooks. It also
+loads any variables in a `.env` file or prompts for missing values such as API
+keys.
 
 ## Troubleshooting FAQ
 
