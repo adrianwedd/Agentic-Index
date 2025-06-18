@@ -232,3 +232,25 @@ def test_worklog_targets(monkeypatch):
         targets=["pr", "issue"],
     )
     assert url == "u"
+
+
+def test_cli_dry_run(monkeypatch, capsys):
+    def fake_create(*a, **k):
+        raise AssertionError("should not be called")
+
+    monkeypatch.setattr(il, "create_issue", fake_create)
+    il.main(
+        [
+            "--new-issue",
+            "--repo",
+            "o/r",
+            "--title",
+            "t",
+            "--body",
+            "b",
+            "--dry-run",
+            "--verbose",
+        ]
+    )
+    out = capsys.readouterr().out
+    assert "DRY RUN" in out

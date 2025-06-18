@@ -101,3 +101,30 @@ def test_missing_repos_file(tmp_path, monkeypatch):
     inj.REPOS_PATH.unlink()
     with pytest.raises(FileNotFoundError):
         inj.build_readme(top_n=50)
+
+
+@pytest.mark.parametrize(
+    "field",
+    [
+        "name",
+        "full_name",
+        "AgenticIndexScore",
+        "stars",
+        "stars_delta",
+        "score_delta",
+        "recency_factor",
+        "issue_health",
+        "doc_completeness",
+        "license_freedom",
+        "ecosystem_integration",
+        "stars_log2",
+        "category",
+    ],
+)
+def test_load_rows_missing_field(tmp_path, field):
+    _setup(tmp_path)
+    data = json.loads(inj.REPOS_PATH.read_text())
+    del data["repos"][0][field]
+    inj.REPOS_PATH.write_text(json.dumps(data))
+    with pytest.raises(KeyError, match=field):
+        inj._load_rows()
