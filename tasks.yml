@@ -1,0 +1,18 @@
+- id: 1
+  description: Align load_json call with parameters used by load_repos
+  component: code
+  dependencies: []
+  priority: 1
+  status: done
+- id: 2
+  description: Add unit test for load_repos caching and update README fixture
+  component: tests
+  dependencies: [1]
+  priority: 2
+  status: done
+- id: 3
+  description: Document package layout in ARCHITECTURE.md
+  component: docs
+  dependencies: []
+  priority: 3
+  status: done

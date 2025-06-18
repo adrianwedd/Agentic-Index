@@ -90,7 +90,7 @@ def load_repos(
     path: Path, *, use_cache: bool = False, use_stream: bool = False
 ) -> List[dict]:
     """Validate and load repository JSON data."""
-    raw = load_json(path, use_cache=use_cache, use_stream=use_stream)
+    raw = load_json(path, cache=use_cache, stream=use_stream)
     if isinstance(raw, list):
         items = raw
     elif isinstance(raw, dict):
