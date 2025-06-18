@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
       - name: Extract release notes
         id: changelog
         run: |
@@ -21,8 +24,21 @@ jobs:
           echo "notes<<EOF" >> $GITHUB_OUTPUT
           cat notes.md >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
+      - name: Build distribution
+        run: |
+          pip install build
+          python -m build
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+      - name: Sign artifacts
+        run: |
+          for file in dist/*; do gpg --batch --yes --detach-sign -a "$file"; done
       - uses: softprops/action-gh-release@v1
         with:
           body: "${{ steps.changelog.outputs.notes }}"
           draft: false
+          files: dist/* dist/*.asc
 

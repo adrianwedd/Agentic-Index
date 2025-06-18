@@ -1,0 +1,29 @@
+name: FOSSA Scan
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  fossa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run FOSSA analysis
+        uses: fossas/fossa-action@v1
+        with:
+          api-key: ${{ secrets.FOSSA_API_KEY }}
+          run-tests: true
+          generate-report: html
+      - name: Upload FOSSA report
+        if: ${{ steps.fossa.outputs.report }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: fossa-report.html
+          path: report.html

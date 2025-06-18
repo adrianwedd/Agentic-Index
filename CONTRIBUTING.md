@@ -130,6 +130,28 @@ following:
 After editing the workflow, run `pre-commit` and `pytest -q` to confirm the repo
 passes formatting and tests before opening a pull request.
 
+## Security Scanning
+
+Dependency and container scans run automatically in CI:
+
+* **pip-audit** – checks Python dependencies for CVEs.
+* **Trivy** – scans the repository filesystem.
+* **Snyk** – tests dependencies weekly and on pull requests.
+* **FOSSA** – verifies license compliance.
+
+To run the Python audit locally:
+
+```bash
+pip install pip-audit
+pip-audit -r requirements.txt
+```
+
+Trivy can scan the repo locally with:
+
+```bash
+trivy fs .
+```
+
 
 
 
