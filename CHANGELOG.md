@@ -17,3 +17,4 @@ All notable changes to this project will be documented in this file. The format 
 - Introduced 📊 Metrics Legend.
 - Added new scoring columns (maint, stars_7d, etc.).
 - README snapshot now uses diff tolerance ±0.02.
+[2025-06-18] chore(self-improve): cycle #1 – fixed load_json call, added caching test, documented architecture
