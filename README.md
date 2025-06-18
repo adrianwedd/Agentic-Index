@@ -33,12 +33,36 @@ Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metr
 
 This catalogue is maintained by the Agentic-Index project and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
 
+<a id="-getting-started"></a>
+## 🚀 Getting Started
+
+1. **Install the CLI**
+   ```bash
+   pip install agentic-index-cli
+   ```
+2. **Configure tokens and settings**
+   ```bash
+   cp agentic_index_cli/config.yaml my_config.yml
+   export GITHUB_TOKEN_REPO_STATS=<token>
+   export API_KEY=<optional-api>
+   ```
+   Edit `my_config.yml` to tweak ranking parameters.
+3. **Run the full pipeline**
+   ```bash
+   agentic-index scrape --min-stars 100
+   agentic-index enrich data/repos.json
+   agentic-index faststart --top 100 data/repos.json
+   ```
+   Results appear in `data/` and are injected into `README.md`.
+4. **Browse the docs** – The full API reference lives in [`docs/`](docs/index.md).
+
 -----
 
 ## TOC
 
 * [✨ Why Agentic Index is Different](#-why-agentic-index-is-different)
 * [⚡ Installation & Quick-start](#-installation--quick-start)
+* [🚀 Getting Started](#-getting-started)
 * [🏆 The Agentic-Index Top 100: AI Agent Repositories](#-the-agentic-index-top-100-ai-agent-repositories)
   * [💎 Honourable Mentions / Niche & Novel Gems](HONOURABLE.md)
     * [🔬 Our Methodology & Scoring Explained](#our-methodology--scoring-explained)
@@ -206,12 +230,7 @@ Quick guide to our categories (and the icons you'll see in the table):
 <a id="-explore-by-category"></a>
 ## 📚 Explore by Category
 <!-- CATEGORY:START -->
-- 🛠️ [DevTools](README_DevTools.md)
-- 🎯 [Domain-Specific](README_Domain-Specific.md)
-- 🧪 [Experimental](README_Experimental.md)
-- 🌐 [General-purpose](README_General-purpose.md)
-- 🤖 [Multi-Agent](README_Multi-Agent.md)
-- 📚 [RAG-centric](README_RAG-centric.md)
+
 <!-- CATEGORY:END -->
 -----
 
