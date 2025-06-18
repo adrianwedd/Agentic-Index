@@ -3,6 +3,9 @@
 # Trigger the update workflow for Agentic Index or a specific category
 set -euo pipefail
 
+LOG_FILE=${LOG_FILE:-refresh.log}
+exec > >(tee -a "$LOG_FILE") 2>&1
+
 CATEGORIES=(
   "Frameworks"
   "Multi-Agent Coordination"
@@ -14,9 +17,18 @@ CATEGORIES=(
 
 run_category() {
   local cat="$1"
-  ./scripts/refresh_category.py "$cat"
+  local out="data/${cat}/repos.json"
+  if [[ -f "$out" ]]; then
+    echo "[skip] $cat"
+    return
+  fi
+  echo "[run] $cat"
+  if ./scripts/refresh_category.py "$cat"; then
+    touch "data/${cat}/.done"
+  fi
 }
 
+start_time=$(date +%s)
 case "${1:-}" in
   --all)
     for c in "${CATEGORIES[@]}"; do
@@ -43,4 +55,6 @@ case "${1:-}" in
     run_category "$1"
     ;;
 esac
+
+echo "Finished in $(( $(date +%s) - start_time ))s" >&2
 

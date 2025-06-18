@@ -5,6 +5,10 @@ on:
     - cron: "23 2 * * *"
   workflow_dispatch:
 
+defaults:
+  run:
+    shell: bash --noprofile --norc -eo pipefail {0}
+
 permissions:
   contents: write
   pull-requests: write
@@ -15,6 +19,8 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    env:
+      PYTHONFAULTHANDLER: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -29,8 +35,13 @@ jobs:
           python scripts/scrape_repos.py --min-stars 50 --output data/repos.json
           python scripts/score_metrics.py data/repos.json
           python -m agentic_index_cli.ranker data/repos.json
-          python scripts/inject_readme.py
           git diff --quiet || echo "CHANGES_DETECTED=true" >> "$GITHUB_ENV"
+      - name: Validate JSON
+        run: |
+          python -m json.tool data/repos.json > /dev/null
+          if [ -f data/ranked.json ]; then
+            python -m json.tool data/ranked.json > /dev/null
+          fi
       - name: Verify artifacts
         run: |
           test -f data/repos.json

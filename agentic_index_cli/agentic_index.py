@@ -1,18 +1,23 @@
 """GitHub scraping and ranking helpers used by the CLI."""
 
 import argparse
+import asyncio
 import csv
 import json
+import logging
 import math
 import os
 import sys
 import time
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional
 
-import requests
+import aiohttp
+from jinja2 import Template
 from rich.progress import track
+
+from agentic_index_cli.internal import http_utils
 
 SCORE_KEY = "AgenticIndexScore"
 
@@ -23,6 +28,27 @@ HEADERS = {
 TOKEN = os.getenv("GITHUB_TOKEN")
 if TOKEN:
     HEADERS["Authorization"] = f"Bearer {TOKEN}"
+
+CACHE_DIR = Path(".cache")
+CACHE_TTL = 86400  # seconds
+
+
+def _load_cache(path: Path) -> Any | None:
+    import time as _time
+
+    if path.exists() and _time.time() - path.stat().st_mtime < CACHE_TTL:
+        try:
+            with path.open() as fh:
+                return json.load(fh)
+        except Exception:
+            return None
+    return None
+
+
+def _save_cache(path: Path, data: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2) + "\n")
+
 
 SEARCH_TERMS = [
     "agent framework",
@@ -49,21 +75,35 @@ VIRAL_LICENSES = {
 }
 
 
+def _get(
+    url: str, *, params: dict | None = None, headers: dict | None = None
+) -> http_utils.Response:
+    """GET with retry and adaptive rate limit handling."""
+    kwargs = {"headers": headers or HEADERS}
+    if params is not None:
+        kwargs["params"] = params
+    return http_utils.sync_get(url, **kwargs)
+
+
+logger = logging.getLogger(__name__)
+
+
 def github_search(query: str, page: int = 1) -> List[Dict]:
     """Return GitHub search results for ``query``."""
-    time.sleep(1)  # rate limiting
     params = {
         "q": query,
         "sort": "stars",
         "order": "desc",
-        "per_page": 5,
+        "per_page": 100,
         "page": page,
     }
-    resp = requests.get(
-        f"{GITHUB_API}/search/repositories", params=params, headers=HEADERS
-    )
+    try:
+        resp = _get(f"{GITHUB_API}/search/repositories", params=params)
+    except Exception as exc:
+        logger.error("GitHub search error: %s", exc)
+        return []
     if resp.status_code != 200:
-        print(f"GitHub search error {resp.status_code}: {resp.text}", file=sys.stderr)
+        logger.error("GitHub search error %s: %s", resp.status_code, resp.text)
         return []
     data = resp.json()
     return data.get("items", [])
@@ -71,25 +111,48 @@ def github_search(query: str, page: int = 1) -> List[Dict]:
 
 def fetch_repo(full_name: str) -> Optional[Dict]:
     """Return repository metadata for ``full_name``."""
-    time.sleep(1)
-    resp = requests.get(f"{GITHUB_API}/repos/{full_name}", headers=HEADERS)
-    if resp.status_code != 200:
-        print(f"Repo fetch error {full_name} {resp.status_code}", file=sys.stderr)
+    cache_file = CACHE_DIR / f"repo_{full_name.replace('/', '_')}.json"
+    cached = _load_cache(cache_file)
+    if cached:
+        return cached
+    try:
+        resp = _get(f"{GITHUB_API}/repos/{full_name}")
+    except Exception as exc:
+        logger.error("Repo fetch error %s: %s", full_name, exc)
         return None
-    return resp.json()
+    if resp.status_code != 200:
+        logger.error("Repo fetch error %s %s", full_name, resp.status_code)
+        return None
+    data = resp.json()
+    _save_cache(cache_file, data)
+    return data
 
 
 def fetch_readme(full_name: str) -> str:
     """Return decoded README text for ``full_name``."""
-    time.sleep(1)
-    resp = requests.get(f"{GITHUB_API}/repos/{full_name}/readme", headers=HEADERS)
+    import time as _time
+
+    cache_file = CACHE_DIR / f"readme_{full_name.replace('/', '_')}.txt"
+    cached = None
+    if cache_file.exists() and _time.time() - cache_file.stat().st_mtime < CACHE_TTL:
+        cached = cache_file.read_text()
+    if cached:
+        return cached
+    try:
+        resp = _get(f"{GITHUB_API}/repos/{full_name}/readme")
+    except Exception as exc:
+        logger.error("Readme fetch error %s: %s", full_name, exc)
+        return ""
     if resp.status_code != 200:
         return ""
     data = resp.json()
     if "content" in data:
         import base64
 
-        return base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
+        text = base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
+        cache_file.parent.mkdir(parents=True, exist_ok=True)
+        cache_file.write_text(text)
+        return text
     return ""
 
 
@@ -181,16 +244,70 @@ def compute_score(repo: Dict, readme: str) -> float:
     return round(score * 100 / 8, 2)  # normalized roughly to 0-100
 
 
-def harvest_repo(full_name: str) -> Optional[Dict]:
-    """Return normalized data for ``full_name``."""
-    repo = fetch_repo(full_name)
+async def async_fetch_repo(
+    full_name: str, session: aiohttp.ClientSession
+) -> Optional[Dict]:
+    cache_file = CACHE_DIR / f"repo_{full_name.replace('/', '_')}.json"
+    cached = _load_cache(cache_file)
+    if cached:
+        return cached
+    try:
+        resp = await http_utils.async_get(
+            f"{GITHUB_API}/repos/{full_name}", session=session
+        )
+    except Exception as exc:
+        logger.error("Repo fetch error %s: %s", full_name, exc)
+        return None
+    if resp.status_code != 200:
+        logger.error("Repo fetch error %s %s", full_name, resp.status_code)
+        return None
+    data = resp.json()
+    _save_cache(cache_file, data)
+    return data
+
+
+async def async_fetch_readme(full_name: str, session: aiohttp.ClientSession) -> str:
+    cache_file = CACHE_DIR / f"readme_{full_name.replace('/', '_')}.txt"
+    cached = None
+    if cache_file.exists() and time.time() - cache_file.stat().st_mtime < CACHE_TTL:
+        cached = cache_file.read_text()
+    if cached:
+        return cached
+    try:
+        resp = await http_utils.async_get(
+            f"{GITHUB_API}/repos/{full_name}/readme", session=session
+        )
+    except Exception as exc:
+        logger.error("Readme fetch error %s: %s", full_name, exc)
+        return ""
+    if resp.status_code != 200:
+        return ""
+    data = resp.json()
+    if "content" in data:
+        import base64
+
+        text = base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
+        cache_file.parent.mkdir(parents=True, exist_ok=True)
+        cache_file.write_text(text)
+        return text
+    return ""
+
+
+async def async_harvest_repo(
+    full_name: str, session: aiohttp.ClientSession
+) -> Optional[Dict]:
+    cache_file = CACHE_DIR / f"meta_{full_name.replace('/', '_')}.json"
+    cached = _load_cache(cache_file)
+    if cached:
+        return cached
+    repo = await async_fetch_repo(full_name, session)
     if not repo:
         return None
-    readme = fetch_readme(full_name)
+    readme = await async_fetch_readme(full_name, session)
     score = compute_score(repo, readme)
     category = categorize(repo.get("description", ""), repo.get("topics", []))
     first_paragraph = readme.split("\n\n")[0][:200]
-    return {
+    data = {
         "name": full_name,
         "description": repo.get("description", ""),
         "stars": repo.get("stargazers_count", 0),
@@ -210,45 +327,118 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
         SCORE_KEY: score,
         "category": category,
     }
+    _save_cache(cache_file, data)
+    return data
+
+
+def harvest_repo(full_name: str) -> Optional[Dict]:
+    """Return normalized data for ``full_name``."""
+    cache_file = CACHE_DIR / f"meta_{full_name.replace('/', '_')}.json"
+    cached = _load_cache(cache_file)
+    if cached:
+        return cached
+    repo = fetch_repo(full_name)
+    if not repo:
+        return None
+    readme = fetch_readme(full_name)
+    score = compute_score(repo, readme)
+    category = categorize(repo.get("description", ""), repo.get("topics", []))
+    first_paragraph = readme.split("\n\n")[0][:200]
+    data = {
+        "name": full_name,
+        "description": repo.get("description", ""),
+        "stars": repo.get("stargazers_count", 0),
+        "forks": repo.get("forks_count", 0),
+        "open_issues": repo.get("open_issues_count", 0),
+        "closed_issues": repo.get("closed_issues", 0),
+        "last_commit": repo.get("pushed_at", ""),
+        "language": repo.get("language", ""),
+        "license": (
+            repo.get("license")
+            if not isinstance(repo.get("license"), dict)
+            else repo.get("license").get("spdx_id")
+        ),
+        "maintainer": repo.get("owner", {}).get("login"),
+        "topics": ",".join(repo.get("topics", [])),
+        "readme_excerpt": first_paragraph,
+        SCORE_KEY: score,
+        "category": category,
+    }
+    _save_cache(cache_file, data)
+    return data
+
+
+async def async_search_and_harvest(
+    min_stars: int = 0, max_pages: int = 1
+) -> List[Dict]:
+    seen = set()
+    results: List[Dict] = []
+    async with aiohttp.ClientSession() as session:
+        tasks = []
+        for term in SEARCH_TERMS:
+            for page in range(1, max_pages + 1):
+                query = f"{term} stars:>={min_stars}"
+                resp = await http_utils.async_get(
+                    f"{GITHUB_API}/search/repositories",
+                    params={
+                        "q": query,
+                        "sort": "stars",
+                        "order": "desc",
+                        "per_page": 100,
+                        "page": page,
+                    },
+                    session=session,
+                )
+                items = resp.json().get("items", [])
+                for repo in items:
+                    full_name = repo["full_name"]
+                    if full_name in seen:
+                        continue
+                    seen.add(full_name)
+                    tasks.append(
+                        asyncio.create_task(async_harvest_repo(full_name, session))
+                    )
+
+        for topic in TOPIC_FILTERS:
+            for page in range(1, max_pages + 1):
+                query = f"topic:{topic} stars:>={min_stars}"
+                resp = await http_utils.async_get(
+                    f"{GITHUB_API}/search/repositories",
+                    params={
+                        "q": query,
+                        "sort": "stars",
+                        "order": "desc",
+                        "per_page": 100,
+                        "page": page,
+                    },
+                    session=session,
+                )
+                items = resp.json().get("items", [])
+                for repo in items:
+                    full_name = repo["full_name"]
+                    if full_name in seen:
+                        continue
+                    seen.add(full_name)
+                    tasks.append(
+                        asyncio.create_task(async_harvest_repo(full_name, session))
+                    )
+
+        for fut in asyncio.as_completed(tasks):
+            try:
+                meta = await fut
+            except Exception as exc:
+                logger.error("harvest failed: %s", exc)
+                continue
+            if meta:
+                results.append(meta)
+    return results
 
 
 def search_and_harvest(min_stars: int = 0, max_pages: int = 1) -> List[Dict]:
     """Search GitHub and harvest repo metadata."""
-    seen = set()
-    results = []
-    for term in SEARCH_TERMS:
-        for page in track(
-            range(1, max_pages + 1),
-            description=f"{term}",
-            disable=not sys.stderr.isatty(),
-        ):
-            query = f"{term} stars:>={min_stars}"
-            repos = github_search(query, page)
-            for repo in repos:
-                full_name = repo["full_name"]
-                if full_name in seen:
-                    continue
-                seen.add(full_name)
-                meta = harvest_repo(full_name)
-                if meta:
-                    results.append(meta)
-    # Topic filter
-    for topic in TOPIC_FILTERS:
-        for page in track(
-            range(1, max_pages + 1),
-            description=f"topic:{topic}",
-            disable=not sys.stderr.isatty(),
-        ):
-            query = f"topic:{topic} stars:>={min_stars}"
-            repos = github_search(query, page)
-            for repo in repos:
-                full_name = repo["full_name"]
-                if full_name in seen:
-                    continue
-                seen.add(full_name)
-                meta = harvest_repo(full_name)
-                if meta:
-                    results.append(meta)
+    start = time.perf_counter()
+    results = asyncio.run(async_search_and_harvest(min_stars, max_pages))
+    logger.info("search_and_harvest completed in %.2fs", time.perf_counter() - start)
     return results
 
 
@@ -277,13 +467,31 @@ def save_csv(repos: List[Dict], path: Path):
 
 def save_markdown(repos: List[Dict], path: Path):
     """Write a Markdown table of ``repos`` to ``path``."""
-    with path.open("w") as f:
-        f.write("| # | Repo | ★ | Last Commit | Score | Category | One-liner |\n")
-        f.write("|---|------|----|------------|-------|----------|-----------|\n")
-        for i, r in enumerate(repos, 1):
-            date = r["last_commit"].split("T")[0]
-            line = f"| {i} | {r['name']} | {r['stars']} | {date} | {r[SCORE_KEY]} | {r['category']} | {r['description']} |\n"
-            f.write(line)
+
+    tmpl = Template(
+        """
+| # | Repo | ★ | Last Commit | Score | Category | One-liner |
+|---|------|----|------------|-------|----------|-----------|
+{% for i, r in rows %}| {{ i }} | {{ r.name }} | {{ r.stars }} | {{ r.date }} | {{ r.score }} | {{ r.category }} | {{ r.description }} |
+{% endfor %}"""
+    )
+
+    rows = [
+        (
+            i,
+            {
+                "name": r["name"],
+                "stars": r["stars"],
+                "date": r["last_commit"].split("T")[0],
+                "score": r[SCORE_KEY],
+                "category": r["category"],
+                "description": r["description"],
+            },
+        )
+        for i, r in enumerate(repos, 1)
+    ]
+
+    path.write_text(tmpl.render(rows=rows))
 
 
 def load_previous(path: Path) -> List[str]:

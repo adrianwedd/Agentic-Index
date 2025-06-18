@@ -17,6 +17,15 @@ def test_ranker_positive_score(tmp_path):
     path.write_text(json.dumps({"schema_version": 1, "repos": [repo]}))
     env = os.environ.copy()
     env["PYTEST_CURRENT_TEST"] = "y"
-    subprocess.run(["python", "scripts/rank.py", str(path)], check=True, env=env)
+    subprocess.run(
+        [
+            "python",
+            "-m",
+            "agentic_index_cli.ranker",
+            str(path),
+        ],
+        check=True,
+        env=env,
+    )
     result = json.loads(path.read_text())["repos"][0]
     assert result["AgenticIndexScore"] > 0

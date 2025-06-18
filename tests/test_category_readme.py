@@ -48,12 +48,16 @@ def _setup(tmp_path: Path):
     )
     (data_dir / "top100.md").write_text("")
     (data_dir / "last_snapshot.json").write_text("[]")
+    by_cat = data_dir / "by_category"
+    by_cat.mkdir()
+    (by_cat / "index.json").write_text("{}")
     for name, val in {
         "ROOT": tmp_path,
         "README_PATH": tmp_path / "README.md",
         "DATA_PATH": data_dir / "top100.md",
         "REPOS_PATH": data_dir / "repos.json",
         "SNAPSHOT": data_dir / "last_snapshot.json",
+        "BY_CAT_INDEX": by_cat / "index.json",
     }.items():
         setattr(inj, name, val)
     return tmp_path

@@ -32,7 +32,8 @@ bash scripts/agent-setup.sh
 This installs `pre-commit` and performs a `pip install -e .` under the hood.
 
 ## Pre-commit Hooks
-Activate hooks so formatting and lint checks run before each commit:
+Activate hooks so formatting and lint checks run before each commit. The hooks
+run **Black**, **Isort**, **Flake8**, and the unit tests:
 ```bash
 pre-commit install
 ```

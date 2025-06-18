@@ -8,8 +8,9 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List
 
-import requests
 from pydantic import BaseModel, ValidationError
+
+from agentic_index_cli.internal import http_utils
 
 from ..exceptions import APIError, InvalidRepoError, RateLimitError
 from ..validate import save_repos
@@ -69,31 +70,8 @@ class RepoModel(BaseModel):
     owner: OwnerModel
 
 
-def _get(url: str, *, headers: dict, params: dict | None = None) -> requests.Response:
-    backoff = 1
-    for attempt in range(5):
-        try:
-            resp = requests.get(url, headers=headers, params=params)
-        except requests.RequestException as e:
-            if attempt == 4:
-                raise APIError(str(e)) from e
-        else:
-            if (
-                resp.status_code == 403
-                and resp.headers.get("X-RateLimit-Remaining") == "0"
-            ):
-                reset = int(resp.headers.get("X-RateLimit-Reset", "0"))
-                sleep_for = max(0, reset - int(time.time()))
-                logger.warning("Rate limit hit, sleeping %s seconds", sleep_for)
-                time.sleep(sleep_for)
-                continue
-            if resp.status_code >= 500:
-                logger.warning("Server error %s, retrying", resp.status_code)
-            else:
-                return resp
-        time.sleep(backoff)
-        backoff *= 2
-    raise APIError(f"failed GET {url} after retries")
+def _get(url: str, *, headers: dict, params: dict | None = None) -> http_utils.Response:
+    return http_utils.sync_get(url, params=params, headers=headers)
 
 
 def _extract(item: Dict[str, Any]) -> Dict[str, Any]:

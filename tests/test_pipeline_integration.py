@@ -70,7 +70,9 @@ def test_end_to_end(tmp_path, monkeypatch, min_stars):
 
     monkeypatch.chdir(tmp_path)
     monkeypatch.setenv("CI_OFFLINE", "1")
-    monkeypatch.setattr(scraper.requests, "get", fake_get)
+    monkeypatch.setattr(
+        scraper.http_utils, "sync_get", lambda url, **kw: fake_get(url, **kw)
+    )
     monkeypatch.setattr(scraper, "DEFAULT_REPOS", ["owner/repo"])
 
     scraper.main(["--one-shot", f"--min-stars={min_stars}"])
@@ -98,8 +100,13 @@ def test_end_to_end(tmp_path, monkeypatch, min_stars):
         env=env,
     )
 
+    (tmp_path / "data" / "last_snapshot.json").write_text("[]")
+
     readme = tmp_path / "README.md"
     readme.write_text("start\n<!-- TOP50:START -->\n<!-- TOP50:END -->\nend\n")
+    by_cat = tmp_path / "data" / "by_category"
+    by_cat.mkdir(exist_ok=True)
+    (by_cat / "index.json").write_text("{}")
 
     inj_mod = importlib.import_module("agentic_index_cli.internal.inject_readme")
     for name, val in {
@@ -107,6 +114,7 @@ def test_end_to_end(tmp_path, monkeypatch, min_stars):
         "DATA_PATH": tmp_path / "data" / "top100.md",
         "REPOS_PATH": data_file,
         "SNAPSHOT": tmp_path / "data" / "last_snapshot.json",
+        "BY_CAT_INDEX": by_cat / "index.json",
     }.items():
         setattr(inj_mod, name, val)
 

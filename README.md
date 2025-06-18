@@ -26,20 +26,10 @@ Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metr
 
 > **🎯 TL;DR:** This isn’t just a list—it’s your launchpad for building with AI agents.
 
+
 [🚀 Jump to Fast-Start Picks →](FAST_START.md)
 
------
-
-<p align="center">
-![build](badges/build.svg)
-![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)
-![security](https://img.shields.io/badge/security-0%20issues-brightgreen)
-![docs](badges/docs.svg)
-![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index)
-![license](badges/license.svg)
-![PyPI](badges/pypi.svg)
-![Release Notes](https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases)
-</p>
+![build](badges/build.svg) ![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen) ![security](https://img.shields.io/badge/security-0%20issues-brightgreen) ![docs](badges/docs.svg) ![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index) ![license](badges/license.svg) ![PyPI](badges/pypi.svg) ![Release Notes](https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases)
 
 This catalogue is maintained by the Agentic-Index project and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
 
@@ -59,6 +49,7 @@ This catalogue is maintained by the Agentic-Index project and is updated regular
   * [🔧 Usage](#-usage)
   * [🔄 How refresh works](#-how-refresh-works)
   * [🧪 Testing](#-testing)
+  * [📝 Forcing README injection](#-forcing-readme-injection)
   * [🤝 How to Contribute](#-how-to-contribute)
   * [🛡 Code of Conduct](#-code-of-conduct)
   * [📜 License](#-license)
@@ -88,8 +79,8 @@ pip install agentic-index-cli
 
 agentic-index scrape --min-stars 100
 agentic-index enrich data/repos.json
-agentic-index rank data/repos.json
-cat README.md | less         # see table injected
+agentic-index faststart --top 3 data/repos.json
+cat FAST_START.md | less     # see table injected
 ```
 
 -----
@@ -180,8 +171,8 @@ For a full description of every metric field, see [SCHEMA.md](./docs/SCHEMA.md) 
 ### Our Methodology & Scoring Explained
 
 <a id="our-methodology--scoring-explained"></a>
-\<details\>
-\<summary\>🔬 Our Methodology & Scoring Explained (Click to Expand)\</summary\>
+<details>
+<summary>🔬 Our Methodology & Scoring Explained (Click to Expand)</summary>
 
 Agentic-Index believes in full transparency. Here’s the lowdown on how we find, vet, and score repositories.
 
@@ -196,7 +187,7 @@ Our score balances stars, recency, maintenance health, documentation quality, li
 
 For the full, unabridged version, see **[./docs/methodology.md](./docs/methodology.md)**.
 
-\</details\>
+</details>
 
 -----
 
@@ -316,6 +307,16 @@ bash scripts/trigger_refresh.sh 75
 
 Replace `75` with your desired minimum star count. The script requires the GitHub CLI and an authenticated token.
 Set a personal access token via the `GITHUB_TOKEN_REPO_STATS` environment variable to avoid hitting rate limits when scraping.
+
+### 📝 Forcing README injection
+
+The injector normally skips writing `README.md` when no changes are detected. Use `--force` to rewrite the table regardless:
+
+```bash
+python scripts/inject_readme.py --force
+```
+
+This can be handy after metric tweaks that don't change rankings but should refresh the snapshot.
 
 -----
 

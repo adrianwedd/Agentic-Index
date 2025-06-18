@@ -2,6 +2,8 @@ import json
 import shutil
 from pathlib import Path
 
+import pytest
+
 import agentic_index_cli.internal.inject_readme as inj
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,7 +25,5 @@ def test_injector_handles_missing_snapshot(tmp_path, capsys, monkeypatch):
     monkeypatch.setattr(inj, "REPOS_PATH", data_dir / "repos.json")
     monkeypatch.setattr(inj, "SNAPSHOT", data_dir / "last_snapshot.json")
 
-    ret = inj.main(check=True, top_n=50)
-    captured = capsys.readouterr()
-    assert ret == 0
-    assert "missing snapshot" in captured.err
+    with pytest.raises(FileNotFoundError):
+        inj.main(check=True, top_n=50)

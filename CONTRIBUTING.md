@@ -13,6 +13,22 @@ To propose additions or changes:
 
 We welcome fixes to data, new repo suggestions, and other improvements.
 
+## Quick Setup
+
+After cloning the repository, run the environment setup script and install the package in editable mode:
+
+```bash
+source scripts/setup-env.sh
+pip install -e .
+pre-commit install
+```
+
+Run the test suite to ensure everything works:
+
+```bash
+PYTHONPATH="$PWD" pytest -q
+```
+
 Refer to [SCHEMA.md](./docs/SCHEMA.md) for details on metric fields used in `repos.json`.
 
 Before opening a pull request, ensure the README table is up to date:
@@ -81,6 +97,9 @@ Our scheduled workflow keeps metrics current by running these steps:
 
 Touch files under `score/*.py`, update `scripts/inject_readme.py` and document your column in `README.md`. Include tests covering the metric and regenerate snapshots with the injector.
 New metrics should maintain overall test coverage (see badges) and update any affected snapshots.
+
+Type hints are gradually being added across the codebase. Run `mypy` before
+submitting changes and keep overall type coverage above **70%** for CLI modules.
 
 ## Codex Queue
 

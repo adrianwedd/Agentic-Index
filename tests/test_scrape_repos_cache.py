@@ -21,8 +21,8 @@ def test_cache_hit(monkeypatch, tmp_path):
     monkeypatch.chdir(tmp_path)
     monkeypatch.setattr(scraper, "CACHE_DIR", cache_dir)
     monkeypatch.setattr(
-        scraper.requests,
-        "get",
+        scraper.http_utils,
+        "sync_get",
         lambda *a, **k: (_ for _ in ()).throw(AssertionError("no call")),
     )
     repo = scraper.fetch_repo("owner/repo")
@@ -45,7 +45,7 @@ def test_rate_limit_backoff(monkeypatch):
     resp2.json.return_value = {}
     resp2.raise_for_status = mock.Mock()
     calls = iter([resp1, resp2])
-    monkeypatch.setattr(scraper.requests, "get", lambda *a, **k: next(calls))
+    monkeypatch.setattr(scraper.http_utils, "sync_get", lambda *a, **k: next(calls))
     scraper._get("https://api.github.com/repos/owner/repo")
     assert scraper.API_LIMIT == 60
     assert scraper.API_REMAINING == 59

@@ -6,15 +6,22 @@ from pathlib import Path
 import pytest
 
 REPO_JSON = Path("data/repos.json")
-RANK_SCRIPT = Path("scripts/rank.py")
 TOP_MD = Path("data/top100.md")
 
 
 def run_script():
     subprocess.run(
-        ["python3", "-m", "agentic_index_cli.enricher", str(REPO_JSON)], check=True
+        [
+            "python3",
+            "-m",
+            "agentic_index_cli.enricher",
+            str(REPO_JSON),
+        ],
+        check=True,
     )
-    subprocess.run(["python3", str(RANK_SCRIPT), str(REPO_JSON)], check=True)
+    subprocess.run(
+        ["python3", "-m", "agentic_index_cli.ranker", str(REPO_JSON)], check=True
+    )
 
 
 def load_scores():

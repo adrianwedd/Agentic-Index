@@ -37,12 +37,18 @@ output:
 """
     )
 
-    script = Path(__file__).resolve().parents[1] / "scripts" / "rank.py"
     env = os.environ.copy()
     env["PYTHONPATH"] = str(Path(__file__).resolve().parents[1])
     env.pop("PYTEST_CURRENT_TEST", None)
     subprocess.run(
-        ["python", str(script), str(repo_file), "--config", str(cfg_file)],
+        [
+            "python",
+            "-m",
+            "agentic_index_cli.ranker",
+            str(repo_file),
+            "--config",
+            str(cfg_file),
+        ],
         check=True,
         cwd=tmp_path,
         env=env,

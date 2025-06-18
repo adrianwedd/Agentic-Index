@@ -7,10 +7,14 @@ from fastapi import FastAPI, Response
 """Minimal API server with optional auth."""
 
 import json
+import logging
 import os
+import time
+import uuid
 from pathlib import Path
 from typing import Any, Optional
 
+import structlog
 from fastapi import FastAPI, HTTPException, Request, Response
 from fastapi.concurrency import run_in_threadpool
 from pydantic import BaseModel
@@ -18,7 +22,13 @@ from pydantic import BaseModel
 from agentic_index_cli import issue_logger
 from agentic_index_cli.internal.rank import SCORE_KEY, compute_score
 from agentic_index_cli.internal.scrape import scrape
+from agentic_index_cli.logging_config import configure_logging, configure_sentry
 from agentic_index_cli.validate import save_repos
+
+configure_logging()
+configure_sentry()
+
+logger = structlog.get_logger(__name__)
 
 API_KEY = os.getenv("API_KEY")
 _whitelist = os.getenv("IP_WHITELIST", "")
@@ -47,13 +57,54 @@ app = FastAPI()
 
 
 @app.middleware("http")
+async def request_logging(request: Request, call_next):
+    request_id = str(uuid.uuid4())
+    structlog.contextvars.bind_contextvars(request_id=request_id)
+    start = time.perf_counter()
+    try:
+        response = await call_next(request)
+    except Exception:
+        duration = time.perf_counter() - start
+        logger.exception(
+            "request-error",
+            path=request.url.path,
+            method=request.method,
+            duration=duration,
+        )
+        structlog.contextvars.unbind_contextvars("request_id")
+        raise
+    duration = time.perf_counter() - start
+    logger.info(
+        "request-complete",
+        path=request.url.path,
+        method=request.method,
+        status_code=response.status_code,
+        duration=duration,
+    )
+    structlog.contextvars.unbind_contextvars("request_id")
+    return response
+
+
+@app.middleware("http")
 async def _auth(request: Request, call_next):
     if request.url.path in PROTECTED_PATHS:
         client_ip = request.client.host if request.client else None
-        if client_ip not in IP_WHITELIST:
-            key = request.headers.get("X-API-KEY")
-            if not API_KEY or key != API_KEY:
-                return Response(status_code=401)
+        key = request.headers.get("X-API-KEY")
+        had_key = key is not None
+        key_valid = bool(API_KEY and key == API_KEY)
+        logger.info(
+            "auth-check",
+            path=request.url.path,
+            client_ip=client_ip,
+            had_key=had_key,
+            key_valid=key_valid,
+        )
+        if client_ip not in IP_WHITELIST and not key_valid:
+            return Response(
+                json.dumps({"detail": "unauthorized"}),
+                status_code=401,
+                media_type="application/json",
+            )
     return await call_next(request)
 
 

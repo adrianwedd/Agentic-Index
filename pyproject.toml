@@ -7,12 +7,18 @@ name = "agentic-index"
 version = "0.1.0"
 description = "CLI for Agentic Index"
 requires-python = ">=3.8"
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+]
 dependencies = [
     "requests",
     "PyYAML",
     "jsonschema>=3.2",
     "pydantic>=2",
     "rich",
+    "structlog",
+    "sentry-sdk",
 ]
 
 [project.scripts]
@@ -27,3 +33,9 @@ fail_under = 70  # temporary threshold, will be raised after snapshot tolerance 
 
 [tool.isort]
 profile = "black"
+
+[tool.setuptools]
+license-files = ["LICENSE"]
+
+[tool.setuptools.packages.find]
+exclude = ["tests*", "docs*", "scripts*"]

@@ -32,7 +32,9 @@ def make_response(stars):
 
 
 def test_refresh_flags(monkeypatch, tmp_path):
-    monkeypatch.setattr(scrape.requests, "get", lambda *a, **kw: make_response(7))
+    monkeypatch.setattr(
+        scrape.http_utils, "sync_get", lambda *a, **kw: make_response(7)
+    )
     repos = scrape.scrape(min_stars=5, token=None)
     assert repos and all(r["stargazers_count"] >= 5 for r in repos)
 

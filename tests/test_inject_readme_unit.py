@@ -47,6 +47,9 @@ def _setup(tmp_path: Path, top_n: int = 50) -> Path:
         "| 1 | [x](https://github.com/o/x) | test repo | 1.00 | 10 | +1 |\n"
     )
     (data_dir / "last_snapshot.json").write_text("[]")
+    by_cat = data_dir / "by_category"
+    by_cat.mkdir()
+    (by_cat / "index.json").write_text("{}")
     readme = tmp_path / "README.md"
     readme.write_text(
         f"start\n<!-- TOP{top_n}:START -->\nold\n<!-- TOP{top_n}:END -->\nend\n"
@@ -57,6 +60,7 @@ def _setup(tmp_path: Path, top_n: int = 50) -> Path:
         "DATA_PATH": data_dir / "top100.md",
         "REPOS_PATH": data_dir / "repos.json",
         "SNAPSHOT": data_dir / "last_snapshot.json",
+        "BY_CAT_INDEX": data_dir / "by_category" / "index.json",
     }.items():
         setattr(inj, name, val)
     return readme
@@ -97,3 +101,30 @@ def test_missing_repos_file(tmp_path, monkeypatch):
     inj.REPOS_PATH.unlink()
     with pytest.raises(FileNotFoundError):
         inj.build_readme(top_n=50)
+
+
+@pytest.mark.parametrize(
+    "field",
+    [
+        "name",
+        "full_name",
+        "AgenticIndexScore",
+        "stars",
+        "stars_delta",
+        "score_delta",
+        "recency_factor",
+        "issue_health",
+        "doc_completeness",
+        "license_freedom",
+        "ecosystem_integration",
+        "stars_log2",
+        "category",
+    ],
+)
+def test_load_rows_missing_field(tmp_path, field):
+    _setup(tmp_path)
+    data = json.loads(inj.REPOS_PATH.read_text())
+    del data["repos"][0][field]
+    inj.REPOS_PATH.write_text(json.dumps(data))
+    with pytest.raises(KeyError, match=field):
+        inj._load_rows()

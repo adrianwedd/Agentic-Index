@@ -20,7 +20,8 @@ def test_score_nonzero(tmp_path):
     subprocess.run(
         [
             "python",
-            "scripts/rank.py",
+            "-m",
+            "agentic_index_cli.ranker",
             str(path),
         ],
         check=True,

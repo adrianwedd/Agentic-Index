@@ -18,9 +18,12 @@ on:
         default: 'false'
         required: false
 
+defaults:
+  run:
+    shell: bash --noprofile --norc -eo pipefail {0}
+
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   update-data:
@@ -31,6 +34,7 @@ jobs:
     env:
       BRANCH: data-update-${{ github.run_id }}
       MIN_STARS: ${{ github.event.inputs['min-stars'] || 50 }}
+      PYTHONFAULTHANDLER: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -40,18 +44,24 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -e .
-      - name: Run extended scraper & scoring
+      - name: Run scraper & enrichment
         run: |
-          python scripts/scrape_repos.py --min-stars $MIN_STARS --output data/repos.json
-          python scripts/score_metrics.py data/repos.json
+          python -m agentic_index_cli.scraper --min-stars $MIN_STARS 2>&1 | tee update.log
+          python -m agentic_index_cli.enricher data/repos.json 2>&1 | tee -a update.log
       - name: Validate data
-        run: python -m agentic_index_cli.validate data/repos.json
+        run: python -m agentic_index_cli.validate data/repos.json >> update.log 2>&1
       - name: Rank repositories
-        run: python -m agentic_index_cli.ranker data/repos.json
+        run: python -m agentic_index_cli.ranker data/repos.json >> update.log 2>&1
+      - name: Validate JSON
+        run: |
+          python -m json.tool data/repos.json > /dev/null
+          if [ -f data/ranked.json ]; then
+            python -m json.tool data/ranked.json > /dev/null
+          fi
       - name: Run tests
         env:
           CI_OFFLINE: '1'
-        run: pytest -q
+        run: pytest -q --full-trace >> update.log 2>&1
       - name: Check for updated index
         id: detect-changes
         shell: bash
@@ -84,3 +94,16 @@ jobs:
           github_token: ${{ github.token }}
           pull_request: ${{ steps.createpr.outputs.pull-request-number }}
           merge_method: squash
+      - name: Upload history
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-history
+          path: data/history/*.json
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-logs
+          path: update.log
+          if-no-files-found: ignore
