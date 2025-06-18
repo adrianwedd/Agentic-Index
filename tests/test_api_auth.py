@@ -24,6 +24,7 @@ def test_protected_requires_auth(monkeypatch):
     for path in ["/sync", "/score", "/render", "/issue"]:
         resp = client.post(path)
         assert resp.status_code == 401
+        assert resp.json() == {"detail": "unauthorized"}
 
 
 def test_api_key_header(monkeypatch, tmp_path):
@@ -47,6 +48,14 @@ def test_api_key_header(monkeypatch, tmp_path):
         "/issue", json={"repo": "o/r", "title": "t"}, headers={"X-API-KEY": "sekret"}
     )
     assert resp.status_code == 200
+
+
+def test_invalid_api_key(monkeypatch):
+    app, _ = load_app(monkeypatch, key="sekret")
+    client = TestClient(app)
+    resp = client.post("/sync", headers={"X-API-KEY": "wrong"})
+    assert resp.status_code == 401
+    assert resp.json() == {"detail": "unauthorized"}
 
 
 def test_ip_whitelist(monkeypatch):
