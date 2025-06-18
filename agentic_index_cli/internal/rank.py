@@ -218,7 +218,8 @@ def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> N
         "|-----:|------|-------------|------:|------:|--------:|",
     ]
 
-    def fmt(val):
+    def fmt(val: str | int | float) -> str:
+        """Return ``val`` as a signed string."""
         if isinstance(val, str):
             return val
         sign = "+" if val >= 0 else ""

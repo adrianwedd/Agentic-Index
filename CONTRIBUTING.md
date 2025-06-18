@@ -98,6 +98,9 @@ Our scheduled workflow keeps metrics current by running these steps:
 Touch files under `score/*.py`, update `scripts/inject_readme.py` and document your column in `README.md`. Include tests covering the metric and regenerate snapshots with the injector.
 New metrics should maintain overall test coverage (see badges) and update any affected snapshots.
 
+Type hints are gradually being added across the codebase. Run `mypy` before
+submitting changes and keep overall type coverage above **70%** for CLI modules.
+
 ## Codex Queue
 
 Automation tasks can be orchestrated through a simple queue file located at `.codex/queue.yml`.
