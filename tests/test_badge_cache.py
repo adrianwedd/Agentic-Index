@@ -7,7 +7,7 @@ import pytest
 
 pytestmark = pytest.mark.network
 
-import agentic_index_cli.internal.rank as rank_mod
+import agentic_index_cli.internal.badges as rank_mod
 
 generate_badges = rank_mod.generate_badges
 

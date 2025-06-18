@@ -3,7 +3,7 @@ import os
 import subprocess
 from pathlib import Path
 
-from agentic_index_cli.internal import rank as rank_mod
+from agentic_index_cli.internal import rank_main as rank_mod
 
 
 def test_delta_calculation(tmp_path, monkeypatch):

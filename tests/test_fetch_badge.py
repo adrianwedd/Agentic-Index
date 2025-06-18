@@ -7,7 +7,7 @@ import pytest
 
 pytestmark = pytest.mark.network
 
-from agentic_index_cli.internal.rank import fetch_badge
+from agentic_index_cli.internal.badges import fetch_badge
 
 
 class DummyResp(io.BytesIO):

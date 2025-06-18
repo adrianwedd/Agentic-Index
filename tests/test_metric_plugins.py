@@ -1,4 +1,4 @@
-from agentic_index_cli.internal.rank import compute_score
+from agentic_index_cli.internal.scoring import compute_score
 from lib.metrics_registry import get_metrics, register
 
 

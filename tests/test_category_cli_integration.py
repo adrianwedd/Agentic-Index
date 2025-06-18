@@ -6,7 +6,7 @@ from pathlib import Path
 import agentic_index_cli.agentic_index as ai
 import agentic_index_cli.enricher as enricher
 import agentic_index_cli.internal.inject_readme as inj
-import agentic_index_cli.internal.rank as rank
+import agentic_index_cli.internal.rank_main as rank
 
 
 def test_cli_all_categories(tmp_path, monkeypatch):
