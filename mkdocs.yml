@@ -17,3 +17,4 @@ nav:
   - CLI Usage: cli.md
   - API Reference:
       - agentic_index_cli: reference/agentic_index_cli.md
+      - agentic_index_api: reference/agentic_index_api.md
