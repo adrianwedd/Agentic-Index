@@ -10,6 +10,8 @@ from typing import List
 import click
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
+from .internal.json_utils import load_json
+
 
 class License(BaseModel):
     """Model for the ``license`` block."""
@@ -84,9 +86,11 @@ def _migrate_item(item: dict) -> dict:
     return item
 
 
-def load_repos(path: Path) -> List[dict]:
+def load_repos(
+    path: Path, *, use_cache: bool = False, use_stream: bool = False
+) -> List[dict]:
     """Validate and load repository JSON data."""
-    raw = json.loads(path.read_text())
+    raw = load_json(path, use_cache=use_cache, use_stream=use_stream)
     if isinstance(raw, list):
         items = raw
     elif isinstance(raw, dict):
@@ -118,9 +122,8 @@ def load_repos(path: Path) -> List[dict]:
 
 def save_repos(path: Path, repos: List[dict]) -> None:
     """Write validated ``repos`` to ``path``."""
-    payload = RepoFile(repos=[Repo(**_migrate_item(r)) for r in repos]).model_dump(
-        exclude_none=True
-    )
+    repo_objs = [Repo(**_migrate_item(r)) for r in repos]
+    payload = RepoFile(repos=repo_objs).model_dump(exclude_none=True)
     path.write_text(json.dumps(payload, indent=2) + "\n")
 
 

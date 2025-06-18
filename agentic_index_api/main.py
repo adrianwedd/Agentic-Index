@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-import json
 from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException
+
+from agentic_index_cli.internal.json_utils import load_json
 
 DATA_FILE = Path("data/repos.json")
 HISTORY_DIR = Path("data/history")
@@ -14,8 +15,7 @@ app = FastAPI(title="Agentic Index API")
 
 def _load_repos() -> list[dict[str, Any]]:
     if DATA_FILE.exists():
-        with DATA_FILE.open() as f:
-            data = json.load(f)
+        data = load_json(DATA_FILE, cache=True)
         return data.get("repos", [])
     return []
 
@@ -61,8 +61,7 @@ def get_history(name: str) -> dict[str, Any]:
     points = []
     for path in sorted(HISTORY_DIR.glob("*.json")):
         date = path.stem
-        with path.open() as f:
-            data = json.load(f)
+        data = load_json(path, cache=True)
         for entry in data:
             if not isinstance(entry, dict):
                 continue
