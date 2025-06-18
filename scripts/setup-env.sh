@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Wrapper script for devcontainer initialization
-bash "$(dirname "$0")/agent-setup.sh"
+bash "$(dirname "${BASH_SOURCE[0]}")/agent-setup.sh"
 
 # Ensure the script is sourced so exports persist
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

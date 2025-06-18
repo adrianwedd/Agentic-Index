@@ -200,6 +200,30 @@ jobs:
           name: bandit
           path: bandit.json
 
+  benchmarks:
+    needs: tests
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    env:
+      PYTHONFAULTHANDLER: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Cache pip
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+      - name: Install deps
+        run: |
+          pip install -r requirements.txt
+          pip install -e '.[dev]'
+      - name: Run benchmarks
+        run: python scripts/benchmark_ops.py
+
   badge-update:
     runs-on: ubuntu-latest
     permissions:
@@ -243,7 +267,7 @@ jobs:
           delete-branch: true
 
   audit-summary:
-    needs: [lint-format, type-check, tests, pipeline-integrity, security-scan, badge-update]
+    needs: [lint-format, type-check, tests, pipeline-integrity, security-scan, benchmarks, badge-update]
     runs-on: ubuntu-latest
     if: always()
     env:
@@ -259,4 +283,5 @@ jobs:
           echo "| Tests | ${{ needs.tests.result }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Pipeline Integrity | ${{ needs.pipeline-integrity.result }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Security Scan | ${{ needs.security-scan.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Benchmarks | ${{ needs.benchmarks.result }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Badge Update | ${{ needs.badge-update.result }} |" >> $GITHUB_STEP_SUMMARY
