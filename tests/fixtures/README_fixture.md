@@ -228,10 +228,10 @@ This isn't a static list. It's alive\! See [CHANGELOG.md](./CHANGELOG.md) for al
 <a id="-usage"></a>
 ## 🔧 Usage
 
-Run the indexer to fetch fresh repo data:
+Use the CLI to fetch fresh repo data:
 
 ```bash
-python -m agentic_index_cli.agentic_index --min-stars 50 --iterations 1 --output data
+agentic-index scrape --min-stars 50 --iterations 1 --output data
 ```
 
 The CLI reads tuning parameters from `agentic_index_cli/config.yaml`. Use
