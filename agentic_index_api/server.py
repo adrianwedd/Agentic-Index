@@ -1,13 +1,8 @@
 from __future__ import annotations
 
-from typing import List
-
-from fastapi import FastAPI, Response
-
 """Minimal API server with optional auth."""
 
 import json
-import logging
 import os
 import time
 import uuid
@@ -20,9 +15,12 @@ from fastapi.concurrency import run_in_threadpool
 from pydantic import BaseModel
 
 from agentic_index_cli import issue_logger
-from agentic_index_cli.internal.rank import SCORE_KEY, compute_score
+from agentic_index_cli.internal.rank import compute_score
 from agentic_index_cli.internal.scrape import scrape
-from agentic_index_cli.logging_config import configure_logging, configure_sentry
+from agentic_index_cli.logging_config import (
+    configure_logging,
+    configure_sentry,
+)
 from agentic_index_cli.validate import save_repos
 
 configure_logging()
@@ -36,19 +34,27 @@ IP_WHITELIST = {ip.strip() for ip in _whitelist.split(",") if ip.strip()}
 
 PROTECTED_PATHS = {"/sync", "/score", "/render", "/issue"}
 
+GITHUB_API = "https://api.github.com/repos"
+
 SYNC_DATA_PATH = Path("state/sync_data.json")
 
 
-def _load_sync_data() -> List[dict[str, Any]]:
+def _load_sync_data() -> list[dict[str, Any]]:
     """Return list of repos from :data:`SYNC_DATA_PATH`."""
     try:
         with SYNC_DATA_PATH.open() as fh:
             data = json.load(fh)
     except FileNotFoundError as exc:
-        raise HTTPException(status_code=400, detail="sync data missing") from exc
+        raise HTTPException(
+            status_code=400,
+            detail="sync data missing",
+        ) from exc
     except json.JSONDecodeError as exc:
-        raise HTTPException(status_code=400, detail="invalid sync data") from exc
-    if not isinstance(data, list) or not all(isinstance(r, dict) for r in data):
+        raise HTTPException(
+            status_code=400,
+            detail="invalid sync data",
+        ) from exc
+    if not (isinstance(data, list) and all(isinstance(r, dict) for r in data)):
         raise HTTPException(status_code=400, detail="invalid sync data")
     return data
 
@@ -174,8 +180,12 @@ async def issue(payload: IssueBody) -> Any:
 
     def _run() -> Any:
         if payload.issue_number is not None:
-            issue_url = f"https://api.github.com/repos/{payload.repo}/issues/{payload.issue_number}"
-            return issue_logger.post_comment(issue_url, payload.body, token=token)
+            issue_url = f"{GITHUB_API}/{payload.repo}/issues/{payload.issue_number}"
+            return issue_logger.post_comment(
+                issue_url,
+                payload.body,
+                token=token,
+            )
         if not payload.title:
             raise HTTPException(status_code=400, detail="title required")
         return issue_logger.create_issue(
