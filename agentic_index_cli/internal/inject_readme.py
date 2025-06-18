@@ -10,6 +10,8 @@ import pathlib
 import sys
 import traceback
 
+from jinja2 import Template
+
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 README_PATH = ROOT / "README.md"
 DATA_PATH = ROOT / "data" / "top100.md"
@@ -33,6 +35,16 @@ CATEGORY_ICONS = {
 DEFAULT_SORT_FIELD = "score"
 
 DEFAULT_TOP_N = 100
+
+SUMMARY_ROW_TMPL = Template(
+    "| {{ i }} | {{ name }} | {{ desc }} | {{ score }} | "
+    "{{ stars }} | {{ sdelta }} |"
+)
+FULL_ROW_TMPL = Template(
+    "| {{ i }} | {{ name }} | {{ score }} | {{ stars }} | {{ sdelta }} | "
+    "{{ scdelta }} | {{ rec }} | {{ health }} | {{ docs }} | {{ licfr }} | "
+    "{{ eco }} | {{ log2 }} | {{ cat }} |"
+)
 
 
 def _markers(n: int) -> tuple[str, str]:
@@ -201,19 +213,19 @@ def _load_rows(
             name = _clamp_name(name)
         if summary:
             desc = _short_desc(repo.get("description"))
-            row = "| {i} | {name} | {desc} | {score:.2f} | {stars} | {sdelta} |".format(
+            row = SUMMARY_ROW_TMPL.render(
                 i=i,
                 name=name,
                 desc=desc,
-                score=repo["score"],
+                score=f"{repo['score']:.2f}",
                 stars=repo["stars"],
                 sdelta=repo["stars_delta"],
             )
         else:
-            row = "| {i} | {name} | {score:.2f} | {stars} | {sdelta} | {scdelta} | {rec} | {health} | {docs} | {licfr} | {eco} | {log2} | {cat} |".format(
+            row = FULL_ROW_TMPL.render(
                 i=i,
                 name=name,
-                score=repo["score"],
+                score=f"{repo['score']:.2f}",
                 stars=repo["stars"],
                 sdelta=repo["stars_delta"],
                 scdelta=repo["score_delta"],
