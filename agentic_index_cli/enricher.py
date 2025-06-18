@@ -4,6 +4,7 @@ import argparse
 import json
 import math
 from pathlib import Path
+from typing import Dict, List, Optional
 
 from jsonschema import Draft7Validator
 
@@ -16,7 +17,7 @@ from .scoring import (
 from .validate import load_repos, save_repos
 
 
-def _previous_map(data_file: Path) -> dict:
+def _previous_map(data_file: Path) -> Dict[str, Dict]:
     """Return repo mapping from the last snapshot if available."""
     history_dir = data_file.parent / "history"
     last = data_file.parent / "last_snapshot.txt"
@@ -93,7 +94,7 @@ def enrich(path: Path) -> None:
         validator.validate(item)
 
 
-def main(argv=None):
+def main(argv: Optional[List[str]] = None) -> None:
     """Command-line interface for :func:`enrich`."""
     parser = argparse.ArgumentParser(description="Enrich scraped repo data")
     parser.add_argument("json_path", nargs="?", default="data/repos.json")
