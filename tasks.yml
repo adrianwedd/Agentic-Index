@@ -45,7 +45,7 @@
   component: code
   dependencies: []
   priority: 3
-  status: todo
+  status: done
 - id: CR-AGENTIC-006
   description: Build integration tests for the API server (`api_server.py`), starting a test instance and exercising all REST endpoints including failure cases
   component: tests

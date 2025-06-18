@@ -3,6 +3,8 @@ import os
 import subprocess
 from pathlib import Path
 
+import pytest
+
 from agentic_index_cli.config import load_config
 
 
@@ -57,3 +59,16 @@ output:
     top_md = tmp_path / "data" / "top100.md"
     lines = [l for l in top_md.read_text().splitlines() if l.startswith("|")]
     assert len(lines) == 3
+
+
+def test_invalid_config(tmp_path):
+    bad_cfg = tmp_path / "bad.yaml"
+    bad_cfg.write_text(
+        """
+ranking:
+  top_n: wrong
+"""
+    )
+
+    with pytest.raises(ValueError):
+        load_config(bad_cfg)
