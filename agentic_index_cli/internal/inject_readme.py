@@ -200,7 +200,7 @@ def _load_rows(
                 desc=desc,
                 score=f"{repo['score']:.2f}",
                 stars=repo["stars"],
-                sdelta=repo["stars_delta"],
+                delta=repo["stars_delta"],
             )
         else:
             row = FULL_ROW_TMPL.render(
