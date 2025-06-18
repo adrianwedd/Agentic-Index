@@ -284,11 +284,17 @@ npx puppeteer browsers install chrome
 sudo apt-get install -y chromium
 ```
 
+### Running Tests
+
 Run tests with:
 
 ```bash
 pytest -q
 ```
+
+`pytest` will fail if optional development packages are missing.
+Run `source scripts/setup-env.sh` or install `dev-requirements.txt`
+to ensure all dependencies are available.
 
 CI runs tests with network access disabled. Set `CI_OFFLINE=1` or run
 `pytest --disable-socket` locally to replicate the offline environment.
