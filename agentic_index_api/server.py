@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from typing import List
-
 """Minimal API server with optional auth."""
 
 import json
@@ -36,10 +34,12 @@ IP_WHITELIST = {ip.strip() for ip in _whitelist.split(",") if ip.strip()}
 
 PROTECTED_PATHS = {"/sync", "/score", "/render", "/issue"}
 
+GITHUB_API = "https://api.github.com/repos"
+
 SYNC_DATA_PATH = Path("state/sync_data.json")
 
 
-def _load_sync_data() -> List[dict[str, Any]]:
+def _load_sync_data() -> list[dict[str, Any]]:
     """Return list of repos from :data:`SYNC_DATA_PATH`."""
     try:
         with SYNC_DATA_PATH.open() as fh:
@@ -54,9 +54,7 @@ def _load_sync_data() -> List[dict[str, Any]]:
             status_code=400,
             detail="invalid sync data",
         ) from exc
-    valid_list = isinstance(data, list)
-    valid_items = all(isinstance(r, dict) for r in data)
-    if not valid_list or not valid_items:
+    if not (isinstance(data, list) and all(isinstance(r, dict) for r in data)):
         raise HTTPException(status_code=400, detail="invalid sync data")
     return data
 
@@ -182,10 +180,7 @@ async def issue(payload: IssueBody) -> Any:
 
     def _run() -> Any:
         if payload.issue_number is not None:
-            issue_url = (
-                f"https://api.github.com/repos/{payload.repo}/issues/"
-                f"{payload.issue_number}"
-            )
+            issue_url = f"{GITHUB_API}/{payload.repo}/issues/{payload.issue_number}"
             return issue_logger.post_comment(
                 issue_url,
                 payload.body,
