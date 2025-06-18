@@ -5,7 +5,7 @@ Welcome! This document collects everything you need to set up a working developm
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
-- [Fork & Clone](#fork--clone)
+- [Fork & Clone](#fork-clone)
 - [Install Dependencies](#install-dependencies)
 - [Pre-commit Hooks](#pre-commit-hooks)
 - [Running Tests](#running-tests)

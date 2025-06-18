@@ -48,10 +48,10 @@
 
 *   **Table Content:**
     *   **(Medium Impact, Medium Effort)** The main table "The Agentic-Index Top 100" has empty cells for "Δ Stars" and "Δ Score". If this data is intended to be populated, ensure the scripts do so. If not, consider removing the columns to avoid confusion.
-    *   The table legend within `<details>` is good. Ensure the link `[See full formula →](./docs/methodology.md#scoring-formula)` correctly points to the relevant part of the methodology document.
+    *   The table legend within `<details>` is good. Ensure the link `[See full formula →](../methodology.md#scoring-formula)` correctly points to the relevant part of the methodology document.
 
 *   **Links and Navigation:**
-    *   **(Low Impact, Medium Effort)** Verify all internal links (especially those in the TOC and text) point to the correct sections or documents. The use of relative links like `[🚀 Jump to Fast-Start Picks →](FAST_START.md)` is good.
-    *   The link `[SCHEMA.md](SCHEMA.md)` and `[docs/METRICS_SCHEMA.md](docs/METRICS_SCHEMA.md)` should be checked. Similarly for `[ONBOARDING guide](docs/ONBOARDING.md)`, `[Changelog](./CHANGELOG.md)`, etc.
+    *   **(Low Impact, Medium Effort)** Verify all internal links (especially those in the TOC and text) point to the correct sections or documents. The use of relative links like `[🚀 Jump to Fast-Start Picks →](../../FAST_START.md)` is good.
+    *   The link `[SCHEMA.md](../SCHEMA.md)` and `[docs/METRICS_SCHEMA.md](../METRICS_SCHEMA.md)` should be checked. Similarly for `[ONBOARDING guide](../ONBOARDING.md)`, `[Changelog](../../CHANGELOG.md)`, etc.
 
 Prioritization is based on improving clarity, structure, and completeness for a first-time reader or potential contributor.
