@@ -186,3 +186,19 @@ def assert_readme_equivalent(
                     )
             if verbose:
                 print(f"Row {row_idx} {header} ok: {val1} vs {val2} (tol={tol})")
+
+
+def diff_unexpected_lines(diff: str, patterns: list[str]) -> list[str]:
+    """Return diff lines not matching any allowlist pattern."""
+    regexes = [re.compile(p) for p in patterns]
+    bad = []
+    for line in diff.splitlines():
+        if line.startswith(("+++", "---", "@@")):
+            continue
+        if line.startswith("+") or line.startswith("-"):
+            text = line[1:].strip()
+            if not text:
+                continue
+            if not any(r.search(text) for r in regexes):
+                bad.append(line)
+    return bad
