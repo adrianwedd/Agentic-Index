@@ -8,8 +8,11 @@ import json
 import os
 import pathlib
 import sys
+import time
 import traceback
+import uuid
 
+import structlog
 from jinja2 import Template
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -35,6 +38,8 @@ CATEGORY_ICONS = {
 DEFAULT_SORT_FIELD = "score"
 
 DEFAULT_TOP_N = 100
+
+logger = structlog.get_logger(__name__).bind(file=__file__)
 
 SUMMARY_ROW_TMPL = Template(
     "| {{ i }} | {{ name }} | {{ desc }} | {{ score }} | "
@@ -101,8 +106,13 @@ def _load_rows(
             if not REPOS_PATH.exists():
                 raise FileNotFoundError(str(REPOS_PATH))
             repos = json.loads(REPOS_PATH.read_text()).get("repos", [])
-    except Exception:
-        traceback.print_exc()
+    except Exception as exc:
+        logger.exception(
+            "load-rows-error",
+            func="_load_rows",
+            request_id=str(uuid.uuid4()),
+            error=str(exc),
+        )
         raise
 
     required = [
@@ -321,13 +331,16 @@ def build_readme(
     top_n: int = DEFAULT_TOP_N,
 ) -> str:
     """Return README text with the ranking table injected."""
+    request_id = str(uuid.uuid4())
+    log = logger.bind(func="build_readme", request_id=request_id)
+    start_time = time.perf_counter()
     start_marker, end_marker = _markers(top_n)
     if not README_PATH.exists():
         raise FileNotFoundError(str(README_PATH))
     try:
         readme_text = README_PATH.read_text(encoding="utf-8")
-    except Exception:
-        traceback.print_exc()
+    except Exception as exc:
+        log.exception("readme-load-error", error=str(exc))
         raise
     end_newline = readme_text.endswith("\n")
     try:
@@ -360,6 +373,11 @@ def build_readme(
     new_text = new_text.rstrip("\n")
     if end_newline:
         new_text += "\n"
+    log.info(
+        "build-readme-complete",
+        duration=time.perf_counter() - start_time,
+        rows=len(rows),
+    )
     return new_text
 
 
@@ -371,8 +389,13 @@ def diff(new_text: str, readme_path: pathlib.Path | None = None) -> str:
         raise FileNotFoundError(str(readme_path))
     try:
         old_text = readme_path.read_text(encoding="utf-8")
-    except Exception:
-        traceback.print_exc()
+    except Exception as exc:
+        logger.exception(
+            "diff-read-error",
+            func="diff",
+            request_id=str(uuid.uuid4()),
+            error=str(exc),
+        )
         raise
     if not new_text.endswith("\n"):
         new_text += "\n"
@@ -415,6 +438,9 @@ def main(
     limit:
         Maximum number of rows to render. Defaults to ``top_n``.
     """
+    request_id = str(uuid.uuid4())
+    log = logger.bind(func="main", request_id=request_id)
+    start_time = time.perf_counter()
     for path in (DATA_PATH, REPOS_PATH, SNAPSHOT, BY_CAT_INDEX):
         if not path.exists():
             raise FileNotFoundError(str(path))
@@ -423,8 +449,8 @@ def main(
     try:
         row_limit = top_n if limit is None else limit
         new_text = build_readme(sort_by=sort_by, limit=row_limit, top_n=top_n)
-    except Exception:
-        traceback.print_exc()
+    except Exception as exc:
+        log.exception("build-failed", error=str(exc))
         return 1
 
     if check:
@@ -443,10 +469,11 @@ def main(
     if write and (force or diff(new_text)):
         try:
             README_PATH.write_text(new_text, encoding="utf-8")
-        except Exception:
-            traceback.print_exc()
+        except Exception as exc:
+            log.exception("write-error", error=str(exc))
             raise
 
+    log.info("inject-complete", duration=time.perf_counter() - start_time)
     return 0
 
 
@@ -458,7 +485,13 @@ def available_categories() -> list[str]:
             repos = data.get("repos", data)
         else:
             repos = json.loads(REPOS_PATH.read_text()).get("repos", [])
-    except Exception:
+    except Exception as exc:
+        logger.exception(
+            "category-load-error",
+            func="available_categories",
+            request_id=str(uuid.uuid4()),
+            error=str(exc),
+        )
         return []
     return sorted({r.get("category", "-") for r in repos if r.get("category")})
 
@@ -514,6 +547,9 @@ def write_category_readme(
     limit: int | None = None,
 ) -> int:
     """Write or check ``README_<category>.md``."""
+    request_id = str(uuid.uuid4())
+    log = logger.bind(func="write_category_readme", request_id=request_id)
+    start_time = time.perf_counter()
     cfg_limit = top_n if limit is None else limit
     text = build_category_table(category, sort_by=sort_by, limit=cfg_limit)
     fname = f"README_{category.replace(' ', '_')}.md"
@@ -524,16 +560,21 @@ def write_category_readme(
     if write and (force or not path.exists() or diff(text, path)):
         try:
             path.write_text(text, encoding="utf-8")
-        except Exception:
-            traceback.print_exc()
+        except Exception as exc:
+            log.exception("write-category-error", error=str(exc))
             raise
+    log.info("write-category-complete", duration=time.perf_counter() - start_time)
     return 0
 
 
 def write_all_categories(**kwargs) -> int:
     """Write or check README files for all categories."""
+    request_id = str(uuid.uuid4())
+    log = logger.bind(func="write_all_categories", request_id=request_id)
+    start_time = time.perf_counter()
     status = 0
     for cat in available_categories():
         ret = write_category_readme(cat, **kwargs)
         status = max(status, ret)
+    log.info("write-all-complete", duration=time.perf_counter() - start_time)
     return status

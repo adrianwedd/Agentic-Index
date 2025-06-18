@@ -9,11 +9,13 @@ import math
 import os
 import sys
 import time
+import uuid
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import aiohttp
+import structlog
 from jinja2 import Template
 from rich.progress import track
 
@@ -85,7 +87,7 @@ def _get(
     return http_utils.sync_get(url, **kwargs)
 
 
-logger = logging.getLogger(__name__)
+logger = structlog.get_logger(__name__).bind(file=__file__)
 
 
 def github_search(query: str, page: int = 1) -> List[Dict]:
@@ -222,6 +224,9 @@ def categorize(description: str, topics: List[str]) -> str:
 
 def compute_score(repo: Dict, readme: str) -> float:
     """Compute the Agentic Index score for ``repo``."""
+    request_id = str(uuid.uuid4())
+    log = logger.bind(func="compute_score", request_id=request_id)
+    start = time.perf_counter()
     stars = repo.get("stargazers_count", 0)
     open_issues = repo.get("open_issues_count", 0)
     closed_issues = repo.get("closed_issues", 0)
@@ -241,7 +246,14 @@ def compute_score(repo: Dict, readme: str) -> float:
         + 0.07 * license_free
         + 0.03 * eco
     )
-    return round(score * 100 / 8, 2)  # normalized roughly to 0-100
+    final = round(score * 100 / 8, 2)
+    log.debug(
+        "score-computed",
+        repo=repo.get("full_name", repo.get("name")),
+        score=final,
+        duration=time.perf_counter() - start,
+    )
+    return final
 
 
 async def async_fetch_repo(
