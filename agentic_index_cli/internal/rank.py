@@ -7,12 +7,12 @@ Usage:
 
 import datetime
 import json
-import math
 import os
 import shutil
-import sys
 import urllib.request
 from pathlib import Path
+
+from jinja2 import Template
 
 import lib.quality_metrics  # ensure built-in metrics are registered
 from agentic_index_cli.agentic_index import (
@@ -29,6 +29,10 @@ from .inject_readme import _format_link, _short_desc
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
 
 SCORE_KEY = "AgenticIndexScore"
+
+SUMMARY_ROW_TMPL = Template(
+    "| {{ i }} | {{ name }} | {{ desc }} | {{ score }} | " "{{ stars }} | {{ delta }} |"
+)
 
 
 def compute_score(repo: dict) -> float:
@@ -226,13 +230,13 @@ def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> N
         return f"{sign}{val}"
 
     rows = [
-        "| {i} | {name} | {desc} | {score:.2f} | {stars} | {sd} |".format(
+        SUMMARY_ROW_TMPL.render(
             i=i,
             name=_format_link(repo["name"], repo.get("html_url")),
             desc=_short_desc(repo.get("description")),
-            score=repo[SCORE_KEY],
+            score=f"{repo[SCORE_KEY]:.2f}",
             stars=repo.get("stars", repo.get("stargazers_count", 0)),
-            sd=fmt(repo["stars_delta"]),
+            delta=fmt(repo["stars_delta"]),
         )
         for i, repo in enumerate(repos[:top_n], start=1)
     ]
