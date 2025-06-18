@@ -12,8 +12,6 @@ import shutil
 import urllib.request
 from pathlib import Path
 
-from jinja2 import Template
-
 import lib.quality_metrics  # ensure built-in metrics are registered
 from agentic_index_cli.config import load_config
 from agentic_index_cli.scoring import (
@@ -21,18 +19,13 @@ from agentic_index_cli.scoring import (
     compute_recency_factor,
     license_freedom,
 )
+from agentic_index_cli.templates import SUMMARY_ROW_TMPL, format_link, short_desc
 from agentic_index_cli.validate import load_repos, save_repos
 from lib.metrics_registry import get_metrics
-
-from .inject_readme import _format_link, _short_desc
 
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
 
 SCORE_KEY = "AgenticIndexScore"
-
-SUMMARY_ROW_TMPL = Template(
-    "| {{ i }} | {{ name }} | {{ desc }} | {{ score }} | " "{{ stars }} | {{ delta }} |"
-)
 
 
 def compute_score(repo: dict) -> float:
@@ -232,8 +225,8 @@ def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> N
     rows = [
         SUMMARY_ROW_TMPL.render(
             i=i,
-            name=_format_link(repo["name"], repo.get("html_url")),
-            desc=_short_desc(repo.get("description")),
+            name=format_link(repo["name"], repo.get("html_url")),
+            desc=short_desc(repo.get("description")),
             score=f"{repo[SCORE_KEY]:.2f}",
             stars=repo.get("stars", repo.get("stargazers_count", 0)),
             delta=fmt(repo["stars_delta"]),

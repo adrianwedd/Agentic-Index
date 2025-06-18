@@ -13,7 +13,14 @@ import traceback
 import uuid
 
 import structlog
-from jinja2 import Template
+
+from agentic_index_cli.templates import (
+    FULL_ROW_TMPL,
+    SUMMARY_ROW_TMPL,
+)
+from agentic_index_cli.templates import clamp_name as _clamp_name
+from agentic_index_cli.templates import format_link as _format_link
+from agentic_index_cli.templates import short_desc as _short_desc
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 README_PATH = ROOT / "README.md"
@@ -41,46 +48,10 @@ DEFAULT_TOP_N = 100
 
 logger = structlog.get_logger(__name__).bind(file=__file__)
 
-SUMMARY_ROW_TMPL = Template(
-    "| {{ i }} | {{ name }} | {{ desc }} | {{ score }} | "
-    "{{ stars }} | {{ sdelta }} |"
-)
-FULL_ROW_TMPL = Template(
-    "| {{ i }} | {{ name }} | {{ score }} | {{ stars }} | {{ sdelta }} | "
-    "{{ scdelta }} | {{ rec }} | {{ health }} | {{ docs }} | {{ licfr }} | "
-    "{{ eco }} | {{ log2 }} | {{ cat }} |"
-)
-
 
 def _markers(n: int) -> tuple[str, str]:
     """Return start and end markers for ``n``."""
     return f"<!-- TOP{n}:START -->", f"<!-- TOP{n}:END -->"
-
-
-def _clamp_name(name: str, limit: int = 28) -> str:
-    """Return ``name`` truncated and escaped for markdown."""
-    safe = name.replace("|", "\\|").replace("`", "\\`")
-    if len(safe) <= limit:
-        return safe
-    return safe[: limit - 3] + "..."
-
-
-def _format_link(name: str, url: str | None, *, limit: int = 28) -> str:
-    """Return a markdown link for ``name`` clamped to ``limit``."""
-    text = _clamp_name(name, limit)
-    if url:
-        return f"[{text}]({url})"
-    return text
-
-
-def _short_desc(desc: str | None, limit: int = 150) -> str:
-    """Return ``desc`` escaped for markdown and truncated."""
-    if not desc:
-        return ""
-    desc = desc.replace("|", "/").replace("`", "\\`").replace("\n", " ")
-    if len(desc) <= limit:
-        return desc
-    return desc[: limit - 3] + "..."
 
 
 def _load_rows(
