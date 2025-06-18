@@ -2,6 +2,16 @@ queue:
   - GH-API-03a
   - GH-API-03b
   - GH-API-03c
+  - CR-AGENTIC-001
+  - CR-AGENTIC-002
+  - CR-AGENTIC-003
+  - CR-AGENTIC-004
+  - CR-AGENTIC-005
+  - CR-AGENTIC-006
+  - CR-AGENTIC-007
+  - CR-AGENTIC-008
+  - CR-AGENTIC-009
+  - CR-AGENTIC-010
 mode: sequential
 on_block:
   - explain: true
