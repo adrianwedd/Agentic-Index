@@ -26,6 +26,11 @@ repos:
         language: python
         pass_filenames: false
         additional_dependencies: [pre-commit-hooks==5.0.0]
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
