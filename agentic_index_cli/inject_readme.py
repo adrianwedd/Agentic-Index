@@ -1,9 +1,11 @@
 """Helpers for injecting the top-50 table into ``README.md``."""
 
+from typing import List, Optional
+
 from .internal.inject_readme import DEFAULT_TOP_N, main
 
 
-def cli(argv=None):
+def cli(argv: Optional[List[str]] = None) -> None:
     """Entry point for the README injector."""
     import argparse
 

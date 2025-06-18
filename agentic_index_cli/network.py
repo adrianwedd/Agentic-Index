@@ -174,6 +174,8 @@ async def async_harvest_repo(
     score = compute_score(repo, readme)
     category = categorize(repo.get("description", ""), repo.get("topics", []))
     first_paragraph = readme.split("\n\n")[0][:200]
+    lic = repo.get("license")
+    license_value = lic if not isinstance(lic, dict) else lic.get("spdx_id")
     data = {
         "name": full_name,
         "description": repo.get("description", ""),
@@ -183,11 +185,7 @@ async def async_harvest_repo(
         "closed_issues": repo.get("closed_issues", 0),
         "last_commit": repo.get("pushed_at", ""),
         "language": repo.get("language", ""),
-        "license": (
-            repo.get("license")
-            if not isinstance(repo.get("license"), dict)
-            else repo.get("license").get("spdx_id")
-        ),
+        "license": license_value,
         "maintainer": repo.get("owner", {}).get("login"),
         "topics": ",".join(repo.get("topics", [])),
         "readme_excerpt": first_paragraph,
@@ -210,6 +208,8 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
     score = compute_score(repo, readme)
     category = categorize(repo.get("description", ""), repo.get("topics", []))
     first_paragraph = readme.split("\n\n")[0][:200]
+    lic = repo.get("license")
+    license_value = lic if not isinstance(lic, dict) else lic.get("spdx_id")
     data = {
         "name": full_name,
         "description": repo.get("description", ""),
@@ -219,11 +219,7 @@ def harvest_repo(full_name: str) -> Optional[Dict]:
         "closed_issues": repo.get("closed_issues", 0),
         "last_commit": repo.get("pushed_at", ""),
         "language": repo.get("language", ""),
-        "license": (
-            repo.get("license")
-            if not isinstance(repo.get("license"), dict)
-            else repo.get("license").get("spdx_id")
-        ),
+        "license": license_value,
         "maintainer": repo.get("owner", {}).get("login"),
         "topics": ",".join(repo.get("topics", [])),
         "readme_excerpt": first_paragraph,
