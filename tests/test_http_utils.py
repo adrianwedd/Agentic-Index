@@ -86,7 +86,7 @@ def test_server_error_retry(monkeypatch):
 
 def test_client_error(monkeypatch):
     session = DummySession([aiohttp.ClientError("boom")])
-    with pytest.raises(aiohttp.ClientError):
+    with pytest.raises(http_utils.APIError):
         run_async(http_utils.async_get("http://x", session=session, retries=1))
 
 

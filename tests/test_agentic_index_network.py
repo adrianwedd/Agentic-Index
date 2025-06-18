@@ -19,7 +19,7 @@ class DummyResp:
 def test_github_search(monkeypatch):
     captured = {}
 
-    def fake_get(url, params=None, headers=None):
+    def fake_get(url, params=None, headers=None, **_):
         captured["params"] = params
         return DummyResp({"items": ["ok"]})
 
