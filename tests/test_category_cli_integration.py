@@ -51,6 +51,7 @@ def test_cli_all_categories(tmp_path, monkeypatch):
         "REPOS_PATH": data_path,
         "DATA_PATH": data_dir / "top100.md",
         "SNAPSHOT": data_dir / "last_snapshot.json",
+        "BY_CAT_INDEX": data_dir / "by_category" / "index.json",
     }.items():
         setattr(inj, name, val)
 

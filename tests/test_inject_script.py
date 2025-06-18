@@ -16,6 +16,10 @@ def test_inject_readme(tmp_path, monkeypatch):
     (data_dir / "repos.json").write_text(
         '{"schema_version":3,"repos":[{"name":"x","full_name":"o/x","html_url":"https://github.com/o/x","description":"test repo","AgenticIndexScore":1.0,"stars":10,"stars_delta":1,"score_delta":0,"recency_factor":1.0,"issue_health":0.5,"doc_completeness":0.5,"license_freedom":0.9,"ecosystem_integration":0.3,"stars_log2":3.32,"category":"Test"}]}'
     )
+    (data_dir / "last_snapshot.json").write_text("[]")
+    by_cat = data_dir / "by_category"
+    by_cat.mkdir()
+    (by_cat / "index.json").write_text("{}")
 
     monkeypatch.setattr(inj, "REPOS_PATH", data_dir / "repos.json")
     monkeypatch.setattr(inj, "SNAPSHOT", data_dir / "last_snapshot.json")
@@ -24,6 +28,7 @@ def test_inject_readme(tmp_path, monkeypatch):
 
     monkeypatch.setattr(inj, "README_PATH", readme)
     monkeypatch.setattr(inj, "DATA_PATH", data_dir / "top100.md")
+    monkeypatch.setattr(inj, "BY_CAT_INDEX", by_cat / "index.json")
 
     assert inj.main(top_n=50) == 0
     content = readme.read_text()

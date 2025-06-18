@@ -6,6 +6,9 @@ INJECT = ROOT / "scripts" / "inject_readme.py"
 
 
 def test_readme_synced():
+    by_cat = ROOT / "data" / "by_category"
+    by_cat.mkdir(exist_ok=True)
+    (by_cat / "index.json").write_text("{}")
     subprocess.run(["python", str(INJECT), "--check", "--top-n", "50"], check=True)
 
     text = (ROOT / "README.md").read_text()
@@ -23,6 +26,9 @@ def test_readme_synced():
 
 
 def test_inject_idempotent(tmp_path):
+    by_cat = ROOT / "data" / "by_category"
+    by_cat.mkdir(exist_ok=True)
+    (by_cat / "index.json").write_text("{}")
     subprocess.run(["python", str(INJECT), "--top-n", "50"], check=True)
     first = (ROOT / "README.md").read_text()
     subprocess.run(["python", str(INJECT), "--top-n", "50"], check=True)
