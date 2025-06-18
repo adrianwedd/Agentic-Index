@@ -13,6 +13,7 @@ nav:
       - Coverage Baseline: coverage_baseline.md
       - Development Setup: DEVELOPMENT.md
       - Performance Tips: PERFORMANCE.md
+      - Metrics Alerts: METRICS_ALERTS.md
   - Methodology: methodology.md
   - CLI Usage: cli.md
   - API Reference:
