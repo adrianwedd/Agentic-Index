@@ -1,6 +1,7 @@
 # Index Schema
 
 This document defines the fields produced by the Agentic Index enrichment pipeline. The resulting JSON is used by ranking tools and the website.
+The **current schema version is v3**.
 For detailed metric descriptions and GitHub field mappings see [METRICS_SCHEMA.md](METRICS_SCHEMA.md).
 
 ## Field Reference
@@ -28,5 +29,13 @@ For detailed metric descriptions and GitHub field mappings see [METRICS_SCHEMA.m
 - Added enrichment metrics: `stars_7d`, `maintenance`, `docs_quality`, `ecosystem_fit`, `release_age`, and `license_score`.
 - License is now stored only as an SPDX string.
 - `scripts/migrate_schema_v2.py` upgrades old files. Tests consuming `repos.json` must update fixtures to include the new fields.
+
+### v3
+- Promotes internal ranking fields to the official schema: `category`, `stars`,
+  `stars_delta`, `score_delta`, `recency_factor`, `issue_health`,
+  `doc_completeness`, `license_freedom`, `ecosystem_integration`, `stars_log2`
+  and `topics`.
+- Renames `docs_score` → `docs_quality` and `ecosystem` → `ecosystem_fit`.
+- Upgrade using `scripts/migrate_schema_v3.py`.
 
 Future versions will follow the same pattern. Any tooling consuming the index should check the `schema_version` field before parsing.

@@ -44,6 +44,16 @@ To run the scraping and ranking tools locally, install the CLI:
 pip install agentic-index-cli
 ```
 
+### Schema Migrations
+
+Older `repos.json` files may use a previous schema version. Upgrade them in
+place with the migration scripts:
+
+```bash
+python scripts/migrate_schema_v2.py path/to/repos.json
+python scripts/migrate_schema_v3.py path/to/repos.json
+```
+
 ## PR Checklist
 
 Before requesting review, verify:
