@@ -256,6 +256,8 @@ Use the CLI to fetch fresh repo data:
 
 ```bash
 agentic-index scrape --min-stars 50 --iterations 1 --output data
+agentic-index enrich data/repos.json
+agentic-index faststart --top 5 data/repos.json
 ```
 
 The CLI reads tuning parameters from `agentic_index_cli/config.yaml`. Use

@@ -7,6 +7,8 @@ This repository is organized into two main packages:
 
 See `docs/architecture` for generated diagrams (`scripts/gen_arch_diagrams.py`).
 
+![CLI Dependency Graph](docs/architecture/agentic_index_cli.svg)
+
 ## Self-Improvement Process
 
 To ensure continuous improvement and maintain project health, this project follows a structured iterative process. This process involves regular cycles of reflection, analysis, decision-making, execution, validation, and documentation.
