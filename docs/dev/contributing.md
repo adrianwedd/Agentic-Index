@@ -1,6 +1,6 @@
 # Developer Contributing Notes
 
-This section supplements the main [CONTRIBUTING.md](../../CONTRIBUTING.md).
+This section supplements the main [CONTRIBUTING.md](https://github.com/adrianwedd/Agentic-Index/blob/main/CONTRIBUTING.md).
 
 ## Regenerating Fixtures
 

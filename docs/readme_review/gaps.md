@@ -13,7 +13,7 @@
     *   **Overall Use-Case Gap:** The README explains the "what" and "how" of the index creation very well but lacks examples for the "what now?" from a user's perspective wanting to find an AI agent framework.
 
 *   **Link Correctness (Manual Spot Check):**
-    *   **Internal file links** (e.g., `[SCHEMA.md](SCHEMA.md)`, `[docs/METRICS_SCHEMA.md](docs/METRICS_SCHEMA.md)`, `[FAST_START.md](FAST_START.md)`) appear plausible and use correct relative paths based on standard repository structures.
+    *   **Internal file links** (e.g., `[SCHEMA.md](../SCHEMA.md)`, `[docs/METRICS_SCHEMA.md](../METRICS_SCHEMA.md)`, `[FAST_START.md](../../FAST_START.md)`) appear plausible and use correct relative paths based on standard repository structures.
     *   **Internal section links** (e.g., `[📊 Metrics Legend](#metrics-legend)`) correctly use fragment identifiers that correspond to `<a>` tags with `id` attributes within the document.
     *   **External links** (e.g., to `shields.io`, `github.com` for pa11y, `git-lfs.github.com`, `creativecommons.org`, `opensource.org`) seem appropriate and are formatted correctly.
     *   Footnote-style links (e.g., `[1, 2]` in the "Why Agentic Index is Different" section) are numerous and point to `docs/methodology.md`. This is consistent.

@@ -44,6 +44,15 @@ To run the scraping and ranking tools locally, install the CLI:
 pip install agentic-index-cli
 ```
 
+### Building the Documentation
+
+Install MkDocs and serve the site locally to preview changes:
+
+```bash
+pip install mkdocs-material mkdocstrings[python]
+mkdocs serve
+```
+
 ### Schema Migrations
 
 Older `repos.json` files may use a previous schema version. Upgrade them in
