@@ -37,11 +37,26 @@ Before opening a pull request, ensure the README table is up to date:
 pre-commit run inject-readme --all-files
 ```
 
+
 To run the scraping and ranking tools locally, install the CLI:
 
 ```bash
 pip install agentic-index-cli
 ```
+
+## PR Checklist
+
+Before requesting review, verify:
+
+- [ ] Architectural changes are clearly explained.
+- [ ] Security implications are considered.
+- [ ] Tests cover new or updated code.
+- [ ] Documentation is updated as needed.
+
+### Pair Review for Sensitive Changes
+
+Security-sensitive work and large refactors must be reviewed by a second
+maintainer. Mention another maintainer when opening these PRs.
 
 ### Architecture
 
@@ -165,3 +180,9 @@ Contributors looking to help address these key items should refer to the main tr
 *   **EPIC Issue:** `EPIC: Launch-readiness fixes (June 2025 review)` (Search for this issue in the repository's GitHub Issues tab).
 
 This EPIC issue links to all individual tasks spawned from the review. Alternatively, you can view the full review document and linked issues in [REVIEW-2025-06.md](docs/REVIEW-2025-06.md).
+
+## Blameless Retrospectives
+
+When a bug reaches production, hold a short blameless retrospective to
+identify contributing factors and improve the process. The focus is on
+learning, not on assigning fault.
