@@ -11,12 +11,18 @@ on:
         default: 'false'
         type: boolean
 
+defaults:
+  run:
+    shell: bash --noprofile --norc -eo pipefail {0}
+
 jobs:
   inject-readme:
     runs-on: ubuntu-latest
     if: |
       github.event_name == 'schedule'
       || (github.event_name == 'workflow_dispatch' && github.event.inputs.force == 'true')
+    env:
+      PYTHONFAULTHANDLER: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: '0 0 * * 0'
 
+defaults:
+  run:
+    shell: bash --noprofile --norc -eo pipefail {0}
+
 permissions:
   contents: read
 
@@ -13,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      PYTHONFAULTHANDLER: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
@@ -25,6 +31,12 @@ jobs:
           echo "running ranker" | tee rank.log
           # Placeholder for ranking logic generating repos.json
           python scripts/ranker.py >> rank.log 2>&1
+      - name: Validate JSON
+        run: |
+          python -m json.tool data/repos.json > /dev/null
+          if [ -f data/ranked.json ]; then
+            python -m json.tool data/ranked.json > /dev/null
+          fi
       - name: Archive repos.json
         run: |
           mkdir -p data/history
