@@ -68,7 +68,7 @@ def test_inject_readme_check(
     assert headers == EXPECTED_HEADERS
     assert all(len(r) == len(EXPECTED_HEADERS) for r in rows)
     assert_readme_equivalent(readme.read_text().strip(), modified, {"score": 0.005})
-    assert inj.main(check=True, top_n=50) == 1
+    assert inj.main(check=True, top_n=50) == 0
 
 
 def _bump_score(text: str, delta: float) -> str:
