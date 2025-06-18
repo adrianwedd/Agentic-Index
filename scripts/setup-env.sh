@@ -13,10 +13,11 @@ fi
 PY_VER=$(python3 -c 'import sys; print("{}.{}.{}".format(*sys.version_info[:3]))')
 if ! python3 - <<'PY'
 import sys
-raise SystemExit(0 if sys.version_info >= (3,10) else 1)
+
+raise SystemExit(0 if sys.version_info >= (3,11) else 1)
 PY
 then
-  echo "Python 3.10 or newer required. Found $PY_VER"
+  echo "Python 3.11 or newer required. Found $PY_VER"
   return 1
 fi
 
@@ -38,7 +39,7 @@ fi
 source .venv/bin/activate
 
 pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r requirements.lock
 pip install -e .
 pip install black isort flake8 mypy bandit pre-commit
 pre-commit install --install-hooks
@@ -62,6 +63,7 @@ fi
 
 python - <<'PY'
 import sys
+
 try:
     import agentic_index_cli
 except Exception as e:

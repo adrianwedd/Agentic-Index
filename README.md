@@ -342,6 +342,16 @@ python scripts/inject_readme.py --force
 
 This can be handy after metric tweaks that don't change rankings but should refresh the snapshot.
 
+### 🔍 Preview changes with `--dry-run`
+
+Use `--dry-run` to print a unified diff without modifying `README.md`:
+
+```bash
+python scripts/inject_readme.py --dry-run
+```
+
+This lets you verify upcoming updates locally or in CI.
+
 -----
 
 <a id="-how-to-contribute"></a>
