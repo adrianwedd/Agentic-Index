@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-import agentic_index_cli.internal.rank as rank_mod
+import agentic_index_cli.internal.rank_main as rank_mod
 from scripts import refresh_category
 
 

@@ -17,7 +17,7 @@ from fastapi.concurrency import run_in_threadpool
 from pydantic import BaseModel
 
 from agentic_index_cli import issue_logger
-from agentic_index_cli.internal.rank import compute_score
+from agentic_index_cli.internal.scoring import compute_score
 from agentic_index_cli.internal.scrape import scrape
 from agentic_index_cli.logging_config import (
     configure_logging,

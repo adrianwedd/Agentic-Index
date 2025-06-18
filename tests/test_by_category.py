@@ -2,7 +2,7 @@ import json
 import os
 from pathlib import Path
 
-import agentic_index_cli.internal.rank as rank_mod
+import agentic_index_cli.internal.rank_main as rank_mod
 
 
 def test_by_category_generation(tmp_path, monkeypatch):
