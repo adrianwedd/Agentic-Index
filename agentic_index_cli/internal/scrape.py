@@ -1,6 +1,7 @@
 """Scrape GitHub repositories for inclusion in the index."""
 
 import argparse
+import asyncio
 import json
 import logging
 import os
@@ -87,39 +88,53 @@ def _extract(item: Dict[str, Any]) -> Dict[str, Any]:
 
 def scrape(min_stars: int = 0, token: str | None = None) -> List[Dict[str, Any]]:
     """Return repository metadata from GitHub."""
-    global RATE_LIMIT_REMAINING
-    headers = {"Accept": "application/vnd.github+json"}
-    if token:
-        headers["Authorization"] = f"token {token}"
-    all_repos: Dict[str, Dict[str, Any]] = {}
-    for query in QUERIES:
-        params = {
-            "q": f"{query} stars:>={min_stars}",
-            "sort": "stars",
-            "order": "desc",
-            "per_page": 100,
-        }
-        response = _get(
-            "https://api.github.com/search/repositories",
-            headers=headers,
-            params=params,
-        )
-        remaining = int(response.headers.get("X-RateLimit-Remaining", "0"))
-        if RATE_LIMIT_REMAINING is None or remaining < RATE_LIMIT_REMAINING:
-            RATE_LIMIT_REMAINING = remaining
+
+    async def _scrape_async() -> List[Dict[str, Any]]:
+        global RATE_LIMIT_REMAINING
+        headers = {"Accept": "application/vnd.github+json"}
+        if token:
+            headers["Authorization"] = f"token {token}"
+        all_repos: Dict[str, Dict[str, Any]] = {}
+        tasks = []
+        for query in QUERIES:
+            params = {
+                "q": f"{query} stars:>={min_stars}",
+                "sort": "stars",
+                "order": "desc",
+                "per_page": 100,
+            }
+            tasks.append(
+                asyncio.to_thread(
+                    _get,
+                    "https://api.github.com/search/repositories",
+                    headers=headers,
+                    params=params,
+                )
+            )
         try:
-            items = response.json().get("items", [])
-        except ValueError as e:
-            logger.warning("bad JSON skipped: %s", e)
-            continue
-        for item in items:
+            responses = await asyncio.gather(*tasks)
+        except Exception as exc:
+            logger.warning("request failed: %s", exc)
+            raise
+        for response in responses:
+            remaining = int(response.headers.get("X-RateLimit-Remaining", "0"))
+            if RATE_LIMIT_REMAINING is None or remaining < RATE_LIMIT_REMAINING:
+                RATE_LIMIT_REMAINING = remaining
             try:
-                data = _extract(item)
-            except InvalidRepoError as e:
-                logger.warning("invalid repo skipped: %s", e)
+                items = response.json().get("items", [])
+            except ValueError as e:
+                logger.warning("bad JSON skipped: %s", e)
                 continue
-            all_repos[data["full_name"]] = data
-    return list(all_repos.values())
+            for item in items:
+                try:
+                    data = _extract(item)
+                except InvalidRepoError as e:
+                    logger.warning("invalid repo skipped: %s", e)
+                    continue
+                all_repos[data["full_name"]] = data
+        return list(all_repos.values())
+
+    return asyncio.run(_scrape_async())
 
 
 def main() -> None:
