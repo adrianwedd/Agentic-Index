@@ -30,7 +30,11 @@ if __name__ == "__main__":
         "--write", action="store_true", help="Update README in place (default)"
     )
     group.add_argument("--dry-run", action="store_true", help="Alias for --check")
-    parser.add_argument("--force", action="store_true", help="Write even if unchanged")
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Write README even if no changes are detected",
+    )
     parser.add_argument(
         "--sort-by",
         default=DEFAULT_SORT_FIELD,
