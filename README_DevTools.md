@@ -1,0 +1,44 @@
+## 🧠 Top Agentic-AI Repositories: DevTools  
+| Rank | Repo | Score | Stars | Δ Stars | Δ Score | Recency | Issue Health | Doc Complete | License Freedom | Ecosystem | log₂(Stars) | Category |
+|-----:|------|------:|------:|--------:|--------:|-------:|-------------:|-------------:|---------------:|---------:|------------:|----------|
+| 1 | [dify](https://github.com/langgenius/dify) | 5.28 | 103268 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 16.66 | DevTools |
+| 2 | [langflow](https://github.com/langflow-ai/langflow) | 5.17 | 73776 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 16.17 | DevTools |
+| 3 | [system-prompts-and-models...](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | 5.03 | 57495 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 15.81 | DevTools |
+| 4 | [DB-GPT](https://github.com/eosphoros-ai/DB-GPT) | 4.53 | 16764 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 14.03 | DevTools |
+| 5 | [goose](https://github.com/block/goose) | 4.47 | 14627 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.84 | DevTools |
+| 6 | [ai](https://github.com/vercel/ai) | 4.45 | 14955 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 13.87 | DevTools |
+| 7 | [deer-flow](https://github.com/bytedance/deer-flow) | 4.44 | 13528 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.72 | DevTools |
+| 8 | [devika](https://github.com/stitionai/devika) | 4.41 | 19329 |  |  | 0.28 | 0.00 | 0.00 | 1.00 | 0.00 | 14.24 | DevTools |
+| 9 | [adk-python](https://github.com/google/adk-python) | 4.31 | 10116 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 13.30 | DevTools |
+| 10 | [pr-agent](https://github.com/qodo-ai/pr-agent) | 4.18 | 8127 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 12.99 | DevTools |
+| 11 | [RD-Agent](https://github.com/microsoft/RD-Agent) | 4.08 | 5872 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 12.52 | DevTools |
+| 12 | [LaVague](https://github.com/lavague-ai/LaVague) | 4.01 | 6072 |  |  | 0.65 | 0.00 | 0.00 | 1.00 | 0.00 | 12.57 | DevTools |
+| 13 | [xtuner](https://github.com/InternLM/xtuner) | 3.97 | 4591 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 12.16 | DevTools |
+| 14 | [spring-ai-alibaba](https://github.com/alibaba/spring-ai-alibaba) | 3.92 | 4081 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 12.00 | DevTools |
+| 15 | [aci](https://github.com/aipotheosis-labs/aci) | 3.91 | 3988 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 11.96 | DevTools |
+| 16 | [sim](https://github.com/simstudioai/sim) | 3.91 | 3973 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 11.96 | DevTools |
+| 17 | [TaskingAI](https://github.com/TaskingAI/TaskingAI) | 3.90 | 5129 |  |  | 0.51 | 0.00 | 0.00 | 1.00 | 0.00 | 12.32 | DevTools |
+| 18 | [gptme](https://github.com/gptme/gptme) | 3.89 | 3859 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 11.91 | DevTools |
+| 19 | [DevOpsGPT](https://github.com/kuafuai/DevOpsGPT) | 3.84 | 5920 |  |  | 0.18 | 0.00 | 0.00 | 0.50 | 0.00 | 12.53 | DevTools |
+| 20 | [griptape](https://github.com/griptape-ai/griptape) | 3.67 | 2315 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 11.18 | DevTools |
+| 21 | [DemoGPT](https://github.com/melih-unsal/DemoGPT) | 3.57 | 1836 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 10.84 | DevTools |
+| 22 | [Agently](https://github.com/AgentEra/Agently) | 3.43 | 1354 |  |  | 0.96 | 0.00 | 0.00 | 1.00 | 0.00 | 10.40 | DevTools |
+| 23 | [pasa](https://github.com/bytedance/pasa) | 3.39 | 1206 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 10.24 | DevTools |
+| 24 | [octotools](https://github.com/octotools/octotools) | 3.38 | 1188 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 10.22 | DevTools |
+| 25 | [acu](https://github.com/trycua/acu) | 3.35 | 1304 |  |  | 0.99 | 0.00 | 0.00 | 0.00 | 0.00 | 10.35 | DevTools |
+| 26 | [typedai](https://github.com/TrafficGuard/typedai) | 3.34 | 1077 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 10.07 | DevTools |
+| 27 | [BaseAI](https://github.com/LangbaseInc/BaseAI) | 3.25 | 1074 |  |  | 0.76 | 0.00 | 0.00 | 0.50 | 0.00 | 10.07 | DevTools |
+| 28 | [awesome-ai-sdks](https://github.com/e2b-dev/awesome-ai-sdks) | 3.16 | 951 |  |  | 0.76 | 0.00 | 0.00 | 0.00 | 0.00 | 9.89 | DevTools |
+| 29 | [AIOpsLab](https://github.com/microsoft/AIOpsLab) | 3.10 | 614 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 9.26 | DevTools |
+| 30 | [OpenManus](https://github.com/henryalps/OpenManus) | 3.09 | 645 |  |  | 1.00 | 0.00 | 0.00 | 0.50 | 0.00 | 9.34 | DevTools |
+| 31 | [promptulate](https://github.com/Undertone0809/promptulate) | 3.07 | 576 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 9.17 | DevTools |
+| 32 | [SuperCoder](https://github.com/TransformerOptimus/SuperCoder) | 3.07 | 938 |  |  | 0.14 | 0.00 | 0.00 | 1.00 | 0.00 | 9.87 | DevTools |
+| 33 | [agent](https://github.com/machinegpt/agent) | 3.00 | 307 |  |  | 1.00 | 1.00 | 0.00 | 1.00 | 0.00 | 8.27 | DevTools |
+| 34 | [devlooper](https://github.com/modal-labs/devlooper) | 3.00 | 459 |  |  | 0.28 | 1.00 | 0.00 | 1.00 | 0.00 | 8.85 | DevTools |
+| 35 | [evolving-agents](https://github.com/matiasmolinas/evolving-agents) | 2.95 | 435 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 8.77 | DevTools |
+| 36 | [pentagi](https://github.com/vxcontrol/pentagi) | 2.85 | 342 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 8.42 | DevTools |
+| 37 | [digirl](https://github.com/DigiRL-agent/digirl) | 2.81 | 360 |  |  | 0.75 | 0.00 | 0.00 | 1.00 | 0.00 | 8.50 | DevTools |
+| 38 | [autonomous-hr-chatbot](https://github.com/stepanogil/autonomous-hr-chatbot) | 2.75 | 404 |  |  | 0.32 | 0.00 | 0.00 | 1.00 | 0.00 | 8.66 | DevTools |
+| 39 | [claude-code-flow](https://github.com/ruvnet/claude-code-flow) | 2.64 | 211 |  |  | 1.00 | 0.00 | 0.00 | 1.00 | 0.00 | 7.73 | DevTools |
+| 40 | [JungleGym](https://github.com/a16z-infra/JungleGym) | 2.48 | 193 |  |  | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 7.60 | DevTools |
+| 41 | [agents-aea](https://github.com/fetchai/agents-aea) | 2.42 | 228 |  |  | 0.00 | 0.00 | 0.00 | 1.00 | 0.00 | 7.84 | DevTools |

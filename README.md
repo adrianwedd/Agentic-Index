@@ -206,7 +206,12 @@ Quick guide to our categories (and the icons you'll see in the table):
 <a id="-explore-by-category"></a>
 ## 📚 Explore by Category
 <!-- CATEGORY:START -->
-
+- 🛠️ [DevTools](README_DevTools.md)
+- 🎯 [Domain-Specific](README_Domain-Specific.md)
+- 🧪 [Experimental](README_Experimental.md)
+- 🌐 [General-purpose](README_General-purpose.md)
+- 🤖 [Multi-Agent](README_Multi-Agent.md)
+- 📚 [RAG-centric](README_RAG-centric.md)
 <!-- CATEGORY:END -->
 -----
 
