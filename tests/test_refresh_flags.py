@@ -3,7 +3,7 @@ from pathlib import Path
 from unittest import mock
 
 import agentic_index_cli.enricher as enricher
-import agentic_index_cli.internal.rank as rank
+import agentic_index_cli.internal.rank_main as rank
 import agentic_index_cli.internal.scrape as scrape
 
 

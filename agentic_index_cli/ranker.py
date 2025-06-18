@@ -6,7 +6,7 @@ import click
 
 from .config import load_config
 from .helpers.click_options import config_option
-from .internal.rank import main as rank_main
+from .internal.rank_main import main as rank_main
 
 # re-export for backward compatibility
 main = rank_main

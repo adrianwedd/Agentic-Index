@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 from agentic_index_cli.helpers.once_per_day import once_per_day
-from agentic_index_cli.internal.rank import generate_badges
+from agentic_index_cli.internal.badges import generate_badges
 
 
 def main(json_path: str = "data/repos.json", *, force: bool = False) -> None:

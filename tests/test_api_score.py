@@ -2,7 +2,7 @@ import json
 
 from fastapi.testclient import TestClient
 
-from agentic_index_cli.internal.rank import compute_score
+from agentic_index_cli.internal.scoring import compute_score
 
 from .test_api_auth import load_app
 
