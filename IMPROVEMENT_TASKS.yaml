@@ -1,0 +1,120 @@
+id: IT-001
+title: Automate dependency installation
+category: Enhancement
+priority: P0
+effort: 5
+rationale: |
+  Missing packages like `aiohttp` caused test failures during the audit.
+  Automating installation would ensure a consistent environment.
+description: |
+  - Create a setup script or package manager configuration that installs all required Python packages.
+  - Validate that new contributors can run `pytest` without missing dependencies.
+acceptance_criteria:
+  - `pytest` runs without ImportError exceptions on a fresh clone.
+
+dependencies: []
+---
+id: IT-002
+title: Improve network error handling tests
+category: Enhancement
+priority: P1
+effort: 3
+rationale: |
+  Collection scripts fail when network calls break. Better unit tests will surface these issues early.
+description: |
+  - Add mock-based tests for modules in `agentic_index_cli.network`.
+  - Include scenarios for timeouts and API failures.
+acceptance_criteria:
+  - New tests cover at least 80% of `agentic_index_cli.network` functions.
+
+dependencies: []
+---
+id: IT-003
+title: Provide containerized development environment
+category: Enhancement
+priority: P1
+effort: 8
+rationale: |
+  A Docker-based workflow would eliminate manual setup and reduce onboarding friction.
+description: |
+  - Create a Dockerfile with all dependencies and environment variables.
+  - Document usage in README.
+acceptance_criteria:
+  - Developers can run `docker compose up` and execute CLI commands immediately.
+
+dependencies: []
+---
+id: IT-004
+title: Document required environment variables
+category: Documentation
+priority: P0
+effort: 1
+rationale: |
+  Users are unaware of necessary tokens like `GITHUB_TOKEN_REPO_STATS` and `API_KEY`.
+description: |
+  - Add a section in README describing required variables and their purpose.
+  - Link to example `.env` file.
+acceptance_criteria:
+  - README includes clear setup steps for environment variables.
+
+dependencies: []
+---
+id: IT-005
+title: Add caching to reduce network calls
+category: Enhancement
+priority: P2
+effort: 5
+rationale: |
+  Scraping and API calls are repeated frequently and may hit rate limits. Caching will speed up runs.
+description: |
+  - Implement optional caching layer in `agentic_index_cli.network` using on-disk JSON or a lightweight DB.
+  - Provide CLI flag to enable or clear cache.
+acceptance_criteria:
+  - Running scrape twice uses cached results and reduces API calls.
+
+dependencies: []
+---
+id: IT-006
+title: Audit secrets and token usage
+category: Governance
+priority: P2
+effort: 3
+rationale: |
+  Token handling lacks security review; sensitive keys may leak in logs or history.
+description: |
+  - Review how environment variables are loaded and used.
+  - Ensure tokens are not logged or committed.
+acceptance_criteria:
+  - Documented guidelines for secure token handling.
+
+dependencies: []
+---
+id: IT-007
+title: Integrate Dependabot or similar tool
+category: Enhancement
+priority: P2
+effort: 3
+rationale: |
+  Keeping dependencies current mitigates security risks and prevents missing features.
+description: |
+  - Add configuration for an automated dependency update service.
+  - Monitor update PRs for successful tests.
+acceptance_criteria:
+  - Dependency update PRs are created automatically and pass CI.
+
+dependencies: []
+---
+id: IT-008
+title: Review contribution guidelines for clarity
+category: Documentation
+priority: P1
+effort: 2
+rationale: |
+  Clear contribution policies improve community engagement and align with Mozilla OSS guidelines.
+description: |
+  - Audit `CONTRIBUTING.md` for missing sections on code style and PR workflow.
+  - Provide examples for common tasks.
+acceptance_criteria:
+  - Updated CONTRIBUTING guide with explicit steps and references to style checks.
+
+dependencies: []
