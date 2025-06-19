@@ -33,7 +33,6 @@ def main(argv: Optional[List[str]] = None) -> None:
 
 def cli(argv: Optional[List[str]] = None) -> None:
     """Entry point for ``python -m agentic_index_cli.scraper``."""
-
     if argv:
         main(argv)
     else:
