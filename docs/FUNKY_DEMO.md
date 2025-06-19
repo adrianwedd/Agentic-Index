@@ -8,5 +8,6 @@ The script:
 2. Runs the full test suite.
 3. Validates README fixtures and top100 consistency.
 4. Spins up a temporary pipeline using sample data and generates a demo README.
+5. Calls `scripts/e2e_test.sh` for a quick smoke test of the enrichment and ranking pipeline.
 
 The output directory is printed at the end so you can inspect the generated artifacts.
