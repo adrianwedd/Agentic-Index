@@ -16,7 +16,9 @@ This step translates observations and identified issues into a concrete, ranked 
 
 3.  **Define Tasks**: For each selected task, clearly define its scope and objective. Each task should be "atomic" – small and focused enough to be completed within a reasonable timeframe by one person or a pair.
 
-4.  **Prioritize Tasks**: Assign a priority to each task (e.g., 1-5, with 1 being the highest). This helps determine the order of execution.
+4.  **Prioritize Tasks**: Assign a priority to each task (e.g., 1-5, with 1 being
+    the highest). This helps determine the order of execution. Run
+    `scripts/rank_tasks.py` to display tasks sorted by priority.
 
 5.  **Update `tasks.yml`**: Add the selected tasks to the `tasks.yml` file. Ensure each task entry includes the following fields, consistent with the existing structure:
     *   `id`: A unique integer for the task. Increment from the highest existing ID.

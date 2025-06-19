@@ -27,3 +27,5 @@ This epic captures the remaining work needed to stabilize the Agentic Index pipe
 - **Pipeline Rollback Guide** – Provide instructions for reverting data if a refresh introduces bad results.
 - **Fixture-Based E2E Test** – Use small fixture data in `scripts/e2e_test.sh` so the pipeline can be validated quickly.
 - **Validation Log** – See `../e2e_pipeline_validation.md` for the latest end-to-end refresh attempt and results.
+- **FunkyAF Demo** – A colorful script (`scripts/funky_demo.py`) walks developers through formatting, tests, fixture validation and a mini pipeline with rich progress bars and metrics tables.
+

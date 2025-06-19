@@ -39,7 +39,7 @@ fi
 source .venv/bin/activate
 
 pip install --upgrade pip
-pip install -r requirements.lock
+pip install -r requirements.txt
 pip install -e .
 pip install black isort flake8 mypy bandit pre-commit
 pre-commit install --install-hooks
@@ -55,14 +55,17 @@ if [[ -f .env ]]; then
   set -o allexport
   source .env
   set +o allexport
-else
-  REQUIRED_VARS=(GITHUB_TOKEN_REPO_STATS API_KEY)
-  for var in "${REQUIRED_VARS[@]}"; do
-    if [[ -z "${!var:-}" ]]; then
-      read -rp "Enter value for $var: " val
-      export "$var"="$val"
-    fi
-  done
+fi
+
+REQUIRED_VARS=(GITHUB_TOKEN_REPO_STATS API_KEY)
+MISSING=()
+for var in "${REQUIRED_VARS[@]}"; do
+  if [[ -z "${!var:-}" ]]; then
+    MISSING+=("$var")
+  fi
+done
+if (( ${#MISSING[@]} )); then
+  echo "Warning: missing variables ${MISSING[*]}." >&2
 fi
 
 python - <<'PY'

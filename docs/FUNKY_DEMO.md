@@ -1,13 +1,12 @@
 # FunkyAF Demo
 
-Run `python scripts/funky_demo.py` to experience an end-to-end walkthrough of the tests and pipeline.
 
-The script:
+Run `python scripts/funky_demo.py` for an interactive tour of the repository.
 
-1. Checks formatting with `black` and `isort`.
-2. Runs the full test suite.
-3. Validates README fixtures and top100 consistency.
-4. Spins up a temporary pipeline using sample data and generates a demo README.
-5. Calls `scripts/e2e_test.sh` for a quick smoke test of the enrichment and ranking pipeline.
+Highlights:
 
-The output directory is printed at the end so you can inspect the generated artifacts.
+1. Progress bars visualize formatting checks and test execution.
+2. Docstrings from key pipeline functions scroll by to explain what each step does.
+3. Fixture validation runs with clear success/failure output.
+4. A miniature pipeline processes fixture repos and renders a metrics table showing repository count and average star count.
+5. Finally, the script invokes `scripts/e2e_test.sh` for a quick smoke test and prints the location of generated artifacts.

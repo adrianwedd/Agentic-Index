@@ -15,11 +15,14 @@
   ```
 
 ## Setup
+- Create a `.env` file exporting any required tokens such as
+  `GITHUB_TOKEN_REPO_STATS` and `API_KEY`.
 - Source `scripts/setup-env.sh` to validate your Python version, install system
   packages, and configure a virtual environment:
   ```bash
   source scripts/setup-env.sh
   ```
+  The script reads `.env` if present and warns when variables are missing.
 
 ## PR Guidelines
 - Separate large formatting-only commits from functional changes.
@@ -84,3 +87,6 @@ labels: [auto, codex]
 Run `python scripts/codex_task_runner.py --file codex_tasks.md` to validate and
 process tasks. The runner checks for duplicate IDs, missing fields, and invalid
 values before creating issues or printing summaries.
+Use `scripts/validate_tasks.py` to check `tasks.yml` against
+`schemas/task.schema.json` and `scripts/rank_tasks.py` to display tasks ordered
+by priority.
