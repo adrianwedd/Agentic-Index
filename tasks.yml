@@ -91,3 +91,24 @@
   dependencies: []
   priority: 3
   status: done
+- id: 4
+  description: Provide `scripts/e2e_test.sh` that chains scraping, enrichment, ranking and README injection using fixture data
+  component: tests
+  dependencies: []
+  priority: 1
+  status: todo
+- id: 5
+  description: Add a GitHub Actions job to run the end-to-end smoke test on pull requests
+  component: ci
+  dependencies:
+    - 4
+  priority: 2
+  status: todo
+- id: 6
+  description: Document rollback steps to revert pipeline state if a step corrupts the dataset
+  component: docs
+  dependencies:
+    - 4
+  priority: 3
+  status: todo
+

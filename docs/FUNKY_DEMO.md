@@ -1,5 +1,6 @@
 # FunkyAF Demo
 
+
 Run `python scripts/funky_demo.py` for an interactive tour of the repository.
 
 Highlights:
