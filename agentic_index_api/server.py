@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 import structlog
-from fastapi import FastAPI, HTTPException, Request, Response
+from fastapi import Body, FastAPI, HTTPException, Request, Response
 from fastapi.concurrency import run_in_threadpool
 from pydantic import BaseModel
 
@@ -129,7 +129,7 @@ def healthz() -> Response:
 
 
 @app.post("/sync")
-async def sync(min_stars: int = 0) -> dict[str, Any]:
+async def sync(min_stars: int = Body(default=0, embed=True)) -> dict[str, Any]:
     """Fetch repository data and write to ``data/repos.json``."""
     token = os.getenv("GITHUB_TOKEN")
 
