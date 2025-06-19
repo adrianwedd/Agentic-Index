@@ -21,3 +21,9 @@ This epic captures the remaining work needed to stabilize the Agentic Index pipe
 - The smoke test passes locally and in CI.
 - API endpoints reject malformed input with clear error messages.
 - Release notes fully describe new features and fixes.
+
+## 4. Additional Hardening
+- **Non-Interactive Setup** – Allow `scripts/setup-env.sh` to read tokens from a `.env` file so CI can run without prompts.
+- **Pipeline Rollback Guide** – Provide instructions for reverting data if a refresh introduces bad results.
+- **Fixture-Based E2E Test** – Use small fixture data in `scripts/e2e_test.sh` so the pipeline can be validated quickly.
+- **Validation Log** – See `../e2e_pipeline_validation.md` for the latest end-to-end refresh attempt and results.
