@@ -2,23 +2,42 @@
 
 from __future__ import annotations
 
-import click
+import argparse
+import os
+from pathlib import Path
+from typing import List, Optional
 
-from .helpers.click_options import output_option
-from .internal.scrape import main as scrape_main
-
-# expose for tests
-main = scrape_main
-
-
-@click.command(help="Scrape repositories")
-@output_option
-def _cli(output: str) -> None:
-    main()  # pragma: no cover - actual parsing happens in submodule
+from .internal import scrape as scrape_mod
 
 
-def cli(argv: list[str] | None = None) -> None:
-    _cli.main(args=argv, standalone_mode=False)
+def main(argv: Optional[List[str]] = None) -> None:
+    """Scrape GitHub repositories and write to a JSON file."""
+
+    parser = argparse.ArgumentParser(description="Scrape repositories")
+    parser.add_argument("--min-stars", type=int, default=0)
+    parser.add_argument(
+        "--output",
+        "-o",
+        type=Path,
+        default=Path("data/repos.json"),
+        help="Output file path",
+    )
+    args = parser.parse_args(argv)
+
+    token = os.getenv("GITHUB_TOKEN")
+    repos = scrape_mod.scrape(min_stars=args.min_stars, token=token)
+    path = args.output
+    path.parent.mkdir(parents=True, exist_ok=True)
+    scrape_mod.save_repos(path, repos)
+
+
+def cli(argv: Optional[List[str]] = None) -> None:
+    """Entry point for ``python -m agentic_index_cli.scraper``."""
+
+    if argv:
+        main(argv)
+    else:
+        main()
 
 
 if __name__ == "__main__":
