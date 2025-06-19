@@ -46,6 +46,10 @@ pre-commit install --install-hooks
 
 export PYTHONPATH="$PWD"
 
+# Enable offline mode for tests by default
+: "${CI_OFFLINE:=1}"
+export CI_OFFLINE
+
 if [[ -f .env ]]; then
   echo "Loading environment variables from .env"
   set -o allexport
