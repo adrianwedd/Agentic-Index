@@ -1,8 +1,15 @@
 # Editable Git install with no remote (agentic-index==0.1.0)
 -e /workspace/Agentic-Index
 alabaster==1.0.0
+aiohappyeyeballs==2.6.1
+aiohttp==3.12.13
+aiosignal==1.3.2
 annotated-types==0.7.0
+frozenlist==1.7.0
 anyio==4.9.0
+multidict==6.5.0
+propcache==0.3.2
+yarl==1.20.1
 attrs==25.3.0
 babel==2.17.0
 bandit==1.8.3
