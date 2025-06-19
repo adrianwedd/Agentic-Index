@@ -6,6 +6,7 @@ import agentic_index_cli.enricher as enricher
 import agentic_index_cli.faststart as faststart
 import agentic_index_cli.inject as inject_cli
 import agentic_index_cli.internal.scrape as scrape_mod
+import agentic_index_cli.prune as prune
 import agentic_index_cli.scraper as scraper
 from agentic_index_cli.internal import inject_readme
 
@@ -122,3 +123,19 @@ def test_plot_trends_cli(capsys):
     plot_trends.main()
     captured = capsys.readouterr()
     assert "not yet implemented" in captured.out
+
+
+def test_prune_cli(monkeypatch):
+    called = {}
+
+    def fake_prune(
+        inactive, repos_path=Path("repos.json"), changelog_path=Path("CHANGELOG.md")
+    ):
+        called["args"] = (inactive, repos_path, changelog_path)
+
+    monkeypatch.setattr(prune, "prune", fake_prune)
+    prune.main(
+        ["--inactive", "10", "--repos-path", "r.json", "--changelog-path", "c.md"]
+    )
+
+    assert called["args"] == (10, Path("r.json"), Path("c.md"))
