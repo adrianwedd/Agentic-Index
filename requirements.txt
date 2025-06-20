@@ -6,7 +6,7 @@ PyYAML
 pytest-socket
 responses
 rich
-typer[all]
+typer
 click
 jsonschema>=3.2
 pydantic>=2
@@ -17,7 +17,6 @@ pydeps
 sphinx
 sphinx_rtd_theme
 uvicorn
-httpx
 pytest-env
 aiohttp>=3.9.0
 structlog

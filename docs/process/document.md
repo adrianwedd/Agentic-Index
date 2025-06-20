@@ -40,6 +40,7 @@ Accurate and up-to-date documentation is crucial for project maintainability and
           status: done # Updated status
         ```
     *   **Add Newly Discovered Follow-up Tasks**: If any new issues or necessary follow-up work were identified during the cycle (e.g., during "Validate" or "Execute"), add them to `tasks.yml` with an appropriate description, component, priority, and `todo` status. These will be considered in the next cycle's "Decide" step.
+    *   Run `scripts/validate_tasks.py tasks.yml` to verify the file matches the task schema.
 
 ## Output
 

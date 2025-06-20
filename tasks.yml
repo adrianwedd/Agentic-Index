@@ -85,3 +85,9 @@
     - CR-AGENTIC-001
   priority: 2
   status: done
+- id: CR-AGENTIC-011
+  description: Provide a deluxe `funky_demo.py` with rich progress bars, docstring overlays, metrics tables and a final smoke test so contributors can explore the pipeline interactively
+  component: docs
+  dependencies: []
+  priority: 3
+  status: done
