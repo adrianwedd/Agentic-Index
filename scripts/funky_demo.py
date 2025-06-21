@@ -11,7 +11,6 @@ rendered with :mod:`rich` for a deluxe terminal experience.
 from __future__ import annotations
 
 import json
-
 import os
 import shutil
 import subprocess
@@ -97,7 +96,6 @@ def main() -> None:
     show_doc(rank.main)
     show_doc(inj.main)
 
-
     inj.REPOS_PATH = data_dir / "repos.json"
     inj.DATA_PATH = data_dir / "top100.md"
     inj.SNAPSHOT = data_dir / "last_snapshot.json"
@@ -134,7 +132,6 @@ def main() -> None:
 
     console.rule("smoke test")
     run(["bash", "scripts/e2e_test.sh"])
-
 
 
 if __name__ == "__main__":
