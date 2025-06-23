@@ -33,12 +33,12 @@ jobs:
           pip install -r requirements.txt
           pip install -e '.[dev]'
       - name: Run README Injection
-        run: python -m agentic_index_cli.internal.inject_readme --all
+        run: python -m agentic_index_cli.internal.inject_readme --all-categories
       - name: Commit & Push Changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add README.md README_*.md
           if ! git diff --quiet; then
             git commit -m "chore: daily README table update"
             git push

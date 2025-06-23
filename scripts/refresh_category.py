@@ -40,8 +40,7 @@ def refresh(category: str, out_dir: Path) -> None:
     rank(str(data_path))
 
     by_cat = out_dir / "by_category"
-    inj.REPOS_PATH = data_path
-    inj.write_category_readme(category, force=True)
+    inj.write_category_readme(category, force=True, repos_path=data_path)
 
     index_file = by_cat / "index.json"
     try:

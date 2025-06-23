@@ -10,18 +10,41 @@ def test_inject_script_check(monkeypatch, tmp_path):
         force=False,
         check=False,
         write=True,
+        dry_run=False,
         sort_by="score",
         top_n=100,
         limit=None,
+        repos_path=None,
+        ranked_path=None,
+        readme_path=None,
+        index_path=None,
     ):
-        calls["args"] = (force, check, write, sort_by, top_n, limit)
+        calls["args"] = (
+            force,
+            check,
+            write,
+            sort_by,
+            top_n,
+            limit,
+            repos_path,
+            ranked_path,
+        )
         return 0
 
     monkeypatch.setattr("agentic_index_cli.internal.inject_readme.main", fake_main)
     script = Path(__file__).resolve().parents[1] / "scripts" / "inject_readme.py"
     sys.argv = [str(script), "--check"]
     runpy.run_path(script, run_name="__main__")
-    assert calls["args"] == (False, True, False, "score", 100, None)
+    assert calls["args"] == (
+        False,
+        True,
+        False,
+        "score",
+        100,
+        None,
+        None,
+        None,
+    )
 
 
 def test_inject_script_category(monkeypatch):

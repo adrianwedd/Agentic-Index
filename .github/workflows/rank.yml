@@ -29,8 +29,7 @@ jobs:
       - name: Run ranker
         run: |
           echo "running ranker" | tee rank.log
-          # Placeholder for ranking logic generating repos.json
-          python scripts/ranker.py >> rank.log 2>&1
+          python -m agentic_index_cli.ranker data/repos.json >> rank.log 2>&1
       - name: Validate JSON
         run: |
           python -m json.tool data/repos.json > /dev/null
