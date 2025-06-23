@@ -52,6 +52,8 @@ jobs:
         run: python -m agentic_index_cli.validate data/repos.json >> update.log 2>&1
       - name: Rank repositories
         run: python -m agentic_index_cli.ranker data/repos.json >> update.log 2>&1
+      - name: Generate category README files
+        run: python scripts/inject_readme.py --force --all-categories >> update.log 2>&1
       - name: Validate JSON
         run: |
           python -m json.tool data/repos.json > /dev/null

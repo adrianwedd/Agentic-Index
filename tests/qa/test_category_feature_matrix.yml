@@ -6,8 +6,8 @@
     - "Inspect data/by_category for JSON files"
     - "Check index.json mapping"
   expected: "One JSON per category and valid index"
-  actual: "Directory missing"
-  result: fail
+  actual: "Files generated after refresh"
+  result: pass
 
 - id: TC-B1
   cr: CR-AI-105B
@@ -15,8 +15,8 @@
     - "Run write_all_categories()"
     - "Verify README_<Category>.md exists"
   expected: "README files generated"
-  actual: "Files absent"
-  result: fail
+  actual: "README files created"
+  result: pass
 
 - id: TC-C1
   cr: CR-AI-105C
@@ -32,8 +32,8 @@
   steps:
     - "Open README.md between CATEGORY markers"
   expected: "List of categories present"
-  actual: "Section empty"
-  result: fail
+  actual: "Links rendered from index"
+  result: pass
 
 - id: TC-E1
   cr: CR-AI-105E
