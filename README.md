@@ -340,6 +340,8 @@ bash scripts/trigger_refresh.sh 75
 Replace `75` with your desired minimum star count. The script requires the GitHub CLI and an authenticated token.
 Set a personal access token via the `GITHUB_TOKEN_REPO_STATS` environment variable to avoid hitting rate limits when scraping.
 
+If a pipeline step fails and leaves corrupted data, see [ROLLBACK.md](docs/ROLLBACK.md) for how to revert the GitHub state and clear local caches before re-running.
+
 ### 📝 Forcing README injection
 
 The injector normally skips writing `README.md` when no changes are detected. Use `--force` to rewrite the table regardless:
