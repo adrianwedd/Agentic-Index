@@ -105,6 +105,8 @@ def main(json_path: str = "data/repos.json", *, config: dict | None = None) -> N
         save_repos(data_file, repos)
         persist_history(data_file, repos, delta_days=delta_days)
         write_by_category(data_dir, repos)
+        ranked_path = data_dir / "ranked.json"
+        save_repos(ranked_path, repos)
 
     header = [
         "| Rank | Repo | Description | Score | Stars | Δ Stars |",
