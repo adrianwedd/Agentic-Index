@@ -96,7 +96,7 @@
   component: tests
   dependencies: []
   priority: 1
-  status: todo
+  status: done
 - id: 5
   description: Add a GitHub Actions job to run the end-to-end smoke test on pull requests
   component: ci
