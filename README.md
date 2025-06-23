@@ -43,10 +43,9 @@ This catalogue is maintained by the Agentic-Index project and is updated regular
 2. **Configure tokens and settings**
    ```bash
    cp agentic_index_cli/config.yaml my_config.yml
-   export GITHUB_TOKEN_REPO_STATS=<token>
-   export API_KEY=<optional-api>
+   cp .env.example .env
    ```
-   Edit `my_config.yml` to tweak ranking parameters.
+   Edit `my_config.yml` and `.env` to tweak ranking parameters and add any tokens.
 3. **Run the full pipeline**
    ```bash
    agentic-index scrape --min-stars 100
@@ -328,6 +327,12 @@ npx pa11y web/index.html
 You can also run `./scripts/install_pa11y_deps.sh` to install pa11y and Chrome.
 
 See [ONBOARDING.md](docs/ONBOARDING.md#running-tests) for instructions on running the test suite and replicating CI's offline environment.
+
+### Optional Environment Variables
+
+- `GITHUB_TOKEN_REPO_STATS` – increases GitHub API rate limits when scraping.
+- `API_KEY` – used by some metrics scripts for third-party services.
+- `CI_OFFLINE` – set to `1` to disable network calls during tests, matching CI.
 
 ## 💻 Developer
 
