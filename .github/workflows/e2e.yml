@@ -1,0 +1,40 @@
+name: e2e-test
+
+on:
+  pull_request:
+
+defaults:
+  run:
+    shell: bash --noprofile --norc -eo pipefail {0}
+
+permissions:
+  contents: read
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONFAULTHANDLER: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Cache pip
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+      - name: Install dependencies
+        run: |
+          source scripts/setup-env.sh
+      - name: Run end-to-end test
+        run: |
+          bash scripts/e2e_test.sh
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-artifacts
+          path: e2e_demo_*
+          if-no-files-found: ignore
