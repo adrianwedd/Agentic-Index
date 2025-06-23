@@ -14,7 +14,7 @@ jobs:
   fossa:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Run FOSSA analysis
         uses: fossas/fossa-action@v1
         with:
