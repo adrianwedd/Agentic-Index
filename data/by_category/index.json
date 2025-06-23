@@ -1,1 +1,8 @@
-{}
+{
+  "DevTools": "DevTools.json",
+  "Domain-Specific": "Domain-Specific.json",
+  "Experimental": "Experimental.json",
+  "General-purpose": "General-purpose.json",
+  "Multi-Agent": "Multi-Agent.json",
+  "RAG-centric": "RAG-centric.json"
+}
