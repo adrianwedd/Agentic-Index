@@ -103,7 +103,7 @@
   dependencies:
     - 4
   priority: 2
-  status: todo
+  status: done
 - id: 6
   description: Document rollback steps to revert pipeline state if a step corrupts the dataset
   component: docs
