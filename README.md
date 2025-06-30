@@ -229,12 +229,7 @@ Quick guide to our categories (and the icons you'll see in the table):
 <a id="-explore-by-category"></a>
 ## 📚 Explore by Category
 <!-- CATEGORY:START -->
-- 🛠️ [DevTools](README_DevTools.md)
-- 🎯 [Domain-Specific](README_Domain-Specific.md)
-- 🧪 [Experimental](README_Experimental.md)
-- 🌐 [General-purpose](README_General-purpose.md)
-- • [Multi-Agent](README_Multi-Agent.md)
-- 📚 [RAG-centric](README_RAG-centric.md)
+
 <!-- CATEGORY:END -->
 -----
 
@@ -407,9 +402,9 @@ Please see our [Code of Conduct](./CODE_OF_CONDUCT.md) for contributor expectati
 <a id="-license"></a>
 ## 📜 License
 
-The content of Agentic-Index (this `README.md`, files in `/docs/`, etc.) is licensed under([https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)).
+The content of Agentic-Index (this `README.md`, files in `/docs/`, etc.) is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
-Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 'em) are licensed under([https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)).
+Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 'em) are licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 © 2025 Agentic-Index Maintainers
 
