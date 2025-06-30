@@ -8,7 +8,7 @@ from typing import Dict, List
 
 from jinja2 import Template
 
-from .scoring import SCORE_KEY
+from agentic_index_cli.constants import SCORE_KEY
 
 
 def save_csv(repos: List[Dict], path: Path) -> None:

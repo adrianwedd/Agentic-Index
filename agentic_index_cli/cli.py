@@ -10,9 +10,10 @@ from typing import Dict, List
 
 from rich.progress import track
 
+from agentic_index_cli.constants import SCORE_KEY
+
 from .network import search_and_harvest
 from .render import changelog, load_previous, save_changelog, save_csv, save_markdown
-from .scoring import SCORE_KEY
 
 
 def sort_and_select(repos: List[Dict], limit: int = 100) -> List[Dict]:

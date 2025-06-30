@@ -13,9 +13,10 @@ from typing import Any, Dict, List, Optional
 import aiohttp
 import structlog
 
+from .constants import SCORE_KEY
 from .exceptions import APIError
 from .internal import http_utils
-from .scoring import SCORE_KEY, categorize, compute_score
+from .scoring import categorize, compute_score
 
 logger = structlog.get_logger(__name__).bind(file=__file__)
 

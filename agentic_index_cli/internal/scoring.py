@@ -1,8 +1,7 @@
 from __future__ import annotations
 
+from agentic_index_cli.constants import SCORE_KEY
 from lib.metrics_registry import get_metrics
-
-SCORE_KEY = "AgenticIndexScore"
 
 
 def compute_score(repo: dict) -> float:

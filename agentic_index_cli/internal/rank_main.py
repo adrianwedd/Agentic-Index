@@ -7,6 +7,7 @@ from pathlib import Path
 
 import lib.quality_metrics  # ensure built-in metrics are registered
 from agentic_index_cli.config import load_config
+from agentic_index_cli.constants import SCORE_KEY
 from agentic_index_cli.scoring import (
     compute_issue_health,
     compute_recency_factor,
@@ -16,7 +17,7 @@ from agentic_index_cli.templates import SUMMARY_ROW_TMPL, format_link, short_des
 from agentic_index_cli.validate import load_repos, save_repos
 
 from .badges import generate_badges
-from .scoring import SCORE_KEY, compute_score
+from .scoring import compute_score
 from .scoring import infer_category as _infer_category
 from .snapshot import persist_history, write_by_category
 

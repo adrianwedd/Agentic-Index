@@ -10,9 +10,9 @@ from typing import Dict, List, Optional
 
 import structlog
 
-logger = structlog.get_logger(__name__).bind(file=__file__)
+from agentic_index_cli.constants import SCORE_KEY
 
-SCORE_KEY = "AgenticIndexScore"
+logger = structlog.get_logger(__name__).bind(file=__file__)
 
 PERMISSIVE_LICENSES = {
     "mit",

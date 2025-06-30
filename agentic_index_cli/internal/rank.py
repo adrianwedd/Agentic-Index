@@ -14,6 +14,7 @@ from pathlib import Path
 
 import lib.quality_metrics  # ensure built-in metrics are registered
 from agentic_index_cli.config import load_config
+from agentic_index_cli.constants import SCORE_KEY
 from agentic_index_cli.scoring import (
     compute_issue_health,
     compute_recency_factor,
@@ -24,8 +25,6 @@ from agentic_index_cli.validate import load_repos, save_repos
 from lib.metrics_registry import get_metrics
 
 # ─────────────────────────  Scoring & categorisation  ──────────────────────────
-
-SCORE_KEY = "AgenticIndexScore"
 
 
 def compute_score(repo: dict) -> float:

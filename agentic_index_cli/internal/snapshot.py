@@ -5,9 +5,8 @@ import json
 import shutil
 from pathlib import Path
 
+from agentic_index_cli.constants import SCORE_KEY
 from agentic_index_cli.validate import save_repos
-
-from .scoring import SCORE_KEY
 
 __all__ = ["persist_history", "write_by_category"]
 
