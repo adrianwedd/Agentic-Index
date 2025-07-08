@@ -294,7 +294,7 @@ pytest -q
 ```
 
 `pytest` will fail if optional development packages are missing.
-Run `source scripts/setup-env.sh` or install `dev-requirements.txt`
+Run `source scripts/setup-env.sh` or install `dev-requirements.lock`
 to ensure all dependencies are available.
 
 CI runs tests with network access disabled. Set `CI_OFFLINE=1` or run
@@ -308,7 +308,7 @@ If collection fails with messages like `ImportError: No module named 'responses'
 make sure all test dependencies are installed:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.lock
 ```
 
 You may also see `Missing required environment variables:` errors when
