@@ -17,10 +17,10 @@ variable to your internal PyPI mirror so all `pip` commands automatically use it
 
 ```bash
 export PIP_INDEX_URL=https://pypi.mycompany.com/simple
-pip install -r requirements.txt
+pip install -r requirements.lock
 ```
 
-`pip install -r requirements.txt` must succeed before running `pip-audit` so the
+`pip install -r requirements.lock` must succeed before running `pip-audit` so the
 audit tool can resolve every dependency.
 
 ## Example Workflow Step

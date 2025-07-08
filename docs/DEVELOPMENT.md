@@ -24,7 +24,7 @@ source scripts/setup-env.sh
 ```
 
 The script verifies Python **3.11** or newer, installs required system packages,
-creates a virtual environment with the dependencies from `requirements.txt`,
+creates a virtual environment with the dependencies from `requirements.lock`,
 exports `PYTHONPATH`, and installs pre-commit hooks. If a `.env` file exists it
 is sourced; otherwise missing token variables are only reported.
 

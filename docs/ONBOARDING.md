@@ -40,7 +40,7 @@ pip install -r requirements.lock
 
 For a full environment setup—including every package needed for the test
 suite—source `scripts/setup-env.sh`. The script installs the contents of
-`dev-requirements.txt` and ensures `pytest` can run without missing modules.
+`dev-requirements.lock` and ensures `pytest` can run without missing modules.
 
 ## Pre-commit Hooks
 Activate hooks so formatting and lint checks run before each commit. The hooks
