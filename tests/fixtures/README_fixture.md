@@ -43,10 +43,9 @@ This catalogue is maintained by the Agentic-Index project and is updated regular
 2. **Configure tokens and settings**
    ```bash
    cp agentic_index_cli/config.yaml my_config.yml
-   export GITHUB_TOKEN_REPO_STATS=<token>
-   export API_KEY=<optional-api>
+   cp .env.example .env
    ```
-   Edit `my_config.yml` to tweak ranking parameters.
+   Edit `my_config.yml` and `.env` to tweak ranking parameters and add any tokens.
 3. **Run the full pipeline**
    ```bash
    agentic-index scrape --min-stars 100
@@ -205,7 +204,7 @@ Our score balances stars, recency, maintenance health, documentation quality, li
 **Quick Look at Components:**
 
   * **Seed Discovery:** GitHub searches (e.g., `"agent framework"`, `"LLM agent"`), topic filters (e.g., `topic:agent` [17]), and crawling curated lists [24, 25, 7] to cast a wide net.
-  * **Metadata Harvest:** Pulling key data: stars, forks, open/closed issues, commit dates, language, license, README snippets. (Examples: [13, 1, 12, 26, 23, 2, 10, 8, 3, 14, 15, 16, 19, 22, 27, 28] and many others as detailed in `docs/methodology.md`)
+  * **Metadata Harvest:** Pulling key data: stars, forks, open/closed issues, commit dates, language, license, README snippets. (Examples: [13, 1, 12, 26, 23, 2, 10, 8, 3, 14, 15, 16, 19, 22, 27, 28]. More in [Data Sources & Scraping](./docs/methodology.md#data-sources--scraping))
   * **Quality & Activity Scoring:** The formula balances community buzz, dev activity, maintenance, docs, license, and how well it plays with others.
   * **De-duplication & Categorisation:** Forks usually get skipped unless they’re their own thing now. Repos get bucketed by their main gig.
 
@@ -230,7 +229,12 @@ Quick guide to our categories (and the icons you'll see in the table):
 <a id="-explore-by-category"></a>
 ## 📚 Explore by Category
 <!-- CATEGORY:START -->
-
+- 🛠️ [DevTools](README_DevTools.md)
+- 🎯 [Domain-Specific](README_Domain-Specific.md)
+- 🧪 [Experimental](README_Experimental.md)
+- 🌐 [General-purpose](README_General-purpose.md)
+- • [Multi-Agent](README_Multi-Agent.md)
+- 📚 [RAG-centric](README_RAG-centric.md)
 <!-- CATEGORY:END -->
 -----
 
@@ -329,6 +333,12 @@ You can also run `./scripts/install_pa11y_deps.sh` to install pa11y and Chrome.
 
 See [ONBOARDING.md](docs/ONBOARDING.md#running-tests) for instructions on running the test suite and replicating CI's offline environment.
 
+### Optional Environment Variables
+
+- `GITHUB_TOKEN_REPO_STATS` – increases GitHub API rate limits when scraping.
+- `API_KEY` – used by some metrics scripts for third-party services.
+- `CI_OFFLINE` – set to `1` to disable network calls during tests, matching CI.
+
 ## 💻 Developer
 
 To trigger a data refresh via GitHub Actions, run:
@@ -397,9 +407,9 @@ Please see our [Code of Conduct](./CODE_OF_CONDUCT.md) for contributor expectati
 <a id="-license"></a>
 ## 📜 License
 
-The content of Agentic-Index (this `README.md`, files in `/docs/`, etc.) is licensed under([https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)).
+The content of Agentic-Index (this `README.md`, files in `/docs/`, etc.) is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
-Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 'em) are licensed under([https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)).
+Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 'em) are licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 © 2025 Agentic-Index Maintainers
 

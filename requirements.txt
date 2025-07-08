@@ -1,23 +1,23 @@
-pytest
-pytest-cov
-hypothesis
-requests
-PyYAML
-pytest-socket
-responses
-rich
-typer
-click
-jsonschema>=3.2
-pydantic>=2
-fastapi
-httpx
-matplotlib
-pydeps
-sphinx
-sphinx_rtd_theme
-uvicorn
-pytest-env
-aiohttp>=3.9.0
-structlog
-sentry-sdk
+pytest  # test framework
+pytest-cov  # coverage plugin
+hypothesis  # property-based testing
+requests  # HTTP client
+PyYAML  # YAML parsing
+pytest-socket  # restrict network calls in tests
+responses  # mock HTTP responses
+rich  # colorized CLI output
+typer  # CLI framework
+click  # dependency for typer
+jsonschema>=3.2  # JSON validation
+pydantic>=2  # data models
+fastapi  # web framework
+httpx  # async HTTP client
+matplotlib  # graphs for docs
+pydeps  # dependency graphs
+sphinx  # documentation generator
+sphinx_rtd_theme  # docs theme
+uvicorn  # ASGI server
+pytest-env  # env var plugin
+aiohttp>=3.9.0  # async HTTP engine
+structlog  # structured logging
+sentry-sdk  # error reporting
