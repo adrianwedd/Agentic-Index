@@ -1,7 +1,7 @@
-black
-isort
-flake8
-coverage
-mypy
-bandit
-pre-commit
+black  # code formatter
+isort  # import sorter
+flake8  # linting
+coverage  # coverage reporting
+mypy  # type checker
+bandit  # security checks
+pre-commit  # git hooks
