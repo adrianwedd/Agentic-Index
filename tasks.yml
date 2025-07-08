@@ -112,3 +112,21 @@
   priority: 3
   status: done
 
+- id: 7
+  description: Consolidate the legacy "api" package with the official "agentic_index_api" to eliminate duplicate FastAPI servers.
+  component: code
+  dependencies: []
+  priority: 3
+  status: pending
+- id: 8
+  description: Refactor GitHub fetching into a shared asynchronous client to avoid duplicated logic across `network.py` and `internal/scrape.py`.
+  component: code
+  dependencies: []
+  priority: 4
+  status: pending
+- id: 9
+  description: Validate API server configuration with Pydantic `BaseSettings` to ensure required environment variables are present and well-formed.
+  component: code
+  dependencies: []
+  priority: 3
+  status: pending
