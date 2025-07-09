@@ -12,9 +12,9 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 import agentic_index_cli.internal.inject_readme as inj
+from agentic_index_api.sync_utils import sync
 from agentic_index_cli.enricher import enrich
 from agentic_index_cli.internal.rank_main import main as rank
-from api.sync import sync
 
 TOPIC_MAP = {
     "Frameworks": ["framework"],
