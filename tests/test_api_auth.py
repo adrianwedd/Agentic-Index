@@ -3,18 +3,13 @@ import importlib
 import pytest
 from fastapi.testclient import TestClient
 
-import agentic_index_api.server as srv
 
+def load_app(monkeypatch, key="k", ips=""):
+    """Reload the server with the given environment variables."""
+    monkeypatch.setenv("API_KEY", key)
+    monkeypatch.setenv("IP_WHITELIST", ips)
+    import agentic_index_api.server as srv
 
-def load_app(monkeypatch, key=None, ips=None):
-    if key is not None:
-        monkeypatch.setenv("API_KEY", key)
-    else:
-        monkeypatch.delenv("API_KEY", raising=False)
-    if ips is not None:
-        monkeypatch.setenv("IP_WHITELIST", ips)
-    else:
-        monkeypatch.delenv("IP_WHITELIST", raising=False)
     module = importlib.reload(srv)
     return module.app, module
 
