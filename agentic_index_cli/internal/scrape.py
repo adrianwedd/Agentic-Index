@@ -11,6 +11,7 @@ from typing import Any, Dict, List
 
 from pydantic import BaseModel, ValidationError
 
+from agentic_index_cli.github_client import get as github_get
 from agentic_index_cli.internal import http_utils
 
 from ..exceptions import APIError, InvalidRepoError, RateLimitError
@@ -72,7 +73,7 @@ class RepoModel(BaseModel):
 
 
 def _get(url: str, *, headers: dict, params: dict | None = None) -> http_utils.Response:
-    return http_utils.sync_get(url, params=params, headers=headers)
+    return github_get(url, params=params, headers=headers)
 
 
 def _extract(item: Dict[str, Any]) -> Dict[str, Any]:

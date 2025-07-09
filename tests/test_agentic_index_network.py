@@ -30,9 +30,7 @@ def test_github_search(monkeypatch):
             sleep=lambda x: None, time=lambda: 0, perf_counter=lambda: 0
         ),
     )
-    monkeypatch.setattr(
-        ai.http_utils, "sync_get", lambda url, **kw: fake_get(url, **kw)
-    )
+    monkeypatch.setattr(ai, "github_get", lambda url, **kw: fake_get(url, **kw))
     res = ai.github_search("query", page=3)
     assert res == ["ok"]
     assert captured["params"]["page"] == 3
@@ -54,13 +52,11 @@ def test_fetch_repo_and_readme(monkeypatch):
             sleep=lambda x: None, time=lambda: 0, perf_counter=lambda: 0
         ),
     )
-    monkeypatch.setattr(ai.http_utils, "sync_get", lambda url, **kw: fake_get_repo(url))
+    monkeypatch.setattr(ai, "github_get", lambda url, **kw: fake_get_repo(url))
     repo = ai.fetch_repo("owner/name")
     assert repo == {"id": 123}
 
-    monkeypatch.setattr(
-        ai.http_utils, "sync_get", lambda url, **kw: fake_get_readme(url)
-    )
+    monkeypatch.setattr(ai, "github_get", lambda url, **kw: fake_get_readme(url))
     text = ai.fetch_readme("owner/name")
     assert text == "hello"
 
@@ -93,7 +89,7 @@ def test_error_branches(monkeypatch):
     def bad_get(url, params=None, headers=None):
         return DummyResp({}, status=500)
 
-    monkeypatch.setattr(ai.http_utils, "sync_get", lambda url, **kw: bad_get(url))
+    monkeypatch.setattr(ai, "github_get", lambda url, **kw: bad_get(url))
     assert ai.github_search("q") == []
 
     assert ai.fetch_repo("name") is None
@@ -103,7 +99,7 @@ def test_error_branches(monkeypatch):
     def ok_get(url, params=None, headers=None):
         return DummyResp({}, status=200)
 
-    monkeypatch.setattr(ai.http_utils, "sync_get", lambda url, **kw: ok_get(url))
+    monkeypatch.setattr(ai, "github_get", lambda url, **kw: ok_get(url))
     assert ai.fetch_readme("name") == ""
 
 

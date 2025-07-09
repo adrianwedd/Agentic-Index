@@ -5,7 +5,6 @@ from __future__ import annotations
 import asyncio
 import base64
 import json
-import os
 import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -15,26 +14,20 @@ import structlog
 
 from .constants import SCORE_KEY
 from .exceptions import APIError
-from .internal import http_utils
+from .github_client import async_get as github_async_get
+from .github_client import get as github_get
+from .internal.http_utils import Response
 from .scoring import categorize, compute_score
 
 logger = structlog.get_logger(__name__).bind(file=__file__)
 
 GITHUB_API = "https://api.github.com"
-HEADERS = {"Accept": "application/vnd.github+json"}
-TOKEN = os.getenv("GITHUB_TOKEN")
-if TOKEN:
-    HEADERS["Authorization"] = f"Bearer {TOKEN}"
 
 CACHE_DIR = Path(".cache")
 CACHE_TTL = 86400  # seconds
 
 SEARCH_TERMS = ["agent framework", "LLM agent"]
 TOPIC_FILTERS = ["agent"]
-
-MAX_RETRIES = int(os.getenv("NETWORK_RETRIES", str(http_utils.DEFAULT_RETRIES)))
-REQUEST_TIMEOUT = float(os.getenv("NETWORK_TIMEOUT", str(http_utils.DEFAULT_TIMEOUT)))
-BACKOFF_FACTOR = float(os.getenv("NETWORK_BACKOFF", str(http_utils.DEFAULT_BACKOFF)))
 
 
 def _load_cache(path: Path) -> Any | None:
@@ -54,18 +47,10 @@ def _save_cache(path: Path, data: Any) -> None:
 
 def _get(
     url: str, *, params: dict | None = None, headers: dict | None = None
-) -> http_utils.Response:
-    """GET with retry and adaptive rate limit handling."""
-    kwargs = {
-        "headers": headers or HEADERS,
-        "retries": MAX_RETRIES,
-        "timeout": REQUEST_TIMEOUT,
-        "backoff_factor": BACKOFF_FACTOR,
-    }
-    if params is not None:
-        kwargs["params"] = params
+) -> Response:
+    """GET with error handling."""
     try:
-        return http_utils.sync_get(url, **kwargs)
+        return github_get(url, params=params, headers=headers)
     except Exception as exc:  # pragma: no cover - network error path
         raise APIError(f"GET {url} failed: {exc}") from exc
 
@@ -138,12 +123,9 @@ async def async_fetch_repo(
     if cached:
         return cached
     try:
-        resp = await http_utils.async_get(
+        resp = await github_async_get(
             f"{GITHUB_API}/repos/{full_name}",
             session=session,
-            retries=MAX_RETRIES,
-            timeout=REQUEST_TIMEOUT,
-            backoff_factor=BACKOFF_FACTOR,
         )
     except Exception as exc:  # pragma: no cover - network error path
         logger.error("Repo fetch error %s: %s", full_name, exc)
@@ -161,12 +143,9 @@ async def async_fetch_readme(full_name: str, session: aiohttp.ClientSession) -> 
     if cache_file.exists() and time.time() - cache_file.stat().st_mtime < CACHE_TTL:
         return cache_file.read_text()
     try:
-        resp = await http_utils.async_get(
+        resp = await github_async_get(
             f"{GITHUB_API}/repos/{full_name}/readme",
             session=session,
-            retries=MAX_RETRIES,
-            timeout=REQUEST_TIMEOUT,
-            backoff_factor=BACKOFF_FACTOR,
         )
     except Exception as exc:  # pragma: no cover - network error path
         logger.error("Readme fetch error %s: %s", full_name, exc)
@@ -262,7 +241,7 @@ async def async_search_and_harvest(
         for term in SEARCH_TERMS:
             for page in range(1, max_pages + 1):
                 query = f"{term} stars:>={min_stars}"
-                resp = await http_utils.async_get(
+                resp = await github_async_get(
                     f"{GITHUB_API}/search/repositories",
                     params={
                         "q": query,
@@ -272,9 +251,6 @@ async def async_search_and_harvest(
                         "page": page,
                     },
                     session=session,
-                    retries=MAX_RETRIES,
-                    timeout=REQUEST_TIMEOUT,
-                    backoff_factor=BACKOFF_FACTOR,
                 )
                 for repo in resp.json().get("items", []):
                     full_name = repo["full_name"]
@@ -288,7 +264,7 @@ async def async_search_and_harvest(
         for topic in TOPIC_FILTERS:
             for page in range(1, max_pages + 1):
                 query = f"topic:{topic} stars:>={min_stars}"
-                resp = await http_utils.async_get(
+                resp = await github_async_get(
                     f"{GITHUB_API}/search/repositories",
                     params={
                         "q": query,
@@ -298,9 +274,6 @@ async def async_search_and_harvest(
                         "page": page,
                     },
                     session=session,
-                    retries=MAX_RETRIES,
-                    timeout=REQUEST_TIMEOUT,
-                    backoff_factor=BACKOFF_FACTOR,
                 )
                 for repo in resp.json().get("items", []):
                     full_name = repo["full_name"]
