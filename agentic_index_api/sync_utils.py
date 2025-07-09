@@ -1,9 +1,8 @@
 import json
-import logging
 import time
 import uuid
 from pathlib import Path
-from typing import List, Optional
+from typing import Any, List, Optional
 
 import structlog
 
@@ -21,7 +20,7 @@ def sync(org: Optional[str] = None, topics: Optional[List[str]] = None) -> List[
     start_time = time.perf_counter()
     try:
         repos = search_and_harvest(min_stars=0, max_pages=1)
-    except Exception as exc:
+    except Exception as exc:  # pragma: no cover - safety
         log.exception("harvest-error", error=str(exc))
         return []
 

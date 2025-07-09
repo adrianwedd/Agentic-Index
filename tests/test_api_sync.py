@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
 
-from api import sync as sync_module
-from api.app import app
+from agentic_index_api import sync_utils as sync_module
+from agentic_index_api.simple_app import app
 
 
 def test_sync_endpoint(tmp_path, monkeypatch):

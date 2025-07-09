@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -6,7 +8,7 @@ import matplotlib.pyplot as plt
 from fastapi import Body, FastAPI
 from pydantic import BaseModel
 
-from .sync import sync
+from .sync_utils import sync
 
 
 class RepoScore(BaseModel):
