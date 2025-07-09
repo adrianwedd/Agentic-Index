@@ -6,11 +6,12 @@ import types
 
 from fastapi.testclient import TestClient
 
-import agentic_index_api.server as srv
-
 
 def load_app(monkeypatch):
     monkeypatch.setenv("API_KEY", "k")
+    monkeypatch.setenv("IP_WHITELIST", "")
+    import agentic_index_api.server as srv
+
     module = importlib.reload(srv)
     return TestClient(module.app), module
 

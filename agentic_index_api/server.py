@@ -14,7 +14,7 @@ from typing import Any, Optional
 import structlog
 from fastapi import Body, FastAPI, HTTPException, Request, Response
 from fastapi.concurrency import run_in_threadpool
-from pydantic import BaseModel
+from pydantic import BaseModel, ValidationError
 
 from agentic_index_cli import issue_logger
 from agentic_index_cli.internal.scoring import compute_score
@@ -30,9 +30,15 @@ configure_sentry()
 
 logger = structlog.get_logger(__name__)
 
-API_KEY = os.getenv("API_KEY")
-_whitelist = os.getenv("IP_WHITELIST", "")
-IP_WHITELIST = {ip.strip() for ip in _whitelist.split(",") if ip.strip()}
+from .config import Settings
+
+try:
+    settings = Settings()
+except ValidationError as exc:  # pragma: no cover - validated in tests
+    raise RuntimeError(f"Invalid server configuration: {exc}") from exc
+
+API_KEY = settings.API_KEY
+IP_WHITELIST = settings.whitelist
 
 PROTECTED_PATHS = {"/sync", "/score", "/render", "/issue"}
 
