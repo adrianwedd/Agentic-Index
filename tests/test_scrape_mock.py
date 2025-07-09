@@ -35,7 +35,7 @@ def test_scrape_mock(monkeypatch):
             json.dumps({"items": [item]}),
         )
 
-    monkeypatch.setattr(scrape.http_utils, "sync_get", fake_get)
+    monkeypatch.setattr(scrape, "github_get", fake_get)
     repos = scrape.scrape(min_stars=0, token=None)
     assert repos and repos[0]["full_name"] == "owner/repo"
 
@@ -74,7 +74,7 @@ def test_scrape_timeout_retry(monkeypatch):
             )
         raise scrape.APIError("timeout")
 
-    monkeypatch.setattr(scrape.http_utils, "sync_get", fake_get)
+    monkeypatch.setattr(scrape, "github_get", fake_get)
     monkeypatch.setattr(scrape.time, "sleep", lambda s: None)
     repos = scrape.scrape(min_stars=0, token=None)
     assert calls["n"] >= 3
@@ -88,7 +88,7 @@ def test_scrape_timeout_fail(monkeypatch):
     def fail_get(*a, **k):
         raise scrape.APIError("boom")
 
-    monkeypatch.setattr(scrape.http_utils, "sync_get", fail_get)
+    monkeypatch.setattr(scrape, "github_get", fail_get)
     monkeypatch.setattr(scrape.time, "sleep", lambda s: None)
     with pytest.raises(scrape.APIError):
         scrape.scrape(min_stars=0, token=None)
@@ -132,7 +132,7 @@ def test_scrape_rate_limit_retry(monkeypatch):
             json.dumps({"items": []}),
         )
 
-    monkeypatch.setattr(scrape.http_utils, "sync_get", rate_limit_get)
+    monkeypatch.setattr(scrape, "github_get", rate_limit_get)
     monkeypatch.setattr(scrape.time, "sleep", lambda s: None)
     repos = scrape.scrape(min_stars=0, token=None)
     assert calls["n"] >= 2

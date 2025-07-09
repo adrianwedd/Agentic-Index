@@ -34,8 +34,8 @@ def test_scrape_retry_500(monkeypatch):
         )
 
     monkeypatch.setattr(
-        scrape.http_utils,
-        "sync_get",
+        scrape,
+        "github_get",
         lambda *a, **k: scrape.http_utils.Response(
             200, {"X-RateLimit-Remaining": "1"}, json.dumps({"items": [item]})
         ),
@@ -54,8 +54,8 @@ def test_scrape_rate_limit_sleep(monkeypatch):
     monkeypatch.setattr(scrape.time, "sleep", fake_sleep)
 
     monkeypatch.setattr(
-        scrape.http_utils,
-        "sync_get",
+        scrape,
+        "github_get",
         lambda *a, **k: scrape.http_utils.Response(
             403 if sleeps["s"] == 0 else 200,
             {
@@ -72,8 +72,8 @@ def test_scrape_rate_limit_sleep(monkeypatch):
 def test_scrape_bad_json(monkeypatch):
     monkeypatch.setattr(scrape, "QUERIES", ["q"])
     monkeypatch.setattr(
-        scrape.http_utils,
-        "sync_get",
+        scrape,
+        "github_get",
         lambda *a, **k: scrape.http_utils.Response(
             200,
             {"X-RateLimit-Remaining": "1"},

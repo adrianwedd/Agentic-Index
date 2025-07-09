@@ -21,7 +21,7 @@ def test_rate_limit_drops():
         make_response(97),
     ]
     with mock.patch(
-        "agentic_index_cli.internal.scrape.http_utils.sync_get", side_effect=responses
+        "agentic_index_cli.internal.scrape.github_get", side_effect=responses
     ) as get:
         scrape.scrape(min_stars=0, token=None)
         assert scrape.RATE_LIMIT_REMAINING == 97
