@@ -23,3 +23,8 @@ repos.json
 !data/last_snapshot.json
 /docs/sphinx/_build/
 .venv/
+
+claude.txt
+.env
+logs/
+*.log
