@@ -114,6 +114,24 @@ def _compute_stars_delta(full_name: str, stars: int) -> int:
     return delta
 
 
+def _check_docs_presence(full_name: str) -> float:
+    """Check for presence of common documentation files."""
+    doc_files = [
+        "README.md",
+        "docs/index.md",
+        "docs/README.md",
+        "documentation/README.md",
+    ]
+    for doc_file in doc_files:
+        doc_url = f"https://raw.githubusercontent.com/{full_name}/HEAD/{doc_file}"
+        try:
+            resp = _get(doc_url)
+            if resp.status_code == 200:
+                return 1.0
+        except Exception:
+            pass
+    return 0.0
+
 def fetch_repo(full_name: str) -> Dict[str, Any]:
     cache_file = CACHE_DIR / f"repo_{full_name.replace('/', '_')}.json"
     if cache_file.exists() and time.time() - cache_file.stat().st_mtime < 86400:
@@ -146,6 +164,7 @@ def fetch_repo(full_name: str) -> Dict[str, Any]:
 
     stars = repo.get("stargazers_count", 0)
 
+    docs_score = _check_docs_presence(full_name)
     data = {
         "name": repo.get("name"),
         "full_name": repo.get("full_name"),
@@ -162,7 +181,7 @@ def fetch_repo(full_name: str) -> Dict[str, Any]:
         "topics": topics,
         "stars_7d": _compute_stars_delta(full_name, stars),
         "maintenance": 1.0,
-        "docs_score": 0.0,
+        "docs_score": docs_score,
         "ecosystem": 1.0 if topics else 0.0,
         "last_release": last_release,
     }

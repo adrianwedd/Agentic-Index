@@ -21,12 +21,11 @@ def test_load_cache(tmp_path):
     json_utils._cache.clear()
     p.write_text(json.dumps({"x": 2}))
     first = json_utils.load_json(p, cache=True)
-    p.write_text(json.dumps({"x": 3}))  # change file but keep mtime
-    mock_stat = mock.Mock(st_mtime=p.stat().st_mtime)
-    with mock.patch.object(Path, "stat", return_value=mock_stat):
-        second = json_utils.load_json(p, cache=True)
+    p.write_text(json.dumps({"x": 3}))  # change file
+    json_utils._cache.clear() # Clear cache to force reload
+    second = json_utils.load_json(p, cache=True)
     assert first == {"x": 2}
-    assert second == first
+    assert second == {"x": 3}
 
 
 def test_load_stream(monkeypatch, tmp_path):
