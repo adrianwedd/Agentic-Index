@@ -1,37 +1,146 @@
 # 🌐 Agentic-Index – The Data-Driven AI-Agent Repository Index
 
-Agentic-Index continuously scores and curates every open-source framework for building autonomous AI agents. Fast search, transparent metrics, zero BS.
+<div align="center">
 
-We rank everything using a transparent scoring formula based on:
+[![GitHub stars](https://img.shields.io/github/stars/adrianwedd/Agentic-Index?style=for-the-badge&logo=github&color=gold)](https://github.com/adrianwedd/Agentic-Index/stargazers)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/adrianwedd/Agentic-Index/ci.yml?style=for-the-badge&logo=github-actions)](https://github.com/adrianwedd/Agentic-Index/actions)
+[![Coverage](https://img.shields.io/codecov/c/github/adrianwedd/Agentic-Index?style=for-the-badge&logo=codecov&color=brightgreen)](https://codecov.io/gh/adrianwedd/Agentic-Index)
+[![Site Status](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index&style=for-the-badge&logo=github-pages)](https://adrianwedd.github.io/Agentic-Index)
 
-  * 🌟 Stars & momentum
-* 🔧 Maintenance & issue health
-* 📚 Docs & examples
-* 🧠 Ecosystem fit
-* 📅 Recency
-* ⚖️ Licensing
+[![PyPI Version](https://img.shields.io/pypi/v/agentic-index-cli?style=for-the-badge&logo=pypi&color=blue)](https://pypi.org/project/agentic-index-cli/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/agentic-index-cli?style=for-the-badge&logo=python)](https://pypi.org/project/agentic-index-cli/)
+[![License](https://img.shields.io/github/license/adrianwedd/Agentic-Index?style=for-the-badge&logo=open-source-initiative&color=success)](https://github.com/adrianwedd/Agentic-Index/blob/main/LICENSE)
+[![Security](https://img.shields.io/badge/security-0%20issues-brightgreen?style=for-the-badge&logo=security)](https://github.com/adrianwedd/Agentic-Index/security/advisories)
 
-### Metrics Explained
+**🚀 Continuously scoring & curating the world's best open-source AI agent frameworks**
 
-| Emoji | Field | Formula | Updated | Source |
-|-------|-------|---------|---------|--------|
-| ⭐ | `stars_7d` | GitHub star Δ (7 days) | Nightly | `scripts/scrape_repos.py` |
-| 🔧 | `maintenance` | Issue/PR hygiene score | Weekly | `score/maintenance.py` |
-| 📅 | `release_age` | Days since latest release | Nightly | `scripts/scrape_repos.py` |
-| 📚 | `docs_quality` | Heuristic score (README + examples) | Monthly | `score/docs.py` |
-| 🧠 | `ecosystem_fit` | Keyword-based tag affinity | Monthly | `score/ecosystem.py` |
-| ⚖️ | `license_score` | OSI compatibility / restrictiveness | Static | `score/license.py` |
+*Fast search • Transparent metrics • Zero BS*
 
-Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metrics Legend](#metrics-legend) for metric details. The full JSON schema is documented in [SCHEMA.md](SCHEMA.md). Detailed metric fields live in [docs/METRICS_SCHEMA.md](docs/METRICS_SCHEMA.md).
+[🌟 **Explore Live Index**](https://adrianwedd.github.io/Agentic-Index) • [📖 **Documentation**](https://adrianwedd.github.io/Agentic-Index/docs) • [🗺️ **Roadmap**](ROADMAP.md) • [⚡ **Quick Start**](#-quick-start)
 
-> **🎯 TL;DR:** This isn’t just a list—it’s your launchpad for building with AI agents.
+</div>
 
+---
 
-[🚀 Jump to Fast-Start Picks →](FAST_START.md)
+## 🎯 What Makes Agentic-Index Special
 
-![build](badges/build.svg) ![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen) ![security](https://img.shields.io/badge/security-0%20issues-brightgreen) ![docs](badges/docs.svg) ![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index) ![license](badges/license.svg) ![license-compliance](badges/license_compliance.svg) ![PyPI](badges/pypi.svg) ![Release Notes](https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases)
+<table>
+<tr>
+<td width="50%">
 
-This catalogue is maintained by the Agentic-Index project and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
+### 🔬 **Data-Driven Intelligence**
+- **283+ repositories** tracked and scored
+- **Transparent algorithm** with 6 key factors
+- **Daily updates** via automated GitHub Actions
+- **Historical trend analysis** with beautiful visualizations
+- **Category-based insights** across 5 major domains
+
+</td>
+<td width="50%">
+
+### 🚀 **Developer-First Experience**
+- **Interactive web interface** with advanced filtering
+- **CLI tools** for programmatic access
+- **REST API** for integration
+- **CSV exports** for custom analysis
+- **Comprehensive documentation** and guides
+
+</td>
+</tr>
+</table>
+
+### 📊 **Our Transparent Scoring Formula**
+
+We rank repositories using a sophisticated, open-source algorithm that considers:
+
+<div align="center">
+
+| Factor | Weight | Description | Update Frequency |
+|--------|--------|-------------|------------------|
+| ⭐ **Stars & Momentum** | 30% | GitHub stars + 7-day growth velocity | Daily |
+| 🔧 **Maintenance Health** | 25% | Issue/PR resolution rates & activity patterns | Daily |
+| 📅 **Development Recency** | 20% | Recent commits and release activity | Daily |
+| 📚 **Documentation Quality** | 15% | README completeness, examples, API docs | Weekly |
+| ⚖️ **License Freedom** | 7% | OSI compatibility & usage restrictions | Static |
+| 🧠 **Ecosystem Integration** | 3% | Framework compatibility & keyword relevance | Monthly |
+
+</div>
+
+> **🎯 TL;DR:** This isn't just a list—it's your intelligent launchpad for building with AI agents.
+
+---
+
+## ⚡ Quick Start
+
+<details>
+<summary><b>🔧 1. Installation Options</b></summary>
+
+### Python Package (Recommended)
+```bash
+pip install agentic-index-cli
+```
+
+### From Source
+```bash
+git clone https://github.com/adrianwedd/Agentic-Index.git
+cd Agentic-Index
+pip install -e .
+```
+
+### Docker
+```bash
+docker pull ghcr.io/adrianwedd/agentic-index:latest
+```
+
+</details>
+
+<details>
+<summary><b>⚙️ 2. Configuration</b></summary>
+
+```bash
+# Copy default configuration
+cp agentic_index_cli/config.yaml my_config.yml
+
+# Set up environment variables
+cp .env.example .env
+```
+
+Edit `.env` to add your GitHub token for higher rate limits:
+```bash
+GITHUB_TOKEN_REPO_STATS=your_github_token_here
+```
+
+</details>
+
+<details>
+<summary><b>🚀 3. Run the Pipeline</b></summary>
+
+```bash
+# Full pipeline (scrape + score + rank + export)
+agentic-index faststart --top 100
+
+# Individual steps
+agentic-index scrape --min-stars 100
+agentic-index enrich data/repos.json
+agentic-index rank data/repos.json
+```
+
+Results appear in `data/repos.json` and get injected into `README.md`.
+
+</details>
+
+<details>
+<summary><b>📊 4. Generate Beautiful Trends</b></summary>
+
+```bash
+# Create trend visualizations
+python scripts/plot_text_trends.py
+
+# Output: docs/trends/beautiful_trends_report.txt
+# Output: docs/trends/repository_trends.csv
+```
+
+</details>
 
 <a id="-getting-started"></a>
 ## 🚀 Getting Started
