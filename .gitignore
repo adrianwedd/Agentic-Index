@@ -25,6 +25,10 @@ repos.json
 .venv/
 
 claude.txt
+.claude/
 .env
 logs/
 *.log
+.cache/
+.venv/
+venv/

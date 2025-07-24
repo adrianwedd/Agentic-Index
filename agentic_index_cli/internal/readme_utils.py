@@ -380,7 +380,7 @@ def build_readme(
     # inject navigation using provided index
     new_text = _inject_category_section(new_text, index_path)
     if os.getenv("PYTEST_CURRENT_TEST") is None:
-        ts = datetime.datetime.utcnow().isoformat(timespec="seconds")
+        ts = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
         new_text = new_text.replace("{timestamp}", ts)
     new_text = new_text.rstrip("\n")
     if end_newline:

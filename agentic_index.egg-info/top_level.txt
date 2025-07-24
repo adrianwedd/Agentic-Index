@@ -1,5 +1,11 @@
 agentic_index_api
 agentic_index_cli
-api
+badges
+ci
+data
+hooks
 lib
-tests
+reports
+schemas
+venv
+web

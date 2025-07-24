@@ -5,7 +5,7 @@ from __future__ import annotations
 import math
 import time
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Dict, List, Optional
 
 import structlog
@@ -29,7 +29,7 @@ VIRAL_LICENSES = {"gpl-3.0", "gpl-2.0", "agpl-3.0", "agpl-2.0"}
 def compute_recency_factor(pushed_at: str) -> float:
     """Return a freshness score based on ``pushed_at`` timestamp."""
     pushed_date = datetime.strptime(pushed_at, "%Y-%m-%dT%H:%M:%SZ")
-    days = (datetime.utcnow() - pushed_date).days
+    days = (datetime.now(timezone.utc) - pushed_date).days
     if days <= 30:
         return 1.0
     if days >= 365:

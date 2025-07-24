@@ -13,6 +13,8 @@ pydantic>=2  # data models
 fastapi  # web framework
 httpx  # async HTTP client
 matplotlib  # graphs for docs
+seaborn  # enhanced plotting
+numpy  # numerical computing
 pydeps  # dependency graphs
 sphinx  # documentation generator
 sphinx_rtd_theme  # docs theme

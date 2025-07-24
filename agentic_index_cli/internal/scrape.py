@@ -4,6 +4,8 @@ import argparse
 import asyncio
 import json
 import logging
+import datetime
+import math
 import os
 import time
 from pathlib import Path
@@ -40,6 +42,12 @@ FIELDS = [
     "language",
     "pushed_at",
     "owner",
+    "stars",
+    "recency_factor",
+    "issue_health",
+    "doc_completeness",
+    "license_freedom",
+    "ecosystem_integration",
 ]
 
 
@@ -76,6 +84,77 @@ def _get(url: str, *, headers: dict, params: dict | None = None) -> http_utils.R
     return github_get(url, params=params, headers=headers)
 
 
+def compute_recency_factor(pushed_at: str) -> float:
+    """Compute recency factor based on last push date."""
+    try:
+        pushed_date = datetime.datetime.strptime(pushed_at, "%Y-%m-%dT%H:%M:%SZ")
+        days = (datetime.datetime.now(datetime.timezone.utc) - pushed_date).days
+        if days <= 30:
+            return 1.0
+        if days >= 365:
+            return 0.0
+        return max(0.0, 1 - (days - 30) / 335)
+    except (ValueError, TypeError):
+        return 0.0
+
+
+def compute_issue_health(open_issues: int) -> float:
+    """Compute issue health factor."""
+    if open_issues <= 10:
+        return 1.0
+    elif open_issues <= 50:
+        return 0.7
+    elif open_issues <= 100:
+        return 0.5
+    else:
+        return 0.2
+
+
+def get_license_freedom(license_info: dict) -> float:
+    """Compute license freedom factor."""
+    if not license_info:
+        return 0.5
+    spdx_id = license_info.get("spdx_id", "")
+    if not spdx_id:
+        return 0.5
+    spdx_id = spdx_id.lower()
+    permissive = {"mit", "apache-2.0", "bsd-2-clause", "bsd-3-clause", "isc"}
+    if spdx_id in permissive:
+        return 1.0
+    elif spdx_id in {"gpl-3.0", "gpl-2.0", "agpl-3.0"}:
+        return 0.5
+    return 0.5
+
+
+def get_doc_completeness(full_name: str) -> float:
+    """Check for presence of common documentation files."""
+    doc_files = [
+        "README.md",
+        "docs/index.md",
+        "docs/README.md",
+        "documentation/README.md",
+    ]
+    for doc_file in doc_files:
+        doc_url = f"https://raw.githubusercontent.com/{full_name}/HEAD/{doc_file}"
+        try:
+            resp = _get(doc_url)
+            if resp.status_code == 200:
+                return 1.0
+        except Exception:
+            pass
+    return 0.0
+
+
+def get_ecosystem_integration(description: str, topics: List[str]) -> float:
+    """Check for ecosystem integration keywords."""
+    text = (description or "").lower() + " " + " ".join(topics).lower()
+    keywords = ["langchain", "openai", "plugin", "framework", "tool", "api"]
+    for keyword in keywords:
+        if keyword in text:
+            return 1.0
+    return 0.0
+
+
 def _extract(item: Dict[str, Any]) -> Dict[str, Any]:
     try:
         repo = RepoModel(**item)
@@ -84,7 +163,23 @@ def _extract(item: Dict[str, Any]) -> Dict[str, Any]:
     data = repo.model_dump()
     data["license"] = {"spdx_id": (repo.license.spdx_id if repo.license else None)}
     data["owner"] = {"login": repo.owner.login}
-    return {field: data.get(field) for field in FIELDS}
+
+    # Compute scoring fields
+    stars = data.get("stargazers_count", 0)
+    open_issues = data.get("open_issues_count", 0)
+    pushed_at = data.get("pushed_at", "")
+    description = data.get("description", "")
+    license_info = data.get("license", {})
+    topics = data.get("topics", []) # Assuming topics are now part of the scraped data
+
+    data["stars"] = stars # Add stars for consistency with ranker
+    data["recency_factor"] = compute_recency_factor(pushed_at)
+    data["issue_health"] = compute_issue_health(open_issues)
+    data["doc_completeness"] = get_doc_completeness(data["full_name"])
+    data["license_freedom"] = get_license_freedom(license_info)
+    data["ecosystem_integration"] = get_ecosystem_integration(description, topics)
+
+    return {field: data.get(field) for field in FIELDS + ["stars", "recency_factor", "issue_health", "doc_completeness", "license_freedom", "ecosystem_integration"]}
 
 
 def scrape(min_stars: int = 0, token: str | None = None) -> List[Dict[str, Any]]:

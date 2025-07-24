@@ -3,6 +3,8 @@ PyYAML
 jsonschema>=3.2
 pydantic>=2
 rich
+structlog
+sentry-sdk
 
 [dev]
 fastapi

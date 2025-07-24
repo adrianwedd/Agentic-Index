@@ -1,5 +1,5 @@
 ranking:
-  delta_days: 7
+  delta_days: 365
   top_n: 100
   min_stars: 0
 output:

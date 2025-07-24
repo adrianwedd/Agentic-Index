@@ -1,0 +1,106 @@
+# Agentic-Index Task Management
+# Organized by priority and category for better visibility
+
+## HIGH PRIORITY - Critical Issues (Complete First)
+
+- id: dt-deprecation
+  title: Fix datetime deprecation warnings
+  description: Replace datetime.utcnow() with timezone-aware datetime objects in scoring.py and readme_utils.py
+  component: code
+  priority: 1
+  status: pending
+  estimated_hours: 1
+
+- id: delta-stars-data
+  title: Populate Δ Stars column data
+  description: Fix missing Δ Stars data in README tables by ensuring stars_7d calculation works correctly
+  component: data
+  priority: 1
+  status: pending
+  estimated_hours: 2
+
+- id: type-hints-core
+  title: Add comprehensive type hints
+  description: Add missing type annotations to scoring.py and other core modules
+  component: code
+  priority: 1
+  status: pending
+  estimated_hours: 3
+
+- id: unify-pipeline
+  title: Unify scraping & ranking logic
+  description: Consolidate duplicate logic from scripts/ and agentic_index_cli/internal/ into canonical implementation
+  component: refactoring
+  priority: 1
+  status: pending
+  estimated_hours: 6
+
+## MEDIUM PRIORITY - Quality Improvements
+
+- id: markdownlint-cleanup
+  title: Fix markdownlint issues
+  description: Resolve trailing spaces, formatting issues across all markdown files
+  component: docs
+  priority: 2
+  status: pending
+  estimated_hours: 2
+
+- id: github-actions-security
+  title: Add least-privilege permissions to workflows
+  description: Implement least-privilege permissions blocks in GitHub Actions for security
+  component: ci
+  priority: 2
+  status: pending
+  estimated_hours: 1
+
+- id: async-scraping
+  title: Implement async scraping with aiohttp
+  description: Refactor scraping to use aiohttp with concurrency controls for better performance
+  component: performance
+  priority: 2
+  status: pending
+  estimated_hours: 4
+
+- id: schema-validation
+  title: Enforce schema validation
+  description: Validate data/repos.json against schema after every enrichment step
+  component: validation
+  priority: 2
+  status: pending
+  estimated_hours: 2
+
+## LOW PRIORITY - Nice to Have
+
+- id: documentation-improvements
+  title: Improve documentation clarity
+  description: Address README readability, add glossary, improve alt text for accessibility
+  component: docs
+  priority: 3
+  status: pending
+  estimated_hours: 4
+
+- id: api-enhancements
+  title: Enhance API server
+  description: Add Pydantic validation, better error logging, rate limit tracking
+  component: api
+  priority: 3
+  status: pending
+  estimated_hours: 3
+
+- id: testing-coverage
+  title: Improve test coverage
+  description: Add unit tests for pipeline utilities, expand mock testing scenarios
+  component: tests
+  priority: 3
+  status: pending
+  estimated_hours: 5
+
+## COMPLETED TASKS (Reference Only)
+
+- id: CR-AGENTIC-001 to CR-AGENTIC-011
+  description: All major CLI testing, type annotations, refactoring, and CI enhancements
+  status: done
+
+- id: 1-6
+  description: Core pipeline and documentation tasks
+  status: done

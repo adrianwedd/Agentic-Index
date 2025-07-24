@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 from hypothesis import given, settings
 from hypothesis import strategies as st
@@ -9,7 +9,7 @@ from agentic_index_cli.rank import compute_score
 
 
 def _repo(stars: int, open_issues: int, closed_issues: int, days_old: int):
-    pushed_at = (datetime.utcnow() - timedelta(days=days_old)).strftime(
+    pushed_at = (datetime.now(timezone.utc) - timedelta(days=days_old)).strftime(
         "%Y-%m-%dT%H:%M:%SZ"
     )
     return {
