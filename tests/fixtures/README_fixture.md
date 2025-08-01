@@ -1,37 +1,146 @@
 # 🌐 Agentic-Index – The Data-Driven AI-Agent Repository Index
 
-Agentic-Index continuously scores and curates every open-source framework for building autonomous AI agents. Fast search, transparent metrics, zero BS.
+<div align="center">
 
-We rank everything using a transparent scoring formula based on:
+[![GitHub stars](https://img.shields.io/github/stars/adrianwedd/Agentic-Index?style=for-the-badge&logo=github&color=gold)](https://github.com/adrianwedd/Agentic-Index/stargazers)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/adrianwedd/Agentic-Index/ci.yml?style=for-the-badge&logo=github-actions)](https://github.com/adrianwedd/Agentic-Index/actions)
+[![Coverage](https://img.shields.io/codecov/c/github/adrianwedd/Agentic-Index?style=for-the-badge&logo=codecov&color=brightgreen)](https://codecov.io/gh/adrianwedd/Agentic-Index)
+[![Site Status](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index&style=for-the-badge&logo=github-pages)](https://adrianwedd.github.io/Agentic-Index)
 
-  * 🌟 Stars & momentum
-* 🔧 Maintenance & issue health
-* 📚 Docs & examples
-* 🧠 Ecosystem fit
-* 📅 Recency
-* ⚖️ Licensing
+[![PyPI Version](https://img.shields.io/pypi/v/agentic-index-cli?style=for-the-badge&logo=pypi&color=blue)](https://pypi.org/project/agentic-index-cli/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/agentic-index-cli?style=for-the-badge&logo=python)](https://pypi.org/project/agentic-index-cli/)
+[![License](https://img.shields.io/github/license/adrianwedd/Agentic-Index?style=for-the-badge&logo=open-source-initiative&color=success)](https://github.com/adrianwedd/Agentic-Index/blob/main/LICENSE)
+[![Security](https://img.shields.io/badge/security-0%20issues-brightgreen?style=for-the-badge&logo=security)](https://github.com/adrianwedd/Agentic-Index/security/advisories)
 
-### Metrics Explained
+**🚀 Continuously scoring & curating the world's best open-source AI agent frameworks**
 
-| Emoji | Field | Formula | Updated | Source |
-|-------|-------|---------|---------|--------|
-| ⭐ | `stars_7d` | GitHub star Δ (7 days) | Nightly | `scripts/scrape_repos.py` |
-| 🔧 | `maintenance` | Issue/PR hygiene score | Weekly | `score/maintenance.py` |
-| 📅 | `release_age` | Days since latest release | Nightly | `scripts/scrape_repos.py` |
-| 📚 | `docs_quality` | Heuristic score (README + examples) | Monthly | `score/docs.py` |
-| 🧠 | `ecosystem_fit` | Keyword-based tag affinity | Monthly | `score/ecosystem.py` |
-| ⚖️ | `license_score` | OSI compatibility / restrictiveness | Static | `score/license.py` |
+*Fast search • Transparent metrics • Zero BS*
 
-Small fluctuations up to ±0.02 are normal between refreshes. See the [📊 Metrics Legend](#metrics-legend) for metric details. The full JSON schema is documented in [SCHEMA.md](SCHEMA.md). Detailed metric fields live in [docs/METRICS_SCHEMA.md](docs/METRICS_SCHEMA.md).
+[🌟 **Explore Live Index**](https://adrianwedd.github.io/Agentic-Index) • [📖 **Documentation**](https://adrianwedd.github.io/Agentic-Index/docs) • [🗺️ **Roadmap**](ROADMAP.md) • [⚡ **Quick Start**](#-quick-start)
 
-> **🎯 TL;DR:** This isn’t just a list—it’s your launchpad for building with AI agents.
+</div>
 
+---
 
-[🚀 Jump to Fast-Start Picks →](FAST_START.md)
+## 🎯 What Makes Agentic-Index Special
 
-![build](badges/build.svg) ![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen) ![security](https://img.shields.io/badge/security-0%20issues-brightgreen) ![docs](badges/docs.svg) ![Site](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fadrianwedd.github.io%2FAgentic-Index) ![license](badges/license.svg) ![license-compliance](badges/license_compliance.svg) ![PyPI](badges/pypi.svg) ![Release Notes](https://img.shields.io/github/release/adrianwedd/Agentic-Index?include_prereleases)
+<table>
+<tr>
+<td width="50%">
 
-This catalogue is maintained by the Agentic-Index project and is updated regularly (aiming for monthly refreshes) to reflect the rapidly evolving landscape of Agentic-AI.
+### 🔬 **Data-Driven Intelligence**
+- **283+ repositories** tracked and scored
+- **Transparent algorithm** with 6 key factors
+- **Daily updates** via automated GitHub Actions
+- **Historical trend analysis** with beautiful visualizations
+- **Category-based insights** across 5 major domains
+
+</td>
+<td width="50%">
+
+### 🚀 **Developer-First Experience**
+- **Interactive web interface** with advanced filtering
+- **CLI tools** for programmatic access
+- **REST API** for integration
+- **CSV exports** for custom analysis
+- **Comprehensive documentation** and guides
+
+</td>
+</tr>
+</table>
+
+### 📊 **Our Transparent Scoring Formula**
+
+We rank repositories using a sophisticated, open-source algorithm that considers:
+
+<div align="center">
+
+| Factor | Weight | Description | Update Frequency |
+|--------|--------|-------------|------------------|
+| ⭐ **Stars & Momentum** | 30% | GitHub stars + 7-day growth velocity | Daily |
+| 🔧 **Maintenance Health** | 25% | Issue/PR resolution rates & activity patterns | Daily |
+| 📅 **Development Recency** | 20% | Recent commits and release activity | Daily |
+| 📚 **Documentation Quality** | 15% | README completeness, examples, API docs | Weekly |
+| ⚖️ **License Freedom** | 7% | OSI compatibility & usage restrictions | Static |
+| 🧠 **Ecosystem Integration** | 3% | Framework compatibility & keyword relevance | Monthly |
+
+</div>
+
+> **🎯 TL;DR:** This isn't just a list—it's your intelligent launchpad for building with AI agents.
+
+---
+
+## ⚡ Quick Start
+
+<details>
+<summary><b>🔧 1. Installation Options</b></summary>
+
+### Python Package (Recommended)
+```bash
+pip install agentic-index-cli
+```
+
+### From Source
+```bash
+git clone https://github.com/adrianwedd/Agentic-Index.git
+cd Agentic-Index
+pip install -e .
+```
+
+### Docker
+```bash
+docker pull ghcr.io/adrianwedd/agentic-index:latest
+```
+
+</details>
+
+<details>
+<summary><b>⚙️ 2. Configuration</b></summary>
+
+```bash
+# Copy default configuration
+cp agentic_index_cli/config.yaml my_config.yml
+
+# Set up environment variables
+cp .env.example .env
+```
+
+Edit `.env` to add your GitHub token for higher rate limits:
+```bash
+GITHUB_TOKEN_REPO_STATS=your_github_token_here
+```
+
+</details>
+
+<details>
+<summary><b>🚀 3. Run the Pipeline</b></summary>
+
+```bash
+# Full pipeline (scrape + score + rank + export)
+agentic-index faststart --top 100
+
+# Individual steps
+agentic-index scrape --min-stars 100
+agentic-index enrich data/repos.json
+agentic-index rank data/repos.json
+```
+
+Results appear in `data/repos.json` and get injected into `README.md`.
+
+</details>
+
+<details>
+<summary><b>📊 4. Generate Beautiful Trends</b></summary>
+
+```bash
+# Create trend visualizations
+python scripts/plot_text_trends.py
+
+# Output: docs/trends/beautiful_trends_report.txt
+# Output: docs/trends/repository_trends.csv
+```
+
+</details>
 
 <a id="-getting-started"></a>
 ## 🚀 Getting Started
@@ -115,7 +224,7 @@ cat FAST_START.md | less     # see table injected
 The definitive list of Agentic-AI repositories, ranked by the Agentic Index Score. This score is a holistic measure of project quality, activity, and community love.
 *(Data updated as of: 2025-06-16T05:56:02 UTC)*
 
-<!-- TOP50:START -->
+<!-- TOP100:START -->
 | Rank | Repo | Description | Score | Stars | Δ Stars |
 |-----:|------|-------------|------:|------:|--------:|
 | 1 | [dify](https://github.com/langgenius/dify) | Production-ready platform for agentic workflow development. | 5.28 | 103268 |  |
@@ -168,245 +277,7 @@ The definitive list of Agentic-AI repositories, ranked by the Agentic Index Scor
 | 48 | [suna](https://github.com/kortix-ai/suna) | Suna - Open Source Generalist AI Agent | 4.46 | 14425 |  |
 | 49 | [ai](https://github.com/vercel/ai) | The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents  | 4.45 | 14955 |  |
 | 50 | [botpress](https://github.com/botpress/botpress) | The open-source hub to build & deploy GPT/LLM Agents ⚡️ | 4.45 | 13805 |  |
-<!-- TOP50:END -->
+<\!-- TOP100:END -->
 *➡️ Dig into how these scores are cooked up in our [Methodology section](#our-methodology--scoring-explained) and the [full recipe in /docs/methodology.md](./docs/methodology.md).*
 
 <a id="metrics-legend"></a>
-
-<details>
-<summary>📊 Metrics Legend</summary>
-
-Our score blends stars, recency, issue health, docs completeness, license freedom and ecosystem integration. **[See full formula →](./docs/methodology.md#scoring-formula)**
-- ⭐ Δ7d = stars gained in the last 7 days
-- 🔧 Maint = 1 / (days_since_last_commit * open_issue_ratio)
-- 📅 Release = 1 / days_since_last_release
-- 📚 Docs = 1 if README > 300 words & has code else 0
-- 🧠 Fit = fraction of ecosystem keywords matched
-- ⚖️ License = 1 for permissive, 0.5 for viral, 0 if none
-- Missing data for a metric shows as `-` instead of `0.00`
-
-</details>
-
-For a full description of every metric field, see [SCHEMA.md](./docs/SCHEMA.md) and [docs/METRICS_SCHEMA.md](docs/METRICS_SCHEMA.md).
-
------
-
-### Our Methodology & Scoring Explained
-
-<a id="our-methodology--scoring-explained"></a>
-<details>
-<summary>🔬 Our Methodology & Scoring Explained (Click to Expand)</summary>
-
-Agentic-Index believes in full transparency. Here’s the lowdown on how we find, vet, and score repositories.
-
-Our score balances stars, recency, maintenance health, documentation quality, license freedom, and ecosystem fit. **[See full formula →](./docs/methodology.md#scoring-formula)**
-
-**Quick Look at Components:**
-
-  * **Seed Discovery:** GitHub searches (e.g., `"agent framework"`, `"LLM agent"`), topic filters (e.g., `topic:agent` [17]), and crawling curated lists [24, 25, 7] to cast a wide net.
-  * **Metadata Harvest:** Pulling key data: stars, forks, open/closed issues, commit dates, language, license, README snippets. (Examples: [13, 1, 12, 26, 23, 2, 10, 8, 3, 14, 15, 16, 19, 22, 27, 28]. More in [Data Sources & Scraping](./docs/methodology.md#data-sources--scraping))
-  * **Quality & Activity Scoring:** The formula balances community buzz, dev activity, maintenance, docs, license, and how well it plays with others.
-  * **De-duplication & Categorisation:** Forks usually get skipped unless they’re their own thing now. Repos get bucketed by their main gig.
-
-For the full, unabridged version, see **[./docs/methodology.md](./docs/methodology.md)**.
-
-</details>
-
------
-
-<a id="-category-definitions"></a>
-## 🏷️ Category Definitions
-
-Quick guide to our categories (and the icons you'll see in the table):
-
-  * 🌐 **General-purpose:** Flexible frameworks for all sorts of agentic tasks (e.g., Langchain [8]).
-  * 🤖 **Multi-Agent Coordination:** For orchestrating teams of collaborating agents (e.g., CrewAI [1]).
-  * 📚 **RAG-centric:** Focused on agents that are wizards at Retrieval-Augmented Generation (e.g., AutoAgent's Agentic-RAG [29]).
-  * 🎯 **Domain-Specific:** Tools built for specific industries or tasks (e.g., `video-db/Director` [22]).
-  * 🛠️ **DevTools:** Libraries and platforms to help you build, test, deploy, or secure agents (e.g., `msoedov/agentic_security` [23]).
-  * 🧪 **Experimental:** Bleeding-edge, research-heavy, or early-stage projects (e.g., BabyAGI [3]).
-
-<a id="-explore-by-category"></a>
-## 📚 Explore by Category
-<!-- CATEGORY:START -->
-
-<!-- CATEGORY:END -->
------
-
-<a id="-changelog"></a>
-## 🔄 Changelog
-
-This isn't a static list. It's alive\! See [CHANGELOG.md](./CHANGELOG.md) for all the adds, drops, and major rank shuffles.
-
------
-
-<a id="-architecture"></a>
-## 🏗 Architecture
-
-
-![System Architecture](docs/architecture.svg)
-
------
-
-<a id="-usage"></a>
-## 🔧 Usage
-
-Use the CLI to fetch fresh repo data:
-
-```bash
-agentic-index scrape --min-stars 50 --iterations 1 --output data
-agentic-index enrich data/repos.json
-agentic-index faststart --top 5 data/repos.json
-```
-
-The CLI reads tuning parameters from `agentic_index_cli/config.yaml`. Use
-`--config my.yml` with any command to override these defaults.
-
-Generated tables live in the `data/` directory.
-
-<a id="-how-refresh-works"></a>
-## 🔄 How refresh works
-
-A scheduled GitHub Action keeps the index up to date. It runs the extended
-scraper and metric scoring before ranking repositories, then opens a pull
-request with any changes and can auto-merge when all
-checks pass. You can also trigger this process manually by running
-[`scripts/trigger_refresh.sh`](scripts/trigger_refresh.sh).
-
-<a id="-testing"></a>
-## 🧪 Testing
-
-This project uses `pytest` for unit tests and [pa11y](https://github.com/pa11y/pa11y) for accessibility checks. Ensure Chrome is installed before running pa11y:
-
-```bash
-# via puppeteer
-npx puppeteer browsers install chrome
-# or with apt
-sudo apt-get install -y chromium
-```
-
-### Running Tests
-
-Run tests with:
-
-```bash
-pytest -q
-```
-
-`pytest` will fail if optional development packages are missing.
-Run `source scripts/setup-env.sh` or install `dev-requirements.lock`
-to ensure all dependencies are available.
-
-CI runs tests with network access disabled. Set `CI_OFFLINE=1` or run
-`pytest --disable-socket` locally to replicate the offline environment.
-An autouse fixture still permits UNIX-domain `socketpair()` calls so FastAPI's
-`TestClient` can start its event loop.
-
-### Troubleshooting
-
-If collection fails with messages like `ImportError: No module named 'responses'`,
-make sure all test dependencies are installed:
-
-```bash
-pip install -r requirements.lock
-```
-
-You may also see `Missing required environment variables:` errors when
-`CI_OFFLINE` or API tokens are unset. Export the variables before running tests:
-
-```bash
-export CI_OFFLINE=1
-```
-
-To check accessibility after building the site:
-
-```bash
-npx pa11y web/index.html
-```
-
-You can also run `./scripts/install_pa11y_deps.sh` to install pa11y and Chrome.
-
-See [ONBOARDING.md](docs/ONBOARDING.md#running-tests) for instructions on running the test suite and replicating CI's offline environment.
-
-### Optional Environment Variables
-
-- `GITHUB_TOKEN_REPO_STATS` – increases GitHub API rate limits when scraping.
-- `API_KEY` – used by some metrics scripts for third-party services.
-- `CI_OFFLINE` – set to `1` to disable network calls during tests, matching CI.
-
-## 💻 Developer
-
-To trigger a data refresh via GitHub Actions, run:
-
-```bash
-bash scripts/trigger_refresh.sh 75
-```
-
-Replace `75` with your desired minimum star count. The script requires the GitHub CLI and an authenticated token.
-Set a personal access token via the `GITHUB_TOKEN_REPO_STATS` environment variable to avoid hitting rate limits when scraping.
-
-If a pipeline step fails and leaves corrupted data, see [ROLLBACK.md](docs/ROLLBACK.md) for how to revert the GitHub state and clear local caches before re-running.
-
-### 📝 Forcing README injection
-
-The injector normally skips writing `README.md` when no changes are detected. Use `--force` to rewrite the table regardless:
-
-```bash
-python scripts/inject_readme.py --force
-```
-
-This can be handy after metric tweaks that don't change rankings but should refresh the snapshot.
-
-### 🔍 Preview changes with `--dry-run`
-
-Use `--dry-run` to print a unified diff without modifying `README.md`:
-
-```bash
-python scripts/inject_readme.py --dry-run
-```
-
-This lets you verify upcoming updates locally or in CI.
-
------
-
-<a id="-how-to-contribute"></a>
-## 🤝 How to Contribute
-
-Agentic-Index aims to be *the* spot for Agentic-AI frameworks. Your brainpower and suggestions are gold.
-
-Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
-
-  * Nominate new repositories.
-  * Flag outdated info or errors.
-  * Suggest tweaks to scoring or categories.
-  * Understand what makes a repo eligible.
-  * Install [Git LFS](https://git-lfs.github.com/) and run `git lfs install`.
-    PNG and GIF assets are tracked via LFS.
-  * Set up your dev environment with [DEVELOPMENT.md](./docs/DEVELOPMENT.md).
-  * Run `source scripts/setup-env.sh` to configure your environment.
-
-
-For tips on keeping your branch in sync with `main` and resolving conflicts, see
-[CONFLICT_RESOLUTION.md](./docs/CONFLICT_RESOLUTION.md).
-
-Let's build the best damn agent list together\!
-
-
------
-<a id="-code-of-conduct"></a>
-## 🛡 Code of Conduct
-
-Please see our [Code of Conduct](./CODE_OF_CONDUCT.md) for contributor expectations.
-
-
-<a id="-license"></a>
-## 📜 License
-
-The content of Agentic-Index (this `README.md`, files in `/docs/`, etc.) is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
-
-Any scripts or code for analysis and generation (e.g., in `/scripts`, if we add 'em) are licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
-© 2025 Agentic-Index Maintainers
-
-
-![Last Sync](badges/last_sync.svg) ![Top Repo](badges/top_repo.svg) ![Repo Count](badges/repo_count.svg)

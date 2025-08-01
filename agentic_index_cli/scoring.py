@@ -28,7 +28,7 @@ VIRAL_LICENSES = {"gpl-3.0", "gpl-2.0", "agpl-3.0", "agpl-2.0"}
 
 def compute_recency_factor(pushed_at: str) -> float:
     """Return a freshness score based on ``pushed_at`` timestamp."""
-    pushed_date = datetime.strptime(pushed_at, "%Y-%m-%dT%H:%M:%SZ")
+    pushed_date = datetime.strptime(pushed_at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
     days = (datetime.now(timezone.utc) - pushed_date).days
     if days <= 30:
         return 1.0

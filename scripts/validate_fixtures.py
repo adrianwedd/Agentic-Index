@@ -18,7 +18,7 @@ def _generate_readme() -> str:
     """Return README text produced by the injector."""
     from agentic_index_cli.internal import inject_readme as inj
 
-    return inj.build_readme(top_n=50, limit=50).strip()
+    return inj.build_readme(top_n=100, limit=50).strip()
 
 
 def main() -> int:

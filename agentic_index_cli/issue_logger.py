@@ -129,6 +129,28 @@ def close_issue(
     return update_issue(issue_url, state="closed", token=token, debug=debug)
 
 
+def search_issues(
+    query: str, *, token: str | None = None, debug: bool = False
+) -> List[Dict[str, Any]]:
+    """Search for issues using GitHub's search API."""
+    token = token or get_token()
+    if not token:
+        return []
+    
+    resp = _request(
+        "GET",
+        f"{API_URL}/search/issues?q={query}",
+        token=token,
+        debug=debug,
+    )
+    if resp.status_code >= 400:
+        if debug:
+            print(f"Search failed: {resp.status_code} {resp.text}")
+        return []
+    
+    return resp.json().get("items", [])
+
+
 def _parse_issue_url(issue_url: str) -> tuple[str, int]:
     """Return ``repo`` and ``issue_number`` extracted from ``issue_url``."""
     return _parse_issue_or_pr_url(issue_url)

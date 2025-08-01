@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend
 import matplotlib.pyplot as plt
 from fastapi import Body, FastAPI
 from pydantic import BaseModel
@@ -59,7 +61,7 @@ def render_endpoint(req: RenderRequest):
     json_file: Optional[Path] = None
     if req.export_json:
         json_file = output_dir / "scores.json"
-        json_file.write_text(json.dumps([r.dict() for r in req.repos]))
+        json_file.write_text(json.dumps([r.model_dump() for r in req.repos]))
 
     return {
         "markdown_file": str(md_path),

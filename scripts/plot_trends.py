@@ -4,6 +4,8 @@ import json
 from datetime import datetime
 from pathlib import Path
 
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend
 import matplotlib.pyplot as plt
 
 

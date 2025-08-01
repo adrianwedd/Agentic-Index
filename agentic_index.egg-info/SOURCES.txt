@@ -161,6 +161,7 @@ tests/test_snapshot_presence.py
 tests/test_sorting.py
 tests/test_sync.py
 tests/test_sync_queue_to_issues.py
+tests/test_sync_utils.py
 tests/test_task_daemon.py
 tests/test_task_helpers.py
 tests/test_update_coverage_badge.py
