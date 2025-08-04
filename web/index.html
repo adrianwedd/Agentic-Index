@@ -12,6 +12,15 @@
 </head>
 <body>
   <h1>Agentic Index Repository Index</h1>
+  
+  <!-- CI Health Status Bar -->
+  <div id="ci-health-bar" style="background: linear-gradient(90deg, #f56565 0%, #ed8936 50%, #48bb78 100%); padding: 12px; border-radius: 8px; margin-bottom: 20px; color: white; font-weight: bold; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <span id="ci-status-text">🔄 Loading CI Health Status...</span>
+    </div>
+    <a href="ci_dashboard.html" style="color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 4px; font-size: 14px;">📊 View Dashboard</a>
+  </div>
+  
   <div id="filters">
     <label>Stars: <input type="range" id="starsRange" min="0" max="20000" step="100" value="0"></label>
     <span id="starsValue">0+</span>
@@ -60,7 +69,43 @@ async function load() {
   catSel.onchange = render;
   toggle.onchange = render;
   render();
+  
+  // Load CI health status
+  loadCIHealth();
 }
+
+async function loadCIHealth() {
+  try {
+    const res = await fetch('ci_report.json');
+    const report = await res.json();
+    
+    const total = report.summary.total_workflows;
+    const healthy = report.summary.healthy_workflows;
+    const critical = report.summary.total_critical_issues;
+    const healthPct = (healthy / total * 100);
+    
+    const statusText = document.getElementById('ci-status-text');
+    const healthBar = document.getElementById('ci-health-bar');
+    
+    // Update status text
+    statusText.innerHTML = `🚀 CI Health: <strong>${healthy}/${total}</strong> workflows healthy (${healthPct.toFixed(1)}%) • ${critical} critical issues`;
+    
+    // Update background color based on health
+    if (healthPct >= 80) {
+      healthBar.style.background = 'linear-gradient(90deg, #48bb78 0%, #38a169 100%)';
+    } else if (healthPct >= 60) {
+      healthBar.style.background = 'linear-gradient(90deg, #ed8936 0%, #dd6b20 100%)';
+    } else {
+      healthBar.style.background = 'linear-gradient(90deg, #f56565 0%, #e53e3e 100%)';
+    }
+    
+  } catch (error) {
+    console.log('CI health data not available yet');
+    const statusText = document.getElementById('ci-status-text');
+    statusText.innerHTML = '🔧 CI Health Dashboard - <a href="ci_dashboard.html" style="color: white; text-decoration: underline;">View Status</a>';
+  }
+}
+
 load();
 </script>
 </body>

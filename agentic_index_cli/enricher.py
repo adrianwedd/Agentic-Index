@@ -23,9 +23,18 @@ def _previous_map(data_file: Path) -> Dict[str, Dict]:
     last = data_file.parent / "last_snapshot.txt"
     if not last.exists():
         return {}
-    prev_path = Path(last.read_text().strip())
+    prev_path_str = last.read_text().strip()
+    prev_path = Path(prev_path_str)
+    
+    # Handle both absolute and relative paths correctly
     if not prev_path.is_absolute():
-        prev_path = history_dir / prev_path.name
+        # If it's a relative path, resolve it relative to the project root
+        # The path in last_snapshot.txt is relative to the project root, not data_file.parent
+        prev_path = Path(prev_path_str)
+        if not prev_path.exists():
+            # Fallback: try relative to data_file.parent
+            prev_path = data_file.parent / prev_path_str
+    
     if not prev_path.exists():
         return {}
     try:
