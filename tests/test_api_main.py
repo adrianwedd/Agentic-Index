@@ -7,7 +7,7 @@ def test_module_entry(monkeypatch):
     # Set up API environment variables before module import
     monkeypatch.setenv("API_KEY", "test-key")
     monkeypatch.setenv("IP_WHITELIST", "")
-    
+
     called = {}
 
     def fake_run(app_ref, host="0.0.0.0", port=8000):
