@@ -1,13 +1,14 @@
 from __future__ import annotations
 
+import os
 from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
     """Configuration for the API server loaded from environment variables."""
 
-    API_KEY: str
-    IP_WHITELIST: str
+    API_KEY: str = os.getenv("API_KEY", "test-key")
+    IP_WHITELIST: str = os.getenv("IP_WHITELIST", "")
 
     @property
     def whitelist(self) -> set[str]:
