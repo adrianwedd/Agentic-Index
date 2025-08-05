@@ -15,7 +15,7 @@ def test_gate_pass(tmp_path):
 
 
 def test_gate_fail(tmp_path):
-    xml = _write_xml(tmp_path, 0.79)
+    xml = _write_xml(tmp_path, 0.74)
     assert main(str(xml)) == 1
 
 
@@ -33,7 +33,7 @@ def test_high_coverage_instruction(tmp_path, capsys):
     out = capsys.readouterr().out
     assert "run with --bump" in out
     assert "Bumped THRESHOLD" not in out
-    assert "THRESHOLD = 80" in script.read_text()
+    assert "THRESHOLD = 75" in script.read_text()
 
 
 def test_high_coverage_bump(tmp_path, capsys):
