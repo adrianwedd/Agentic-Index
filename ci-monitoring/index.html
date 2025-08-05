@@ -1,0 +1,1176 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>🚀 CI/CD Pipeline Health Monitoring - Agentic Index</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cicd-pipeline-health-monitoring" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Agentic Index" class="md-header__button md-logo" aria-label="Agentic Index" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agentic Index
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🚀 CI/CD Pipeline Health Monitoring
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Agentic Index" class="md-nav__button md-logo" aria-label="Agentic Index" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Agentic Index
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../REFRESH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Refresh Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ci-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CI Audit Report
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONFLICT_RESOLUTION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conflict Resolution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coverage_baseline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coverage Baseline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DEVELOPMENT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PERFORMANCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Tips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../METRICS_ALERTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metrics Alerts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Methodology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agentic_index_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    agentic_index_cli
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agentic_index_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    agentic_index_api
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌟 Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-time-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Real-Time Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-issue-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚨 Automated Issue Creation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprehensive-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Comprehensive Analytics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ci-status-monitor-scriptsci_status_monitorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. CI Status Monitor (scripts/ci_status_monitor.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-automated-issue-creator-scriptscreate_ci_issuespy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Automated Issue Creator (scripts/create_ci_issues.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automated-workflow-githubworkflowsci-health-monitoryml" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Automated Workflow (.github/workflows/ci-health-monitor.yml)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Dashboard Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Dashboard Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#health-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow Cards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-coded-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color-Coded Health
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-issue-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚨 Critical Issue Detection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚨 Critical Issue Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-failure-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      High Failure Rates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporal-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporal Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Response
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#website-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Website Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-pages-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Pages Deployment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Metrics &amp; KPIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Metrics &amp; KPIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow-health-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow Health Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-health-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Health Indicators
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛡️ Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issue Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow Maintenance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Optimization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Future Enhancements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Future Enhancements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planned-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planned Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Analytics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cicd-pipeline-health-monitoring">🚀 CI/CD Pipeline Health Monitoring</h1>
+<p>The Agentic-Index project features a comprehensive CI/CD health monitoring system that provides real-time visibility into pipeline status, automated failure detection, and proactive issue management.</p>
+<h2 id="features">🌟 Features</h2>
+<h3 id="real-time-dashboard">📊 Real-Time Dashboard</h3>
+<ul>
+<li><strong>Beautiful HTML Dashboard</strong>: Visual overview of all workflow health</li>
+<li><strong>Live Status Bar</strong>: Integrated into the main website</li>
+<li><strong>Trend Analysis</strong>: Track workflow health over time</li>
+<li><strong>Failure Pattern Detection</strong>: Identify systematic issues</li>
+</ul>
+<h3 id="automated-issue-creation">🚨 Automated Issue Creation</h3>
+<ul>
+<li><strong>Smart Detection</strong>: Automatically identifies critical failures</li>
+<li><strong>Contextual Issues</strong>: Creates detailed GitHub issues with analysis</li>
+<li><strong>Rate Limiting</strong>: Prevents spam with intelligent throttling</li>
+<li><strong>Actionable Insights</strong>: Provides specific troubleshooting steps</li>
+</ul>
+<h3 id="comprehensive-analytics">📈 Comprehensive Analytics</h3>
+<ul>
+<li><strong>Failure Rate Tracking</strong>: Monitor success/failure ratios</li>
+<li><strong>Trend Analysis</strong>: Detect improving, stable, or degrading patterns  </li>
+<li><strong>Critical Issue Detection</strong>: Flag workflows needing immediate attention</li>
+<li><strong>Historical Context</strong>: Compare against previous performance</li>
+</ul>
+<h2 id="components">🛠️ Components</h2>
+<h3 id="1-ci-status-monitor-scriptsci_status_monitorpy">1. CI Status Monitor (<code>scripts/ci_status_monitor.py</code>)</h3>
+<p>Core monitoring engine that:
+- Fetches recent GitHub Actions runs via CLI
+- Analyzes workflow health and failure patterns
+- Generates beautiful HTML dashboards
+- Creates machine-readable JSON reports
+- Provides console summaries</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-bash"># Generate full dashboard
+python scripts/ci_status_monitor.py --format all --output-dir web/
+
+# Console summary only
+python scripts/ci_status_monitor.py
+
+# JSON report for automation
+python scripts/ci_status_monitor.py --format json
+</code></pre>
+<h3 id="2-automated-issue-creator-scriptscreate_ci_issuespy">2. Automated Issue Creator (<code>scripts/create_ci_issues.py</code>)</h3>
+<p>Intelligent issue management that:
+- Identifies workflows with critical failures
+- Creates detailed GitHub issues with context
+- Provides specific troubleshooting guidance
+- Prevents duplicate issues
+- Includes actionable next steps</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-bash"># Dry run to see what would be created
+python scripts/create_ci_issues.py --dry-run
+
+# Create issues for critical failures
+python scripts/create_ci_issues.py --max-issues 3
+</code></pre>
+<h3 id="3-automated-workflow-githubworkflowsci-health-monitoryml">3. Automated Workflow (<code>.github/workflows/ci-health-monitor.yml</code>)</h3>
+<p>Scheduled automation that:
+- Runs every 6 hours automatically
+- Updates dashboard and reports
+- Creates issues for new critical failures
+- Deploys to GitHub Pages
+- Provides workflow summaries</p>
+<h2 id="dashboard-features">📊 Dashboard Features</h2>
+<h3 id="health-overview">Health Overview</h3>
+<ul>
+<li><strong>Total Workflows</strong>: Count of all monitored workflows</li>
+<li><strong>Healthy Workflows</strong>: Workflows with &lt;20% failure rate</li>
+<li><strong>Critical Issues</strong>: Number of workflows needing attention</li>
+<li><strong>Recent Runs</strong>: Volume of recent activity</li>
+</ul>
+<h3 id="workflow-cards">Workflow Cards</h3>
+<p>Each workflow displays:
+- <strong>Status Emoji</strong>: ✅ Healthy, 🟡 Warning, ❌ Critical
+- <strong>Failure Rate</strong>: Percentage and absolute counts
+- <strong>Trend Indicator</strong>: 📈 Improving, ➡️ Stable, 📉 Degrading
+- <strong>Critical Issues</strong>: Specific problems requiring attention
+- <strong>Statistics</strong>: Total runs, successes, failures</p>
+<h3 id="color-coded-health">Color-Coded Health</h3>
+<ul>
+<li><strong>Green (80%+ healthy)</strong>: System is healthy</li>
+<li><strong>Yellow (60-80% healthy)</strong>: Some degradation detected</li>
+<li><strong>Red (&lt;60% healthy)</strong>: Critical issues require attention</li>
+</ul>
+<h2 id="critical-issue-detection">🚨 Critical Issue Detection</h2>
+<p>The system automatically detects:</p>
+<h3 id="high-failure-rates">High Failure Rates</h3>
+<ul>
+<li><strong>&gt;50% failure rate</strong>: Workflow is critically broken</li>
+<li><strong>&gt;80% failure rate</strong>: Urgent attention required</li>
+</ul>
+<h3 id="temporal-patterns">Temporal Patterns</h3>
+<ul>
+<li><strong>Recent failures</strong>: Issues in last 24 hours</li>
+<li><strong>Consecutive failures</strong>: 3+ failures in a row</li>
+<li><strong>Trend degradation</strong>: Increasing failure rates</li>
+</ul>
+<h3 id="automated-response">Automated Response</h3>
+<p>When critical issues are detected:
+1. <strong>GitHub Issue Created</strong>: Detailed problem description
+2. <strong>Labels Applied</strong>: <code>bug</code>, <code>ci</code>, <code>priority-high</code>
+3. <strong>Analysis Included</strong>: Failure patterns and recommendations
+4. <strong>Resources Linked</strong>: Dashboard, logs, and documentation</p>
+<h2 id="integration">🔧 Integration</h2>
+<h3 id="website-integration">Website Integration</h3>
+<p>The main website includes:
+- <strong>Health Status Bar</strong>: Live CI health indicator
+- <strong>Dashboard Link</strong>: Direct access to detailed view
+- <strong>Color-Coded Status</strong>: Visual health representation</p>
+<h3 id="github-pages-deployment">GitHub Pages Deployment</h3>
+<p>Dashboard automatically deploys to:
+- <strong>URL</strong>: <code>https://adrianwedd.github.io/Agentic-Index/ci-dashboard/</code>
+- <strong>Auto-Update</strong>: Every 6 hours via GitHub Actions
+- <strong>Mobile Responsive</strong>: Works on all devices</p>
+<h2 id="metrics-kpis">📈 Metrics &amp; KPIs</h2>
+<h3 id="workflow-health-metrics">Workflow Health Metrics</h3>
+<ul>
+<li><strong>Failure Rate</strong>: Percentage of failed runs</li>
+<li><strong>Success Count</strong>: Total successful executions  </li>
+<li><strong>Trend Direction</strong>: Improving/stable/degrading</li>
+<li><strong>Critical Issues</strong>: Number of urgent problems</li>
+</ul>
+<h3 id="system-health-indicators">System Health Indicators</h3>
+<ul>
+<li><strong>Overall Health</strong>: Percentage of healthy workflows</li>
+<li><strong>Critical Issue Count</strong>: Total urgent problems</li>
+<li><strong>Recovery Time</strong>: How quickly issues are resolved</li>
+<li><strong>Pattern Detection</strong>: Systematic vs. isolated failures</li>
+</ul>
+<h2 id="best-practices">🛡️ Best Practices</h2>
+<h3 id="issue-management">Issue Management</h3>
+<ol>
+<li><strong>Regular Monitoring</strong>: Check dashboard weekly</li>
+<li><strong>Prompt Response</strong>: Address critical issues within 24h</li>
+<li><strong>Root Cause Analysis</strong>: Fix underlying problems, not symptoms</li>
+<li><strong>Documentation</strong>: Update runbooks based on learnings</li>
+</ol>
+<h3 id="workflow-maintenance">Workflow Maintenance</h3>
+<ol>
+<li><strong>Regular Updates</strong>: Keep actions and dependencies current</li>
+<li><strong>Timeout Management</strong>: Set appropriate timeouts for jobs</li>
+<li><strong>Resource Planning</strong>: Monitor runner usage and limits</li>
+<li><strong>Error Handling</strong>: Implement graceful failure modes</li>
+</ol>
+<h3 id="performance-optimization">Performance Optimization</h3>
+<ol>
+<li><strong>Parallel Execution</strong>: Run independent jobs concurrently</li>
+<li><strong>Caching Strategy</strong>: Cache dependencies and build artifacts</li>
+<li><strong>Resource Efficiency</strong>: Right-size runners for workloads</li>
+<li><strong>Monitoring</strong>: Track execution times and resource usage</li>
+</ol>
+<h2 id="future-enhancements">🚀 Future Enhancements</h2>
+<h3 id="planned-features">Planned Features</h3>
+<ul>
+<li><strong>Slack Integration</strong>: Real-time notifications</li>
+<li><strong>Performance Metrics</strong>: Execution time trends</li>
+<li><strong>Cost Analysis</strong>: Runner usage and billing insights</li>
+<li><strong>Predictive Alerts</strong>: ML-based failure prediction</li>
+</ul>
+<h3 id="advanced-analytics">Advanced Analytics</h3>
+<ul>
+<li><strong>Correlation Analysis</strong>: Link failures to code changes</li>
+<li><strong>Resource Optimization</strong>: Recommend runner improvements</li>
+<li><strong>Dependency Health</strong>: Monitor third-party service status</li>
+<li><strong>Recovery Automation</strong>: Auto-retry transient failures</li>
+</ul>
+<h2 id="references">📚 References</h2>
+<ul>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions Documentation</a></li>
+<li><a href="https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions">CI/CD Best Practices</a></li>
+<li><a href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows">Workflow Monitoring</a></li>
+</ul>
+<hr />
+<p><em>This monitoring system ensures the Agentic-Index project maintains high reliability and provides rapid response to CI/CD issues, keeping the development pipeline healthy and productive.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>
