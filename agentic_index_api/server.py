@@ -37,6 +37,7 @@ try:
 except ValidationError as exc:  # pragma: no cover - validated in tests
     # In test environments, provide sensible defaults
     import os
+
     if os.getenv("PYTEST_CURRENT_TEST") or "pytest" in os.getenv("_", ""):
         # We're in a test environment, use defaults
         os.environ.setdefault("API_KEY", "test-key")
