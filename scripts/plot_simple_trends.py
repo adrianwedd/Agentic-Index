@@ -394,14 +394,14 @@ class TrendsGenerator:
             f.write("🚀 AGENTIC INDEX - TRENDS ANALYSIS SUMMARY\n")
             f.write("=" * 50 + "\n\n")
 
-            f.write(f"📊 Data Overview:\n")
+            f.write("📊 Data Overview:\n")
             f.write(f"   • Historical snapshots: {len(snapshots)}\n")
             f.write(f"   • Date range: {dates[0].date()} to {dates[-1].date()}\n")
             f.write(f"   • Total repositories tracked: {len(repos)}\n\n")
 
             if repos:
                 top_repo = max(repos, key=lambda x: x["score"])
-                f.write(f"🏆 Top Repository:\n")
+                f.write("🏆 Top Repository:\n")
                 f.write(f"   • Name: {top_repo['name']}\n")
                 f.write(f"   • Score: {top_repo['score']:.2f}\n")
                 f.write(f"   • Stars: {top_repo['stars']:,}\n")
@@ -411,7 +411,7 @@ class TrendsGenerator:
                 avg_score = sum(r["score"] for r in repos) / len(repos)
                 avg_stars = sum(r["stars"] for r in repos) / len(repos)
 
-                f.write(f"📈 Repository Statistics:\n")
+                f.write("📈 Repository Statistics:\n")
                 f.write(f"   • Average score: {avg_score:.2f}\n")
                 f.write(f"   • Average stars: {avg_stars:,.0f}\n")
                 f.write(
@@ -424,7 +424,7 @@ class TrendsGenerator:
                     cat = repo["category"]
                     categories[cat] = categories.get(cat, 0) + 1
 
-                f.write(f"🏷️ Category Breakdown:\n")
+                f.write("🏷️ Category Breakdown:\n")
                 for cat, count in sorted(
                     categories.items(), key=lambda x: x[1], reverse=True
                 ):

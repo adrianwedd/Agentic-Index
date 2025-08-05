@@ -315,7 +315,7 @@ Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
         # Generate CSV export
         self.generate_csv_export(dates, snapshots)
 
-        print(f"\n✅ Beautiful trend visualizations generated!")
+        print("\n✅ Beautiful trend visualizations generated!")
         print(f"📊 Main report: {report_path}")
         print(f"📈 CSV export: {self.output_dir}/repository_trends.csv")
         print(f"\n{report_content}")

@@ -18,11 +18,11 @@ from matplotlib.patches import Rectangle
 # Set up beautiful styling
 try:
     plt.style.use("seaborn-v0_8-darkgrid")
-except:
+except Exception:
     plt.style.use("seaborn-darkgrid")
 try:
     sns.set_palette("husl")
-except:
+except Exception:
     pass  # fallback to default palette
 
 

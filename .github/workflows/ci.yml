@@ -186,6 +186,7 @@ jobs:
       - name: Install deps
         run: |
           pip install -r requirements.lock
+          pip install -r dev-requirements.lock
           pip install -e '.[dev]'
       - name: Run bandit
         run: bandit -r agentic_index_cli -f json -o bandit.json
@@ -215,6 +216,7 @@ jobs:
       - name: Install deps
         run: |
           pip install -r requirements.lock
+          pip install -r dev-requirements.lock
           pip install -e '.[dev]'
       - name: Run benchmarks
         run: python scripts/benchmark_ops.py

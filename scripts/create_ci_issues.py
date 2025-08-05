@@ -281,7 +281,7 @@ This issue was automatically created by the CI Health Monitor.
                 )
                 break
 
-        print(f"\n📊 Summary:")
+        print("\n📊 Summary:")
         print(f"  ✅ Created: {created_count} issues")
         print(f"  ⏭️  Skipped: {skipped_count} (already exist)")
         print(f"  🔍 Total critical workflows: {len(critical_workflows)}")

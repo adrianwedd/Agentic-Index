@@ -370,7 +370,7 @@ class CIStatusMonitor:
             <h1>🚀 CI/CD Pipeline Dashboard</h1>
             <p>Repository: <strong>{self.repo}</strong></p>
         </div>
-        
+
         <div class="metrics-grid">
             <div class="metric-card">
                 <h3>Total Workflows</h3>
@@ -389,11 +389,11 @@ class CIStatusMonitor:
                 <p class="metric-value">{len(self.runs)}</p>
             </div>
         </div>
-        
+
         <div class="workflows">
             {self._generate_workflow_cards()}
         </div>
-        
+
         <div class="timestamp">
             Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}
         </div>
