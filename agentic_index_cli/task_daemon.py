@@ -65,7 +65,7 @@ def parse_tasks(path: Path) -> List[Task]:
 
 
 def task_hash(task: Task) -> str:
-    return hashlib.sha1((task["title"] + task["body"]).encode()).hexdigest()
+    return hashlib.sha1((task["title"] + task["body"]).encode(), usedforsecurity=False).hexdigest()
 
 
 def load_queue(path: Path) -> List[str]:
