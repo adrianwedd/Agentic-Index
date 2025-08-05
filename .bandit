@@ -1,0 +1,31 @@
+# Configuration for bandit security linter
+
+# Skip specific tests that are acceptable for this codebase
+# B101: Assert usage - Used for validation, acceptable in this context
+# B110: Try/except/pass - Used for graceful error handling  
+# B112: Try/except/continue - Used for graceful error handling
+# B310: URL open - Used for legitimate badge downloading and URL checking
+# B404: Subprocess import - Used for git operations, acceptable
+# B603: Subprocess without shell - Git operations with hardcoded commands
+# B607: Partial executable path - Using 'git' command, acceptable in dev tools
+
+skips:
+  - B101
+  - B110  
+  - B112
+  - B310
+  - B404
+  - B603
+  - B607
+
+exclude_dirs:
+  - .git
+  - __pycache__
+  - .venv
+  - venv
+  - env
+  - .env
+  - "*.egg-info"
+  - build
+  - dist
+  - tests

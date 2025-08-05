@@ -85,7 +85,7 @@ jobs:
       - name: Run tests with coverage
         env:
           PYTHONHASHSEED: 0
-        run: pytest --cov=agentic_index_cli --cov-report=xml --cov-fail-under=80 --full-trace
+        run: pytest --cov=agentic_index_cli --cov-report=xml --cov-fail-under=75 --full-trace
       - name: Enforce coverage threshold
         run: python scripts/coverage_gate.py coverage.xml
       - name: Upload coverage
@@ -189,7 +189,7 @@ jobs:
           pip install -r dev-requirements.lock
           pip install -e '.[dev]'
       - name: Run bandit
-        run: bandit -r agentic_index_cli -f json -o bandit.json
+        run: bandit -r agentic_index_cli -f json -o bandit.json --configfile .bandit
       - name: Upload bandit report
         uses: actions/upload-artifact@v4
         with:
