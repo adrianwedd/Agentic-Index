@@ -217,6 +217,8 @@ cat FAST_START.md | less     # see table injected
 
 -----
 
+<!-- TOP50:START -->
+<!-- TOP50:END -->
 
 <a id="-the-agentic-index-top-100-ai-agent-repositories"></a>
 ## 🏆 The Agentic-Index Top 100: AI Agent Repositories

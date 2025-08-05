@@ -13,6 +13,7 @@ def test_clamp_bounds():
 
 def test_compute_recency_factor_boundaries(monkeypatch):
     from datetime import timezone
+
     fixed_now = datetime(2025, 1, 1, tzinfo=timezone.utc)
 
     class DummyDatetime(datetime):

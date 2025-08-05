@@ -136,7 +136,7 @@ def search_issues(
     token = token or get_token()
     if not token:
         return []
-    
+
     resp = _request(
         "GET",
         f"{API_URL}/search/issues?q={query}",
@@ -147,7 +147,7 @@ def search_issues(
         if debug:
             print(f"Search failed: {resp.status_code} {resp.text}")
         return []
-    
+
     return resp.json().get("items", [])
 
 

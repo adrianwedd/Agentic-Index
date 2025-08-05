@@ -132,6 +132,7 @@ def _check_docs_presence(full_name: str) -> float:
             pass
     return 0.0
 
+
 def fetch_repo(full_name: str) -> Dict[str, Any]:
     cache_file = CACHE_DIR / f"repo_{full_name.replace('/', '_')}.json"
     if cache_file.exists() and time.time() - cache_file.stat().st_mtime < 86400:

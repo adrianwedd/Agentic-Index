@@ -10,7 +10,9 @@ def test_sync_filters_and_writes(tmp_path, monkeypatch):
         {"name": "b", "maintainer": "openai", "topics": "ml"},
         {"name": "c", "maintainer": "other", "topics": "agents"},
     ]
-    monkeypatch.setattr(sync_utils, "search_and_harvest", lambda min_stars=0, max_pages=1: repos)
+    monkeypatch.setattr(
+        sync_utils, "search_and_harvest", lambda min_stars=0, max_pages=1: repos
+    )
     monkeypatch.setattr(sync_utils, "STATE_PATH", tmp_path / "sync.json")
 
     result = sync_utils.sync(org="openai", topics=["agents"])
@@ -18,4 +20,3 @@ def test_sync_filters_and_writes(tmp_path, monkeypatch):
     assert (tmp_path / "sync.json").exists()
     saved = json.loads(Path(tmp_path / "sync.json").read_text())
     assert len(saved) == len(result)
-

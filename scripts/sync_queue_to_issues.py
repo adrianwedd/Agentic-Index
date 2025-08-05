@@ -17,7 +17,7 @@ def sync_queue(path: Path, repo: str) -> bool:
     queue = data.get("queue", [])
     changed = False
     new_queue = []
-    
+
     for item in queue:
         if isinstance(item, dict):
             task_id = item.get("task") or item.get("id")
@@ -27,15 +27,19 @@ def sync_queue(path: Path, repo: str) -> bool:
             task_id = str(item)
             issue_id = None
             entry = {"task": task_id}
-        
+
         if not issue_id:
             title = task_id
             body = f"Automated task for {task_id}"
-            
+
             # Check if issue already exists to prevent duplicates
-            existing_issues = issue_logger.search_issues(f'"{title}" in:title repo:{repo}')
+            existing_issues = issue_logger.search_issues(
+                f'"{title}" in:title repo:{repo}'
+            )
             if existing_issues:
-                print(f"Issue for {task_id} already exists: {existing_issues[0]['html_url']}")  
+                print(
+                    f"Issue for {task_id} already exists: {existing_issues[0]['html_url']}"
+                )
                 # Extract issue number from existing issue
                 entry["issue_id"] = existing_issues[0]["number"]
                 changed = True
@@ -45,7 +49,7 @@ def sync_queue(path: Path, repo: str) -> bool:
                 entry["issue_id"] = num
                 changed = True
         new_queue.append(entry)
-    
+
     if changed:
         data["queue"] = new_queue
         path.write_text(yaml.safe_dump(data))

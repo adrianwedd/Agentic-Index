@@ -25,7 +25,7 @@ def _previous_map(data_file: Path) -> Dict[str, Dict]:
         return {}
     prev_path_str = last.read_text().strip()
     prev_path = Path(prev_path_str)
-    
+
     # Handle both absolute and relative paths correctly
     if not prev_path.is_absolute():
         # If it's a relative path, resolve it relative to the project root
@@ -34,7 +34,7 @@ def _previous_map(data_file: Path) -> Dict[str, Dict]:
         if not prev_path.exists():
             # Fallback: try relative to data_file.parent
             prev_path = data_file.parent / prev_path_str
-    
+
     if not prev_path.exists():
         return {}
     try:

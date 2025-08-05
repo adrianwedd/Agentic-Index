@@ -22,7 +22,7 @@ def test_load_cache(tmp_path):
     p.write_text(json.dumps({"x": 2}))
     first = json_utils.load_json(p, cache=True)
     p.write_text(json.dumps({"x": 3}))  # change file
-    json_utils._cache.clear() # Clear cache to force reload
+    json_utils._cache.clear()  # Clear cache to force reload
     second = json_utils.load_json(p, cache=True)
     assert first == {"x": 2}
     assert second == {"x": 3}

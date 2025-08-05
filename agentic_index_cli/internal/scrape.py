@@ -2,9 +2,9 @@
 
 import argparse
 import asyncio
+import datetime
 import json
 import logging
-import datetime
 import math
 import os
 import time
@@ -170,16 +170,27 @@ def _extract(item: Dict[str, Any]) -> Dict[str, Any]:
     pushed_at = data.get("pushed_at", "")
     description = data.get("description", "")
     license_info = data.get("license", {})
-    topics = data.get("topics", []) # Assuming topics are now part of the scraped data
+    topics = data.get("topics", [])  # Assuming topics are now part of the scraped data
 
-    data["stars"] = stars # Add stars for consistency with ranker
+    data["stars"] = stars  # Add stars for consistency with ranker
     data["recency_factor"] = compute_recency_factor(pushed_at)
     data["issue_health"] = compute_issue_health(open_issues)
     data["doc_completeness"] = get_doc_completeness(data["full_name"])
     data["license_freedom"] = get_license_freedom(license_info)
     data["ecosystem_integration"] = get_ecosystem_integration(description, topics)
 
-    return {field: data.get(field) for field in FIELDS + ["stars", "recency_factor", "issue_health", "doc_completeness", "license_freedom", "ecosystem_integration"]}
+    return {
+        field: data.get(field)
+        for field in FIELDS
+        + [
+            "stars",
+            "recency_factor",
+            "issue_health",
+            "doc_completeness",
+            "license_freedom",
+            "ecosystem_integration",
+        ]
+    }
 
 
 def scrape(min_stars: int = 0, token: str | None = None) -> List[Dict[str, Any]]:

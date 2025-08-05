@@ -23,3 +23,4 @@ pytest-env  # env var plugin
 aiohttp>=3.9.0  # async HTTP engine
 structlog  # structured logging
 sentry-sdk  # error reporting
+bandit[toml]  # security scanner
