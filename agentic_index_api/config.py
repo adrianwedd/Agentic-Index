@@ -6,8 +6,8 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     """Configuration for the API server loaded from environment variables."""
 
-    API_KEY: str = "test-key"  # Default for testing
-    IP_WHITELIST: str = ""  # Default for testing
+    API_KEY: str
+    IP_WHITELIST: str
 
     @property
     def whitelist(self) -> set[str]:
