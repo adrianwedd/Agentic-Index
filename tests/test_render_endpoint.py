@@ -2,10 +2,10 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from agentic_index_api.simple_app import app
-
 
 def test_render_endpoint(tmp_path, monkeypatch):
+    from agentic_index_api.simple_app import app
+    
     monkeypatch.chdir(tmp_path)
     client = TestClient(app)
     data = {

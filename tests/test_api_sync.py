@@ -1,10 +1,10 @@
 from fastapi.testclient import TestClient
 
-from agentic_index_api import sync_utils as sync_module
-from agentic_index_api.simple_app import app
-
 
 def test_sync_endpoint(tmp_path, monkeypatch):
+    from agentic_index_api import sync_utils as sync_module
+    from agentic_index_api.simple_app import app
+    
     def fake_search(min_stars=0, max_pages=1):
         return [{"maintainer": "openai", "topics": "llm,agents"}]
 

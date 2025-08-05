@@ -1,10 +1,10 @@
 import json
 from pathlib import Path
 
-from agentic_index_api import sync_utils
-
 
 def test_sync_filters_and_writes(tmp_path, monkeypatch):
+    from agentic_index_api import sync_utils
+    
     repos = [
         {"name": "a", "maintainer": "openai", "topics": "ai,agents"},
         {"name": "b", "maintainer": "openai", "topics": "ml"},

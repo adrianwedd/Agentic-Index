@@ -1,25 +1,31 @@
+import pytest
 from fastapi.testclient import TestClient
 
-from agentic_index_api import main as api_main
 
-api_main.REPOS[:] = [
-    {
-        "name": "repo1",
-        "full_name": "repo1",
-        "stargazers_count": 1,
-        "AgenticIndexScore": 1.0,
-    }
-]
-api_main.RANKED[:] = api_main.REPOS[:]
-api_main.NAME_MAP.clear()
-for r in api_main.REPOS:
-    api_main.NAME_MAP[r["name"]] = r
+@pytest.fixture
+def api_client():
+    """Set up API client with test data."""
+    from agentic_index_api import main as api_main
+    
+    # Set up test data
+    api_main.REPOS[:] = [
+        {
+            "name": "repo1",
+            "full_name": "repo1",
+            "stargazers_count": 1,
+            "AgenticIndexScore": 1.0,
+        }
+    ]
+    api_main.RANKED[:] = api_main.REPOS[:]
+    api_main.NAME_MAP.clear()
+    for r in api_main.REPOS:
+        api_main.NAME_MAP[r["name"]] = r
+    
+    return TestClient(api_main.app)
 
-client = TestClient(api_main.app)
 
-
-def test_repo_endpoint():
-    resp = client.get("/repo/repo1")
+def test_repo_endpoint(api_client):
+    resp = api_client.get("/repo/repo1")
     assert resp.status_code == 200
     data = resp.json()
     assert data["name"].lower() == "repo1"
@@ -28,8 +34,8 @@ def test_repo_endpoint():
     assert "stars" in data
 
 
-def test_history_endpoint():
-    resp = client.get("/history/repo1")
+def test_history_endpoint(api_client):
+    resp = api_client.get("/history/repo1")
     assert resp.status_code == 200
     data = resp.json()
     assert isinstance(data.get("history"), list)
