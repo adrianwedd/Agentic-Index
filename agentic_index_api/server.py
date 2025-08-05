@@ -32,18 +32,11 @@ logger = structlog.get_logger(__name__)
 
 from .config import Settings
 
-def get_settings():
-    """Get settings, using defaults for testing if env vars not set."""
-    try:
-        return Settings()
-    except ValidationError:
-        # If validation fails, try with test defaults
-        import os
-        os.environ.setdefault("API_KEY", "test-key")
-        os.environ.setdefault("IP_WHITELIST", "")
-        return Settings()
+try:
+    settings = Settings()
+except ValidationError as exc:  # pragma: no cover - validated in tests
+    raise RuntimeError(f"Invalid server configuration: {exc}") from exc
 
-settings = get_settings()
 API_KEY = settings.API_KEY
 IP_WHITELIST = settings.whitelist
 

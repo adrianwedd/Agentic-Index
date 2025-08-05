@@ -6,6 +6,15 @@ import pytest
 
 
 @pytest.fixture(autouse=True)
+def _setup_api_env():
+    """Set API environment variables for testing before any imports."""
+    # Set default API environment variables for testing
+    os.environ.setdefault("API_KEY", "test-key")
+    os.environ.setdefault("IP_WHITELIST", "")
+    yield
+
+
+@pytest.fixture(autouse=True)
 def _offline_socket(monkeypatch):
     if os.getenv("CI_OFFLINE") == "1":
         import pytest_socket
