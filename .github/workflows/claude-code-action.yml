@@ -8,9 +8,11 @@ jobs:
   run-claude:
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       issues: write
       pull-requests: write
     steps:
       - name: Claude Code Action Official
         uses: anthropics/claude-code-action@beta
-
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
