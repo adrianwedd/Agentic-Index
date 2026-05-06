@@ -120,27 +120,68 @@
             <h1>🚀 CI/CD Pipeline Dashboard</h1>
             <p>Repository: <strong>adrianwedd/Agentic-Index</strong></p>
         </div>
-        
+
         <div class="metrics-grid">
             <div class="metric-card">
                 <h3>Total Workflows</h3>
-                <p class="metric-value">23</p>
+                <p class="metric-value">26</p>
             </div>
             <div class="metric-card">
                 <h3>Healthy Workflows</h3>
-                <p class="metric-value">12</p>
+                <p class="metric-value">11</p>
             </div>
             <div class="metric-card">
                 <h3>Critical Issues</h3>
-                <p class="metric-value">22</p>
+                <p class="metric-value">29</p>
             </div>
             <div class="metric-card">
                 <h3>Recent Runs</h3>
-                <p class="metric-value">100</p>
+                <p class="metric-value">191</p>
             </div>
         </div>
-        
+
         <div class="workflows">
+            
+            <div class="workflow-card">
+                <div class="workflow-header">
+                    <h3 class="workflow-name">
+                        ❌ Trivy Scan
+                    </h3>
+                    <div>
+                        <span class="status-badge failure">failure</span>
+                        <span class="status-badge degrading">
+                            degrading
+                            <span class="trend-arrow trend-degrading">📉</span>
+                        </span>
+                    </div>
+                </div>
+                
+            <div class="workflow-stats">
+                <div class="stat">
+                    <p class="stat-value">6</p>
+                    <p class="stat-label">Total Runs</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">1</p>
+                    <p class="stat-label">Successes</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">5</p>
+                    <p class="stat-label">Failures</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">83.3%</p>
+                    <p class="stat-label">Failure Rate</p>
+                </div>
+            </div>
+            
+                
+                <div class="critical-issues">
+                    <h4>🚨 Critical Issues</h4>
+                    <ul><li>High failure rate (>50%)</li><li>Recent failure in last 24h</li><li>3+ consecutive failures</li></ul>
+                </div>
+                
+            </div>
             
             <div class="workflow-card">
                 <div class="workflow-header">
@@ -158,7 +199,7 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
@@ -166,7 +207,7 @@
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Failures</p>
                 </div>
                 <div class="stat">
@@ -178,7 +219,48 @@
                 
                 <div class="critical-issues">
                     <h4>🚨 Critical Issues</h4>
-                    <ul><li>High failure rate (>50%)</li></ul>
+                    <ul><li>High failure rate (>50%)</li><li>3+ consecutive failures</li></ul>
+                </div>
+                
+            </div>
+            
+            <div class="workflow-card">
+                <div class="workflow-header">
+                    <h3 class="workflow-name">
+                        ❌ CI Health Monitor
+                    </h3>
+                    <div>
+                        <span class="status-badge failure">failure</span>
+                        <span class="status-badge stable">
+                            stable
+                            <span class="trend-arrow trend-stable">➡️</span>
+                        </span>
+                    </div>
+                </div>
+                
+            <div class="workflow-stats">
+                <div class="stat">
+                    <p class="stat-value">6</p>
+                    <p class="stat-label">Total Runs</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">0</p>
+                    <p class="stat-label">Successes</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">6</p>
+                    <p class="stat-label">Failures</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">100.0%</p>
+                    <p class="stat-label">Failure Rate</p>
+                </div>
+            </div>
+            
+                
+                <div class="critical-issues">
+                    <h4>🚨 Critical Issues</h4>
+                    <ul><li>High failure rate (>50%)</li><li>3+ consecutive failures</li></ul>
                 </div>
                 
             </div>
@@ -190,16 +272,16 @@
                     </h3>
                     <div>
                         <span class="status-badge failure">failure</span>
-                        <span class="status-badge degrading">
-                            degrading
-                            <span class="trend-arrow trend-degrading">📉</span>
+                        <span class="status-badge stable">
+                            stable
+                            <span class="trend-arrow trend-stable">➡️</span>
                         </span>
                     </div>
                 </div>
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
@@ -207,7 +289,7 @@
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Failures</p>
                 </div>
                 <div class="stat">
@@ -219,7 +301,7 @@
                 
                 <div class="critical-issues">
                     <h4>🚨 Critical Issues</h4>
-                    <ul><li>High failure rate (>50%)</li><li>Recent failure in last 24h</li></ul>
+                    <ul><li>High failure rate (>50%)</li><li>Recent failure in last 24h</li><li>3+ consecutive failures</li></ul>
                 </div>
                 
             </div>
@@ -240,7 +322,7 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">9</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
@@ -248,7 +330,7 @@
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">9</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Failures</p>
                 </div>
                 <div class="stat">
@@ -260,7 +342,7 @@
                 
                 <div class="critical-issues">
                     <h4>🚨 Critical Issues</h4>
-                    <ul><li>High failure rate (>50%)</li><li>Recent failure in last 24h</li><li>3+ consecutive failures</li></ul>
+                    <ul><li>High failure rate (>50%)</li><li>3+ consecutive failures</li></ul>
                 </div>
                 
             </div>
@@ -281,7 +363,7 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
@@ -289,7 +371,7 @@
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Failures</p>
                 </div>
                 <div class="stat">
@@ -301,7 +383,7 @@
                 
                 <div class="critical-issues">
                     <h4>🚨 Critical Issues</h4>
-                    <ul><li>High failure rate (>50%)</li></ul>
+                    <ul><li>High failure rate (>50%)</li><li>3+ consecutive failures</li></ul>
                 </div>
                 
             </div>
@@ -322,7 +404,7 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
@@ -330,7 +412,7 @@
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Failures</p>
                 </div>
                 <div class="stat">
@@ -342,7 +424,7 @@
                 
                 <div class="critical-issues">
                     <h4>🚨 Critical Issues</h4>
-                    <ul><li>High failure rate (>50%)</li></ul>
+                    <ul><li>High failure rate (>50%)</li><li>3+ consecutive failures</li></ul>
                 </div>
                 
             </div>
@@ -383,7 +465,7 @@
                 
                 <div class="critical-issues">
                     <h4>🚨 Critical Issues</h4>
-                    <ul><li>High failure rate (>50%)</li><li>Recent failure in last 24h</li></ul>
+                    <ul><li>High failure rate (>50%)</li></ul>
                 </div>
                 
             </div>
@@ -404,7 +486,7 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">10</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
@@ -412,7 +494,7 @@
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">10</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Failures</p>
                 </div>
                 <div class="stat">
@@ -424,7 +506,7 @@
                 
                 <div class="critical-issues">
                     <h4>🚨 Critical Issues</h4>
-                    <ul><li>High failure rate (>50%)</li><li>Recent failure in last 24h</li><li>3+ consecutive failures</li></ul>
+                    <ul><li>High failure rate (>50%)</li><li>3+ consecutive failures</li></ul>
                 </div>
                 
             </div>
@@ -445,7 +527,7 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">9</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
@@ -453,7 +535,7 @@
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">9</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Failures</p>
                 </div>
                 <div class="stat">
@@ -465,7 +547,48 @@
                 
                 <div class="critical-issues">
                     <h4>🚨 Critical Issues</h4>
-                    <ul><li>High failure rate (>50%)</li><li>Recent failure in last 24h</li><li>3+ consecutive failures</li></ul>
+                    <ul><li>High failure rate (>50%)</li><li>3+ consecutive failures</li></ul>
+                </div>
+                
+            </div>
+            
+            <div class="workflow-card">
+                <div class="workflow-header">
+                    <h3 class="workflow-name">
+                        ❌ PR-Issue Sync
+                    </h3>
+                    <div>
+                        <span class="status-badge failure">failure</span>
+                        <span class="status-badge degrading">
+                            degrading
+                            <span class="trend-arrow trend-degrading">📉</span>
+                        </span>
+                    </div>
+                </div>
+                
+            <div class="workflow-stats">
+                <div class="stat">
+                    <p class="stat-value">5</p>
+                    <p class="stat-label">Total Runs</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">0</p>
+                    <p class="stat-label">Successes</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">5</p>
+                    <p class="stat-label">Failures</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">100.0%</p>
+                    <p class="stat-label">Failure Rate</p>
+                </div>
+            </div>
+            
+                
+                <div class="critical-issues">
+                    <h4>🚨 Critical Issues</h4>
+                    <ul><li>High failure rate (>50%)</li><li>3+ consecutive failures</li></ul>
                 </div>
                 
             </div>
@@ -486,7 +609,7 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">2</p>
+                    <p class="stat-value">1</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
@@ -494,7 +617,7 @@
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">2</p>
+                    <p class="stat-value">1</p>
                     <p class="stat-label">Failures</p>
                 </div>
                 <div class="stat">
@@ -547,7 +670,7 @@
                 
                 <div class="critical-issues">
                     <h4>🚨 Critical Issues</h4>
-                    <ul><li>High failure rate (>50%)</li><li>Recent failure in last 24h</li></ul>
+                    <ul><li>High failure rate (>50%)</li></ul>
                 </div>
                 
             </div>
@@ -568,7 +691,7 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">9</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
@@ -576,7 +699,7 @@
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">9</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Failures</p>
                 </div>
                 <div class="stat">
@@ -588,7 +711,48 @@
                 
                 <div class="critical-issues">
                     <h4>🚨 Critical Issues</h4>
-                    <ul><li>High failure rate (>50%)</li><li>Recent failure in last 24h</li><li>3+ consecutive failures</li></ul>
+                    <ul><li>High failure rate (>50%)</li><li>3+ consecutive failures</li></ul>
+                </div>
+                
+            </div>
+            
+            <div class="workflow-card">
+                <div class="workflow-header">
+                    <h3 class="workflow-name">
+                        ❌ pr-validate
+                    </h3>
+                    <div>
+                        <span class="status-badge failure">failure</span>
+                        <span class="status-badge degrading">
+                            degrading
+                            <span class="trend-arrow trend-degrading">📉</span>
+                        </span>
+                    </div>
+                </div>
+                
+            <div class="workflow-stats">
+                <div class="stat">
+                    <p class="stat-value">5</p>
+                    <p class="stat-label">Total Runs</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">0</p>
+                    <p class="stat-label">Successes</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">5</p>
+                    <p class="stat-label">Failures</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">100.0%</p>
+                    <p class="stat-label">Failure Rate</p>
+                </div>
+            </div>
+            
+                
+                <div class="critical-issues">
+                    <h4>🚨 Critical Issues</h4>
+                    <ul><li>High failure rate (>50%)</li><li>3+ consecutive failures</li></ul>
                 </div>
                 
             </div>
@@ -609,11 +773,11 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">10</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">10</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
@@ -645,11 +809,11 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">10</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">10</p>
+                    <p class="stat-value">6</p>
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
@@ -669,78 +833,6 @@
                 <div class="workflow-header">
                     <h3 class="workflow-name">
                         ✅ CodeQL
-                    </h3>
-                    <div>
-                        <span class="status-badge success">success</span>
-                        <span class="status-badge stable">
-                            stable
-                            <span class="trend-arrow trend-stable">➡️</span>
-                        </span>
-                    </div>
-                </div>
-                
-            <div class="workflow-stats">
-                <div class="stat">
-                    <p class="stat-value">3</p>
-                    <p class="stat-label">Total Runs</p>
-                </div>
-                <div class="stat">
-                    <p class="stat-value">3</p>
-                    <p class="stat-label">Successes</p>
-                </div>
-                <div class="stat">
-                    <p class="stat-value">0</p>
-                    <p class="stat-label">Failures</p>
-                </div>
-                <div class="stat">
-                    <p class="stat-value">0.0%</p>
-                    <p class="stat-label">Failure Rate</p>
-                </div>
-            </div>
-            
-                
-            </div>
-            
-            <div class="workflow-card">
-                <div class="workflow-header">
-                    <h3 class="workflow-name">
-                        ✅ Dependabot Updates
-                    </h3>
-                    <div>
-                        <span class="status-badge success">success</span>
-                        <span class="status-badge stable">
-                            stable
-                            <span class="trend-arrow trend-stable">➡️</span>
-                        </span>
-                    </div>
-                </div>
-                
-            <div class="workflow-stats">
-                <div class="stat">
-                    <p class="stat-value">6</p>
-                    <p class="stat-label">Total Runs</p>
-                </div>
-                <div class="stat">
-                    <p class="stat-value">6</p>
-                    <p class="stat-label">Successes</p>
-                </div>
-                <div class="stat">
-                    <p class="stat-value">0</p>
-                    <p class="stat-label">Failures</p>
-                </div>
-                <div class="stat">
-                    <p class="stat-value">0.0%</p>
-                    <p class="stat-label">Failure Rate</p>
-                </div>
-            </div>
-            
-                
-            </div>
-            
-            <div class="workflow-card">
-                <div class="workflow-header">
-                    <h3 class="workflow-name">
-                        ✅ Deploy Docs
                     </h3>
                     <div>
                         <span class="status-badge success">success</span>
@@ -789,11 +881,11 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">2</p>
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">0</p>
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
@@ -861,7 +953,7 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">16</p>
+                    <p class="stat-value">4</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
@@ -884,7 +976,7 @@
             <div class="workflow-card">
                 <div class="workflow-header">
                     <h3 class="workflow-name">
-                        ✅ Trivy Scan
+                        ✅ Stale Branch Guard
                     </h3>
                     <div>
                         <span class="status-badge success">success</span>
@@ -897,11 +989,11 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
@@ -933,11 +1025,47 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">5</p>
+                    <p class="stat-label">Successes</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">0</p>
+                    <p class="stat-label">Failures</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">0.0%</p>
+                    <p class="stat-label">Failure Rate</p>
+                </div>
+            </div>
+            
+                
+            </div>
+            
+            <div class="workflow-card">
+                <div class="workflow-header">
+                    <h3 class="workflow-name">
+                        ✅ e2e-test
+                    </h3>
+                    <div>
+                        <span class="status-badge success">success</span>
+                        <span class="status-badge stable">
+                            stable
+                            <span class="trend-arrow trend-stable">➡️</span>
+                        </span>
+                    </div>
+                </div>
+                
+            <div class="workflow-stats">
+                <div class="stat">
+                    <p class="stat-value">5</p>
+                    <p class="stat-label">Total Runs</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
@@ -969,11 +1097,11 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">5</p>
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
@@ -992,7 +1120,7 @@
             <div class="workflow-card">
                 <div class="workflow-header">
                     <h3 class="workflow-name">
-                        ✅ queue-sync
+                        🟡 Dependabot Updates
                     </h3>
                     <div>
                         <span class="status-badge success">success</span>
@@ -1005,19 +1133,19 @@
                 
             <div class="workflow-stats">
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">76</p>
                     <p class="stat-label">Total Runs</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">1</p>
+                    <p class="stat-value">68</p>
                     <p class="stat-label">Successes</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">0</p>
+                    <p class="stat-value">8</p>
                     <p class="stat-label">Failures</p>
                 </div>
                 <div class="stat">
-                    <p class="stat-value">0.0%</p>
+                    <p class="stat-value">10.5%</p>
                     <p class="stat-label">Failure Rate</p>
                 </div>
             </div>
@@ -1026,9 +1154,9 @@
             </div>
             
         </div>
-        
+
         <div class="timestamp">
-            Last updated: 2025-08-05 01:10:20 UTC
+            Last updated: 2026-05-06 02:47:04 UTC
         </div>
     </div>
 </body>

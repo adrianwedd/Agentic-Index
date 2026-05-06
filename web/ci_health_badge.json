@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "label": "CI Health",
+  "message": "11/26 workflows (42%)",
+  "color": "red"
+}
