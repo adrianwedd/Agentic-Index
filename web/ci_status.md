@@ -18,7 +18,7 @@
    🚨 High failure rate (>50%)
    🚨 Recent failure in last 24h
    🚨 3+ consecutive failures
-❌ CI Health Monitor              | 100.0% failure rate | degrading 📉
+❌ CI Health Monitor              | 100.0% failure rate | stable ➡️
    🚨 High failure rate (>50%)
    🚨 Recent failure in last 24h
    🚨 3+ consecutive failures
@@ -56,4 +56,4 @@
 ✅ e2e-test                       |   0.0% failure rate | stable ➡️
 ✅ pip-audit                      |   0.0% failure rate | stable ➡️
 
-⏰ Report generated at 2026-05-06 06:57:11
+⏰ Report generated at 2026-05-06 12:39:36
