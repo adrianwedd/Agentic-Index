@@ -1,18 +1,96 @@
 {
   "repository": "adrianwedd/Agentic-Index",
-  "generated_at": "2026-05-06T02:47:04.968950",
+  "generated_at": "2026-05-06T06:57:06.890308",
   "summary": {
-    "total_workflows": 26,
-    "healthy_workflows": 11,
-    "total_critical_issues": 29,
-    "recent_runs": 191
+    "total_workflows": 27,
+    "healthy_workflows": 12,
+    "total_critical_issues": 35,
+    "recent_runs": 199
   },
   "workflows": {
-    "Trivy Scan": {
-      "total_runs": 6,
-      "failures": 5,
+    "Deploy Web": {
+      "total_runs": 8,
+      "failures": 0,
       "successes": 1,
-      "failure_rate": 0.8333333333333334,
+      "failure_rate": 0.0,
+      "trend": "stable",
+      "critical_issues": [],
+      "latest_run": {
+        "conclusion": "skipped",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413845998",
+        "created_at": "2026-05-06T02:51:02Z",
+        "age_hours": 4.101358423888889
+      }
+    },
+    "Safe Rebase & Retry": {
+      "total_runs": 5,
+      "failures": 0,
+      "successes": 0,
+      "failure_rate": 0.0,
+      "trend": "stable",
+      "critical_issues": [],
+      "latest_run": {
+        "conclusion": "skipped",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413826731",
+        "created_at": "2026-05-06T02:50:20Z",
+        "age_hours": 4.113025093333333
+      }
+    },
+    "pip-audit": {
+      "total_runs": 7,
+      "failures": 0,
+      "successes": 7,
+      "failure_rate": 0.0,
+      "trend": "stable",
+      "critical_issues": [],
+      "latest_run": {
+        "conclusion": "success",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413752018",
+        "created_at": "2026-05-06T02:47:40Z",
+        "age_hours": 4.157469539166667
+      }
+    },
+    "DevContainer Build": {
+      "total_runs": 7,
+      "failures": 7,
+      "successes": 0,
+      "failure_rate": 1.0,
+      "trend": "stable",
+      "critical_issues": [
+        "High failure rate (>50%)",
+        "Recent failure in last 24h",
+        "3+ consecutive failures"
+      ],
+      "latest_run": {
+        "conclusion": "failure",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413752010",
+        "created_at": "2026-05-06T02:47:40Z",
+        "age_hours": 4.157469540277778
+      }
+    },
+    "pr-validate": {
+      "total_runs": 6,
+      "failures": 6,
+      "successes": 0,
+      "failure_rate": 1.0,
+      "trend": "stable",
+      "critical_issues": [
+        "High failure rate (>50%)",
+        "Recent failure in last 24h",
+        "3+ consecutive failures"
+      ],
+      "latest_run": {
+        "conclusion": "failure",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413752009",
+        "created_at": "2026-05-06T02:47:40Z",
+        "age_hours": 4.157469541666667
+      }
+    },
+    "Trivy Scan": {
+      "total_runs": 7,
+      "failures": 6,
+      "successes": 1,
+      "failure_rate": 0.8571428571428571,
       "trend": "degrading",
       "critical_issues": [
         "High failure rate (>50%)",
@@ -21,9 +99,169 @@
       ],
       "latest_run": {
         "conclusion": "failure",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413729233",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413752004",
+        "created_at": "2026-05-06T02:47:40Z",
+        "age_hours": 4.157469542777777
+      }
+    },
+    "e2e-test": {
+      "total_runs": 6,
+      "failures": 0,
+      "successes": 6,
+      "failure_rate": 0.0,
+      "trend": "stable",
+      "critical_issues": [],
+      "latest_run": {
+        "conclusion": "success",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413752002",
+        "created_at": "2026-05-06T02:47:40Z",
+        "age_hours": 4.1574695436111115
+      }
+    },
+    "CI": {
+      "total_runs": 7,
+      "failures": 7,
+      "successes": 0,
+      "failure_rate": 1.0,
+      "trend": "stable",
+      "critical_issues": [
+        "High failure rate (>50%)",
+        "Recent failure in last 24h",
+        "3+ consecutive failures"
+      ],
+      "latest_run": {
+        "conclusion": "failure",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413752001",
+        "created_at": "2026-05-06T02:47:40Z",
+        "age_hours": 4.157469545
+      }
+    },
+    "PR-Issue Sync": {
+      "total_runs": 6,
+      "failures": 6,
+      "successes": 0,
+      "failure_rate": 1.0,
+      "trend": "stable",
+      "critical_issues": [
+        "High failure rate (>50%)",
+        "Recent failure in last 24h",
+        "3+ consecutive failures"
+      ],
+      "latest_run": {
+        "conclusion": "failure",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413751998",
+        "created_at": "2026-05-06T02:47:40Z",
+        "age_hours": 4.157469545833333
+      }
+    },
+    "Claude Code Action": {
+      "total_runs": 7,
+      "failures": 7,
+      "successes": 0,
+      "failure_rate": 1.0,
+      "trend": "stable",
+      "critical_issues": [
+        "High failure rate (>50%)",
+        "Recent failure in last 24h",
+        "3+ consecutive failures"
+      ],
+      "latest_run": {
+        "conclusion": "failure",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413751996",
+        "created_at": "2026-05-06T02:47:40Z",
+        "age_hours": 4.1574695466666665
+      }
+    },
+    "TruffleHog Scan": {
+      "total_runs": 7,
+      "failures": 0,
+      "successes": 7,
+      "failure_rate": 0.0,
+      "trend": "stable",
+      "critical_issues": [],
+      "latest_run": {
+        "conclusion": "success",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413751994",
+        "created_at": "2026-05-06T02:47:40Z",
+        "age_hours": 4.1574695475
+      }
+    },
+    "Docs Build & Link Check": {
+      "total_runs": 7,
+      "failures": 7,
+      "successes": 0,
+      "failure_rate": 1.0,
+      "trend": "stable",
+      "critical_issues": [
+        "High failure rate (>50%)",
+        "Recent failure in last 24h",
+        "3+ consecutive failures"
+      ],
+      "latest_run": {
+        "conclusion": "failure",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413751991",
+        "created_at": "2026-05-06T02:47:40Z",
+        "age_hours": 4.157469548611111
+      }
+    },
+    "Stale Branch Guard": {
+      "total_runs": 6,
+      "failures": 0,
+      "successes": 6,
+      "failure_rate": 0.0,
+      "trend": "stable",
+      "critical_issues": [],
+      "latest_run": {
+        "conclusion": "success",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413751281",
+        "created_at": "2026-05-06T02:47:39Z",
+        "age_hours": 4.157747327222222
+      }
+    },
+    "Dependabot Updates": {
+      "total_runs": 71,
+      "failures": 6,
+      "successes": 65,
+      "failure_rate": 0.08450704225352113,
+      "trend": "stable",
+      "critical_issues": [],
+      "latest_run": {
+        "conclusion": "success",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413731571",
+        "created_at": "2026-05-06T02:46:54Z",
+        "age_hours": 4.170247328055555
+      }
+    },
+    "Deploy Docs": {
+      "total_runs": 1,
+      "failures": 0,
+      "successes": 1,
+      "failure_rate": 0.0,
+      "trend": "stable",
+      "critical_issues": [],
+      "latest_run": {
+        "conclusion": "success",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413729230",
         "created_at": "2026-05-06T02:46:50Z",
-        "age_hours": 0.004158047777777778
+        "age_hours": 4.17135844
+      }
+    },
+    "CI Health Monitor": {
+      "total_runs": 7,
+      "failures": 7,
+      "successes": 0,
+      "failure_rate": 1.0,
+      "trend": "stable",
+      "critical_issues": [
+        "High failure rate (>50%)",
+        "Recent failure in last 24h",
+        "3+ consecutive failures"
+      ],
+      "latest_run": {
+        "conclusion": "failure",
+        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413729218",
+        "created_at": "2026-05-06T02:46:50Z",
+        "age_hours": 4.171358440833333
       }
     },
     "Draft Release Notes": {
@@ -37,230 +275,12 @@
         "conclusion": "success",
         "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413729196",
         "created_at": "2026-05-06T02:46:50Z",
-        "age_hours": 0.0041580505555555555
-      }
-    },
-    "Claude Code Action": {
-      "total_runs": 6,
-      "failures": 6,
-      "successes": 0,
-      "failure_rate": 1.0,
-      "trend": "stable",
-      "critical_issues": [
-        "High failure rate (>50%)",
-        "Recent failure in last 24h",
-        "3+ consecutive failures"
-      ],
-      "latest_run": {
-        "conclusion": "failure",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25413417973",
-        "created_at": "2026-05-06T02:35:21Z",
-        "age_hours": 0.19554694083333332
-      }
-    },
-    "Dependabot Updates": {
-      "total_runs": 76,
-      "failures": 8,
-      "successes": 68,
-      "failure_rate": 0.10526315789473684,
-      "trend": "stable",
-      "critical_issues": [],
-      "latest_run": {
-        "conclusion": "success",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/25320072687",
-        "created_at": "2026-05-04T12:52:41Z",
-        "age_hours": 37.90665805305556
-      }
-    },
-    "Deploy Web": {
-      "total_runs": 5,
-      "failures": 0,
-      "successes": 0,
-      "failure_rate": 0.0,
-      "trend": "stable",
-      "critical_issues": [],
-      "latest_run": {
-        "conclusion": "skipped",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/24994932095",
-        "created_at": "2026-04-27T12:26:50Z",
-        "age_hours": 206.3374913875
-      }
-    },
-    "Safe Rebase & Retry": {
-      "total_runs": 4,
-      "failures": 0,
-      "successes": 0,
-      "failure_rate": 0.0,
-      "trend": "stable",
-      "critical_issues": [],
-      "latest_run": {
-        "conclusion": "skipped",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/24994779159",
-        "created_at": "2026-04-27T12:23:25Z",
-        "age_hours": 206.39443583305555
-      }
-    },
-    "PR-Issue Sync": {
-      "total_runs": 5,
-      "failures": 5,
-      "successes": 0,
-      "failure_rate": 1.0,
-      "trend": "degrading",
-      "critical_issues": [
-        "High failure rate (>50%)",
-        "3+ consecutive failures"
-      ],
-      "latest_run": {
-        "conclusion": "failure",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/24994778909",
-        "created_at": "2026-04-27T12:23:24Z",
-        "age_hours": 206.3947136122222
-      }
-    },
-    "pip-audit": {
-      "total_runs": 5,
-      "failures": 0,
-      "successes": 5,
-      "failure_rate": 0.0,
-      "trend": "stable",
-      "critical_issues": [],
-      "latest_run": {
-        "conclusion": "success",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/24994778876",
-        "created_at": "2026-04-27T12:23:24Z",
-        "age_hours": 206.39471361333332
-      }
-    },
-    "e2e-test": {
-      "total_runs": 5,
-      "failures": 0,
-      "successes": 5,
-      "failure_rate": 0.0,
-      "trend": "stable",
-      "critical_issues": [],
-      "latest_run": {
-        "conclusion": "success",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/24994778864",
-        "created_at": "2026-04-27T12:23:24Z",
-        "age_hours": 206.39471361444444
-      }
-    },
-    "pr-validate": {
-      "total_runs": 5,
-      "failures": 5,
-      "successes": 0,
-      "failure_rate": 1.0,
-      "trend": "degrading",
-      "critical_issues": [
-        "High failure rate (>50%)",
-        "3+ consecutive failures"
-      ],
-      "latest_run": {
-        "conclusion": "failure",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/24994778861",
-        "created_at": "2026-04-27T12:23:24Z",
-        "age_hours": 206.39471361555556
-      }
-    },
-    "TruffleHog Scan": {
-      "total_runs": 5,
-      "failures": 0,
-      "successes": 5,
-      "failure_rate": 0.0,
-      "trend": "stable",
-      "critical_issues": [],
-      "latest_run": {
-        "conclusion": "success",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/24994778859",
-        "created_at": "2026-04-27T12:23:24Z",
-        "age_hours": 206.39471361694444
-      }
-    },
-    "DevContainer Build": {
-      "total_runs": 5,
-      "failures": 5,
-      "successes": 0,
-      "failure_rate": 1.0,
-      "trend": "degrading",
-      "critical_issues": [
-        "High failure rate (>50%)",
-        "3+ consecutive failures"
-      ],
-      "latest_run": {
-        "conclusion": "failure",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/24994778857",
-        "created_at": "2026-04-27T12:23:24Z",
-        "age_hours": 206.39471362
-      }
-    },
-    "Docs Build & Link Check": {
-      "total_runs": 5,
-      "failures": 5,
-      "successes": 0,
-      "failure_rate": 1.0,
-      "trend": "degrading",
-      "critical_issues": [
-        "High failure rate (>50%)",
-        "3+ consecutive failures"
-      ],
-      "latest_run": {
-        "conclusion": "failure",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/24994778845",
-        "created_at": "2026-04-27T12:23:24Z",
-        "age_hours": 206.39471362194445
-      }
-    },
-    "CI": {
-      "total_runs": 5,
-      "failures": 5,
-      "successes": 0,
-      "failure_rate": 1.0,
-      "trend": "degrading",
-      "critical_issues": [
-        "High failure rate (>50%)",
-        "3+ consecutive failures"
-      ],
-      "latest_run": {
-        "conclusion": "failure",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/24994778842",
-        "created_at": "2026-04-27T12:23:24Z",
-        "age_hours": 206.39471362361112
-      }
-    },
-    "Stale Branch Guard": {
-      "total_runs": 5,
-      "failures": 0,
-      "successes": 5,
-      "failure_rate": 0.0,
-      "trend": "stable",
-      "critical_issues": [],
-      "latest_run": {
-        "conclusion": "success",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/24994778101",
-        "created_at": "2026-04-27T12:23:23Z",
-        "age_hours": 206.39499140444445
-      }
-    },
-    "CI Health Monitor": {
-      "total_runs": 6,
-      "failures": 6,
-      "successes": 0,
-      "failure_rate": 1.0,
-      "trend": "stable",
-      "critical_issues": [
-        "High failure rate (>50%)",
-        "3+ consecutive failures"
-      ],
-      "latest_run": {
-        "conclusion": "failure",
-        "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/24994776729",
-        "created_at": "2026-04-27T12:23:21Z",
-        "age_hours": 206.39554696166667
+        "age_hours": 4.171358441944444
       }
     },
     "FOSSA Scan": {
-      "total_runs": 2,
-      "failures": 2,
+      "total_runs": 1,
+      "failures": 1,
       "successes": 0,
       "failure_rate": 1.0,
       "trend": "degrading",
@@ -271,12 +291,12 @@
         "conclusion": "failure",
         "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/18269762422",
         "created_at": "2025-10-06T04:09:00Z",
-        "age_hours": 5086.634713630555
+        "age_hours": 5090.801913998333
       }
     },
     "Snyk Scan": {
-      "total_runs": 2,
-      "failures": 2,
+      "total_runs": 1,
+      "failures": 1,
       "successes": 0,
       "failure_rate": 1.0,
       "trend": "degrading",
@@ -287,7 +307,7 @@
         "conclusion": "failure",
         "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/18269027481",
         "created_at": "2025-10-06T03:18:49Z",
-        "age_hours": 5087.4711025208335
+        "age_hours": 5091.6383028880555
       }
     },
     "CodeQL": {
@@ -301,13 +321,13 @@
         "conclusion": "success",
         "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/18268619273",
         "created_at": "2025-10-06T02:51:39Z",
-        "age_hours": 5087.9238802997215
+        "age_hours": 5092.091080666667
       }
     },
     "CI-Audit": {
-      "total_runs": 6,
+      "total_runs": 5,
       "failures": 0,
-      "successes": 6,
+      "successes": 5,
       "failure_rate": 0.0,
       "trend": "stable",
       "critical_issues": [],
@@ -315,15 +335,15 @@
         "conclusion": "success",
         "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/18253347801",
         "created_at": "2025-10-05T03:30:50Z",
-        "age_hours": 5111.270824745277
+        "age_hours": 5115.438025112222
       }
     },
     "Metrics Monitor": {
-      "total_runs": 6,
-      "failures": 6,
+      "total_runs": 5,
+      "failures": 5,
       "successes": 0,
       "failure_rate": 1.0,
-      "trend": "stable",
+      "trend": "degrading",
       "critical_issues": [
         "High failure rate (>50%)",
         "3+ consecutive failures"
@@ -332,13 +352,13 @@
         "conclusion": "failure",
         "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/18253311653",
         "created_at": "2025-10-05T03:27:28Z",
-        "age_hours": 5111.3269358572215
+        "age_hours": 5115.494136224166
       }
     },
     "Auto Rebase Bot": {
-      "total_runs": 6,
+      "total_runs": 5,
       "failures": 0,
-      "successes": 6,
+      "successes": 5,
       "failure_rate": 0.0,
       "trend": "stable",
       "critical_issues": [],
@@ -346,15 +366,15 @@
         "conclusion": "success",
         "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/18253235050",
         "created_at": "2025-10-05T03:20:18Z",
-        "age_hours": 5111.4463803027775
+        "age_hours": 5115.613580669444
       }
     },
     "Update index": {
-      "total_runs": 6,
-      "failures": 6,
+      "total_runs": 5,
+      "failures": 5,
       "successes": 0,
       "failure_rate": 1.0,
-      "trend": "stable",
+      "trend": "degrading",
       "critical_issues": [
         "High failure rate (>50%)",
         "3+ consecutive failures"
@@ -363,15 +383,15 @@
         "conclusion": "failure",
         "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/18252984465",
         "created_at": "2025-10-05T02:57:08Z",
-        "age_hours": 5111.8324914147215
+        "age_hours": 5115.99969178139
       }
     },
     "Nightly README Refresh": {
-      "total_runs": 6,
-      "failures": 6,
+      "total_runs": 5,
+      "failures": 5,
       "successes": 0,
       "failure_rate": 1.0,
-      "trend": "stable",
+      "trend": "degrading",
       "critical_issues": [
         "High failure rate (>50%)",
         "3+ consecutive failures"
@@ -380,7 +400,7 @@
         "conclusion": "failure",
         "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/18252931698",
         "created_at": "2025-10-05T02:51:50Z",
-        "age_hours": 5111.920824749167
+        "age_hours": 5116.088025115556
       }
     },
     "Rank Repos": {
@@ -396,15 +416,15 @@
         "conclusion": "failure",
         "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/18251510893",
         "created_at": "2025-10-05T00:32:18Z",
-        "age_hours": 5114.246380305555
+        "age_hours": 5118.413580671944
       }
     },
     "Daily README Injection": {
-      "total_runs": 6,
-      "failures": 6,
+      "total_runs": 4,
+      "failures": 4,
       "successes": 0,
       "failure_rate": 1.0,
-      "trend": "stable",
+      "trend": "degrading",
       "critical_issues": [
         "High failure rate (>50%)",
         "3+ consecutive failures"
@@ -413,7 +433,7 @@
         "conclusion": "failure",
         "url": "https://github.com/adrianwedd/Agentic-Index/actions/runs/18251305323",
         "created_at": "2025-10-05T00:13:02Z",
-        "age_hours": 5114.567491417778
+        "age_hours": 5118.7346917838895
       }
     }
   }
