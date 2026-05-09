@@ -1,0 +1,5 @@
+sphinx
+furo
+pydantic
+rich
+jsonschema>=3.2

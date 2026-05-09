@@ -1,0 +1,303 @@
+date,repository,stars,forks,issues,score,language,category
+2024-01-01,repo1,0,0,0,5,Unknown,Uncategorized
+2024-01-01,repo2,0,0,0,4,Unknown,Uncategorized
+2024-01-01,repo3,0,0,0,3,Unknown,Uncategorized
+2024-02-01,repo1,0,0,0,6,Unknown,Uncategorized
+2024-02-01,repo2,0,0,0,5,Unknown,Uncategorized
+2024-02-01,repo3,0,0,0,4,Unknown,Uncategorized
+2024-02-01,repo4,0,0,0,3,Unknown,Uncategorized
+2024-03-01,repo1,0,0,0,7,Unknown,Uncategorized
+2024-03-01,repo2,0,0,0,6,Unknown,Uncategorized
+2024-03-01,repo3,0,0,0,5,Unknown,Uncategorized
+2024-03-01,repo4,0,0,0,4,Unknown,Uncategorized
+2024-03-01,repo5,0,0,0,3,Unknown,Uncategorized
+2025-06-13,repo1,0,0,0,10,Unknown,Uncategorized
+2025-06-13,repo2,0,0,0,9,Unknown,Uncategorized
+2025-06-13,repo3,0,0,0,8,Unknown,Uncategorized
+2025-06-13,repo4,0,0,0,7,Unknown,Uncategorized
+2025-06-13,repo5,0,0,0,6,Unknown,Uncategorized
+2025-06-15,dify,103268,15497,777,5.28,TypeScript,General-purpose
+2025-06-15,langflow,73776,6817,780,5.17,Python,DevTools
+2025-06-15,browser-use,63197,7142,491,5.1,Python,General-purpose
+2025-06-15,OpenHands,58086,6658,378,5.07,Python,General-purpose
+2025-06-15,lobe-chat,62457,12945,859,5.06,TypeScript,RAG-centric
+2025-06-15,MetaGPT,56406,6753,74,5.06,Python,Multi-Agent Coordination
+2025-06-15,ragflow,55104,5395,2245,5.04,Python,RAG-centric
+2025-06-15,system-prompts-and-models-of-ai-tools,57495,17465,39,5.03,Unknown,DevTools
+2025-06-15,LLaMA-Factory,52281,6314,497,5.02,Python,General-purpose
+2025-06-15,cline,45704,5674,907,4.96,TypeScript,General-purpose
+2025-06-15,anything-llm,45309,4503,288,4.96,JavaScript,RAG-centric
+2025-06-15,autogen,45993,6979,457,4.93,Python,General-purpose
+2025-06-15,llama_index,42355,6070,298,4.93,Python,General-purpose
+2025-06-15,awesome-llm-apps,41125,4675,11,4.92,Python,RAG-centric
+2025-06-15,Flowise,40065,20577,579,4.87,TypeScript,General-purpose
+2025-06-15,ChatTTS,36799,3993,59,4.84,Python,General-purpose
+2025-06-15,mem0,34513,3441,445,4.84,Python,General-purpose
+2025-06-15,crewAI,32933,4420,102,4.82,Python,Multi-Agent Coordination
+2025-06-15,Langchain-Chatchat,35287,5913,183,4.81,TypeScript,RAG-centric
+2025-06-15,AgentGPT,34323,9431,211,4.79,TypeScript,General-purpose
+2025-06-15,agno,28280,3605,145,4.76,Python,Multi-Agent Coordination
+2025-06-15,khoj,30327,1715,83,4.75,Python,Experimental
+2025-06-15,ChatDev,27024,3400,46,4.74,Python,Multi-Agent Coordination
+2025-06-15,LibreChat,26789,4703,226,4.73,TypeScript,General-purpose
+2025-06-15,ai-agents-for-beginners,26615,7171,14,4.73,Jupyter Notebook,General-purpose
+2025-06-15,cherry-studio,28444,2453,833,4.72,TypeScript,General-purpose
+2025-06-15,Jobs_Applier_AI_Agent_AIHawk,28310,4271,11,4.72,Python,General-purpose
+2025-06-15,qlib,25192,3881,265,4.71,Python,Experimental
+2025-06-15,composio,25499,4415,79,4.68,Python,General-purpose
+2025-06-15,FastGPT,24718,6365,564,4.66,TypeScript,RAG-centric
+2025-06-15,gpt-researcher,21875,2877,122,4.65,Python,Experimental
+2025-06-15,haystack,21154,2217,120,4.63,Python,RAG-centric
+2025-06-15,CopilotKit,21205,2887,173,4.63,TypeScript,General-purpose
+2025-06-15,swarm,19920,2108,10,4.56,Python,Multi-Agent Coordination
+2025-06-15,agentic,17639,2231,13,4.55,TypeScript,General-purpose
+2025-06-15,vanna,18127,1628,201,4.54,Python,RAG-centric
+2025-06-15,letta,16861,1755,65,4.53,Python,General-purpose
+2025-06-15,DB-GPT,16764,2298,413,4.53,Python,General-purpose
+2025-06-15,agenticSeek,18268,1773,15,4.53,Python,General-purpose
+2025-06-15,deep-research,16638,1718,68,4.53,TypeScript,Experimental
+2025-06-15,SWE-agent,16305,1674,49,4.52,Python,General-purpose
+2025-06-15,RagaAI-Catalyst,16193,3775,13,4.51,Python,RAG-centric
+2025-06-15,eliza,16078,5238,40,4.51,TypeScript,General-purpose
+2025-06-15,DocsGPT,15708,1669,39,4.5,TypeScript,DevTools
+2025-06-15,awesome-ai-agents,18587,1424,56,4.48,Unknown,General-purpose
+2025-06-15,goose,14627,1172,373,4.47,Rust,General-purpose
+2025-06-15,suna,14425,2142,155,4.46,TypeScript,General-purpose
+2025-06-15,activepieces,15291,2087,398,4.46,TypeScript,General-purpose
+2025-06-15,ai,14955,2389,740,4.45,TypeScript,DevTools
+2025-06-15,botpress,13805,2026,19,4.45,TypeScript,General-purpose
+2025-06-15,plandex,13790,969,29,4.45,Go,General-purpose
+2025-06-15,dagger,13931,741,765,4.45,Go,DevTools
+2025-06-15,SuperAGI,16414,2005,198,4.44,Python,RAG-centric
+2025-06-15,deer-flow,13528,1515,147,4.44,TypeScript,DevTools
+2025-06-15,ai-pdf-chatbot-langchain,15574,3095,32,4.44,TypeScript,General-purpose
+2025-06-15,web-ui,13672,2322,253,4.44,Python,General-purpose
+2025-06-15,mastra,14211,844,264,4.42,TypeScript,RAG-centric
+2025-06-15,camel,12909,1379,518,4.42,Python,Multi-Agent Coordination
+2025-06-15,ChuanhuChatGPT,15414,2280,122,4.41,Python,General-purpose
+2025-06-15,devika,19329,2558,186,4.41,Python,Experimental
+2025-06-15,GenAI_Agents,13225,1778,15,4.39,Jupyter Notebook,General-purpose
+2025-06-15,Llama-Chinese,14611,1304,197,4.37,Python,General-purpose
+2025-06-15,openai-agents-python,11447,1672,210,4.36,Python,Multi-Agent Coordination
+2025-06-15,graphiti,11288,882,62,4.36,Python,General-purpose
+2025-06-15,LangBot,11933,913,98,4.35,Python,General-purpose
+2025-06-15,pydantic-ai,10239,936,305,4.32,Python,General-purpose
+2025-06-15,adk-python,10116,1252,454,4.31,Python,DevTools
+2025-06-15,ai-engineering-hub,9779,1699,88,4.3,Jupyter Notebook,RAG-centric
+2025-06-15,Qwen-Agent,9528,814,304,4.29,Python,RAG-centric
+2025-06-15,opik,9739,668,110,4.29,Python,RAG-centric
+2025-06-15,agent-zero,9872,1915,174,4.27,Python,General-purpose
+2025-06-15,AstrBot,9720,660,207,4.26,Python,General-purpose
+2025-06-15,bisheng,8843,1447,107,4.25,TypeScript,RAG-centric
+2025-06-15,E2B,8628,586,32,4.24,MDX,DevTools
+2025-06-15,awesome-LLM-resources,5444,537,0,4.24,Unknown,General-purpose
+2025-06-15,cua,8591,371,53,4.24,Python,General-purpose
+2025-06-15,Figma-Context-MCP,8150,665,30,4.22,TypeScript,General-purpose
+2025-06-15,Bert-VITS2,8468,1206,1,4.2,Python,General-purpose
+2025-06-15,Upsonic,7523,702,53,4.18,Python,General-purpose
+2025-06-15,WrenAI,8045,798,187,4.18,TypeScript,General-purpose
+2025-06-15,agentscope,7489,442,76,4.18,Python,Multi-Agent Coordination
+2025-06-15,UFO,7384,909,34,4.18,Python,General-purpose
+2025-06-15,pr-agent,8127,931,72,4.18,Python,DevTools
+2025-06-15,OpenRLHF,7076,686,257,4.16,Python,General-purpose
+2025-06-15,promptfoo,7194,574,229,4.16,TypeScript,RAG-centric
+2025-06-15,aichat,7022,462,1,4.15,Rust,RAG-centric
+2025-06-15,R2R,6971,555,86,4.15,Python,RAG-centric
+2025-06-15,nanobrowser,6803,652,29,4.14,TypeScript,Multi-Agent Coordination
+2025-06-15,intentkit,6420,682,71,4.11,Python,General-purpose
+2025-06-15,agents,6321,966,351,4.11,Python,General-purpose
+2025-06-15,deep-searcher,6253,620,38,4.1,Python,Experimental
+2025-06-15,agent-squad,6031,510,64,4.09,Python,General-purpose
+2025-06-15,lamda,7029,961,26,4.08,Python,General-purpose
+2025-06-15,RD-Agent,5872,543,75,4.08,Python,Experimental
+2025-06-15,TaskWeaver,5764,739,55,4.07,Python,General-purpose
+2025-06-15,LLocalSearch,5928,375,58,4.07,Go,General-purpose
+2025-06-15,ten-framework,6157,717,144,4.06,C,General-purpose
+2025-06-15,mcp-agent,5720,532,67,4.06,Python,General-purpose
+2025-06-15,superagent,5922,897,64,4.05,TypeScript,RAG-centric
+2025-06-15,julep,5548,928,97,4.05,Python,General-purpose
+2025-06-15,cognee,5536,410,39,4.05,Python,General-purpose
+2025-06-15,PocketFlow,5460,612,38,4.04,Python,General-purpose
+2025-06-15,Agent-S,5460,556,11,4.04,Python,General-purpose
+2025-06-15,AppAgent,5882,652,88,4.03,Python,General-purpose
+2025-06-15,MindSearch,6388,647,49,4.02,JavaScript,Multi-Agent Coordination
+2025-06-15,XAgent,8370,885,53,4.02,Python,General-purpose
+2025-06-15,open-deep-research,5718,708,42,4.02,TypeScript,Experimental
+2025-06-15,magentic-ui,5172,502,54,4.02,Python,Experimental
+2025-06-15,LaVague,6072,553,94,4.01,Python,General-purpose
+2025-06-15,superduper,5086,497,28,4.01,Python,General-purpose
+2025-06-15,pyspur,5074,356,25,4.01,TypeScript,General-purpose
+2025-06-15,swarms,4925,574,38,4.0,Python,Multi-Agent Coordination
+2025-06-15,Archon,4892,944,49,4.0,Python,General-purpose
+2025-06-15,PraisonAI,4857,669,27,3.99,Python,Multi-Agent Coordination
+2025-06-15,AutoAgent,4678,631,40,3.98,Python,General-purpose
+2025-06-15,agentops,4548,417,68,3.97,Python,Multi-Agent Coordination
+2025-06-15,steel-browser,4634,311,19,3.97,TypeScript,General-purpose
+2025-06-15,xtuner,4591,348,249,3.97,Python,DevTools
+2025-06-15,gaianet-node,4954,297,60,3.97,Shell,General-purpose
+2025-06-15,AgentLaboratory,4518,653,53,3.93,Python,Experimental
+2025-06-15,cursor-talk-to-figma-mcp,4316,423,48,3.93,JavaScript,General-purpose
+2025-06-15,opencode,4190,352,89,3.93,Go,General-purpose
+2025-06-15,gibberlink,4488,359,8,3.93,TypeScript,General-purpose
+2025-06-15,spring-ai-alibaba,4081,782,231,3.92,Java,General-purpose
+2025-06-15,12-factor-agents,4383,260,7,3.91,TypeScript,General-purpose
+2025-06-15,TradingAgents,4043,543,20,3.91,Python,Multi-Agent Coordination
+2025-06-15,LLM-Agent-Paper-List,7721,468,17,3.91,Unknown,General-purpose
+2025-06-15,aci,3988,345,50,3.91,Python,DevTools
+2025-06-15,sim,3973,587,28,3.91,TypeScript,DevTools
+2025-06-15,SerpentAI,6897,801,2,3.9,Python,General-purpose
+2025-06-15,TaskingAI,5129,329,38,3.9,Python,General-purpose
+2025-06-15,SuperPrompt,6135,577,12,3.9,Unknown,General-purpose
+2025-06-15,gptme,3859,316,94,3.89,Python,DevTools
+2025-06-15,agents,5623,437,36,3.88,Python,General-purpose
+2025-06-15,agency-swarm,3694,946,9,3.88,Python,General-purpose
+2025-06-15,rig,3771,408,94,3.88,Rust,General-purpose
+2025-06-15,casibase,3735,440,31,3.88,Go,General-purpose
+2025-06-15,lab,7238,1390,65,3.88,C,Experimental
+2025-06-15,rags,6470,664,36,3.87,Python,RAG-centric
+2025-06-15,Awesome-GPT-Agents,6093,667,7,3.87,Unknown,General-purpose
+2025-06-15,Viper,4331,582,2,3.87,Unknown,General-purpose
+2025-06-15,street-fighter-ai,6483,1396,58,3.87,Python,General-purpose
+2025-06-15,cognita,4102,333,16,3.86,Python,RAG-centric
+2025-06-15,Integuru,4381,346,13,3.85,Python,General-purpose
+2025-06-15,DevOpsGPT,5920,725,18,3.84,HTML,Multi-Agent Coordination
+2025-06-15,langroid,3402,323,59,3.84,Python,Multi-Agent Coordination
+2025-06-15,PromptWizard,3314,288,13,3.83,Python,General-purpose
+2025-06-15,claude-coder,3706,157,25,3.83,TypeScript,RAG-centric
+2025-06-15,modelscope-agent,3187,363,77,3.81,Python,General-purpose
+2025-06-15,OpenAgents,4334,475,12,3.81,Python,General-purpose
+2025-06-15,AgentVerse,4615,448,29,3.79,JavaScript,General-purpose
+2025-06-15,AdalFlow,3321,288,39,3.79,Python,General-purpose
+2025-06-15,tensortrade,5197,1093,53,3.77,Python,General-purpose
+2025-06-15,BotSharp,2766,553,38,3.75,C#,Multi-Agent Coordination
+2025-06-15,LlamaIndexTS,2687,447,114,3.74,TypeScript,General-purpose
+2025-06-15,Streamer-Sales,3293,515,11,3.74,Python,RAG-centric
+2025-06-15,FinRobot,3600,629,47,3.73,Jupyter Notebook,General-purpose
+2025-06-15,core,2805,377,50,3.72,Python,General-purpose
+2025-06-15,beeai-framework,2522,300,42,3.71,TypeScript,General-purpose
+2025-06-15,rl-baselines3-zoo,2457,556,62,3.7,Python,General-purpose
+2025-06-15,ii-agent,2436,356,13,3.7,Python,General-purpose
+2025-06-15,vocode-core,3348,582,16,3.7,Python,General-purpose
+2025-06-15,synthetic-data-generator,2359,383,24,3.68,Python,General-purpose
+2025-06-15,AutoGPT-Next-Web,3008,1398,32,3.68,TypeScript,General-purpose
+2025-06-15,griptape,2315,193,70,3.67,Python,DevTools
+2025-06-15,china-dictatorship,2414,267,748,3.66,HTML,RAG-centric
+2025-06-15,index,2268,119,6,3.66,Python,General-purpose
+2025-06-15,lagent,2145,220,14,3.64,Python,General-purpose
+2025-06-15,voltagent,2082,173,33,3.63,TypeScript,General-purpose
+2025-06-15,motia,2034,192,12,3.62,TypeScript,General-purpose
+2025-06-15,llama_deploy,2024,225,35,3.62,Python,General-purpose
+2025-06-15,LazyLLM,2011,110,20,3.61,Python,Multi-Agent Coordination
+2025-06-15,DemoGPT,1836,211,6,3.57,Python,DevTools
+2025-06-15,OpenAI_Agent_Swarm,3067,396,7,3.54,Python,General-purpose
+2025-06-15,langgraphjs,1634,244,120,3.52,TypeScript,General-purpose
+2025-06-15,openlit,1628,160,71,3.52,Python,General-purpose
+2025-06-15,comfyui_LLM_party,1730,143,51,3.51,Python,RAG-centric
+2025-06-15,Memary,2249,167,12,3.51,Jupyter Notebook,General-purpose
+2025-06-15,ax,1550,114,13,3.5,TypeScript,General-purpose
+2025-06-15,Cradle,2111,187,18,3.49,Python,General-purpose
+2025-06-15,agentUniverse,1485,213,46,3.48,Python,Multi-Agent Coordination
+2025-06-15,Free-Auto-GPT,2499,394,33,3.46,Python,General-purpose
+2025-06-15,ai-legion,1409,165,8,3.46,TypeScript,General-purpose
+2025-06-15,LLMStack,1961,286,14,3.45,Python,Multi-Agent Coordination
+2025-06-15,uAgents,1384,310,25,3.45,Python,General-purpose
+2025-06-15,AI-Researcher,1600,203,35,3.44,Python,Experimental
+2025-06-15,Autonomous-Agents,844,45,0,3.44,Unknown,Experimental
+2025-06-15,Agently,1354,154,29,3.43,Python,General-purpose
+2025-06-15,nextpy,2291,167,23,3.42,Python,General-purpose
+2025-06-15,LLPhant,1240,127,36,3.4,PHP,General-purpose
+2025-06-15,patchwork,1376,94,189,3.39,Python,General-purpose
+2025-06-15,company-research-agent,1205,164,2,3.39,Python,RAG-centric
+2025-06-15,Adala,1190,98,35,3.39,Python,General-purpose
+2025-06-15,codel,2349,190,27,3.39,TypeScript,General-purpose
+2025-06-15,pasa,1206,85,14,3.39,Python,DevTools
+2025-06-15,AIlice,1193,177,5,3.39,Python,General-purpose
+2025-06-15,octotools,1188,157,2,3.38,Python,DevTools
+2025-06-15,pymarl,2033,397,62,3.37,Python,Multi-Agent Coordination
+2025-06-15,agent-protocol,1220,147,44,3.37,Python,General-purpose
+2025-06-15,KaibanJS,1160,111,62,3.37,JavaScript,Multi-Agent Coordination
+2025-06-15,.github,1497,138,919,3.36,Unknown,RAG-centric
+2025-06-15,pywinassistant,1303,187,13,3.36,Python,General-purpose
+2025-06-15,RL-Factory,1120,92,9,3.36,Python,General-purpose
+2025-06-15,acu,1304,90,1,3.35,Unknown,DevTools
+2025-06-15,typedai,1077,75,5,3.34,TypeScript,General-purpose
+2025-06-15,chidori,1316,49,1,3.33,Rust,DevTools
+2025-06-15,intellagent,1060,132,2,3.32,Python,General-purpose
+2025-06-15,web-eval-agent,1018,73,4,3.32,Python,General-purpose
+2025-06-15,koog,919,54,52,3.27,Kotlin,General-purpose
+2025-06-15,react-agent,1601,151,13,3.26,TypeScript,General-purpose
+2025-06-15,BaseAI,1074,93,28,3.25,TypeScript,DevTools
+2025-06-15,SMARTS,1037,202,228,3.25,Python,Multi-Agent Coordination
+2025-06-15,webarena,1025,158,68,3.25,Python,General-purpose
+2025-06-15,ACE_Framework,1469,208,3,3.23,Python,General-purpose
+2025-06-15,awesome-llm-agents,971,87,20,3.23,Python,General-purpose
+2025-06-15,WebRover,926,160,7,3.21,Python,RAG-centric
+2025-06-15,Agentarium,922,75,1,3.2,Python,General-purpose
+2025-06-15,RestGPT,1369,104,13,3.2,Python,General-purpose
+2025-06-15,OpenAlpha_Evolve,784,133,8,3.2,Python,Experimental
+2025-06-15,FilmAgent,976,134,15,3.19,Python,Multi-Agent Coordination
+2025-06-15,gpt-newspaper,1325,188,12,3.19,Python,General-purpose
+2025-06-15,awesome-ai-sdks,951,79,17,3.16,Unknown,DevTools
+2025-06-15,terminal-velocity,1029,74,1,3.16,Python,General-purpose
+2025-06-15,autogen-ui,931,133,14,3.14,TypeScript,Multi-Agent Coordination
+2025-06-15,world_ai_protocol,443,186,0,3.13,Move,General-purpose
+2025-06-15,codefuse-chatbot,1189,123,5,3.11,Python,RAG-centric
+2025-06-15,AIOpsLab,614,88,3,3.1,Python,General-purpose
+2025-06-15,OpenManus,645,170,6,3.09,Python,General-purpose
+2025-06-15,deebo-prototype,598,46,1,3.09,JavaScript,General-purpose
+2025-06-15,SeeAct,753,95,10,3.08,Python,General-purpose
+2025-06-15,ix,1029,128,14,3.07,Python,General-purpose
+2025-06-15,SuperCoder,938,98,28,3.07,Go,General-purpose
+2025-06-15,promptulate,576,35,106,3.07,Python,General-purpose
+2025-06-15,Awesome-AI-Agents,657,49,5,3.06,Unknown,General-purpose
+2025-06-15,anda,356,40,0,3.06,Rust,General-purpose
+2025-06-15,AutoDidact,632,53,5,3.0,Jupyter Notebook,Experimental
+2025-06-15,devlooper,459,33,0,3.0,Python,General-purpose
+2025-06-15,agent,307,699,0,3.0,Python,General-purpose
+2025-06-15,Awesome-Papers-Autonomous-Agent,698,59,1,2.98,Unknown,General-purpose
+2025-06-15,pippin,527,186,4,2.98,Python,General-purpose
+2025-06-15,txtchat,292,15,0,2.98,Python,RAG-centric
+2025-06-15,jido,460,23,8,2.97,Elixir,General-purpose
+2025-06-15,babyagi-asi,797,91,7,2.96,Python,General-purpose
+2025-06-15,evolving-agents,435,30,14,2.95,Python,DevTools
+2025-06-15,dapr-agents,422,52,27,2.94,Python,General-purpose
+2025-06-15,Collaborative_Perception,492,58,1,2.93,Unknown,Multi-Agent Coordination
+2025-06-15,autonomous-learning-library,648,72,24,2.87,Python,General-purpose
+2025-06-15,jobber,545,82,4,2.86,Python,General-purpose
+2025-06-15,pentagi,342,48,7,2.85,Go,General-purpose
+2025-06-15,babyagi-2o,311,65,0,2.85,Python,General-purpose
+2025-06-15,android_world,335,46,19,2.84,Python,General-purpose
+2025-06-15,agent-q,467,94,5,2.81,Python,General-purpose
+2025-06-15,agents,436,120,10,2.81,Python,General-purpose
+2025-06-15,digirl,360,34,2,2.81,Python,General-purpose
+2025-06-15,gpt-instagram,232,23,0,2.77,TypeScript,Multi-Agent Coordination
+2025-06-15,PromptAgent,287,34,0,2.76,Python,General-purpose
+2025-06-15,autonomous-hr-chatbot,404,86,2,2.75,Jupyter Notebook,DevTools
+2025-06-15,OpenSteer,332,50,0,2.75,C++,General-purpose
+2025-06-15,GPT4V-AD-Exploration,297,16,0,2.74,Unknown,General-purpose
+2025-06-15,MindFlow,205,29,0,2.74,Python,General-purpose
+2025-06-15,ChatSim,391,27,38,2.72,Python,General-purpose
+2025-06-15,gpt-assistant,521,63,7,2.71,TypeScript,Experimental
+2025-06-15,beebot,436,75,9,2.7,Python,General-purpose
+2025-06-15,aguvis,316,19,22,2.69,Python,General-purpose
+2025-06-15,INSIGHT,409,58,1,2.67,Python,Experimental
+2025-06-15,shoal,249,35,0,2.66,JavaScript,General-purpose
+2025-06-15,AgentLLM,418,76,11,2.65,JavaScript,General-purpose
+2025-06-15,reflexion-draft,388,40,2,2.65,Python,General-purpose
+2025-06-15,Nuggt,335,29,7,2.65,Python,General-purpose
+2025-06-15,micro-agent,443,43,6,2.64,Python,General-purpose
+2025-06-15,personoids-lite,381,24,8,2.64,JavaScript,General-purpose
+2025-06-15,claude-code-flow,211,53,15,2.64,TypeScript,General-purpose
+2025-06-15,macad-gym,361,78,16,2.62,Python,Multi-Agent Coordination
+2025-06-15,genworlds,304,39,6,2.62,Jupyter Notebook,Multi-Agent Coordination
+2025-06-15,PSAI,203,19,4,2.62,PowerShell,General-purpose
+2025-06-15,Autono,207,35,13,2.58,Python,General-purpose
+2025-06-15,Gentopia,317,40,3,2.56,Python,General-purpose
+2025-06-15,Aetherius_AI_Assistant,295,40,1,2.56,Python,General-purpose
+2025-06-15,Agent-Driver,263,15,11,2.48,Python,General-purpose
+2025-06-15,SIMPL,258,34,25,2.48,Python,Multi-Agent Coordination
+2025-06-15,JungleGym,193,20,0,2.48,Python,General-purpose
+2025-06-15,pocketgroq,198,56,3,2.47,Python,General-purpose
+2025-06-15,awesome-autonomous-gpt,281,18,3,2.44,Unknown,General-purpose
+2025-06-15,agents-aea,228,71,88,2.42,Python,General-purpose
+2025-06-15,rl_CARLA,251,41,3,2.39,Python,General-purpose
