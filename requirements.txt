@@ -20,7 +20,7 @@ sphinx  # documentation generator
 sphinx_rtd_theme  # docs theme
 uvicorn  # ASGI server
 pytest-env  # env var plugin
-aiohttp>=3.9.0  # async HTTP engine
+aiohttp>=3.13.5  # async HTTP engine
 structlog  # structured logging
 sentry-sdk  # error reporting
 bandit[toml]  # security scanner
