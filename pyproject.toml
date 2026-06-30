@@ -15,7 +15,7 @@ dependencies = [
     "requests",
     "PyYAML",
     "jsonschema>=3.2",
-    "pydantic>=2",
+    "pydantic>=2.13.0",
     "rich",
     "structlog",
     "sentry-sdk",
