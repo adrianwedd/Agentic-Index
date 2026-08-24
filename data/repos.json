@@ -8225,6 +8225,21 @@
       "issues_closed_delta": "+new",
       "score_delta": 0.0,
       "stars_log2": 7.977279923499917
+    },
+    {
+      "name": "ontheia",
+      "full_name": "Ontheia/ontheia",
+      "html_url": "https://github.com/Ontheia/ontheia",
+      "description": "Self-hosted, open-source AI agent platform \u2014 multi-provider, MCP-native, visual workflows (Chain Engine), multi-agent delegation, RAG, and multi-user governance.",
+      "archived": false,
+      "language": "TypeScript",
+      "owner": {
+        "login": "Ontheia"
+      },
+      "license": "AGPL-3.0-only",
+      "category": "DevTools",
+      "forks_delta": "+new",
+      "issues_closed_delta": "+new"
     }
   ]
 }
